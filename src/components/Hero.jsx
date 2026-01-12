@@ -19,7 +19,7 @@ const Hero = () => {
         {/* LEFT CONTENT */}
         <div className="text-white">
           {/* Rating */}
-          <div className="flex items-center gap-2 text-sm text-yellow-400 mb-4">
+          <div className="flex items-center gap-2 text-sm text-[#DBAB35] mb-4">
             <span>★★★★★</span>
             <span className="text-gray-200">
               5 star rating | Based on 200+ happy customers
@@ -41,7 +41,7 @@ const Hero = () => {
           </p>
 
           {/* CTA */}
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-3 rounded-full transition">
+          <button className="bg-[#DBAB35] text-black font-semibold px-8 py-3 rounded-full transition">
             Shop Now
           </button>
         </div>

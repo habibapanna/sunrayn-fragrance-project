@@ -1,6 +1,7 @@
 import React from "react";
 import { Search, ShoppingBag, User } from "lucide-react";
 import { LiaAngleDownSolid } from "react-icons/lia";
+import { CiShoppingTag } from "react-icons/ci";
 
 const Navbar = () => {
   return (
@@ -29,6 +30,7 @@ const Navbar = () => {
           </button>
 
           <span className="bg-[#FD4929] text-white text-xs px-3 py-1 rounded-full font-semibold flex items-center gap-1">
+            <CiShoppingTag className="text-xl" />
              Holiday Sale
           </span>
         </div>

@@ -8,7 +8,6 @@ const NewArrivals = () => {
 
         {/* IMAGE GRID */}
         <div className="grid grid-cols-3 gap-5">
-          {/* Large Left Image */}
           <div className="relative rounded-4xl overflow-hidden">
             <img
               src="https://i.postimg.cc/9QcGyqYZ/Product-Image-(3).png"
@@ -17,11 +16,9 @@ const NewArrivals = () => {
             />
             {/* Gradient Overlay */}
             <div className="absolute bottom-0 left-0 w-full h-full 
-                            bg-gradient-to-b from-transparent to-[#EDE8E0]/70">
-            </div>
+                            bg-gradient-to-b from-transparent to-[#EDE8E0]/90"></div>
           </div>
 
-          {/* Top Right Image */}
           <div className="relative rounded-4xl overflow-hidden">
             <img
               src="https://i.postimg.cc/vT4crfPf/Product-Image-(2).png"
@@ -29,11 +26,9 @@ const NewArrivals = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute bottom-0 left-0 w-full h-full 
-                            bg-gradient-to-b from-transparent to-[#EDE8E0]/70">
-            </div>
+                            bg-gradient-to-b from-transparent to-[#EDE8E0]/70"></div>
           </div>
 
-          {/* Bottom Right Image */}
           <div className="relative rounded-4xl overflow-hidden">
             <img
               src="https://i.postimg.cc/fbvtDwtd/Product-Image-(4).png"
@@ -41,20 +36,24 @@ const NewArrivals = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute bottom-0 left-0 w-full h-full 
-                            bg-gradient-to-b from-transparent to-[#EDE8E0]/70">
-            </div>
+                            bg-gradient-to-b from-transparent to-[#EDE8E0]/70"></div>
           </div>
         </div>
 
         {/* TEXT SECTION */}
-        <div className="text-center lg:text-left space-y-4 absolute top-108 left-50">
-          <h2 className="text-3xl md:text-6xl font-bold flex items-center text-[#571313]">
-            NEW ARRIVALS
-            <span className="text-xl text-[#571313]">
-              <BsArrowUpRightCircleFill className="text-4xl ml-3" />
-            </span>
-          </h2>
-          <p className="uppercase text-3xl md:text-6xl text-[#571313] ml-56">
+        <div
+          className="absolute top-[80%] left-[15%] transform -translate-y-1/2"
+        >
+          {/* NEW ARRIVALS + Icon */}
+          <div className="relative inline-flex items-center">
+            <h2 className="text-4xl md:text-7xl font-bold text-[#571313]">
+              NEW ARRIVALS
+            </h2>
+            <BsArrowUpRightCircleFill className="text-4xl ml-3 bg-white rounded-full text-[#571313]" />
+          </div>
+
+          {/* Premium Collections aligned under specific letters */}
+          <p className="uppercase text-3xl md:text-6xl text-[#571313] relative left-[15rem]">
             Premium Collections
           </p>
         </div>
