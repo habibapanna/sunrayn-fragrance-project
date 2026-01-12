@@ -18,7 +18,7 @@ const Navbar = () => {
 
         {/* RIGHT ICONS */}
       <div className="flex justify-between border-none">
-           <div className="hidden md:flex items-center gap-6 bg-white/90 text-black px-6 py-2 rounded-full shadow mr-16">
+           <div className="hidden md:flex items-center gap-6 bg-white/90 text-[#282828] px-6 py-2 rounded-full shadow mr-16">
           <button className="flex items-center gap-1 text-sm font-medium">
             Perfumes
            <LiaAngleDownSolid />

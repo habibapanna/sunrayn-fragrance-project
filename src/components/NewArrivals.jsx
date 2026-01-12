@@ -3,14 +3,14 @@ import { BsArrowUpRightCircleFill } from "react-icons/bs";
 
 const NewArrivals = () => {
   return (
-    <section className="mx-auto px-6 pb-24">
+    <section className="mx-auto px-6 pb-10">
       <div className="items-center gap-12 bg-[#EDE8E0] rounded-4xl p-20 relative">
 
         {/* IMAGE GRID */}
         <div className="grid grid-cols-3 gap-5">
           <div className="relative rounded-4xl overflow-hidden">
             <img
-              src="https://i.postimg.cc/9QcGyqYZ/Product-Image-(3).png"
+              src="https://i.postimg.cc/vT4crfPf/Product-Image-(2).png"
               alt="Product 1"
               className="w-full h-full object-cover"
             />
@@ -21,7 +21,7 @@ const NewArrivals = () => {
 
           <div className="relative rounded-4xl overflow-hidden">
             <img
-              src="https://i.postimg.cc/vT4crfPf/Product-Image-(2).png"
+              src="https://i.postimg.cc/9QcGyqYZ/Product-Image-(3).png"
               alt="Product 2"
               className="w-full h-full object-cover"
             />
@@ -45,7 +45,7 @@ const NewArrivals = () => {
           className="absolute top-[80%] left-[15%] transform -translate-y-1/2"
         >
           {/* NEW ARRIVALS + Icon */}
-          <div className="relative inline-flex items-center">
+          <div className="relative inline-flex items-center justify-center">
             <h2 className="text-4xl md:text-7xl font-bold text-[#571313]">
               NEW ARRIVALS
             </h2>

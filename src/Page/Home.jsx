@@ -4,6 +4,7 @@ import Navbar from '../shared/Navbar/Navbar';
 import Signature from '../components/Signature';
 import Category from '../components/Category';
 import NewArrivals from '../components/NewArrivals';
+import Featured from '../components/Featured';
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <Signature></Signature>
             <Category></Category>
            <NewArrivals></NewArrivals>
+           <Featured></Featured>
         </div>
     );
 };

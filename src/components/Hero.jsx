@@ -41,7 +41,7 @@ const Hero = () => {
           </p>
 
           {/* CTA */}
-          <button className="bg-[#DBAB35] text-black font-semibold px-8 py-3 rounded-full transition">
+          <button className="bg-[#DBAB35] text-black font-semibold px-8 py-3 rounded-full">
             Shop Now
           </button>
         </div>
