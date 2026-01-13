@@ -33,12 +33,12 @@ const Category = () => {
             />
 
             {/* TITLE (TOP LEFT) */}
-            <h3 className="absolute top-6 left-6 z-20 text-xl font-medium text-[#2b1b14]">
+            <h3 className="absolute top-6 left-6 z-20 text-[50px] font-medium text-[#1D0B01]">
               {item.title}
             </h3>
 
             {/* ARROW BUTTON (BOTTOM RIGHT) */}
-            <button className="absolute bottom-6 right-6 z-20 w-[55px] h-[55px] rounded-full bg-white shadow flex items-center justify-center hover:scale-105 transition">
+            <button className="absolute bottom-6 right-6 z-20 w-[55px] h-[55px] rounded-full bg-white shadow flex items-center justify-center hover:scale-105 transition cursor-pointer">
               <GoChevronRight className="text-[35px]" />
             </button>
           </div>
