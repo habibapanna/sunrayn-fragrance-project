@@ -1,6 +1,9 @@
 import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
 import { LuCrown, LuHeartHandshake } from 'react-icons/lu';
 import { PiSealCheck } from 'react-icons/pi';
+import Discount from '../assets/Discount Price.png';
+import Original from '../assets/Original Price.png';
+
 
 const items = [
   {
@@ -23,25 +26,25 @@ const BestSelling = () => {
              <div className='flex justify-between mb-10'>
             <div className='flex justify-center items-center text-center gap-10'>
                 <div>
-                    <p className='text-3xl md:text-5xl font-semibold text-[#282828]'>Best Selling Perfumes</p>
+                    <p className='text-3xl md:text-[50px] font-semibold text-[#282828]'>Best Selling Perfumes</p>
                 </div>
                 <div>
                     <button className="bg-[#BA9948] text-white font-semibold px-8 py-3 rounded-full">View All</button>
                 </div>
             </div>
             <div className='flex gap-5'>
-                <button className="w-10 h-10 rounded-full bg-[#F5F1EA] shadow flex items-center justify-center">
-                              <GoChevronLeft />
+                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center">
+                              <GoChevronLeft className='text-[35px]' />
                             </button>
-                <button className="w-10 h-10 rounded-full bg-[#F5F1EA] shadow flex items-center justify-center">
-                              <GoChevronRight />
+                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center">
+                              <GoChevronRight className='text-[35px]' />
                             </button>
             </div>
 
             </div>
             {/**** Items ****/}
 
-   <section className="mx-auto pb-5">
+   <section className="mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {items.map((item, index) => (
           <div
@@ -52,21 +55,21 @@ const BestSelling = () => {
             <img
               src={item.product}
               alt={item.title}
-              className="absolute inset-0 object-cover"
+              className="absolute inset-0 object-cover h-[501px] w-[501px]"
             />
          {/* BOTTOM CONTENT */}
-<div className="absolute bottom-0 left-0 w-full z-20 p-10">
+<div className="absolute bottom-0 left-0 w-full z-20 p-[40px]">
   
   {/* Rating */}
-  <div className="flex items-center gap-2 text-sm text-[#FF9100] mb-2">
+  <div className="flex items-center gap-2 text-lg text-[#FF9100] mb-2">
     <span>★★★★★</span>
-    <span className="text-[#0D0C09]">1239</span>
+    <span className="text-[#0D0C09] text-[14px]">1239</span>
   </div>
 
-  <h3 className="text-xl md:text-2xl font-medium text-[#571313]">
+  <h3 className="text-xl md:text-[35px] font-medium text-[#571313]">
     {item.title}
   </h3>
-  <p className="text-sm text-[#0D0C09] mb-4">
+  <p className="text-[18px] text-[#0D0C09] mb-[26px]">
     Sanrayn Original
   </p>
 
@@ -75,13 +78,9 @@ const BestSelling = () => {
       Add to Cart
     </button>
 
-    <div className="flex gap-2">
-      <button className="bg-white text-[#0D0C09] font-semibold px-4 py-3 rounded-full text-sm">
-        $20
-      </button>
-      <button className="bg-[#BA9948] text-white font-semibold px-4 py-3 rounded-full text-sm">
-        $29.40
-      </button>
+    <div className="flex gap-[22px]">
+      <img src={Original} alt="" className='h-[45px]' />
+      <img src={Discount} alt="" className='h-[48px]' />
     </div>
   </div>
 </div>

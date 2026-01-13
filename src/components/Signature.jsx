@@ -36,14 +36,14 @@ const Signature = () => {
           />
 
           {/* CONTENT */}
-          <div className="relative z-10 p-14">
-            <h2 className="text-3xl md:text-4xl font-semibold text-[#5a2c1d] mb-6 leading-snug">
+          <div className="relative z-10 p-12">
+            <h2 className="text-3xl md:text-[50px] text-[#5a2c1d] mb-6 leading-snug">
               Signature-Inspired <br />
               Scents That Stay-On Skin <br />
               and in Memory
             </h2>
 
-            <p className="text-sm text-[#4a2a1d] leading-relaxed max-w-lg">
+            <p className="text-[24px] text-[#4a2a1d] leading-relaxed">
               <span className="font-semibold">
                 SANRAYN means “LIGHT PURIFIED THROUGH THE SOUL.”
               </span>{" "}

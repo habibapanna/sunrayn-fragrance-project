@@ -7,6 +7,8 @@ import NewArrivals from '../components/NewArrivals';
 import Featured from '../components/Featured';
 import Special from '../components/Special';
 import BestSelling from '../components/BestSelling';
+import Testimonials from '../components/Testimonials';
+import Blogs from '../components/Blogs';
 
 
 const Home = () => {
@@ -20,6 +22,8 @@ const Home = () => {
            <Featured></Featured>
            <Special></Special>
            <BestSelling></BestSelling>
+           <Testimonials></Testimonials>
+           <Blogs></Blogs>
         </div>
     );
 };

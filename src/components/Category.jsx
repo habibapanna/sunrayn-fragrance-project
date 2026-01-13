@@ -38,8 +38,8 @@ const Category = () => {
             </h3>
 
             {/* ARROW BUTTON (BOTTOM RIGHT) */}
-            <button className="absolute bottom-6 right-6 z-20 w-10 h-10 rounded-full bg-white shadow flex items-center justify-center hover:scale-105 transition">
-              <GoChevronRight />
+            <button className="absolute bottom-6 right-6 z-20 w-[55px] h-[55px] rounded-full bg-white shadow flex items-center justify-center hover:scale-105 transition">
+              <GoChevronRight className="text-[35px]" />
             </button>
           </div>
         ))}
@@ -48,4 +48,14 @@ const Category = () => {
   );
 };
 
+
 export default Category;
+
+
+
+
+
+
+// <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center">
+                            //   <GoChevronRight className='text-[35px]' />
+                            // </button>

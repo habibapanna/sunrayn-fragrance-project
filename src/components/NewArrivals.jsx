@@ -1,5 +1,6 @@
 import React from "react"; 
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
+import Button from '../assets/Button Container.png'
 
 const NewArrivals = () => {
   return (
@@ -42,18 +43,26 @@ const NewArrivals = () => {
 
         {/* TEXT SECTION */}
         <div
-          className="absolute top-[80%] left-[15%] transform -translate-y-1/2"
+          className="absolute top-[600px] left-[150px] transform -translate-y-1/2"
         >
           {/* NEW ARRIVALS + Icon */}
           <div className="relative inline-flex items-center justify-center">
-            <h2 className="text-4xl md:text-7xl font-bold text-[#571313]">
+            <h2 className="text-4xl text-[120px] font-bold text-[#571313]" style={{
+        fontWeight: 700,
+    lineHeight: "110%",
+    letterSpacing: "-7.2px",
+      }}>
               NEW ARRIVALS
             </h2>
-            <BsArrowUpRightCircleFill className="text-4xl ml-3 bg-white rounded-full text-[#571313]" />
+            <img src={Button} alt="" className="ml-[31px] h-[64px]" />
           </div>
 
           {/* Premium Collections aligned under specific letters */}
-          <p className="uppercase text-3xl md:text-6xl text-[#571313] relative left-[15rem]">
+          <p className="uppercase text-3xl md:text-[100px] text-[#571313] relative left-[400px]" style={{
+        fontWeight: 400,
+    lineHeight: "110%",
+    letterSpacing: "-7.2px",
+      }}>
             Premium Collections
           </p>
         </div>
