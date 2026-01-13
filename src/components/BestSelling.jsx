@@ -1,4 +1,3 @@
-import React from 'react';
 import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
 import { LuCrown, LuHeartHandshake } from 'react-icons/lu';
 import { PiSealCheck } from 'react-icons/pi';
@@ -18,13 +17,13 @@ const items = [
   },
 ];
 
-const Featured = () => {
+const BestSelling = () => {
     return (
         <div className='mx-auto px-6 pb-10'>
-            <div className='flex justify-between mb-10'>
+             <div className='flex justify-between mb-10'>
             <div className='flex justify-center items-center text-center gap-10'>
                 <div>
-                    <p className='text-3xl md:text-5xl font-semibold text-[#282828]'>Featured Perfumes</p>
+                    <p className='text-3xl md:text-5xl font-semibold text-[#282828]'>Best Selling Perfumes</p>
                 </div>
                 <div>
                     <button className="bg-[#BA9948] text-white font-semibold px-8 py-3 rounded-full">View All</button>
@@ -40,8 +39,7 @@ const Featured = () => {
             </div>
 
             </div>
-
-{/**** Items ****/}
+            {/**** Items ****/}
 
    <section className="mx-auto pb-5">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
@@ -92,48 +90,9 @@ const Featured = () => {
         ))}
       </div>
     </section>
-
-    {/******* Premium *******/}
-
-   <section className="mx-auto pb-10">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-
-<div className='flex bg-[#F6EAEF] rounded-4xl p-10 justify-center items-center'> 
-<div>
-<span className='text-[#DC7C2A] text-6xl'><LuCrown /></span>
-<h3 className='text-[#DC7C2A] text-2xl font-semibold mt-5'>Premium</h3>
-<p className='text-[#0D0C09]'>All our fragrances are inspired by an exclusive collection of popular and iconic aromas</p>
-</div>
-<div>
-  <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png" alt="" />
-</div>
-</div>
-<div className='flex bg-[#E6F3EF] rounded-4xl p-10 justify-center items-center'> 
-<div>
-<span className='text-[#43B583] text-6xl'><PiSealCheck /></span>
-<h3 className='text-[#43B583] text-2xl font-semibold mt-5'>Certified</h3>
-<p className='text-[#0D0C09]'>Certified, skin-friendly formula, Cruelty-free, crafted with care to ensure the safety of our beloved users.</p>
-</div>
-<div>
-  <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png" alt="" />
-</div>
-</div>
-<div className='flex bg-[#EEEBFF] rounded-4xl p-10 justify-center items-center'> 
-<div>
-<span className='text-[#FF4242] text-6xl'><LuHeartHandshake /></span>
-<h3 className='text-[#FF4242] text-2xl font-semibold mt-5'>Made with Care</h3>
-<p className='text-[#0D0C09]'>Every fragrance is responsibly crafted and carefully inspected to ensure perfection in every bottle.</p>
-</div>
-<div>
-  <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png" alt="" />
-</div>
-</div>
-
-      </div>
-    </section>
-
+            
         </div>
     );
 };
 
-export default Featured;
+export default BestSelling;

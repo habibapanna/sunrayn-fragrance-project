@@ -5,6 +5,8 @@ import Signature from '../components/Signature';
 import Category from '../components/Category';
 import NewArrivals from '../components/NewArrivals';
 import Featured from '../components/Featured';
+import Special from '../components/Special';
+import BestSelling from '../components/BestSelling';
 
 
 const Home = () => {
@@ -16,6 +18,8 @@ const Home = () => {
             <Category></Category>
            <NewArrivals></NewArrivals>
            <Featured></Featured>
+           <Special></Special>
+           <BestSelling></BestSelling>
         </div>
     );
 };
