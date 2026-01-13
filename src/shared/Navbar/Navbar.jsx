@@ -3,6 +3,10 @@ import { Search, ShoppingBag, User } from "lucide-react";
 import { LiaAngleDownSolid } from "react-icons/lia";
 import { CiShoppingTag } from "react-icons/ci";
 import Logo from "../../assets/Logo.png";
+import Solar from "../../assets/solar_tag-bold.png";
+import Icon from "../../assets/Icon (Stroke).png";
+import Frame from "../../assets/Frame (1).png";
+import Users from "../../assets/User Icon.png";
 import BrandName from "../../assets/Brand Name.png";
 import { Link } from "react-router-dom";
 
@@ -10,7 +14,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="absolute top-0 left-0 w-full z-50">
-      <div className=" mx-auto px-6 py-5 flex items-center justify-between text-white">
+      <div className=" mx-auto px-[32px] py-[24px] flex items-center justify-between text-white">
 
  {/* LOGO */}
 <Link to="/" className="flex items-center gap-3 cursor-pointer">
@@ -33,33 +37,33 @@ const Navbar = () => {
 
         {/* RIGHT ICONS */}
       <div className="flex justify-between border-none">
-           <div className="hidden md:flex items-center gap-6 bg-white/90 text-[#282828] px-6 py-2 rounded-full shadow mr-16">
-          <button className="flex items-center gap-1 text-sm font-medium">
+           <div className="hidden md:flex items-center gap-6 bg-white/90 text-[#282828] px-[24px] py-[12px] rounded-full shadow mr-16">
+          <button className="flex items-center gap-1 text-[16px] font-normal">
             Perfumes
            <LiaAngleDownSolid />
           </button>
 
-          <button className="flex items-center gap-1 text-sm font-medium">
+          <button className="flex items-center gap-1 text-[16px] font-normal">
             Collections
             <LiaAngleDownSolid />
           </button>
 
-          <span className="bg-[#FD4929] text-white text-xs px-3 py-1 rounded-full font-semibold flex items-center gap-1">
-            <CiShoppingTag className="text-xl" />
+          <span className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[7px] rounded-full font-semibold flex items-center gap-1">
+            <img src={Solar} alt="" className="h-[17px]" />
              Holiday Sale
           </span>
         </div>
         <div className="flex items-center gap-4">
           <button className="bg-white/90 text-black p-2 rounded-full hover:bg-white transition">
-            <Search className="text-[#744F18]" size={18} />
+           <img src={Icon} alt="" className="h-[20px]" />
           </button>
 
           <button className="bg-white/90 text-black p-2 rounded-full hover:bg-white transition">
-            <ShoppingBag className="text-[#744F18]" size={18} />
+             <img src={Frame} alt="" className="h-[20px]" />
           </button>
 
           <button className="bg-white/90 text-black p-2 rounded-full hover:bg-white transition">
-            <User className="text-[#744F18]" size={18} />
+            <img src={Users} alt="" className="h-[20px]" /> 
           </button>
         </div>
       </div>
@@ -69,3 +73,15 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+
+// 
+{/* <img src={Icon} alt="" className="h-[20px]" />
+
+         <img src={Frame} alt="" className="h-[20px]" />
+
+          <img src={Users} alt="" className="h-[20px]" /> */}
+// 

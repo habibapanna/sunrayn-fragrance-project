@@ -29,7 +29,7 @@ const BestSelling = () => {
                     <p className='text-3xl md:text-[50px] font-semibold text-[#282828]'>Best Selling Perfumes</p>
                 </div>
                 <div>
-                    <button className="bg-[#BA9948] text-white font-semibold px-8 py-3 rounded-full">View All</button>
+                    <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[20px]">View All</button>
                 </div>
             </div>
             <div className='flex gap-5'>

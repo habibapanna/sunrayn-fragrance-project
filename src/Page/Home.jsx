@@ -9,6 +9,8 @@ import Special from '../components/Special';
 import BestSelling from '../components/BestSelling';
 import Testimonials from '../components/Testimonials';
 import Blogs from '../components/Blogs';
+import Offer from '../components/Offer';
+import RecentPost from '../components/RecentPost';
 
 
 const Home = () => {
@@ -24,6 +26,8 @@ const Home = () => {
            <BestSelling></BestSelling>
            <Testimonials></Testimonials>
            <Blogs></Blogs>
+           <Offer></Offer>
+           <RecentPost></RecentPost>
         </div>
     );
 };
