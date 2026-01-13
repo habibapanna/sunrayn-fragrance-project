@@ -1,7 +1,9 @@
 import React from 'react';
 import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
+import { LuCrown, LuHeartHandshake } from 'react-icons/lu';
+import { PiSealCheck } from 'react-icons/pi';
 
-const categories = [
+const items = [
   {
     title: "Ambery Saffron",
     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
@@ -13,6 +15,27 @@ const categories = [
   {
     title: "Ambery Saffron",
     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
+  },
+];
+
+const premiumItems= [
+  {
+    title: "Premium",
+    product: "https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png",
+    desc: "All our fragrances are inspired by an exclusive collection of popular and iconic aromas", 
+    icon: <LuCrown />,
+  },
+  {
+    title: "Certified",
+    product: "https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png",
+    desc: "Certified, skin-friendly formula, Cruelty-free, crafted with care to ensure the safety of our beloved users. ",
+    icon: <PiSealCheck />,
+  },
+  {
+    title: "Made with Care",
+    product: "https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png",
+    desc: "Every fragrance is responsibly crafted and carefully inspected to ensure perfection in every bottle.",
+    icon: <LuHeartHandshake />,
   },
 ];
 
@@ -39,9 +62,12 @@ const Featured = () => {
             </div>
 
             </div>
-   <section className="mx-auto px-6 pb-10">
+
+{/**** Items ****/}
+
+   <section className="mx-auto pb-5">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {categories.map((item, index) => (
+        {items.map((item, index) => (
           <div
             key={index}
             className="relative rounded-4xl overflow-hidden bg-[#EDE8E0] aspect-[4/5] md:aspect-[3/4]"
@@ -61,7 +87,7 @@ const Featured = () => {
     <span className="text-[#0D0C09]">1239</span>
   </div>
 
-  <h3 className="text-xl font-medium text-[#571313]">
+  <h3 className="text-xl md:text-2xl font-medium text-[#571313]">
     {item.title}
   </h3>
   <p className="text-sm text-[#0D0C09] mb-4">
@@ -86,6 +112,45 @@ const Featured = () => {
 
           </div>
         ))}
+      </div>
+    </section>
+
+    {/******* Premium *******/}
+
+   <section className="mx-auto pb-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+
+<div className='flex bg-[#F6EAEF] rounded-4xl p-8 justify-center items-center'> 
+<div>
+<span className='text-[#DC7C2A] text-6xl'><LuCrown /></span>
+<h3 className='text-[#DC7C2A] text-2xl font-semibold mt-5'>Premium</h3>
+<p className='text-[#0D0C09]'>All our fragrances are inspired by an exclusive collection of popular and iconic aromas</p>
+</div>
+<div>
+  <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png" alt="" />
+</div>
+</div>
+<div className='flex bg-[#E6F3EF] rounded-4xl p-8 justify-center items-center'> 
+<div>
+<span className='text-[#43B583] text-6xl'><PiSealCheck /></span>
+<h3 className='text-[#43B583] text-2xl font-semibold mt-5'>Certified</h3>
+<p className='text-[#0D0C09]'>Certified, skin-friendly formula, Cruelty-free, crafted with care to ensure the safety of our beloved users.</p>
+</div>
+<div>
+  <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png" alt="" />
+</div>
+</div>
+<div className='flex bg-[#EEEBFF] rounded-4xl p-8 justify-center items-center'> 
+<div>
+<span className='text-[#FF4242] text-6xl'><LuHeartHandshake /></span>
+<h3 className='text-[#FF4242] text-2xl font-semibold mt-5'>Made with Care</h3>
+<p className='text-[#0D0C09]'>Every fragrance is responsibly crafted and carefully inspected to ensure perfection in every bottle.</p>
+</div>
+<div>
+  <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png" alt="" />
+</div>
+</div>
+
       </div>
     </section>
 
