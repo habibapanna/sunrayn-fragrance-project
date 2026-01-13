@@ -44,31 +44,46 @@ const Featured = () => {
         {categories.map((item, index) => (
           <div
             key={index}
-            className="relative rounded-4xl overflow-hidden aspect-[4/5] md:aspect-[3/4]"
+            className="relative rounded-4xl overflow-hidden bg-[#EDE8E0] aspect-[4/5] md:aspect-[3/4]"
           >
             {/* PRODUCT IMAGE (BASE LAYER) */}
             <img
               src={item.product}
               alt={item.title}
-              className="absolute inset-0 object-cover h-full w-full z-10"
+              className="absolute inset-0 object-cover"
             />
-          {/* Rating */}
-          <div className="flex items-center gap-2 text-sm text-[#DBAB35]">
-            <span>★★★★★</span>
-            <span className="text-gray-200">
-              1239
-            </span>
-          </div>
-            {/* TITLE (TOP LEFT) */}
-            <h3 className=" text-xl font-medium text-[#2b1b14]">
-              {item.title}
-            </h3>
-            <h3>Sanrayn Original</h3>
+         {/* BOTTOM CONTENT */}
+<div className="absolute bottom-0 left-0 w-full z-20 p-5">
+  
+  {/* Rating */}
+  <div className="flex items-center gap-2 text-sm text-[#FF9100] mb-2">
+    <span>★★★★★</span>
+    <span className="text-[#0D0C09]">1239</span>
+  </div>
 
-            {/* ARROW BUTTON (BOTTOM RIGHT) */}
-            <button className="absolute bottom-6 right-6 z-20 w-10 h-10 rounded-full bg-white shadow flex items-center justify-center hover:scale-105 transition">
-              <GoChevronRight />
-            </button>
+  <h3 className="text-xl font-medium text-[#571313]">
+    {item.title}
+  </h3>
+  <p className="text-sm text-[#0D0C09] mb-4">
+    Sanrayn Original
+  </p>
+
+  <div className="flex items-center justify-between gap-3">
+    <button className="bg-white text-[#0D0C09] font-semibold px-6 py-3 rounded-full">
+      Add to Cart
+    </button>
+
+    <div className="flex gap-2">
+      <button className="bg-white text-[#0D0C09] font-semibold px-4 py-3 rounded-full text-sm">
+        $20
+      </button>
+      <button className="bg-[#BA9948] text-white font-semibold px-4 py-3 rounded-full text-sm">
+        $29.40
+      </button>
+    </div>
+  </div>
+</div>
+
           </div>
         ))}
       </div>
