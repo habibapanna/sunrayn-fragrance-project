@@ -2,16 +2,29 @@ import React from "react";
 import { Search, ShoppingBag, User } from "lucide-react";
 import { LiaAngleDownSolid } from "react-icons/lia";
 import { CiShoppingTag } from "react-icons/ci";
+import Logo from "../../assets/Logo.png";
+import BrandName from "../../assets/Brand Name.png";
+
 
 const Navbar = () => {
   return (
     <nav className="absolute top-0 left-0 w-full z-50">
       <div className=" mx-auto px-6 py-5 flex items-center justify-between text-white">
 
-        {/* LOGO */}
-        <div className="flex items-center gap-2 font-semibold text-xl">
-          <span className="tracking-widest">SANRAYN</span>
-        </div>
+      {/* LOGO */}
+<div className="flex items-center gap-3">
+  <img
+    src={Logo}
+    alt="Brand Logo"
+    className="h-10 w-auto"
+  />
+  <img
+    src={BrandName}
+    alt="Brand Name"
+    className="h-6 w-auto"
+  />
+</div>
+
 
         {/* CENTER MENU */}
        
