@@ -95,7 +95,7 @@ const Featured = () => {
 
     {/******* Premium *******/}
 
-   <section className="mx-auto pb-10">
+   <section className="mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 
 <div className='flex bg-[#F6EAEF] rounded-4xl p-10 justify-center items-center'> 
