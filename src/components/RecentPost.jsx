@@ -51,7 +51,7 @@ const RecentPost = () => {
         {posts.map((item, index) => (
           <div
             key={index}
-            className="relative rounded-4xl overflow-hidden aspect-[4/5] md:aspect-[3/4]"
+            className="relative rounded-[32px] overflow-hidden aspect-[4/5] md:aspect-[3/4]"
           >
             {/* PRODUCT IMAGE (BASE LAYER) */}
             <img

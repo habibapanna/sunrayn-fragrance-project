@@ -4,7 +4,7 @@ const Offer = () => {
     return (
         <div className='mx-auto pb-10 px-6 '>
            <section
-  className="bg-cover bg-center min-h-screen flex rounded-4xl"
+  className="bg-cover bg-center min-h-screen flex rounded-[48px]"
   style={{
     backgroundImage:
       "url('https://i.postimg.cc/W1xsfBt0/Frame-(3).png')",

@@ -6,7 +6,7 @@ const Signature = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 auto-rows-fr">
 
         {/* LEFT IMAGE CARD */}
-        <div className="rounded-4xl flex items-center justify-center p-10 bg-[#a68b60]">
+        <div className="rounded-[48px] flex items-center justify-center p-10 bg-[#a68b60]">
           <img
             src="https://i.postimg.cc/zD20k7cK/Featured-Image.png"
             alt="Signature Perfume"
@@ -15,7 +15,7 @@ const Signature = () => {
         </div>
 
         {/* RIGHT CONTENT CARD */}
-        <div className="relative rounded-4xl overflow-hidden p-10 flex items-center">
+        <div className="relative rounded-[48px] overflow-hidden p-10 flex items-center">
 
           {/* RADIAL GRADIENT (CENTER LIGHT) */}
           <div

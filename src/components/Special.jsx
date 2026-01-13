@@ -6,7 +6,7 @@ const Special = () => {
     return (
         <div>
             <section className="mx-auto px-6 pb-10">
-                  <div className="items-center gap-12 bg-[#EDE8E0] rounded-4xl p-20 relative">
+                  <div className="items-center gap-12 bg-[#EDE8E0] rounded-[48px] p-20 relative">
             
                     {/* IMAGE GRID */}
                     <div className="flex justify-center items-center gap-5">
@@ -14,7 +14,7 @@ const Special = () => {
                         <img
                           src="https://i.postimg.cc/8kWKHMLp/Product-Image.png"
                           alt="Product 1"
-                          className="w-[651px] h-[700px] object-cover rounded-4xl"
+                          className="w-[651px] h-[700px] object-cover rounded-[48px]"
                         />
                       </div>
             

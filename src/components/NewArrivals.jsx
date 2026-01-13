@@ -5,11 +5,11 @@ import Button from '../assets/Button Container.png'
 const NewArrivals = () => {
   return (
     <section className="mx-auto px-6 pb-10">
-      <div className="items-center gap-12 bg-[#EDE8E0] rounded-4xl p-20 relative">
+      <div className="items-center gap-12 bg-[#EDE8E0] rounded-[48px] p-20 relative">
 
         {/* IMAGE GRID */}
         <div className="grid grid-cols-3 gap-5">
-          <div className="relative rounded-4xl overflow-hidden">
+          <div className="relative rounded-[48px] overflow-hidden">
             <img
               src="https://i.postimg.cc/vT4crfPf/Product-Image-(2).png"
               alt="Product 1"

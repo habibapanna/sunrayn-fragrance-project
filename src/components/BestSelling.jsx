@@ -49,7 +49,7 @@ const BestSelling = () => {
         {items.map((item, index) => (
           <div
             key={index}
-            className="relative rounded-4xl overflow-hidden bg-[#EDE8E0] aspect-[4/5] md:aspect-[3/4]"
+            className="relative rounded-[48px] overflow-hidden bg-[#EDE8E0] aspect-[4/5] md:aspect-[3/4]"
           >
             {/* PRODUCT IMAGE (BASE LAYER) */}
             <img
