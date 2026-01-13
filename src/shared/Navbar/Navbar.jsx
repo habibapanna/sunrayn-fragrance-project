@@ -4,6 +4,7 @@ import { LiaAngleDownSolid } from "react-icons/lia";
 import { CiShoppingTag } from "react-icons/ci";
 import Logo from "../../assets/Logo.png";
 import BrandName from "../../assets/Brand Name.png";
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -11,8 +12,8 @@ const Navbar = () => {
     <nav className="absolute top-0 left-0 w-full z-50">
       <div className=" mx-auto px-6 py-5 flex items-center justify-between text-white">
 
-      {/* LOGO */}
-<div className="flex items-center gap-3">
+ {/* LOGO */}
+<Link to="/" className="flex items-center gap-3 cursor-pointer">
   <img
     src={Logo}
     alt="Brand Logo"
@@ -23,7 +24,8 @@ const Navbar = () => {
     alt="Brand Name"
     className="h-6 w-auto"
   />
-</div>
+</Link>
+
 
 
         {/* CENTER MENU */}
