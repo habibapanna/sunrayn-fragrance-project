@@ -7,7 +7,7 @@ const Signature = () => {
 <img
             src="https://i.postimg.cc/zD20k7cK/Featured-Image.png"
             alt="Signature Perfume"
-            className=" object-cover"
+            className=" object-cover h-full w-full rounded-[48px]"
           />
         {/* LEFT IMAGE CARD */}
 
@@ -33,17 +33,21 @@ const Signature = () => {
           />
 
           {/* CONTENT */}
-          <div className="relative z-10 p-12">
-            <h2 className="text-3xl md:text-[50px] text-[#571313] mb-6 leading-snug">
+          <div className="relative z-10 p-32">
+            <h2 className="text-3xl md:text-[50px] text-[#571313] mb-6 leading-snug font-medium"
+            style={{
+       fontWeight: 600,
+      }}>
               Signature-Inspired <br />
               Scents That Stay-On Skin <br />
               and in Memory
             </h2>
 
             <p className="text-[24px] text-[#1D0B01] leading-relaxed">
-              <span className="font-semibold">
-                SANRAYN means “LIGHT PURIFIED THROUGH THE SOUL.”
-              </span>{" "}
+              SANRAYN means “
+              <span className="font-bold">
+                LIGHT PURIFIED THROUGH THE SOUL.
+              </span>”
               The brand was born with a purpose: to make top-quality,
               designer-inspired perfumes accessible. Too often,
               perfumes fail to create a true connection. They lack

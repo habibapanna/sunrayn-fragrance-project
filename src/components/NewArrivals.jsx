@@ -17,7 +17,7 @@ const NewArrivals = () => {
             />
             {/* Gradient Overlay */}
             <div className="absolute bottom-0 left-0 w-full h-full 
-                            bg-gradient-to-b from-transparent to-[#EDE8E0]/95"></div>
+                            bg-gradient-to-b from-transparent to-[#EDE8E0]"></div>
           </div>
 
           <div className="relative rounded-4xl overflow-hidden">
@@ -27,7 +27,7 @@ const NewArrivals = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute bottom-0 left-0 w-full h-full 
-                            bg-gradient-to-b from-transparent to-[#EDE8E0]/95"></div>
+                            bg-gradient-to-b from-transparent to-[#EDE8E0]"></div>
           </div>
 
           <div className="relative rounded-4xl overflow-hidden">
@@ -37,7 +37,7 @@ const NewArrivals = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute bottom-0 left-0 w-full h-full 
-                            bg-gradient-to-b from-transparent to-[#EDE8E0]/95"></div>
+                            bg-gradient-to-b from-transparent to-[#EDE8E0]"></div>
           </div>
         </div>
 
