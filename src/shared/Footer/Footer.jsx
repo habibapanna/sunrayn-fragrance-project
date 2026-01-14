@@ -13,7 +13,7 @@ import Logo from "../../assets/Logo (1).png";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#F0ECE5] overflow-hidden">
+    <footer className="relative bg-gradient-to-t from-[#FDFCFC] to-[#F0ECE5] overflow-hidden">
 
       {/* LEFT BACKGROUND LOGO */}
       <div className="absolute inset-y-0 left-0 w-1/2 pointer-events-none">
@@ -25,7 +25,7 @@ const Footer = () => {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="relative z-10 mx-auto px-[319px] py-[250px] flex justify-between">
+      <div className="relative z-10 mx-auto px-[250px] py-[250px] flex justify-between">
 
         {/* LEFT CONTENT */}
         <div>

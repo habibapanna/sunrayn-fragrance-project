@@ -59,7 +59,7 @@ const RecentPost = () => {
                         <div className='flex gap-5'>
                               <div>
                                 
-                                <button className="bg-[#F5F1EA] text-[#571313] font-semibold px-[32px] py-[12px] rounded-full flex justify-center items-center text-[24px] mr-3 cursor-pointer">
+                                <button className="bg-[#F5F1EA] text-[#571313] font-semibold px-[32px] py-[12px] rounded-full flex justify-center items-center text-[24px] mr-3 cursor-pointer w-[180px] h-[55px]">
                                     <img src={Instagram} alt="" className='mr-2 h-[32px] ' />@Sanrayn</button>
                             </div>
                             <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">

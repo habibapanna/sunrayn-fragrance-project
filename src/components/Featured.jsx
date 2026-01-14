@@ -32,7 +32,7 @@ const Featured = () => {
                     <p className='text-3xl md:text-[50px] font-semibold text-[#282828]'>Featured Perfumes</p>
                 </div>
                 <div>
-                    <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[20px] cursor-pointer">View All</button>
+                    <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[20px] cursor-pointer w-[139px] h-[55px]">View All</button>
                 </div>
             </div>
             <div className='flex gap-5'>
@@ -78,13 +78,13 @@ const Featured = () => {
         </p>
       
         <div className="flex items-center justify-between gap-3">
-          <button className="bg-white text-[#0D0C09] font-semibold px-6 py-3 rounded-full cursor-pointer">
+          <button className="bg-white text-[#0D0C09] font-semibold px-[24px] py-[10px] rounded-[100px] cursor-pointer h-[45px] w-[167px]">
             Add to Cart
           </button>
       
-          <div className="flex gap-[22px]">
-            <img src={Original} alt="" className='h-[45px]' />
-            <img src={Discount} alt="" className='h-[48px]' />
+          <div className="flex gap-[16px]">
+            <img src={Original} alt="" className='h-[45px] w-[70px]' />
+            <img src={Discount} alt="" className='h-[52px] w-[105px]' />
           </div>
         </div>
       </div>

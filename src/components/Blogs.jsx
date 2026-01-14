@@ -25,7 +25,7 @@ const Blogs = () => {
                     <p className='text-3xl md:text-[50px] font-semibold text-[#282828]'>The Sanrayn Blogs</p>
                 </div>
                 <div>
-                    <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[20px] cursor-pointer">Read All</button>
+                   <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[20px] cursor-pointer w-[139px] h-[55px]">Read All</button>
                 </div>
             </div>
             <div className='flex gap-5'>

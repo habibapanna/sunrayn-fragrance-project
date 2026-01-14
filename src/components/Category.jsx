@@ -33,7 +33,10 @@ const Category = () => {
             />
 
             {/* TITLE (TOP LEFT) */}
-            <h3 className="absolute top-6 left-6 z-20 text-[50px] font-medium text-[#1D0B01]">
+            <h3 className="absolute top-6 left-6 z-20 text-[50px] font-medium text-[#1D0B01]" style={{
+       fontWeight: 400,
+          
+      }}>
               {item.title}
             </h3>
 

@@ -4,15 +4,12 @@ const Signature = () => {
   return (
     <section className="mx-auto px-6 py-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 auto-rows-fr">
-
-        {/* LEFT IMAGE CARD */}
-        <div className="rounded-[48px] flex items-center justify-center p-10 bg-[#a68b60]">
-          <img
+<img
             src="https://i.postimg.cc/zD20k7cK/Featured-Image.png"
             alt="Signature Perfume"
             className=" object-cover"
           />
-        </div>
+        {/* LEFT IMAGE CARD */}
 
         {/* RIGHT CONTENT CARD */}
         <div className="relative rounded-[48px] overflow-hidden p-10 flex items-center">
@@ -22,7 +19,7 @@ const Signature = () => {
             className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(circle at center, #FFEDCA 0%, #BA9448 70%)",
+                "radial-gradient(circle at center, #FFEDCA 0%, #BA9448 100%)",
             }}
           />
 
@@ -37,13 +34,13 @@ const Signature = () => {
 
           {/* CONTENT */}
           <div className="relative z-10 p-12">
-            <h2 className="text-3xl md:text-[50px] text-[#5a2c1d] mb-6 leading-snug">
+            <h2 className="text-3xl md:text-[50px] text-[#571313] mb-6 leading-snug">
               Signature-Inspired <br />
               Scents That Stay-On Skin <br />
               and in Memory
             </h2>
 
-            <p className="text-[24px] text-[#4a2a1d] leading-relaxed">
+            <p className="text-[24px] text-[#1D0B01] leading-relaxed">
               <span className="font-semibold">
                 SANRAYN means “LIGHT PURIFIED THROUGH THE SOUL.”
               </span>{" "}
