@@ -1,6 +1,8 @@
 import React from 'react';
 import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
 import Instagram from '../assets/Instagram_logo_2016 1.png';
+import Marquee from "react-fast-marquee";
+
 
 const posts = [
   {
@@ -20,6 +22,28 @@ const posts = [
     product: "https://i.postimg.cc/59Y4VNW2/N6Apea-UPkl-Bb-Tmrqi-Me-Hki00U-png-(4).png",
   },
 ];
+const inspiredBy = [
+  {
+    title: "Black Opium",
+  },
+  {
+    title: "Love, Don’t be shy",
+  },
+  {
+    title: "Good Girl",
+  },
+  {
+    title: "Libre",
+  },
+  {
+    title: "Light Blue",
+  },
+  {
+    title: "Not a Perfume",
+  },
+];
+
+
 
 const RecentPost = () => {
     return (
@@ -62,6 +86,28 @@ const RecentPost = () => {
           </div>
         ))}
       </div>
+
+{/* Inspired By MARQUEE */}
+<div className="mt-10">
+  <Marquee
+    speed={40}
+    gradient={false}
+    pauseOnHover={true}
+  >
+    {inspiredBy.map((item, index) => (
+      <button
+        key={index}
+        className="bg-[#F5F1EA] text-[#571313] px-[32px] py-[12px] rounded-full flex items-center text-[24px] font-medium mx-4 whitespace-nowrap"
+      >
+        Inspired by
+        <span className="underline font-bold ml-3  cursor-pointer">
+          {item.title}
+        </span>
+      </button>
+    ))}
+  </Marquee>
+</div>
+
 
         </div>
     );
