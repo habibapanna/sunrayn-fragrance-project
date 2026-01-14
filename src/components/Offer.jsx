@@ -36,7 +36,7 @@ const Offer = () => {
         Be the first to know about new collections and exclusive offers.
       </p>
 
-      <button className="bg-[#571313] text-white px-[24px] py-[10px] rounded-full text-[20px]">
+      <button className="bg-[#571313] text-white px-[24px] py-[10px] rounded-full text-[20px] cursor-pointer">
        Shop Hurry
       </button>
     </div>

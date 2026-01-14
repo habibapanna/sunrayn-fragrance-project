@@ -17,10 +17,10 @@ const Testimonials = () => {
                             </div>
                         </div>
                          <div className='flex gap-5'>
-                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center">
+                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">
                               <GoChevronLeft className='text-[35px]' />
                             </button>
-                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center">
+                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">
                               <GoChevronRight className='text-[35px]' />
                             </button>
             </div>

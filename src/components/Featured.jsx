@@ -32,14 +32,14 @@ const Featured = () => {
                     <p className='text-3xl md:text-[50px] font-semibold text-[#282828]'>Featured Perfumes</p>
                 </div>
                 <div>
-                    <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[20px]">View All</button>
+                    <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[20px] cursor-pointer">View All</button>
                 </div>
             </div>
             <div className='flex gap-5'>
-                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center">
-                              <GoChevronLeft className='text-[35px]' />
+                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">
+                              <GoChevronLeft className='text-[35px] ' />
                             </button>
-                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center">
+                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">
                               <GoChevronRight className='text-[35px]' />
                             </button>
             </div>
@@ -78,7 +78,7 @@ const Featured = () => {
         </p>
       
         <div className="flex items-center justify-between gap-3">
-          <button className="bg-white text-[#0D0C09] font-semibold px-6 py-3 rounded-full">
+          <button className="bg-white text-[#0D0C09] font-semibold px-6 py-3 rounded-full cursor-pointer">
             Add to Cart
           </button>
       

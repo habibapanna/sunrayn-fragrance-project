@@ -25,14 +25,14 @@ const Blogs = () => {
                     <p className='text-3xl md:text-[50px] font-semibold text-[#282828]'>The Sanrayn Blogs</p>
                 </div>
                 <div>
-                    <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[20px]">Read All</button>
+                    <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[20px] cursor-pointer">Read All</button>
                 </div>
             </div>
             <div className='flex gap-5'>
-                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center">
+                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">
                               <GoChevronLeft className='text-[35px]' />
                             </button>
-                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center">
+                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">
                               <GoChevronRight className='text-[35px]' />
                             </button>
             </div>
@@ -48,14 +48,14 @@ const Blogs = () => {
             <img
               src={item.product}
               alt={item.title}
-              className="absolute inset-0 object-cover h-full w-full z-10"
+              className="absolute inset-0 object-cover h-full w-full z-10 "
             />
             {/* OVERLAY */}
 <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/50 via-black/30 to-transparent" />
 
 {/* TITLE */}
 <div className="absolute bottom-8 left-8 right-8 z-30">
-  <h3 className="text-white text-2xl md:text-[32px] font-medium leading-tight">
+  <h3 className="text-white text-2xl md:text-[32px] font-medium leading-tight cursor-pointer">
     {item.title}
   </h3>
 </div>

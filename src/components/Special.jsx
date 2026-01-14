@@ -20,7 +20,7 @@ const Special = () => {
             
             <div className='w-1/2 px-10 mt-40'>
                 <p className='text-[25px]'>An exclusive creation from Sanrayn, this special perfume delivers a luxurious, long-lasting aroma crafted with integrity. Elegant, smooth, and versatile, it’s designed to elevate your presence and leave a lasting impression.</p>
-                 <button className="bg-[#DBAB35] text-black font-semibold px-8 py-3 rounded-full mt-[46px]">
+                 <button className="bg-[#DBAB35] text-black font-semibold px-8 py-3 rounded-full mt-[46px] cursor-pointer">
             Shop Now
           </button>
             </div>
