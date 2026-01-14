@@ -9,15 +9,21 @@ import Paypal from "../../assets/XMLID_1_.png";
 import { Link } from "react-router-dom";
 import SANRAYN from '../../assets/SANRAYN.png';
 import MasterCard  from '../../assets/MasterCard logo.png';
+import Logo  from '../../assets/Logo (1).png';
 
 const Footer = () => {
   return (
     <footer className="bg-[#F0ECE5] relative overflow-hidden">
       {/* MAIN CONTENT */}
-      <div className="max-w-7xl mx-auto px-6 py-[252px] flex justify-between gap-10">
+      <div className="mx-auto px-[319px] py-[252px] flex justify-between gap-10">
 
         {/* LEFT CONTENT */}
-        <div className="z-10">
+        <div className="z-10"
+        style={{
+        backgroundImage:
+          `url(${Logo})`,
+      }}
+        >
           <Link to='/'>
           <img src={SANRAYN} alt="" />
           </Link>
@@ -27,7 +33,7 @@ const Footer = () => {
             {/* SHOP */}
             <div>
               <p className="text-[#571313] mb-4 text-[25px]">Shop</p>
-              <ul className="space-y-3 text-[18px] text-[#282828]">
+              <ul className="space-y-3 text-[18px] text-[#282828] cursor-pointer">
                 <li>Holiday Sale</li>
                 <li>New Arrivals</li>
                 <li>Featured Products</li>
@@ -38,7 +44,7 @@ const Footer = () => {
             {/* COMPANY */}
             <div>
               <p className="font-medium text-[#571313] mb-4 text-[25px]">Company</p>
-              <ul className="space-y-3 text-[18px] text-[#282828]">
+              <ul className="space-y-3 text-[18px] text-[#282828] cursor-pointer">
                 <li>Shop by category</li>
                 <li>About us</li>
                 <li>Blogs</li>
@@ -48,7 +54,7 @@ const Footer = () => {
             {/* OTHER */}
             <div>
               <p className="font-medium text-[#571313] mb-4 text-[25px]">Other</p>
-              <ul className="space-y-3 text-[18px] text-[#282828]">
+              <ul className="space-y-3 text-[18px] text-[#282828] cursor-pointer">
                 <li>FAQs</li>
                 <li>Contact us</li>
               </ul>
@@ -68,7 +74,7 @@ const Footer = () => {
       </div>
 
       {/* BOTTOM BAR */}
-      <div className="border-t border-[#E6E0D6]">
+      <div className="border-t border-[#C77F6033] border-1">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-wrap items-center justify-between gap-6 text-sm text-[#8A8A8A]">
 
           {/* LEFT */}
@@ -80,7 +86,7 @@ const Footer = () => {
           </p>
 
           {/* SOCIAL */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 cursor-pointer">
             <span className="text-[16px] text-[#220B12B2]">Follow us</span>
             <img src={Facebook} className="h-4" />
             <img src={Instagram} className="h-4" />
@@ -88,7 +94,7 @@ const Footer = () => {
           </div>
 
           {/* PAYMENTS */}
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 cursor-pointer">
             <img src={Visa} className="h-6" />
             <img src={MasterCard} className="h-6" />
             <img src={Paypal} className="h-6" />

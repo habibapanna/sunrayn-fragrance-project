@@ -3,6 +3,8 @@ import { LuCrown, LuHeartHandshake } from "react-icons/lu";
 import { PiSealCheck } from "react-icons/pi";
 import { RiDoubleQuotesL } from "react-icons/ri";
 import Quote from "../../src/assets/Review text (1).png";
+import Reviewer from "../../src/assets/Reviewer photo (1).png";
+import material from "../../src/assets/material-symbols-light_verified-rounded.png";
 
 
 const Testimonials = () => {
@@ -36,7 +38,34 @@ const Testimonials = () => {
           </div>
             <h3 className='text-[#571313] text-[35px] font-semibold mb-[48px]'>The Best Perfume</h3>
             <p className='text-[#0D0C09] text-[20px]'>From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values. This isn’t just a perfume it’s an experience that stays with you.</p>
+ {/* VERIFIED CUSTOMER */}
+<div className="flex items-center gap-4 mt-[50px]">
+  {/* PROFILE IMAGE */}
+  <img
+    src={Reviewer}
+    alt="Reviewer"
+    className="w-[55px] h-[55px] rounded-full object-cover"
+  />
+
+  {/* NAME + VERIFIED */}
+  <div>
+    <p className="text-[24px] font-semibold text-[#0D0C09]">
+      Rebeca Pipard
+    </p>
+
+    <div className="flex items-center gap-2 text-[14px] text-[#5E9C76]">
+      <img
+        src={material}
+        alt="Verified"
+        className="w-[24px] h-[24px]"
+      />
+      <span className="text-[16px] text-[#282828]">Verified Customer</span>
+    </div>
+  </div>
+</div>
+
             </div>
+            
             </div>
             <div className='flex bg-[#E6F3EF] rounded-[48px] p-[50px] justify-center items-center'> 
             <div>
@@ -46,6 +75,32 @@ const Testimonials = () => {
           </div>
             <h3 className='text-[#571313] text-[35px] font-semibold mb-[48px]'>Best of the Best</h3>
             <p className='text-[#0D0C09] text-[20px]'>From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values. </p>
+           {/* VERIFIED CUSTOMER */}
+<div className="flex items-center gap-4 mt-[50px]">
+  {/* PROFILE IMAGE */}
+  <img
+    src={Reviewer}
+    alt="Reviewer"
+    className="w-[55px] h-[55px] rounded-full object-cover"
+  />
+
+  {/* NAME + VERIFIED */}
+  <div>
+    <p className="text-[24px] font-semibold text-[#0D0C09]">
+      Rebeca Pipard
+    </p>
+
+    <div className="flex items-center gap-2 text-[14px] text-[#5E9C76]">
+      <img
+        src={material}
+        alt="Verified"
+        className="w-[24px] h-[24px]"
+      />
+      <span className="text-[16px] text-[#282828]">Verified Customer</span>
+    </div>
+  </div>
+</div>
+
             </div>
             </div>
             <div className='flex bg-[#EEEBFF] rounded-[48px] p-[50px] justify-center items-center'> 
@@ -56,6 +111,32 @@ const Testimonials = () => {
           </div>
             <h3 className='text-[#571313] text-[35px] font-semibold mb-[48px]'>New Obsession. Love It</h3>
             <p className='text-[#0D0C09] text-[20px]'>From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values.</p>
+            {/* VERIFIED CUSTOMER */}
+<div className="flex items-center gap-4 mt-[50px]">
+  {/* PROFILE IMAGE */}
+  <img
+    src={Reviewer}
+    alt="Reviewer"
+    className="w-[55px] h-[55px] rounded-full object-cover"
+  />
+
+  {/* NAME + VERIFIED */}
+  <div>
+    <p className="text-[24px] font-semibold text-[#0D0C09]">
+      Rebeca Pipard
+    </p>
+
+    <div className="flex items-center gap-2 text-[14px] text-[#5E9C76]">
+      <img
+        src={material}
+        alt="Verified"
+        className="w-[24px] h-[24px]"
+      />
+      <span className="text-[16px] text-[#282828]">Verified Customer</span>
+    </div>
+  </div>
+</div>
+
             </div>
             </div>
             

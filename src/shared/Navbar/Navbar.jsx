@@ -40,12 +40,12 @@ const Navbar = () => {
            <div className="hidden md:flex items-center gap-6 bg-white/90 text-[#282828] px-[24px] py-[12px] rounded-full shadow mr-16">
           <button className="flex items-center gap-1 text-[16px] font-normal">
             Perfumes
-           <LiaAngleDownSolid />
+           <LiaAngleDownSolid className="text-[24px] text-[#282828]" />
           </button>
 
           <button className="flex items-center gap-1 text-[16px] font-normal">
             Collections
-            <LiaAngleDownSolid />
+            <LiaAngleDownSolid className="text-[24px] text-[#282828]" />
           </button>
 
           <span className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[7px] rounded-full font-semibold flex items-center gap-1">
