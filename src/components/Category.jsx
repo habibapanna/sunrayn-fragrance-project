@@ -23,26 +23,46 @@ const Category = () => {
         {categories.map((item, index) => (
           <div
             key={index}
-            className="relative rounded-[48px] overflow-hidden aspect-[4/5] md:aspect-[3/4]"
+            className="group relative rounded-[48px] overflow-hidden aspect-[4/5] md:aspect-[3/4] cursor-pointer"
           >
-            {/* PRODUCT IMAGE (BASE LAYER) */}
+            {/* IMAGE */}
             <img
               src={item.product}
               alt={item.title}
-              className="absolute inset-0 object-cover h-full w-full z-10"
+              className="absolute inset-0 h-full w-full object-cover"
             />
 
-            {/* TITLE (TOP LEFT) */}
-            <h3 className="absolute top-6 left-6 z-20 text-[50px] font-medium text-[#1D0B01]" style={{
-       fontWeight: 400,
-          
-      }}>
+            {/* TITLE */}
+            <h3 className="absolute top-6 left-6 z-20 text-[50px] font-medium text-[#1D0B01]">
               {item.title}
             </h3>
 
-            {/* ARROW BUTTON (BOTTOM RIGHT) */}
-            <button className="absolute bottom-6 right-6 z-20 w-[55px] h-[55px] rounded-full bg-white shadow flex items-center justify-center hover:scale-105 transition cursor-pointer">
-              <GoChevronRight className="text-[35px]" />
+            {/* EXPANDING BUTTON */}
+            <button
+              className="
+                absolute bottom-6 right-6 z-20
+                h-[55px]
+                w-[55px] group-hover:w-[200px]
+                bg-white rounded-full shadow
+                flex items-center group-hover:justify-center
+                px-3
+                transition-all duration-300 ease-in-out
+                overflow-hidden cursor-pointer text-center
+              "
+            >
+              {/* ICON (STAYS FIXED) */}
+              <GoChevronRight className="text-[35px] flex-shrink-0 font-semibold" />
+              {/* TEXT */}
+              <span
+                className="
+                  whitespace-nowrap
+                  text-[20px] text-[#1D0B01]
+                  opacity-0 group-hover:opacity-100
+                  transition-opacity duration-200 uppercase text-center font-semibold
+                "
+              >
+                Shop {item.title}
+              </span>
             </button>
           </div>
         ))}
@@ -51,14 +71,4 @@ const Category = () => {
   );
 };
 
-
 export default Category;
-
-
-
-
-
-
-// <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center">
-                            //   <GoChevronRight className='text-[35px]' />
-                            // </button>

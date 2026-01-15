@@ -9,7 +9,7 @@ const Signature = () => {
             alt="Signature Perfume"
             className=" object-cover h-full w-full rounded-[48px]"
           />
-        {/* LEFT IMAGE CARD */}
+
 
         {/* RIGHT CONTENT CARD */}
         <div className="relative rounded-[48px] overflow-hidden p-10 flex items-center">
