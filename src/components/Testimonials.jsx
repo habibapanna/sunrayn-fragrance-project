@@ -30,7 +30,7 @@ const Testimonials = () => {
             <section className="mx-auto">
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             
-            <div className="bg-[#F6EAEF] rounded-[48px] p-[50px] h-full">
+            <div className="bg-[#F6EAEF] rounded-[31px] p-[50px] h-full  md:h-[700px] md:w-[598px]">
   <div className="flex flex-col h-full">
 
     <span className="text-white text-8xl">
@@ -74,7 +74,7 @@ const Testimonials = () => {
   </div>
 </div>
 
-                        <div className="bg-[#E6F3EF] rounded-[48px] p-[50px] h-full">
+                        <div className="bg-[#E6F3EF] rounded-[31px] p-[50px] h-full md:h-[700px] md:w-[598px]">
   <div className="flex flex-col h-full">
 
     <span className="text-white text-8xl">
@@ -117,7 +117,7 @@ const Testimonials = () => {
 
   </div>
 </div>
-            <div className="bg-[#EEEBFF] rounded-[48px] p-[50px] h-full">
+            <div className="bg-[#EEEBFF] rounded-[31px] p-[50px] h-full  md:h-[700px] md:w-[598px]">
   <div className="flex flex-col h-full">
 
     <span className="text-white text-8xl">

@@ -53,19 +53,19 @@ const Featured = () => {
               {items.map((item, index) => (
                 <div
                   key={index}
-                  className="relative rounded-[48px] overflow-hidden bg-[#EDE8E0] aspect-[4/5] md:aspect-[3/4]"
+                  className="relative rounded-[48px] overflow-hidden bg-[#EDE8E0] md:h-[700px] md:w-[598px]"
                 >
                   {/* PRODUCT IMAGE (BASE LAYER) */}
                   <img
                     src={item.product}
                     alt={item.title}
-                    className="absolute inset-0 object-cover h-[501px] w-[501px]"
+                    className="absolute inset-0 object-cover ml-[48px] h-[501px] w-[501px]"
                   />
                {/* BOTTOM CONTENT */}
       <div className="absolute bottom-0 left-0 w-full z-20 p-[40px]">
         
         {/* Rating */}
-        <div className="flex items-center gap-2 text-lg text-[#FF9100] mb-2">
+        <div className="flex items-center gap-2 text-lg text-[#FF9100]">
           <span>★★★★★</span>
           <span className="text-[#0D0C09] text-[14px]">1239</span>
         </div>
@@ -99,7 +99,7 @@ const Featured = () => {
    <section className="mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 
-<div className='flex bg-[#F6EAEF] rounded-[24px] py-[32px] px-[48px] justify-center items-center'> 
+<div className='flex bg-[#F6EAEF] rounded-[24px] py-[32px] px-[48px] justify-center items-center md:h-[325px] md:[598px]'> 
 <div>
 <span className='text-[#DC7C2A] text-6xl'><img src={Crown} alt="" className='h-[80px]' /></span>
 <h3 className='text-[#DC7C2A] text-[35px] font-semibold mt-[20px] mb-2'>Premium</h3>
@@ -109,7 +109,7 @@ const Featured = () => {
   <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png" alt="" />
 </div>
 </div>
-<div className='flex bg-[#E6F3EF] rounded-[24px] py-[32px] px-[48px] justify-center items-center'> 
+<div className='flex bg-[#E6F3EF] rounded-[24px] py-[32px] px-[48px] justify-center items-center md:h-[325px] md:[598px]'> 
 <div>
 <span className='text-[#43B583] text-6xl'><img src={Checkmark} alt="" className='h-[80px]' /></span>
 <h3 className='text-[#43B583] text-[35px] mt-[20px] mb-2'>Certified</h3>
@@ -119,7 +119,7 @@ const Featured = () => {
   <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png" alt="" />
 </div>
 </div>
-<div className='flex bg-[#EEEBFF] rounded-[24px] py-[32px] px-[48px] justify-center items-center'> 
+<div className='flex bg-[#EEEBFF] rounded-[24px] py-[32px] px-[48px] justify-center items-center md:h-[325px] md:[598px]'> 
 <div>
 <span className='text-[#FF4242] text-6xl'><img src={Frame} alt="" className='h-[80px]' /></span>
 <h3 className='text-[#FF4242] text-[35px] mt-[20px] mb-2'>Made with Care</h3>

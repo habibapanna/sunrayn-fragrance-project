@@ -23,7 +23,7 @@ const Category = () => {
         {categories.map((item, index) => (
           <div
             key={index}
-            className="group relative rounded-[48px] overflow-hidden aspect-[4/5] md:aspect-[3/4] cursor-pointer"
+            className="group relative rounded-[48px] overflow-hidden cursor-pointer  md:h-[700px] md:w-[598px]"
           >
             {/* IMAGE */}
             <img

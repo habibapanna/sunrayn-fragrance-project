@@ -44,50 +44,50 @@ const BestSelling = () => {
             </div>
             {/**** Items ****/}
 
-   <section className="mx-auto">
+<section className="mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {items.map((item, index) => (
-          <div
-            key={index}
-            className="relative rounded-[48px] overflow-hidden bg-[#EDE8E0] aspect-[4/5] md:aspect-[3/4]"
-          >
-            {/* PRODUCT IMAGE (BASE LAYER) */}
-            <img
-              src={item.product}
-              alt={item.title}
-              className="absolute inset-0 object-cover h-[501px] w-[501px]"
-            />
-         {/* BOTTOM CONTENT */}
-<div className="absolute bottom-0 left-0 w-full z-20 p-[40px]">
-  
-  {/* Rating */}
-  <div className="flex items-center gap-2 text-lg text-[#FF9100] mb-2">
-    <span>★★★★★</span>
-    <span className="text-[#0D0C09] text-[14px]">1239</span>
-  </div>
-
-  <h3 className="text-xl md:text-[35px] font-medium text-[#571313]">
-    {item.title}
-  </h3>
-  <p className="text-[18px] text-[#0D0C09] mb-[26px]">
-    Sanrayn Original
-  </p>
-
-  <div className="flex items-center justify-between gap-3">
-    <button className="bg-white text-[#0D0C09] font-semibold px-6 py-3 rounded-full cursor-pointer">
-      Add to Cart
-    </button>
-
-    <div className="flex gap-[22px]">
-      <img src={Original} alt="" className='h-[45px]' />
-      <img src={Discount} alt="" className='h-[48px]' />
-    </div>
-  </div>
-</div>
-
+              {items.map((item, index) => (
+                <div
+                  key={index}
+                  className="relative rounded-[48px] overflow-hidden bg-[#EDE8E0] md:h-[700px] md:w-[598px]"
+                >
+                  {/* PRODUCT IMAGE (BASE LAYER) */}
+                  <img
+                    src={item.product}
+                    alt={item.title}
+                    className="absolute inset-0 object-cover h-[501px] w-[501px] ml-[48px]"
+                  />
+               {/* BOTTOM CONTENT */}
+      <div className="absolute bottom-0 left-0 w-full z-20 p-[40px]">
+        
+        {/* Rating */}
+        <div className="flex items-center gap-2 text-lg text-[#FF9100]">
+          <span>★★★★★</span>
+          <span className="text-[#0D0C09] text-[14px]">1239</span>
+        </div>
+      
+        <h3 className="text-xl md:text-[35px] font-medium text-[#571313]">
+          {item.title}
+        </h3>
+        <p className="text-[18px] text-[#0D0C09] mb-[26px]">
+          Sanrayn Original
+        </p>
+      
+        <div className="flex items-center justify-between gap-3">
+          <button className="bg-white text-[#0D0C09] font-semibold px-[24px] py-[10px] rounded-[100px] cursor-pointer h-[45px] w-[167px]">
+            Add to Cart
+          </button>
+      
+          <div className="flex gap-[16px]">
+            <img src={Original} alt="" className='h-[45px] w-[70px]' />
+            <img src={Discount} alt="" className='h-[52px] w-[105px]' />
           </div>
-        ))}
+        </div>
       </div>
+      
+                </div>
+              ))}
+            </div>
     </section>
             
         </div>

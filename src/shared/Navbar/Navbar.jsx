@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Search, ShoppingBag, User } from "lucide-react";
 import { LiaAngleDownSolid } from "react-icons/lia";
 import { CiShoppingTag } from "react-icons/ci";
@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
+   const [open, setOpen] = useState(false);
   return (
     <nav className="absolute top-0 left-0 w-full z-50">
       <div className=" mx-auto px-[32px] py-[24px] flex items-center justify-between text-white">
@@ -36,7 +37,7 @@ const Navbar = () => {
        
 
         {/* RIGHT ICONS */}
-      <div className="flex justify-between border-none">
+      <div className="flex justify-between border-none gap-[24px]">
            <div className="hidden md:flex items-center gap-[24px] bg-white/90 text-[#282828] pr-[9px] pl-[24px] py-[12px] rounded-[100px]  shadow mr-16 w-[426px] h-[50px]">
           <button className="flex items-center gap-[4px] text-[16px] font-normal">
             Perfumes
@@ -53,7 +54,7 @@ const Navbar = () => {
              Holiday Sale
           </span>
         </div>
-        <div className="flex items-center gap-[8px]">
+        <div className="flex items-center gap-[16px]">
           <button className="bg-white/90 p-[15px] rounded-[100px] cursor-pointer h-[50px] w-[50px]">
            <img src={Icon} alt="" className="h-[20px] w-[20px]" />
           </button>
@@ -74,14 +75,3 @@ const Navbar = () => {
 
 export default Navbar;
 
-
-
-
-
-// 
-{/* <img src={Icon} alt="" className="h-[20px]" />
-
-         <img src={Frame} alt="" className="h-[20px]" />
-
-          <img src={Users} alt="" className="h-[20px]" /> */}
-// 

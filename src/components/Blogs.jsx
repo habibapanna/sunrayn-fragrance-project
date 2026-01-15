@@ -42,7 +42,7 @@ const Blogs = () => {
         {blogs.map((item, index) => (
           <div
             key={index}
-            className="relative rounded-[48px] overflow-hidden aspect-[4/5] md:aspect-[3/4]"
+            className="relative rounded-[48px] overflow-hidden md:h-[700px] md:w-[598px]"
           >
             {/* PRODUCT IMAGE (BASE LAYER) */}
             <img
@@ -51,7 +51,7 @@ const Blogs = () => {
               className="absolute inset-0 object-cover h-full w-full z-10 "
             />
             {/* OVERLAY */}
-<div className="absolute inset-0 z-20 bg-gradient-to-t from-black/50 via-black/30 to-transparent" />
+<div className="absolute inset-0 z-20 bg-gradient-to-t from-[#000000] via-black/10 to-transparent" />
 
 {/* TITLE */}
 <div className="absolute bottom-8 left-8 right-8 z-30">

@@ -7,12 +7,12 @@ const Signature = () => {
 <img
             src="https://i.postimg.cc/zD20k7cK/Featured-Image.png"
             alt="Signature Perfume"
-            className=" object-cover h-full w-full rounded-[48px]"
+            className=" object-cover md:h-[700px] md:w-[912px] rounded-[48px]"
           />
 
 
         {/* RIGHT CONTENT CARD */}
-        <div className="relative rounded-[48px] overflow-hidden p-10 flex items-center">
+        <div className="relative rounded-[48px] overflow-hidden md:p-10 flex items-center md:h-[700px] md:w-[912px]">
 
           {/* RADIAL GRADIENT (CENTER LIGHT) */}
           <div
