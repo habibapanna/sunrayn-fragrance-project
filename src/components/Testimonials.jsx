@@ -9,8 +9,8 @@ import material from "../../src/assets/material-symbols-light_verified-rounded.p
 
 const Testimonials = () => {
     return (
-        <div className="mx-auto px-6 pb-10">
-             <div className='flex justify-between mb-10'>
+        <div className="mx-auto px-[32px] pb-[32px]">
+             <div className='flex justify-between mb-[32px]'>
                         <div className='flex justify-center items-center text-center gap-10'>
                             <div>
                                 <p className='text-[30px] md:text-[50px] font-semibold text-[#282828]'>What Fragrance Lovers Are Saying About Sanrayn</p>
@@ -28,7 +28,7 @@ const Testimonials = () => {
                         </div>
 
             <section className="mx-auto">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
             
             <div className="bg-[#F6EAEF] rounded-[31px] p-[50px] h-full  md:h-[700px] md:w-[598px]">
   <div className="flex flex-col h-full">

@@ -3,7 +3,7 @@ import Button from "../assets/Button Container.png";
 
 const Special = () => {
   return (
-    <section className="mx-auto px-4 md:px-6 pb-10">
+    <section className="mx-auto px-[32px] pb-[32px]">
       <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] p-6 md:p-20 relative">
 
         {/* ================= CONTENT ================= */}

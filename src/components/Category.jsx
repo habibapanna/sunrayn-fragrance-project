@@ -18,8 +18,8 @@ const categories = [
 
 const Category = () => {
   return (
-    <section className="mx-auto px-6 pb-10">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+    <section className="mx-auto px-[32px] pb-[32px]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
         {categories.map((item, index) => (
           <div
             key={index}

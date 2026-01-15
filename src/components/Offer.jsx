@@ -2,7 +2,7 @@ import React from 'react';
 
 const Offer = () => {
     return (
-        <div className='mx-auto pb-10 px-6 '>
+        <div className='mx-auto pb-[32px] px-[32px]'>
            <section
   className="bg-cover bg-center flex rounded-[48px]"
   style={{

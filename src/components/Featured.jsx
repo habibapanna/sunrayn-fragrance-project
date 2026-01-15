@@ -25,9 +25,9 @@ const items = [
 
 const Featured = () => {
     return (
-        <div className='mx-auto px-6 pb-10'>
-            <div className='flex justify-between mb-10'>
-            <div className='flex justify-center items-center text-center gap-10'>
+        <div className='mx-auto px-[32px] pb-[32px]'>
+            <div className='flex justify-between mb-[32px]'>
+            <div className='flex justify-center items-center text-center gap-[32px]'>
                 <div>
                     <p className='text-3xl md:text-[50px] font-semibold text-[#282828]'>Featured Perfumes</p>
                 </div>
@@ -48,8 +48,8 @@ const Featured = () => {
 
 {/**** Items ****/}
 
-   <section className="mx-auto pb-5">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+   <section className="mx-auto pb-[32px]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
               {items.map((item, index) => (
                 <div
                   key={index}
@@ -97,7 +97,7 @@ const Featured = () => {
     {/******* Premium *******/}
 
    <section className="mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
 
 <div className='flex bg-[#F6EAEF] rounded-[24px] py-[32px] px-[48px] justify-center items-center md:h-[325px] md:[598px]'> 
 <div>

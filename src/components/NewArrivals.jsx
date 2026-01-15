@@ -3,11 +3,11 @@ import Button from "../assets/Button Container.png";
 
 const NewArrivals = () => {
   return (
-    <section className="mx-auto px-4 md:px-6 pb-10">
+    <section className="mx-auto px-[32px] pb-[32px]">
       <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] p-6 md:p-20 relative">
 
         {/* ================= IMAGE GRID ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
           
           {/* IMAGE 1 (always visible) */}
           <div className="relative rounded-[32px] md:rounded-[48px] overflow-hidden">

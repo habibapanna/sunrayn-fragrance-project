@@ -47,8 +47,8 @@ const inspiredBy = [
 
 const RecentPost = () => {
     return (
-        <div className='mb-10 px-6'>
-             <div className='flex justify-between mb-10'>
+        <div className='pb-[32px] px-[32px]'>
+             <div className='flex justify-between mb-[32px]'>
                         <div className='flex justify-center items-center text-center gap-10'>
                             <div>
                                 <p className='text-3xl md:text-[50px] font-semibold text-[#282828]'>Recent Post on Instagram</p>
@@ -71,7 +71,7 @@ const RecentPost = () => {
                         </div>
             
                         </div>
-<div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+<div className="grid grid-cols-1 md:grid-cols-4 gap-[32px]">
         {posts.map((item, index) => (
           <div
             key={index}
@@ -88,7 +88,7 @@ const RecentPost = () => {
       </div>
 
 {/* Inspired By MARQUEE */}
-<div className="mt-10">
+<div className="pt-[32px]">
   <Marquee
     speed={40}
     gradient={false}

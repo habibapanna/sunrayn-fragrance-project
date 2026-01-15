@@ -2,8 +2,8 @@ import React from "react";
 
 const Signature = () => {
   return (
-    <section className="mx-auto px-6 py-10">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 auto-rows-fr">
+    <section className="mx-auto px-[32px] py-[32px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[32px] auto-rows-fr">
 <img
             src="https://i.postimg.cc/zD20k7cK/Featured-Image.png"
             alt="Signature Perfume"
