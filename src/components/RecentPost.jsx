@@ -142,14 +142,14 @@ const prev = () => setCurrent((prev - 1 + total) % total);
   <div className="flex gap-4 mt-6">
     <button
       onClick={prev}
-      className="w-[45px] h-[45px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
+      className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
     >
       <GoChevronLeft className="text-[28px]" />
     </button>
 
     <button
       onClick={next}
-      className="w-[45px] h-[45px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
+      className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
     >
       <GoChevronRight className="text-[28px]" />
     </button>

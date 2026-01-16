@@ -103,14 +103,14 @@ const [current, setCurrent] = useState(0);
     <div className="flex gap-5 mt-6">
       <button
         onClick={prev}
-        className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
+        className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
       >
         <GoChevronLeft className="text-[35px]" />
       </button>
 
       <button
         onClick={next}
-        className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
+        className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
       >
         <GoChevronRight className="text-[35px]" />
       </button>
