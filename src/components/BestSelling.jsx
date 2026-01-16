@@ -29,7 +29,7 @@ const [current, setCurrent] = useState(0);
     setCurrent((prev) => (prev - 1 + items.length) % items.length);
 
     return (
-        <div className='mx-auto px-[16px] md:px-[32px] md:pb-[32px]'>
+        <div className='mx-auto px-[16px] pb-[16px] md:pb-[32px] md:px-[32px]'>
                <div className='flex justify-between mb-[16px] md:mb-[32px]'>
                          <div className='flex justify-center items-center text-center gap-[20px] md:gap-[32px]'>
                              <div className='text-left'>
@@ -119,7 +119,7 @@ const [current, setCurrent] = useState(0);
 </section>
 
 {/* ================= DESKTOP GRID (UNCHANGED) ================= */}
-<section className="hidden md:block mx-auto pb-[32px]">
+<section className="hidden md:block mx-auto">
   <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
     {items.map((item, index) => (
       <div

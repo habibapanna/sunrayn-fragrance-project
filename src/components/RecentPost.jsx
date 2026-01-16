@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
 import Instagram from '../assets/Instagram_logo_2016 1.png';
 import Marquee from "react-fast-marquee";
@@ -46,6 +46,13 @@ const inspiredBy = [
 
 
 const RecentPost = () => {
+  const [current, setCurrent] = useState(0);
+
+const total = 2;
+
+const next = () => setCurrent((prev) => (prev + 1) % total);
+const prev = () => setCurrent((prev - 1 + total) % total);
+
     return (
         <div className='mx-auto px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]'>
              <div className='hidden md:flex justify-between mb-[32px]'>
@@ -85,7 +92,7 @@ const RecentPost = () => {
             </div>
             </div>
 
-<div className="grid grid-cols-2 md:grid-cols-4 gap-[16px] md:gap-[32px]">
+<div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-[16px] md:gap-[32px]">
         {posts.map((item, index) => (
           <div
             key={index}
@@ -100,6 +107,55 @@ const RecentPost = () => {
           </div>
         ))}
       </div>
+
+      {/* for mobile */}
+{/* MOBILE CAROUSEL */}
+<div className="md:hidden overflow-hidden relative">
+  <div
+    className="flex transition-transform duration-500 ease-in-out"
+    style={{ transform: `translateX(-${current * 100}%)` }}
+  >
+    {posts.reduce((result, item, index) => {
+      // Group 2 images per slide
+      if (index % 2 === 0) result.push([item]);
+      else result[result.length - 1].push(item);
+      return result;
+    }, []).map((group, index) => (
+      <div key={index} className="flex-shrink-0 w-full px-2 flex gap-2">
+        {group.map((item, idx) => (
+          <div
+            key={idx}
+            className="relative rounded-[16px] overflow-hidden h-[150px] w-1/2"
+          >
+            <img
+              src={item.product}
+              alt={item.title}
+              className="absolute inset-0 object-cover h-full w-full"
+            />
+          </div>
+        ))}
+      </div>
+    ))}
+  </div>
+
+  {/* MOBILE NAV BUTTONS */}
+  <div className="flex gap-4 mt-6">
+    <button
+      onClick={prev}
+      className="w-[45px] h-[45px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
+    >
+      <GoChevronLeft className="text-[28px]" />
+    </button>
+
+    <button
+      onClick={next}
+      className="w-[45px] h-[45px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
+    >
+      <GoChevronRight className="text-[28px]" />
+    </button>
+  </div>
+</div>
+
 
 {/* Inspired By MARQUEE */}
 <div className=" pt-[16px] md:pt-[32px]">
