@@ -47,8 +47,8 @@ const inspiredBy = [
 
 const RecentPost = () => {
     return (
-        <div className='pb-[32px] px-[32px]'>
-             <div className='flex justify-between mb-[32px]'>
+        <div className='mx-auto px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]'>
+             <div className='hidden md:flex justify-between mb-[32px]'>
                         <div className='flex justify-center items-center text-center gap-10'>
                             <div>
                                 <p className='text-3xl md:text-[50px] font-semibold text-[#282828]'>Recent Post on Instagram</p>
@@ -71,11 +71,25 @@ const RecentPost = () => {
                         </div>
             
                         </div>
-<div className="grid grid-cols-1 md:grid-cols-4 gap-[32px]">
+                        {/* for mobile */}
+  <div className='md:hidden mb-[16px] md:mb-[32px]'>
+            <div className='flex justify-between items-center text-center gap-[20px] md:gap-[32px]'>
+                <div>
+                    <p className='text-[25px] md:text-[50px] font-semibold text-[#282828]'>Instagram</p>
+                </div>
+                <div>
+                                
+                                <button className="bg-[#F5F1EA] text-[#571313] font-semibold pl-[12px] pr-[16px] py-[12px] rounded-full flex justify-center items-center text-[20px] cursor-pointer w-[150px] h-[40px]">
+                                    <img src={Instagram} alt="" className='mr-2 h-[24px] ' />@Sanrayn</button>
+                            </div>
+            </div>
+            </div>
+
+<div className="grid grid-cols-2 md:grid-cols-4 gap-[16px] md:gap-[32px]">
         {posts.map((item, index) => (
           <div
             key={index}
-            className="relative rounded-[32px] overflow-hidden md:h-[494px] md:w-[440px]"
+            className="relative rounded-[16px] md:rounded-[32px] overflow-hidden h-[150px] w-[164px] md:h-[494px] md:w-[440px]"
           >
             {/* PRODUCT IMAGE (BASE LAYER) */}
             <img
@@ -88,7 +102,7 @@ const RecentPost = () => {
       </div>
 
 {/* Inspired By MARQUEE */}
-<div className="pt-[32px]">
+<div className=" pt-[16px] md:pt-[32px]">
   <Marquee
     speed={40}
     gradient={false}
@@ -97,7 +111,7 @@ const RecentPost = () => {
     {inspiredBy.map((item, index) => (
       <button
         key={index}
-        className="bg-[#F5F1EA] text-[#571313] px-[32px] py-[12px] rounded-full flex items-center text-[24px] font-medium mx-4 whitespace-nowrap"
+        className="bg-[#F5F1EA] text-[#571313] px-[32px] py-[12px] rounded-full flex items-center text-[24px] font-medium mx-2 md:mx-4 whitespace-nowrap"
       >
         Inspired by
         <span className="underline font-bold ml-3  cursor-pointer">

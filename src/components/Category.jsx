@@ -18,12 +18,16 @@ const categories = [
 
 const Category = () => {
   return (
-    <section className="mx-auto px-[32px] pb-[32px]">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
+    <section className="mx-auto px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-[16px] md:gap-[32px]">
         {categories.map((item, index) => (
           <div
             key={index}
-            className="group relative rounded-[48px] overflow-hidden cursor-pointer  md:h-[700px] md:w-[598px]"
+            className="
+              group relative rounded-[24px] md:rounded-[48px] overflow-hidden cursor-pointer
+              w-[343px] h-[392px]
+              md:w-[598px] md:h-[700px]
+            "
           >
             {/* IMAGE */}
             <img
@@ -46,19 +50,22 @@ const Category = () => {
                 bg-white rounded-full shadow
                 flex items-center group-hover:justify-center
                 px-3
-                transition-all duration-300 ease-in-out
                 overflow-hidden cursor-pointer text-center
+
+                transition-[width] duration-800 ease-[cubic-bezier(0.4,0,0.2,1)]
+                will-change-[width]
               "
             >
-              {/* ICON (STAYS FIXED) */}
+              {/* ICON */}
               <GoChevronRight className="text-[35px] flex-shrink-0 font-semibold" />
+
               {/* TEXT */}
               <span
                 className="
-                  whitespace-nowrap
-                  text-[20px] text-[#1D0B01]
+                  whitespace-nowrap text-[16px] md:text-[18px]
+                  text-[#1D0B01] uppercase font-semibold text-center
                   opacity-0 group-hover:opacity-100
-                  transition-opacity duration-200 uppercase text-center font-semibold
+                  transition-opacity duration-300 delay-150
                 "
               >
                 Shop {item.title}

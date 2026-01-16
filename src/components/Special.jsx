@@ -3,21 +3,22 @@ import Button from "../assets/Button Container.png";
 
 const Special = () => {
   return (
-    <section className="mx-auto px-[32px] pb-[32px]">
-      <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] p-6 md:p-20 relative">
+    <section className="mx-auto pb-[16px] px-[16px] md:px-[32px] md:pb-[32px]">
+      <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] md:p-20 relative">
 
         {/* ================= CONTENT ================= */}
         <div className="flex flex-col md:flex-row items-center gap-10">
 
           {/* IMAGE */}
-          <div className="w-full flex justify-center">
+          <div className="relative w-full flex justify-center">
             <img
               src="https://i.postimg.cc/8kWKHMLp/Product-Image.png"
               alt="Special Perfume"
-              className="md:w-[651px] md:h-[700px] object-cover rounded-[32px] md:rounded-[48px]"
+              className="w-[376px] h-[334px] md:w-[651px] md:h-[700px] object-cover rounded-[32px] md:rounded-[48px]"
             />
+             <div className="md:hidden absolute inset-0 bg-gradient-to-b from-transparent to-[#EDE8E0]" />
           </div>
-
+          
           {/* DESCRIPTION (DESKTOP) */}
           <div className="hidden md:block mt-40">
             <p className="text-[25px]">
@@ -34,26 +35,24 @@ const Special = () => {
         </div>
 
         {/* ================= MOBILE TEXT ================= */}
-        <div className="md:hidden mt-8 p-10 text-[#571313]">
+        <div className="md:hidden pb-[24px] px-[24px] text-[#571313]">
           
 
-          <div className="flex items-center gap-3 mt-1">
+          <div className="flex items-center gap-2">
             <h2
-            className="text-[42px] font-bold leading-tight"
-            style={{ letterSpacing: "-2px" }}
+            className="text-[25px] font-bold leading-tight"
           >
-            SUNRAYN <span className="uppercase font-medium">Specials</span>
+            SUNRAYN 
           </h2>
             <p
-              className="text-[40px] font-light uppercase leading-tight"
-              style={{ letterSpacing: "-2px" }}
+              className=" font-light uppercase leading-tight"
             >
-              
+              <span className="uppercase font-medium text-[25px]">Specials</span>
             </p>
-            <img src={Button} alt="" className="h-10" />
+            <img src={Button} alt="" className="h-[30px] w-[30px]" />
           </div>
 
-          <p className="text-[16px] mt-4 text-black">
+          <p className="text-[14px] mt-4 text-black">
             An exclusive creation from Sanrayn, this special perfume delivers a
             luxurious, long-lasting aroma crafted with integrity. Elegant,
             smooth, and versatile, it’s designed to elevate your presence and
@@ -81,7 +80,7 @@ const Special = () => {
             >
               SPECIALS
             </p>
-            <img src={Button} alt="" className="h-[64px] ml-[27px]" />
+            <img src={Button} alt="" className="h-[81px] w-[81px] ml-[27px]" />
           </div>
         </div>
       </div>

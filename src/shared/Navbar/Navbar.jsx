@@ -1,77 +1,164 @@
 import React, { useState } from "react";
-import { Search, ShoppingBag, User } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { LiaAngleDownSolid } from "react-icons/lia";
-import { CiShoppingTag } from "react-icons/ci";
 import Logo from "../../assets/Logo.png";
 import Solar from "../../assets/solar_tag-bold.png";
 import Icon from "../../assets/Icon (Stroke).png";
 import Frame from "../../assets/Frame (1).png";
 import Users from "../../assets/User Icon.png";
+import User1 from "../../assets/User Icon (1).png";
 import BrandName from "../../assets/Brand Name.png";
 import { Link } from "react-router-dom";
-
+import { TbMenu } from "react-icons/tb";
+import { GoChevronRight } from "react-icons/go";
 
 const Navbar = () => {
-   const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav className="absolute top-0 left-0 w-full z-50">
-      <div className=" mx-auto px-[32px] py-[24px] flex items-center justify-between text-white">
+    <>
+      <nav className="absolute top-0 left-0 w-full z-50">
+        <div className="mx-auto px-[16px] md:px-[32px] md:py-[24px] flex items-center justify-between text-white">
 
- {/* LOGO */}
-<Link to="/" className="flex items-center gap-3 cursor-pointer">
-  <img
-    src={Logo}
-    alt="Brand Logo"
-    className="h-10 w-auto"
-  />
-  <img
-    src={BrandName}
-    alt="Brand Name"
-    className="h-6 w-auto"
-  />
-</Link>
+          {/* LOGO (unchanged) */}
+          <Link to="/" className="flex items-center gap-[7px] md:gap-[12px] cursor-pointer">
+            <img src={Logo} alt="Brand Logo" className="h-[35px] w-[35px] md:h-[58px] md:w-[58px]" />
+            <img src={BrandName} alt="Brand Name" className="h-[17px] w-[104px] md:h-[27px] md:w-[170px]" />
+          </Link>
 
+          {/* RIGHT SIDE */}
+          <div className="flex items-center gap-[24px]">
 
+            {/* DESKTOP MENU (UNCHANGED) */}
+            <div className="hidden md:flex items-center gap-[24px] bg-white/90 text-[#282828] pr-[9px] pl-[24px] py-[12px] rounded-[100px] shadow mr-16 w-[426px] h-[50px]">
+              <button className="flex items-center gap-[4px] text-[16px]">
+                Perfumes
+                <LiaAngleDownSolid className="text-[24px]" />
+              </button>
 
-        {/* CENTER MENU */}
-       
+              <button className="flex items-center gap-[4px] text-[16px]">
+                Collections
+                <LiaAngleDownSolid className="text-[24px]" />
+              </button>
 
-        {/* RIGHT ICONS */}
-      <div className="flex justify-between border-none gap-[24px]">
-           <div className="hidden md:flex items-center gap-[24px] bg-white/90 text-[#282828] pr-[9px] pl-[24px] py-[12px] rounded-[100px]  shadow mr-16 w-[426px] h-[50px]">
-          <button className="flex items-center gap-[4px] text-[16px] font-normal">
-            Perfumes
-           <LiaAngleDownSolid className="text-[24px] text-[#282828] cursor-pointer" />
-          </button>
+              <span className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[7px] rounded-[100px] font-semibold flex items-center gap-[6px] w-[139px] h-[34px]">
+                <img src={Solar} className="h-[17px] w-[17px]" />
+                Holiday Sale
+              </span>
+            </div>
 
-          <button className="flex items-center gap-[4px] text-[16px] font-normal">
-            Collections
-            <LiaAngleDownSolid className="text-[24px] text-[#282828] cursor-pointer" />
-          </button>
+            {/* DESKTOP ICONS (UNCHANGED) */}
+            <div className="hidden md:flex items-center gap-[16px]">
+              <button className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px]">
+                <img src={Icon} className="h-[20px] w-[20px]" />
+              </button>
 
-          <span className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[7px] rounded-[100px] font-semibold flex items-center gap-[6px] cursor-pointer w-[139px] h-[34px]">
-            <img src={Solar} alt="" className="h-[17px] w-[17px]" />
-             Holiday Sale
-          </span>
+              <button className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px]">
+                <img src={Frame} className="h-[20px] w-[20px]" />
+              </button>
+
+              <button className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px]">
+                <img src={Users} className="h-[20px] w-[20px]" />
+              </button>
+            </div>
+
+            {/* MOBILE ICONS */}
+            <div className="flex md:hidden items-center gap-[16px] py-[24px]">
+              <button className="bg-white/90 p-3 rounded-full">
+                <img src={Icon} className="h-5 w-5" />
+              </button>
+              <button className="bg-white/90 p-3 rounded-full">
+                <img src={Frame} className="h-5 w-5" />
+              </button>
+              <button
+                onClick={() => setOpen(true)}
+                className="bg-[#6B0F0F] w-[40px] h-[40px] p-[8px] rounded-full"
+              >
+                <TbMenu className="text-white h-[24px] w-[24px]" />
+              </button>
+            </div>
+
+          </div>
         </div>
-        <div className="flex items-center gap-[16px]">
-          <button className="bg-white/90 p-[15px] rounded-[100px] cursor-pointer h-[50px] w-[50px]">
-           <img src={Icon} alt="" className="h-[20px] w-[20px]" />
-          </button>
+      </nav>
 
-          <button className="bg-white/90 p-[15px] rounded-[100px] cursor-pointer h-[50px] w-[50px]">
-             <img src={Frame} alt="" className="h-[20px] w-[20px]" />
-          </button>
+      {/* OVERLAY */}
+      {open && (
+        <div
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 bg-black/40 z-40 md:hidden"
+        />
+      )}
 
-          <button className="bg-white/90 p-[15px] rounded-[100px]  cursor-pointer h-[50px] w-[50px]">
-            <img src={Users} alt="" className="h-[20px] w-[20px]" /> 
-          </button>
+      {/* MOBILE SIDEBAR */}
+      <aside
+        className={`fixed top-0 left-0 h-full w-[100%] max-w-sm bg-[#F6F7F2] z-50
+        transform transition-transform duration-500 md:hidden
+        ${open ? "translate-x-0" : "-translate-x-full"}`}
+      >
+       <div className="relative flex items-center justify-between px-[20px] py-[16px]">
+  <div className="flex justify-center items-center gap-[12px]">
+    <button className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px]">
+      <img src={User1} className="h-[20px] w-[20px]" />
+    </button>
+    <span className="font-bold text-[#282828] text-[16px]">Login</span>
+  </div>
+
+  <button onClick={() => setOpen(false)}>
+    <X className="h-[40px] w-[40px] text-[#1D0B01]" />
+  </button>
+
+  {/* Figma-style header divider */}
+  <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#571313]/20" />
+</div>
+
+
+        <div className="p-5 space-y-6">
+          <div className="bg-white rounded-[24px] overflow-hidden">
+  {["Man", "Woman", "Unisex"].map((i, idx, arr) => (
+    <div
+      key={i}
+      className="relative flex justify-between items-center py-[16px] px-[24px] text-[14px]"
+    >
+      {i}
+      <GoChevronRight className="text-[35px]" />
+
+      {/* Figma-style divider */}
+      {idx !== arr.length - 1 && (
+        <span className="absolute bottom-0 left-[24px] right-[24px] h-[1px] bg-[#571313]/20" />
+      )}
+    </div>
+  ))}
+</div>
+
+
+        <div className="bg-white rounded-[24px] overflow-hidden">
+  {["New Arrivals", "Best selling perfumes", "Featured perfumes"].map(
+    (i, idx, arr) => (
+      <div
+        key={i}
+        className="relative flex justify-between items-center py-[16px] px-[24px] text-[14px]"
+      >
+        {i}
+        <GoChevronRight className="text-[35px]" />
+
+        {idx !== arr.length - 1 && (
+          <span className="absolute bottom-0 left-[24px] right-[24px] h-[1px] bg-[#571313]/20" />
+        )}
+      </div>
+    )
+  )}
+</div>
+
+
+           <button className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[7px] rounded-[100px] font-semibold flex items-center text-center gap-[6px] h-[45px] mx-auto w-[335px] justify-center">
+                <img src={Solar} className="h-[17px] w-[17px]" />
+                Holiday Sale
+              </button>
         </div>
-      </div>
-      </div>
-    </nav>
+      </aside>
+    </>
   );
 };
 
 export default Navbar;
-

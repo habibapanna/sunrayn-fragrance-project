@@ -18,19 +18,19 @@ const blogs = [
 
 const Blogs = () => {
     return (
-        <div className='mx-auto px-[32px] pb-[32px]'>
-            <div className='flex justify-between mb-[32px]'>
-            <div className='flex justify-center items-center text-center gap-10'>
-                <div>
-                    <p className='text-3xl md:text-[50px] font-semibold text-[#282828]'>The Sanrayn Blogs</p>
+        <div className='mx-auto px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]'>
+              <div className='md:flex md:justify-between mb-[16px] md:mb-[32px]'>
+            <div className='flex justify-between md:justify-center items-center text-center gap-[20px] md:gap-[32px]'>
+                <div className='text-left'>
+                    <p className='text-[25px] md:text-[50px] font-semibold text-[#282828]'>The Sanrayn Blogs</p>
                 </div>
                 <div>
-                   <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[20px] cursor-pointer w-[139px] h-[55px]">Read All</button>
+                    <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[14px] md:text-[20px] cursor-pointer w-[117px] h-[40px] md:w-[139px] md:h-[55px]">Read all</button>
                 </div>
             </div>
-            <div className='flex gap-5'>
+            <div className='hidden md:flex gap-5 '>
                 <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">
-                              <GoChevronLeft className='text-[35px]' />
+                              <GoChevronLeft className='text-[35px] ' />
                             </button>
                 <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">
                               <GoChevronRight className='text-[35px]' />
@@ -38,11 +38,12 @@ const Blogs = () => {
             </div>
 
             </div>
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
+
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-[16px] md:gap-[32px]">
         {blogs.map((item, index) => (
           <div
             key={index}
-            className="relative rounded-[48px] overflow-hidden md:h-[700px] md:w-[598px]"
+            className="relative rounded-[24px] w-[343px] h-[350px] md:rounded-[48px] overflow-hidden md:h-[700px] md:w-[598px]"
           >
             {/* PRODUCT IMAGE (BASE LAYER) */}
             <img

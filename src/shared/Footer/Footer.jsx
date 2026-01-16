@@ -16,7 +16,7 @@ const Footer = () => {
     <footer className="relative bg-gradient-to-t from-[#FDFCFC] to-[#F0ECE5] overflow-hidden">
 
       {/* BACKGROUND LOGO */}
-      <div className="absolute inset-y-0 left-0 w-full md:w-1/2 pointer-events-none z-0">
+      <div className="absolute inset-y-0 left-0 w-full md:w-1/2 pointer-events-none z-0 top-40 md:top-0">
         <img
           src={Logo}
           alt="Background Logo"
@@ -32,15 +32,15 @@ const Footer = () => {
           <img src={BigS} alt="Big S" className="h-[260px]" />
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-start gap-16">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-16 ">
 
           {/* LEFT CONTENT */}
-          <div className="w-full md:w-auto text-left">
+          <div className="w-full md:w-auto text-left mt-[43px] md:mt-0">
             <Link to="/" className="inline-block">
               <img src={SANRAYN} alt="Sanrayn" className="mx-auto md:mx-0" />
             </Link>
 
-            <div className="flex justify-between gap- md:gap-16 mt-12">
+            <div className="flex justify-between gap-[16px] md:gap-16 mt-[48px] md:mt-[57px]">
 
               {/* SHOP */}
               <div className="text-left">
@@ -56,7 +56,7 @@ const Footer = () => {
               {/* COMPANY */}
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Company</p>
-                <ul className="space-y-3 text-[16px] text-[#282828]">
+                <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
                   <li>Shop by category</li>
                   <li>About us</li>
                   <li>Blogs</li>
@@ -66,7 +66,7 @@ const Footer = () => {
               {/* OTHER */}
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Other</p>
-                <ul className="space-y-3 text-[16px] text-[#282828]">
+                <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
                   <li>FAQs</li>
                   <li>Contact us</li>
                 </ul>
@@ -84,32 +84,39 @@ const Footer = () => {
       </div>
 
       {/* ================= BOTTOM BAR ================= */}
-      <div className="border-t border-[#C77F6033] relative z-10">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+     <div className="max-w-7xl mx-auto p-[32px] md:px-[120px] md:py-[32px] flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left border-t border-[#C77F6033]">
 
-          <p className="text-[14px] text-[#220B12B2]">
-            ©2026 Sanrayn all right reserved
-          </p>
+  {/* 1. COPYRIGHT */}
+  <p className="text-[16px] text-[#220B12B2] order-1 md:order-none mb-[16px] md:mb-0">
+    ©2026 Sanrayn all right reserved
+  </p>
 
-          <p className="text-[14px] text-[#220B12B2]">
-            Made by <span>Niyo.agency</span>
-          </p>
+  {/* 2. FOLLOW US TEXT */}
+  <span className="text-[16px] text-[#220B12B2] order-2 md:hidden">
+    Follow us
+  </span>
 
-          <div className="flex items-center gap-3 justify-center">
-            <span className="text-[14px] text-[#220B12B2]">Follow us</span>
-            <img src={Facebook} className="h-4" />
-            <img src={Instagram} className="h-4" />
-            <img src={Tiktok} className="h-4" />
-          </div>
+  {/* 3. SOCIAL ICONS */}
+  <div className="flex items-center gap-4 order-3 md:order-none mb-[16px] md:mb-0">
+    <img src={Facebook} className="h-4" />
+    <img src={Instagram} className="h-4" />
+    <img src={Tiktok} className="h-4" />
+  </div>
 
-          <div className="flex items-center gap-4 justify-center">
-            <img src={Visa} className="h-6" />
-            <img src={MasterCard} className="h-6" />
-            <img src={Paypal} className="h-6" />
-          </div>
+  {/* 4. MADE BY */}
+  <p className="text-[16px] text-[#220B12B2] order-4 md:order-none mb-[32px] md:mb-0">
+    Made by <span>Niyot.agency</span>
+  </p>
 
-        </div>
-      </div>
+  {/* 5. PAYMENTS */}
+  <div className="flex items-center gap-[33px] justify-center order-5 md:order-none">
+    <img src={Visa} className="h-6" />
+    <img src={MasterCard} className="h-6" />
+    <img src={Paypal} className="h-6" />
+  </div>
+
+</div>
+
     </footer>
   );
 };
