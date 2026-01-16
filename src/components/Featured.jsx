@@ -7,6 +7,7 @@ import Original from '../assets/Original Price.png';
 import Frame from '../assets/Frame (2).png';
 import Checkmark from '../assets/checkmark-badge-01.png';
 import Crown from '../assets/crown-03.png';
+import { FaStar } from 'react-icons/fa';
 
 const items = [
   {
@@ -74,7 +75,13 @@ const [current, setCurrent] = useState(0);
 
             <div className="absolute bottom-0 left-0 w-full z-20 p-[16px] md:p-[40px]">
               <div className="flex items-center gap-[2px] text-lg text-[#FF9100]">
-                <span>★★★★★</span>
+                <div className="flex gap-[6px] mb-[8px] md:mb-0 items-center">
+    <FaStar className="h-[10px] w-[10px] md:h-[15px] md:w-[15px]" />
+    <FaStar className="h-[10px] w-[10px] md:h-[15px] md:w-[15px]" />
+    <FaStar className="h-[10px] w-[10px] md:h-[15px] md:w-[15px]" />
+    <FaStar className="h-[10px] w-[10px] md:h-[15px] md:w-[15px]" />
+    <FaStar className="h-[10px] w-[10px] md:h-[15px] md:w-[15px]" />
+  </div>
                 <span className="text-[#0D0C09] text-[10px] md:text-[14px]">1239</span>
               </div>
 
@@ -137,7 +144,13 @@ const [current, setCurrent] = useState(0);
 
         <div className="absolute bottom-0 left-0 w-full z-20 p-[40px]">
           <div className="flex items-center gap-2 text-lg text-[#FF9100]">
-            <span>★★★★★</span>
+            <div className="flex gap-[6px] mb-[8px] md:mb-0 items-center">
+    <FaStar className="h-[10px] w-[10px] md:h-[15px] md:w-[15px]" />
+    <FaStar className="h-[10px] w-[10px] md:h-[15px] md:w-[15px]" />
+    <FaStar className="h-[10px] w-[10px] md:h-[15px] md:w-[15px]" />
+    <FaStar className="h-[10px] w-[10px] md:h-[15px] md:w-[15px]" />
+    <FaStar className="h-[10px] w-[10px] md:h-[15px] md:w-[15px]" />
+  </div>
             <span className="text-[#0D0C09] text-[14px]">1239</span>
           </div>
 

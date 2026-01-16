@@ -29,19 +29,25 @@ const Hero = () => {
         {/* LEFT CONTENT */}
         <div className="text-white">
           {/* Rating */}
-          <div className="flex flex-col md:flex-row text-[#DBAB35]">
-            <div className='flex gap-[4px] mb-[8px]'><span><FaStar className='h-[15px] w-[15px]' /></span>
-            <span><FaStar className='h-[15px] w-[15px]' /></span>
-            <span><FaStar className='h-[15px] w-[15px]' /></span>
-            <span><FaStar className='h-[15px] w-[15px]' /></span>
-            <span><FaStar className='h-[15px] w-[15px]' /></span></div>
-            <span className="text-[14px]md:text-[16px] text-[#FFFFFF] mb-[16px] md:mb-[24px]">
-              5 star rating | Based on 200+ happy customers
-            </span>
-          </div>
+<div className="flex flex-col md:flex-row items-center md:gap-[8px] text-[#DBAB35]">
+  {/* Stars */}
+  <div className="flex gap-[6px] mb-[8px] md:mb-0 items-center">
+    <FaStar className="h-[15px] w-[15px]" />
+    <FaStar className="h-[15px] w-[15px]" />
+    <FaStar className="h-[15px] w-[15px]" />
+    <FaStar className="h-[15px] w-[15px]" />
+    <FaStar className="h-[15px] w-[15px]" />
+  </div>
+
+  {/* Text */}
+  <span className="text-[14px] md:text-[16px] text-[#FFFFFF]">
+    5 star rating | Based on 200+ happy customers
+  </span>
+</div>
+
 
           {/* Heading */}
-          <h1 className="text-[30px] md:text-[60px] font-semibold leading-tight mb-[16px] md:mb-[24px]">
+          <h1 className="text-[30px] md:text-[60px] font-semibold leading-tight mb-[16px] md:my-[24px]">
             Designer-Inspired Luxury <br />
             Fragrances with Everyday <br />
             Affordability
@@ -69,3 +75,7 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
+
+

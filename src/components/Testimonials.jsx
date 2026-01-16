@@ -6,6 +6,7 @@ import Quote from "../../src/assets/Review text (1).png";
 import Reviewer from "../../src/assets/Reviewer photo (1).png";
 import material from "../../src/assets/material-symbols-light_verified-rounded.png";
 import { useState } from "react";
+import { FaStar } from "react-icons/fa";
 
 
 const Testimonials = () => {
@@ -43,11 +44,17 @@ const prev = () => setCurrent((prev - 1 + total) % total);
   <div className="flex flex-col h-full">
 
     <span className="text-white text-8xl">
-      <img src={Quote} alt="" />
+      <img src={Quote} alt="" className="w-[145px] h-[74px]" />
     </span>
 
     <div className="flex items-center gap-2 text-2xl text-[#FF9100] mb-[12px] mt-[48px]">
-      <span>★★★★★</span>
+       <div className="flex gap-[6px] mb-[8px] md:mb-0 items-center">
+     <FaStar className="h-[24px] w-[24px]" />
+     <FaStar className="h-[24px] w-[24px]" />
+     <FaStar className="h-[24px] w-[24px]" />
+     <FaStar className="h-[24px] w-[24px]" />
+     <FaStar className="h-[24px] w-[24px]" />
+   </div>
     </div>
 
     <h3 className="text-[#571313] text-[35px] font-semibold mb-[48px]">
@@ -87,11 +94,17 @@ const prev = () => setCurrent((prev - 1 + total) % total);
   <div className="flex flex-col h-full">
 
     <span className="text-white text-8xl">
-      <img src={Quote} alt="" />
+      <img src={Quote} alt="" className="w-[145px] h-[74px]" />
     </span>
 
     <div className="flex items-center gap-2 text-2xl text-[#FF9100] mb-[12px] mt-[48px]">
-      <span>★★★★★</span>
+       <div className="flex gap-[6px] mb-[8px] md:mb-0 items-center">
+   <FaStar className="h-[24px] w-[24px]" />
+     <FaStar className="h-[24px] w-[24px]" />
+     <FaStar className="h-[24px] w-[24px]" />
+     <FaStar className="h-[24px] w-[24px]" />
+     <FaStar className="h-[24px] w-[24px]" />
+   </div>
     </div>
 
     <h3 className="text-[#571313] text-[35px] font-semibold mb-[48px]">
@@ -130,11 +143,17 @@ const prev = () => setCurrent((prev - 1 + total) % total);
   <div className="flex flex-col h-full">
 
     <span className="text-white text-8xl">
-      <img src={Quote} alt="" />
+      <img src={Quote} alt="" className="w-[145px] h-[74px]" />
     </span>
 
     <div className="flex items-center gap-2 text-2xl text-[#FF9100] mb-[12px] mt-[48px]">
-      <span>★★★★★</span>
+      <div className="flex gap-[6px] mb-[8px] md:mb-0 items-center">
+     <FaStar className="h-[24px] w-[24px]" />
+     <FaStar className="h-[24px] w-[24px]" />
+     <FaStar className="h-[24px] w-[24px]" />
+     <FaStar className="h-[24px] w-[24px]" />
+     <FaStar className="h-[24px] w-[24px]" />
+   </div>
     </div>
 
     <h3 className="text-[#571313] text-[35px] font-semibold mb-[48px]">
@@ -175,151 +194,163 @@ const prev = () => setCurrent((prev - 1 + total) % total);
 
 
 
-                {/* MOBILE TESTIMONIALS CAROUSEL */}
+{/* MOBILE TESTIMONIALS CAROUSEL */}
 <section className="md:hidden overflow-hidden relative">
   <div
     className="flex transition-transform duration-500 ease-in-out"
     style={{ transform: `translateX(-${current * 100}%)` }}
   >
     {/* CARD 1 */}
-    <div className="w-full px-2">
-                 <div className="bg-[#F6EAEF] rounded-[24px] p-[24px] w-[300px] h-[480px]  md:h-[700px] md:w-[598px]">
-  <div className="flex flex-col h-full">
-
-    <span className="text-white text-8xl">
-      <img src={Quote} alt="" />
-    </span>
-
-    <div className="flex items-center gap-2 text-2xl text-[#FF9100] mb-[6px] mt-[20px]">
-      <span>★★★★★</span>
-    </div>
-
-    <h3 className="text-[#571313] text-[25px] font-semibold mb-[20px]">
-      The Best Perfume
-    </h3>
-
-    <p className="text-[#0D0C09] text-[14px]">
-     From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values. This isn’t just a perfume it’s an experience that stays with you.
-    </p>
-
-    {/* VERIFIED CUSTOMER — STICKS TO BOTTOM */}
-    <div className="flex items-center gap-4 mt-auto pt-[10px]">
-      <img
-        src={Reviewer}
-        alt="Reviewer"
-        className="w-[55px] h-[55px] rounded-full object-cover"
-      />
-
-      <div>
-        <p className="text-[18px] font-semibold text-[#0D0C09]">
-          Rebeca Pipard
-        </p>
-
-        <div className="flex items-center gap-2">
-          <img src={material} alt="Verified" className="w-[24px] h-[24px]" />
-          <span className="text-[15px] text-[#282828]">
-            Verified Customer
+    <div className="flex-shrink-0 w-full px-2">
+      <div className="bg-[#F6EAEF] rounded-[24px] p-[24px] h-[480px] w-full">
+        <div className="flex flex-col h-full">
+          <span className="text-white">
+            <img src={Quote} alt="" className="w-[108px] h-[55px]" />
           </span>
+
+          <div className="flex items-center gap-2 text-2xl text-[#FF9100] mb-[6px] mt-[20px]">
+            <div className="flex gap-[6px] items-center">
+              <FaStar className="h-[24px] w-[24px]" />
+              <FaStar className="h-[24px] w-[24px]" />
+              <FaStar className="h-[24px] w-[24px]" />
+              <FaStar className="h-[24px] w-[24px]" />
+              <FaStar className="h-[24px] w-[24px]" />
+            </div>
+          </div>
+
+          <h3 className="text-[#571313] text-[25px] font-semibold mb-[20px]">
+            The Best Perfume
+          </h3>
+
+          <p className="text-[#0D0C09] text-[14px]">
+            From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values. This isn’t just a perfume it’s an experience that stays with you.
+          </p>
+
+          {/* VERIFIED CUSTOMER */}
+          <div className="flex items-center gap-4 mt-auto pt-[10px]">
+            <img
+              src={Reviewer}
+              alt="Reviewer"
+              className="w-[55px] h-[55px] rounded-full object-cover"
+            />
+
+            <div>
+              <p className="text-[18px] font-semibold text-[#0D0C09]">
+                Rebeca Pipard
+              </p>
+
+              <div className="flex items-center gap-2">
+                <img src={material} alt="Verified" className="w-[24px] h-[24px]" />
+                <span className="text-[15px] text-[#282828]">
+                  Verified Customer
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-  </div>
-</div>
     </div>
 
     {/* CARD 2 */}
-    <div className="w-full px-2">
-                            <div className="bg-[#E6F3EF] rounded-[24px] p-[24px] w-[300px] h-[480px] md:h-[700px] md:w-[598px]">
-  <div className="flex flex-col h-full">
-
-    <span className="text-white text-8xl">
-      <img src={Quote} alt="" />
-    </span>
-
-    <div className="flex items-center gap-2 text-2xl text-[#FF9100] mb-[6px] mt-[20px]">
-      <span>★★★★★</span>
-    </div>
-
-    <h3 className="text-[#571313] text-[25px] font-semibold mb-[20px]">
-      Best of the Best
-    </h3>
-
-    <p className="text-[#0D0C09] text-[14px]">
-     From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values. 
-    </p>
-
-    {/* VERIFIED CUSTOMER — STICKS TO BOTTOM */}
-    <div className="flex items-center gap-4 mt-auto pt-[10px]">
-      <img
-        src={Reviewer}
-        alt="Reviewer"
-        className="w-[55px] h-[55px] rounded-full object-cover"
-      />
-
-      <div>
-        <p className="text-[18px] font-semibold text-[#0D0C09]">
-          Rebeca Pipard
-        </p>
-
-        <div className="flex items-center gap-2">
-          <img src={material} alt="Verified" className="w-[24px] h-[24px]" />
-          <span className="text-[15px] text-[#282828]">
-            Verified Customer
+    <div className="flex-shrink-0 w-full px-2">
+      <div className="bg-[#E6F3EF] rounded-[24px] p-[24px] h-[480px] w-full">
+        <div className="flex flex-col h-full">
+          <span className="text-white">
+            <img src={Quote} alt="" className="w-[108px] h-[55px]" />
           </span>
+
+          <div className="flex items-center gap-2 text-2xl text-[#FF9100] mb-[6px] mt-[20px]">
+            <div className="flex gap-[6px] items-center">
+              <FaStar className="h-[24px] w-[24px]" />
+              <FaStar className="h-[24px] w-[24px]" />
+              <FaStar className="h-[24px] w-[24px]" />
+              <FaStar className="h-[24px] w-[24px]" />
+              <FaStar className="h-[24px] w-[24px]" />
+            </div>
+          </div>
+
+          <h3 className="text-[#571313] text-[25px] font-semibold mb-[20px]">
+            Best of the Best
+          </h3>
+
+          <p className="text-[#0D0C09] text-[14px]">
+            From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values.
+          </p>
+
+          {/* VERIFIED CUSTOMER */}
+          <div className="flex items-center gap-4 mt-auto pt-[10px]">
+            <img
+              src={Reviewer}
+              alt="Reviewer"
+              className="w-[55px] h-[55px] rounded-full object-cover"
+            />
+
+            <div>
+              <p className="text-[18px] font-semibold text-[#0D0C09]">
+                Rebeca Pipard
+              </p>
+
+              <div className="flex items-center gap-2">
+                <img src={material} alt="Verified" className="w-[24px] h-[24px]" />
+                <span className="text-[15px] text-[#282828]">
+                  Verified Customer
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-  </div>
-</div>
     </div>
 
     {/* CARD 3 */}
-    <div className="w-full px-2">
-                <div className="bg-[#EEEBFF] rounded-[24px] p-[24px] w-[300px] h-[480px] md:h-[700px] md:w-[598px]">
-  <div className="flex flex-col h-full">
-
-    <span className="text-white text-8xl">
-      <img src={Quote} alt="" />
-    </span>
-
-    <div className="flex items-center gap-2 text-2xl text-[#FF9100] mb-[6px] mt-[20px]">
-      <span>★★★★★</span>
-    </div>
-
-    <h3 className="text-[#571313] text-[25px] font-semibold mb-[20px]">
-      New Obsession. Love It
-    </h3>
-
-    <p className="text-[#0D0C09] text-[14px]">
-    From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values.
-    </p>
-
-     {/* VERIFIED CUSTOMER — STICKS TO BOTTOM */}
-    <div className="flex items-center gap-4 mt-auto pt-[10px]">
-      <img
-        src={Reviewer}
-        alt="Reviewer"
-        className="w-[55px] h-[55px] rounded-full object-cover"
-      />
-
-      <div>
-        <p className="text-[18px] font-semibold text-[#0D0C09]">
-          Rebeca Pipard
-        </p>
-
-        <div className="flex items-center gap-2">
-          <img src={material} alt="Verified" className="w-[24px] h-[24px]" />
-          <span className="text-[15px] text-[#282828]">
-            Verified Customer
+    <div className="flex-shrink-0 w-full px-2">
+      <div className="bg-[#EEEBFF] rounded-[24px] p-[24px] h-[480px] w-full">
+        <div className="flex flex-col h-full">
+          <span className="text-white">
+            <img src={Quote} alt="" className="w-[108px] h-[55px]" />
           </span>
+
+          <div className="flex items-center gap-2 text-2xl text-[#FF9100] mb-[6px] mt-[20px]">
+            <div className="flex gap-[6px] items-center">
+              <FaStar className="h-[24px] w-[24px]" />
+              <FaStar className="h-[24px] w-[24px]" />
+              <FaStar className="h-[24px] w-[24px]" />
+              <FaStar className="h-[24px] w-[24px]" />
+              <FaStar className="h-[24px] w-[24px]" />
+            </div>
+          </div>
+
+          <h3 className="text-[#571313] text-[25px] font-semibold mb-[20px]">
+            New Obsession. Love It
+          </h3>
+
+          <p className="text-[#0D0C09] text-[14px]">
+            From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values.
+          </p>
+
+          {/* VERIFIED CUSTOMER */}
+          <div className="flex items-center gap-4 mt-auto pt-[10px]">
+            <img
+              src={Reviewer}
+              alt="Reviewer"
+              className="w-[55px] h-[55px] rounded-full object-cover"
+            />
+
+            <div>
+              <p className="text-[18px] font-semibold text-[#0D0C09]">
+                Rebeca Pipard
+              </p>
+
+              <div className="flex items-center gap-2">
+                <img src={material} alt="Verified" className="w-[24px] h-[24px]" />
+                <span className="text-[15px] text-[#282828]">
+                  Verified Customer
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-  </div>
-</div>
     </div>
   </div>
 
@@ -340,6 +371,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
     </button>
   </div>
 </section>
+
 
         </div>
     );
