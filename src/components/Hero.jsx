@@ -29,7 +29,7 @@ const Hero = () => {
         {/* LEFT CONTENT */}
         <div className="text-white">
           {/* Rating */}
-<div className="flex flex-col md:flex-row items-center md:gap-[8px] text-[#DBAB35]">
+<div className="flex flex-col md:flex-row md:items-center md:gap-[8px] text-[#DBAB35]">
   {/* Stars */}
   <div className="flex gap-[6px] mb-[8px] md:mb-0 items-center">
     <FaStar className="h-[15px] w-[15px]" />
@@ -47,7 +47,7 @@ const Hero = () => {
 
 
           {/* Heading */}
-          <h1 className="text-[30px] md:text-[60px] font-semibold leading-tight mb-[16px] md:my-[24px]">
+          <h1 className="text-[30px] md:text-[60px] font-semibold leading-tight my-[16px] md:my-[24px]">
             Designer-Inspired Luxury <br />
             Fragrances with Everyday <br />
             Affordability
