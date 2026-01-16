@@ -12,7 +12,7 @@ const Hero = () => {
     >
 
       {/* Content */}
-      <div className="relative z-10 mx-auto ml-20 md:ml-[192px] mt-60 md:mt-[250px] md:mb-[276px] grid grid-cols-1 lg:grid-cols-2 items-center">
+      <div className="relative z-10 mx-auto ml-20 md:ml-[150px] mt-60 md:mt-[250px] md:mb-[276px] grid grid-cols-1 lg:grid-cols-2 items-center">
         
         {/* LEFT CONTENT */}
         <div className="text-white">
