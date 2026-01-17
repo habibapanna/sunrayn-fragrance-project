@@ -19,12 +19,12 @@ const Hero = () => {
   from-[#210E07]/95
   via-[#210E07]/80
   to-transparent
-  md:hidden
+  lg:hidden
 "></div>
 
  
       {/* Content */}
-      <div className="relative z-10 mx-auto px-[16px] md:ml-[192px] mt-[400px] md:mt-[295px] md:mb-[276px] grid grid-cols-1 lg:grid-cols-2 items-center">
+      <div className="relative z-10 mx-auto px-[16px] lg:ml-[192px] mt-[400px] md:ml-[80px] lg:mt-[295px] md:mb-[276px] grid grid-cols-1 lg:grid-cols-2 items-center">
         
         {/* LEFT CONTENT */}
         <div className="text-white">

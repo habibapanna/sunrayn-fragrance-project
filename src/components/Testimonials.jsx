@@ -18,7 +18,7 @@ const next = () => setCurrent((prev) => (prev + 1) % total);
 const prev = () => setCurrent((prev - 1 + total) % total);
 
     return (
-        <div className="mx-auto px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]">
+        <div className="mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]">
                <div className='flex justify-between mb-[16px] md:mb-[32px]'>
             <div className='flex justify-center items-center text-center gap-[20px] md:gap-[32px]'>
                 <div className="text-left">
@@ -38,9 +38,9 @@ const prev = () => setCurrent((prev - 1 + total) % total);
             </div>
 {/* testimonials card */}
             <section className="mx-auto hidden md:block">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-[32px]">
             
-            <div className="bg-[#F6EAEF] rounded-[31px] p-[50px] h-[480px] w-[300px] md:h-[700px] md:w-[598px]">
+            <div className="bg-[#F6EAEF] rounded-[31px] p-[50px] h-[480px] md:h-[700px]">
   <div className="flex flex-col h-full">
 
     <span className="text-white text-8xl">
@@ -90,7 +90,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
   </div>
 </div>
 
-                        <div className="bg-[#E6F3EF] rounded-[31px] p-[50px] h-[480px] w-[300px] md:h-[700px] md:w-[598px]">
+                        <div className="bg-[#E6F3EF] rounded-[31px] p-[50px] h-[480px] md:h-[700px]">
   <div className="flex flex-col h-full">
 
     <span className="text-white text-8xl">
@@ -139,7 +139,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
 
   </div>
 </div>
-            <div className="bg-[#EEEBFF] rounded-[31px] p-[50px] h-[480px] w-[300px]  md:h-[700px] md:w-[598px]">
+            <div className="bg-[#EEEBFF] rounded-[31px] p-[50px] h-[480px] md:h-[700px]">
   <div className="flex flex-col h-full">
 
     <span className="text-white text-8xl">

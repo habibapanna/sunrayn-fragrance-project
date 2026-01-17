@@ -7,7 +7,7 @@ const NewArrivals = () => {
       <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] md:p-20 relative">
 
         {/* ================= IMAGE GRID ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[32px]">
           
           {/* IMAGE 1 */}
           <div className="relative rounded-[32px] md:rounded-[48px] overflow-hidden">
@@ -30,7 +30,7 @@ const NewArrivals = () => {
           </div>
 
           {/* IMAGE 3 */}
-          <div className="relative rounded-[48px] overflow-hidden hidden md:block">
+          <div className="relative rounded-[48px] overflow-hidden hidden lg:block">
             <img
               src="https://i.postimg.cc/fbvtDwtd/Product-Image-(4).png"
               alt="Product 3"
@@ -57,10 +57,10 @@ const NewArrivals = () => {
         </div>
 
         {/* DESKTOP TEXT — UNCHANGED */}
-        <div className="hidden md:block top-[600px] absolute md:top-[700px] left-[150px] transform -translate-y-1/2 text-[#571313]">
+        <div className="hidden md:block top-[600px] absolute md:top-[400px] lg:top-[700px] left-[150px] transform -translate-y-1/2 text-[#571313]">
           <div className="inline-flex items-center">
             <h2
-              className="text-[120px] font-bold"
+              className="md:text-[60px] lg:text-[120px] font-bold"
               style={{
                 lineHeight: "110%",
                 letterSpacing: "-7.2px",
@@ -72,7 +72,7 @@ const NewArrivals = () => {
           </div>
 
           <p
-            className="text-[100px] font-normal relative left-[400px] uppercase"
+            className="md:text-[40px] lg:text-[100px] font-normal relative md:left-[100px] lg:left-[400px] uppercase"
             style={{
               lineHeight: "110%",
               letterSpacing: "-7.2px",

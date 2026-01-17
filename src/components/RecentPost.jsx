@@ -54,10 +54,10 @@ const next = () => setCurrent((prev) => (prev + 1) % total);
 const prev = () => setCurrent((prev - 1 + total) % total);
 
     return (
-        <div className='mx-auto px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]'>
+        <div className='mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]'>
              <div className='hidden md:flex justify-between mb-[32px]'>
                         <div className='flex justify-center items-center text-center gap-10'>
-                            <div>
+                            <div className='text-left'>
                                 <p className='text-3xl md:text-[50px] font-semibold text-[#282828]'>Recent Post on Instagram</p>
                             </div>
                             
@@ -92,11 +92,11 @@ const prev = () => setCurrent((prev - 1 + total) % total);
             </div>
             </div>
 
-<div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-[16px] md:gap-[32px]">
+<div className="hidden md:grid lg:grid-cols-4 gap-[16px] md:gap-[32px]">
         {posts.map((item, index) => (
           <div
             key={index}
-            className="relative rounded-[16px] md:rounded-[32px] overflow-hidden h-[150px] w-[164px] md:h-[494px] md:w-[440px]"
+            className="relative rounded-[16px] md:rounded-[32px] overflow-hidden h-[150px] md:h-[494px]"
           >
             {/* PRODUCT IMAGE (BASE LAYER) */}
             <img
@@ -167,7 +167,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
     {inspiredBy.map((item, index) => (
       <button
         key={index}
-        className="bg-[#F5F1EA] text-[#571313] px-[32px] py-[12px] rounded-full flex items-center text-[24px] font-medium mx-2 md:mx-4 whitespace-nowrap"
+        className="bg-[#F5F1EA] text-[#571313] px-[32px] py-[12px] rounded-full flex items-center text-[18px] md:text-[24px] font-medium mx-2 md:mx-4 whitespace-nowrap"
       >
         Inspired by
         <span className="underline font-bold ml-3  cursor-pointer">

@@ -1,8 +1,8 @@
-import React from 'react';
+
 
 const Offer = () => {
     return (
-        <div className='mx-auto px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]'>
+        <div className='mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]'>
            <section
   className="bg-cover bg-center flex rounded-[32px] md:rounded-[48px]"
   style={{
@@ -11,13 +11,13 @@ const Offer = () => {
   }}
 >
   {/* LEFT EMPTY SPACE */}
-  <div className="w-1/3 md:w-1/2" />
+  <div className="w-1/3 lg:w-1/2" />
 
   {/* RIGHT CONTENT */}
-  <div className="w-2/3 md:w-1/2 flex items-center justify-center px-10 py-16 md:px-[150px] md:py-[241px]">
+  <div className="w-2/3 lg:w-1/2 flex items-center justify-center px-10 py-16 md:px-[150px] md:py-[241px]">
     <div className="text-white text-left">
 
-      <h1 className="text-[25px] md:text-[90px] leading-tight mb-6"
+      <h1 className="text-[25px] md:text-[40px] lg:text-[90px] leading-tight mb-6"
        >
         Get 30% Off
       </h1>

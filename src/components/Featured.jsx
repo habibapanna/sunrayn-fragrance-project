@@ -130,7 +130,7 @@ const [current, setCurrent] = useState(0);
 
 {/* ================= DESKTOP GRID (UNCHANGED) ================= */}
 <section className="hidden md:block mx-auto pb-[32px]">
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
+  <div className="grid grid-cols-1 lg:grid-cols-3 gap-[32px]">
     {items.map((item, index) => (
       <div
         key={index}
@@ -182,7 +182,7 @@ const [current, setCurrent] = useState(0);
     {/******* Premium *******/}
 
    <section className="mx-auto pb-[16px]">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-[16px] md:gap-[32px]">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-[16px] md:gap-[32px]">
 
 <div className='flex bg-[#F6EAEF] rounded-[24px] md:py-[32px] md:px-[48px] p-[24px] justify-center items-center md:h-[325px]'> 
 <div>

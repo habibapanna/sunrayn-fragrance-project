@@ -13,10 +13,10 @@ import Logo from "../../assets/Logo (1).png";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-gradient-to-t from-[#FDFCFC] to-[#F0ECE5] overflow-hidden">
+    <footer className="relative max-w-full bg-gradient-to-t from-[#FDFCFC] to-[#F0ECE5] overflow-hidden">
 
       {/* BACKGROUND LOGO */}
-      <div className="absolute inset-y-0 left-0 w-full md:w-1/2 pointer-events-none z-0 top-40 md:top-0">
+      <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 pointer-events-none z-0 top-40 md:top-0">
         <img
           src={Logo}
           alt="Background Logo"
@@ -25,7 +25,7 @@ const Footer = () => {
       </div>
 
       {/* ================= MAIN CONTENT ================= */}
-      <div className="relative z-10 mx-auto px-6 md:pl-[260px] py-16 md:py-[250px]">
+      <div className="relative z-10 mx-auto px-6 md:pl-[180px] lg:pl-[260px] py-16 md:py-[250px]">
 
         {/* MOBILE BIG S */}
         <div className="md:hidden flex justify-center mb-12">
@@ -76,7 +76,7 @@ const Footer = () => {
           </div>
 
           {/* DESKTOP BIG S */}
-          <div className="hidden md:block absolute right-[337px] top-1/2 -translate-y-1/2 pointer-events-none opacity-90">
+          <div className="hidden md:hidden lg:block absolute right-[337px] top-1/2 -translate-y-1/2 pointer-events-none opacity-90">
             <img src={BigS} alt="Decorative S" className="h-[642px] w-[348px]" />
           </div>
 
@@ -84,7 +84,7 @@ const Footer = () => {
       </div>
 
       {/* ================= BOTTOM BAR ================= */}
-     <div className="max-w-7xl mx-auto p-[32px] md:px-[120px] md:py-[32px] flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left border-t border-[#C77F6033]">
+     <div className="max-w-7xl mx-auto p-[32px] lg:px-[120px] md:py-[32px] flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left border-t border-[#C77F6033]">
 
   {/* 1. COPYRIGHT */}
   <p className="text-[16px] text-[#220B12B2] order-1 md:order-none mb-[16px] md:mb-0">
@@ -97,7 +97,7 @@ const Footer = () => {
   </span>
 
   {/* 3. SOCIAL ICONS */}
-  <div className="flex items-center gap-4 order-3 md:order-none mb-[16px] md:mb-0">
+  <div className="flex items-center gap-4 md:gap-2 lg:gap-4 order-3 md:order-none mb-[16px] md:mb-0">
     <img src={Facebook} className="h-4" />
     <img src={Instagram} className="h-4" />
     <img src={Tiktok} className="h-4" />
@@ -109,7 +109,7 @@ const Footer = () => {
   </p>
 
   {/* 5. PAYMENTS */}
-  <div className="flex items-center gap-[33px] justify-center order-5 md:order-none">
+  <div className="flex items-center gap-[33px] md:gap-[20px] lg:gap-[33px] justify-center order-5 md:order-none">
     <img src={Visa} className="h-6" />
     <img src={MasterCard} className="h-6" />
     <img src={Paypal} className="h-6" />

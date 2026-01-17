@@ -50,7 +50,7 @@ useEffect(() => {
           <div className="flex items-center gap-[24px]">
 
             {/* DESKTOP MENU (UNCHANGED) */}
-            <div className="hidden md:flex items-center gap-[24px] bg-white/90 text-[#282828] pr-[9px] pl-[24px] py-[12px] rounded-[100px] mr-16 w-[426px] h-[50px]">
+            <div className="hidden lg:flex items-center gap-[24px] bg-white/90 text-[#282828] pr-[9px] pl-[24px] py-[12px] rounded-[100px] mr-16 w-[426px] h-[50px]">
               <button className="flex items-center gap-[4px] text-[16px]">
                 Perfumes
                 <LiaAngleDownSolid className="text-[24px]" />

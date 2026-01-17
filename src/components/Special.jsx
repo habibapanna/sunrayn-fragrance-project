@@ -4,23 +4,23 @@ import Button from "../assets/Button Container.png";
 const Special = () => {
   return (
     <section className="mx-auto pb-[16px] px-[16px] md:px-[32px] md:pb-[32px]">
-      <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] md:p-20 relative">
+      <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] lg:p-20 relative">
 
         {/* ================= CONTENT ================= */}
-        <div className="flex flex-col md:flex-row items-center gap-10">
+        <div className="flex flex-col lg:flex-row items-center gap-10">
 
           {/* IMAGE */}
           <div className="relative w-full flex justify-center">
             <img
               src="https://i.postimg.cc/8kWKHMLp/Product-Image.png"
               alt="Special Perfume"
-              className="w-[376px] h-[334px] md:w-[651px] md:h-[700px] object-cover rounded-[32px] md:rounded-[48px]"
+              className="h-full w-full object-cover rounded-[32px] md:rounded-[48px]"
             />
-             <div className="md:hidden absolute inset-0 bg-gradient-to-b from-transparent to-[#EDE8E0]" />
+             <div className="lg:hidden absolute inset-0 bg-gradient-to-b from-transparent to-[#EDE8E0]" />
           </div>
           
           {/* DESCRIPTION (DESKTOP) */}
-          <div className="hidden md:block mt-40">
+          <div className="hidden md:block lg:mt-40 md:p-20 lg:p-0">
             <p className="text-[25px]">
               An exclusive creation from Sanrayn, this special perfume delivers a
               luxurious, long-lasting aroma crafted with integrity. Elegant,
@@ -65,9 +65,9 @@ const Special = () => {
         </div>
 
         {/* ================= DESKTOP FLOATING TEXT ================= */}
-        <div className="hidden md:inline-flex absolute top-[250px] left-[530px] transform -translate-y-1/2 text-[#571313]">
+        <div className="hidden md:inline-flex absolute md:top-[1050px] lg:top-[250px] md:left-[80px] lg:left-[530px] transform -translate-y-1/2 text-[#571313]">
           <h2
-            className="text-[120px] font-bold leading-[110%]"
+            className="md:text-[60px] lg:text-[120px] font-bold leading-[110%]"
             style={{ letterSpacing: "-7.2px" }}
           >
             SUNRAYN
@@ -75,12 +75,12 @@ const Special = () => {
 
           <div className="flex items-center ml-5">
             <p
-              className="text-[120px] font-light uppercase leading-[100%]"
+              className="md:text-[60px] lg:text-[120px] font-light uppercase leading-[100%]"
               style={{ letterSpacing: "-7.2px" }}
             >
               SPECIALS
             </p>
-            <img src={Button} alt="" className="h-[81px] w-[81px] ml-[27px]" />
+            <img src={Button} alt="" className="md:h-[65px] md:w-[65px] lg:h-[81px] lg:w-[81px] ml-[27px]" />
           </div>
         </div>
       </div>

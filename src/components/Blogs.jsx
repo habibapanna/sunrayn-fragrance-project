@@ -25,7 +25,7 @@ const Blogs = () => {
   const prev = () => setCurrent((prev - 1 + total) % total);
 
   return (
-    <div className="mx-auto px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]">
+    <div className="mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]">
       {/* HEADER */}
       <div className="md:flex md:justify-between mb-[16px] md:mb-[32px]">
         <div className="flex justify-between md:justify-center items-center text-center gap-[20px] md:gap-[32px]">
@@ -53,11 +53,11 @@ const Blogs = () => {
       </div>
 
       {/* DESKTOP GRID */}
-      <div className="hidden md:grid grid-cols-3 gap-[32px]">
+      <div className="hidden md:grid lg:grid-cols-3 gap-[32px]">
         {blogs.map((item, index) => (
           <div
             key={index}
-            className="relative rounded-[48px] overflow-hidden md:h-[700px] md:w-[598px]"
+            className="relative rounded-[48px] overflow-hidden md:h-[700px]"
           >
             <img
               src={item.product}

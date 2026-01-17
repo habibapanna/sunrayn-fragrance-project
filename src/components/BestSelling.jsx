@@ -120,16 +120,16 @@ const [current, setCurrent] = useState(0);
 
 {/* ================= DESKTOP GRID (UNCHANGED) ================= */}
 <section className="hidden md:block mx-auto">
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px]">
+  <div className="grid grid-cols-1 lg:grid-cols-3 gap-[32px]">
     {items.map((item, index) => (
       <div
         key={index}
-        className="relative rounded-[48px] overflow-hidden bg-[#EDE8E0] md:h-[700px] md:w-[598px]"
+        className="relative rounded-[48px] overflow-hidden bg-[#EDE8E0] md:h-[700px]"
       >
         <img
           src={item.product}
           alt={item.title}
-          className="absolute inset-0 object-cover ml-[48px] h-[501px] w-[501px]"
+          className="absolute inset-0 object-cover lg:ml-[48px] h-[501px] mx-auto"
         />
 
         <div className="absolute bottom-0 left-0 w-full z-20 p-[40px]">
