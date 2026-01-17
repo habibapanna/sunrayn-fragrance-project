@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="absolute top-0 left-0 w-full z-50">
+      <nav className="fixed top-0 left-0 w-full z-50">
         <div className="mx-auto px-[16px] md:px-[32px] md:py-[24px] flex items-center justify-between text-white">
 
           {/* LOGO (unchanged) */}
@@ -30,7 +30,7 @@ const Navbar = () => {
           <div className="flex items-center gap-[24px]">
 
             {/* DESKTOP MENU (UNCHANGED) */}
-            <div className="hidden md:flex items-center gap-[24px] bg-white/90 text-[#282828] pr-[9px] pl-[24px] py-[12px] rounded-[100px] shadow mr-16 w-[426px] h-[50px]">
+            <div className="hidden md:flex items-center gap-[24px] bg-white/90 text-[#282828] pr-[9px] pl-[24px] py-[12px] rounded-[100px] mr-16 w-[426px] h-[50px]">
               <button className="flex items-center gap-[4px] text-[16px]">
                 Perfumes
                 <LiaAngleDownSolid className="text-[24px]" />
