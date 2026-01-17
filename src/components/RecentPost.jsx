@@ -121,7 +121,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
       else result[result.length - 1].push(item);
       return result;
     }, []).map((group, index) => (
-      <div key={index} className="flex-shrink-0 w-full px-2 flex gap-2">
+      <div key={index} className="flex-shrink-0 w-full flex gap-2">
         {group.map((item, idx) => (
           <div
             key={idx}

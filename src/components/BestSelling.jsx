@@ -61,12 +61,12 @@ const [current, setCurrent] = useState(0);
       style={{ transform: `translateX(-${current * 100}%)` }}
     >
       {items.map((item, index) => (
-        <div key={index} className="min-w-full px-1">
-          <div className="relative rounded-[24px] md:rounded-[48px] overflow-hidden bg-[#EDE8E0] w-[344px] h-[344px] md:h-[700px] md:w-[598px]">
+        <div key={index} className="min-w-full">
+          <div className="relative rounded-[24px] md:rounded-[48px] overflow-hidden bg-[#EDE8E0] h-[344px] md:h-[700px] md:w-[598px]">
             <img
               src={item.product}
               alt={item.title}
-              className="absolute inset-0 object-cover ml-[40px] md:ml-[48px] h-[220px] w-[220px] md:h-[501px] md:w-[501px]"
+              className="absolute inset-0 object-cover mx-auto md:ml-[48px] h-[220px] w-[220px] md:h-[501px] md:w-[501px]"
             />
 
             <div className="absolute bottom-0 left-0 w-full z-20 p-[16px] md:p-[40px]">

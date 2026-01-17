@@ -83,7 +83,7 @@ const Blogs = () => {
           {blogs.map((item, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-full px-2"
+              className="flex-shrink-0 w-full"
             >
               <div className="relative rounded-[24px] overflow-hidden w-full h-[350px]">
                 <img

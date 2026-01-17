@@ -201,7 +201,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
     style={{ transform: `translateX(-${current * 100}%)` }}
   >
     {/* CARD 1 */}
-    <div className="flex-shrink-0 w-full px-2">
+    <div className="flex-shrink-0 w-full">
       <div className="bg-[#F6EAEF] rounded-[24px] p-[24px] h-[480px] w-full">
         <div className="flex flex-col h-full">
           <span className="text-white">
@@ -252,7 +252,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
     </div>
 
     {/* CARD 2 */}
-    <div className="flex-shrink-0 w-full px-2">
+    <div className="flex-shrink-0 w-full">
       <div className="bg-[#E6F3EF] rounded-[24px] p-[24px] h-[480px] w-full">
         <div className="flex flex-col h-full">
           <span className="text-white">
@@ -303,7 +303,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
     </div>
 
     {/* CARD 3 */}
-    <div className="flex-shrink-0 w-full px-2">
+    <div className="flex-shrink-0 w-full">
       <div className="bg-[#EEEBFF] rounded-[24px] p-[24px] h-[480px] w-full">
         <div className="flex flex-col h-full">
           <span className="text-white">

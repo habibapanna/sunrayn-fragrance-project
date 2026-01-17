@@ -25,7 +25,7 @@ const Category = () => {
             key={index}
             className="
               group relative rounded-[24px] md:rounded-[48px] overflow-hidden cursor-pointer
-              w-[343px] h-[392px]
+               h-[392px]
               md:w-[598px] md:h-[700px]
             "
           >

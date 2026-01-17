@@ -92,7 +92,7 @@ const Navbar = () => {
 
       {/* MOBILE SIDEBAR */}
       <aside
-        className={`fixed top-0 left-0 h-full w-[100%] max-w-sm bg-[#F6F7F2] z-50
+        className={`fixed top-0 left-0 h-full w-[100%] bg-[#F6F7F2] z-50
         transform transition-transform duration-500 md:hidden
         ${open ? "translate-x-0" : "-translate-x-full"}`}
       >
