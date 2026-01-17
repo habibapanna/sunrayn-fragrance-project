@@ -26,7 +26,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
                 </div>
 
             </div>
-            <div className='hidden md:flex gap-5 '>
+            <div className='hidden lg:flex gap-5 '>
                 <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">
                               <GoChevronLeft className='text-[35px] ' />
                             </button>
@@ -37,8 +37,8 @@ const prev = () => setCurrent((prev - 1 + total) % total);
 
             </div>
 {/* testimonials card */}
-            <section className="mx-auto hidden md:block">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-[32px]">
+            <section className="mx-auto hidden lg:block">
+                  <div className="lg:grid lg:grid-cols-3 gap-[32px]">
             
             <div className="bg-[#F6EAEF] rounded-[31px] p-[50px] h-[480px] md:h-[700px]">
   <div className="flex flex-col h-full">
@@ -195,7 +195,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
 
 
 {/* MOBILE TESTIMONIALS CAROUSEL */}
-<section className="md:hidden overflow-hidden relative">
+<section className="lg:hidden overflow-hidden relative">
   <div
     className="flex transition-transform duration-500 ease-in-out"
     style={{ transform: `translateX(-${current * 100}%)` }}

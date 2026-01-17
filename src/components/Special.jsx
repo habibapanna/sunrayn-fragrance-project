@@ -65,7 +65,7 @@ const Special = () => {
         </div>
 
         {/* ================= DESKTOP FLOATING TEXT ================= */}
-        <div className="hidden md:inline-flex absolute md:top-[1050px] lg:top-[250px] md:left-[80px] lg:left-[530px] transform -translate-y-1/2 text-[#571313]">
+        <div className="hidden md:inline-flex absolute md:top-[850px] lg:top-[250px] md:left-[80px] lg:left-[530px] transform -translate-y-1/2 text-[#571313]">
           <h2
             className="md:text-[60px] lg:text-[120px] font-bold leading-[110%]"
             style={{ letterSpacing: "-7.2px" }}

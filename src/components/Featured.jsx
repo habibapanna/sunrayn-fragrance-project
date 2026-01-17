@@ -44,7 +44,7 @@ const [current, setCurrent] = useState(0);
                     <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[14px] md:text-[20px] cursor-pointer w-[117px] h-[40px] md:w-[139px] md:h-[55px]">View All</button>
                 </div>
             </div>
-            <div className='hidden md:flex gap-5 '>
+            <div className='hidden lg:flex gap-5 '>
                 <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">
                               <GoChevronLeft className='text-[35px] ' />
                             </button>
@@ -58,7 +58,7 @@ const [current, setCurrent] = useState(0);
 {/**** Items ****/}
 
 {/* ================= MOBILE CAROUSEL ================= */}
-<section className="md:hidden pb-[16px] md:pb-[32px]">
+<section className="lg:hidden pb-[16px] md:pb-[32px]">
   <div className="relative overflow-hidden">
     <div
       className="flex transition-transform duration-500 ease-in-out"
@@ -66,7 +66,7 @@ const [current, setCurrent] = useState(0);
     >
       {items.map((item, index) => (
         <div key={index} className="min-w-full">
-          <div className="relative rounded-[24px] md:rounded-[48px] overflow-hidden bg-[#EDE8E0] h-[344px] md:h-[700px] md:w-[598px]">
+          <div className="relative rounded-[24px] md:rounded-[48px] overflow-hidden bg-[#EDE8E0] h-[344px] md:h-[700px]">
             <img
               src={item.product}
               alt={item.title}
@@ -129,7 +129,7 @@ const [current, setCurrent] = useState(0);
 </section>
 
 {/* ================= DESKTOP GRID (UNCHANGED) ================= */}
-<section className="hidden md:block mx-auto pb-[32px]">
+<section className="hidden lg:block mx-auto pb-[32px]">
   <div className="grid grid-cols-1 lg:grid-cols-3 gap-[32px]">
     {items.map((item, index) => (
       <div
@@ -162,12 +162,12 @@ const [current, setCurrent] = useState(0);
             Sanrayn Original
           </p>
 
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center justify-between">
             <button className="bg-white text-[#0D0C09] font-semibold px-[24px] py-[10px] rounded-[100px] cursor-pointer h-[45px] w-[167px]">
               Add to Cart
             </button>
 
-            <div className="flex gap-[16px]">
+            <div className="flex gap-[16px] justify-center items-center text-center">
               <img src={Original} alt="" className="h-[45px] w-[70px]" />
               <img src={Discount} alt="" className="h-[52px] w-[105px]" />
             </div>

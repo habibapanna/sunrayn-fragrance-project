@@ -55,7 +55,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
 
     return (
         <div className='mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]'>
-             <div className='hidden md:flex justify-between mb-[32px]'>
+             <div className='hidden lg:flex justify-between mb-[32px]'>
                         <div className='flex justify-center items-center text-center gap-10'>
                             <div className='text-left'>
                                 <p className='text-3xl md:text-[50px] font-semibold text-[#282828]'>Recent Post on Instagram</p>
@@ -79,7 +79,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
             
                         </div>
                         {/* for mobile */}
-  <div className='md:hidden mb-[16px] md:mb-[32px]'>
+  <div className='lg:hidden mb-[16px] md:mb-[32px]'>
             <div className='flex justify-between items-center text-center gap-[20px] md:gap-[32px]'>
                 <div>
                     <p className='text-[25px] md:text-[50px] font-semibold text-[#282828]'>Instagram</p>
@@ -92,7 +92,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
             </div>
             </div>
 
-<div className="hidden md:grid lg:grid-cols-4 gap-[16px] md:gap-[32px]">
+<div className="hidden lg:grid lg:grid-cols-4 gap-[16px] md:gap-[32px]">
         {posts.map((item, index) => (
           <div
             key={index}
@@ -110,7 +110,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
 
       {/* for mobile */}
 {/* MOBILE CAROUSEL */}
-<div className="md:hidden overflow-hidden relative">
+<div className="lg:hidden overflow-hidden relative">
   <div
     className="flex transition-transform duration-500 ease-in-out"
     style={{ transform: `translateX(-${current * 100}%)` }}

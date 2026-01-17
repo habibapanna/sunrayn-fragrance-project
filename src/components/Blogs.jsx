@@ -42,7 +42,7 @@ const Blogs = () => {
         </div>
 
         {/* Desktop Arrows */}
-        <div className="hidden md:flex gap-5">
+        <div className="hidden lg:flex gap-5">
           <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">
             <GoChevronLeft className="text-[35px]" />
           </button>
@@ -53,7 +53,7 @@ const Blogs = () => {
       </div>
 
       {/* DESKTOP GRID */}
-      <div className="hidden md:grid lg:grid-cols-3 gap-[32px]">
+      <div className="hidden lg:grid lg:grid-cols-3 gap-[32px]">
         {blogs.map((item, index) => (
           <div
             key={index}
@@ -75,7 +75,7 @@ const Blogs = () => {
       </div>
 
       {/* MOBILE CAROUSEL */}
-      <div className="md:hidden overflow-hidden relative">
+      <div className="lg:hidden overflow-hidden relative">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${current * 100}%)` }}
