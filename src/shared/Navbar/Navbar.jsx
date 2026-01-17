@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { LiaAngleDownSolid } from "react-icons/lia";
 import Logo from "../../assets/Logo.png";
@@ -13,11 +13,31 @@ import { TbMenu } from "react-icons/tb";
 import { GoChevronRight } from "react-icons/go";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+const [open, setOpen] = useState(false);
+const [scrolled, setScrolled] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 10);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50">
+      <nav
+  className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
+    ${
+      scrolled
+        ? "bg-black/10 backdrop-blur-sm"
+        : "bg-transparent"
+    }
+  `}
+>
+
         <div className="mx-auto px-[16px] md:px-[32px] md:py-[24px] flex items-center justify-between text-white">
 
           {/* LOGO (unchanged) */}

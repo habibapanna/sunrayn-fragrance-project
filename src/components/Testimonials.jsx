@@ -355,7 +355,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
   </div>
 
   {/* MOBILE NAV BUTTONS */}
-  <div className="flex gap-4 mt-6">
+  <div className="flex gap-4 mt-6  justify-center">
     <button
       onClick={prev}
       className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"

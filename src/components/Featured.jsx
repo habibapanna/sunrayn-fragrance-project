@@ -110,7 +110,7 @@ const [current, setCurrent] = useState(0);
     </div>
 
     {/* MOBILE ARROWS */}
-    <div className="flex gap-5 mt-6">
+    <div className="flex gap-5 mt-6 justify-center">
       <button
         onClick={prev}
         className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
@@ -134,15 +134,15 @@ const [current, setCurrent] = useState(0);
     {items.map((item, index) => (
       <div
         key={index}
-        className="relative rounded-[48px] overflow-hidden bg-[#EDE8E0] md:h-[700px] md:w-[598px]"
+        className="relative rounded-[48px] overflow-hidden bg-[#EDE8E0] md:h-[700px]"
       >
         <img
           src={item.product}
           alt={item.title}
-          className="absolute inset-0 object-cover ml-[48px] h-[501px] w-[501px]"
+          className="absolute inset-0 object-cover lg:ml-[48px] lg:h-[501px] mx-auto"
         />
 
-        <div className="absolute bottom-0 left-0 w-full z-20 p-[40px]">
+        <div className="absolute bottom-20 lg:bottom-0 left-0 w-full z-20 p-[20px] lg:p-[40px]">
           <div className="flex items-center gap-2 text-lg text-[#FF9100]">
             <div className="flex gap-[6px] mb-[8px] md:mb-0 items-center">
     <FaStar className="h-[10px] w-[10px] md:h-[15px] md:w-[15px]" />
@@ -184,34 +184,34 @@ const [current, setCurrent] = useState(0);
    <section className="mx-auto pb-[16px]">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-[16px] md:gap-[32px]">
 
-<div className='flex bg-[#F6EAEF] rounded-[24px] md:py-[32px] md:px-[48px] p-[24px] justify-center items-center md:h-[325px] md:[598px]'> 
+<div className='flex bg-[#F6EAEF] rounded-[24px] md:py-[32px] md:px-[48px] p-[24px] justify-center items-center md:h-[325px]'> 
 <div>
 <span className='text-[#DC7C2A] text-6xl'><img src={Crown} alt="" className='h-[60px] w-[60px] md:h-[80px]' /></span>
 <h3 className='text-[#DC7C2A] text-[25px] md:text-[35px] font-semibold mt-[20px] mb-2'>Premium</h3>
 <p className='text-[#0D0C09] text-[16px]'>All our fragrances are inspired by an exclusive collection of popular and iconic aromas</p>
 </div>
 <div>
-  <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png" alt=""  className="hidden md:block" />
+  <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png" alt=""  className="hidden lg:block" />
 </div>
 </div>
-<div className='flex bg-[#E6F3EF] rounded-[24px] md:py-[32px] md:px-[48px] p-[24px] justify-center items-center md:h-[325px] md:[598px]'> 
+<div className='flex bg-[#E6F3EF] rounded-[24px] md:py-[32px] md:px-[48px] p-[24px] justify-center items-center md:h-[325px]'> 
 <div>
 <span className='text-[#43B583] text-6xl'><img src={Checkmark} alt="" className='h-[60px] w-[60px] md:h-[80px]' /></span>
 <h3 className='text-[#43B583] text-[25px] md:text-[35px] mt-[20px] mb-2'>Certified</h3>
 <p className='text-[#0D0C09] text-[16px]'>Certified, skin-friendly formula, Cruelty-free, crafted with care to ensure the safety of our beloved users.</p>
 </div>
 <div>
-  <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png" alt=""  className="hidden md:block" />
+  <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png" alt=""  className="hidden lg:block" />
 </div>
 </div>
-<div className='flex bg-[#EEEBFF] rounded-[24px] md:py-[32px] md:px-[48px] p-[24px] justify-center items-center md:h-[325px] md:[598px]'> 
+<div className='flex bg-[#EEEBFF] rounded-[24px] md:py-[32px] md:px-[48px] p-[24px] justify-center items-center md:h-[325px]'> 
 <div>
 <span className='text-[#FF4242] text-6xl'><img src={Frame} alt="" className='h-[60px] w-[60px] md:h-[80px]' /></span>
 <h3 className='text-[#FF4242] text-[25px] md:text-[35px] mt-[20px] mb-2'>Made with Care</h3>
 <p className='text-[#0D0C09] text-[16px]'>Every fragrance is responsibly crafted and carefully inspected to ensure perfection in every bottle.</p>
 </div>
 <div>
-  <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png"  className="hidden md:block" alt="" />
+  <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png"  className="hidden lg:block" alt="" />
 </div>
 </div>
 

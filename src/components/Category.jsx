@@ -18,7 +18,7 @@ const categories = [
 
 const Category = () => {
   return (
-    <section className="mx-auto px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]">
+    <section className="mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-[16px] md:gap-[32px]">
         {categories.map((item, index) => (
           <div
@@ -26,7 +26,7 @@ const Category = () => {
             className="
               group relative rounded-[24px] md:rounded-[48px] overflow-hidden cursor-pointer
                h-[392px]
-              md:w-[598px] md:h-[700px]
+            md:h-[700px]
             "
           >
             {/* IMAGE */}
@@ -63,7 +63,7 @@ const Category = () => {
               <span
                 className="
                   whitespace-nowrap text-[16px] md:text-[18px]
-                  text-[#1D0B01] uppercase font-semibold text-center
+                  text-[#1D0B01] uppercase font-medium text-center
                   opacity-0 group-hover:opacity-100
                   transition-opacity duration-300 delay-150
                 "

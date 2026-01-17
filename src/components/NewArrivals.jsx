@@ -3,7 +3,7 @@ import Button from "../assets/Button Container.png";
 
 const NewArrivals = () => {
   return (
-    <section className="mx-auto px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]">
+    <section className="mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]">
       <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] md:p-20 relative">
 
         {/* ================= IMAGE GRID ================= */}

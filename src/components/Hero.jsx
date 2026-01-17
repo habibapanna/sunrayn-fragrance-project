@@ -5,7 +5,7 @@ const Hero = () => {
     return (
         <div>
             <section
-      className="relative min-h-screen flex items-center bg-cover bg-center"
+      className="relative min-h-screen flex items-center bg-cover bg-center max-w-full"
       style={{
         backgroundImage:
           "url('https://i.postimg.cc/vHNVx6j7/Image.png')",
