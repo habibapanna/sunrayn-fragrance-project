@@ -70,7 +70,7 @@ const [current, setCurrent] = useState(0);
             <img
               src={item.product}
               alt={item.title}
-              className="absolute inset-0 object-cover mx-auto md:ml-[48px] h-[220px] w-[220px] md:h-[501px] md:w-[501px]"
+              className="absolute inset-0 object-cover mx-auto h-[220px] md:h-[501px]"
             />
 
             <div className="absolute bottom-0 left-0 w-full z-20 p-[16px] md:p-[40px]">

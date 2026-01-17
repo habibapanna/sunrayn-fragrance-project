@@ -171,7 +171,7 @@ useEffect(() => {
 </div>
 
 
-           <button className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[7px] rounded-[100px] font-semibold flex items-center text-center gap-[6px] h-[45px] mx-auto w-[335px] justify-center">
+           <button className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[7px] rounded-[100px] font-semibold flex items-center text-center gap-[6px] h-[45px] mx-auto w-full justify-center">
                 <img src={Solar} className="h-[17px] w-[17px]" />
                 Holiday Sale
               </button>
