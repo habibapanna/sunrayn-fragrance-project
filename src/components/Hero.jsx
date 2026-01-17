@@ -24,7 +24,7 @@ const Hero = () => {
 
  
       {/* Content */}
-      <div className="relative z-10 mx-auto px-[16px] md:ml-[150px] mt-[233px] md:mt-[250px] md:mb-[276px] grid grid-cols-1 lg:grid-cols-2 items-center">
+      <div className="relative z-10 mx-auto px-[16px] md:ml-[192px] mt-[233px] mb-[24px] md:mt-[295px] md:mb-[276px] grid grid-cols-1 lg:grid-cols-2 items-center">
         
         {/* LEFT CONTENT */}
         <div className="text-white">
@@ -61,7 +61,7 @@ const Hero = () => {
           </p>
 
           {/* CTA */}
-          <button className="bg-[#DBAB35] text-black px-[24px] py-[10px] rounded-[100px] text-[14px] md:text-[20px] font-bold cursor-pointer w-[116px] h-[40px] md:w-[210px] md:h-[55px] mb-[32px] md:mb-[276px]">
+          <button className="bg-[#DBAB35] text-black px-[24px] py-[10px] rounded-[100px] text-[14px] md:text-[20px] font-bold cursor-pointer w-[116px] h-[40px] md:w-[210px] md:h-[55px]">
             Shop Now
           </button>
         </div>
