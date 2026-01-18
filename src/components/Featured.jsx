@@ -94,6 +94,7 @@ const premiumItems = [
   },
 ];
 
+const minSwipeDistance = 50;
 
   const next = () => setCurrent((prev) => (prev + 1) % items.length);
   const prev = () =>
@@ -251,7 +252,6 @@ const premiumItems = [
   </div>
 </section>
 
-
     {/******* Premium *******/}
 
    <section className="hidden lg:block mx-auto pb-[16px]">
@@ -304,7 +304,7 @@ const premiumItems = [
       style={{ transform: `translateX(-${index * 100}%)` }}
     >
       {premiumItems.map((item, index) => (
-        <div key={index} className="min-w-full px-[16px]">
+        <div key={index} className="min-w-full">
           <div
             className="rounded-[24px] p-[24px]"
             style={{ backgroundColor: item.bg }}
