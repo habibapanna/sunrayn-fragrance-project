@@ -53,7 +53,7 @@ const Blogs = () => {
       </div>
 
       {/* DESKTOP GRID */}
-      <div className="hidden lg:grid lg:grid-cols-3 gap-[32px]">
+      <div className="hidden lg:grid lg:grid-cols-2 2xl:grid-cols-3 gap-[32px]">
         {blogs.map((item, index) => (
           <div
             key={index}

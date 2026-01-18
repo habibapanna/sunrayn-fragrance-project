@@ -92,7 +92,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
             </div>
             </div>
 
-<div className="hidden lg:grid lg:grid-cols-4 gap-[16px] md:gap-[32px]">
+<div className="hidden lg:grid lg:grid-cols-2 2xl:grid-cols-4 gap-[16px] md:gap-[32px]">
         {posts.map((item, index) => (
           <div
             key={index}

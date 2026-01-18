@@ -58,7 +58,7 @@ const prev = () => setCurrent((prev - 1 + total) % total);
             </div>
 {/* testimonials card */}
             <section className="mx-auto hidden lg:block">
-                  <div className="lg:grid lg:grid-cols-3 gap-[32px]">
+                  <div className="lg:grid lg:grid-cols-2 2xl:grid-cols-3 gap-[32px]">
             
             <div className="bg-[#F6EAEF] rounded-[31px] p-[50px] h-[480px] md:h-[700px]">
   <div className="flex flex-col h-full">
