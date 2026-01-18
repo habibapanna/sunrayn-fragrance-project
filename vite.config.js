@@ -10,6 +10,9 @@ content: [
   ],
   theme: {
     extend: {
+       screens: {
+        xl2: '1200px', // ✅ NEW breakpoint
+      },
       fontFamily: {
         satoshi: ["Satoshi", "sans-serif"],
       },

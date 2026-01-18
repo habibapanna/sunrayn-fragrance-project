@@ -65,9 +65,15 @@ const Special = () => {
         </div>
 
         {/* ================= DESKTOP FLOATING TEXT ================= */}
-        <div className="hidden md:inline-flex absolute md:top-[850px] lg:top-[250px] md:left-[80px] lg:left-[530px] transform -translate-y-1/2 text-[#571313]">
+        <div className=" hidden md:inline-flex absolute transform -translate-y-1/2 text-[#571313]
+
+    lg:top-[200px] lg:left-[350px] xl2:top-[260px] xl2:left-[480px]
+    2xl:top-[250px] 2xl:left-[530px]">
           <h2
-            className="md:text-[60px] lg:text-[120px] font-bold leading-[110%]"
+            className=" font-bold leading-[110%]
+    lg:text-[60px]
+    xl2:text-[80px]
+    2xl:text-[120px]"
             style={{ letterSpacing: "-7.2px" }}
           >
             SUNRAYN
@@ -75,12 +81,18 @@ const Special = () => {
 
           <div className="flex items-center ml-5">
             <p
-              className="md:text-[60px] lg:text-[120px] font-light uppercase leading-[100%]"
+              className="font-light uppercase leading-[100%]
+    lg:text-[60px]
+    xl2:text-[80px]
+    2xl:text-[120px]"
               style={{ letterSpacing: "-7.2px" }}
             >
               SPECIALS
             </p>
-            <img src={Button} alt="" className="md:h-[65px] md:w-[65px] lg:h-[81px] lg:w-[81px] ml-[27px]" />
+            <img src={Button} alt="" className="md:h- ml-[27px]
+    lg:h-[60px] lg:w-[60px]
+    xl2:h-[70px] xl2:w-[70px]
+    2xl:h-[81px] 2xl:w-[81px]" />
           </div>
         </div>
       </div>
