@@ -152,7 +152,7 @@ const onItemTouchEnd = () => {
         <img
           src={item.product}
           alt={item.title}
-          className="absolute inset-0 object-cover lg:ml-[48px] h-[501px] mx-auto"
+          className="absolute inset-0 object-cover h-[501px] mx-auto"
         />
 
         <div className="absolute bottom-0 left-0 w-full z-20 p-[40px]">

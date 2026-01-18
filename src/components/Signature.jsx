@@ -36,14 +36,29 @@ const Signature = () => {
           />
 
           {/* CONTENT */}
-          <div className="relative z-10 p-[36px] md:p-[153px]">
-            <h2 className="text-2xl sm:text-3xl lg:text-[48px] text-[#571313] mb-4 sm:mb-6 leading-tight font-semibold">
+          <div className="relative z-10
+    p-[24px]
+    md:p-[64px]
+    lg:p-[96px]
+    xl2:p-[120px]
+    2xl:p-[153px]">
+            <h2 className="text-[#571313] font-semibold leading-tight
+    text-[24px]
+    sm:text-[30px]
+    lg:text-[42px]
+    xl2:text-[56px]
+    2xl:text-[48px]
+    mb-4 sm:mb-6">
               Signature-Inspired <br />
               Scents That Stay-On Skin <br />
               and in Memory
             </h2>
 
-            <p className="text-[14px] lg:text-[20px] text-[#1D0B01] leading-relaxed">
+            <p className="text-[#1D0B01] leading-relaxed
+    text-[14px]
+    lg:text-[16px]
+    xl2:text-[18px]
+    2xl:text-[20px]">
               SANRAYN means “
               <span className="font-bold">
                 LIGHT PURIFIED THROUGH THE SOUL.
