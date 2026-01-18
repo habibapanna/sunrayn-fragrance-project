@@ -76,15 +76,47 @@ const Footer = () => {
           </div>
 
           {/* DESKTOP BIG S */}
-          <div className="hidden md:hidden lg:block absolute right-[337px] top-1/2 -translate-y-1/2 pointer-events-none opacity-90">
-            <img src={BigS} alt="Decorative S" className="h-[642px] w-[348px]" />
-          </div>
+        <div
+  className="
+    hidden 2xl:block absolute
+    right-[260px]
+    xl2:right-[320px]
+    2xl:right-[420px]
+    top-1/2 -translate-y-1/2
+    pointer-events-none opacity-90
+  "
+>
+  <img
+    src={BigS}
+    className="
+      h-[520px]
+      lg:h-[642px]
+      xl2:h-[720px]
+      2xl:h-[620px]
+      w-auto
+    "
+  />
+</div>
+
 
         </div>
       </div>
 
       {/* ================= BOTTOM BAR ================= */}
-     <div className="max-w-7xl mx-auto p-[32px] lg:px-[120px] md:py-[32px] flex flex-col items-center gap-4 text-center md:flex-row md:justify-between md:text-left border-t border-[#C77F6033]">
+     <div
+  className="
+    mx-auto p-[32px]
+    lg:px-[120px]
+    xl2:px-[180px]
+    2xl:px-[260px]
+    md:py-[32px]
+    flex flex-col md:flex-row
+    items-center justify-between
+    gap-4
+    border-t border-[#C77F6033]
+  "
+>
+
 
   {/* 1. COPYRIGHT */}
   <p className="text-[16px] text-[#220B12B2] order-1 md:order-none mb-[16px] md:mb-0">
