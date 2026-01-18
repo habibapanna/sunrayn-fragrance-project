@@ -23,6 +23,26 @@ const items = [
 
 const BestSelling = () => {
 const [current, setCurrent] = useState(0);
+// ITEMS swipe
+const [itemTouchStart, setItemTouchStart] = useState(null);
+const [itemTouchEnd, setItemTouchEnd] = useState(null);
+
+const minSwipeDistance = 50;
+
+const onItemTouchStart = (e) => {
+  setItemTouchEnd(null);
+  setItemTouchStart(e.targetTouches[0].clientX);
+};
+
+const onItemTouchMove = (e) =>
+  setItemTouchEnd(e.targetTouches[0].clientX);
+
+const onItemTouchEnd = () => {
+  if (!itemTouchStart || !itemTouchEnd) return;
+  const distance = itemTouchStart - itemTouchEnd;
+  if (distance > minSwipeDistance) next();
+  if (distance < -minSwipeDistance) prev();
+};
 
   const next = () => setCurrent((prev) => (prev + 1) % items.length);
   const prev = () =>
@@ -55,7 +75,10 @@ const [current, setCurrent] = useState(0);
 
 {/* ================= MOBILE CAROUSEL ================= */}
 <section className="lg:hidden pb-[16px] md:pb-[32px]">
-  <div className="relative overflow-hidden">
+  <div className="relative overflow-hidden"
+    onTouchStart={onItemTouchStart}
+  onTouchMove={onItemTouchMove}
+  onTouchEnd={onItemTouchEnd}>
     <div
       className="flex transition-transform duration-500 ease-in-out"
       style={{ transform: `translateX(-${current * 100}%)` }}
