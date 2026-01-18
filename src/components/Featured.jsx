@@ -27,11 +27,81 @@ const items = [
 
 
 const Featured = () => {
+
 const [current, setCurrent] = useState(0);
+const [index, setIndex] = useState(0);
+// ITEMS swipe
+const [itemTouchStart, setItemTouchStart] = useState(null);
+const [itemTouchEnd, setItemTouchEnd] = useState(null);
+
+// PREMIUM swipe
+const [premTouchStart, setPremTouchStart] = useState(null);
+const [premTouchEnd, setPremTouchEnd] = useState(null);
+
+const onItemTouchStart = (e) => {
+  setItemTouchEnd(null);
+  setItemTouchStart(e.targetTouches[0].clientX);
+};
+
+const onItemTouchMove = (e) =>
+  setItemTouchEnd(e.targetTouches[0].clientX);
+
+const onItemTouchEnd = () => {
+  if (!itemTouchStart || !itemTouchEnd) return;
+  const distance = itemTouchStart - itemTouchEnd;
+  if (distance > minSwipeDistance) next();
+  if (distance < -minSwipeDistance) prev();
+};
+
+
+const onPremTouchStart = (e) => {
+  setPremTouchEnd(null);
+  setPremTouchStart(e.targetTouches[0].clientX);
+};
+
+const onPremTouchMove = (e) =>
+  setPremTouchEnd(e.targetTouches[0].clientX);
+
+const onPremTouchEnd = () => {
+  if (!premTouchStart || !premTouchEnd) return;
+  const distance = premTouchStart - premTouchEnd;
+  if (distance > minSwipeDistance) nextPrem();
+  if (distance < -minSwipeDistance) prevPrem();
+};
+
+
+const premiumItems = [
+  {
+    title: "Premium",
+    desc: "All our fragrances are inspired by an exclusive collection of popular and iconic aromas",
+    bg: "#F6EAEF",
+    color: "#DC7C2A",
+    icon: Crown,
+  },
+  {
+    title: "Certified",
+    desc: "Certified, skin-friendly formula, Cruelty-free, crafted with care to ensure the safety of our beloved users.",
+    bg: "#E6F3EF",
+    color: "#43B583",
+    icon: Checkmark,
+  },
+  {
+    title: "Made with Care",
+    desc: "Every fragrance is responsibly crafted and carefully inspected to ensure perfection in every bottle.",
+    bg: "#EEEBFF",
+    color: "#FF4242",
+    icon: Frame,
+  },
+];
+
 
   const next = () => setCurrent((prev) => (prev + 1) % items.length);
   const prev = () =>
     setCurrent((prev) => (prev - 1 + items.length) % items.length);
+
+  const nextPrem = () => setIndex((prevPrem) => (prevPrem + 1) % premiumItems.length);
+  const prevPrem = () =>
+    setIndex((prevPrem) => (prevPrem - 1 + premiumItems.length) % premiumItems.length);
 
     return (
         <div className='mx-auto px-[16px] pb-[16x] md:px-[32px] md:pb-[32px]'>
@@ -59,7 +129,10 @@ const [current, setCurrent] = useState(0);
 
 {/* ================= MOBILE CAROUSEL ================= */}
 <section className="lg:hidden pb-[16px] md:pb-[32px]">
-  <div className="relative overflow-hidden">
+  <div className="relative overflow-hidden"
+  onTouchStart={onItemTouchStart}
+  onTouchMove={onItemTouchMove}
+  onTouchEnd={onItemTouchEnd}>
     <div
       className="flex transition-transform duration-500 ease-in-out"
       style={{ transform: `translateX(-${current * 100}%)` }}
@@ -181,7 +254,7 @@ const [current, setCurrent] = useState(0);
 
     {/******* Premium *******/}
 
-   <section className="mx-auto pb-[16px]">
+   <section className="hidden lg:block mx-auto pb-[16px]">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-[16px] md:gap-[32px]">
 
 <div className='flex bg-[#F6EAEF] rounded-[24px] md:py-[32px] md:px-[48px] p-[24px] justify-center items-center md:h-[325px]'> 
@@ -217,6 +290,52 @@ const [current, setCurrent] = useState(0);
 
       </div>
     </section>
+
+    {/* ================= PREMIUM MOBILE CAROUSEL ================= */}
+<section className="lg:hidden pb-[16px]">
+  <div
+    className="relative overflow-hidden"
+ onTouchStart={onPremTouchStart}
+  onTouchMove={onPremTouchMove}
+  onTouchEnd={onPremTouchEnd}
+  >
+    <div
+      className="flex transition-transform duration-500"
+      style={{ transform: `translateX(-${index * 100}%)` }}
+    >
+      {premiumItems.map((item, index) => (
+        <div key={index} className="min-w-full px-[16px]">
+          <div
+            className="rounded-[24px] p-[24px]"
+            style={{ backgroundColor: item.bg }}
+          >
+            <img src={item.icon} className="h-[60px] w-[60px]" />
+            <h3
+              className="text-[25px] font-semibold mt-[20px] mb-2"
+              style={{ color: item.color }}
+            >
+              {item.title}
+            </h3>
+            <p className="text-[#0D0C09] text-[16px]">
+              {item.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* ARROWS */}
+    <div className="flex justify-center gap-5 mt-6">
+      <button onClick={prevPrem} className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center">
+        <GoChevronLeft className="text-[30px]" />
+      </button>
+      <button onClick={nextPrem} className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center">
+        <GoChevronRight className="text-[30px]" />
+      </button>
+    </div>
+  </div>
+</section>
+
 
         </div>
     );
