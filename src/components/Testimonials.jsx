@@ -11,6 +11,26 @@ import { FaStar } from "react-icons/fa";
 
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
+  // ITEMS swipe
+const [itemTouchStart, setItemTouchStart] = useState(null);
+const [itemTouchEnd, setItemTouchEnd] = useState(null);
+
+const minSwipeDistance = 50;
+
+const onItemTouchStart = (e) => {
+  setItemTouchEnd(null);
+  setItemTouchStart(e.targetTouches[0].clientX);
+};
+
+const onItemTouchMove = (e) =>
+  setItemTouchEnd(e.targetTouches[0].clientX);
+
+const onItemTouchEnd = () => {
+  if (!itemTouchStart || !itemTouchEnd) return;
+  const distance = itemTouchStart - itemTouchEnd;
+  if (distance > minSwipeDistance) next();
+  if (distance < -minSwipeDistance) prev();
+};
 
 const total = 3;
 
@@ -198,6 +218,9 @@ const prev = () => setCurrent((prev - 1 + total) % total);
 <section className="lg:hidden overflow-hidden relative">
   <div
     className="flex transition-transform duration-500 ease-in-out"
+      onTouchStart={onItemTouchStart}
+  onTouchMove={onItemTouchMove}
+  onTouchEnd={onItemTouchEnd}
     style={{ transform: `translateX(-${current * 100}%)` }}
   >
     {/* CARD 1 */}
