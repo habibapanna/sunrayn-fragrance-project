@@ -1,403 +1,175 @@
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
-import { LuCrown, LuHeartHandshake } from "react-icons/lu";
-import { PiSealCheck } from "react-icons/pi";
-import { RiDoubleQuotesL } from "react-icons/ri";
+import { useEffect, useState } from "react";
+import { FaStar } from "react-icons/fa";
+
 import Quote from "../../src/assets/Review text (1).png";
 import Reviewer from "../../src/assets/Reviewer photo (1).png";
 import material from "../../src/assets/material-symbols-light_verified-rounded.png";
-import { useState } from "react";
-import { FaStar } from "react-icons/fa";
 
+const testimonials = [
+  {
+    bg: "#F6EAEF",
+    title: "The Best Perfume",
+    text:
+      "From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values. This isn’t just a perfume it’s an experience that stays with you.",
+  },
+  {
+    bg: "#E6F3EF",
+    title: "Best of the Best",
+    text:
+      "From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values.",
+  },
+  {
+    bg: "#EEEBFF",
+    title: "New Obsession. Love It",
+    text:
+      "From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values.",
+  },
+];
 
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
-  // ITEMS swipe
-const [itemTouchStart, setItemTouchStart] = useState(null);
-const [itemTouchEnd, setItemTouchEnd] = useState(null);
+  const [cardsPerView, setCardsPerView] = useState(3);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
-const minSwipeDistance = 50;
+  // ✅ Responsive cards per view
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth >= 1280) setCardsPerView(3);
+      else if (window.innerWidth >= 768) setCardsPerView(2);
+      else setCardsPerView(1);
+    };
 
-const onItemTouchStart = (e) => {
-  setItemTouchEnd(null);
-  setItemTouchStart(e.targetTouches[0].clientX);
-};
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
-const onItemTouchMove = (e) =>
-  setItemTouchEnd(e.targetTouches[0].clientX);
+  const maxIndex = testimonials.length - cardsPerView;
 
-const onItemTouchEnd = () => {
-  if (!itemTouchStart || !itemTouchEnd) return;
-  const distance = itemTouchStart - itemTouchEnd;
-  if (distance > minSwipeDistance) next();
-  if (distance < -minSwipeDistance) prev();
-};
+  const next = () => setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  const prev = () => setCurrent((prev) => (prev <= 0 ? maxIndex : prev - 1));
 
-const total = 3;
+  // ✅ Touch/Swipe support
+  const minSwipeDistance = 50;
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    if (distance > minSwipeDistance) next();
+    if (distance < -minSwipeDistance) prev();
+  };
 
-const next = () => setCurrent((prev) => (prev + 1) % total);
-const prev = () => setCurrent((prev - 1 + total) % total);
-
-    return (
-        <div className="mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]">
-               <div className='flex justify-between mb-[16px] md:mb-[32px]'>
-            <div className='flex justify-center items-center text-center gap-[20px] md:gap-[32px]'>
-                <div className="text-left">
-                    <p className='text-[25px] md:text-[50px] font-semibold text-[#282828]'>What Fragrance Lovers Are Saying About Sanrayn</p>
-                </div>
-
-            </div>
-            <div className='hidden lg:flex gap-5 '>
-                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">
-                              <GoChevronLeft className='text-[35px] ' />
-                            </button>
-                <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">
-                              <GoChevronRight className='text-[35px]' />
-                            </button>
-            </div>
-
-            </div>
-{/* testimonials card */}
-            <section className="mx-auto hidden lg:block">
-                  <div className="lg:grid lg:grid-cols-2 2xl:grid-cols-3 gap-[32px]">
-            
-            <div className="bg-[#F6EAEF] rounded-[31px] p-[50px] h-[480px] md:h-[700px]">
-  <div className="flex flex-col h-full">
-
-    <span className="text-white text-8xl">
-      <img src={Quote} alt="" className="w-[145px] h-[74px]" />
-    </span>
-
-    <div className="flex items-center gap-2 text-2xl text-[#FF9100] mb-[12px] mt-[48px]">
-       <div className="flex gap-[6px] mb-[8px] md:mb-0 items-center">
-     <FaStar className="h-[24px] w-[24px]" />
-     <FaStar className="h-[24px] w-[24px]" />
-     <FaStar className="h-[24px] w-[24px]" />
-     <FaStar className="h-[24px] w-[24px]" />
-     <FaStar className="h-[24px] w-[24px]" />
-   </div>
-    </div>
-
-    <h3 className="text-[#571313] text-[35px] font-semibold mb-[48px]">
-      The Best Perfume
-    </h3>
-
-    <p className="text-[#0D0C09] text-[20px]">
-     From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values. This isn’t just a perfume it’s an experience that stays with you.
-    </p>
-
-    {/* VERIFIED CUSTOMER — STICKS TO BOTTOM */}
-    <div className="flex items-center gap-4 mt-auto pt-[50px]">
-      <img
-        src={Reviewer}
-        alt="Reviewer"
-        className="w-[55px] h-[55px] rounded-full object-cover"
-      />
-
-      <div>
-        <p className="text-[24px] font-semibold text-[#0D0C09]">
-          Rebeca Pipard
+  return (
+    <div className="mx-auto max-w-full px-[16px] pb-[16px] md:pr-[32px] md:pb-[32px]">
+      {/* HEADER */}
+      <div className="flex justify-between mb-[16px] md:mb-[32px]">
+        <p className="text-[25px] md:text-[50px] font-semibold text-[#282828] pl-[16px]">
+          What Fragrance Lovers Are Saying About Sanrayn
         </p>
 
-        <div className="flex items-center gap-2">
-          <img src={material} alt="Verified" className="w-[24px] h-[24px]" />
-          <span className="text-[16px] text-[#282828]">
-            Verified Customer
-          </span>
+        <div className="hidden lg:flex gap-5">
+          <button
+            onClick={prev}
+            className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer"
+          >
+            <GoChevronLeft className="text-[35px]" />
+          </button>
+          <button
+            onClick={next}
+            className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer"
+          >
+            <GoChevronRight className="text-[35px]" />
+          </button>
         </div>
       </div>
-    </div>
 
-  </div>
-</div>
+      {/* CAROUSEL */}
+      <section
+        className="overflow-hidden"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
+       <div
+  className="flex transition-transform duration-500 ease-in-out"
+  style={{
+    transform: `translateX(-${current * (100 / cardsPerView)}%)`,
+  }}
+>
+  {testimonials.map((item, i) => (
+    <div
+      key={i}
+      className="flex-shrink-0 px-[16px]"
+      style={{ flex: `0 0 ${100 / cardsPerView}%` }} // flex-basis fixes last card
+    >
+      {/* CARD */}
+      <div
+        className="relative rounded-[31px] overflow-hidden h-full md:h-[700px] p-[20px] lg:p-[50px]"
+        style={{ backgroundColor: item.bg }}
+      >
+                <div className="flex flex-col h-full">
+                  <img src={Quote} className="w-[145px] h-[74px]" />
 
-                        <div className="bg-[#E6F3EF] rounded-[31px] p-[50px] h-[480px] md:h-[700px]">
-  <div className="flex flex-col h-full">
-
-    <span className="text-white text-8xl">
-      <img src={Quote} alt="" className="w-[145px] h-[74px]" />
-    </span>
-
-    <div className="flex items-center gap-2 text-2xl text-[#FF9100] mb-[12px] mt-[48px]">
-       <div className="flex gap-[6px] mb-[8px] md:mb-0 items-center">
-   <FaStar className="h-[24px] w-[24px]" />
-     <FaStar className="h-[24px] w-[24px]" />
-     <FaStar className="h-[24px] w-[24px]" />
-     <FaStar className="h-[24px] w-[24px]" />
-     <FaStar className="h-[24px] w-[24px]" />
-   </div>
-    </div>
-
-    <h3 className="text-[#571313] text-[35px] font-semibold mb-[48px]">
-      Best of the Best
-    </h3>
-
-    <p className="text-[#0D0C09] text-[20px]">
-     From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values. 
-    </p>
-
-    {/* VERIFIED CUSTOMER — STICKS TO BOTTOM */}
-    <div className="flex items-center gap-4 mt-auto pt-[50px]">
-      <img
-        src={Reviewer}
-        alt="Reviewer"
-        className="w-[55px] h-[55px] rounded-full object-cover"
-      />
-
-      <div>
-        <p className="text-[24px] font-semibold text-[#0D0C09]">
-          Rebeca Pipard
-        </p>
-
-        <div className="flex items-center gap-2">
-          <img src={material} alt="Verified" className="w-[24px] h-[24px]" />
-          <span className="text-[16px] text-[#282828]">
-            Verified Customer
-          </span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-            <div className="bg-[#EEEBFF] rounded-[31px] p-[50px] h-[480px] md:h-[700px]">
-  <div className="flex flex-col h-full">
-
-    <span className="text-white text-8xl">
-      <img src={Quote} alt="" className="w-[145px] h-[74px]" />
-    </span>
-
-    <div className="flex items-center gap-2 text-2xl text-[#FF9100] mb-[12px] mt-[48px]">
-      <div className="flex gap-[6px] mb-[8px] md:mb-0 items-center">
-     <FaStar className="h-[24px] w-[24px]" />
-     <FaStar className="h-[24px] w-[24px]" />
-     <FaStar className="h-[24px] w-[24px]" />
-     <FaStar className="h-[24px] w-[24px]" />
-     <FaStar className="h-[24px] w-[24px]" />
-   </div>
-    </div>
-
-    <h3 className="text-[#571313] text-[35px] font-semibold mb-[48px]">
-      New Obsession. Love It
-    </h3>
-
-    <p className="text-[#0D0C09] text-[20px]">
-    From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values.
-    </p>
-
-    {/* VERIFIED CUSTOMER — STICKS TO BOTTOM */}
-    <div className="flex items-center gap-4 mt-auto pt-[50px]">
-      <img
-        src={Reviewer}
-        alt="Reviewer"
-        className="w-[55px] h-[55px] rounded-full object-cover"
-      />
-
-      <div>
-        <p className="text-[24px] font-semibold text-[#0D0C09]">
-          Rebeca Pipard
-        </p>
-
-        <div className="flex items-center gap-2">
-          <img src={material} alt="Verified" className="w-[24px] h-[24px]" />
-          <span className="text-[16px] text-[#282828]">
-            Verified Customer
-          </span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-            
+                  <div className="flex gap-[6px] mt-[48px] mb-[12px] text-[#FF9100]">
+                    {[...Array(5)].map((_, idx) => (
+                      <FaStar key={idx} className="h-[24px] w-[24px]" />
+                    ))}
                   </div>
-                </section>
 
+                  <h3 className="text-[#571313] text-[35px] font-semibold mb-[48px]">
+                    {item.title}
+                  </h3>
 
+                  <p className="text-[#0D0C09] text-[20px]">{item.text}</p>
 
-{/* MOBILE TESTIMONIALS CAROUSEL */}
-<section className="lg:hidden overflow-hidden relative">
-  <div
-    className="flex transition-transform duration-500 ease-in-out"
-      onTouchStart={onItemTouchStart}
-  onTouchMove={onItemTouchMove}
-  onTouchEnd={onItemTouchEnd}
-    style={{ transform: `translateX(-${current * 100}%)` }}
-  >
-    {/* CARD 1 */}
-    <div className="flex-shrink-0 w-full">
-      <div className="bg-[#F6EAEF] rounded-[24px] p-[24px] h-[480px] w-full">
-        <div className="flex flex-col h-full">
-          <span className="text-white">
-            <img src={Quote} alt="" className="w-[108px] h-[55px]" />
-          </span>
-
-          <div className="flex items-center gap-2 text-2xl text-[#FF9100] mb-[6px] mt-[20px]">
-            <div className="flex gap-[6px] items-center">
-              <FaStar className="h-[24px] w-[24px]" />
-              <FaStar className="h-[24px] w-[24px]" />
-              <FaStar className="h-[24px] w-[24px]" />
-              <FaStar className="h-[24px] w-[24px]" />
-              <FaStar className="h-[24px] w-[24px]" />
-            </div>
-          </div>
-
-          <h3 className="text-[#571313] text-[25px] font-semibold mb-[20px]">
-            The Best Perfume
-          </h3>
-
-          <p className="text-[#0D0C09] text-[14px]">
-            From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values. This isn’t just a perfume it’s an experience that stays with you.
-          </p>
-
-          {/* VERIFIED CUSTOMER */}
-          <div className="flex items-center gap-4 mt-auto pt-[10px]">
-            <img
-              src={Reviewer}
-              alt="Reviewer"
-              className="w-[55px] h-[55px] rounded-full object-cover"
-            />
-
-            <div>
-              <p className="text-[18px] font-semibold text-[#0D0C09]">
-                Rebeca Pipard
-              </p>
-
-              <div className="flex items-center gap-2">
-                <img src={material} alt="Verified" className="w-[24px] h-[24px]" />
-                <span className="text-[15px] text-[#282828]">
-                  Verified Customer
-                </span>
+                  {/* FOOTER */}
+                  <div className="flex items-center gap-4 mt-auto pt-[50px]">
+                    <img
+                      src={Reviewer}
+                      className="w-[55px] h-[55px] rounded-full"
+                    />
+                    <div>
+                      <p className="text-[24px] font-semibold text-[#0D0C09]">
+                        Rebeca Pipard
+                      </p>
+                      <div className="flex items-center gap-2">
+                        <img src={material} className="w-[24px] h-[24px]" />
+                        <span className="text-[16px] text-[#282828]">
+                          Verified Customer
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
-      </div>
+
+        {/* MOBILE ARROWS */}
+        <div className="flex lg:hidden gap-4 mt-6 justify-center">
+          <button
+            onClick={prev}
+            className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
+          >
+            <GoChevronLeft className="text-[28px]" />
+          </button>
+          <button
+            onClick={next}
+            className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
+          >
+            <GoChevronRight className="text-[28px]" />
+          </button>
+        </div>
+      </section>
     </div>
-
-    {/* CARD 2 */}
-    <div className="flex-shrink-0 w-full">
-      <div className="bg-[#E6F3EF] rounded-[24px] p-[24px] h-[480px] w-full">
-        <div className="flex flex-col h-full">
-          <span className="text-white">
-            <img src={Quote} alt="" className="w-[108px] h-[55px]" />
-          </span>
-
-          <div className="flex items-center gap-2 text-2xl text-[#FF9100] mb-[6px] mt-[20px]">
-            <div className="flex gap-[6px] items-center">
-              <FaStar className="h-[24px] w-[24px]" />
-              <FaStar className="h-[24px] w-[24px]" />
-              <FaStar className="h-[24px] w-[24px]" />
-              <FaStar className="h-[24px] w-[24px]" />
-              <FaStar className="h-[24px] w-[24px]" />
-            </div>
-          </div>
-
-          <h3 className="text-[#571313] text-[25px] font-semibold mb-[20px]">
-            Best of the Best
-          </h3>
-
-          <p className="text-[#0D0C09] text-[14px]">
-            From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values.
-          </p>
-
-          {/* VERIFIED CUSTOMER */}
-          <div className="flex items-center gap-4 mt-auto pt-[10px]">
-            <img
-              src={Reviewer}
-              alt="Reviewer"
-              className="w-[55px] h-[55px] rounded-full object-cover"
-            />
-
-            <div>
-              <p className="text-[18px] font-semibold text-[#0D0C09]">
-                Rebeca Pipard
-              </p>
-
-              <div className="flex items-center gap-2">
-                <img src={material} alt="Verified" className="w-[24px] h-[24px]" />
-                <span className="text-[15px] text-[#282828]">
-                  Verified Customer
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* CARD 3 */}
-    <div className="flex-shrink-0 w-full">
-      <div className="bg-[#EEEBFF] rounded-[24px] p-[24px] h-[480px] w-full">
-        <div className="flex flex-col h-full">
-          <span className="text-white">
-            <img src={Quote} alt="" className="w-[108px] h-[55px]" />
-          </span>
-
-          <div className="flex items-center gap-2 text-2xl text-[#FF9100] mb-[6px] mt-[20px]">
-            <div className="flex gap-[6px] items-center">
-              <FaStar className="h-[24px] w-[24px]" />
-              <FaStar className="h-[24px] w-[24px]" />
-              <FaStar className="h-[24px] w-[24px]" />
-              <FaStar className="h-[24px] w-[24px]" />
-              <FaStar className="h-[24px] w-[24px]" />
-            </div>
-          </div>
-
-          <h3 className="text-[#571313] text-[25px] font-semibold mb-[20px]">
-            New Obsession. Love It
-          </h3>
-
-          <p className="text-[#0D0C09] text-[14px]">
-            From the moment I tried Sanrayn, I knew it would become part of my daily routine. It’s long-lasting yet gentle, with a depth that truly elevates your presence. What I appreciate most is the brand’s respect for purity and values.
-          </p>
-
-          {/* VERIFIED CUSTOMER */}
-          <div className="flex items-center gap-4 mt-auto pt-[10px]">
-            <img
-              src={Reviewer}
-              alt="Reviewer"
-              className="w-[55px] h-[55px] rounded-full object-cover"
-            />
-
-            <div>
-              <p className="text-[18px] font-semibold text-[#0D0C09]">
-                Rebeca Pipard
-              </p>
-
-              <div className="flex items-center gap-2">
-                <img src={material} alt="Verified" className="w-[24px] h-[24px]" />
-                <span className="text-[15px] text-[#282828]">
-                  Verified Customer
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  {/* MOBILE NAV BUTTONS */}
-  <div className="flex gap-4 mt-6  justify-center">
-    <button
-      onClick={prev}
-      className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
-    >
-      <GoChevronLeft className="text-[28px]" />
-    </button>
-
-    <button
-      onClick={next}
-      className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
-    >
-      <GoChevronRight className="text-[28px]" />
-    </button>
-  </div>
-</section>
-
-
-        </div>
-    );
+  );
 };
 
 export default Testimonials;

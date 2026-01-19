@@ -4,7 +4,7 @@ import Button from "../assets/Button Container.png";
 const Special = () => {
   return (
     <section className="mx-auto pb-[16px] px-[16px] md:px-[32px] md:pb-[32px]">
-      <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] lg:p-20 relative">
+      <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] lg:p-20 relative cursor-pointer">
 
         {/* ================= CONTENT ================= */}
         <div className="flex flex-col lg:flex-row items-center gap-10">
@@ -65,15 +65,16 @@ const Special = () => {
         </div>
 
         {/* ================= DESKTOP FLOATING TEXT ================= */}
-        <div className=" hidden md:inline-flex absolute transform -translate-y-1/2 text-[#571313]
+        <div className=" hidden md:inline-flex absolute transform -translate-y-1/2 text-[#571313] md:top-[900px] md:left-[90px]
 
-    lg:top-[200px] lg:left-[350px] xl2:top-[260px] xl2:left-[480px]
-    2xl:top-[250px] 2xl:left-[530px]">
+    lg:top-[200px] lg:left-[350px] xl2:left-[480px]
+    2xl:top-[250px] 2xl:left-[450px]">
           <h2
             className=" font-bold leading-[110%]
+            md:text-[55px]
     lg:text-[60px]
     xl2:text-[80px]
-    2xl:text-[120px]"
+    2xl:text-[110px]"
             style={{ letterSpacing: "-7.2px" }}
           >
             SUNRAYN
@@ -82,17 +83,17 @@ const Special = () => {
           <div className="flex items-center ml-5">
             <p
               className="font-light uppercase leading-[100%]
+              md:text-[50px]
     lg:text-[60px]
     xl2:text-[80px]
-    2xl:text-[120px]"
+    2xl:text-[110px]"
               style={{ letterSpacing: "-7.2px" }}
             >
               SPECIALS
             </p>
-            <img src={Button} alt="" className="md:h- ml-[27px]
-    lg:h-[60px] lg:w-[60px]
-    xl2:h-[70px] xl2:w-[70px]
-    2xl:h-[81px] 2xl:w-[81px]" />
+            <img src={Button} alt="" className="md:h-[49px] md:w-[49px] ml-[20px]
+    lg:h-[65px] lg:w-[65px]
+" />
           </div>
         </div>
       </div>

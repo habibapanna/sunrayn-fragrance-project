@@ -2,19 +2,28 @@ import React, { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { LiaAngleDownSolid } from "react-icons/lia";
 import Logo from "../../assets/Logo.png";
+import Logo2 from "../../assets/Logo (2).png";
 import Solar from "../../assets/solar_tag-bold.png";
 import Icon from "../../assets/Icon (Stroke).png";
-import Frame from "../../assets/Frame (1).png";
+import Cart from "../../assets/Frame (1).png";
 import Users from "../../assets/User Icon.png";
 import User1 from "../../assets/User Icon (1).png";
 import BrandName from "../../assets/Brand Name.png";
+import BrandName2 from "../../assets/Brand Name (1).png";
 import { Link } from "react-router-dom";
 import { TbMenu } from "react-icons/tb";
 import { GoChevronRight } from "react-icons/go";
+import SearchOverlay from "../../components/SearchOverlay";
+import CartOverlay from "../../components/CartOverlay";
+
 
 const Navbar = () => {
 const [open, setOpen] = useState(false);
 const [scrolled, setScrolled] = useState(false);
+const [searchOpen, setSearchOpen] = useState(false);
+const [cartOpen, setCartOpen] = useState(false);
+
+
 
 useEffect(() => {
   const handleScroll = () => {
@@ -40,11 +49,24 @@ useEffect(() => {
 
         <div className="mx-auto px-[16px] md:px-[32px] md:py-[24px] flex items-center justify-between text-white">
 
-          {/* LOGO (unchanged) */}
-          <Link to="/" className="flex items-center gap-[7px] md:gap-[12px] cursor-pointer">
-            <img src={Logo} alt="Brand Logo" className="h-[35px] w-[35px] md:h-[58px] md:w-[58px]" />
-            <img src={BrandName} alt="Brand Name" className="h-[17px] w-[104px] md:h-[27px] md:w-[170px]" />
-          </Link>
+{/* LOGO */}
+<Link
+  to="/"
+  className="flex items-center gap-[7px] md:gap-[12px] cursor-pointer transition-all duration-300"
+>
+  <img
+    src={scrolled ? Logo2 : Logo}
+    alt="Brand Logo"
+    className="h-[35px] w-[35px] md:h-[58px] md:w-[58px] transition-all duration-300"
+  />
+
+  <img
+    src={scrolled ? BrandName2 : BrandName}
+    alt="Brand Name"
+    className="h-[17px] w-[104px] md:h-[27px] md:w-[170px] transition-all duration-300"
+  />
+</Link>
+
 
           {/* RIGHT SIDE */}
           <div className="flex items-center gap-[24px]">
@@ -69,27 +91,41 @@ useEffect(() => {
 
             {/* DESKTOP ICONS (UNCHANGED) */}
             <div className="hidden md:flex items-center gap-[16px]">
-              <button className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px]">
-                <img src={Icon} className="h-[20px] w-[20px]" />
-              </button>
+              <button
+  onClick={() => setSearchOpen(true)}
+  className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px] cursor-pointer"
+>
+  <img src={Icon} className="h-[20px] w-[20px]" title="Search" />
+</button>
 
-              <button className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px]">
-                <img src={Frame} className="h-[20px] w-[20px]" />
-              </button>
+              <button
+  onClick={() => setCartOpen(true)}
+  className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px] cursor-pointer" title="View Cart"
+>
+  <img src={Cart} className="h-[20px] w-[20px]" />
+</button>
 
-              <button className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px]">
+
+              <button className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px] cursor-pointer">
                 <img src={Users} className="h-[20px] w-[20px]" />
               </button>
             </div>
 
             {/* MOBILE ICONS */}
             <div className="flex md:hidden items-center gap-[16px] py-[24px]">
-              <button className="bg-white/90 p-3 rounded-full">
-                <img src={Icon} className="h-5 w-5" />
-              </button>
-              <button className="bg-white/90 p-3 rounded-full">
-                <img src={Frame} className="h-5 w-5" />
-              </button>
+              <button
+  onClick={() => setSearchOpen(true)}
+  className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px]"
+>
+  <img src={Icon} className="h-[20px] w-[20px]" />
+</button>
+              <button
+  onClick={() => setCartOpen(true)}
+  className="bg-white/90 p-3 rounded-full"
+>
+  <img src={Cart} className="h-5 w-5" />
+</button>
+
               <button
                 onClick={() => setOpen(true)}
                 className="bg-[#6B0F0F] w-[40px] h-[40px] p-[8px] rounded-full"
@@ -100,7 +136,22 @@ useEffect(() => {
 
           </div>
         </div>
+          <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} />
       </nav>
+{cartOpen && (
+  <>
+    {/* Blur background */}
+    <div
+      onClick={() => setCartOpen(false)}
+      className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50"
+    />
+
+    {/* Cart UI */}
+    <CartOverlay onClose={() => setCartOpen(false)} />
+  </>
+)}
+
+
 
       {/* OVERLAY */}
       {open && (
@@ -182,3 +233,5 @@ useEffect(() => {
 };
 
 export default Navbar;
+
+

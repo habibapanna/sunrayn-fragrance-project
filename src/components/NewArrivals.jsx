@@ -4,7 +4,7 @@ import Button from "../assets/Button Container.png";
 const NewArrivals = () => {
   return (
     <section className="mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]">
-      <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] md:p-20 relative">
+      <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] md:p-20 relative cursor-pointer">
 
         {/* ================= IMAGE GRID ================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[32px]">
@@ -57,11 +57,11 @@ const NewArrivals = () => {
         </div>
 
         {/* DESKTOP TEXT — UNCHANGED */}
-        <div className="hidden md:block absolute md:top-[400px] lg:top-[320px] xl2:top-[600px] 2xl:top-[700px] left-[150px] transform -translate-y-1/2 text-[#571313]">
+        <div className="hidden md:block absolute md:top-[400px] lg:top-[300px] 2xl:top-[600px] left-[150px] transform -translate-y-1/2 text-[#571313]">
           <div className="inline-flex items-center">
             <h2
               className=" font-bold
-        lg:text-[60px]  xl2:text-[80px] 2xl:text-[120px]"
+        md:text-[60px]  xl2:text-[80px] 2xl:text-[120px]"
               style={{
                 lineHeight: "110%",
                 letterSpacing: "-7.2px",
@@ -70,6 +70,7 @@ const NewArrivals = () => {
               NEW ARRIVALS
             </h2>
             <img src={Button} alt="" className="ml-[31px]
+            md:h-[49px] md:w-[49px]
         lg:h-[48px] lg:w-[48px]
         xl2:h-[56px] xl2:w-[56px]
         2xl:h-[64px] 2xl:w-[64px]" />
@@ -77,12 +78,11 @@ const NewArrivals = () => {
 
           <p
             className=" uppercase font-normal
-      lg:text-[40px]
+      md:text-[40px]
       xl2:text-[60px]     
       2xl:text-[100px]
       lg:left-[120px]
-      xl2:left-[260px]
-      2xl:left-[400px]
+      2xl:left-[200px]
       relative"
             style={{
               lineHeight: "110%",
