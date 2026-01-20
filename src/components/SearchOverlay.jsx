@@ -1,5 +1,5 @@
 import { X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Gender from '../assets/Heart (1).png'
 import IMPRESSIONS from '../assets/Frame (6).png'
 import ORIGINALS from '../assets/Group 53.png'
@@ -7,6 +7,7 @@ import SCENT from '../assets/Frame (4).png'
 import { FaStar } from "react-icons/fa";
 import Discount from '../assets/Discount Price.png';
 import Original from '../assets/Original Price.png';
+import { GoChevronRight } from "react-icons/go";
 
 const SearchOverlay = ({ open, onClose }) => {
   const [animateIcon, setAnimateIcon] = useState(false);
@@ -44,16 +45,16 @@ useEffect(() => {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[60] bg-black/40">
+    <div className="fixed inset-0 z-60 bg-black/40">
       {/* WHITE PANEL */}
-      <div className="absolute top-[106px] lg:right-[164px] h-[458px] lg:w-[1001px] bg-white rounded-[24px] p-[24px]">
+      <div className="absolute lg:top-[106px] top-[60px] right-[50px] lg:right-[164px] lg:w-[1001px] bg-white rounded-[24px] p-[24px]">
 
         {/* SEARCH BAR */}
         <div className="relative">
           <input
             type="text"
             placeholder='Search scents, brands, ingredients. e.g. “vanilla, coconut”"'
-            className="w-full rounded-[100px] bg-[#F6F7F2] py-[12px] pr-[5px] pl-[24px] outline-none h-[50px] text-[#3A3F42] text-[16px]"
+            className="w-full rounded-[100px] bg-[#F6F7F2] py-[12px] pr-[5px] pl-[24px] outline-none h-[50px] text-[#3A3F42] lg:text-[16px] md:text-sm"
           />
 
           {/* ANIMATED RED SEARCH BUTTON */}
@@ -79,7 +80,8 @@ useEffect(() => {
         </div>
 
         {/* CONTENT GRID */}
-        <div className="flex justify-between gap-[32px] mt-[24px] ">
+       <div className="flex flex-col lg:flex-row justify-between gap-[32px] mt-[24px]">
+
 
           <div className="space-y-[24px]">
 
@@ -110,15 +112,17 @@ useEffect(() => {
 </div>
 
  {/* RIGHT CARD */}
-          <div className="flex gap-[20px] col-span-2">
-            <div className="bg-[#F6F7F2] w-[280px] h-[328px] rounded-[24px] p-[24px] flex flex-col justify-between">
+          <div className="flex justify-center lg:justify-end">
+
+            <div className="bg-[#F6F7F2] w-full max-w-[280px] h-auto rounded-[24px] p-[24px] flex flex-col justify-between">
+
 
 <div className="">
       <h3 className="text-[25px] font-semibold text-[#1D0B01]">
     Scents Families
   </h3>
 
-  <p className="text-[18px] text-[#282828] leading-snug">
+  <p className="text-[18px] text-[#282828] leading-snu">
     Search using our 6 olfactive families
   </p>
 </div>
@@ -149,7 +153,7 @@ useEffect(() => {
         {/* CLOSE */}
         <button
           onClick={onClose}
-          className="absolute top-[10px] right-[10px] cursor-pointer"
+          className="absolute top-[8px] right-[8px] cursor-pointer"
         >
           <X />
         </button>
@@ -158,32 +162,93 @@ useEffect(() => {
   );
 };
 
-const IconFilter = ({ icon, title, items }) => (
-  <div className="flex gap-[14px]">
-    {/* ICON */}
-    <img src={icon} className="w-[20px] h-[20px] mt-[4px]" />
+const IconFilter = ({ icon, title, items, hideArrowOnDesktop = false }) => {
+  const scrollRef = useRef(null);
+  const [canScroll, setCanScroll] = useState(false);
 
-    {/* CONTENT */}
-    <div className="flex flex-col">
-      <p className="font-bold mb-[8px] text-[#571313] text-[15px]">
-        {title}
-      </p>
+  // detect overflow
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
 
-      <div className="flex flex-wrap gap-[8px]">
-        {items.map((i) => (
-          <span
-            key={i}
-            className="px-[14px] py-[6px] rounded-[100px]
-            text-[16px] font-medium text-[#1D0B01] cursor-pointer
-             bg-[#F6F7F2]"
+    const check = () => {
+      setCanScroll(el.scrollWidth > el.clientWidth);
+    };
+
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  const scrollRight = () => {
+    scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+  };
+
+  return (
+    <div className="flex gap-[14px]">
+      {/* ICON */}
+      <img src={icon} className="w-[20px] h-[20px] mt-[4px]" alt="" />
+
+      {/* CONTENT */}
+      <div className="flex-1 min-w-0">
+        <p className="font-bold mb-[10px] text-[#571313] text-[15px]">
+          {title}
+        </p>
+
+        {/* CAROUSEL */}
+        <div className="relative">
+          <div
+            ref={scrollRef}
+            className="
+              flex gap-[8px]
+              overflow-x-auto scrollbar-hide
+              max-w-[260px]
+              sm:max-w-[360px]
+              md:max-w-[480px]
+              lg:max-w-full
+              pr-[44px]
+            "
           >
-            {i}
-          </span>
-        ))}
+            {items.map((i) => (
+              <span
+                key={i}
+                className="
+                  shrink-0 px-[14px] py-[6px]
+                  rounded-full text-[16px]
+                  font-medium text-[#1D0B01]
+                  bg-[#F6F7F2]
+                  cursor-pointer whitespace-nowrap
+                "
+              >
+                {i}
+              </span>
+            ))}
+          </div>
+
+          {/* RIGHT ARROW */}
+          {canScroll && (
+            <button
+              onClick={scrollRight}
+              className={`
+                absolute right-0 top-1/2 -translate-y-1/2
+                w-[28px] h-[28px]
+                rounded-full bg-[#F6F7F2]
+                flex items-center justify-center shadow
+                cursor-pointer
+                ${hideArrowOnDesktop ? "lg:hidden" : ""}
+              `}
+            >
+              <GoChevronRight className="text-[18px]" />
+            </button>
+          )}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
+
+
+
 
 
 

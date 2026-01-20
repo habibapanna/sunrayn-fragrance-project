@@ -117,20 +117,20 @@ useEffect(() => {
   onClick={() => setSearchOpen(true)}
   className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px]"
 >
-  <img src={Icon} className="h-[20px] w-[20px]" />
+  <img src={Icon} className="h-[20px] w-[20px] cursor-pointer" />
 </button>
               <button
   onClick={() => setCartOpen(true)}
   className="bg-white/90 p-3 rounded-full"
 >
-  <img src={Cart} className="h-5 w-5" />
+  <img src={Cart} className="h-5 w-5 cursor-pointer" />
 </button>
 
               <button
                 onClick={() => setOpen(true)}
                 className="bg-[#6B0F0F] w-[40px] h-[40px] p-[8px] rounded-full"
               >
-                <TbMenu className="text-white h-[24px] w-[24px]" />
+                <TbMenu className="text-white h-[24px] w-[24px] cursor-pointer" />
               </button>
             </div>
 
@@ -176,7 +176,7 @@ useEffect(() => {
   </div>
 
   <button onClick={() => setOpen(false)}>
-    <X className="h-[40px] w-[40px] text-[#1D0B01]" />
+    <X className="h-[40px] w-[40px] text-[#1D0B01] cursor-pointer" />
   </button>
 
   {/* Figma-style header divider */}
@@ -222,7 +222,7 @@ useEffect(() => {
 </div>
 
 
-           <button className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[7px] rounded-[100px] font-semibold flex items-center text-center gap-[6px] h-[45px] mx-auto w-full justify-center">
+           <button className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[7px] rounded-[100px] font-semibold flex items-center text-center gap-[6px] h-[45px] mx-auto w-full cursor-pointer justify-center">
                 <img src={Solar} className="h-[17px] w-[17px]" />
                 Holiday Sale
               </button>

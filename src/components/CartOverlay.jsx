@@ -7,53 +7,6 @@ import Discount from '../assets/Discount Price.png';
 import Original from '../assets/Original Price.png';
 import { useEffect, useState } from "react";
 
-const CartOverlay = ({ onClose }) => {
-  const navigate = useNavigate();
-  const [current, setCurrent] = useState(0);
-const [touchStart, setTouchStart] = useState(null);
-const [touchEnd, setTouchEnd] = useState(null);
-const [itemsPerView, setItemsPerView] = useState(1);
-
-useEffect(() => {
-  const updateView = () => {
-    if (window.innerWidth < 640) {
-      setItemsPerView(1);
-    } else {
-      setItemsPerView(2);
-    }
-  };
-
-  updateView();
-  window.addEventListener("resize", updateView);
-  return () => window.removeEventListener("resize", updateView);
-}, []);
-
-const minSwipeDistance = 50;
-
-const onTouchStart = (e) => {
-  setTouchEnd(null);
-  setTouchStart(e.targetTouches[0].clientX);
-};
-
-const onTouchMove = (e) => {
-  setTouchEnd(e.targetTouches[0].clientX);
-};
-
-const onTouchEnd = () => {
-  if (!touchStart || !touchEnd) return;
-
-  const distance = touchStart - touchEnd;
-  const maxIndex = items.length - itemsPerView;
-
-  if (distance > minSwipeDistance) {
-    setCurrent((prev) => (prev >= maxIndex ? maxIndex : prev + 1));
-  }
-
-  if (distance < -minSwipeDistance) {
-    setCurrent((prev) => (prev <= 0 ? 0 : prev - 1));
-  }
-};
-
 
 const items = [
   {
@@ -77,6 +30,49 @@ const items = [
     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
   },
 ]
+
+const CartOverlay = ({ onClose }) => {
+  const navigate = useNavigate();
+ /* ================= CAROUSEL STATE ================= */
+  const [current, setCurrent] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(1);
+  const [startX, setStartX] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
+
+/* ================= RESPONSIVE ================= */
+  useEffect(() => {
+    const updateView = () => {
+      setItemsPerView(window.innerWidth < 640 ? 1 : 2);
+    };
+    updateView();
+    window.addEventListener("resize", updateView);
+    return () => window.removeEventListener("resize", updateView);
+  }, []);
+
+  const maxIndex = items.length - itemsPerView;
+  const minSwipeDistance = 50;
+
+  const clamp = (value) => Math.max(0, Math.min(value, maxIndex));
+
+  /* ================= DRAG HANDLERS ================= */
+  const handleStart = (x) => {
+    setStartX(x);
+    setIsDragging(true);
+  };
+
+  const handleEnd = (x) => {
+    if (!isDragging || startX === null) return;
+    const distance = startX - x;
+
+    if (distance > minSwipeDistance) {
+      setCurrent((prev) => clamp(prev + 1));
+    } else if (distance < -minSwipeDistance) {
+      setCurrent((prev) => clamp(prev - 1));
+    }
+
+    setIsDragging(false);
+    setStartX(null);
+  };
 
 
 
@@ -166,84 +162,87 @@ const items = [
             <div className="flex justify-between"><span>VAT (5%)</span><span>$1.75</span></div>
           </div>
         </div>
-{/* ================= RECOMMENDED CAROUSEL ================= */}
-<div className="p-[16px] m-[16px] rounded-[20px] bg-[#F6F7F2]">
-  <h3 className="font-medium text-[20px] text-[#050C29] mb-[16px]">
-    Recommended Products
-  </h3>
 
-  <div
-    className="relative overflow-hidden"
-    onTouchStart={onTouchStart}
-    onTouchMove={onTouchMove}
-    onTouchEnd={onTouchEnd}
-  >
-    <div
-      className="flex transition-transform duration-500 ease-in-out"
-      style={{
-        transform: `translateX(-${(current * 100) / itemsPerView}%)`,
-      }}
-    >
-      {items.map((item, i) => (
-        <div
-          key={i}
-          className="px-[8px]"
-          style={{ minWidth: `${100 / itemsPerView}%` }}
-        >
-          {/* ===== CARD (SAME DESIGN AS BEST SELLING) ===== */}
-          <div className="relative rounded-[24px] overflow-hidden bg-[#EDE8E0] h-[260px]">
-            <img
-              src={item.product}
-              alt={item.title}
-              className="absolute inset-0 mx-auto h-[148px] w-[148px] object-contain"
-            />
+        {/* ================= RECOMMENDED CAROUSEL ================= */}
+        <div className="p-[16px] m-[16px] rounded-[20px] bg-[#F6F7F2]">
+          <h3 className="font-medium text-[20px] mb-[16px]">
+            Recommended Products
+          </h3>
 
-            <div className="absolute bottom-0 left-0 w-full p-[12px]">
-              {/* Rating */}
-              <div className="flex items-center h-[12px] gap-1 text-[#FF9100] text-[12px]">
-                {[...Array(5)].map((_, i) => (
-                  <FaStar key={i} />
-                ))}
-                <span className="text-[#0D0C09] ml-1">1239</span>
+          <div
+            className="relative overflow-hidden cursor-grab active:cursor-grabbing"
+            onTouchStart={(e) => handleStart(e.touches[0].clientX)}
+            onTouchEnd={(e) => handleEnd(e.changedTouches[0].clientX)}
+            onMouseDown={(e) => handleStart(e.clientX)}
+            onMouseUp={(e) => handleEnd(e.clientX)}
+            onMouseLeave={() => setIsDragging(false)}
+          >
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{
+                transform: `translateX(-${(current * 100) / itemsPerView}%)`,
+              }}
+            >
+              {items.map((item, i) => (
+                <div
+                  key={i}
+                  className="px-2"
+                  style={{ minWidth: `${100 / itemsPerView}%` }}
+                >
+                  <div className="relative h-[260px] rounded-[24px] bg-[#EDE8E0] overflow-hidden">
+                    <img
+                      src={item.product}
+                      className=" mx-auto h-[148px] w-[148px] object-cover"
+                    />
+
+                    <div className="absolute bottom-0 left-0 w-full p-3">
+                      <div className="flex gap-1 text-[#FF9100] text-[12px]">
+                        {[...Array(5)].map((_, i) => (
+                          <FaStar key={i} />
+                        ))}
+                        <span className="text-black ml-1">1239</span>
+                      </div>
+
+                      <h3 className="text-[18px] font-semibold text-[#571313]">
+                        {item.title}
+                      </h3>
+
+                      <p className="text-[12px] mb-2">Sanrayn Original</p>
+
+                      <div className="flex justify-between items-center">
+                        <button className="bg-white px-4 py-1 rounded-full text-sm cursor-pointer">
+                          Add to Cart
+                        </button>
+                        <img src={Discount} className="h-[30px] w-[60px]" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* ===== CLICKABLE SCROLL INDICATOR ===== */}
+            <div className="mt-3">
+              <div
+                className="relative w-full h-[6px] bg-[#28282826] rounded-full cursor-pointer"
+                onClick={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const clickX = e.clientX - rect.left;
+                  const percent = clickX / rect.width;
+                  setCurrent(clamp(Math.round(percent * maxIndex)));
+                }}
+              >
+                <div
+                  className="absolute top-0 left-0 h-full bg-[#282828] transition-transform duration-500"
+                  style={{
+                    width: `${100 / (maxIndex + 1)}%`,
+                    transform: `translateX(${(current * 100) / (maxIndex + 1)}%)`,
+                  }}
+                />
               </div>
-
-              <h3 className="text-[18px] font-semibold text-[#571313]">
-                {item.title}
-              </h3>
-
-              <p className="text-[12px] text-[#0D0C09] mb-[8px]">
-                Sanrayn Original
-              </p>
-
-             <div className="flex items-center justify-between gap-3">
-                           <button className="bg-white px-[16px] py-[4px] rounded-full font-medium text-[14px]">
-                             Add to Cart
-                           </button>
-                          
-                             <img src={Discount} className="h-[30px] w-[60px]" />
-                         </div>
             </div>
           </div>
         </div>
-      ))}
-    </div>
-    {/* ===== CAROUSEL SCROLL INDICATOR ===== */}
-<div className="mt-[12px] flex justify-center">
-  <div className="relative w-full h-[4px] rounded-full bg-[#28282826] overflow-hidden">
-    <div
-      className="absolute top-0 left-0 h-full bg-[#282828] transition-transform duration-500 ease-in-out"
-      style={{
-        width: `${100 / (items.length - itemsPerView + 1)}%`,
-        transform: `translateX(${
-          current * (100 / (items.length - itemsPerView + 1))
-        }%)`,
-      }}
-    />
-  </div>
-</div>
-
-  </div>
-</div>
 
         {/* Footer */}
         <div className="bg-[#F6F7F2] rounded-[20px] m-[16px] p-[16px]">

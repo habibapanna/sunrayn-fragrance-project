@@ -20,7 +20,7 @@ const Checkout = () => {
        <Link to="/" className="cursor-pointer"><img src={SANRAYN} alt="" className="w-[174px]h-[28px]"/></Link>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 relative">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:px-10 relative">
 
         {/* LEFT */}
         <div className="lg:col-span-2 space-y-6">
@@ -260,7 +260,7 @@ const Checkout = () => {
         </div>
 
         {/* RIGHT */}
-       <div className="lg:col-span-1"> <div className="bg-white rounded-[20px] p-[24px] w-full
+       <div className="lg:col-span-2"> <div className="bg-white rounded-[20px] p-[24px] w-full
       lg:sticky lg:top-[32px]">
           <p className="font-medium text-[20px] mb-4">Product Details</p>
           <div className="flex justify-between items-center mb-[20px]">
