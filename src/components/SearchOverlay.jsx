@@ -10,6 +10,28 @@ import Original from '../assets/Original Price.png';
 
 const SearchOverlay = ({ open, onClose }) => {
   const [animateIcon, setAnimateIcon] = useState(false);
+  const [animateSearch, setAnimateSearch] = useState(false);
+const [showPlaceholder, setShowPlaceholder] = useState(false);
+
+useEffect(() => {
+  if (open) {
+    setAnimateSearch(false);
+    setShowPlaceholder(false);
+
+    requestAnimationFrame(() => {
+      setAnimateSearch(true);
+    });
+
+    // placeholder fades in slightly after movement starts
+    setTimeout(() => {
+      setShowPlaceholder(true);
+    }, 300);
+  } else {
+    setAnimateSearch(false);
+    setShowPlaceholder(false);
+  }
+}, [open]);
+
 
   useEffect(() => {
     if (open) {
@@ -24,7 +46,7 @@ const SearchOverlay = ({ open, onClose }) => {
   return (
     <div className="fixed inset-0 z-[60] bg-black/40">
       {/* WHITE PANEL */}
-      <div className="absolute top-[106px] right-[164px] md:h-[458px] md:w-[1001px] bg-white rounded-[24px] p-[24px]">
+      <div className="absolute top-[106px] right-[164px] h-[458px] lg:w-[1001px] bg-white rounded-[24px] p-[24px]">
 
         {/* SEARCH BAR */}
         <div className="relative">
