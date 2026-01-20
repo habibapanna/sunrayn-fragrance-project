@@ -1,5 +1,12 @@
 import { X } from "lucide-react";
 import { useEffect, useState } from "react";
+import Gender from '../assets/Heart (1).png'
+import IMPRESSIONS from '../assets/Frame (6).png'
+import ORIGINALS from '../assets/Group 53.png'
+import SCENT from '../assets/Frame (4).png'
+import { FaStar } from "react-icons/fa";
+import Discount from '../assets/Discount Price.png';
+import Original from '../assets/Original Price.png';
 
 const SearchOverlay = ({ open, onClose }) => {
   const [animateIcon, setAnimateIcon] = useState(false);
@@ -17,22 +24,24 @@ const SearchOverlay = ({ open, onClose }) => {
   return (
     <div className="fixed inset-0 z-[60] bg-black/40">
       {/* WHITE PANEL */}
-      <div className="absolute top-[120px] left-1/2 -translate-x-1/2 w-[90%] max-w-[1100px] bg-white rounded-[24px] p-[24px] shadow-xl">
+      <div className="absolute top-[106px] right-[164px] md:h-[458px] md:w-[1001px] bg-white rounded-[24px] p-[24px]">
 
         {/* SEARCH BAR */}
         <div className="relative">
           <input
             type="text"
-            placeholder='Search scents, brands, ingredients e.g. "vanilla, coconut"'
-            className="w-full h-[56px] rounded-[100px] border border-[#E5E5E5] pl-[24px] pr-[70px] text-[15px] outline-none"
+            placeholder='Search scents, brands, ingredients. e.g. “vanilla, coconut”"'
+            className="w-full rounded-[100px] border border-[#E5E5E5] py-[12px] pr-[5px] pl-[24px] outline-none h-[50px] text-[#3A3F42] text-[16px]"
           />
 
           {/* ANIMATED RED SEARCH BUTTON */}
-          <button
-            className={`absolute top-1/2 -translate-y-1/2 h-[44px] w-[44px] rounded-full bg-[#FD4929] flex items-center justify-center transition-all duration-700 ease-in-out
-              ${animateIcon ? "right-[6px]" : "left-[80px]"}
-            `}
-          >
+         <button
+  className={`absolute top-1/2 -translate-y-1/2 h-[40px] w-[40px] rounded-[100px] bg-[#FD4929]
+  flex items-center justify-center
+  transition-[left,right] duration-[900ms] ease-in-out
+  ${animateIcon ? "right-[6px]" : "left-[24px]"}`}
+>
+
             <svg
               width="20"
               height="20"
@@ -48,35 +57,77 @@ const SearchOverlay = ({ open, onClose }) => {
         </div>
 
         {/* CONTENT GRID */}
-        <div className="grid grid-cols-4 gap-[24px] mt-[24px] text-[#282828] text-[14px]">
+        <div className="flex justify-between gap-[32px] mt-[24px] ">
 
-          {/* LEFT FILTERS */}
-          <div className="col-span-3 space-y-[15px] font-bold text-[#571313]">
-            <Filter title="Gender" items={["Women", "Men", "Unisex"]} />
-            <Filter title="Impressions of Inspired-by Brands" items={["Tom Ford", "LeLabo", "YSL", "Chanel", "Jo Malone", "Valentino", "Dio"]} />
-            <Filter title="Originals by Collection" items={["Lauren Collection", "Aliyah Collection", "mgk Collection", "Icons Collection"]} />
-            <Filter title="Scent Notes" items={["Amber", "Powdery", "Fruity", "Vanilla", "Citrus", "Apple", "Spicy"]} />
-          </div>
+          <div className="space-y-[24px]">
 
-          {/* RIGHT CARD */}
-          <div className="bg-[#FAFAFA] rounded-[16px] p-[16px] text-center">
-            <img
-              src="https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png"
-              className="mx-auto h-[160px]"
-              alt=""
-            />
-            <p className="mt-3 font-semibold">Ambery Saffron</p>
-            <p className="text-[#FD4929] font-bold mt-1">$29.40</p>
-            <button className="mt-3 w-full bg-[#FD4929] text-white rounded-full py-[10px]">
-              Add to cart
-            </button>
+  <IconFilter
+    icon={Gender}
+    title="Gender"
+    items={["Women", "Men", "Unisex"]}
+  />
+
+  <IconFilter
+    icon={IMPRESSIONS}
+    title="Impressions of Inspired-by Brands"
+    items={["Tom Ford", "LeLabo", "YSL", "Chanel", "Jo Malone", "Valentino", "Dio"]}
+  />
+
+  <IconFilter
+    icon={ORIGINALS}
+    title="Originals by Collection"
+    items={["Lauren Collection", "Aliyah Collection", "mgk Collection", "Icons Collection"]}
+  />
+
+  <IconFilter
+    icon={SCENT}
+    title="Scent Notes"
+    items={["Amber", "Powdery", "Fruity", "Vanilla", "Citrus", "Apple", "Spicy"]}
+  />
+
+</div>
+
+ {/* RIGHT CARD */}
+          <div className="flex gap-[20px] col-span-2">
+            <div className="bg-[#F6F7F2] w-[280px] h-[328px] rounded-[24px] p-[24px] flex flex-col justify-between">
+
+<div className="">
+      <h3 className="text-[25px] font-semibold text-[#1D0B01]">
+    Scents Families
+  </h3>
+
+  <p className="text-[18px] text-[#282828] leading-snug">
+    Search using our 6 olfactive families
+  </p>
+</div>
+
+  <div className="grid grid-cols-2 gap-[8px]">
+    {[
+      { name: "Flowery", bg: "#FFE6F0" },
+      {  name: "Warm", bg: "#FFE5C3"  },
+      { name: "Gourmand", bg: "#FFD3C8" },
+      { name: "Fresh", bg: "#BEFFBA" },
+      { name: "Earthy", bg: "#BFDDFF" },
+      { name: "Herbal", bg: "#BCBAFF" },
+    ].map((item) => (
+      <button
+        key={item.name}
+        style={{ backgroundColor: item.bg }}
+        className="h-[35px] rounded-full text-[16px] text-[#282828] py-[8px]px-[16px] font-medium"
+      >
+        {item.name}
+      </button>
+    ))}
+  </div>
+
+</div>
           </div>
         </div>
 
         {/* CLOSE */}
         <button
           onClick={onClose}
-          className="absolute top-[16px] right-[16px]"
+          className="absolute top-[10px] right-[10px]"
         >
           <X />
         </button>
@@ -85,20 +136,34 @@ const SearchOverlay = ({ open, onClose }) => {
   );
 };
 
-const Filter = ({ title, items }) => (
-  <div>
-    <p className="font-semibold mb-[8px]">{title}</p>
-    <div className="flex flex-wrap gap-[8px]">
-      {items.map((i) => (
-        <span
-          key={i}
-          className="px-[14px] py-[6px] rounded-full border text-[13px] cursor-pointer hover:bg-[#FD4929] hover:text-white transition"
-        >
-          {i}
-        </span>
-      ))}
+const IconFilter = ({ icon, title, items }) => (
+  <div className="flex gap-[14px]">
+    {/* ICON */}
+    <img src={icon} className="w-[20px] h-[20px] mt-[4px]" />
+
+    {/* CONTENT */}
+    <div className="flex flex-col">
+      <p className="font-bold mb-[8px] text-[#571313] text-[15px]">
+        {title}
+      </p>
+
+      <div className="flex flex-wrap gap-[8px]">
+        {items.map((i) => (
+          <span
+            key={i}
+            className="px-[14px] py-[6px] rounded-[100px]
+            text-[16px] font-medium text-[#1D0B01] cursor-pointer
+             bg-[#F6F7F2]"
+          >
+            {i}
+          </span>
+        ))}
+      </div>
     </div>
   </div>
 );
+
+
+
 
 export default SearchOverlay;
