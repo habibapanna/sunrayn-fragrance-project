@@ -31,7 +31,7 @@ const SearchOverlay = ({ open, onClose }) => {
           <input
             type="text"
             placeholder='Search scents, brands, ingredients. e.g. “vanilla, coconut”"'
-            className="w-full rounded-[100px] border border-[#E5E5E5] py-[12px] pr-[5px] pl-[24px] outline-none h-[50px] text-[#3A3F42] text-[16px]"
+            className="w-full rounded-[100px] bg-[#F6F7F2] py-[12px] pr-[5px] pl-[24px] outline-none h-[50px] text-[#3A3F42] text-[16px]"
           />
 
           {/* ANIMATED RED SEARCH BUTTON */}
