@@ -37,7 +37,7 @@ const SearchOverlay = ({ open, onClose }) => {
           {/* ANIMATED RED SEARCH BUTTON */}
          <button
   className={`absolute top-1/2 -translate-y-1/2 h-[40px] w-[40px] rounded-[100px] bg-[#FD4929]
-  flex items-center justify-center
+  flex items-center justify-center cursor-pointer
   transition-[left,right] duration-[900ms] ease-in-out
   ${animateIcon ? "right-[6px]" : "left-[24px]"}`}
 >
@@ -113,7 +113,7 @@ const SearchOverlay = ({ open, onClose }) => {
       <button
         key={item.name}
         style={{ backgroundColor: item.bg }}
-        className="h-[35px] rounded-full text-[16px] text-[#282828] py-[8px]px-[16px] font-medium"
+        className="h-[35px] rounded-full text-[16px] text-[#282828] py-[8px]px-[16px] cursor-pointer font-medium"
       >
         {item.name}
       </button>
@@ -127,7 +127,7 @@ const SearchOverlay = ({ open, onClose }) => {
         {/* CLOSE */}
         <button
           onClick={onClose}
-          className="absolute top-[10px] right-[10px]"
+          className="absolute top-[10px] right-[10px] cursor-pointer"
         >
           <X />
         </button>
