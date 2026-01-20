@@ -256,7 +256,7 @@ const items = [
     onClose();
     navigate("/checkout");
   }}
-  className="w-full bg-[#DBAB35] text-[#1D0B01] py-[7px] px-[12px] rounded-full font-medium text-[16px]"
+  className="w-full bg-[#DBAB35] text-[#1D0B01] py-[7px] px-[12px] rounded-full font-medium text-[16px] cursor-pointer"
 >
   Process to Checkout
 </button>

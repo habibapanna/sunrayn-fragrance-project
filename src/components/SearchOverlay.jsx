@@ -46,7 +46,7 @@ useEffect(() => {
   return (
     <div className="fixed inset-0 z-[60] bg-black/40">
       {/* WHITE PANEL */}
-      <div className="absolute top-[106px] right-[164px] h-[458px] lg:w-[1001px] bg-white rounded-[24px] p-[24px]">
+      <div className="absolute top-[106px] lg:right-[164px] h-[458px] lg:w-[1001px] bg-white rounded-[24px] p-[24px]">
 
         {/* SEARCH BAR */}
         <div className="relative">
