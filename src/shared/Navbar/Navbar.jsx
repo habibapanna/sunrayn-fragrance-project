@@ -115,15 +115,15 @@ useEffect(() => {
             <div className="flex md:hidden items-center gap-[16px] py-[24px]">
               <button
   onClick={() => setSearchOpen(true)}
-  className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px]"
+  className="bg-white/90 p-[10px] rounded-full"
 >
   <img src={Icon} className="h-[20px] w-[20px] cursor-pointer" />
 </button>
               <button
   onClick={() => setCartOpen(true)}
-  className="bg-white/90 p-3 rounded-full"
+  className="bg-white/90 p-[10px] rounded-full"
 >
-  <img src={Cart} className="h-5 w-5 cursor-pointer" />
+  <img src={Cart} className="h-[20px] w-[20px] cursor-pointer" />
 </button>
 
               <button

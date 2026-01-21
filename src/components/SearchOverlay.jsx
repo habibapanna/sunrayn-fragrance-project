@@ -47,21 +47,21 @@ useEffect(() => {
   return (
     <div className="fixed inset-0 z-60 bg-black/40">
       {/* WHITE PANEL */}
-      <div className="absolute lg:top-[106px] top-[60px] right-0 2xl:right-[164px] 2xl:w-[1001px] bg-white rounded-[24px] p-[24px]">
+      <div className="absolute lg:top-[106px] top-[20px] right-0 2xl:right-[164px] 2xl:w-[1001px] bg-white rounded-[24px] p-[24px]">
 
         {/* SEARCH BAR */}
         <div className="relative">
           <input
             type="text"
             placeholder='Search scents, brands, ingredients. e.g. “vanilla, coconut”"'
-            className="w-full rounded-[100px] bg-[#F6F7F2] py-[12px] pr-[5px] pl-[24px] outline-none h-[50px] text-[#3A3F42] lg:text-[16px] md:text-sm"
+            className="w-full rounded-[100px] bg-[#F6F7F2] py-[12px] pr-[5px] pl-[24px] outline-none h-[50px] text-[#3A3F42] lg:text-[16px] text-sm"
           />
 
           {/* ANIMATED RED SEARCH BUTTON */}
          <button
   className={`absolute top-1/2 -translate-y-1/2 h-[40px] w-[40px] rounded-[100px] bg-[#FD4929]
   flex items-center justify-center cursor-pointer
-  transition-[left,right] duration-[900ms] ease-in-out
+  transition-[left,right] duration-[9000ms] ease-in-out
   ${animateIcon ? "right-[6px]" : "left-[24px]"}`}
 >
 
