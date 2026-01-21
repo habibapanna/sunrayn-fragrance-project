@@ -1,99 +1,113 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../assets/Button Container.png";
 
 const Special = () => {
+  const [textStyle, setTextStyle] = useState({
+    left: "90px",
+    top: "650px",
+    fontSize: "55px",
+  });
+
+useEffect(() => {
+  const update = () => {
+    const w = window.innerWidth;
+
+    if (w >= 1535 && w <= 1750) {
+      setTextStyle({ left: "320px", top: "180px", fontSize: "90px" });
+    } 
+    else if (w >= 1756) {
+      setTextStyle({ left: "510px", top: "200px", fontSize: "120px" });
+    }
+    else if (w >= 1024) {
+      setTextStyle({ left: "360px", top: "60px", fontSize: "50px" });
+    }
+    else if (w >= 768) {
+      setTextStyle({ left: "90px", top: "650px", fontSize: "55px" });
+    }
+    else {
+      // ✅ MOBILE FIX
+      setTextStyle({ left: "14px", top: "450px", fontSize: "32px" });
+    }
+  };
+
+  update();
+  window.addEventListener("resize", update);
+  return () => window.removeEventListener("resize", update);
+}, []);
+
+
   return (
     <section className="mx-auto pb-[16px] px-[16px] md:px-[32px] md:pb-[32px]">
-      <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] lg:p-20 relative cursor-pointer">
+      <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] relative cursor-pointer overflow-hidden">
 
         {/* ================= CONTENT ================= */}
-        <div className="flex flex-col lg:flex-row items-center gap-10">
+        <div className="flex flex-col lg:flex-row items-center gap-[20px]">
 
           {/* IMAGE */}
-          <div className="relative w-full flex justify-center">
+          <div className="relative w-full flex justify-center lg:pl-[50px] lg:py-[50px] 2xl:py-[100px]">
             <img
               src="https://i.postimg.cc/8kWKHMLp/Product-Image.png"
               alt="Special Perfume"
-              className="h-full w-full object-cover rounded-[32px] md:rounded-[48px]"
+              className="2xl:h-[700px] w-full 2xl:w-[651px] object-cover rounded-[32px] md:rounded-[48px]"
             />
-             <div className="lg:hidden absolute inset-0 bg-gradient-to-b from-transparent to-[#EDE8E0]" />
+            <div className="lg:hidden absolute inset-0 bg-gradient-to-b from-transparent to-[#EDE8E0]" />
           </div>
-          
-          {/* DESCRIPTION (DESKTOP) */}
-          <div className="hidden md:block lg:mt-40 md:p-20 lg:p-0">
-            <p className="text-[25px]">
+
+          {/* DESCRIPTION */}
+          <div className="p-5 lg:mt-[100px] 2xl:mt-[200px]">
+            <p className="text-[18px] lg:text-[25px] lg:w-xl 2xl:w-3/4">
               An exclusive creation from Sanrayn, this special perfume delivers a
               luxurious, long-lasting aroma crafted with integrity. Elegant,
               smooth, and versatile, it’s designed to elevate your presence and
               leave a lasting impression.
             </p>
 
-            <button className="bg-[#DBAB35] text-black px-6 py-3 rounded-full text-[20px] font-bold w-[210px] h-[55px] mt-12">
+            <button className="bg-[#DBAB35] text-black px-5 py-2 md:px-6 md:py-3 rounded-full text-[20px] font-bold md:w-[210px] md:h-[55px] hover:bg-white cursor-pointer my-5 2xl:my-12">
               Shop Now
             </button>
           </div>
         </div>
 
-        {/* ================= MOBILE TEXT ================= */}
-        <div className="md:hidden pb-[24px] px-[24px] text-[#571313]">
-          
-
-          <div className="flex items-center gap-2">
-            <h2
-            className="text-[25px] font-bold leading-tight"
-          >
-            SUNRAYN 
-          </h2>
-            <p
-              className=" font-light uppercase leading-tight"
-            >
-              <span className="uppercase font-medium text-[25px]">Specials</span>
-            </p>
-            <img src={Button} alt="" className="h-[30px] w-[30px]" />
-          </div>
-
-          <p className="text-[14px] mt-4 text-black">
-            An exclusive creation from Sanrayn, this special perfume delivers a
-            luxurious, long-lasting aroma crafted with integrity. Elegant,
-            smooth, and versatile, it’s designed to elevate your presence and
-            leave a lasting impression.
-          </p>
-
-          <button className="bg-[#DBAB35] text-black px-6 py-3 rounded-full text-[16px] font-bold mt-6">
-            Shop Now
-          </button>
-        </div>
-
-        {/* ================= DESKTOP FLOATING TEXT ================= */}
-        <div className=" hidden md:inline-flex absolute transform -translate-y-1/2 text-[#571313] md:top-[900px] md:left-[90px]
-
-    lg:top-[200px] lg:left-[350px] xl2:left-[480px]
-    2xl:top-[250px] 2xl:left-[450px]">
+        {/* ================= FLOATING DESKTOP TEXT ================= */}
+        <div
+          className="flex absolute text-[#571313] items-center"
+          style={{
+            left: textStyle.left,
+            top: textStyle.top,
+            maxWidth: "90vw",   // 🔒 prevents overflow
+            whiteSpace: "nowrap",
+          }}
+        >
           <h2
-            className=" font-bold leading-[110%]
-            md:text-[55px]
-    lg:text-[60px]
-    xl2:text-[80px]
-    2xl:text-[110px]"
-            style={{ letterSpacing: "-7.2px" }}
+            className="font-bold uppercase leading-[110%]"
+            style={{
+              fontSize: textStyle.fontSize,
+              letterSpacing: "-0.06em",
+            }}
           >
-            SUNRAYN
+            Sanrayn
           </h2>
 
-          <div className="flex items-center ml-5">
+          <div className="flex items-center ml-2">
             <p
-              className="font-light uppercase leading-[100%]
-              md:text-[50px]
-    lg:text-[60px]
-    xl2:text-[80px]
-    2xl:text-[110px]"
-              style={{ letterSpacing: "-7.2px" }}
+              className="font-light uppercase leading-[100%]"
+              style={{
+                fontSize: textStyle.fontSize,
+                letterSpacing: "-0.06em",
+              }}
             >
-              SPECIALS
+              Specials
             </p>
-            <img src={Button} alt="" className="md:h-[49px] md:w-[49px] ml-[20px]
-    lg:h-[65px] lg:w-[65px]
-" />
+
+            <img
+              src={Button}
+              alt=""
+              className="ml-2"
+              style={{
+                width: `calc(${textStyle.fontSize} / 1.8)`,
+                height: `calc(${textStyle.fontSize} / 1.8)`,
+              }}
+            />
           </div>
         </div>
       </div>

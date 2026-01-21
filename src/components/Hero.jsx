@@ -19,15 +19,15 @@ const Hero = () => {
   from-[#210E07]/95
   via-[#210E07]/80
   to-transparent
-  lg:hidden
+  2xl:hidden
 "></div>
 
  
       {/* Content */}
-      <div className="relative z-10 mx-auto px-[16px] lg:ml-[192px] mt-[400px] md:ml-[80px] lg:mt-[295px] md:mb-[276px] grid grid-cols-1 lg:grid-cols-2 items-center">
+      <div className="relative z-10 mx-auto px-[16px] mt-[400px] md:ml-[80px] lg:mt-[295px] 2xl:mb-[276px] grid grid-cols-1 lg:grid-cols-2 items-center">
         
         {/* LEFT CONTENT */}
-        <div className="text-white">
+        <div className="text-white col-span-2 2xl:col-span-1">
           {/* Rating */}
 <div className="flex flex-col md:flex-row md:items-center md:gap-[8px] text-[#DBAB35]">
   {/* Stars */}

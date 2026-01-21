@@ -50,7 +50,7 @@ const Blogs = () => {
             <div className='flex justify-between mb-[16px] md:mb-[32px]'>
             <div className='flex justify-center items-center text-center gap-[20px] md:gap-[32px]'>
                 <div>
-                    <p className='text-[25px] md:text-[50px] font-semibold text-[#282828]'>Featured Perfumes</p>
+                    <p className='text-[25px] md:text-[50px] font-semibold text-[#282828]'>The Sanrayn Blogs</p>
                 </div>
                 <div>
                     <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[14px] md:text-[20px] cursor-pointer w-[117px] h-[40px] md:w-[139px] md:h-[55px]">View All</button>

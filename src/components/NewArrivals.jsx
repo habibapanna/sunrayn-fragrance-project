@@ -77,7 +77,7 @@ const NewArrivals = () => {
           </div>
 
           <p
-            className=" uppercase font-normal
+            className=" uppercase font-light 
       md:text-[40px]
       xl2:text-[60px]     
       2xl:text-[100px]

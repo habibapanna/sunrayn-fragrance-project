@@ -33,7 +33,7 @@ const Testimonials = () => {
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
-  // ✅ Responsive cards per view
+  /* RESPONSIVE CARD COUNT */
   useEffect(() => {
     const update = () => {
       if (window.innerWidth >= 1280) setCardsPerView(3);
@@ -48,10 +48,12 @@ const Testimonials = () => {
 
   const maxIndex = testimonials.length - cardsPerView;
 
-  const next = () => setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1));
-  const prev = () => setCurrent((prev) => (prev <= 0 ? maxIndex : prev - 1));
+  const next = () =>
+    setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  const prev = () =>
+    setCurrent((prev) => (prev <= 0 ? maxIndex : prev - 1));
 
-  // ✅ Touch/Swipe support
+  /* TOUCH SUPPORT */
   const minSwipeDistance = 50;
   const onTouchStart = (e) => {
     setTouchEnd(null);
@@ -66,23 +68,23 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="mx-auto max-w-full px-[16px] pb-[16px] md:pr-[32px] md:pb-[32px]">
+    <div className="mx-auto max-w-full px-[16px] pb-[16px] md:pb-[32px]">
       {/* HEADER */}
-      <div className="flex justify-between mb-[16px] md:mb-[32px]">
-        <p className="text-[25px] md:text-[50px] font-semibold text-[#282828] pl-[16px]">
+      <div className="flex justify-between items-start mb-[16px] md:mb-[32px]">
+        <p className="text-[25px] md:text-[40px] lg:text-[50px] font-semibold text-[#282828]">
           What Fragrance Lovers Are Saying About Sanrayn
         </p>
 
         <div className="hidden lg:flex gap-5">
           <button
             onClick={prev}
-            className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer"
+            className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
           >
             <GoChevronLeft className="text-[35px]" />
           </button>
           <button
             onClick={next}
-            className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer"
+            className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
           >
             <GoChevronRight className="text-[35px]" />
           </button>
@@ -96,51 +98,67 @@ const Testimonials = () => {
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-       <div
-  className="flex transition-transform duration-500 ease-in-out"
-  style={{
-    transform: `translateX(-${current * (100 / cardsPerView)}%)`,
-  }}
->
-  {testimonials.map((item, i) => (
-    <div
-      key={i}
-      className="flex-shrink-0 px-[16px]"
-      style={{ flex: `0 0 ${100 / cardsPerView}%` }} // flex-basis fixes last card
-    >
-      {/* CARD */}
-      <div
-        className="relative rounded-[31px] overflow-hidden h-full md:h-[700px] p-[20px] lg:p-[50px]"
-        style={{ backgroundColor: item.bg }}
-      >
-                <div className="flex flex-col h-full">
-                  <img src={Quote} className="w-[145px] h-[74px]" />
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{
+            transform: `translateX(-${current * (100 / cardsPerView)}%)`,
+          }}
+        >
+          {testimonials.map((item, i) => (
+            <div
+              key={i}
+              className="flex-shrink-0"
+              style={{ width: `${100 / cardsPerView}%` }}
+            >
+              <div className="md:px-[16px] h-full">
+                {/* CARD */}
+                <div
+                  className="relative rounded-[31px] h-full
+                             p-[20px] md:p-[32px] lg:p-[50px]
+                             flex flex-col"
+                  style={{ backgroundColor: item.bg }}
+                >
+                  <img
+                    src={Quote}
+                    className="w-[100px] md:w-[145px]"
+                    alt=""
+                  />
 
-                  <div className="flex gap-[6px] mt-[48px] mb-[12px] text-[#FF9100]">
+                  {/* STARS */}
+                  <div className="flex gap-[6px] mt-[20px] md:mt-[32px] lg:mt-[48px] mb-[12px] text-[#FF9100]">
                     {[...Array(5)].map((_, idx) => (
-                      <FaStar key={idx} className="h-[24px] w-[24px]" />
+                      <FaStar key={idx} className="h-[20px] w-[20px] md:h-[24px] md:w-[24px]" />
                     ))}
                   </div>
 
-                  <h3 className="text-[#571313] text-[35px] font-semibold mb-[48px]">
+                  {/* TITLE */}
+                  <h3 className="text-[#571313] text-[22px] md:text-[28px] lg:text-[35px] font-semibold mb-[20px] md:mb-[32px]">
                     {item.title}
                   </h3>
 
-                  <p className="text-[#0D0C09] text-[20px]">{item.text}</p>
+                  {/* TEXT */}
+                  <p className="text-[#0D0C09] text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed">
+                    {item.text}
+                  </p>
 
                   {/* FOOTER */}
-                  <div className="flex items-center gap-4 mt-auto pt-[50px]">
+                  <div className="flex items-center gap-4 mt-[32px] md:mt-auto pt-[24px] md:pt-[40px]">
                     <img
                       src={Reviewer}
-                      className="w-[55px] h-[55px] rounded-full"
+                      className="w-[48px] h-[48px] md:w-[55px] md:h-[55px] rounded-full"
+                      alt=""
                     />
                     <div>
-                      <p className="text-[24px] font-semibold text-[#0D0C09]">
+                      <p className="text-[18px] md:text-[22px] font-semibold text-[#0D0C09]">
                         Rebeca Pipard
                       </p>
                       <div className="flex items-center gap-2">
-                        <img src={material} className="w-[24px] h-[24px]" />
-                        <span className="text-[16px] text-[#282828]">
+                        <img
+                          src={material}
+                          className="w-[20px] h-[20px] md:w-[24px] md:h-[24px]"
+                          alt=""
+                        />
+                        <span className="text-[14px] md:text-[16px] text-[#282828]">
                           Verified Customer
                         </span>
                       </div>
