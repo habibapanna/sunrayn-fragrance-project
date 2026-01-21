@@ -1,7 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Button from "../assets/Button Container.png";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const Special = () => {
+const sectionRef = useRef(null);
+
+const { scrollYProgress } = useScroll({
+  target: sectionRef,
+  offset: ["start end", "center center"],
+});
+
+
   const [textStyle, setTextStyle] = useState({
     left: "90px",
     top: "650px",
@@ -35,9 +45,18 @@ useEffect(() => {
   return () => window.removeEventListener("resize", update);
 }, []);
 
+const leftTextX = useTransform(scrollYProgress, [0, 0.6], [200, 0]);   // from right
+const rightTextX = useTransform(scrollYProgress, [0, 0.6], [-200, 0]); // from left
+const textOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+
+
 
   return (
-    <section className="mx-auto pb-[16px] px-[16px] md:px-[32px] md:pb-[32px]">
+    <section
+  ref={sectionRef}
+  className="mx-auto pb-[16px] px-[16px] md:px-[32px] md:pb-[32px]"
+>
+
       <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] relative cursor-pointer overflow-hidden">
 
         {/* ================= CONTENT ================= */}
@@ -68,48 +87,56 @@ useEffect(() => {
           </div>
         </div>
 
-        {/* ================= FLOATING DESKTOP TEXT ================= */}
-        <div
-          className="flex absolute text-[#571313] items-center"
-          style={{
-            left: textStyle.left,
-            top: textStyle.top,
-            maxWidth: "90vw",   // 🔒 prevents overflow
-            whiteSpace: "nowrap",
-          }}
-        >
-          <h2
-            className="font-bold uppercase leading-[110%]"
-            style={{
-              fontSize: textStyle.fontSize,
-              letterSpacing: "-0.06em",
-            }}
-          >
-            Sanrayn
-          </h2>
+      {/* ================= FLOATING DESKTOP TEXT ================= */}
+<motion.div
+  className="hidden md:flex absolute text-[#571313] items-center"
+  style={{
+    left: textStyle.left,
+    top: textStyle.top,
+    maxWidth: "90vw",
+    whiteSpace: "nowrap",
+    opacity: textOpacity,
+  }}
+>
+  {/* SANRAYN → FROM RIGHT */}
+  <motion.h2
+    style={{
+      x: leftTextX,
+      fontSize: textStyle.fontSize,
+      letterSpacing: "-0.06em",
+    }}
+    className="font-bold uppercase leading-[110%]"
+  >
+    Sanrayn
+  </motion.h2>
 
-          <div className="flex items-center ml-2">
-            <p
-              className="font-light uppercase leading-[100%]"
-              style={{
-                fontSize: textStyle.fontSize,
-                letterSpacing: "-0.06em",
-              }}
-            >
-              Specials
-            </p>
+  {/* SPECIALS → FROM LEFT */}
+  <motion.div
+    style={{ x: rightTextX }}
+    className="flex items-center ml-2"
+  >
+    <p
+      className="font-light uppercase leading-[100%]"
+      style={{
+        fontSize: textStyle.fontSize,
+        letterSpacing: "-0.06em",
+      }}
+    >
+      Specials
+    </p>
 
-            <img
-              src={Button}
-              alt=""
-              className="ml-2"
-              style={{
-                width: `calc(${textStyle.fontSize} / 1.8)`,
-                height: `calc(${textStyle.fontSize} / 1.8)`,
-              }}
-            />
-          </div>
-        </div>
+    <img
+      src={Button}
+      alt=""
+      className="ml-2"
+      style={{
+        width: `calc(${textStyle.fontSize} / 1.8)`,
+        height: `calc(${textStyle.fontSize} / 1.8)`,
+      }}
+    />
+  </motion.div>
+</motion.div>
+
       </div>
     </section>
   );
