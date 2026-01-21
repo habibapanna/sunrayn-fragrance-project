@@ -88,7 +88,7 @@ const Blogs = () => {
                   />
                   <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#000000] via-black/10 to-transparent" />
                   <div className="absolute bottom-4 md:bottom-8 left-4 right-4 z-30">
-                    <h3 className="text-white text-[25px] lg:text-[40px] md:text-2xl font-medium leading-tight cursor-pointer">
+                    <h3 className="text-white text-[25px] 2xl:text-[40px] md:text-2xl font-medium leading-tight cursor-pointer">
                       {item.title}
                     </h3>
                   </div>

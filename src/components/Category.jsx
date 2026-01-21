@@ -26,7 +26,7 @@ const Category = () => {
             className="
               group relative rounded-[24px] md:rounded-[48px] overflow-hidden cursor-pointer
                h-[392px]
-            md:h-[700px]
+            2xl:h-[700px]
             "
           >
             {/* IMAGE */}
@@ -37,16 +37,16 @@ const Category = () => {
             />
 
             {/* TITLE */}
-            <h3 className="absolute top-6 left-6 z-20 text-[50px] font-medium text-[#1D0B01]">
+            <h3 className="absolute top-6 left-6 z-20 text-[25px] 2xl:text-[50px] font-medium text-[#1D0B01]">
               {item.title}
             </h3>
 
             {/* EXPANDING BUTTON */}
             <button
               className="
-                absolute bottom-6 right-6 z-20
-                h-[55px]
-                w-[55px] group-hover:w-[200px]
+                absolute bottom-6 right-6 z-20 h-[40px] w-[40px]
+                2xl:h-[55px]
+                2xl:w-[55px] group-hover:w-[200px]
                 bg-white rounded-full shadow
                 flex items-center group-hover:justify-center
                 px-3
@@ -57,7 +57,7 @@ const Category = () => {
               "
             >
               {/* ICON */}
-              <GoChevronRight className="text-[35px] flex-shrink-0 font-semibold" />
+              <GoChevronRight className="text-[20px] 2xl:text-[35px] flex-shrink-0 font-semibold" />
 
               {/* TEXT */}
               <span

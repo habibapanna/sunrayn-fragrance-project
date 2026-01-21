@@ -17,7 +17,7 @@ const Offer = () => {
   <div className="w-2/3 xl2:w-1/2 flex items-center justify-center px-10 py-16 md:px-[150px] md:py-[241px]">
     <div className="text-white text-left">
 
-      <h1 className="text-[25px] xl2:text-[40px] lg:text-[90px] leading-tight mb-6"
+      <h1 className="text-[25px] lg:text-[40px] 2xl:text-[90px] leading-tight mb-6"
        >
         Get 30% Off
       </h1>

@@ -10,7 +10,7 @@ const Signature = () => {
           <img
             src="https://i.postimg.cc/zD20k7cK/Featured-Image.png"
             alt="Signature Perfume"
-            className="w-full h-[300px] sm:h-[450px] lg:h-full object-cover rounded-3xl lg:rounded-[48px]"
+            className="w-full h-[300px] md:h-[450px] lg:h-full object-cover rounded-3xl lg:rounded-[48px]"
           />
         </div>
 
@@ -45,8 +45,6 @@ const Signature = () => {
             <h2 className="text-[#571313] font-semibold leading-tight
     text-[24px]
     sm:text-[30px]
-    lg:text-[42px]
-    xl2:text-[56px]
     2xl:text-[48px]
     mb-4 sm:mb-6">
               Signature-Inspired <br />
