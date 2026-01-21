@@ -28,7 +28,7 @@ const Offer = () => {
         Be the first to know about new collections and exclusive offers.
       </p>
 
-      <button className="bg-white text-black px-[24px] py-[10px] rounded-[100px] h-[40px] w-[123px] md:w-[210px] md:h-[55px] text-[14px] md:text-[20px] cursor-pointer font-bold">
+      <button className="bg-white text-black px-[24px] py-[10px] rounded-[100px] h-[40px] w-[123px] md:w-[210px] md:h-[55px] text-[14px] md:text-[20px] cursor-pointer font-bold hover:bg-[#DBAB35]">
        Shop Hurry
       </button>
     </div>

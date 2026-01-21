@@ -79,7 +79,7 @@ const Blogs = () => {
               {slide.map((item, idx) => (
                 <div
                   key={idx}
-                  className="relative rounded-[32px] md:rounded-[48px] flex-1 h-[350px] md:h-[700px] overflow-hidden"
+                  className="relative rounded-[32px] md:rounded-[48px] flex-1 h-[350px] md:h-[700px] overflow-hidden cursor-pointer"
                 >
                   <img
                     src={item.product}

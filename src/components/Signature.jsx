@@ -39,8 +39,7 @@ const Signature = () => {
           <div className="relative z-10
     p-[24px]
     md:p-[64px]
-    lg:p-[96px]
-    xl2:p-[120px]
+    lg:p-[60px]
     2xl:p-[153px]">
             <h2 className="text-[#571313] font-semibold leading-tight
     text-[24px]
