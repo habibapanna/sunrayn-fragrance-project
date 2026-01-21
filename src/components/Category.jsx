@@ -1,5 +1,7 @@
 import React from "react";
 import { GoChevronRight } from "react-icons/go";
+import { motion } from "framer-motion";
+
 
 const categories = [
   {
@@ -17,18 +19,52 @@ const categories = [
 ];
 
 const Category = () => {
+  const containerVariant = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.25,
+    },
+  },
+};
+
+const cardVariant = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.1,
+      ease: "easeOut",
+    },
+  },
+};
+
   return (
     <section className="mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-[16px] md:gap-[32px]">
+      <motion.div
+  variants={containerVariant}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.3 }}
+  className="grid grid-cols-1 lg:grid-cols-3 gap-[16px] md:gap-[32px]"
+>
+
         {categories.map((item, index) => (
-          <div
-            key={index}
-            className="
-              group relative rounded-[24px] md:rounded-[48px] overflow-hidden cursor-pointer
-               h-[392px]
-            2xl:h-[700px]
-            "
-          >
+         <motion.div
+  key={index}
+  variants={cardVariant}
+  className="
+    group relative rounded-[24px] md:rounded-[48px]
+    overflow-hidden cursor-pointer
+    h-[392px]
+    2xl:h-[700px]
+  "
+>
+
             {/* IMAGE */}
             <img
               src={item.product}
@@ -71,9 +107,9 @@ const Category = () => {
                 Shop {item.title}
               </span>
             </button>
-          </div>
+         </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

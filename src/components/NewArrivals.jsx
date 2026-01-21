@@ -32,7 +32,7 @@ const NewArrivals = () => {
       ref={sectionRef}
       className="mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]"
     >
-      <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] md:p-20 relative overflow-hidden">
+      <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] md:p-20 relative overflow-hidden cursor-pointer">
 
         {/* ================= IMAGE GRID ================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[32px]">
@@ -108,7 +108,9 @@ const NewArrivals = () => {
             <motion.p
               style={{ x: premiumX }}
               className="uppercase font-light md:text-[60px] 2xl:text-[100px] relative left-[100px]"
-              style={{ lineHeight: "110%", letterSpacing: "-7.2px" }}
+              style={{ lineHeight: "110%", letterSpacing: "-7.2px",
+                fontWeight: 500,
+               }}
             >
               Premium Collections
             </motion.p>

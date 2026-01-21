@@ -120,6 +120,7 @@ const textOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
       style={{
         fontSize: textStyle.fontSize,
         letterSpacing: "-0.06em",
+        fontWeight: 500,
       }}
     >
       Specials
@@ -130,8 +131,8 @@ const textOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
       alt=""
       className="ml-2"
       style={{
-        width: `calc(${textStyle.fontSize} / 1.8)`,
-        height: `calc(${textStyle.fontSize} / 1.8)`,
+        width: `calc(${textStyle.fontSize} / 2)`,
+        height: `calc(${textStyle.fontSize} / 2)`,
       }}
     />
   </motion.div>
