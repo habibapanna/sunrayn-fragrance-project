@@ -4,9 +4,6 @@ import Gender from '../assets/Heart (1).png'
 import IMPRESSIONS from '../assets/Frame (6).png'
 import ORIGINALS from '../assets/Group 53.png'
 import SCENT from '../assets/Frame (4).png'
-import { FaStar } from "react-icons/fa";
-import Discount from '../assets/Discount Price.png';
-import Original from '../assets/Original Price.png';
 import { GoChevronRight } from "react-icons/go";
 
 const SearchOverlay = ({ open, onClose }) => {

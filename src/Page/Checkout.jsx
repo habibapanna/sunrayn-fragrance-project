@@ -8,12 +8,11 @@ import Gpay  from '../assets/G pay logo.png';
 import Visa  from '../assets/Visa logo.png';
 import MasterCard  from '../assets/MasterCard logo.png';
 import Flag from '../assets/Flag Pack.png';
-import { CiSearch } from "react-icons/ci";
 import { LuSearch } from "react-icons/lu";
 
 const Checkout = () => {
   return (
-    <section className="min-h-screen bg-[#F6F7F2] py-10">
+    <section className="min-h-screen bg-[#F6F7F2]">
       {/* Logo */}
       <div className="flex flex-col w-[174px] h-[118px] justify-center mb-10 mx-auto items-center">
        <Link to="/" className="cursor-pointer"> <img src={Logo2} alt="Sanrayn" className="h-[89px] w-[89px]" /></Link>
