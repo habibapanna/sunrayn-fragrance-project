@@ -150,69 +150,75 @@ const prev = () =>
 {/**** Items ****/}
 
 {/* ================= DESKTOP GRID (UNCHANGED) ================= */}
-<section className="relative overflow-hidden pb-[32px]">
-  <div
-    className="flex transition-transform duration-500 ease-in-out"
-    style={{
-      transform: `translateX(-${(current * 100) / itemsPerView}%)`,
-    }}
-  >
-    {items.map((item, i) => (
-      <div
-        key={i}
-        className="px-[16px]"
-        style={{ minWidth: `${100 / itemsPerView}%` }}
-      >
-        {/* CARD (UNCHANGED UI) */}
-        <div className="relative rounded-[32px] md:rounded-[48px] overflow-hidden bg-[#EDE8E0] h-[344px] md:h-[700px]">
-          <img
-            src={item.product}
-            alt={item.title}
-            className="absolute inset-0 object-cover mx-auto h-[220px] md:h-[501px]"
-          />
+ {/* CAROUSEL */}
+      <section className="relative overflow-hidden pb-[16px]">
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{
+            transform: `translateX(-${(current * 100) / itemsPerView}%)`,
+          }}
+        >
+          {items.map((item, i) => (
+            <div
+              key={i}
+              className="flex-shrink-0"
+              style={{ width: `${100 / itemsPerView}%` }}
+            >
+              {/* OUTER SPACING (SAFE) */}
+              <div className="md:mx-[16px]">
+                {/* CARD */}
+                <div className="relative rounded-[24px] md:rounded-[48px] overflow-hidden bg-[#EDE8E0] h-[344px] md:h-[700px]">
+                  <img
+                    src={item.product}
+                    alt={item.title}
+                    className="absolute inset-0 object-cover mx-auto h-[220px] md:h-[501px]"
+                  />
 
-          <div className="absolute bottom-0 left-0 w-full z-20 p-[16px] md:p-[40px]">
-            <div className="flex items-center gap-2 text-[#FF9100]">
-              {[...Array(5)].map((_, i) => (
-                <FaStar key={i} className="h-[12px] w-[12px] md:h-[15px] md:w-[15px]" />
-              ))}
-              <span className="text-[#0D0C09] text-[12px] md:text-[14px]">1239</span>
-            </div>
+                  <div className="absolute bottom-0 left-0 w-full z-20 p-[16px] md:p-[40px]">
+                    <div className="flex items-center gap-2 text-[#FF9100]">
+                      {[...Array(5)].map((_, i) => (
+                        <FaStar key={i} className="h-[12px] md:h-[15px]" />
+                      ))}
+                      <span className="text-[#0D0C09] text-[12px] md:text-[14px]">
+                        1239
+                      </span>
+                    </div>
 
-            <h3 className="text-[20px] md:text-[35px] font-semibold text-[#571313]">
-              {item.title}
-            </h3>
+                    <h3 className="text-[20px] md:text-[35px] font-semibold text-[#571313]">
+                      {item.title}
+                    </h3>
 
-            <p className="text-[12px] md:text-[18px] text-[#0D0C09] mb-[12px] md:mb-[26px]">
-              Sanrayn Original
-            </p>
+                    <p className="text-[12px] md:text-[18px] text-[#0D0C09] mb-[12px] md:mb-[26px]">
+                      Sanrayn Original
+                    </p>
 
-            <div className="flex items-center justify-between gap-3">
-              <button className="bg-white px-[16px] md:px-[24px] py-[6px] md:py-[10px] rounded-full font-semibold hover:bg-[#DBAB35] cursor-pointer">
-                Add to Cart
-              </button>
+                    <div className="flex items-center justify-between gap-3">
+                      <button className="bg-white px-[16px] md:px-[24px] py-[6px] md:py-[10px] rounded-full font-semibold hover:bg-[#DBAB35]">
+                        Add to Cart
+                      </button>
 
-              <div className="flex gap-[12px] md:gap-[20px]">
-                <img src={Original} className="h-[35px] md:h-[45px]" />
-                <img src={Discount} className="h-[40px] md:h-[52px]" />
+                      <div className="flex gap-[12px] md:gap-[20px]">
+                        <img src={Original} className="h-[35px] md:h-[45px]" />
+                        <img src={Discount} className="h-[40px] md:h-[52px]" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
-      </div>
-    ))}
-  </div>
 
-  {/* MOBILE ARROWS */}
-  <div className="flex lg:hidden justify-center gap-5 mt-6">
-    <button onClick={prev} className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA]">
-      <GoChevronLeft className="text-[30px]" />
-    </button>
-    <button onClick={next} className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA]">
-      <GoChevronRight className="text-[30px]" />
-    </button>
-  </div>
-</section>
+        {/* MOBILE ARROWS */}
+        <div className="flex lg:hidden justify-center gap-5 mt-6">
+          <button onClick={prev} className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA]">
+            <GoChevronLeft className="text-[30px]" />
+          </button>
+          <button onClick={next} className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA]">
+            <GoChevronRight className="text-[30px]" />
+          </button>
+        </div>
+      </section>
 
 
     {/******* Premium *******/}
@@ -288,7 +294,7 @@ const prev = () =>
     </div>
 
     {/* ARROWS */}
-    <div className="flex justify-center gap-5 mt-6">
+    <div className="flex justify-center gap-5">
       <button onClick={prevPrem} className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center">
         <GoChevronLeft className="text-[30px]" />
       </button>

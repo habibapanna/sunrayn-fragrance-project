@@ -89,7 +89,7 @@ const textOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
       {/* ================= FLOATING DESKTOP TEXT ================= */}
 <motion.div
-  className="hidden md:flex absolute text-[#571313] items-center"
+  className="flex absolute text-[#571313] items-center"
   style={{
     left: textStyle.left,
     top: textStyle.top,
