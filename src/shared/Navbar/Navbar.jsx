@@ -123,7 +123,7 @@ useEffect(() => {
   onClick={() => setCartOpen(true)}
   className="bg-white/90 p-[10px] rounded-full"
 >
-  <img src={Cart} className="h-[20px] w-[20px] cursor-pointer" />
+  <img src={Cart} className="h-[20px] w-[20px] cursor-pointer " />
 </button>
 
               <button

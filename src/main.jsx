@@ -14,7 +14,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    errorElement: <h1 className='text-3xl font-serif font-bold text-red-500'>Page is not found</h1>,
+    errorElement: <h1 className='text-xl lg:text-3xl font-serif font-bold text-red-500'>Page is not found</h1>,
     children: [
       {
         path: "/",
