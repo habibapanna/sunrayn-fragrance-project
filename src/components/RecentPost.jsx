@@ -84,7 +84,7 @@ const RecentPost = () => {
           {slides.map((slide, index) => (
             <div
               key={index}
-              className="flex flex-shrink-0 w-full gap-[32px] md:gap-8"
+              className="flex flex-shrink-0 w-full lg:gap-[32px] gap-[16px]"
             >
               {slide.map((item, idx) => (
                 <div
