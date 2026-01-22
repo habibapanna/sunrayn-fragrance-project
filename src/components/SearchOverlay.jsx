@@ -42,7 +42,8 @@ useEffect(() => {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 backdrop-blur-sm bg-black/40">
+   <div className="fixed inset-0 z-[70]">
+
       {/* WHITE PANEL */}
       <div className="absolute lg:top-[106px] top-[20px] right-0 2xl:right-[164px] 2xl:w-[1001px] bg-white rounded-[24px] p-[24px]">
 
@@ -150,9 +151,9 @@ useEffect(() => {
         {/* CLOSE */}
         <button
           onClick={onClose}
-          className="absolute top-[8px] right-[8px] cursor-pointer"
+          className="absolute top-[5px] right-[8px]"
         >
-          <X />
+          <X className="cursor-pointer"/>
         </button>
       </div>
     </div>
