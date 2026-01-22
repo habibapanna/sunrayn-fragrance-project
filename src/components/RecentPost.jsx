@@ -50,8 +50,11 @@ const RecentPost = () => {
     <div className="mx-auto max-w-full px-4 md:px-8 pb-4 md:pb-8">
       {/* Header */}
       <div className="flex justify-between items-center mb-8 gap-4">
-        <h2 className="text-2xl md:text-5xl font-semibold text-[#282828]">
+        <h2 className="text-2xl md:text-5xl font-semibold text-[#282828] hidden md:block">
           Recent Post on Instagram
+        </h2>
+        <h2 className="text-2xl md:text-5xl font-semibold text-[#282828] md:hidden">
+        Instagram
         </h2>
         <div className="flex items-center gap-[24px]">
           <button className="bg-[#F5F1EA] text-[#571313] font-semibold px-6 py-3 rounded-full flex items-center text-lg md:text-2xl">
