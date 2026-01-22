@@ -14,10 +14,14 @@
   font-weight: 500;
 }
 
-
 body {
   font-family: "Satoshi", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 
 

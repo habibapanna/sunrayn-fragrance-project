@@ -133,7 +133,6 @@ useEffect(() => {
                 <TbMenu className="text-white h-[24px] w-[24px] cursor-pointer" />
               </button>
             </div>
-
           </div>
         </div>
           <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} />

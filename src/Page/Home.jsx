@@ -1,6 +1,5 @@
-import React from 'react';
+
 import Hero from '../components/Hero';
-import Navbar from '../shared/Navbar/Navbar';
 import Signature from '../components/Signature';
 import Category from '../components/Category';
 import NewArrivals from '../components/NewArrivals';
@@ -13,23 +12,54 @@ import Offer from '../components/Offer';
 import RecentPost from '../components/RecentPost';
 
 
+import ScrollReveal from "../components/ScrollReveal";
+
 const Home = () => {
-    return (
-        <div>
-             <Navbar></Navbar>
-            <Hero></Hero>
-            <Signature></Signature>
-            <Category></Category>
-           <NewArrivals></NewArrivals>
-           <Featured></Featured>
-           <Special></Special>
-           <BestSelling></BestSelling>
-           <Testimonials></Testimonials>
-           <Blogs></Blogs>
-           <Offer></Offer>
-           <RecentPost></RecentPost>
-        </div>
-    );
+  return (
+    <div>
+      <Hero />
+
+      <ScrollReveal>
+        <Signature />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Category />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <NewArrivals />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Featured />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Special />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <BestSelling />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Testimonials />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Blogs />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <Offer />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <RecentPost />
+      </ScrollReveal>
+    </div>
+  );
 };
 
 export default Home;
