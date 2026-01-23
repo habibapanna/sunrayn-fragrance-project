@@ -36,7 +36,7 @@ useEffect(() => {
     }
     else {
       // ✅ MOBILE FIX
-      setTextStyle({ left: "14px", top: "450px", fontSize: "32px" });
+      setTextStyle({ left: "14px", top: "430px", fontSize: "30px" });
     }
   };
 

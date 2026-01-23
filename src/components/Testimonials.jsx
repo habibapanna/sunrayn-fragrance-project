@@ -75,7 +75,7 @@ const Testimonials = () => {
           What Fragrance Lovers Are Saying About Sanrayn
         </p>
 
-        <div className="hidden lg:flex gap-5">
+        <div className="hidden lg:flex gap-5 md:mt-[16px]">
           <button
             onClick={prev}
             className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"

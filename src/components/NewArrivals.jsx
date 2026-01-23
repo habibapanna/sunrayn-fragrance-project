@@ -77,7 +77,7 @@ const NewArrivals = () => {
         {/* ================= TEXT SECTION ================= */}
 
         {/* 🔹 MOBILE (NO ANIMATION) */}
-        <div className="absolute top-[300px] left-[50px] md:hidden text-[#571313] text-center">
+        <div className="absolute top-[300px] left-[40px] md:hidden text-[#571313] text-center">
           <div className="flex items-center justify-center gap-3">
             <h2 className="text-[30px] font-bold">NEW ARRIVALS</h2>
             <img src={Button} className="h-[23px] w-[23px]" />

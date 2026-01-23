@@ -261,7 +261,7 @@ const prev = () =>
     </section>
 
     {/* ================= PREMIUM MOBILE CAROUSEL ================= */}
-<section className="lg:hidden pb-[16px]">
+<section className="lg:hidden pb-[16px] ">
   <div
     className="relative overflow-hidden"
  onTouchStart={onPremTouchStart}
@@ -294,7 +294,7 @@ const prev = () =>
     </div>
 
     {/* ARROWS */}
-    <div className="flex justify-center gap-5">
+    <div className="flex justify-center gap-5 mt-[16px]">
       <button onClick={prevPrem} className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center">
         <GoChevronLeft className="text-[30px]" />
       </button>

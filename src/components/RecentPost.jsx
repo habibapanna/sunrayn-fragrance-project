@@ -49,7 +49,7 @@ const RecentPost = () => {
   return (
     <div className="mx-auto max-w-full px-4 md:px-8 pb-4 md:pb-8">
       {/* Header */}
-      <div className="flex justify-between items-center mb-8 gap-4">
+      <div className="flex justify-between items-center mb-[16px] md:mb-[32px] gap-4">
         <h2 className="text-2xl md:text-5xl font-semibold text-[#282828] hidden md:block">
           Recent Post on Instagram
         </h2>
