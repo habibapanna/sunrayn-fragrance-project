@@ -23,17 +23,24 @@ const BestSelling = () => {
   const [current, setCurrent] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
 
-  useEffect(() => {
-    const updateView = () => {
-      if (window.innerWidth < 768) setItemsPerView(1);
-      else if (window.innerWidth < 1280) setItemsPerView(2);
-      else setItemsPerView(3);
-    };
+useEffect(() => {
+  const updateView = () => {
+    if (window.innerWidth < 1024) {
+      // mobile + md
+      setItemsPerView(1);
+    } else if (window.innerWidth < 1280) {
+      // lg
+      setItemsPerView(2);
+    } else {
+      // xl+
+      setItemsPerView(3);
+    }
+  };
 
-    updateView();
-    window.addEventListener("resize", updateView);
-    return () => window.removeEventListener("resize", updateView);
-  }, []);
+  updateView();
+  window.addEventListener("resize", updateView);
+  return () => window.removeEventListener("resize", updateView);
+}, []);
 
   const maxIndex = items.length - itemsPerView;
   const next = () => setCurrent((p) => (p >= maxIndex ? 0 : p + 1));
@@ -43,7 +50,7 @@ const BestSelling = () => {
     <div className="mx-auto px-[16px]">
       {/* HEADER */}
       <div className="flex justify-between items-center mb-[16px] md:mb-[32px]">
-        <div className="flex items-center gap-[20px] md:gap-[32px] lg:px-[16px]">
+        <div className="flex items-center gap-[20px] md:gap-[32px] md:px-[16px]">
           <p
             className="text-[25px] md:text-[50px] font-semibold text-[#282828]"
             style={{ letterSpacing: "-1px" }}

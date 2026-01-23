@@ -89,7 +89,7 @@ const NewArrivals = () => {
 
         {/* 🔹 DESKTOP (ANIMATED) */}
         {!isMobile && (
-          <div className="hidden md:block absolute md:top-[400px] lg:top-[300px] 2xl:top-[600px] left-[150px] -translate-y-1/2 text-[#571313]">
+          <div className="hidden md:block absolute md:top-[400px] md:left-[50px] lg:top-[300px] 2xl:top-[600px] left-[150px] -translate-y-1/2 text-[#571313]">
 
             {/* NEW ARRIVALS */}
             <motion.div style={{ x: newArrivalsX }}>

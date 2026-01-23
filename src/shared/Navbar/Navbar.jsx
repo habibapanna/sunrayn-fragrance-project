@@ -71,10 +71,10 @@ useEffect(() => {
 
 
           {/* RIGHT SIDE */}
-          <div className="flex items-center gap-[24px]">
+          <div className="flex items-center gap-[16px] 2xl:gap-[24px]">
 
             {/* DESKTOP MENU (UNCHANGED) */}
-            <div className="hidden lg:flex items-center gap-[24px] bg-white/90 text-[#282828] pr-[9px] pl-[24px] py-[12px] rounded-[100px] mr-16 w-[426px] h-[50px]">
+            <div className="hidden lg:flex items-center gap-[24px] bg-white/90 text-[#282828] pr-[9px] pl-[24px] py-[12px] rounded-[100px] 2xl:mr-16 w-[426px] h-[50px]">
               <button
   onClick={() => setPerfumeOpen((p) => !p)}
   className="flex items-center gap-[5px] text-[16px] relative"
@@ -100,7 +100,7 @@ useEffect(() => {
             </div>
 
             {/* DESKTOP ICONS (UNCHANGED) */}
-            <div className="hidden md:flex items-center gap-[16px]">
+            <div className="hidden lg:flex items-center gap-[16px]">
               <button
   onClick={() => setSearchOpen(true)}
   className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px] cursor-pointer"
@@ -122,7 +122,7 @@ useEffect(() => {
             </div>
 
             {/* MOBILE ICONS */}
-            <div className="flex md:hidden items-center gap-[16px] py-[24px]">
+            <div className="flex lg:hidden items-center gap-[16px] py-[24px]">
               <button
   onClick={() => setSearchOpen(true)}
   className="bg-white/90 p-[10px] rounded-full"
@@ -156,7 +156,7 @@ useEffect(() => {
     />
 
     {/* MEGA MENU */}
-    <div className="absolute top-[90px] right-[10px] -translate-x-1/2 z-50">
+    <div className="absolute top-[90px] lg:right-[10px] 2xl:right-[80px] -translate-x-[280px] z-50">
       <div className="relative bg-white rounded-[32px] shadow-xl px-[40px] py-[32px] flex gap-[74px]">
 
         {/* ARROW TIP */}
@@ -250,7 +250,7 @@ useEffect(() => {
       {/* MOBILE SIDEBAR */}
       <aside
         className={`fixed top-0 left-0 h-full w-[100%] bg-[#F6F7F2] z-50
-        transform transition-transform duration-500 md:hidden
+        transform transition-transform duration-500 lg:hidden
         ${open ? "translate-x-0" : "-translate-x-full"}`}
       >
        <div className="relative flex items-center justify-between px-[20px] py-[16px]">

@@ -71,7 +71,7 @@ const Testimonials = () => {
     <div className="mx-auto max-w-full px-[16px] pb-[16px] md:pb-[32px]">
       {/* HEADER */}
       <div className="flex justify-between items-start mb-[16px] md:mb-[32px]">
-        <p className="text-[25px] md:text-[40px] lg:text-[50px] font-semibold text-[#282828] lg:px-[16px]">
+        <p className="text-[25px] md:text-[40px] lg:text-[50px] font-semibold text-[#282828] md:px-[16px]">
           What Fragrance Lovers Are Saying About Sanrayn
         </p>
 
