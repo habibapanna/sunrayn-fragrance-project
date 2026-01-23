@@ -22,6 +22,8 @@ const [open, setOpen] = useState(false);
 const [scrolled, setScrolled] = useState(false);
 const [searchOpen, setSearchOpen] = useState(false);
 const [cartOpen, setCartOpen] = useState(false);
+const [perfumeOpen, setPerfumeOpen] = useState(false);
+
 
 
 
@@ -73,14 +75,22 @@ useEffect(() => {
 
             {/* DESKTOP MENU (UNCHANGED) */}
             <div className="hidden lg:flex items-center gap-[24px] bg-white/90 text-[#282828] pr-[9px] pl-[24px] py-[12px] rounded-[100px] mr-16 w-[426px] h-[50px]">
-              <button className="flex items-center gap-[4px] text-[16px]">
-                Perfumes
-                <LiaAngleDownSolid className="text-[24px]" />
-              </button>
+              <button
+  onClick={() => setPerfumeOpen((p) => !p)}
+  className="flex items-center gap-[5px] text-[16px] relative"
+>
+  Perfumes
+  <LiaAngleDownSolid
+    className={`h-[24px] w-[24px] transition-transform cursor-pointer ${
+      perfumeOpen ? "rotate-180" : ""
+    }`}
+  />
+</button>
 
-              <button className="flex items-center gap-[4px] text-[16px]">
+
+              <button className="flex items-center gap-[5px] text-[16px]">
                 Collections
-                <LiaAngleDownSolid className="text-[24px]" />
+                <LiaAngleDownSolid className="h-[24px] w-[24px]" />
               </button>
 
               <span className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[7px] rounded-[100px] font-semibold flex items-center gap-[6px] w-[139px] h-[34px]">
@@ -136,6 +146,66 @@ useEffect(() => {
           </div>
         </div>
       </nav>
+
+      {perfumeOpen && (
+  <>
+    {/* CLICK OUTSIDE */}
+    <div
+      onClick={() => setPerfumeOpen(false)}
+      className="fixed inset-0 z-40"
+    />
+
+    {/* MEGA MENU */}
+    <div className="absolute top-[90px] right-[10px] -translate-x-1/2 z-50">
+      <div className="relative bg-white rounded-[32px] shadow-xl px-[40px] py-[32px] flex gap-[74px]">
+
+        {/* ARROW TIP */}
+        <span className="absolute -top-[10px] right-[300px] w-5 h-5 bg-white rotate-45" />
+
+        {/* COLUMN 1 */}
+        <div>
+          <h4 className="font-bold text-[15px] text-[#1D0B01] mb-[12px]">
+            Perfume Style
+          </h4>
+          <ul className="space-y-[12px] text-[16px] text-[#1D0B01]">
+            <li className="cursor-pointer hover:text-[#FD4929]">Men</li>
+            <li className="cursor-pointer hover:text-[#FD4929]">Women</li>
+            <li className="cursor-pointer hover:text-[#FD4929]">Unisex</li>
+          </ul>
+        </div>
+
+        {/* COLUMN 2 */}
+        <div>
+          <h4 className="font-bold text-[#1D0B01] mb-[12px]">
+            Perfume Family
+          </h4>
+          <ul className="space-y-[12px] text-[16px] text-[#1D0B01]">
+            <li>Flowery</li>
+            <li>Warm</li>
+            <li>Gourmand</li>
+            <li>Fresh</li>
+            <li>Earthy</li>
+            <li>Herbal</li>
+          </ul>
+        </div>
+
+        {/* RIGHT PRODUCT CARD */}
+        <div className="">
+          <div className="bg-[#FBF7F2] rounded-[24px] p-4 w-[220px] text-center">
+            <img
+              src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
+              className="rounded-xl mx-auto mb-4"
+            />
+          </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium">
+              View All Perfume
+            </p>
+        </div>
+
+      </div>
+    </div>
+  </>
+)}
+
 
 {searchOpen && (
   <>
