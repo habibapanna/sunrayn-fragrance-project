@@ -1,6 +1,7 @@
 import React from "react";
 import { GoChevronRight } from "react-icons/go";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 
 const categories = [
@@ -66,11 +67,12 @@ const cardVariant = {
 >
 
             {/* IMAGE */}
+           <Link to='productList'>
             <img
               src={item.product}
               alt={item.title}
               className="absolute inset-0 h-full w-full object-cover"
-            />
+            /></Link>
 
             {/* TITLE */}
             <h3 className="absolute top-6 left-6 z-20 text-[25px] 2xl:text-[50px] font-medium text-[#1D0B01]">

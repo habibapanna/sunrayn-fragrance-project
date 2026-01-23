@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { LiaAngleDownSolid } from "react-icons/lia";
 import Logo from "../../assets/Logo.png";
 import Logo2 from "../../assets/Logo (2).png";
+import Logo3 from "../../assets/Logo (3).png";
 import Solar from "../../assets/solar_tag-bold.png";
 import Icon from "../../assets/Icon (Stroke).png";
 import Cart from "../../assets/Frame (1).png";
@@ -10,11 +11,14 @@ import Users from "../../assets/User Icon.png";
 import User1 from "../../assets/User Icon (1).png";
 import BrandName from "../../assets/Brand Name.png";
 import BrandName2 from "../../assets/Brand Name (1).png";
+import BrandName3 from "../../assets/Brand Name (2).png";
 import { Link } from "react-router-dom";
 import { TbMenu } from "react-icons/tb";
 import { GoChevronRight } from "react-icons/go";
 import SearchOverlay from "../../components/SearchOverlay";
 import CartOverlay from "../../components/CartOverlay";
+import { useLocation } from "react-router-dom";
+
 
 
 const Navbar = () => {
@@ -23,6 +27,16 @@ const [scrolled, setScrolled] = useState(false);
 const [searchOpen, setSearchOpen] = useState(false);
 const [cartOpen, setCartOpen] = useState(false);
 const [perfumeOpen, setPerfumeOpen] = useState(false);
+const [openPerfume, setOpenPerfume] = useState(true);
+const [activeSection, setActiveSection] = useState(null);
+const [selectedItem, setSelectedItem] = useState(null);
+const [openCollection, setOpenCollection] = useState(false);
+const location = useLocation();
+
+// adjust this path to match your ProductList route
+const isProductList = location.pathname === "/productList";
+
+
 
 
 
@@ -37,17 +51,80 @@ useEffect(() => {
 }, []);
 
 
+const navBgClass = isProductList
+  ? "bg-[#BA9948]"
+  : scrolled
+  ? "bg-white backdrop-blur-sm"
+  : "bg-transparent";
+
+const logoSrc = isProductList
+  ? Logo3
+  : scrolled
+  ? Logo2
+  : Logo;
+
+const brandSrc = isProductList
+  ? BrandName3
+  : scrolled
+  ? BrandName2
+  : BrandName;
+
+  const perfumeStyles = ["Men", "Women", "Unisex"];
+
+const perfumeFamilies = [
+  "Flowery",
+  "Warm",
+  "Gourmand",
+  "Fresh",
+  "Earthy",
+  "Herbal",
+];
+
+const perfumeTypes = [
+  "All Perfumes",
+  "Best Sellers",
+  "New Arrivals",
+  "Limited Editions",
+  "Combo Sales",
+];
+
+const inspiredBrands = [
+  "Blueberry",
+  "Byredo",
+  "Chanel",
+  "Creed",
+  "Dior",
+  "Guccu",
+];
+
+const MobileGrid = ({ items }) => (
+  <div className="grid grid-cols-1 gap-3 bg-[#F6F7F2] p-3 rounded-[8px] mt-3 ">
+    {items.map((item) => (
+      <button
+        key={item}
+        onClick={() => setSelectedItem(item)}
+        className={`py-[8px] rounded-[4px] text-[14px] font-medium transition
+          ${
+            selectedItem === item
+              ? "bg-white text-left px-2"
+              : "bg-transparent text-left px-[12px] hover:bg-white"
+          }`}
+      >
+        {item}
+      </button>
+    ))}
+  </div>
+);
+
+
+
+
   return (
     <>
-      <nav
-  className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
-    ${
-      scrolled
-        ? "bg-white backdrop-blur-sm"
-        : "bg-transparent"
-    }
-  `}
+  <nav
+  className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${navBgClass}`}
 >
+
 
         <div className="mx-auto px-[16px] md:px-[32px] md:py-[24px] flex items-center justify-between text-white">
 
@@ -56,17 +133,19 @@ useEffect(() => {
   to="/"
   className="flex items-center gap-[7px] md:gap-[12px] cursor-pointer transition-all duration-300"
 >
-  <img
-    src={scrolled ? Logo2 : Logo}
-    alt="Brand Logo"
-    className="h-[35px] w-[35px] md:h-[58px] md:w-[58px] transition-all duration-300"
-  />
+ <img
+  src={logoSrc}
+  alt="Brand Logo"
+  className="h-[35px] w-[35px] md:h-[58px] md:w-[58px] transition-all duration-300"
+/>
 
-  <img
-    src={scrolled ? BrandName2 : BrandName}
-    alt="Brand Name"
-    className="h-[17px] w-[104px] md:h-[27px] md:w-[170px] transition-all duration-300"
-  />
+
+ <img
+  src={brandSrc}
+  alt="Brand Name"
+  className="h-[17px] w-[104px] md:h-[27px] md:w-[170px] transition-all duration-300"
+/>
+
 </Link>
 
 
@@ -250,7 +329,7 @@ useEffect(() => {
       {/* MOBILE SIDEBAR */}
       <aside
         className={`fixed top-0 left-0 h-full w-[100%] bg-[#F6F7F2] z-50
-        transform transition-transform duration-500 lg:hidden
+        transform transition-transform overflow-y-auto duration-500 lg:hidden
         ${open ? "translate-x-0" : "-translate-x-full"}`}
       >
        <div className="relative flex items-center justify-between px-[20px] py-[16px]">
@@ -266,53 +345,145 @@ useEffect(() => {
   </button>
 
   {/* Figma-style header divider */}
-  <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#571313]/20" />
+  <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#cab3b3]" />
 </div>
 
 
-        <div className="p-5 space-y-6">
-          <div className="bg-white rounded-[24px] overflow-hidden">
-  {["Man", "Woman", "Unisex"].map((i, idx, arr) => (
-    <div
-      key={i}
-      className="relative flex justify-between items-center py-[16px] px-[24px] text-[14px]"
+       <div className="p-5 space-y-6">
+
+{/* PERFUMES */}
+<div>
+  <h3 className="text-[14px] font-semibold mb-3">Perfumes</h3>
+
+  <div className="bg-white rounded-[24px] p-4 space-y-3">
+    
+    {/* Perfume Style */}
+    <button
+      onClick={() =>
+        setActiveSection(
+          activeSection === "style" ? null : "style"
+        )
+      }
+      className="w-full flex justify-between items-center text-[14px]"
     >
-      {i}
-      <GoChevronRight className="text-[35px]" />
+      Perfume Style
+      <LiaAngleDownSolid
+        className={`text-xl transition-transform ${
+          activeSection === "style" ? "rotate-180" : ""
+        }`}
+      />
+    </button>
 
-      {/* Figma-style divider */}
-      {idx !== arr.length - 1 && (
-        <span className="absolute bottom-0 left-[24px] right-[24px] h-[1px] bg-[#571313]/20" />
-      )}
-    </div>
-  ))}
-</div>
+    {activeSection === "style" && (
+      <MobileGrid items={perfumeStyles} />
+    )}
+<div className="border border-[#cab3b3]"></div>
+    {/* Perfume Family */}
+    <button
+      onClick={() =>
+        setActiveSection(
+          activeSection === "family" ? null : "family"
+        )
+      }
+      className="w-full flex justify-between items-center text-[14px]"
+    >
+      Perfume Family
+      <LiaAngleDownSolid
+        className={`text-xl transition-transform ${
+          activeSection === "family" ? "rotate-180" : ""
+        }`}
+      />
+    </button>
 
-
-        <div className="bg-white rounded-[24px] overflow-hidden">
-  {["New Arrivals", "Best selling perfumes", "Featured perfumes"].map(
-    (i, idx, arr) => (
-      <div
-        key={i}
-        className="relative flex justify-between items-center py-[16px] px-[24px] text-[14px]"
-      >
-        {i}
-        <GoChevronRight className="text-[35px]" />
-
-        {idx !== arr.length - 1 && (
-          <span className="absolute bottom-0 left-[24px] right-[24px] h-[1px] bg-[#571313]/20" />
-        )}
-      </div>
-    )
-  )}
-</div>
-
-
-           <button className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[7px] rounded-[100px] font-semibold flex items-center text-center gap-[6px] h-[45px] mx-auto w-full cursor-pointer justify-center">
-                <img src={Solar} className="h-[17px] w-[17px]" />
-                Holiday Sale
-              </button>
+    {activeSection === "family" && (
+      <MobileGrid items={perfumeFamilies} />
+    )}
+  <div className="border border-[#cab3b3]"></div>
+  <div className="">
+          <div className="bg-[#FBF7F2] p-4 text-center  rounded-[8px] ">
+            <img
+              src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
+              className="mx-auto mb-4"
+            />
+          </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium">
+              View All Perfume
+            </p>
         </div>
+  </div>
+
+</div>
+
+
+ {/* COLLECTIONS */}
+<div>
+  <h3 className="text-[14px] font-semibold mb-3">Collections</h3>
+
+  <div className="bg-white rounded-[24px] p-4 space-y-3">
+
+    {/* Perfume Type */}
+    <button
+      onClick={() =>
+        setActiveSection(
+          activeSection === "type" ? null : "type"
+        )
+      }
+      className="w-full flex justify-between items-center text-[14px]"
+    >
+      Perfume Type
+      <LiaAngleDownSolid
+        className={`text-xl transition-transform ${
+          activeSection === "type" ? "rotate-180" : ""
+        }`}
+      />
+    </button>
+
+    {activeSection === "type" && (
+      <MobileGrid items={perfumeTypes} />
+    )}
+<div className="border border-[#cab3b3]"></div>
+    {/* Inspired by Brand */}
+    <button
+      onClick={() =>
+        setActiveSection(
+          activeSection === "brand" ? null : "brand"
+        )
+      }
+      className="w-full flex justify-between items-center text-[14px]"
+    >
+      Inspired by Brand
+      <LiaAngleDownSolid
+        className={`text-xl transition-transform ${
+          activeSection === "brand" ? "rotate-180" : ""
+        }`}
+      />
+    </button>
+
+    {activeSection === "brand" && (
+      <MobileGrid items={inspiredBrands} />
+    )}
+  <div className="border border-[#cab3b3]"></div>
+  <div className="">
+          <div className="bg-[#FBF7F2] p-4 text-center  rounded-[8px] ">
+            <img
+              src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
+              className="mx-auto mb-4"
+            />
+          </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium">
+              View All Perfume
+            </p>
+        </div>
+  </div>
+</div>
+
+
+  {/* HOLIDAY SALE */}
+  <button className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[14px] rounded-[100px] font-semibold flex items-center gap-[6px] w-full justify-center">
+    <img src={Solar} className="h-[17px] w-[17px]" />
+    Holiday Sale
+  </button>
+
+</div>
+
       </aside>
     </>
   );

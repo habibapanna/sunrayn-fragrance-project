@@ -155,7 +155,7 @@ const prev = () =>
 
 {/* ================= DESKTOP GRID (UNCHANGED) ================= */}
  {/* CAROUSEL */}
-     <section className="relative overflow-hidden pb-[16px]">
+     <section className="relative overflow-hidden pb-[16px] md:pb-[32px]">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{
@@ -227,7 +227,7 @@ const prev = () =>
 
     {/******* Premium *******/}
 
-   <section className="hidden lg:block mx-auto">
+   <section className="hidden lg:block mx-auto ">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-[16px] md:gap-[32px] pl-[16px]">
 
 <div className='flex bg-[#EEEBFF] rounded-[24px] md:py-[32px] 2xl:px-[48px] p-[24px] justify-center items-center 2xl:h-[325px]'> 
@@ -265,7 +265,7 @@ const prev = () =>
     </section>
 
     {/* ================= PREMIUM MOBILE CAROUSEL ================= */}
-<section className="lg:hidden pb-[16px] px-[16px]">
+<section className="lg:hidden pb-[16px] md:px-[16px]">
   <div
     className="relative overflow-hidden"
  onTouchStart={onPremTouchStart}

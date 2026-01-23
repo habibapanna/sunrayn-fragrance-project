@@ -9,6 +9,7 @@ import {
 import Main from './components/Main/Main.jsx';
 import Home from './Page/Home.jsx';
 import Checkout from './Page/Checkout.jsx';
+import ProductList from './Page/ProductList.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>
+      },
+      {
+        path: "productList",
+        element: <ProductList></ProductList>
       },
      
     ]
