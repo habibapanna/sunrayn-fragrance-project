@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "../assets/Button Container.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const Special = () => {
 const sectionRef = useRef(null);
@@ -49,6 +50,17 @@ const leftTextX = useTransform(scrollYProgress, [0, 0.6], [200, 0]);   // from r
 const rightTextX = useTransform(scrollYProgress, [0, 0.6], [-200, 0]); // from left
 const textOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
 
+const buttonVariants = {
+  rest: { x: 0 },
+  hover: {
+    x: 12,
+    transition: {
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  },
+};
+
 
 
   return (
@@ -57,7 +69,12 @@ const textOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
   className="mx-auto pb-[16px] px-[16px] md:px-[32px] md:pb-[32px]"
 >
 
-      <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] relative cursor-pointer overflow-hidden">
+    <Link to='productList'>
+      <motion.div
+  whileHover="hover"
+  initial="rest"
+  className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] relative cursor-pointer overflow-hidden"
+>
 
         {/* ================= CONTENT ================= */}
         <div className="flex flex-col lg:flex-row items-center gap-[20px]">
@@ -81,9 +98,9 @@ const textOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
               leave a lasting impression.
             </p>
 
-            <button className="bg-[#DBAB35] text-black px-5 py-2 md:px-6 md:py-3 rounded-full text-[20px] font-bold md:w-[210px] md:h-[55px] hover:bg-white cursor-pointer my-5 2xl:my-12">
+            <Link to='productList'><button className="bg-[#DBAB35] text-black px-5 py-2 md:px-6 md:py-3 rounded-full text-[20px] font-bold md:w-[210px] md:h-[55px] hover:bg-white cursor-pointer my-5 2xl:my-12">
               Shop Now
-            </button>
+            </button></Link>
           </div>
         </div>
 
@@ -126,19 +143,21 @@ const textOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
       Specials
     </p>
 
-    <img
-      src={Button}
-      alt=""
-      className="ml-2"
-      style={{
-        width: `calc(${textStyle.fontSize} / 2)`,
-        height: `calc(${textStyle.fontSize} / 2)`,
-      }}
-    />
+   <motion.img
+  src={Button}
+  alt=""
+  className="ml-2"
+  variants={buttonVariants}
+  style={{
+    width: `calc(${textStyle.fontSize} / 2)`,
+    height: `calc(${textStyle.fontSize} / 2)`,
+  }}
+/>
+
   </motion.div>
 </motion.div>
 
-      </div>
+      </motion.div></Link>
     </section>
   );
 };

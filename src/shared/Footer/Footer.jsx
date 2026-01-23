@@ -46,10 +46,10 @@ const Footer = () => {
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Shop</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
-                  <li>Holiday Sale</li>
-                  <li>New Arrivals</li>
-                  <li>Featured Products</li>
-                  <li>Sanrayn Specials</li>
+                  <li className="hover:underline cursor-pointer">Holiday Sale</li>
+                  <li className="hover:underline cursor-pointer">New Arrivals</li>
+                  <li className="hover:underline cursor-pointer">Featured Products</li>
+                  <li className="hover:underline cursor-pointer">Sanrayn Specials</li>
                 </ul>
               </div>
 
@@ -57,9 +57,9 @@ const Footer = () => {
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Company</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
-                  <li>Shop by category</li>
-                  <li>About us</li>
-                  <li>Blogs</li>
+                  <li className="hover:underline cursor-pointer">Shop by category</li>
+                  <li className="hover:underline cursor-pointer">About us</li>
+                  <li className="hover:underline cursor-pointer">Blogs</li>
                 </ul>
               </div>
 
@@ -67,8 +67,8 @@ const Footer = () => {
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Other</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
-                  <li>FAQs</li>
-                  <li>Contact us</li>
+                  <li className="hover:underline cursor-pointer">FAQs</li>
+                  <li className="hover:underline cursor-pointer"><Link to='contact'>Contact us</Link></li>
                 </ul>
               </div>
 

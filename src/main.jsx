@@ -10,6 +10,7 @@ import Main from './components/Main/Main.jsx';
 import Home from './Page/Home.jsx';
 import Checkout from './Page/Checkout.jsx';
 import ProductList from './Page/ProductList.jsx';
+import Contact from './Page/Contact.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
    {
         path: "checkout",
         element: <Checkout></Checkout>
+      },
+   {
+        path: "contact",
+        element: <Contact></Contact>
       },
 ]);
 

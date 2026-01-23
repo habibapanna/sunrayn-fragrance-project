@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import Button from "../assets/Button Container.png";
 import React, { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const NewArrivals = () => {
   const sectionRef = useRef(null);
@@ -32,6 +33,7 @@ const NewArrivals = () => {
       ref={sectionRef}
       className="mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]"
     >
+    <Link to='productList'>
       <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] md:p-20 relative overflow-hidden cursor-pointer">
 
         {/* ================= IMAGE GRID ================= */}
@@ -116,7 +118,7 @@ const NewArrivals = () => {
             </motion.p>
           </div>
         )}
-      </div>
+      </div></Link>
     </section>
   );
 };
