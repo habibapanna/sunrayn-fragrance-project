@@ -17,6 +17,7 @@ import ScrollReveal from "../components/ScrollReveal";
 const Home = () => {
   return (
     <div>
+        
       <Hero />
 
       <ScrollReveal>

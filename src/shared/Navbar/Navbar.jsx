@@ -39,6 +39,7 @@ const isProductList = location.pathname === "/productList";
 const isContact = location.pathname === "/contact";
 const isFaq = location.pathname === "/faq";
 const isAbout = location.pathname === "/about";
+const isTerms = location.pathname === "/terms";
 
 
 
@@ -56,19 +57,19 @@ useEffect(() => {
 }, []);
 
 
-const navBgClass = isProductList || isContact || isFaq || isAbout
+const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms
   ? "bg-[#BA9948]"
   : scrolled
   ? "bg-white backdrop-blur-sm"
   : "bg-transparent";
 
-const logoSrc = isProductList || isContact || isFaq || isAbout
+const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms
   ? Logo3
   : scrolled
   ? Logo2
   : Logo;
 
-const brandSrc = isProductList || isContact || isFaq || isAbout
+const brandSrc = isProductList || isContact || isFaq || isAbout || isTerms
   ? BrandName3
   : scrolled
   ? BrandName2
