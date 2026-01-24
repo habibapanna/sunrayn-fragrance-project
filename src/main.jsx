@@ -12,6 +12,7 @@ import Checkout from './Page/Checkout.jsx';
 import ProductList from './Page/ProductList.jsx';
 import Contact from './Page/Contact.jsx';
 import Faq from './Page/Faq.jsx';
+import About from './Page/About.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "faq",
         element: <Faq></Faq>
+      },
+      {
+        path: "about",
+        element: <About></About>
       },
      
     ]

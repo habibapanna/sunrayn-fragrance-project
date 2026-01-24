@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom";
 
 
 const Offer = () => {
     return (
         <div className='mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]'>
-           <section
+          <Link to='productList'> <section
   className="bg-cover bg-center flex rounded-[32px] md:rounded-[48px]"
   style={{
     backgroundImage:
@@ -28,12 +29,12 @@ const Offer = () => {
         Be the first to know about new collections and exclusive offers.
       </p>
 
-      <button className="bg-white text-black px-[24px] py-[10px] rounded-[100px] h-[40px] w-[123px] md:w-[210px] md:h-[55px] text-[14px] md:text-[20px] cursor-pointer font-bold hover:bg-[#DBAB35]">
+      <Link to='productList'><button className="bg-white text-black px-[24px] py-[10px] rounded-[100px] h-[40px] w-[123px] md:w-[210px] md:h-[55px] text-[14px] md:text-[20px] cursor-pointer font-bold hover:bg-[#DBAB35]">
        Shop Hurry
-      </button>
+      </button></Link>
     </div>
   </div>
-</section>
+</section></Link>
 
         </div>
     );

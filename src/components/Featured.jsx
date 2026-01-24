@@ -197,7 +197,7 @@ const prev = () =>
                         </p>
     
                         <div className="flex items-center justify-between gap-3">
-                          <button className="bg-white px-[16px] md:px-[24px] py-[6px] md:py-[10px] rounded-full font-semibold hover:bg-[#DBAB35]">
+                          <button className="bg-white px-[16px] md:px-[24px] py-[6px] md:py-[10px] rounded-full font-semibold hover:bg-[#DBAB35] cursor-pointer">
                             Add to Cart
                           </button>
     

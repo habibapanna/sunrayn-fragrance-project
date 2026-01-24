@@ -2,7 +2,7 @@ import React from "react";
 
 const Faq = () => {
   return (
-    <div className="min-h-screen bg-white px-4 py-20">
+    <div className="bg-white px-[32px] py-[64px]">
       {/* Header */}
       <div className="text-center mb-14">
         <h1 className="text-[32px] lg:text-[50px] font-semibold mb-3 text-[#282828]">

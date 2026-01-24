@@ -58,7 +58,7 @@ const Footer = () => {
                 <p className="text-[#571313] mb-4 text-[25px]">Company</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
                   <li className="hover:underline cursor-pointer">Shop by category</li>
-                  <li className="hover:underline cursor-pointer">About us</li>
+                  <li className="hover:underline cursor-pointer"><Link to='about'>About us</Link></li>
                   <li className="hover:underline cursor-pointer">Blogs</li>
                 </ul>
               </div>

@@ -27,6 +27,7 @@ const [scrolled, setScrolled] = useState(false);
 const [searchOpen, setSearchOpen] = useState(false);
 const [cartOpen, setCartOpen] = useState(false);
 const [perfumeOpen, setPerfumeOpen] = useState(false);
+const [collectionOpen, setCollectionOpen] = useState(false);
 const [openPerfume, setOpenPerfume] = useState(true);
 const [activeSection, setActiveSection] = useState(null);
 const [selectedItem, setSelectedItem] = useState(null);
@@ -37,6 +38,7 @@ const location = useLocation();
 const isProductList = location.pathname === "/productList";
 const isContact = location.pathname === "/contact";
 const isFaq = location.pathname === "/faq";
+const isAbout = location.pathname === "/about";
 
 
 
@@ -54,19 +56,19 @@ useEffect(() => {
 }, []);
 
 
-const navBgClass = isProductList || isContact || isFaq
+const navBgClass = isProductList || isContact || isFaq || isAbout
   ? "bg-[#BA9948]"
   : scrolled
   ? "bg-white backdrop-blur-sm"
   : "bg-transparent";
 
-const logoSrc = isProductList || isContact || isFaq
+const logoSrc = isProductList || isContact || isFaq || isAbout
   ? Logo3
   : scrolled
   ? Logo2
   : Logo;
 
-const brandSrc = isProductList || isContact || isFaq
+const brandSrc = isProductList || isContact || isFaq || isAbout
   ? BrandName3
   : scrolled
   ? BrandName2
@@ -170,9 +172,15 @@ const MobileGrid = ({ items }) => (
 </button>
 
 
-              <button className="flex items-center gap-[5px] text-[16px]">
+              <button
+              onClick={() => setCollectionOpen((p) => !p)}
+              className="flex items-center gap-[5px] text-[16px]">
                 Collections
-                <LiaAngleDownSolid className="h-[24px] w-[24px]" />
+                <LiaAngleDownSolid
+    className={`h-[24px] w-[24px] transition-transform cursor-pointer ${
+      collectionOpen ? "rotate-180" : ""
+    }`}
+  />
               </button>
 
               <span className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[7px] rounded-[100px] font-semibold flex items-center gap-[6px] w-[139px] h-[34px]">
@@ -261,7 +269,7 @@ const MobileGrid = ({ items }) => (
           <h4 className="font-bold text-[#1D0B01] mb-[12px]">
             Perfume Family
           </h4>
-          <ul className="space-y-[12px] text-[16px] text-[#1D0B01]">
+          <ul className="space-y-[12px] text-[16px] text-[#1D0B01]  cursor-pointer">
             <li>Flowery</li>
             <li>Warm</li>
             <li>Gourmand</li>
@@ -278,7 +286,67 @@ const MobileGrid = ({ items }) => (
               src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
               className="rounded-xl mx-auto mb-4"
             />
-          </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium">
+          </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium cursor-pointer">
+              View All Perfume
+            </p>
+        </div>
+
+      </div>
+    </div>
+  </>
+)}
+
+      {collectionOpen && (
+  <>
+    {/* CLICK OUTSIDE */}
+    <div
+      onClick={() => setCollectionOpen(false)}
+      className="fixed inset-0 z-40"
+    />
+
+    {/* MEGA MENU */}
+    <div className="absolute top-[90px] lg:right-[10px] 2xl:right-[80px] -translate-x-[150px] z-50">
+      <div className="relative bg-white rounded-[32px] shadow-xl px-[40px] py-[32px] flex gap-[74px]">
+
+        {/* ARROW TIP */}
+        <span className="absolute -top-[10px] right-[300px] w-5 h-5 bg-white rotate-45" />
+
+        {/* COLUMN 1 */}
+        <div>
+          <h4 className="font-bold text-[15px] text-[#571313] mb-[12px]">
+            Perfume Tyle
+          </h4>
+          <ul className="space-y-[12px] text-[16px] text-[#1D0B01]">
+            <li className="cursor-pointer hover:text-[#FD4929]">All Perfumes</li>
+            <li className="cursor-pointer hover:text-[#FD4929]">New Arrivals</li>
+            <li className="cursor-pointer hover:text-[#FD4929]">Limited Editions</li>
+            <li className="cursor-pointer hover:text-[#FD4929]">LCombo Sales</li>
+          </ul>
+        </div>
+
+        {/* COLUMN 2 */}
+        <div>
+          <h4 className="font-bold text-[#571313] mb-[12px]">
+            Inspired by Brand
+          </h4>
+          <ul className="space-y-[12px] text-[16px] text-[#1D0B01] cursor-pointer">
+            <li>Bluberry</li>
+            <li>Byredo</li>
+            <li>Chanel</li>
+            <li>Creed</li>
+            <li>Dior</li>
+            <li>Gucci</li>
+          </ul>
+        </div>
+
+        {/* RIGHT PRODUCT CARD */}
+        <div className="">
+          <div className="bg-[#FBF7F2] rounded-[24px] p-4 w-[220px] text-center">
+            <img
+              src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
+              className="rounded-xl mx-auto mb-4"
+            />
+          </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium cursor-pointer">
               View All Perfume
             </p>
         </div>
