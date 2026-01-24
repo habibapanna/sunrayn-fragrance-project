@@ -67,7 +67,7 @@ const Footer = () => {
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Other</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
-                  <li className="hover:underline cursor-pointer">FAQs</li>
+                  <li className="hover:underline cursor-pointer"><Link to='faq'>FAQs</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='contact'>Contact us</Link></li>
                 </ul>
               </div>

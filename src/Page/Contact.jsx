@@ -9,8 +9,8 @@ const Contact = () => {
     <div className="min-h-screen bg-white  px-4 py-16">
       {/* Header */}
       <div className="text-center mb-14">
-        <h1 className="text-[50px] text-[#282828] font-semibold mb-3">We’re Here to Help</h1>
-        <p className="text-[#282828] text-[20px] max-w-xl mx-auto">
+        <h1 className="text-[32px] lg:text-[50px] text-[#282828] font-semibold mb-3">We’re Here to Help</h1>
+        <p className="text-[#282828] text-[18px] lg:text-[20px] max-w-xl mx-auto">
           Have a question about our fragrances or your order? Our team is happy
           to help and will get back to you shortly.
         </p>
