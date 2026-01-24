@@ -1,5 +1,8 @@
 import React from "react";
-import { Phone, Mail, MapPin, Upload } from "lucide-react";
+import Call from '../assets/Frame (9).png'
+import Email from '../assets/Frame (10).png'
+import Location from '../assets/Frame (11).png'
+import Upload from '../assets/Upload.png'
 
 const Contact = () => {
   return (
@@ -23,37 +26,37 @@ const Contact = () => {
             project requested.
           </p>
 
-          <div className="space-y-6">
+          <div className="space-y-6 text-[#282828]">
             {/* Phone */}
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow">
-                <Phone size={20} />
+                <img src={Call} alt="" />
               </div>
               <div>
-                <p className="text-sm text-gray-500">Call Us</p>
-                <p className="font-medium">+1 (555) 682-9147</p>
+                <p className=" text-[15px]">Call Us</p>
+                <p className="font-medium text-[16px]">+1 (555) 682-9147</p>
               </div>
             </div>
 
             {/* Email */}
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow">
-                <Mail size={20} />
+                <img src={Email} alt="" />
               </div>
               <div>
-                <p className="text-sm text-gray-500">Email Us</p>
-                <p className="font-medium">support@sanrayn.com</p>
+                <p className="text-[15px]">Email Us</p>
+                <p className="font-medium text-[16px]">support@sanrayn.com</p>
               </div>
             </div>
 
             {/* Location */}
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow">
-                <MapPin size={20} />
+                <img src={Location} alt="" />
               </div>
               <div>
-                <p className="text-sm text-gray-500">Location</p>
-                <p className="font-medium">
+                <p className="text-[15px]">Location</p>
+                <p className="font-medium text-[16px]">
                   1234 Serenity Blvd, Suite 210, LA
                 </p>
               </div>
@@ -62,24 +65,24 @@ const Contact = () => {
         </div>
 
         {/* Right Card */}
-        <div className="bg-[#FAFAF7] text-black rounded-3xl p-10">
+        <div className="bg-[#FAFAF7] rounded-3xl p-10 text-[16px]">
           <form className="space-y-6">
             {/* Full Name */}
             <div>
               <label className="label">
-                <span className="label-text">Full Name</span>
+                <span className="label-text text-[#231F20]">Full Name</span>
               </label>
               <input
                 type="text"
                 placeholder="Ex: Steve Henry"
-                className="input input-bordered w-full rounded-full"
+                className="input input-bordered w-full rounded-full  text-[#282828]"
               />
             </div>
 
             {/* Email */}
             <div>
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text  text-[#231F20]">Email</span>
               </label>
               <input
                 type="email"
@@ -91,21 +94,21 @@ const Contact = () => {
             {/* Attachments */}
             <div>
               <label className="label">
-                <span className="label-text">Attachments</span>
+                <span className="label-text  text-[#231F20]">Attachments</span>
               </label>
-              <div className="border-2 border-dashed rounded-2xl p-8 text-center border-gray-300 hover:bg-gray-50 cursor-pointer transition">
-                <Upload className="mx-auto mb-2 text-gray-500" />
-                <p className="text-gray-500">Upload or drag files</p>
+              <div className="border-2 border-dashed rounded-2xl p-8 text-center border-[#282828]/20 hover:bg-gray-50 cursor-pointer transition">
+                <img src={Upload} alt="" className="mx-auto" />
+                <p className="text-[#282828]">Upload or drag files</p>
               </div>
             </div>
 
             {/* Message */}
             <div>
               <label className="label">
-                <span className="label-text">Message</span>
+                <span className="label-text  text-[#231F20]">Message</span>
               </label>
               <textarea
-                className="textarea textarea-bordered w-full rounded-2xl min-h-[120px]"
+                className="textarea textarea-bordered w-full rounded-2xl min-h-[120px]  text-[#282828]"
                 placeholder="Write your message here..."
               ></textarea>
             </div>
@@ -113,7 +116,7 @@ const Contact = () => {
             {/* Submit */}
             <button
               type="submit"
-              className="btn w-full rounded-full bg-[#E1B23A] hover:bg-[#d1a531] text-black border-none"
+              className="btn w-full py-[l4px] px-[16px] font-bold rounded-full bg-[#DBAB35] text-[#1D0B01] border-none"
             >
               Submit
             </button>
