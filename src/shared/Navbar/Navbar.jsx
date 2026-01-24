@@ -35,6 +35,8 @@ const location = useLocation();
 
 // adjust this path to match your ProductList route
 const isProductList = location.pathname === "/productList";
+const isContact = location.pathname === "/contact";
+
 
 
 
@@ -51,19 +53,19 @@ useEffect(() => {
 }, []);
 
 
-const navBgClass = isProductList
+const navBgClass = isProductList || isContact
   ? "bg-[#BA9948]"
   : scrolled
   ? "bg-white backdrop-blur-sm"
   : "bg-transparent";
 
-const logoSrc = isProductList
+const logoSrc = isProductList || isContact
   ? Logo3
   : scrolled
   ? Logo2
   : Logo;
 
-const brandSrc = isProductList
+const brandSrc = isProductList || isContact
   ? BrandName3
   : scrolled
   ? BrandName2

@@ -16,9 +16,9 @@ const Contact = () => {
       {/* Content */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left Card */}
-        <div className="bg-[#F6F7F2] text-black rounded-3xl p-10">
-          <h2 className="text-2xl font-semibold mb-2">Contact SANRAYN</h2>
-          <p className="text-gray-600 mb-8">
+        <div className="bg-[#F6F7F2]  rounded-3xl p-10">
+          <h2 className="text-[25px] lg:text-[32px] font-semibold mb-2 text-[#1D0B01]">Contact SANRAYN</h2>
+          <p className="text-[#282828] mb-8 text-[16px]">
             Our team is ready to assist with questions, support needs, and new
             project requested.
           </p>
@@ -93,7 +93,7 @@ const Contact = () => {
               <label className="label">
                 <span className="label-text">Attachments</span>
               </label>
-              <div className="border-2 border-dashed rounded-2xl p-8 text-center hover:bg-gray-50 cursor-pointer transition">
+              <div className="border-2 border-dashed rounded-2xl p-8 text-center border-gray-300 hover:bg-gray-50 cursor-pointer transition">
                 <Upload className="mx-auto mb-2 text-gray-500" />
                 <p className="text-gray-500">Upload or drag files</p>
               </div>

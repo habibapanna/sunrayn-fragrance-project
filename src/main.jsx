@@ -26,16 +26,16 @@ const router = createBrowserRouter([
         path: "productList",
         element: <ProductList></ProductList>
       },
+      {
+        path: "contact",
+        element: <Contact></Contact>
+      },
      
     ]
   },
    {
         path: "checkout",
         element: <Checkout></Checkout>
-      },
-   {
-        path: "contact",
-        element: <Contact></Contact>
       },
 ]);
 
