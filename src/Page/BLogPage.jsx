@@ -1,45 +1,10 @@
+import { useNavigate } from "react-router-dom";
+import { blogs } from "../data/blogs";
 
 
-const blogs = [
-  {
-    title: "The Rise of Halal Luxury Fragrances in the Modern World",
-    product: "https://i.postimg.cc/KvmJSjd2/Product-Image-(5).png",
-  },
-  {
-    title: "How to Choose Your Signature Scent Based on Personality",
-    product: "https://i.postimg.cc/Rh4QBppP/Perfume-Image.png",
-  },
-  {
-    title: "Crafting Luxury Without Compromise The Sanrayn Philosophy",
-    product: "https://i.postimg.cc/vTdvj2f0/Product-Image-(1).png",
-  },
-  {
-    title: "The Rise of Halal Luxury Fragrances in the Modern World",
-    product: "https://i.postimg.cc/KvmJSjd2/Product-Image-(5).png",
-  },
-  {
-    title: "How to Choose Your Signature Scent Based on Personality",
-    product: "https://i.postimg.cc/Rh4QBppP/Perfume-Image.png",
-  },
-  {
-    title: "Crafting Luxury Without Compromise The Sanrayn Philosophy",
-    product: "https://i.postimg.cc/vTdvj2f0/Product-Image-(1).png",
-  },
-  {
-    title: "The Rise of Halal Luxury Fragrances in the Modern World",
-    product: "https://i.postimg.cc/KvmJSjd2/Product-Image-(5).png",
-  },
-  {
-    title: "How to Choose Your Signature Scent Based on Personality",
-    product: "https://i.postimg.cc/Rh4QBppP/Perfume-Image.png",
-  },
-  {
-    title: "Crafting Luxury Without Compromise The Sanrayn Philosophy",
-    product: "https://i.postimg.cc/vTdvj2f0/Product-Image-(1).png",
-  },
-];
 
 const BLogPage = () => {
+    const navigate = useNavigate();
   return (
     <div className="px-[16px] 2xl:px-[32px] py-[16px] 2xl:py-[32px]">
      <div className="flex flex-col lg:flex-row justify-between text-[#282828] pb-[16px] 2xl:pb-[32px]">
@@ -80,7 +45,8 @@ const BLogPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[16px] 2xl:gap-[32px]">
           {blogs.map((blog, index) => (
             <div
-              key={index}
+             key={blog.slug}
+          onClick={() => navigate(`/blogs/${blog.slug}`)}
               className="relative rounded-[32px] md:rounded-[48px] h-[350px] md:h-[700px] overflow-hidden cursor-pointer"
             >
               {/* Image */}

@@ -15,6 +15,7 @@ import Faq from './Page/Faq.jsx';
 import About from './Page/About.jsx';
 import Terms from './components/Terms.jsx';
 import BLogPage from './Page/BLogPage.jsx';
+import BlogDetails from './Page/BlogDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
       {
         path: "blogs",
         element: <BLogPage></BLogPage>
+      },
+      {
+        path: "/blogs/:slug",
+        element: <BlogDetails></BlogDetails>
       },
      
     ]

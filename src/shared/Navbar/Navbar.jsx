@@ -41,6 +41,8 @@ const isFaq = location.pathname === "/faq";
 const isAbout = location.pathname === "/about";
 const isTerms = location.pathname === "/terms";
 const isBlogPage = location.pathname === "/blogs";
+const isBlogDetails = location.pathname.startsWith("/blogs/");
+
 
 
 
@@ -58,19 +60,19 @@ useEffect(() => {
 }, []);
 
 
-const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage
+const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails
   ? "bg-[#BA9948]"
   : scrolled
   ? "bg-white backdrop-blur-sm"
   : "bg-transparent";
 
-const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage
+const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails
   ? Logo3
   : scrolled
   ? Logo2
   : Logo;
 
-const brandSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage
+const brandSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails
   ? BrandName3
   : scrolled
   ? BrandName2
