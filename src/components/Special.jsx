@@ -24,7 +24,7 @@ useEffect(() => {
     const w = window.innerWidth;
 
     if (w >= 1535 && w <= 1750) {
-      setTextStyle({ left: "320px", top: "180px", fontSize: "90px" });
+      setTextStyle({ left: "450px", top: "180px", fontSize: "90px" });
     } 
     else if (w >= 1756) {
       setTextStyle({ left: "510px", top: "200px", fontSize: "120px" });

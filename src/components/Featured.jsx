@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
-import { LuCrown, LuHeartHandshake } from 'react-icons/lu';
-import { PiSealCheck } from 'react-icons/pi';
 import Discount from '../assets/Discount Price.png';
-import Original from '../assets/Original Price.png';
-import Frame from '../assets/Frame (2).png';
-import Checkmark from '../assets/checkmark-badge-01.png';
-import Crown from '../assets/crown-03.png';
 import { FaStar } from 'react-icons/fa';
+import Premium from './Premium';
 
 const items = [
   {
@@ -29,10 +24,6 @@ const items = [
 const Featured = () => {
 
 const [current, setCurrent] = useState(0);
-const [index, setIndex] = useState(0);
-// ITEMS swipe
-const [itemTouchStart, setItemTouchStart] = useState(null);
-const [itemTouchEnd, setItemTouchEnd] = useState(null);
 const [itemsPerView, setItemsPerView] = useState(3);
 
 useEffect(() => {
@@ -55,66 +46,9 @@ useEffect(() => {
 }, []);
 
 
-
-// PREMIUM swipe
-const [premTouchStart, setPremTouchStart] = useState(null);
-const [premTouchEnd, setPremTouchEnd] = useState(null);
 const minSwipeDistance = 50;
-const onItemTouchStart = (e) => {
-  setItemTouchEnd(null);
-  setItemTouchStart(e.targetTouches[0].clientX);
-};
-
-const onItemTouchMove = (e) =>
-  setItemTouchEnd(e.targetTouches[0].clientX);
-
-const onItemTouchEnd = () => {
-  if (!itemTouchStart || !itemTouchEnd) return;
-  const distance = itemTouchStart - itemTouchEnd;
-  if (distance > minSwipeDistance) next();
-  if (distance < -minSwipeDistance) prev();
-};
 
 
-const onPremTouchStart = (e) => {
-  setPremTouchEnd(null);
-  setPremTouchStart(e.targetTouches[0].clientX);
-};
-
-const onPremTouchMove = (e) =>
-  setPremTouchEnd(e.targetTouches[0].clientX);
-
-const onPremTouchEnd = () => {
-  if (!premTouchStart || !premTouchEnd) return;
-  const distance = premTouchStart - premTouchEnd;
-  if (distance > minSwipeDistance) nextPrem();
-  if (distance < -minSwipeDistance) prevPrem();
-};
-
-
-const premiumItems = [
-  {
-    title: "Premium",
-    desc: "All our fragrances are inspired by an exclusive collection of popular and iconic aromas",
-    bg: "#F6EAEF",
-    color: "#DC7C2A",
-    icon: Crown,
-  },
-  {
-    title: "Certified",
-    desc: "Certified, skin-friendly formula, Cruelty-free, crafted with care to ensure the safety of our beloved users.",
-    bg: "#E6F3EF",
-    color: "#43B583",
-    icon: Checkmark,
-  },
-  {
-    title: "Made with Care",
-    desc: "Every fragrance is responsibly crafted and carefully inspected to ensure perfection in every bottle.",
-    bg: "#EEEBFF",
-    color: "#FF4242",
-    icon: Frame,
-  },
-];
 
 const maxIndex = items.length - itemsPerView;
 
@@ -124,10 +58,6 @@ const next = () =>
 const prev = () =>
   setCurrent((prev) => (prev <= 0 ? maxIndex : prev - 1));
 
-
-  const nextPrem = () => setIndex((prevPrem) => (prevPrem + 1) % premiumItems.length);
-  const prevPrem = () =>
-    setIndex((prevPrem) => (prevPrem - 1 + premiumItems.length) % premiumItems.length);
 
     return (
         <div className='mx-auto px-[16px] pb-[16x] md:pb-[32px]'>
@@ -197,13 +127,50 @@ const prev = () =>
                         </p>
     
                         <div className="flex items-center justify-between gap-3">
-                          <button className="bg-white px-[16px] md:px-[24px] py-[6px] md:py-[10px] rounded-full font-semibold hover:bg-[#DBAB35] cursor-pointer">
+                          <button className="bg-white px-[16px] md:px-[24px] py-[6px] md:py-[10px] rounded-full font-semibold hover:bg-[#DBAB35] cursor-pointer 2xl:h-[45px] 2xl:w-[167px]">
                             Add to Cart
                           </button>
     
                           <div className="flex gap-[12px] md:gap-[20px]">
-                            <img src={Original} className="h-[35px] md:h-[45px]" />
-                            <img src={Discount} className="h-[40px] md:h-[52px]" />
+                             <div>
+                                <button className="text-[#FC2525] text-[16px] bg-[#FFFFFF80]/50 py-[10px] px-[20px] rounded-[100px] line-through">$20</button>
+                            </div>
+                                                       <div className="relative w-[105px] h-[45px]">
+  {/* Discount badge */}
+  <div className="absolute -top-[10px] left-1/2 -translate-x-1/2 
+  bg-[#1D0B01] text-white text-[8px] font-bold z-10 
+  h-[14px] w-[44px] 
+  flex items-center justify-center">
+  -40% Off
+</div>
+
+
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="105"
+    height="45"
+    viewBox="0 0 105 45"
+    fill="none"
+  >
+    <path
+      d="M95 11V0H10V11C4.47715 11 0 15.4772 0 21V24C0 29.5228 4.47715 34 10 34V45H95V34C100.523 34 105 29.5228 105 24V21C105 15.4772 100.523 11 95 11Z"
+      fill="#BA9948"
+    />
+
+    {/* Price text */}
+    <text
+      x="52.5"
+      y="30"
+      textAnchor="middle"
+      fontSize="16"
+      fontWeight="700"
+      fill="#FFFFFF"
+      fontFamily="sans-serif"
+    >
+      $29.40
+    </text>
+  </svg>
+</div>
                           </div>
                         </div>
                       </div>
@@ -224,91 +191,7 @@ const prev = () =>
             </div>
           </section>
 
-
-    {/******* Premium *******/}
-
-   <section className="hidden lg:block mx-auto ">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-[16px] md:gap-[32px] pl-[16px]">
-
-<div className='flex bg-[#EEEBFF] rounded-[24px] md:py-[32px] 2xl:px-[48px] p-[24px] justify-center items-center 2xl:h-[325px]'> 
-<div>
-<span className='text-[#DC7C2A] text-6xl'><img src={Crown} alt="" className='h-[60px] w-[60px] lg:h-[80px] lg:w-[80px]' /></span>
-<h3 className='text-[#DC7C2A] text-[25px] md:text-[35px] font-semibold mt-[20px] mb-2'>Premium</h3>
-<p className='text-[#0D0C09] text-[16px] lg:text-[18px]'>All our fragrances are inspired by an exclusive collection of popular and iconic aromas</p>
-</div>
-<div>
-  <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png" alt=""  className="hidden 2xl:block" />
-</div>
-</div>
-<div className='flex bg-[#EEEBFF] rounded-[24px] md:py-[32px] 2xl:px-[48px] p-[24px] justify-center items-center 2xl:h-[325px]'> 
-<div>
-<span className='text-[#43B583] text-6xl'><img src={Checkmark} alt="" className='h-[60px] w-[60px] lg:h-[80px] lg:w-[80px]' /></span>
-<h3 className='text-[#43B583] text-[25px] md:text-[35px] mt-[20px] mb-2'>Certified</h3>
-<p className='text-[#0D0C09] text-[16px] lg:text-[18px]'>Certified, skin-friendly formula, Cruelty-free, crafted with care to ensure the safety of our beloved users.</p>
-</div>
-<div>
-  <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png" alt=""  className="hidden 2xl:block" />
-</div>
-</div>
-<div className='flex bg-[#EEEBFF] rounded-[24px] md:py-[32px] 2xl:px-[48px] p-[24px] justify-center items-center 2xl:h-[325px]'> 
-<div>
-<span className='text-[#FF4242] text-6xl'><img src={Frame} alt="" className='h-[60px] w-[60px] lg:h-[80px] lg:w-[80px]' /></span>
-<h3 className='text-[#FF4242] text-[25px] md:text-[35px] mt-[20px] mb-2'>Made with Care</h3>
-<p className='text-[#0D0C09] text-[16px] lg:text-[18px]'>Every fragrance is responsibly crafted and carefully inspected to ensure perfection in every bottle.</p>
-</div>
-<div>
-  <img src="https://i.postimg.cc/DZv8tGB0/b20aa639-c0f6-43b7-b86f-f5199d28323a-1.png"  className="hidden 2xl:block" alt="" />
-</div>
-</div>
-
-      </div>
-    </section>
-
-    {/* ================= PREMIUM MOBILE CAROUSEL ================= */}
-<section className="lg:hidden pb-[16px] md:px-[16px]">
-  <div
-    className="relative overflow-hidden"
- onTouchStart={onPremTouchStart}
-  onTouchMove={onPremTouchMove}
-  onTouchEnd={onPremTouchEnd}
-  >
-    <div
-      className="flex transition-transform duration-500"
-      style={{ transform: `translateX(-${index * 100}%)` }}
-    >
-      {premiumItems.map((item, index) => (
-        <div key={index} className="min-w-full">
-          <div
-            className="rounded-[24px] p-[24px]"
-            style={{ backgroundColor: item.bg }}
-          >
-            <img src={item.icon} className="h-[60px] w-[60px]" />
-            <h3
-              className="text-[25px] font-semibold mt-[20px] mb-2"
-              style={{ color: item.color }}
-            >
-              {item.title}
-            </h3>
-            <p className="text-[#0D0C09] text-[16px]">
-              {item.desc}
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    {/* ARROWS */}
-    <div className="flex justify-center gap-5 mt-[16px]">
-      <button onClick={prevPrem} className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center">
-        <GoChevronLeft className="text-[30px]" />
-      </button>
-      <button onClick={nextPrem} className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center">
-        <GoChevronRight className="text-[30px]" />
-      </button>
-    </div>
-  </div>
-</section>
-
+<section className='2xl:px-[16px]'><Premium></Premium></section>
 
         </div>
     );

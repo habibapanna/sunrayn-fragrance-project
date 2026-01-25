@@ -36,7 +36,7 @@ const fadeInSoft = {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[32px] items-stretch">
 
         {/* LEFT IMAGE */}
-<motion.div
+<div
   variants={fadeUpSoft}
   initial="hidden"
   whileInView="visible"
@@ -48,11 +48,11 @@ const fadeInSoft = {
     alt="Signature Perfume"
     className="w-full h-[300px] md:h-[450px] lg:h-full object-cover rounded-3xl lg:rounded-[48px]"
   />
-</motion.div>
+</div>
 
 
         {/* RIGHT CONTENT CARD */}
-       <motion.div
+       <div
   variants={fadeInSoft}
   initial="hidden"
   whileInView="visible"
@@ -118,7 +118,7 @@ const fadeInSoft = {
               should carry.
             </p>
           </motion.div>
-      </motion.div>
+      </div>
       </div>
     </section>
   );

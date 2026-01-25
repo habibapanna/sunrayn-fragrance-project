@@ -46,7 +46,7 @@ const cardVariant = {
 
   return (
     <section className="mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]">
-      <motion.div
+      <div
   variants={containerVariant}
   initial="hidden"
   whileInView="visible"
@@ -55,7 +55,7 @@ const cardVariant = {
 >
 
         {categories.map((item, index) => (
-         <motion.div
+         <div
   key={index}
   variants={cardVariant}
   className="
@@ -109,9 +109,9 @@ const cardVariant = {
                 Shop {item.title}
               </span>
             </button>
-         </motion.div>
+         </div>
         ))}
-      </motion.div>
+      </div>
     </section>
   );
 };

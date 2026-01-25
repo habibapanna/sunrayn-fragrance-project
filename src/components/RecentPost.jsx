@@ -1,22 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
 import Instagram from '../assets/Instagram_logo_2016 1.png';
-import Marquee from 'react-fast-marquee';
+import MarqueeSection from './MarqueeSection';
 
 const posts = [
   { title: 'Men', product: 'https://i.postimg.cc/mkc0WDcW/Container-(1).png' },
   { title: 'Women', product: 'https://i.postimg.cc/prn1167M/N6Apea-UPkl-Bb-Tmrqi-Me-Hki00U-png-(3).png' },
   { title: 'Unisex', product: 'https://i.postimg.cc/Rh4QBppP/Perfume-Image.png' },
   { title: 'Unisex', product: 'https://i.postimg.cc/59Y4VNW2/N6Apea-UPkl-Bb-Tmrqi-Me-Hki00U-png-(4).png' },
-];
-
-const inspiredBy = [
-  { title: 'Black Opium' },
-  { title: "Love, Don’t be shy" },
-  { title: 'Good Girl' },
-  { title: 'Libre' },
-  { title: 'Light Blue' },
-  { title: 'Not a Perfume' },
 ];
 
 const RecentPost = () => {
@@ -115,22 +106,7 @@ const RecentPost = () => {
           </div>
       </div>
 
-      {/* Inspired By Marquee */}
-      <div className="pt-4 md:pt-8">
-        <Marquee speed={40} gradient={false} pauseOnHover>
-          {inspiredBy.map((item, index) => (
-            <button
-              key={index}
-              className="bg-[#F5F1EA] text-[#571313] px-8 py-3 rounded-full flex items-center text-base md:text-xl font-medium mx-2 md:mx-4 whitespace-nowrap"
-            >
-              Inspired by
-              <span className="underline font-bold ml-3 cursor-pointer">
-                {item.title}
-              </span>
-            </button>
-          ))}
-        </Marquee>
-      </div>
+  <MarqueeSection></MarqueeSection>
     </div>
   );
 };

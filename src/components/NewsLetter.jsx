@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const NewsLetter = () => {
   return (
-    <div className="mx-auto max-w-full px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
+    <div className="mx-auto max-w-full">
       <section
         className="relative bg-cover bg-center rounded-[32px] 2xl:rounded-[48px] overflow-hidden"
         style={{
