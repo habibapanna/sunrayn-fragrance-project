@@ -3,9 +3,18 @@ import MarqueeFlavour from "../components/MarqueeFlavour";
 import MarqueeSection from "../components/MarqueeSection";
 import NewsLetter from "../components/NewsLetter";
 import Premium from "../components/Premium";
-import { FiSearch, FiSliders } from "react-icons/fi";
-import { IoIosArrowDown } from "react-icons/io";
-import { AiOutlineHeart } from "react-icons/ai";
+import { useState, useRef, useEffect } from "react";
+
+const scentOptions = [
+  "Flowery",
+  "Fresh",
+  "Gourmand",
+  "Herbal",
+  "Earthy",
+  "Warm",
+];
+
+const genderOptions = ["Man", "Women", "Unisex"];
 
 const items = [
   {
@@ -94,6 +103,27 @@ const products = [
 ];
 
 const ProductList = () => {
+    const [openScent, setOpenScent] = useState(false);
+const [openGender, setOpenGender] = useState(false);
+const [selectedScents, setSelectedScents] = useState([]);
+const [selectedGender, setSelectedGender] = useState([]);
+
+const scentRef = useRef(null);
+const genderRef = useRef(null);
+
+useEffect(() => {
+  const handleClickOutside = (e) => {
+    if (scentRef.current && !scentRef.current.contains(e.target)) {
+      setOpenScent(false);
+    }
+    if (genderRef.current && !genderRef.current.contains(e.target)) {
+      setOpenGender(false);
+    }
+  };
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => document.removeEventListener("mousedown", handleClickOutside);
+}, []);
+
     return (
         <div className="py-[16px] 2xl:pb-[32px] 2xl:px-[32px] px-[16px]">
            <div className=" flex justify-center gap-[16px] 2xl:gap-[32px] py-[16px] 2xl:pb-[32px]">
@@ -118,12 +148,12 @@ const ProductList = () => {
 <section className="w-full pb-[16px] 2xl:pb-[32px]">
       <div className="flex flex-wrap items-center gap-[12px]">
         
-        {/* Short & Filter */}
+        {/* Sort & Filter */}
         <button className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[#1D0B01] font-medium text-[16px]">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M17.7096 10.0002H7.4138M3.77964 10.0002H2.29297M3.77964 10.0002C3.77964 9.51842 3.97103 9.05635 4.31172 8.71566C4.65242 8.37497 5.11449 8.18357 5.5963 8.18357C6.07811 8.18357 6.54019 8.37497 6.88088 8.71566C7.22157 9.05635 7.41297 9.51842 7.41297 10.0002C7.41297 10.482 7.22157 10.9441 6.88088 11.2848C6.54019 11.6255 6.07811 11.8169 5.5963 11.8169C5.11449 11.8169 4.65242 11.6255 4.31172 11.2848C3.97103 10.9441 3.77964 10.482 3.77964 10.0002ZM17.7096 15.5061H12.9196M12.9196 15.5061C12.9196 15.988 12.7278 16.4506 12.387 16.7914C12.0462 17.1321 11.5841 17.3236 11.1021 17.3236C10.6203 17.3236 10.1582 17.1313 9.81756 16.7906C9.47687 16.45 9.28547 15.9879 9.28547 15.5061M12.9196 15.5061C12.9196 15.0241 12.7278 14.5624 12.387 14.2216C12.0462 13.8808 11.5841 13.6894 11.1021 13.6894C10.6203 13.6894 10.1582 13.8808 9.81756 14.2215C9.47687 14.5622 9.28547 15.0243 9.28547 15.5061M9.28547 15.5061H2.29297M17.7096 4.4944H15.1221M11.488 4.4944H2.29297M11.488 4.4944C11.488 4.01259 11.6794 3.55051 12.0201 3.20982C12.3607 2.86913 12.8228 2.67773 13.3046 2.67773C13.5432 2.67773 13.7794 2.72472 13.9998 2.81602C14.2203 2.90732 14.4205 3.04113 14.5892 3.20982C14.7579 3.37852 14.8917 3.57878 14.983 3.79919C15.0743 4.0196 15.1213 4.25583 15.1213 4.4944C15.1213 4.73297 15.0743 4.9692 14.983 5.18961C14.8917 5.41002 14.7579 5.61029 14.5892 5.77898C14.4205 5.94767 14.2203 6.08149 13.9998 6.17278C13.7794 6.26408 13.5432 6.31107 13.3046 6.31107C12.8228 6.31107 12.3607 6.11967 12.0201 5.77898C11.6794 5.43829 11.488 4.97621 11.488 4.4944Z" stroke="#282828" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round"/>
 </svg>
-          SHORT & FILTER
+          SORT & FILTER
         </button>
 
         {/* Search bar */}
@@ -141,30 +171,143 @@ const ProductList = () => {
         </div>
 
         {/* Gender */}
-        <button className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[16px]">
-         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path d="M8.67689 16.6401C6.32582 14.882 1.66797 10.8627 1.66797 7.24569C1.66797 4.85502 3.42235 2.91699 5.83464 2.91699C7.08464 2.91699 8.33464 3.33366 10.0013 5.00033C11.668 3.33366 12.918 2.91699 14.168 2.91699C16.5802 2.91699 18.3346 4.85502 18.3346 7.24569C18.3346 10.8627 13.6768 14.882 11.3257 16.6401C10.5346 17.2317 9.46805 17.2317 8.67689 16.6401Z" stroke="#1D0B01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+       <div className="relative" ref={genderRef}>
+  <button
+    onClick={() => setOpenGender(!openGender)}
+    className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[16px] cursor-pointer"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16" fill="none">
+  <path d="M7.75892 14.4731C5.40785 12.715 0.75 8.69567 0.75 5.0787C0.75 2.68802 2.50438 0.75 4.91667 0.75C6.16667 0.75 7.41667 1.16667 9.08333 2.83333C10.75 1.16667 12 0.75 13.25 0.75C15.6622 0.75 17.4167 2.68802 17.4167 5.0787C17.4167 8.69567 12.7588 12.715 10.4077 14.4731C9.61658 15.0647 8.55008 15.0647 7.75892 14.4731Z" stroke="#1D0B01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-          Gender
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+    Gender
+     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M5 9.16699L10 14.167L15 9.16699" stroke="#282828" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-        </button>
+  </button>
+
+  {openGender && (
+    <div className="absolute top-[56px] left-0 w-[180px] bg-white rounded-[16px] shadow-lg p-[12px] z-50">
+      <ul className="space-y-[8px]">
+        {genderOptions.map((item) => {
+          const active = selectedGender.includes(item);
+          return (
+            <li
+              key={item}
+              onClick={() =>
+                setSelectedGender((prev) =>
+                  active ? prev.filter((v) => v !== item) : [...prev, item]
+                )
+              }
+              className={`flex items-center gap-[10px] px-[10px] py-[8px] rounded-[10px] cursor-pointer ${
+                active ? "bg-[#F6F7F2]" : ""
+              }`}
+            >
+              <div
+                className={`w-[18px] h-[18px] rounded-[7px] border flex items-center justify-center ${
+                  active
+                    ? "bg-[#C8A44B] border-[#C8A44B]"
+                    : "border-[#3A3F42]"
+                }`}
+              >
+                {active && (
+                  <svg width="12" height="12" viewBox="0 0 12 12">
+                    <path
+                      d="M2.5 6.5L5 9L9.5 3.5"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                )}
+              </div>
+              <span className="text-[16px] text-[#282828]">{item}</span>
+            </li>
+          );
+        })}
+      </ul>
+      <button
+        onClick={() => setSelectedGender([])}
+        className="text-[14px] underline text-left ml-[12px] mt-[10px] cursor-pointer"
+      >
+        Clear ({selectedGender.length})
+      </button>
+    </div>
+  )}
+</div>
+
 
         {/* Scent family */}
-        <button className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[16px]">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+      <div className="relative" ref={scentRef}>
+  <button
+    onClick={() => setOpenScent(!openScent)}
+    className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[16px] cursor-pointer"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M1.66797 13.3611C1.66797 14.9974 2.30399 16.4861 3.34362 17.5959C3.92211 18.2135 4.4392 18.3333 5.27539 18.3333H10.5606C11.3967 18.3333 11.9138 18.2135 12.4923 17.5959C13.532 16.4861 14.168 14.9974 14.168 13.3611C14.168 10.8554 12.6767 8.69617 10.5286 7.71283C10.1611 7.54464 9.83597 7.5 9.43264 7.5H6.40334C5.99994 7.5 5.67477 7.54464 5.30734 7.71283C3.15922 8.69617 1.66797 10.8554 1.66797 13.3611Z" stroke="#1D0B01" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M5.83203 7.5V6.66667C5.83203 5.28777 6.11981 5 7.4987 5H8.33203C9.71095 5 9.9987 5.28777 9.9987 6.66667V7.5" stroke="#1D0B01" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M9.16797 5V3.75C9.16797 2.8755 8.85705 2.5 7.91797 2.5C6.97891 2.5 6.66797 2.8755 6.66797 3.75V5" stroke="#1D0B01" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M15.832 6.66699C17.2127 6.66699 18.332 5.5477 18.332 4.16699C18.332 2.78628 17.2127 1.66699 15.832 1.66699C14.4513 1.66699 13.332 2.78628 13.332 4.16699C13.332 5.5477 14.4513 6.66699 15.832 6.66699Z" stroke="#1D0B01" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M5 3.33301H6.66667M9.16667 3.33301H13.3333" stroke="#1D0B01" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-          Scent family
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+    Scent family
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M5 9.16699L10 14.167L15 9.16699" stroke="#282828" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-        </button>
+  </button>
+
+  {openScent && (
+    <div className="absolute top-[56px] left-0 w-[220px] bg-white rounded-[16px] shadow-lg p-[12px] z-50">
+      <ul className="space-y-[10px]">
+        {scentOptions.map((item) => {
+          const active = selectedScents.includes(item);
+          return (
+            <li
+              key={item}
+              onClick={() =>
+                setSelectedScents((prev) =>
+                  active ? prev.filter((v) => v !== item) : [...prev, item]
+                )
+              }
+              className={`flex items-center gap-[10px] px-[10px] py-[8px] rounded-[10px] cursor-pointer ${
+                active ? "bg-[#F6F7F2]" : ""
+              }`}
+            >
+              <div
+                className={`w-[18px] h-[18px] rounded-[7px] border flex items-center justify-center ${
+                  active
+                    ? "bg-[#C8A44B] border-[#C8A44B]"
+                    : "border-[#3A3F42]"
+                }`}
+              >
+                {active && (
+                  <svg width="12" height="12" viewBox="0 0 12 12">
+                    <path
+                      d="M2.5 6.5L5 9L9.5 3.5"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                )}
+              </div>
+              <span className="text-[16px] text-[#282828]">{item}</span>
+            </li>
+          );
+        })}
+      </ul>
+
+      <button
+        onClick={() => setSelectedScents([])}
+        className="text-[14px] underline text-left ml-[12px] mt-[10px] cursor-pointer"
+      >
+        Clear ({selectedScents.length})
+      </button>
+    </div>
+  )}
+</div>
+
 
         {/* Inspired-by Brands */}
         <button className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[16px]">
@@ -198,7 +341,7 @@ Inspired-by Brands
 
       </div>
     </section>
-
+{/* Cards */}
  <section className="relative overflow-hidden pb-[16px] md:pb-[32px]">
             <div
               className="transition-transform duration-500 ease-in-out grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[16px] 2xl:gap-[32px]"
