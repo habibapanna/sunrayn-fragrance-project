@@ -291,7 +291,7 @@ const MobileGrid = ({ items }) => (
               className="rounded-xl mx-auto mb-4"
             />
           </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium cursor-pointer">
-              View All Perfume
+              <Link to='productList'>View All Perfume</Link>
             </p>
         </div>
 
@@ -351,7 +351,7 @@ const MobileGrid = ({ items }) => (
               className="rounded-xl mx-auto mb-4"
             />
           </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium cursor-pointer">
-              View All Perfume
+              <Link to='productList'>View All Perfume</Link>
             </p>
         </div>
 

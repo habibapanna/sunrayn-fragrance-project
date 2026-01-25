@@ -186,6 +186,8 @@ const ProductList = () => {
 const [openGender, setOpenGender] = useState(false);
 const [selectedScents, setSelectedScents] = useState([]);
 const [selectedGender, setSelectedGender] = useState([]);
+const [openFilter, setOpenFilter] = useState(false);
+
 
 const scentRef = useRef(null);
 const genderRef = useRef(null);
@@ -205,11 +207,12 @@ useEffect(() => {
 
     return (
         <div className="py-[16px] 2xl:pb-[32px] 2xl:px-[32px] px-[16px]">
+            {/* All categories */}
            <div className=" flex justify-center gap-[16px] 2xl:gap-[32px] py-[16px] 2xl:pb-[32px]">
   {products.map((item, i) => (
     <div
       key={i}
-      className="bg-[#F6F7F2] rounded-[24px] flex flex-col lg:flex-row items-center gap-[16px] p-[16px] 2xl:gap-[32px] 2xl:p-[24px] w-full"
+      className="bg-[#F6F7F2] rounded-[24px] flex flex-col 2xl:flex-row items-center gap-[16px] p-[16px] 2xl:gap-[32px] 2xl:p-[24px] w-full"
     >
       <h3 className="text-[20px] lg:text-[35px] font-semibold text-[#1D0B01]">
         {item.title}
@@ -228,7 +231,8 @@ useEffect(() => {
       <div className="flex flex-wrap items-center gap-[12px]">
         
         {/* Sort & Filter */}
-        <button className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[#1D0B01] font-medium text-[16px]">
+        <button className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[#1D0B01] font-medium text-[16px]"
+        >
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M17.7096 10.0002H7.4138M3.77964 10.0002H2.29297M3.77964 10.0002C3.77964 9.51842 3.97103 9.05635 4.31172 8.71566C4.65242 8.37497 5.11449 8.18357 5.5963 8.18357C6.07811 8.18357 6.54019 8.37497 6.88088 8.71566C7.22157 9.05635 7.41297 9.51842 7.41297 10.0002C7.41297 10.482 7.22157 10.9441 6.88088 11.2848C6.54019 11.6255 6.07811 11.8169 5.5963 11.8169C5.11449 11.8169 4.65242 11.6255 4.31172 11.2848C3.97103 10.9441 3.77964 10.482 3.77964 10.0002ZM17.7096 15.5061H12.9196M12.9196 15.5061C12.9196 15.988 12.7278 16.4506 12.387 16.7914C12.0462 17.1321 11.5841 17.3236 11.1021 17.3236C10.6203 17.3236 10.1582 17.1313 9.81756 16.7906C9.47687 16.45 9.28547 15.9879 9.28547 15.5061M12.9196 15.5061C12.9196 15.0241 12.7278 14.5624 12.387 14.2216C12.0462 13.8808 11.5841 13.6894 11.1021 13.6894C10.6203 13.6894 10.1582 13.8808 9.81756 14.2215C9.47687 14.5622 9.28547 15.0243 9.28547 15.5061M9.28547 15.5061H2.29297M17.7096 4.4944H15.1221M11.488 4.4944H2.29297M11.488 4.4944C11.488 4.01259 11.6794 3.55051 12.0201 3.20982C12.3607 2.86913 12.8228 2.67773 13.3046 2.67773C13.5432 2.67773 13.7794 2.72472 13.9998 2.81602C14.2203 2.90732 14.4205 3.04113 14.5892 3.20982C14.7579 3.37852 14.8917 3.57878 14.983 3.79919C15.0743 4.0196 15.1213 4.25583 15.1213 4.4944C15.1213 4.73297 15.0743 4.9692 14.983 5.18961C14.8917 5.41002 14.7579 5.61029 14.5892 5.77898C14.4205 5.94767 14.2203 6.08149 13.9998 6.17278C13.7794 6.26408 13.5432 6.31107 13.3046 6.31107C12.8228 6.31107 12.3607 6.11967 12.0201 5.77898C11.6794 5.43829 11.488 4.97621 11.488 4.4944Z" stroke="#282828" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round"/>
 </svg>
@@ -431,7 +435,7 @@ Inspired-by Brands
 {/* Cards */}
  <section className="relative overflow-hidden pb-[16px] md:pb-[32px]">
             <div
-              className="transition-transform duration-500 ease-in-out grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[16px] 2xl:gap-[32px]"
+              className="transition-transform duration-500 ease-in-out grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-[16px] 2xl:gap-[32px]"
             >
               {items.map((item, i) => (
                 <div
@@ -439,7 +443,7 @@ Inspired-by Brands
                   className=""
                 >
                     {/* CARD */}
-                    <div className="relative rounded-[24px] md:rounded-[48px] overflow-hidden bg-[#EDE8E0] h-[344px] md:h-[700px]">
+                    <div className="relative rounded-[24px] md:rounded-[48px] overflow-hidden bg-[#EDE8E0] h-[344px] lg:h-[700px]">
                        {item.off && (
   <div className="mt-[40px] ml-[40px]">
     <button
@@ -458,7 +462,7 @@ Inspired-by Brands
                       <img
                         src={item.product}
                         alt={item.title}
-                        className="absolute inset-0 object-cover mx-auto h-[220px] md:h-[501px]"
+                        className="absolute inset-0 object-cover mx-auto h-[220px] lg:h-[501px]"
                       />
     
                       <div className="absolute bottom-0 left-0 w-full z-20 p-[16px] md:p-[40px]">
