@@ -4,6 +4,10 @@ import MarqueeSection from "../components/MarqueeSection";
 import NewsLetter from "../components/NewsLetter";
 import Premium from "../components/Premium";
 import { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { products } from "../data/productsData";
+
+
 
 const scentOptions = [
   {
@@ -95,70 +99,70 @@ const scentOptions = [
 
 const genderOptions = ["Man", "Women", "Unisex"];
 
-const items = [
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-    off: 'Bestseller',
-  },
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/WpSytKqM/c082e350-40e9-4486-acfd-e19a5713042c-1-(1).png",
-    off: '',
-  },
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-    off: 'New',
-  },
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-    off: '',
-  },
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-    off: 'New',
-  },
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-    off: '',
-  },
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-    off: 'Discount',
-  },
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-    off: '',
-  },
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-    off: '',
-  },
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-    off: '',
-  },
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-    off: '',
-  },
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-    off: 'Discount',
-  },
+// const items = [
+//   {
+//     title: "Ambery Saffron",
+//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
+//     off: 'Bestseller',
+//   },
+//   {
+//     title: "Ambery Saffron",
+//     product: "https://i.postimg.cc/WpSytKqM/c082e350-40e9-4486-acfd-e19a5713042c-1-(1).png",
+//     off: '',
+//   },
+//   {
+//     title: "Ambery Saffron",
+//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
+//     off: 'New',
+//   },
+//   {
+//     title: "Ambery Saffron",
+//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
+//     off: '',
+//   },
+//   {
+//     title: "Ambery Saffron",
+//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
+//     off: 'New',
+//   },
+//   {
+//     title: "Ambery Saffron",
+//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
+//     off: '',
+//   },
+//   {
+//     title: "Ambery Saffron",
+//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
+//     off: 'Discount',
+//   },
+//   {
+//     title: "Ambery Saffron",
+//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
+//     off: '',
+//   },
+//   {
+//     title: "Ambery Saffron",
+//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
+//     off: '',
+//   },
+//   {
+//     title: "Ambery Saffron",
+//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
+//     off: '',
+//   },
+//   {
+//     title: "Ambery Saffron",
+//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
+//     off: '',
+//   },
+//   {
+//     title: "Ambery Saffron",
+//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
+//     off: 'Discount',
+//   },
   
-];
-const products = [
+// ];
+const items = [
   {
     title: "All Perfumes",
     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
@@ -187,7 +191,7 @@ const [openGender, setOpenGender] = useState(false);
 const [selectedScents, setSelectedScents] = useState([]);
 const [selectedGender, setSelectedGender] = useState([]);
 const [openFilter, setOpenFilter] = useState(false);
-
+const navigate = useNavigate();
 
 const scentRef = useRef(null);
 const genderRef = useRef(null);
@@ -209,7 +213,7 @@ useEffect(() => {
         <div className="py-[16px] 2xl:pb-[32px] 2xl:px-[32px] px-[16px]">
             {/* All categories */}
            <div className=" flex justify-center gap-[16px] 2xl:gap-[32px] py-[16px] 2xl:pb-[32px]">
-  {products.map((item, i) => (
+  {items.map((item, i) => (
     <div
       key={i}
       className="bg-[#F6F7F2] rounded-[24px] flex flex-col 2xl:flex-row items-center gap-[16px] p-[16px] 2xl:gap-[32px] 2xl:p-[24px] w-full"
@@ -437,13 +441,15 @@ Inspired-by Brands
             <div
               className="transition-transform duration-500 ease-in-out grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-[16px] 2xl:gap-[32px]"
             >
-              {items.map((item, i) => (
+              {products.map((item, i) => (
                 <div
                   key={i}
                   className=""
                 >
                     {/* CARD */}
-                    <div className="relative rounded-[24px] md:rounded-[48px] overflow-hidden bg-[#EDE8E0] h-[344px] lg:h-[700px]">
+                    <div className="relative rounded-[24px] md:rounded-[48px] overflow-hidden bg-[#EDE8E0] h-[344px] lg:h-[700px] cursor-pointer" 
+                    onClick={() => navigate(`/productList/${item.slug}`)}
+                    >
                        {item.off && (
   <div className="mt-[40px] ml-[40px]">
     <button
@@ -460,7 +466,7 @@ Inspired-by Brands
 
 
                       <img
-                        src={item.product}
+                        src={item.images[0]}
                         alt={item.title}
                         className="absolute inset-0 object-cover mx-auto h-[220px] lg:h-[501px]"
                       />
@@ -524,7 +530,7 @@ Inspired-by Brands
       fill="#FFFFFF"
       fontFamily="sans-serif"
     >
-      $29.40
+      ${item.price}
     </text>
   </svg>
 </div>
