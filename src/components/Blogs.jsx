@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 const blogs = [
   {
@@ -53,7 +54,7 @@ const Blogs = () => {
                     <p className='text-[25px] md:text-[50px] font-semibold text-[#282828]'>The Sanrayn Blogs</p>
                 </div>
                 <div>
-                    <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[14px] md:text-[20px] cursor-pointer w-[117px] h-[40px] md:w-[139px] md:h-[55px]">View All</button>
+                   <Link to='blogs'> <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[14px] md:text-[20px] cursor-pointer w-[117px] h-[40px] md:w-[139px] md:h-[55px]">View All</button></Link>
                 </div>
             </div>
             <div className='hidden lg:flex gap-5 '>
@@ -68,8 +69,9 @@ const Blogs = () => {
             </div>
 
       {/* CAROUSEL */}
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden cursor-pointer">
         {/* Slides container */}
+      <Link to='blogs'>
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${current * 100}%)` }}
@@ -77,7 +79,7 @@ const Blogs = () => {
           {slides.map((slide, index) => (
             <div key={index} className="flex-shrink-0 w-full flex gap-[16px] md:gap-[32px]">
               {slide.map((item, idx) => (
-                <div
+                 <div
                   key={idx}
                   className="relative rounded-[32px] md:rounded-[48px] flex-1 h-[350px] md:h-[700px] overflow-hidden cursor-pointer"
                 >
@@ -96,7 +98,7 @@ const Blogs = () => {
               ))}
             </div>
           ))}
-        </div>
+        </div></Link>
 
   {/* MOBILE ARROWS */}
   <div className="flex lg:hidden justify-center gap-5 mt-6">

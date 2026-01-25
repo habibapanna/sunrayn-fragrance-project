@@ -59,7 +59,7 @@ const Footer = () => {
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
                   <li className="hover:underline cursor-pointer">Shop by category</li>
                   <li className="hover:underline cursor-pointer"><Link to='about'>About us</Link></li>
-                  <li className="hover:underline cursor-pointer">Blogs</li>
+                   <li className="hover:underline cursor-pointer"><Link to='blogs'>Blogs</Link></li>
                 </ul>
               </div>
 

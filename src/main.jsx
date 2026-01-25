@@ -14,6 +14,7 @@ import Contact from './Page/Contact.jsx';
 import Faq from './Page/Faq.jsx';
 import About from './Page/About.jsx';
 import Terms from './components/Terms.jsx';
+import BLogPage from './Page/BLogPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: "terms",
         element: <Terms></Terms>
+      },
+      {
+        path: "blogs",
+        element: <BLogPage></BLogPage>
       },
      
     ]
