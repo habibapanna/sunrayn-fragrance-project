@@ -14,7 +14,7 @@ export const products = [
       "Alluring cherry and almond fragrance that balances sweetness and depth, playful at first, irresistibly smooth as it unfolds.",
 
     images: [
-      "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
+      "https://i.postimg.cc/j2HGZ9mf/5ba00ed74a5d07c68fbf483835563f1219803fa6.png",
       "https://i.postimg.cc/Rh4QBppP/Perfume-Image.png",
       "https://i.postimg.cc/vTdvj2f0/Product-Image-(1).png"
     ],
