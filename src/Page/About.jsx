@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className="bg-white">
       {/* HERO IMAGE */}
-      <section className=" mx-auto px-[16px]  lg:px-[32px] py-[16px] lg:py-[32px]">
+      <section className=" mx-auto px-[16px]  2xl:px-[32px] py-[16px] lg:py-[32px]">
         <div className="flex flex-col lg:flex-row justify-between text-[#282828] pb-[16px] 2xl:pb-[32px]">
             <h3 className="text-[32px] 2xl:text-[50px] "> Purpose in Every Scent</h3>
             <p className="text-[18px] 2xl:text-[20px]">Discover halal, alcohol-free luxury perfumes crafted with <br /> intention, artistry, and unwavering commitment to purity.</p>
@@ -234,7 +234,7 @@ const About = () => {
         </div>
       </section>
 
-    <NewsLetter></NewsLetter>
+    <section className="px-[16px] pb-[16px] lg:px-0 lg:pb-0"><NewsLetter></NewsLetter></section>
     </div>
   );
 };

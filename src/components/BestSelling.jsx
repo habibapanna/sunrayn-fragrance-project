@@ -2,6 +2,7 @@ import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import Discount from "../assets/Discount Price.png";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const items = [
   {
@@ -46,19 +47,19 @@ useEffect(() => {
   const prev = () => setCurrent((p) => (p <= 0 ? maxIndex : p - 1));
 
   return (
-    <div className="mx-auto px-[16px]">
+    <div className="mx-auto px-[8px] 2xl:px-[16px] pb-[16px] 2xl:pb-[32px]">
       {/* HEADER */}
-      <div className="flex justify-between items-center mb-[16px] md:mb-[32px]">
+      <div className="flex justify-between items-center mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:[32px]">
         <div className="flex items-center gap-[20px] md:gap-[32px] md:px-[16px]">
           <p
-            className="text-[25px] md:text-[50px] font-semibold text-[#282828]"
+            className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]"
             style={{ letterSpacing: "-1px" }}
           >
             Best Selling Perfumes
           </p>
 
           <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[14px] md:text-[20px]">
-            View All
+            <Link to='productList'>View All</Link>
           </button>
         </div>
 
@@ -79,7 +80,7 @@ useEffect(() => {
       </div>
 
       {/* CAROUSEL */}
-      <section className="relative overflow-hidden pb-[16px]">
+      <section className="relative overflow-hidden">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{
@@ -93,7 +94,7 @@ useEffect(() => {
               style={{ width: `${100 / itemsPerView}%` }}
             >
               {/* OUTER SPACING (SAFE) */}
-              <div className=" md:mx-[16px]">
+              <div className=" px-[8px] 2xl:px-[16px]">
                 {/* CARD */}
                 <div className="relative rounded-[24px] md:rounded-[48px] overflow-hidden bg-[#EDE8E0] h-[344px] md:h-[700px]">
                   <img

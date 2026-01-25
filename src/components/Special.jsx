@@ -66,7 +66,7 @@ const buttonVariants = {
   return (
     <section
   ref={sectionRef}
-  className="mx-auto pb-[16px] px-[16px] md:px-[32px] md:pb-[32px]"
+  className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]"
 >
 
     <Link to='productList'>

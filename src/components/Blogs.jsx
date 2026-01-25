@@ -46,12 +46,12 @@ const Blogs = () => {
   }
 
   return (
-    <div className="mx-auto max-w-full px-4 md:px-8 pb-4 md:pb-8">
+    <div className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
       {/* HEADER */}
-            <div className='flex justify-between mb-[16px] md:mb-[32px]'>
-            <div className='flex justify-center items-center text-center gap-[20px] md:gap-[32px]'>
+            <div className='flex justify-between mb-[16px] 2xl:mb-[32px] '>
+            <div className='flex justify-center items-center text-center gap-[20px] 2xl:gap-[32px]'>
                 <div>
-                    <p className='text-[25px] md:text-[50px] font-semibold text-[#282828]'>The Sanrayn Blogs</p>
+                    <p className='text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]'>The Sanrayn Blogs</p>
                 </div>
                 <div>
                    <Link to='blogs'> <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[14px] md:text-[20px] cursor-pointer w-[117px] h-[40px] md:w-[139px] md:h-[55px]">View All</button></Link>
@@ -77,11 +77,11 @@ const Blogs = () => {
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
           {slides.map((slide, index) => (
-            <div key={index} className="flex-shrink-0 w-full flex gap-[16px] md:gap-[32px]">
+            <div key={index} className="flex-shrink-0 w-full flex gap-[16px] 2xl:gap-[32px]">
               {slide.map((item, idx) => (
                  <div
                   key={idx}
-                  className="relative rounded-[32px] md:rounded-[48px] flex-1 h-[350px] md:h-[700px] overflow-hidden cursor-pointer"
+                  className="relative rounded-[32px] md:rounded-[48px] flex-1 h-[350px] lg:h-[500px] 2xl:h-[700px] overflow-hidden cursor-pointer"
                 >
                   <img
                     src={item.product}

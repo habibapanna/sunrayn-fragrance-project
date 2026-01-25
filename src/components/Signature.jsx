@@ -32,8 +32,8 @@ const fadeInSoft = {
 
 
   return (
-    <section className="mx-auto max-w-full px-[16px] md:px-[32px] py-[16px] md:py-[32px]">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[32px] items-stretch">
+    <section className="mx-auto px-[16px] 2xl:px-[32px] py-[16px] 2xl:py-[32px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] 2xl:gap-[32px] items-stretch">
 
         {/* LEFT IMAGE */}
 <div

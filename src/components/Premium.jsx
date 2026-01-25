@@ -43,7 +43,7 @@ const Premium = () => {
     <>
       {/* ================= DESKTOP ================= */}
       <section className="hidden lg:block pb-[16px] 2xl:pb-[32px]">
-        <div className="grid grid-cols-3 gap-[32px]">
+        <div className="grid grid-cols-3 gap-[16px] 2xl:gap-[32px]">
           {premiumItems.map((item, i) => (
             <div
               key={i}
@@ -68,7 +68,7 @@ const Premium = () => {
                 {item.desc}
               </p>
              </div>
-              <div>
+              <div className="hidden 2xl:block">
                 <img src={item.img} alt="" />
               </div>
             </div>
@@ -77,7 +77,7 @@ const Premium = () => {
       </section>
 
       {/* ================= MOBILE CAROUSEL ================= */}
-      <section className="lg:hidden px-[16px] pb-[32px]">
+      <section className="lg:hidden pb-[16px]">
         <div className="overflow-hidden relative">
           <div
             className="flex transition-transform duration-500"

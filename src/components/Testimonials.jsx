@@ -68,14 +68,14 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="mx-auto max-w-full px-[16px] pb-[16px] md:pb-[32px]">
+    <div className="mx-auto px-[8px] 2xl:px-[16px] pb-[16px] 2xl:pb-[32px]">
       {/* HEADER */}
-      <div className="flex justify-between items-start mb-[16px] md:mb-[32px]">
-        <p className="text-[25px] md:text-[40px] lg:text-[50px] font-semibold text-[#282828] md:px-[16px]">
+      <div className="flex justify-between items-start mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px] ">
+        <p className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828] md:px-[16px]">
           What Fragrance Lovers Are Saying About Sanrayn
         </p>
 
-        <div className="hidden lg:flex gap-5 md:mt-[16px]">
+        <div className="hidden lg:flex gap-5 ">
           <button
             onClick={prev}
             className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
@@ -110,7 +110,7 @@ const Testimonials = () => {
               className="flex-shrink-0"
               style={{ width: `${100 / cardsPerView}%` }}
             >
-              <div className="md:px-[16px] h-full">
+              <div className="px-[8px] 2xl:px-[16px] h-full">
                 {/* CARD */}
                 <div
                   className="relative rounded-[31px] h-full

@@ -45,13 +45,13 @@ const cardVariant = {
 };
 
   return (
-    <section className="mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]">
+    <section className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
       <div
   variants={containerVariant}
   initial="hidden"
   whileInView="visible"
   viewport={{ once: false, amount: 0.3 }}
-  className="grid grid-cols-1 lg:grid-cols-3 gap-[16px] md:gap-[32px]"
+  className="grid grid-cols-1 lg:grid-cols-3 gap-[16px] 2xl:gap-[32px]"
 >
 
         {categories.map((item, index) => (

@@ -38,13 +38,13 @@ const RecentPost = () => {
   }
 
   return (
-    <div className="mx-auto max-w-full px-4 md:px-8 pb-4 md:pb-8">
+    <div className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
       {/* Header */}
-      <div className="flex justify-between items-center mb-[16px] md:mb-[32px] gap-4">
-        <h2 className="text-2xl md:text-5xl font-semibold text-[#282828] hidden md:block">
+      <div className="flex justify-between items-center mb-[16px] 2xl:mb-[32px] gap-4">
+        <h2 className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828] hidden md:block">
           Recent Post on Instagram
         </h2>
-        <h2 className="text-2xl md:text-5xl font-semibold text-[#282828] md:hidden">
+        <h2 className="text-[25px] font-semibold text-[#282828] md:hidden">
         Instagram
         </h2>
         <div className="flex items-center gap-[24px]">
@@ -78,7 +78,7 @@ const RecentPost = () => {
           {slides.map((slide, index) => (
             <div
               key={index}
-              className="flex flex-shrink-0 w-full lg:gap-[32px] gap-[16px]"
+              className="flex flex-shrink-0 w-full 2xl:gap-[32px] gap-[16px]"
             >
               {slide.map((item, idx) => (
                 <div

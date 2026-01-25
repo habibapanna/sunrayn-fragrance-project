@@ -31,7 +31,7 @@ const NewArrivals = () => {
   return (
     <section
       ref={sectionRef}
-      className="mx-auto max-w-full px-[16px] pb-[16px] md:px-[32px] md:pb-[32px]"
+      className="mx-auto px-[16px] pb-[16px] 2xl:px-[32px] 2xl:pb-[32px]"
     >
     <Link to='productList'>
       <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] md:p-20 relative overflow-hidden cursor-pointer">
