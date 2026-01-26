@@ -99,69 +99,6 @@ const scentOptions = [
 
 const genderOptions = ["Man", "Women", "Unisex"];
 
-// const items = [
-//   {
-//     title: "Ambery Saffron",
-//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-//     off: 'Bestseller',
-//   },
-//   {
-//     title: "Ambery Saffron",
-//     product: "https://i.postimg.cc/WpSytKqM/c082e350-40e9-4486-acfd-e19a5713042c-1-(1).png",
-//     off: '',
-//   },
-//   {
-//     title: "Ambery Saffron",
-//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-//     off: 'New',
-//   },
-//   {
-//     title: "Ambery Saffron",
-//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-//     off: '',
-//   },
-//   {
-//     title: "Ambery Saffron",
-//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-//     off: 'New',
-//   },
-//   {
-//     title: "Ambery Saffron",
-//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-//     off: '',
-//   },
-//   {
-//     title: "Ambery Saffron",
-//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-//     off: 'Discount',
-//   },
-//   {
-//     title: "Ambery Saffron",
-//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-//     off: '',
-//   },
-//   {
-//     title: "Ambery Saffron",
-//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-//     off: '',
-//   },
-//   {
-//     title: "Ambery Saffron",
-//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-//     off: '',
-//   },
-//   {
-//     title: "Ambery Saffron",
-//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-//     off: '',
-//   },
-//   {
-//     title: "Ambery Saffron",
-//     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-//     off: 'Discount',
-//   },
-  
-// ];
 const items = [
   {
     title: "All Perfumes",
