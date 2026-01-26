@@ -77,49 +77,36 @@ const ProductCard = () => {
                                         Add to Cart
                                       </button>
                 
-                                      <div className="flex gap-[12px] md:gap-[20px]">
-                                        <div>
-                                            <button className="text-[#FC2525] text-[16px] bg-[#FFFFFF80]/50 py-[10px] px-[20px] rounded-[100px] line-through">$20</button>
-                                        </div>
-                                       <div className="relative w-[105px] h-[45px]">
-              {/* Discount badge */}
-              <div className="absolute -top-[10px] left-1/2 -translate-x-1/2 
-              bg-[#1D0B01] text-white text-[8px] font-bold z-10 
-              h-[14px] w-[44px] 
-              flex items-center justify-center">
-              -40% Off
-            </div>
-            
-            
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="105"
-                height="45"
-                viewBox="0 0 105 45"
-                fill="none"
-              >
-                <path
-                  d="M95 11V0H10V11C4.47715 11 0 15.4772 0 21V24C0 29.5228 4.47715 34 10 34V45H95V34C100.523 34 105 29.5228 105 24V21C105 15.4772 100.523 11 95 11Z"
-                  fill="#BA9948"
-                />
-            
-                {/* Price text */}
-                <text
-                  x="52.5"
-                  y="30"
-                  textAnchor="middle"
-                  fontSize="16"
-                  fontWeight="700"
-                  fill="#FFFFFF"
-                  fontFamily="sans-serif"
-                >
-                  ${item.price}
-                </text>
-              </svg>
-            </div>
-            
-                                       
-                                      </div>
+                                       <div className="flex gap-[12px] md:gap-[20px]">
+                      <div>
+                        <button className="text-[#FC2525] text-[16px] bg-[#FFFFFF80]/50 py-[10px] px-[20px] rounded-[100px] line-through">
+                          ${item.oldPrice}
+                        </button>
+                      </div>
+                      <div className="relative w-[105px] h-[45px]">
+                        <div className="absolute -top-[10px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-white text-[8px] font-bold z-10 h-[14px] w-[44px] flex items-center justify-center">
+                          -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
+                        </div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="105" height="45" viewBox="0 0 105 45" fill="none">
+                          <path
+                            d="M95 11V0H10V11C4.47715 11 0 15.4772 0 21V24C0 29.5228 4.47715 34 10 34V45H95V34C100.523 34 105 29.5228 105 24V21C105 15.4772 100.523 11 95 11Z"
+                            fill="#BA9948"
+                          />
+                          <text
+                            x="52.5"
+                            y="30"
+                            textAnchor="middle"
+                            fontSize="16"
+                            fontWeight="700"
+                            fill="#FFFFFF"
+                            fontFamily="sans-serif"
+                          >
+                            ${item.price.toFixed(2)}
+                          </text>
+                        </svg>
+                      </div>
+                    </div>
                                     </div>
                                   </div>
                                 </div>

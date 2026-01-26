@@ -22,6 +22,27 @@ html {
   scroll-behavior: smooth;
 }
 
+/* DaisyUI range custom color */
+input[type="range"].custom-range::-webkit-slider-thumb {
+  background-color: #BA9948;
+}
+
+input[type="range"].custom-range::-moz-range-thumb {
+  background-color: #BA9948;
+}
+
+input[type="range"].custom-range::-webkit-slider-runnable-track {
+  background: linear-gradient(
+    to right,
+    #BA9948 var(--value, 0%),
+    #e5e7eb var(--value, 0%)
+  );
+}
+
+input[type="range"].custom-range::-moz-range-track {
+  background: #e5e7eb;
+}
+
 
 
 
