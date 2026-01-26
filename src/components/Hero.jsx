@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     return (
@@ -61,9 +62,9 @@ const Hero = () => {
           </p>
 
           {/* CTA */}
-          <button className="bg-[#DBAB35] text-black px-[24px] py-[10px] rounded-[100px] text-[14px] md:text-[20px] font-bold cursor-pointer w-[116px] h-[40px] md:w-[210px] md:h-[55px] hover:bg-white">
+         <Link to='productList'> <button className="bg-[#DBAB35] text-black px-[24px] py-[10px] rounded-[100px] text-[14px] md:text-[20px] font-bold cursor-pointer w-[116px] h-[40px] md:w-[210px] md:h-[55px] hover:bg-white">
             Shop Now
-          </button>
+          </button></Link>
         </div>
 
         {/* RIGHT SIDE (kept empty since bottles are in bg image) */}
