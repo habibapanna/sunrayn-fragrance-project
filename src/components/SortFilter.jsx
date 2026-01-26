@@ -116,8 +116,6 @@ useEffect(() => {
   return () => document.removeEventListener("mousedown", handleClickOutside);
 }, []);
 
-
-
     return (
         <div>
             {/* Filter */}
