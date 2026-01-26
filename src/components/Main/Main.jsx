@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../../shared/Navbar/Navbar";
 import Footer from "../../shared/Footer/Footer";
+import ScrollToTop from "../ScrollToTop";
 
 const Main = () => {
   const location = useLocation();
@@ -8,6 +9,7 @@ const Main = () => {
 
   return (
     <div className="min-h-screen mx-auto flex flex-col bg-white">
+        <ScrollToTop />
       <Navbar />
 
       <section

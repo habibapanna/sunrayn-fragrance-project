@@ -522,56 +522,94 @@ export const products = [
   about: {
     title: "About Cerisa Aura by Sanrayn",
     paragraphs: [
-      "Feel the temptation with a dark, refined soul.",
-      "Who doesn’t love a luscious scent that instantly lifts your mood and draws attention from everyone around you? Yet finding a fragrance that balances brightness with depth can be a challenge. Cerisa Aura is crafted for those who enjoy contrast; it blends vivid sweetness with soft richness and warmth with gentle elegance.",
-      "Inspired by a luxurious private blend collection, it’s a scent that feels refined without ever being juvenile.",
-      "The aroma never becomes cloying. Perfect for any occasion when you want to make your presence memorable. This is the kind of fragrance that sparks curiosity, invites compliments, and leaves a lasting impression long after you’ve gone."
+      "Feel the temptation with a dark, refined soul",
+      "Who doesn’t love a luscious scent that instantly lifts your mood and draws attention from everyone around you? Yet finding a fragrance that balances brightness with depth can be a challenge. Cerisa Aura is crafted for those who enjoy contrast it blends vivid sweetness with soft richness, and warmth with gentle elegance. Inspired by a luxurious private blend collection, it’s a scent that feels refined without ever being juvenile.",
+      "The aroma never becomes cloying. Perfect for any occasion when you want to make your presence memorable. This is the kind of fragrance that sparks curiosity, invites compliments, and leaves a lasting impression long after you’ve gone.",
+      "One that sparks curiosity, invites compliments, and leaves a lasting impression long after you’ve left the room. Perfect for both men and women."
     ],
     tags: ["Vegan", "Cruelty-free", "Clean Ingredients"],
-    concentration: "18%",
-    gender: "Unisex"
+   meta: [
+    {
+      label: "Concentration",
+      value: "18%",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M1.66406 13.3611C1.66406 14.9974 2.30008 16.4861 3.33971 17.5959C3.9182 18.2135 4.4353 18.3333 5.27149 18.3333H10.5566C11.3928 18.3333 11.9099 18.2135 12.4884 17.5959C13.5281 16.4861 14.1641 14.9974 14.1641 13.3611C14.1641 10.8554 12.6728 8.69617 10.5247 7.71283C10.1572 7.54464 9.83206 7.5 9.42873 7.5H6.39944C5.99604 7.5 5.67086 7.54464 5.30344 7.71283C3.15531 8.69617 1.66406 10.8554 1.66406 13.3611Z" stroke="#1D0B01" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M5.83594 7.5V6.66667C5.83594 5.28777 6.12371 5 7.5026 5H8.33594C9.71485 5 10.0026 5.28777 10.0026 6.66667V7.5" stroke="#1D0B01" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M9.16406 5V3.75C9.16406 2.8755 8.85315 2.5 7.91406 2.5C6.975 2.5 6.66406 2.8755 6.66406 3.75V5" stroke="#1D0B01" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15.8359 6.66699C17.2166 6.66699 18.3359 5.5477 18.3359 4.16699C18.3359 2.78628 17.2166 1.66699 15.8359 1.66699C14.4552 1.66699 13.3359 2.78628 13.3359 4.16699C13.3359 5.5477 14.4552 6.66699 15.8359 6.66699Z" stroke="#1D0B01" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M5 3.33301H6.66667M9.16667 3.33301H13.3333" stroke="#1D0B01" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`
+    },
+    {
+      label: "Gender",
+      value: "Unisex",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M8.67298 16.6401C6.32191 14.882 1.66406 10.8627 1.66406 7.24569C1.66406 4.85502 3.41845 2.91699 5.83073 2.91699C7.08073 2.91699 8.33073 3.33366 9.9974 5.00033C11.6641 3.33366 12.9141 2.91699 14.1641 2.91699C16.5763 2.91699 18.3307 4.85502 18.3307 7.24569C18.3307 10.8627 13.6729 14.882 11.3218 16.6401C10.5306 17.2317 9.46415 17.2317 8.67298 16.6401Z" stroke="#1D0B01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`
+    }
+  ],
   },
 
   scentNotes: {
     title:
       "Cerisa Aura Celebrates Boldness, Vibrant energy, and Irresistible gourmand allure",
     paragraphs: [
-      "We all long to wear a fragrance that makes us feel fresh while leaving a smooth, enduring effect. Cerisa Aura is exactly that. A fragrance that can be worn to elevate your presence in any space.",
+      "We all long to wear a fragrance that makes us feel fresh while leaving a smooth, enduring effect. Cerisa Aura is exactly that. A fragrance that can be worn to elevate your presence in any space. From the very first spray, you’re greeted by a sweet, juicy burst of black cherries. It’s playful, indulgent, and utterly irresistible like wearing a delicious treat. ",
       "From the very first spray, you’re greeted by a sweet, juicy burst of black cherries. It’s playful, indulgent, and utterly irresistible like wearing a delicious treat.",
-      "Soon, the sweetness deepens into a richer, darker cherry heart, reminiscent of biting into chocolate with a cherry center. It’s sweet and gentle, perfectly balanced and comforting.",
-      "As the fragrance settles, soft floral and soothing woody notes take over, leaving a smooth, long-lasting finish. It’s a scent that evolves, tells a story, and leaves a memory wherever you go.",
-      "Cerisa Aura offers a unique experience you won’t find in any other fragrance. A celebration of bold sweetness, sensuous charm, and irresistible confidence."
+      "But the experience doesn’t stop there for you. Soon, the sweetness deepens into a richer, darker cherry heart, reminiscent of biting into chocolate with a cherry center. It’s sweet and gentle, perfectly balanced and comforting. As the fragrance settles, soft floral and soothing woody notes take over, leaving a smooth, long-lasting finish. It’s a scent that evolves, tells a story, and leaves a memory wherever you go. A distinctive floral cherry fragrance that captures attention and sparks conversation up close.",
+      "Cerisa Aura offers a unique experience you won’t find in any other fragrance. A celebration of bold sweetness, sensuous, and irresistible charm. It’s for those who enjoy standing out with quiet confidence and want a scent that feels like a personal signature. Ideal for cooler spring evenings and summer seasons, it performs beautifully when you want warmth, comfort, and a hint of temptation. A perfume that sparks admiration for how incredible you smell."
     ],
     note: "Sanrayn is not affiliated with or endorsed by any other brand."
   },
 
   shipping: {
-    title: "Shipping + Returns",
+    title: "Free exchange for all. Free return with SANRAYN.",
     items: [
-      { label: "Standard Shipping (with 3+ items)", value: "FREE" },
-      { label: "Standard Shipping (under 3 items)", value: "$3.95" },
-      { label: "Express shipping (2 business days)", value: "$19.00" }
+      { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M19.5 17.5C19.5 18.8807 18.3807 20 17 20C15.6193 20 14.5 18.8807 14.5 17.5C14.5 16.1193 15.6193 15 17 15C18.3807 15 19.5 16.1193 19.5 17.5Z" stroke="#282828" stroke-width="1.5"/>
+  <path d="M9.5 17.5C9.5 18.8807 8.38071 20 7 20C5.61929 20 4.5 18.8807 4.5 17.5C4.5 16.1193 5.61929 15 7 15C8.38071 15 9.5 16.1193 9.5 17.5Z" stroke="#282828" stroke-width="1.5"/>
+  <path d="M14.5 17.5H9.5M15 16.1245L15 7C15 5.58579 15 4.87868 14.5607 4.43934C14.1213 4 13.4142 4 12 4H5C3.58579 4 2.87868 4 2.43934 4.43934C2 4.87868 2 5.58579 2 7V15C2 15.9346 2 16.4019 2.20096 16.75C2.33261 16.978 2.52197 17.1674 2.75 17.299C3.09808 17.5 3.56538 17.5 4.5 17.5M15.5 6.5H17.3014C18.1311 6.5 18.5459 6.5 18.8898 6.6947C19.2336 6.8894 19.4471 7.2451 19.8739 7.95651L21.5725 10.7875C21.7849 11.1415 21.8911 11.3186 21.9456 11.5151C22 11.7116 22 11.918 22 12.331V15C22 15.9346 22 16.4019 21.799 16.75C21.6674 16.978 21.478 17.1674 21.25 17.299C20.9019 17.5 20.4346 17.5 19.5 17.5" stroke="#282828" stroke-width="1.5"/>
+</svg>`, label: "Standard Shipping (with 3+ items)", text: 'Auto-selected with 3+ items', value: "FREE", },
+      { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M19.5 17.5C19.5 18.8807 18.3807 20 17 20C15.6193 20 14.5 18.8807 14.5 17.5C14.5 16.1193 15.6193 15 17 15C18.3807 15 19.5 16.1193 19.5 17.5Z" stroke="#282828" stroke-width="1.5"/>
+  <path d="M9.5 17.5C9.5 18.8807 8.38071 20 7 20C5.61929 20 4.5 18.8807 4.5 17.5C4.5 16.1193 5.61929 15 7 15C8.38071 15 9.5 16.1193 9.5 17.5Z" stroke="#282828" stroke-width="1.5"/>
+  <path d="M14.5 17.5H9.5M15 16.1245L15 7C15 5.58579 15 4.87868 14.5607 4.43934C14.1213 4 13.4142 4 12 4H5C3.58579 4 2.87868 4 2.43934 4.43934C2 4.87868 2 5.58579 2 7V15C2 15.9346 2 16.4019 2.20096 16.75C2.33261 16.978 2.52197 17.1674 2.75 17.299C3.09808 17.5 3.56538 17.5 4.5 17.5M15.5 6.5H17.3014C18.1311 6.5 18.5459 6.5 18.8898 6.6947C19.2336 6.8894 19.4471 7.2451 19.8739 7.95651L21.5725 10.7875C21.7849 11.1415 21.8911 11.3186 21.9456 11.5151C22 11.7116 22 11.918 22 12.331V15C22 15.9346 22 16.4019 21.799 16.75C21.6674 16.978 21.478 17.1674 21.25 17.299C20.9019 17.5 20.4346 17.5 19.5 17.5" stroke="#282828" stroke-width="1.5"/>
+</svg>`, label: "Standard Shipping (under 3 items)", text: 'Auto-selected with 3 items',  value: "$3.95" },
+      { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M10 9.5L5.27531 4.47562C4.85705 4.02447 4.92403 3.69493 5.41729 3.40962C6.34454 2.87327 7.06689 2.8587 8.04428 3.39508L12.949 6.08672C13.2982 6.27833 13.6406 6.47256 14 6.57852" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M12.5 13.6632L14.6103 20.4697C14.7826 21.0255 15.086 21.1263 15.556 20.8568C16.4396 20.3501 16.7958 19.765 16.8197 18.7107L16.9395 13.4198C16.9555 12.7131 16.9526 12.0215 17.5 11.5" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8.32846 10.9843L10.2154 9.60554L14.6436 6.37704C14.6436 6.37704 16.2785 5.1759 17.1919 4.77578C18.2765 4.30064 19.2869 4.52153 20.3739 4.82512C20.9362 4.98215 21.2173 5.06066 21.4202 5.20714C21.742 5.43955 21.9513 5.79725 21.9943 6.18849C22.0215 6.43507 21.9498 6.71456 21.8065 7.27353C21.5294 8.35426 21.2181 9.32816 20.2588 10.0175C19.4509 10.598 17.5793 11.3946 17.5793 11.3946L12.5317 13.5645L10.3782 14.4876C9.5974 14.8223 9.207 14.9896 8.94139 15.3002C8.31933 16.0275 8.23148 17.3438 7.99931 18.2494C7.87101 18.7498 7.16748 19.6171 6.54058 19.4869C6.15355 19.4065 6.14613 18.922 6.09796 18.6131L5.6342 15.6389C5.5233 14.9276 5.51479 14.9131 4.94599 14.4627L2.56757 12.5793C2.32053 12.3836 1.89903 12.135 2.022 11.7641C2.22119 11.1633 3.33408 10.9957 3.83747 11.1363C4.74834 11.3907 5.94747 11.9738 6.89684 11.8058C7.3022 11.7341 7.6443 11.4842 8.32846 10.9843Z" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`, text: 'Select in checkout',  label: "Express shipping (2 business days)", value: "$19.00" },
+      { icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M12 22.001C11.1818 22.001 10.4002 21.6708 8.83693 21.0105C4.94564 19.3667 3 18.5448 3 17.1623C3 16.7752 3 10.0655 3 7.00098M12 22.001C12.8182 22.001 13.5998 21.6708 15.1631 21.0105C19.0544 19.3667 21 18.5448 21 17.1623V7.00098M12 22.001V11.3558" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M8.32592 9.6904L5.40472 8.27687C3.80157 7.50112 3 7.11325 3 6.49902C3 5.88479 3.80157 5.49692 5.40472 4.72117L8.32592 3.30764C10.1288 2.43523 11.0303 1.99902 12 1.99902C12.9697 1.99902 13.8712 2.43522 15.6741 3.30764L18.5953 4.72117C20.1984 5.49692 21 5.88479 21 6.49902C21 7.11325 20.1984 7.50112 18.5953 8.27687L15.6741 9.6904C13.8712 10.5628 12.9697 10.999 12 10.999C11.0303 10.999 10.1288 10.5628 8.32592 9.6904Z" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M6 12L8 13" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M17 4.00098L7 9.00098" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`, label: "Free returns In SANRAYN", text: 'View return policy', },
     ],
-    returns: "Free exchange for all. Free return with SANRAYN."
   },
 
   faq: [
     {
-      q: "Is this perfume halal and alcohol-free?",
+      q: "1. Is this perfume halal and alcohol-free??",
       a: "Yes. Sanrayn fragrances are halal-certified and completely alcohol-free, crafted with purity and care."
     },
     {
-      q: "How long does the fragrance last?",
-      a: "Our perfumes are designed to be long-lasting, typically staying noticeable for 6–10 hours."
+      q: "2. How long does the fragrance last?",
+      a: "Our perfumes are designed to be long-lasting, typically staying noticeable for 6–10 hours, depending on skin type and application."
     },
     {
-      q: "Is this fragrance suitable for both men and women?",
+      q: "3. Is this fragrance suitable for both men and women?",
       a: "Yes. This is a unisex fragrance, thoughtfully balanced to complement any style."
     },
     {
-      q: "Where should I apply the perfume for best results?",
-      a: "Apply to pulse points such as the wrists, neck, behind the ears, and inner elbows."
-    }
+      q: "4. Where should I apply the perfume for best results?",
+      a: "Apply to pulse points such as the wrists, neck, behind the ears, and inner elbows for optimal longevity."
+    },
+    {
+      q: "5. Unsure about something? Ask us!",
+      a: "help@sanrayn.co"
+    },
   ]
 },
 

@@ -211,9 +211,9 @@ const BigBottleIcon = () => (
 
   <button
     onClick={() => toggle("about")}
-    className="w-full flex justify-between items-center"
+    className="w-full flex justify-between items-center cursor-pointer"
   >
-    <h3 className="text-[16px] font-medium">About</h3>
+    <h3 className="text-[16px] 2xl:text-[18px] font-medium">About</h3>
     <ChevronDown
       className={`transition-transform ${
         openSection === "about" ? "rotate-180" : ""
@@ -222,19 +222,40 @@ const BigBottleIcon = () => (
   </button>
 
   {openSection === "about" && (
-    <div className="mt-[20px] space-y-[16px] text-[14px] text-[#282828]/90">
+    <div className="mt-[20px] space-y-[16px] text-[14px] text-[#282828]/90 bg-[#FFF] p-[24px] rounded-[32px]">
 
-      <p className="font-medium">{product.about.title}</p>
+      <p className="font-normal text-[16px] 2xl:text-[18px] text-[#1D0B01]">{product.about.title}</p>
 
       {product.about.paragraphs.map((p, i) => (
-        <p key={i}>{p}</p>
+        <p key={i} className="font-normal text-[16px] 2xl:text-[18px] text-[#282828]/80">{p}</p>
       ))}
+<div className="border-t border-[#282828]/20 pt-[24px] mt-[24px] space-y-3">
+
+  {product.about.meta.map((item, index) => (
+    <div
+      key={index}
+      className="flex items-center gap-3 text-[16px] text-[#1D0B01]"
+    >
+      {/* ICON */}
+      <span
+        className="flex items-center px-3 py-3 bg-[#F6F7F2] rounded-full"
+        dangerouslySetInnerHTML={{ __html: item.icon }}
+      />
+
+      {/* TEXT */}
+      <span className="font-medium text-[16px] 2xl:text-[18px] text-[#1D0B01]">
+        {item.label}: <span className="text-[16px] 2xl:text-[18px] text-[#282828]/80">{item.value}</span>
+      </span>
+    </div>
+  ))}
+
+</div>
 
       <div className="flex gap-2 mt-3">
         {product.about.tags.map((tag) => (
           <span
             key={tag}
-            className="px-3 py-1 bg-[#F6F7F2] rounded-full text-[12px]"
+            className="px-3 py-1 bg-[#F6F7F2] rounded-full font-normal text-[16px]"
           >
             {tag}
           </span>
@@ -246,14 +267,50 @@ const BigBottleIcon = () => (
 </div>
 
 
+{/* Scent Notes */}
+<div className="border-t border-[#282828]/20 pt-[24px] mt-[24px]">
+ <button
+    onClick={() => toggle("scentNotes")}
+    className="w-full flex justify-between items-center cursor-pointer"
+  >
+    <h3 className="text-[16px] 2xl:text-[18px] font-medium">Scent Notes</h3>
+    <ChevronDown
+      className={`transition-transform ${
+        openSection === "scentNotes" ? "rotate-180" : ""
+      }`}
+    />
+  </button>
+
+  {openSection === "scentNotes" && (
+    <div className="mt-[20px] space-y-[16px] text-[14px] text-[#282828]/90 bg-[#FFF] p-[24px] rounded-[32px]">
+
+      <p className="font-normal text-[16px] 2xl:text-[18px] text-[#1D0B01]">{product.scentNotes.title}</p>
+
+      {product.scentNotes.paragraphs.map((p, i) => (
+        <p key={i} className="font-normal text-[16px] 2xl:text-[18px] text-[#282828]/80">{p}</p>
+      ))}
+
+     <div className="mt-3">
+  <p className="text-[14px] 2xl:text-[18px] text-[#1D0B01] bg-[#F6F7F2] py-[8px] px-[16px] rounded-[100px]">
+    Note: {product.scentNotes.note}
+  </p>
+</div>
+
+
+    </div>
+  )}
+
+</div>
+
+
 {/* SHIPPING */}
 <div className="border-t border-[#282828]/20 pt-[24px] mt-[24px]">
 
   <button
     onClick={() => toggle("shipping")}
-    className="w-full flex justify-between items-center"
+    className="w-full flex justify-between items-center cursor-pointer"
   >
-    <h3 className="text-[16px] font-medium">Shipping + Returns</h3>
+    <h3 className="text-[16px] 2xl:text-[18px] font-medium">Shipping + Returns</h3>
     <ChevronDown
       className={`transition-transform ${
         openSection === "shipping" ? "rotate-180" : ""
@@ -262,26 +319,44 @@ const BigBottleIcon = () => (
   </button>
 
   {openSection === "shipping" && (
-    <div className="mt-[16px] space-y-[12px] text-[14px]">
-
+    <div className="mt-[16px] space-y-[12px] text-[14px] text-[#282828]/90 bg-[#FFF] p-[24px] rounded-[32px]">
+<p className="text-[#1D0B01] text-[16px] 2xl:text-[18px] font-medium mt-2">
+        {product.shipping.title}
+      </p>
       {product.shipping.items.map((s, i) => (
         <div
           key={i}
-          className="flex justify-between bg-[#F6F7F2] p-3 rounded-lg"
+          className="flex justify-between items-center bg-[#F6F7F2] 2xl:pr-[32px] px-[16px] py-[10px] 2xl:py-[12px] rounded-lg"
         >
-          <span>{s.label}</span>
-          <span className="font-medium">{s.value}</span>
+           <div
+  className={`flex gap-[16px] w-[400px] lg:w-[500px] border-gray-300 ${
+    i !== product.shipping.items.length - 1 ? "border-r" : ""
+  }`}
+>
+
+                 <span
+        className="flex items-center p-2 2xl:p-3 bg-[#FFF] rounded-full"
+        dangerouslySetInnerHTML={{ __html: s.icon }}
+      />
+ <div className="flex flex-col">
+            <span className="text-[15px] 2xl:text-[16px] font-medium">{s.label}</span>
+            <span
+  className={`text-[14px] 2xl:text-[15px] font-medium ${
+    s.text === "View return policy" ? "underline underline-offset-2" : ""
+  }`}
+>
+  {s.text}
+</span>
+
+          </div>
+            </div>
+         
+          <span className="text-[16px] 2xl:text-[18px] font-medium">{s.value}</span>
         </div>
       ))}
-
-      <p className="text-[#282828]/80 mt-2">
-        {product.shipping.returns}
-      </p>
-
     </div>
   )}
 </div>
-
 
 
 {/* FAQ */}
@@ -300,12 +375,13 @@ const BigBottleIcon = () => (
   </button>
 
   {openSection === "faq" && (
-    <div className="mt-[16px] space-y-[12px] text-[14px]">
+    <div className="mt-[16px] space-y-[12px] text-[14px]  bg-[#FFF] p-[24px] rounded-[32px]">
 
       {product.faq.map((f, i) => (
-        <p key={i}>
-          <strong>{f.q}</strong><br />
-          {f.a}
+        <p  key={i}
+        className="flex flex-col" >
+            <span className="text-[16px] 2xl:text-[18px] text-[#1D0B01]">{f.q}</span>
+            <span className="text-[16px] 2xl:text-[18px] text-[#282828]/80 mt-[16px]">{f.a}</span>
         </p>
       ))}
 
@@ -313,7 +389,7 @@ const BigBottleIcon = () => (
         Unsure?{" "}
         <a
           href="mailto:help@sanrayn.co"
-          className="text-[#DBAB35] underline"
+          className="text-[#E20000] underline cursor-pointer"
         >
           help@sanrayn.co
         </a>
