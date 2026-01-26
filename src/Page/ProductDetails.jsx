@@ -2,8 +2,17 @@ import { useParams } from "react-router-dom";
 import { products } from "../data/productsData";
 import { FaStar } from "react-icons/fa";
 import { Minus, Plus } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
+
 
 const ProductDetails = () => {
+    const [openSection, setOpenSection] = useState("notes");
+
+const toggle = (key) => {
+  setOpenSection(openSection === key ? null : key);
+};
+
     const SmallBottleIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <g clip-path="url(#clip0_24405_22822)">
@@ -37,7 +46,7 @@ const BigBottleIcon = () => (
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-[32px]">
 
         {/* LEFT – IMAGES */}
-        <div className="grid grid-cols-2 gap-[16px]">
+        <div className="grid grid-cols-2 gap-[16px] 2xl:gap-[32px]">
           <div className="col-span-2 ] ">
             <img
               src={product.images[0]}
@@ -47,8 +56,8 @@ const BigBottleIcon = () => (
           </div>
 
           {product.images.slice(1).map((img, i) => (
-            <div key={i} className="bg-[#F6F2ED] rounded-[24px] p-[24px]">
-              <img src={img} className="mx-auto h-[200px] object-contain" />
+            <div key={i} className="rounded-[32px]">
+              <img src={img} className="mx-auto h-full object-contain" />
             </div>
           ))}
         </div>
@@ -75,7 +84,7 @@ const BigBottleIcon = () => (
           <p className="mt-4 text-[18px] 2xl:text-[20px] text-[#282828]">{product.description}</p>
 
          {/* Volume */}
-<div className="mt-6">
+<div className="mt-[32px]">
   <p className="text-[16px] 2xl:text-[18px] mb-2">Volume</p>
 
   <div className="flex gap-2">
@@ -110,7 +119,7 @@ const BigBottleIcon = () => (
 
 
           {/* Price */}
-          <div className="flex items-center gap-3 mt-6">
+          <div className="flex items-center gap-3 mt-[32px]">
             <span className="text-[25px] 2xl:text-[30px] font-bold">${product.price}</span>
             <span className="line-through text-[#282828]/50 text-[18px] 2xl:text-[20px]">
               ${product.oldPrice}
@@ -118,7 +127,7 @@ const BigBottleIcon = () => (
           </div>
 
           {/* CTA */}
-        <div className="flex justify-between items-center gap-[16px] mt-6">   <div className="flex items-center gap-3 bg-white rounded-[100px] px-[12px] py-[10px] ">
+        <div className="flex justify-between items-center gap-[16px] mt-[32px]">   <div className="flex items-center gap-3 bg-white rounded-[100px] px-[12px] py-[10px] ">
                           <Minus className="h-[24px]" />
                           <span className="text-[20px]">1</span>
                           <Plus className="h-[24px]" />
@@ -127,13 +136,163 @@ const BigBottleIcon = () => (
             Add to cart
           </button></div>
 
-          {/* Notes */}
-          <div className="mt-8">
-            <h3 className="font-semibold mb-2">Notes & Ingredients</h3>
-            <p><strong>Top:</strong> {product.notes.top}</p>
-            <p><strong>Middle:</strong> {product.notes.middle}</p>
-            <p><strong>Base:</strong> {product.notes.base}</p>
+          {/* NOTES & INGREDIENTS */}
+<div className="mt-[40px] border-t border-[#282828]/20 pt-[24px]">
+
+  {/* HEADER */}
+  <button
+    onClick={() => toggle("notes")}
+    className="w-full flex justify-between items-center"
+  >
+    <h3 className="text-[16px] font-medium">Notes and Ingredients</h3>
+    <ChevronDown
+      className={`transition-transform ${
+        openSection === "notes" ? "rotate-180" : ""
+      }`}
+    />
+  </button>
+
+  {openSection === "notes" && (
+    <div className="mt-[24px] space-y-[24px]">
+
+      <p className="text-[#282828] text-[14px] leading-relaxed">
+        The formula is crafted with thoughtfully selected, skin-friendly materials.
+        Cerisa Aura delivers richness without heaviness.
+      </p>
+
+      {/* INGREDIENT ICONS */}
+      <div className="flex justify-between text-center">
+        {product.ingredients.map((i) => (
+          <div key={i.name}>
+            <div className="text-[32px] mb-1">{i.icon}</div>
+            <p className="text-[12px]">{i.name}</p>
           </div>
+        ))}
+      </div>
+
+      {/* NOTES */}
+      <div className="space-y-[20px]">
+
+        <div className="flex gap-3">
+          <span className="text-[20px]">🧴</span>
+          <div>
+            <p className="font-medium">Tops: {product.notes.top}</p>
+            <p className="text-[14px] text-[#282828]/80">
+              A magnetic opening of juicy black cherry and creamy almond, lifted by subtle cinnamon.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex gap-3">
+          <span className="text-[20px]">🧴</span>
+          <div>
+            <p className="font-medium">Middle: {product.notes.middle}</p>
+            <p className="text-[14px] text-[#282828]/80">
+              The scent deepens with luscious plum and warm clove, softened by rose and jasmine.
+            </p>
+          </div>
+        </div>
+
+        <div className="flex gap-3">
+          <span className="text-[20px]">🧴</span>
+          <div>
+            <p className="font-medium">Base: {product.notes.base}</p>
+            <p className="text-[14px] text-[#282828]/80">
+              Peru balsam, tonka bean, and vanilla create a creamy, ambery finish.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  )}
+</div>
+{/* ABOUT */}
+<div className="border-t border-[#282828]/20 pt-[24px] mt-[24px]">
+  <button
+    onClick={() => toggle("about")}
+    className="w-full flex justify-between items-center"
+  >
+    <h3 className="text-[16px] font-medium">About</h3>
+    <ChevronDown className={`${openSection === "about" ? "rotate-180" : ""}`} />
+  </button>
+
+  {openSection === "about" && (
+    <div className="mt-[20px] space-y-[16px] text-[14px] text-[#282828]/90">
+      <p className="font-medium">About Cerisa Aura by Sanrayn</p>
+
+      <p>
+        Feel the temptation with a dark, refined soul. Cerisa Aura balances
+        brightness with depth and elegance.
+      </p>
+
+      <p>
+        This aroma never becomes cloying. Perfect for any occasion and for both
+        men and women.
+      </p>
+
+      <div className="flex gap-2 mt-3">
+        <span className="px-3 py-1 bg-[#F6F7F2] rounded-full text-[12px]">Vegan</span>
+        <span className="px-3 py-1 bg-[#F6F7F2] rounded-full text-[12px]">Cruelty-free</span>
+        <span className="px-3 py-1 bg-[#F6F7F2] rounded-full text-[12px]">Clean Ingredients</span>
+      </div>
+    </div>
+  )}
+</div>
+{/* SHIPPING */}
+<div className="border-t border-[#282828]/20 pt-[24px] mt-[24px]">
+  <button
+    onClick={() => toggle("shipping")}
+    className="w-full flex justify-between items-center"
+  >
+    <h3 className="text-[16px] font-medium">Shipping + Returns</h3>
+    <ChevronDown className={`${openSection === "shipping" ? "rotate-180" : ""}`} />
+  </button>
+
+  {openSection === "shipping" && (
+    <div className="mt-[16px] space-y-[12px] text-[14px]">
+      <div className="flex justify-between bg-[#F6F7F2] p-3 rounded-lg">
+        <span>Standard Shipping (3+ items)</span>
+        <span className="font-medium">FREE</span>
+      </div>
+
+      <div className="flex justify-between bg-[#F6F7F2] p-3 rounded-lg">
+        <span>Standard Shipping</span>
+        <span>$3.95</span>
+      </div>
+
+      <div className="flex justify-between bg-[#F6F7F2] p-3 rounded-lg">
+        <span>Express Shipping (2 days)</span>
+        <span>$19.00</span>
+      </div>
+    </div>
+  )}
+</div>
+
+{/* FAQ */}
+<div className="border-t border-[#282828]/20 pt-[24px] mt-[24px]">
+  <button
+    onClick={() => toggle("faq")}
+    className="w-full flex justify-between items-center"
+  >
+    <h3 className="text-[16px] font-medium">FAQs</h3>
+    <ChevronDown className={`${openSection === "faq" ? "rotate-180" : ""}`} />
+  </button>
+
+  {openSection === "faq" && (
+    <div className="mt-[16px] space-y-[12px] text-[14px]">
+      <p><strong>Is this perfume halal?</strong> Yes, alcohol-free & halal-certified.</p>
+      <p><strong>How long does it last?</strong> 6–10 hours depending on skin type.</p>
+      <p><strong>Is it unisex?</strong> Yes, balanced for everyone.</p>
+      <p>
+        Unsure? <a href="mailto:help@sanrayn.co" className="text-[#DBAB35] underline">
+          help@sanrayn.co
+        </a>
+      </p>
+    </div>
+  )}
+</div>
+
 
           {/* Icons */}
           <div className="flex gap-4 mt-4">
