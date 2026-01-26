@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { X } from "lucide-react";
 import { LiaAngleDownSolid } from "react-icons/lia";
 import Logo from "../../assets/Logo.png";
 import Logo2 from "../../assets/Logo (2).png";
@@ -14,7 +14,6 @@ import BrandName2 from "../../assets/Brand Name (1).png";
 import BrandName3 from "../../assets/Brand Name (2).png";
 import { Link } from "react-router-dom";
 import { TbMenu } from "react-icons/tb";
-import { GoChevronRight } from "react-icons/go";
 import SearchOverlay from "../../components/SearchOverlay";
 import CartOverlay from "../../components/CartOverlay";
 import { useLocation } from "react-router-dom";
@@ -26,8 +25,9 @@ const [open, setOpen] = useState(false);
 const [scrolled, setScrolled] = useState(false);
 const [searchOpen, setSearchOpen] = useState(false);
 const [cartOpen, setCartOpen] = useState(false);
-const [perfumeOpen, setPerfumeOpen] = useState(false);
-const [collectionOpen, setCollectionOpen] = useState(false);
+const [openMegaMenu, setOpenMegaMenu] = useState(null);
+// values: "perfume" | "collection" | null
+
 const [openPerfume, setOpenPerfume] = useState(true);
 const [activeSection, setActiveSection] = useState(null);
 const [selectedItem, setSelectedItem] = useState(null);
@@ -164,29 +164,39 @@ const MobileGrid = ({ items }) => (
 
             {/* DESKTOP MENU (UNCHANGED) */}
             <div className="hidden lg:flex items-center gap-[24px] bg-white/90 text-[#282828] pr-[9px] pl-[24px] py-[12px] rounded-[100px] 2xl:mr-16 w-[426px] h-[50px]">
-              <button
-  onClick={() => setPerfumeOpen((p) => !p)}
-  className="flex items-center gap-[5px] text-[16px] relative"
+             <button
+  onClick={() =>
+    setOpenMegaMenu(
+      openMegaMenu === "perfume" ? null : "perfume"
+    )
+  }
+  className="flex items-center gap-[5px] text-[16px] cursor-pointer"
 >
   Perfumes
   <LiaAngleDownSolid
-    className={`h-[24px] w-[24px] transition-transform cursor-pointer ${
-      perfumeOpen ? "rotate-180" : ""
+    className={`h-[24px] w-[24px] transition-transform ${
+      openMegaMenu === "perfume" ? "rotate-180" : ""
     }`}
   />
 </button>
 
 
-              <button
-              onClick={() => setCollectionOpen((p) => !p)}
-              className="flex items-center gap-[5px] text-[16px]">
-                Collections
-                <LiaAngleDownSolid
-    className={`h-[24px] w-[24px] transition-transform cursor-pointer ${
-      collectionOpen ? "rotate-180" : ""
+<button
+  onClick={() =>
+    setOpenMegaMenu(
+      openMegaMenu === "collection" ? null : "collection"
+    )
+  }
+  className="flex items-center gap-[5px] text-[16px] cursor-pointer"
+>
+  Collections
+  <LiaAngleDownSolid
+    className={`h-[24px] w-[24px] transition-transform ${
+      openMegaMenu === "collection" ? "rotate-180" : ""
     }`}
   />
-              </button>
+</button>
+
 
               <span className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[7px] rounded-[100px] font-semibold flex items-center gap-[6px] w-[139px] h-[34px]">
                 <img src={Solar} className="h-[17px] w-[17px]" />
@@ -242,11 +252,10 @@ const MobileGrid = ({ items }) => (
         </div>
       </nav>
 
-      {perfumeOpen && (
+    {openMegaMenu === "perfume" && (
   <>
-    {/* CLICK OUTSIDE */}
     <div
-      onClick={() => setPerfumeOpen(false)}
+      onClick={() => setOpenMegaMenu(null)}
       className="fixed inset-0 z-40"
     />
 
@@ -300,12 +309,10 @@ const MobileGrid = ({ items }) => (
     </div>
   </>
 )}
-
-      {collectionOpen && (
+{openMegaMenu === "collection" && (
   <>
-    {/* CLICK OUTSIDE */}
     <div
-      onClick={() => setCollectionOpen(false)}
+      onClick={() => setOpenMegaMenu(null)}
       className="fixed inset-0 z-40"
     />
 

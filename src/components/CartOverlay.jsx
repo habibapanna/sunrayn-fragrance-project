@@ -138,7 +138,7 @@ const CartOverlay = ({ onClose }) => {
             <p className="text-[14px] text-[#282828]">Size: 15ML / 1oz</p>
 
             <div className="flex items-center justify-between mt-3">
-              <div className="flex items-center gap-3 bg-white rounded-[100px] px-[12px] py-[10px] ">
+              <div className="flex items-center gap-3 bg-white rounded-[100px] px-[12px] py-[10px]">
                 <Minus className="h-[24px]" />
                 <span className="text-[20px]">1</span>
                 <Plus className="h-[24px]" />
