@@ -143,9 +143,9 @@ const BigBottleIcon = () => (
 
   <button
     onClick={() => toggle("notes")}
-    className="w-full flex justify-between items-center"
+    className="w-full flex justify-between items-center cursor-pointer"
   >
-    <h3 className="text-[16px] font-medium">Notes and Ingredients</h3>
+    <h3 className="text-[16px] 2xl:text-[18px] font-medium">Notes and Ingredients</h3>
     <ChevronDown
       className={`transition-transform ${
         openSection === "notes" ? "rotate-180" : ""
@@ -154,33 +154,46 @@ const BigBottleIcon = () => (
   </button>
 
   {openSection === "notes" && (
-    <div className="mt-[24px] space-y-[24px]">
+    <div className="mt-[24px] space-y-[24px] bg-[#FFF] p-[24px] rounded-[32px]">
 
       {/* Intro */}
-      <p className="text-[14px] text-[#282828] leading-relaxed">
+      <p className="text-[16px] 2xl:text-[18px] text-[#282828] leading-relaxed">
         {product.notes.intro}
       </p>
-
       {/* Ingredient Icons */}
-      <div className="flex justify-between text-center">
-        {product.ingredients.map((i) => (
-          <div key={i.name}>
-            <div className="text-[32px] mb-1">{i.icon}</div>
-            <p className="text-[12px]">{i.name}</p>
-          </div>
-        ))}
-      </div>
+<div className="flex justify-between text-center">
+  {product.ingredients.map((i) => (
+    <div key={i.name}>
+      {typeof i.icon === "string" && i.icon.trim().startsWith("<svg") ? (
+        <div
+          className="w-8 h-8 mx-auto mb-1"
+          dangerouslySetInnerHTML={{ __html: i.icon }}
+        />
+      ) : (
+        <div className="text-[32px] ">{i.icon}</div>
+      )}
+
+      <p className="text-[16px] 2xl:text-[18px] mt-[30px]">{i.name}</p>
+    </div>
+  ))}
+</div>
+
 
       {/* Notes */}
       <div className="space-y-[20px]">
         {["top", "middle", "base"].map((key) => (
           <div key={key} className="flex gap-3">
-            <span className="text-[20px]">🧴</span>
+            <span className=""><svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+  <circle cx="28" cy="28" r="28" fill="#F6F7F2"/>
+  <path d="M27.9297 14.1338H28.9964V15.2005H27.9297V14.1338Z" fill="#1D0B01"/>
+  <path d="M30.6006 12C30.742 12 30.8776 12.0563 30.9775 12.1562C31.0775 12.2562 31.1338 12.3918 31.1338 12.5332V16.2666H33.2666V19.4668H35.4004C35.5418 19.4668 35.6773 19.523 35.7773 19.623C35.8774 19.7231 35.9336 19.8586 35.9336 20V43.4668C35.9336 43.6082 35.8773 43.7438 35.7773 43.8438C35.6773 43.9437 35.5418 44 35.4004 44H21.5342C21.3927 44 21.2563 43.9438 21.1562 43.8438C21.0564 43.7438 21 43.6081 21 43.4668V20C21 19.8587 21.0564 19.723 21.1562 19.623C21.2563 19.523 21.3927 19.4668 21.5342 19.4668H23.667V16.2666H25.8008V12.5332C25.8008 12.3918 25.857 12.2562 25.957 12.1562C26.057 12.0563 26.1926 12 26.334 12H30.6006ZM22.0674 42.7334H34.8672V28.667H22.0674V42.7334ZM22.0674 23.2002H27.9336V22.1338H26.8672V20.5332H22.0674V23.2002ZM30.0674 22.1338H29V23.2002H34.8672V20.5332H30.0674V22.1338ZM26.8672 16.2666H30.0674V13.0664H26.8672V16.2666Z" fill="#1D0B01"/>
+  <rect x="27.9297" y="23.7334" width="1.06667" height="19.2667" fill="#1D0B01"/>
+</svg></span>
             <div>
-              <p className="font-medium">
+              <p className="font-medium text-[16px] 2xl:text-[18px]">
                 {product.notes[key].title}: {product.notes[key].values}
               </p>
-              <p className="text-[14px] text-[#282828]/80">
+              <p className="text-[14px] 2xl:text-[16px] text-[#282828]/80">
                 {product.notes[key].description}
               </p>
             </div>
