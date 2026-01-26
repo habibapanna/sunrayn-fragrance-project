@@ -128,7 +128,7 @@ export const blogs = [
   {
     slug: "rise-of-halal-luxury-fragrances",
     title: "The Rise of Halal Luxury Fragrances in the Modern World",
-    product: "https://i.postimg.cc/bYnH7mKJ/9b0096f7b783078d5631d44d3d6e0c09fb305a7c.png",
+    product: "https://i.postimg.cc/vTdvj2f0/Product-Image-(1).png",
     description:
       "Luxury fragrance has long been associated with artistry, emotion, and identity. In recent years, a new movement has emerged within the perfume world halal luxury fragrances. What was once a niche category has evolved into a global expression of mindful elegance, purity, and modern sophistication.",
     content: [
@@ -296,7 +296,7 @@ export const blogs = [
   {
     slug: "rise-of-halal-luxury-fragrances",
     title: "The Rise of Halal Luxury Fragrances in the Modern World",
-    product: "https://i.postimg.cc/KvmJSjd2/Product-Image-(5).png",
+    product: "https://i.postimg.cc/vTdvj2f0/Product-Image-(1).png",
     description:
       "Luxury fragrance has long been associated with artistry, emotion, and identity. In recent years, a new movement has emerged within the perfume world halal luxury fragrances. What was once a niche category has evolved into a global expression of mindful elegance, purity, and modern sophistication.",
     content: [

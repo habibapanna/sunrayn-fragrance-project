@@ -17,7 +17,7 @@ const ProductCard = () => {
           </p>
 
           <button className="bg-[#BA9948] text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] py-2xl:[12px] rounded-full text-[14px] md:text-[20px]">
-            <Link to='productList'>Show More</Link>
+            <Link to='/productList'>Show More</Link>
           </button>
         
 
@@ -31,7 +31,7 @@ const ProductCard = () => {
                               className=""
                             >
                                 {/* CARD */}
-                                <div className="relative rounded-[24px] md:rounded-[48px] overflow-hidden bg-[#EDE8E0] h-[344px] lg:h-[700px] cursor-pointer" 
+                                <div className="relative rounded-[24px] md:rounded-[48px] overflow-hidden bg-[#EDE8E0] h-[344px] lg:h-[700px]" 
                                 >
                                    {item.off && (
               <div className="mt-[40px] ml-[40px]">

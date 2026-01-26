@@ -89,7 +89,7 @@ const fadeInSoft = {
     p-[24px]
     md:p-[64px]
     lg:p-[60px]
-    2xl:p-[153px]"
+    2xl:p-[120px]"
 >
 
             <h2 className="text-[#571313] font-semibold leading-tight

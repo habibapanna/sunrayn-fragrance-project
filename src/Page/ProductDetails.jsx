@@ -134,7 +134,7 @@ const BigBottleIcon = () => (
                           <span className="text-[20px]">1</span>
                           <Plus className="h-[24px]" />
                         </div>
-          <button className="text-[18px] 2xl:text-[20px] text-[#1D0B01] bg-[#DBAB35] w-full py-[10px] px-[24px] rounded-full font-semibold">
+          <button className="text-[18px] 2xl:text-[20px] text-[#1D0B01] bg-[#DBAB35] w-full py-[10px] px-[24px] rounded-full font-semibold cursor-pointer">
             Add to cart
           </button></div>
 
