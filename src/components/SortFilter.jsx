@@ -95,7 +95,7 @@ const showClearAll =
 
   return (
     <div>
-      <section className="w-full pb-[16px] 2xl:pb-[32px]">
+      <section className="w-full pb-[16px] 2xl:pb-[32px] px-[16px] 2xl:px-[32px]">
         <div className="flex flex-wrap items-center gap-[12px]">
 
           {/* Sort & Filter Button */}
