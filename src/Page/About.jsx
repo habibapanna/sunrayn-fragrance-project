@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import NewsLetter from "../components/NewsLetter";
 import Offer from "../components/Offer";
 
@@ -36,9 +37,9 @@ const About = () => {
               a variety of fair-priced, niche luxury scents for the next
               generation.
             </p>
-            <button className="btn rounded-full bg-[#DBAB35] hover:bg-white text-[20px] text-[#1D0B01] border-none px-[20px] py-[8px] lg:px-[24px] lg:py-[10px] 2xl:h-[55px] 2xl:w-[210px]">
+            <Link to='/productList'><button className="btn rounded-full bg-[#DBAB35] hover:bg-white text-[20px] text-[#1D0B01] border-none px-[20px] py-[8px] lg:px-[24px] lg:py-[10px] 2xl:h-[55px] 2xl:w-[210px]">
               Shop Now
-            </button>
+            </button></Link>
           </div>
         </div>
       </section>
@@ -193,10 +194,9 @@ const About = () => {
   </div>
 </section>
 
-
       {/* VALUES */}
       <section className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-[16px] 2xl:gap-[32px]">
           <div className="bg-[#FFF4E8] rounded-2xl p-8 text-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" className="mx-auto">
   <path d="M73.3307 22.5007H64.0344C62.0307 22.5007 61.0287 22.5007 60.0841 22.2146C59.1394 21.9286 58.3057 21.3728 56.6384 20.2613C54.1377 18.5941 51.2847 16.6922 49.8674 16.2631C48.4504 15.834 46.9474 15.834 43.9417 15.834C39.8544 15.834 37.2197 15.834 35.3821 16.5952C33.5444 17.3564 32.0993 18.8016 29.209 21.6919L26.6654 24.2355C26.014 24.8868 25.6883 25.2125 25.4872 25.5341C24.7419 26.726 24.8245 28.2575 25.6937 29.3624C25.9282 29.6604 26.287 29.9492 27.0047 30.5267C29.6573 32.6615 33.4814 32.4484 35.8834 30.0321L39.9974 25.8935H43.3307L63.3307 46.0125C65.1717 47.8645 65.1717 50.8669 63.3307 52.7189C61.4897 54.5709 58.5051 54.5709 56.6641 52.7189L54.9974 51.0422M54.9974 51.0422L44.9974 40.9829M54.9974 51.0422C56.8384 52.8942 56.8384 55.8969 54.9974 57.7485C53.1564 59.6005 50.1717 59.6005 48.3307 57.7485L44.9974 54.3956M44.9974 54.3956C46.8384 56.2472 46.8384 59.2499 44.9974 61.1019C43.1564 62.9535 40.1717 62.9535 38.3307 61.1019L33.3307 56.0719M44.9974 54.3956L38.3307 47.7289M33.3307 56.0719L31.6641 54.3956M33.3307 56.0719C35.1717 57.9239 35.1717 60.9266 33.3307 62.7786C31.4898 64.6302 28.505 64.6302 26.6641 62.7786L17.252 53.1702C15.3179 51.1959 14.3509 50.2089 13.1119 49.6879C11.8729 49.1672 10.491 49.1672 7.7272 49.1672H6.66406" stroke="#DC7C2A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -234,7 +234,7 @@ const About = () => {
         </div>
       </section>
 
-    <section className="px-[16px] pb-[16px] lg:px-0 lg:pb-0"><NewsLetter></NewsLetter></section>
+    <section className="px-[16px] pb-[16px] lg:px-[32px] lg:pb-[32px]"><NewsLetter></NewsLetter></section>
     </div>
   );
 };

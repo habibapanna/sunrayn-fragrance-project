@@ -5,6 +5,10 @@ import Categories from "../components/Categories";
 import SortFilter from "../components/SortFilter";
 import { products } from "../data/productsData";
 import { FaStar } from "react-icons/fa";
+import MarqueeSection from '../components/MarqueeSection';
+import MarqueeFlavour from '../components/MarqueeFlavour';
+import Premium from '../components/Premium';
+import NewsLetter from '../components/NewsLetter';
 
 const ProductList = () => {
   const navigate = useNavigate();
@@ -70,8 +74,12 @@ const ProductList = () => {
       return true;
     });
 
-    if (sortBy === "price-high") result.sort((a, b) => b.price - a.price);
-    if (sortBy === "price-low") result.sort((a, b) => a.price - b.price);
+   if (sortBy === "price-high") result.sort((a, b) => b.price - a.price);
+if (sortBy === "price-low") result.sort((a, b) => a.price - b.price);
+if (sortBy === "best-selling")
+  result = result.filter(p => p.off?.toLowerCase().includes("best"));
+if (sortBy === "new")
+  result = result.filter(p => p.off?.toLowerCase().includes("new"));
 
     return result;
   }, [filters, sortBy, priceRange]);
@@ -139,95 +147,260 @@ const ProductList = () => {
       <div className="relative flex gap-[16px] 2xl:gap-[32px]">
 
         {/* -------------------- SIDEBAR -------------------- */}
-        {sidebarOpen && (
-          <aside className="hidden lg:block sticky top-[120px] w-[550px] h-[calc(100vh-140px)] bg-[#EDE8D0] rounded-[16px] overflow-y-auto shrink-0">
+        {/* -------------------- SIDEBAR -------------------- */}
+{sidebarOpen && (
+  <aside className="hidden lg:block sticky top-[120px] w-[420px] h-[calc(100vh-140px)] bg-[#F2EFD8] rounded-[16px] overflow-y-auto shrink-0">
 
-            <div className="p-6 space-y-6 text-[#1D0B01]">
+    <div className="p-5 space-y-6 text-[#1D0B01]">
 
-              {/* SORT */}
-              <div className="space-y-3">
-                <h3 className="text-[16px] font-bold uppercase">Sort by</h3>
+      {/* ================= SORT BY ================= */}
+      <div className="space-y-2">
+        <h3 className="text-[14px] font-bold uppercase">Sort by:</h3>
 
-                {[
-                  { label: "Relevance (Default)", value: "relevance" },
-                  { label: "Price - high to low", value: "price-high" },
-                  { label: "Price - low to high", value: "price-low" },
-                ].map(item => (
-                  <label key={item.value} className="flex items-center gap-3">
-                    <input
-                      type="radio"
-                      name="sort"
-                      checked={sortBy === item.value}
-                      onChange={() => setSortBy(item.value)}
-                      className="radio radio-neutral checked:bg-[#BA9948]"
-                    />
-                    <span>{item.label}</span>
-                  </label>
-                ))}
-              </div>
+        <div
+          className="bg-[#FBFBF6] rounded-[12px] p-4 cursor-pointer"
+          onClick={() => toggleAccordion("Sort")}
+        >
+          <div className="flex justify-between items-center">
+            <span className="font-medium">
+              {[
+                "Relevance (Default)",
+                "Price - high to low",
+                "Price - low to high",
+                "Best - Selling",
+                "New Arrivals",
+              ].find(label =>
+                label.toLowerCase().includes(sortBy.split("-")[0])
+              ) || "Relevance (Default)"}
+            </span>
 
-              {/* ACTIVE TAGS */}
-              <div className="space-y-2">
-                <div className="flex flex-wrap gap-2">
-                  {Object.entries(filters).map(([key, values]) =>
-                    values.map(v => (
-                      <span
-                        key={`${key}-${v}`}
-                        className="flex items-center gap-2 bg-white px-3 py-1 rounded-full"
-                      >
-                        {v}
-                        <button onClick={() => toggleFilter(key, v)} className="font-bold">✕</button>
-                      </span>
-                    ))
-                  )}
-                </div>
+            <span className={`transition-transform ${openSection === "Sort" ? "rotate-180" : ""}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
+          </div>
 
-                <button onClick={clearAllFilters} className="text-[14px] underline">
-                  Clear all
-                </button>
-              </div>
-
-              <FilterBlock title="Gender" options={["MEN", "WOMEN", "UNISEX"]} filterKey="gender" />
-              <FilterBlock title="Inspired by Brands" options={["Burberry", "Byredo", "Chanel", "Chloe", "Dior", "Creed"]} filterKey="brand" />
-              <FilterBlock title="Scent Family" options={["Flowery", "Fresh", "Gourmand", "Herbal", "Warm", "Earthy"]} filterKey="scentFamily" />
-              <FilterBlock title="Scent - Intensity Scale" options={["Subtle", "Significant", "Statement"]} filterKey="intensity" />
-
-              {/* PRICE RANGE */}
-              <div className="bg-[#F6F7F2] rounded-[16px] p-3 space-y-2">
-                <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
-                  <h3 className="font-medium">Price</h3>
-                  <span className={`transition-transform ${openSection === "Price" ? "rotate-180" : ""}`}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                      <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                  </span>
-                </div>
-
-                {openSection === "Price" && (
-                  <div className="bg-white rounded-[12px] p-4 space-y-4">
-                    <input
-                      type="range"
-                      min={MIN_PRICE}
-                      max={MAX_PRICE}
-                      value={priceRange[1]}
-                      onChange={e => setPriceRange([priceRange[0], Number(e.target.value)])}
-                      className="w-full appearance-none h-[3px] rounded-full"
-                      style={{ background: "#DBAB35" }}
-                    />
-                    <div className="flex justify-between text-[14px] font-medium">
-                      <span>${priceRange[0]}</span>
-                      <span>${priceRange[1]}</span>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
-              <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
-
+          {openSection === "Sort" && (
+            <div className="mt-4 space-y-3">
+              {[
+                { label: "Relevance (Default)", value: "relevance" },
+                { label: "Price - high to low", value: "price-high" },
+                { label: "Price - low to high", value: "price-low" },
+                { label: "Best - Selling", value: "best-selling" },
+                { label: "New Arrivals", value: "new" },
+              ].map(item => (
+                <label key={item.value} className="flex items-center gap-3">
+                  <input
+                    type="radio"
+                    name="sort"
+                    checked={sortBy === item.value}
+                    onChange={() => setSortBy(item.value)}
+                    className="radio checked:bg-[#BA9948]"
+                  />
+                  <span>{item.label}</span>
+                </label>
+              ))}
             </div>
-          </aside>
+          )}
+        </div>
+      </div>
+
+      {/* ================= FILTER TITLE ================= */}
+      <h3 className="text-[14px] font-bold uppercase">Filter:</h3>
+
+      {/* ACTIVE TAGS */}
+      <div className="flex flex-wrap gap-2">
+        {Object.entries(filters).map(([key, values]) =>
+          values.map(v => (
+            <span key={`${key}-${v}`} className="flex items-center gap-2 bg-white px-4 py-1 rounded-full text-sm">
+              {v}
+              <button onClick={() => toggleFilter(key, v)}>✕</button>
+            </span>
+          ))
         )}
+        <button onClick={clearAllFilters} className="ml-auto underline text-sm">
+          Clear all
+        </button>
+      </div>
+
+      {/* ================= FILTER BLOCKS ================= */}
+      <FilterBlock title="Gender" options={["Women", "Men", "Unisex"]} filterKey="gender" />
+      <FilterBlock title="Inspired by Brands" options={["Burberry", "Byredo", "Chanel", "Chloe", "Clinique", "Creed", "Dior"]} filterKey="brand" />
+      <FilterBlock title="Scent Family" options={["Flowery", "Fresh", "Gourmand", "Herbal", "Earthy", "Warm"]} filterKey="scentFamily" />
+      <FilterBlock title="Scent - Intensity Scale" options={["Subtle", "Significant", "Statement"]} filterKey="intensity" />
+
+      {/* ================= PRICE RANGE ================= */}
+      <div className="bg-[#FBFBF6] rounded-[16px] p-4 space-y-4">
+        <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
+          <h3 className="font-medium">Price</h3>
+          <span className={`transition-transform ${openSection === "Price" ? "rotate-180" : ""}`}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </span>
+        </div>
+
+        {openSection === "Price" && (
+          <>
+            <input
+              type="range"
+              min={MIN_PRICE}
+              max={MAX_PRICE}
+              value={priceRange[1]}
+              onChange={e => setPriceRange([priceRange[0], Number(e.target.value)])}
+              className="w-full h-[3px] rounded-full appearance-none"
+              style={{ background: "#DBAB35" }}
+            />
+
+            <div className="flex justify-between text-sm font-medium">
+              <span>${priceRange[0]}</span>
+              <span>${priceRange[1]}</span>
+            </div>
+          </>
+        )}
+      </div>
+
+      <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
+      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
+
+    </div>
+  </aside>
+)}
+
+
+
+{/* -------------------- MOBILE SIDEBAR -------------------- */}
+{sidebarOpen && (
+  <>
+    {/* Overlay */}
+    <div
+      className="lg:hidden fixed inset-0 bg-black/40 z-40"
+      onClick={() => setSidebarOpen(false)}
+    />
+
+    {/* Sliding sidebar */}
+    <aside
+      className={`lg:hidden fixed top-0 left-0 z-50 h-full w-ful bg-[#EDE8D0] transform transition-transform duration-300
+        ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
+    >
+      <div className="p-6 space-y-6 overflow-y-auto h-full">
+        {/* Close button */}
+        <div className="flex justify-end">
+          <button onClick={() => setSidebarOpen(false)}>✕</button>
+        </div>
+<div className="space-y-2">
+        <h3 className="text-[14px] font-bold uppercase">Sort by:</h3>
+
+        <div
+          className="bg-[#FBFBF6] rounded-[12px] p-4 cursor-pointer"
+          onClick={() => toggleAccordion("Sort")}
+        >
+          <div className="flex justify-between items-center">
+            <span className="font-medium">
+              {[
+                "Relevance (Default)",
+                "Price - high to low",
+                "Price - low to high",
+                "Best - Selling",
+                "New Arrivals",
+              ].find(label =>
+                label.toLowerCase().includes(sortBy.split("-")[0])
+              ) || "Relevance (Default)"}
+            </span>
+
+            <span className={`transition-transform ${openSection === "Sort" ? "rotate-180" : ""}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </span>
+          </div>
+          
+
+          {openSection === "Sort" && (
+            <div className="mt-4 space-y-3">
+              {[
+                { label: "Relevance (Default)", value: "relevance" },
+                { label: "Price - high to low", value: "price-high" },
+                { label: "Price - low to high", value: "price-low" },
+                { label: "Best - Selling", value: "best-selling" },
+                { label: "New Arrivals", value: "new" },
+              ].map(item => (
+                <label key={item.value} className="flex items-center gap-3">
+                  <input
+                    type="radio"
+                    name="sort"
+                    checked={sortBy === item.value}
+                    onChange={() => setSortBy(item.value)}
+                    className="radio checked:bg-[#BA9948]"
+                  />
+                  <span>{item.label}</span>
+                </label>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+      {/* ================= FILTER TITLE ================= */}
+      <h3 className="text-[14px] font-bold uppercase">Filter:</h3>
+
+      {/* ACTIVE TAGS */}
+      <div className="flex flex-wrap gap-2">
+        {Object.entries(filters).map(([key, values]) =>
+          values.map(v => (
+            <span key={`${key}-${v}`} className="flex items-center gap-2 bg-white px-4 py-1 rounded-full text-sm">
+              {v}
+              <button onClick={() => toggleFilter(key, v)}>✕</button>
+            </span>
+          ))
+        )}
+        <button onClick={clearAllFilters} className="ml-auto underline text-sm">
+          Clear all
+        </button>
+      </div>
+        {/* Filter blocks (reuse your FilterBlock component) */}
+        <FilterBlock title="Gender" options={["Women", "Men", "Unisex"]} filterKey="gender" />
+        <FilterBlock title="Inspired by Brands" options={["Burberry","Byredo","Chanel","Chloe","Clinique","Creed","Dior"]} filterKey="brand" />
+        <FilterBlock title="Scent Family" options={["Flowery","Fresh","Gourmand","Herbal","Earthy","Warm"]} filterKey="scentFamily" />
+        <FilterBlock title="Scent - Intensity Scale" options={["Subtle","Significant","Statement"]} filterKey="intensity" />
+
+        {/* ================= PRICE RANGE ================= */}
+      <div className="bg-[#FBFBF6] rounded-[16px] p-4 space-y-4">
+        <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
+          <h3 className="font-medium">Price</h3>
+          <span className={`transition-transform ${openSection === "Price" ? "rotate-180" : ""}`}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </span>
+        </div>
+
+        {openSection === "Price" && (
+          <>
+            <input
+              type="range"
+              min={MIN_PRICE}
+              max={MAX_PRICE}
+              value={priceRange[1]}
+              onChange={e => setPriceRange([priceRange[0], Number(e.target.value)])}
+              className="w-full h-[3px] rounded-full appearance-none"
+              style={{ background: "#DBAB35" }}
+            />
+
+            <div className="flex justify-between text-sm font-medium">
+              <span>${priceRange[0]}</span>
+              <span>${priceRange[1]}</span>
+            </div>
+          </>
+        )}
+      </div>
+
+      <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
+      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
+      </div>
+    </aside>
+  </>
+)}
 
         {/* CARDS (SCROLLS INDEPENDENTLY) */}
         <section className="flex-1">
@@ -322,6 +495,10 @@ const ProductList = () => {
         </section>
 
       </div>
+      <section className="pt-[16px] 2xl:pt-[32px]"><Premium></Premium></section>
+      <NewsLetter></NewsLetter>
+      <MarqueeFlavour></MarqueeFlavour>
+      <MarqueeSection></MarqueeSection>
     </div>
   );
 };

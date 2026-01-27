@@ -1,7 +1,6 @@
 
 import { X } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
-import MobileFilterSidebar from "./MobileFilterSidebar";
 
 const scentOptions = [
   {
@@ -136,20 +135,8 @@ useEffect(() => {
         SORT & FILTER
       </button>
 
-      {/* MOBILE OVERLAY */}
-      {sidebarOpen && (
-        <div
-          onClick={() => setSidebarOpen(false)}
-          className="fixed inset-0 bg-black/40 z-40 lg:hidden"
-        />
-      )}
 
-     {/* MOBILE SIDEBAR (MODAL) */}
-{/* MOBILE SIDEBAR (MODAL) */}
-<MobileFilterSidebar
-  sidebarOpen={sidebarOpen}
-  setSidebarOpen={setSidebarOpen}
-/>
+
 
 
 
