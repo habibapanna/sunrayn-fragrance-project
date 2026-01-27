@@ -16,6 +16,8 @@ const ProductList = () => {
   /* -------------------- UI STATES -------------------- */
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [openSection, setOpenSection] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+
 
   /* -------------------- SORT STATE -------------------- */
   const [sortBy, setSortBy] = useState("relevance");
@@ -70,7 +72,12 @@ const ProductList = () => {
       if (filters.connection.length && !filters.connection.includes(p.connection)) return false;
       if (filters.volume.length && !filters.volume.some(v => p.volume.includes(v))) return false;
       if (p.price < priceRange[0] || p.price > priceRange[1]) return false;
-
+if (
+      searchQuery &&
+      !p.title.toLowerCase().includes(searchQuery.toLowerCase())
+    ) {
+      return false;
+    }
       return true;
     });
 
@@ -82,7 +89,7 @@ if (sortBy === "new")
   result = result.filter(p => p.off?.toLowerCase().includes("new"));
 
     return result;
-  }, [filters, sortBy, priceRange]);
+  }, [filters, sortBy, priceRange, searchQuery]);
 
   /* -------------------- ACCORDION TOGGLE -------------------- */
   const toggleAccordion = title => {
@@ -140,9 +147,15 @@ if (sortBy === "new")
       <Categories />
 
       <SortFilter
-        sidebarOpen={sidebarOpen}
-        setSidebarOpen={setSidebarOpen}
-      />
+  sidebarOpen={sidebarOpen}
+  setSidebarOpen={setSidebarOpen}
+  filters={filters}
+  toggleFilter={toggleFilter}
+  searchQuery={searchQuery}
+  setSearchQuery={setSearchQuery}
+  clearAllFilters={clearAllFilters}
+/>
+
 
       <div className="relative flex gap-[16px] 2xl:gap-[32px]">
 

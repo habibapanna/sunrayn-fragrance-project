@@ -25,20 +25,20 @@ const Categories = () => {
     return (
         <div>
               {/* categories */}
-           <div className=" flex justify-center gap-[16px] 2xl:gap-[32px] py-[16px] 2xl:pb-[32px] overflow-x-scroll 2xl:overflow-x-hidden">
+           <div className=" flex justify-center items-center gap-[16px] py-[32px] overflow-x-scroll 2xl:overflow-x-hidden">
   {items.map((item, i) => (
     <div
       key={i}
-      className="bg-[#F6F7F2] rounded-[24px] flex flex-col 2xl:flex-row items-center gap-[16px] p-[16px] 2xl:gap-[32px] 2xl:p-[24px] w-full"
+      className="bg-[#F6F7F2] rounded-[24px] flex flex-col 2xl:flex-row items-center p-[8px] 2xl:gap-[16px] 2xl:p-[24px] w-full"
     >
-      <h3 className="text-[20px] lg:text-[35px] font-semibold text-[#1D0B01]">
+      <h3 className="text-[20px] 2xl:text-[35px] font-semibold text-[#1D0B01]">
         {item.title}
       </h3>
 
       <img
         src={item.product}
         alt={item.title}
-        className="object-cover h-[108px] w-[108px]"
+        className="object-cover h-[80px] w-[80px] 2xl:h-[108px] 2xl:w-[108px]"
       />
     </div>
   ))}

@@ -1,14 +1,14 @@
-import React from 'react';
+
 import Offer from '../components/Offer';
 import SortFilter from '../components/SortFilter';
-import ProductCard from '../components/ProductCard';
 import Testimonials from '../components/Testimonials';
 import Premium from '../components/Premium';
 import { FaStar } from 'react-icons/fa';
 import { products } from '../data/productsData';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const HolidayOffer = () => {
+    const navigate = useNavigate();
     return (
         <div className='pt-[16px] 2xl:pt-[32px] '>
             <Offer></Offer>
@@ -42,9 +42,10 @@ const HolidayOffer = () => {
                        
                        
                                              <img
+                                             onClick={() => navigate(`/productList/${item.slug}`)}
                                                src={item.images[0]}
                                                alt={item.title}
-                                               className="absolute inset-0 object-cover mx-auto h-[220px] lg:h-[501px]"
+                                               className="absolute inset-0 object-cover mx-auto h-[220px] lg:h-[501px] cursor-pointer"
                                              />
                            
                                              <div className="absolute bottom-0 left-0 w-full z-20 p-[16px] md:p-[40px]">
