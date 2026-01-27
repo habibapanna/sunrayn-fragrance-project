@@ -428,7 +428,7 @@ const MobileGrid = ({ items }) => (
   </button>
 
   {/* Figma-style header divider */}
-  <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#cab3b3]" />
+  <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#571313]/10" />
 </div>
 
 
@@ -460,7 +460,7 @@ const MobileGrid = ({ items }) => (
     {activeSection === "style" && (
       <MobileGrid items={perfumeStyles} />
     )}
-<div className="border border-[#cab3b3]"></div>
+<div className="border border-[#571313]/10"></div>
     {/* Perfume Family */}
     <button
       onClick={() =>
@@ -481,16 +481,16 @@ const MobileGrid = ({ items }) => (
     {activeSection === "family" && (
       <MobileGrid items={perfumeFamilies} />
     )}
-  <div className="border border-[#cab3b3]"></div>
+  <div className="border border-[#571313]/10"></div>
   <div className="">
           <div className="bg-[#FBF7F2] p-4 text-center  rounded-[8px] ">
             <img
               src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
               className="mx-auto mb-4"
             />
-          </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium">
+          </div><Link to='/productList'> <p className="text-[16px] text-center text-[#1D0B01] font-medium">
               View All Perfume
-            </p>
+            </p></Link>
         </div>
   </div>
 
@@ -523,7 +523,7 @@ const MobileGrid = ({ items }) => (
     {activeSection === "type" && (
       <MobileGrid items={perfumeTypes} />
     )}
-<div className="border border-[#cab3b3]"></div>
+<div className="border border-[#571313]/10"></div>
     {/* Inspired by Brand */}
     <button
       onClick={() =>
@@ -544,16 +544,16 @@ const MobileGrid = ({ items }) => (
     {activeSection === "brand" && (
       <MobileGrid items={inspiredBrands} />
     )}
-  <div className="border border-[#cab3b3]"></div>
+  <div className="border border-[#571313]/10"></div>
   <div className="">
           <div className="bg-[#FBF7F2] p-4 text-center  rounded-[8px] ">
             <img
               src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
               className="mx-auto mb-4"
             />
-          </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium">
+          </div><Link to='/productList'> <p className="text-[16px] text-center text-[#1D0B01] font-medium">
               View All Perfume
-            </p>
+            </p></Link>
         </div>
   </div>
 </div>

@@ -1,9 +1,28 @@
 import { FaStar } from "react-icons/fa";
 import { products } from "../data/productsData";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 
 const ProductCard = () => {
+  const [limit, setLimit] = useState(2);
+
+useEffect(() => {
+  const updateLimit = () => {
+    if (window.innerWidth >= 1536) {
+      setLimit(3); // 2xl
+    } else if (window.innerWidth >= 1024) {
+      setLimit(2); // lg
+    } else {
+      setLimit(1); // mobile
+    }
+  };
+
+  updateLimit();
+  window.addEventListener("resize", updateLimit);
+  return () => window.removeEventListener("resize", updateLimit);
+}, []);
+
     return (
         <div>
             {/* Cards */}
@@ -25,7 +44,7 @@ const ProductCard = () => {
                         <div
                           className="transition-transform duration-500 ease-in-out grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-[16px] 2xl:gap-[32px]"
                         >
-                          {products.slice(0, 3).map((item, i) => (
+                          {products.slice(0, limit).map((item, i) => (
                             <div
                               key={i}
                               className=""

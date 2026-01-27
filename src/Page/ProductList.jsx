@@ -408,7 +408,7 @@ if (sortBy === "new")
             className={`
               grid gap-[16px] 2xl:gap-[32px]
               grid-cols-1
-              lg:${sidebarOpen ? "grid-cols-2" : "grid-cols-3"}
+              lg:${sidebarOpen ? "grid-cols-1" : "grid-cols-2"} & 2xl:${sidebarOpen ? "grid-cols-2" : "grid-cols-3"}
             `}
           >
             {filteredProducts.map((item, i) => (

@@ -171,7 +171,7 @@ useEffect(() => {
   </button>
 
   {openGender && (
-    <div className="absolute top-[56px] left-0 w-[180px] bg-white rounded-[16px] shadow-lg p-[12px] z-50">
+    <div className="absolute top-[56px] left-0 w-[180px] bg-white rounded-[16px] shadow-lg p-[12px] z-40">
       <ul className="space-y-[8px]">
         {genderOptions.map((item) => {
           const active = selectedGender.includes(item);
@@ -206,7 +206,7 @@ useEffect(() => {
                   </svg>
                 )}
               </div>
-              <span className="text-[16px] text-[#282828]">{item}</span>
+              <span className="text-[14px] 2xl:text-[16px] text-[#282828]">{item}</span>
             </li>
           );
         })}
@@ -242,7 +242,7 @@ useEffect(() => {
   </button>
 
   {openScent && (
-    <div className="absolute top-[56px] left-0 w-[220px] bg-white rounded-[16px] shadow-lg p-[12px] z-50">
+    <div className="absolute top-[56px] left-0 w-[180px] bg-white rounded-[16px] shadow-lg p-[12px] z-20">
       <ul className="space-y-[10px]">
   {scentOptions.map(({ label, icon }) => {
     const active = selectedScents.includes(label);
@@ -255,7 +255,7 @@ useEffect(() => {
             active ? prev.filter((v) => v !== label) : [...prev, label]
           )
         }
-        className={`flex items-center gap-[12px] px-[10px] py-[8px] rounded-[10px] cursor-pointer
+        className={`flex items-center gap-[10px] py-[8px] rounded-[10px] cursor-pointer
           ${active ? "bg-[#F6F7F2]" : ""}`}
       >
         {/* CHECKBOX */}
@@ -282,7 +282,7 @@ useEffect(() => {
         </span>
 
         {/* LABEL */}
-        <span className="text-[16px] text-[#282828]">
+        <span className="text-[14px] 2xl:text-[16px] text-[#282828]">
           {label}
         </span>
       </li>
@@ -303,7 +303,7 @@ useEffect(() => {
 
 
         {/* Inspired-by Brands */}
-        <button className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[16px]">
+        <button className="hidden 2xl:flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[16px]">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M12 6L8 6" stroke="#1D0B01"/>
   <rect x="4" y="8" width="12" height="11" rx="1" stroke="#1D0B01" stroke-width="1.25"/>
@@ -318,7 +318,7 @@ Inspired-by Brands
         </button>
 
         {/* Collections */}
-        <button className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[16px]">
+        <button className=" hidden 2xl:flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[16px]">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M6 13.4189C6.63342 13.0889 7.31328 12.9189 8 12.9189C8.68672 12.9189 9.36658 13.0889 10 13.4189C10.6334 13.7489 11.3133 13.9189 12 13.9189C12.6867 13.9189 13.3666 13.7489 14 13.4189" stroke="#1D0B01" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M6 9C6 7.89543 6.89543 7 8 7H12C13.1046 7 14 7.89543 14 9V17C14 17.5523 13.5523 18 13 18H7C6.44772 18 6 17.5523 6 17V9Z" stroke="#1D0B01" stroke-width="1.25"/>
