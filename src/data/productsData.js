@@ -13,7 +13,7 @@ export const products = [
   reviews: 1239,
   salesCount: 15230,
 
-  volume: ["60ML"],
+  volume: ["15ML", "30ML", "60ML"],
   scentFamily: ["Fresh"],
   intensity: "Significant",
   connection: "Rich and Extreme",
@@ -1882,7 +1882,7 @@ export const products = [
   reviews: 1239,
   salesCount: 15230,
 
-  volume: ["60ML"],
+  volume: ["15ML", "30ML", "60ML"],
   scentFamily: ["Flowery"],
   intensity: "Significant",
   connection: "Rich and Extreme",
@@ -2505,7 +2505,7 @@ export const products = [
   reviews: 1239,
   salesCount: 15230,
 
-  volume: ["30ML"],
+  volume: ["15ML", "30ML", "60ML"],
   scentFamily: ["Earthy"],
   intensity: "Statement",
   connection: "Standard and Balanced",
@@ -3128,7 +3128,7 @@ export const products = [
   reviews: 1239,
   salesCount: 15230,
 
-  volume: ["15ML"],
+  volume: ["15ML", "30ML", "60ML"],
   scentFamily: ["Warm"],
   intensity: "Significant",
   connection: "Rich and Extreme",
@@ -3751,7 +3751,7 @@ export const products = [
   reviews: 1239,
   salesCount: 15230,
 
-  volume: ["60ML"],
+  volume: ["15ML", "30ML", "60ML"],
   scentFamily: ["Gourmand"],
   intensity: "Subtle",
   connection: "Rich and Extreme",
@@ -4374,7 +4374,7 @@ export const products = [
   reviews: 1239,
   salesCount: 15230,
 
-  volume: ["30ML"],
+  volume: ["15ML", "30ML", "60ML"],
   scentFamily: ["Herbal"],
   intensity: "Significant",
   connection: "Rich and Extreme",
@@ -4997,7 +4997,7 @@ export const products = [
   reviews: 1239,
   salesCount: 15230,
 
-  volume: ["15ML"],
+  volume: ["15ML", "30ML", "60ML"],
   scentFamily: ["Fresh"],
   intensity: "Statement",
   connection: "Standard and Balanced",
@@ -5620,7 +5620,7 @@ export const products = [
   reviews: 1239,
   salesCount: 15220,
 
-  volume: ["60ML"],
+  volume: ["15ML", "30ML", "60ML"],
   scentFamily: ["Flowery"],
   intensity: "Significant",
   connection: "Rich and Extreme",
@@ -6243,7 +6243,7 @@ export const products = [
   reviews: 1239,
   salesCount: 15240,
 
-  volume: ["30ML"],
+  volume: ["15ML", "30ML", "60ML"],
   scentFamily: ["Earthy"],
   intensity: "Subtle",
   connection: "Standard and balanced",
@@ -6866,7 +6866,7 @@ export const products = [
   reviews: 1239,
   salesCount: 15330,
 
-  volume: ["15ML"],
+  volume: ["15ML", "30ML", "60ML"],
   scentFamily: ["Warm"],
   intensity: "Significant",
   connection: "Rich and Extreme",

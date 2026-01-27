@@ -67,7 +67,7 @@ const BigBottleIcon = () => (
         {/* RIGHT – INFO */}
         <div className="bg-[#F6F7F2] rounded-[32px] p-[32px]">
 
-          <span className="text-[16px] bg-[#FFFFFF] p-[8px] rounded-full">{product.category}</span>
+          <span className="text-[16px] bg-[#FFFFFF] p-[8px] rounded-full">{product.gender}</span>
 
           <h1 className="text-[25px] 2xl:text-[35px] text-[#1D0B01] font-bold mt-2">
             {product.title} – {product.subtitle}

@@ -1,233 +1,233 @@
-import { FaStar } from "react-icons/fa";
+import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 import Categories from "../components/Categories";
 import SortFilter from "../components/SortFilter";
 import { products } from "../data/productsData";
+import { FaStar } from "react-icons/fa";
 
 const ProductList = () => {
   const navigate = useNavigate();
+
+  /* -------------------- UI STATES -------------------- */
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [openSection, setOpenSection] = useState(null);
+
+  /* -------------------- SORT STATE -------------------- */
+  const [sortBy, setSortBy] = useState("relevance");
+
+  /* -------------------- PRICE RANGE -------------------- */
+  const prices = products.map(p => p.price);
+  const MIN_PRICE = Math.min(...prices);
+  const MAX_PRICE = Math.max(...prices);
+  const [priceRange, setPriceRange] = useState([MIN_PRICE, MAX_PRICE]);
+
+  /* -------------------- FILTER STATES -------------------- */
+  const [filters, setFilters] = useState({
+    gender: [],
+    brand: [],
+    scentFamily: [],
+    intensity: [],
+    connection: [],
+    volume: [],
+  });
+
+  /* -------------------- FILTER HANDLER -------------------- */
+  const toggleFilter = (type, value) => {
+    setFilters(prev => ({
+      ...prev,
+      [type]: prev[type].includes(value)
+        ? prev[type].filter(v => v !== value)
+        : [...prev[type], value],
+    }));
+  };
+
+  /* -------------------- CLEAR ALL -------------------- */
+  const clearAllFilters = () => {
+    setFilters({
+      gender: [],
+      brand: [],
+      scentFamily: [],
+      intensity: [],
+      connection: [],
+      volume: [],
+    });
+    setSortBy("relevance");
+    setPriceRange([MIN_PRICE, MAX_PRICE]);
+  };
+
+  /* -------------------- FILTER + SORT LOGIC -------------------- */
+  const filteredProducts = useMemo(() => {
+    let result = products.filter(p => {
+      if (filters.gender.length && !filters.gender.map(g => g.toUpperCase()).includes(p.gender)) return false;
+      if (filters.brand.length && !filters.brand.includes(p.brand)) return false;
+      if (filters.scentFamily.length && !filters.scentFamily.some(f => p.scentFamily.includes(f))) return false;
+      if (filters.intensity.length && !filters.intensity.includes(p.intensity)) return false;
+      if (filters.connection.length && !filters.connection.includes(p.connection)) return false;
+      if (filters.volume.length && !filters.volume.some(v => p.volume.includes(v))) return false;
+      if (p.price < priceRange[0] || p.price > priceRange[1]) return false;
+
+      return true;
+    });
+
+    if (sortBy === "price-high") result.sort((a, b) => b.price - a.price);
+    if (sortBy === "price-low") result.sort((a, b) => a.price - b.price);
+
+    return result;
+  }, [filters, sortBy, priceRange]);
+
+  /* -------------------- ACCORDION TOGGLE -------------------- */
+  const toggleAccordion = title => {
+    setOpenSection(prev => (prev === title ? null : title));
+  };
+
+  /* -------------------- FILTER BLOCK -------------------- */
+  const FilterBlock = ({ title, options, filterKey }) => (
+    <div className="bg-[#F6F7F2] rounded-[16px] p-3 space-y-2">
+
+      <div
+        className="flex justify-between cursor-pointer"
+        onClick={() => toggleAccordion(title)}
+      >
+        <h3 className="font-medium">{title}</h3>
+
+        <span
+          className={`transition-transform ${
+            openSection === title ? "rotate-180" : ""
+          }`}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M15 10.833L10 5.83301L5 10.833"
+              stroke="#282828"
+              strokeWidth="1.25"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+      </div>
+
+      {openSection === title && (
+        <div className="bg-white rounded-[12px] p-4 space-y-3">
+          {options.map(opt => (
+            <label key={opt} className="flex items-center gap-3">
+              <input
+                type="checkbox"
+                checked={filters[filterKey].includes(opt)}
+                onChange={() => toggleFilter(filterKey, opt)}
+                className="checkbox checkbox-neutral checked:bg-[#BA9948]"
+              />
+              <span>{opt}</span>
+            </label>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <div className="px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
+
       <Categories />
 
-      {/* BUTTON */}
       <SortFilter
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
       />
 
-      {/* LAYOUT WRAPPER */}
       <div className="relative flex gap-[16px] 2xl:gap-[32px]">
-        
-        {/* Desktop SIDEBAR */}
-       {sidebarOpen && (
-  <aside
-    className="
-      hidden lg:block
-      sticky top-[120px]
-      w-[550px] h-[calc(100vh-140px)]
-      bg-[#EDE8D0] rounded-[16px]
-      overflow-y-auto
-      shrink-0
-    "
-  >
-  <div className="p-6 space-y-6 text-[#1D0B01]">
 
-  {/* SORT BY */}
-   <h3 className="text-[16px] font-bold uppercase text-[#1D0B01]">Sort by:</h3>
-  <div className="space-y-3 bg-[#F6F7F2] rounded-[16px] p-2">
-    <div className="flex justify-between px-2">
-      <h3 className="text-[16px] text-[#282828]">Price - high to low</h3>
-      <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
-  <path d="M10.625 5.625L5.625 0.625L0.625 5.625" stroke="#282828" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></span>
-    </div>
+        {/* -------------------- SIDEBAR -------------------- */}
+        {sidebarOpen && (
+          <aside className="hidden lg:block sticky top-[120px] w-[550px] h-[calc(100vh-140px)] bg-[#EDE8D0] rounded-[16px] overflow-y-auto shrink-0">
 
-    <div className="bg-white rounded-[12px] p-4 space-y-3">
-      {[
-        "Relevance (Default)",
-        "Price - high to low",
-        "Price - low to high",
-        "Best - Selling",
-        "New Arrivals",
-      ].map((item, i) => (
-        <label key={i} className="flex items-center gap-3 cursor-pointer">
-          <input
-            type="radio"
-            name="sort"
-            defaultChecked={item === "Price - high to low"}
-            className="radio radio-neutral checked:bg-[#BA9948]"
-          />
-          <span className="text-[16px]">{item}</span>
-        </label>
-      ))}
-    </div>
-  </div>
+            <div className="p-6 space-y-6 text-[#1D0B01]">
 
-  {/* FILTER TAGS */}
-  <div className="space-y-3">
-    <h3 className="text-[16px] font-bold uppercase text-[#1D0B01]">Filter:</h3>
+              {/* SORT */}
+              <div className="space-y-3">
+                <h3 className="text-[16px] font-bold uppercase">Sort by</h3>
 
-    <div className="flex flex-wrap gap-2">
-      {["Women", "Unisex", "Byredo"].map(tag => (
-        <span
-          key={tag}
-          className="flex items-center gap-2 bg-white px-3 py-1 rounded-full text-[16px]"
-        >
-          {tag}
-          <button className="text-[#000000]">✕</button>
-        </span>
-      ))}
-      <button className="ml-auto text-[16px] underline text-[#282828]">Clear all</button>
-    </div>
-  </div>
+                {[
+                  { label: "Relevance (Default)", value: "relevance" },
+                  { label: "Price - high to low", value: "price-high" },
+                  { label: "Price - low to high", value: "price-low" },
+                ].map(item => (
+                  <label key={item.value} className="flex items-center gap-3">
+                    <input
+                      type="radio"
+                      name="sort"
+                      checked={sortBy === item.value}
+                      onChange={() => setSortBy(item.value)}
+                      className="radio radio-neutral checked:bg-[#BA9948]"
+                    />
+                    <span>{item.label}</span>
+                  </label>
+                ))}
+              </div>
 
-  {/* SECTION */}
-  {[
-    {
-      title: "Gender",
-      options: ["Woman", "Men", "Unisex"],
-      checked: ["Men"],
-    },
-    {
-      title: "Inspired by Brands",
-      options: [
-        "Burberry",
-        "Byredo",
-        "Chanel",
-        "Chloe",
-        "Clinique",
-        "Creed",
-        "Dior",
-      ],
-      checked: ["Byredo"],
-    },
-    {
-      title: "Scent Family",
-      options: ["Flowery", "Fresh", "Gourmand", "Herbal", "Earthy", "Warm"],
-      checked: ["Fresh"],
-    },
-  ].map(section => (
-    <div key={section.title} className="space-y-3 bg-[#F6F7F2] rounded-[16px] p-2">
-      <div className="flex justify-between items-center">
-        <h3 className="font-medium">{section.title}</h3>
-        <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
-  <path d="M10.625 5.625L5.625 0.625L0.625 5.625" stroke="#282828" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></span>
-      </div>
+              {/* ACTIVE TAGS */}
+              <div className="space-y-2">
+                <div className="flex flex-wrap gap-2">
+                  {Object.entries(filters).map(([key, values]) =>
+                    values.map(v => (
+                      <span
+                        key={`${key}-${v}`}
+                        className="flex items-center gap-2 bg-white px-3 py-1 rounded-full"
+                      >
+                        {v}
+                        <button onClick={() => toggleFilter(key, v)} className="font-bold">✕</button>
+                      </span>
+                    ))
+                  )}
+                </div>
 
-      <div className="bg-white rounded-[12px] p-4 space-y-3">
-        {section.options.map(opt => (
-          <label key={opt} className="flex items-center gap-3">
-            <input
-              type="checkbox"
-              defaultChecked={section.checked.includes(opt)}
-              className="checkbox checkbox-neutral checked:bg-[#BA9948]"
-            />
-            <span className="text-[16px] text-[#282828]">{opt}</span>
-          </label>
-        ))}
-      </div>
-    </div>
-  ))}
+                <button onClick={clearAllFilters} className="text-[14px] underline">
+                  Clear all
+                </button>
+              </div>
 
-  {/* INTENSITY */}
-  <div className="space-y-3 bg-[#F6F7F2] rounded-[16px] p-2">
-    <div className="flex justify-between">
-      <h3 className="text-[16px] text-[#282828]">Scent - Intensity Scale</h3>
-      <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
-  <path d="M10.625 5.625L5.625 0.625L0.625 5.625" stroke="#282828" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></span>
-    </div>
+              <FilterBlock title="Gender" options={["MEN", "WOMEN", "UNISEX"]} filterKey="gender" />
+              <FilterBlock title="Inspired by Brands" options={["Burberry", "Byredo", "Chanel", "Chloe", "Dior", "Creed"]} filterKey="brand" />
+              <FilterBlock title="Scent Family" options={["Flowery", "Fresh", "Gourmand", "Herbal", "Warm", "Earthy"]} filterKey="scentFamily" />
+              <FilterBlock title="Scent - Intensity Scale" options={["Subtle", "Significant", "Statement"]} filterKey="intensity" />
 
-    <div className="bg-white rounded-[12px] p-4 space-y-3">
-      {["Subtle", "Significant", "Statement"].map(level => (
-        <label key={level} className="flex items-center gap-3">
-          <input
-            type="checkbox"
-            defaultChecked={level === "Significant"}
-            className="checkbox checkbox-neutral checked:bg-[#BA9948]"
-          />
-          <span className="text-[16px] text-[#282828]">{level}</span>
-        </label>
-      ))}
-    </div>
-  </div>
+              {/* PRICE RANGE */}
+              <div className="bg-[#F6F7F2] rounded-[16px] p-3 space-y-2">
+                <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
+                  <h3 className="font-medium">Price</h3>
+                  <span className={`transition-transform ${openSection === "Price" ? "rotate-180" : ""}`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </span>
+                </div>
 
-  {/* PRICE */}
-  <div className="space-y-3 bg-[#F6F7F2] rounded-[16px] p-2">
-    <div className="flex justify-between">
-      <h3 className="text-[16px] text-[#282828]">Price</h3>
-      <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
-  <path d="M10.625 5.625L5.625 0.625L0.625 5.625" stroke="#282828" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></span>
-    </div>
+                {openSection === "Price" && (
+                  <div className="bg-white rounded-[12px] p-4 space-y-4">
+                    <input
+                      type="range"
+                      min={MIN_PRICE}
+                      max={MAX_PRICE}
+                      value={priceRange[1]}
+                      onChange={e => setPriceRange([priceRange[0], Number(e.target.value)])}
+                      className="w-full appearance-none h-[3px] rounded-full"
+                      style={{ background: "#DBAB35" }}
+                    />
+                    <div className="flex justify-between text-[14px] font-medium">
+                      <span>${priceRange[0]}</span>
+                      <span>${priceRange[1]}</span>
+                    </div>
+                  </div>
+                )}
+              </div>
 
-    <div className="bg-white rounded-[12px] p-4 space-y-3">
-      <input type="range" min="29" max="199" className="range range-warning" />
-      <div className="flex justify-between text-[16px] text-[#282828]">
-        <span>$29</span>
-        <span>$199</span>
-      </div>
-    </div>
-  </div>
+              <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
+              <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
 
-  {/* CONNECTION */}
-  <div className="space-y-3 bg-[#F6F7F2] rounded-[16px] p-2">
-    <div className="flex justify-between">
-      <h3 className="text-[16px] text-[#282828]">Connection</h3>
-      <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
-  <path d="M10.625 5.625L5.625 0.625L0.625 5.625" stroke="#282828" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></span>
-    </div>
-
-    <div className="bg-white rounded-[12px] p-4 space-y-3">
-      {["Standard and Balanced", "Rich and Extreme"].map(opt => (
-        <label key={opt} className="flex items-center gap-3">
-          <input
-            type="checkbox"
-            defaultChecked={opt === "Rich and Extreme"}
-            className="checkbox checkbox-neutral checked:bg-[#BA9948]"
-          />
-          <span className="text-[16px] text-[#282828]">{opt}</span>
-        </label>
-      ))}
-    </div>
-  </div>
-
-  {/* PERFUME VOLUME */}
-  <div className="space-y-3 bg-[#F6F7F2] rounded-[16px] p-2">
-    <div className="flex justify-between">
-      <h3 className="text-[16px] text-[#282828]">Perfume Volume</h3>
-      <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
-  <path d="M10.625 5.625L5.625 0.625L0.625 5.625" stroke="#282828" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></span>
-    </div>
-
-    <div className="bg-white rounded-[12px] p-4 space-y-3">
-      {["15ML", "30ML", "60ML"].map(v => (
-        <label key={v} className="flex items-center gap-3">
-          <input
-            type="checkbox"
-            defaultChecked={v === "30ML"}
-            className="checkbox checkbox-neutral checked:bg-[#BA9948]"
-          />
-          <span className="text-[16px] text-[#282828]">{v}</span>
-        </label>
-      ))}
-    </div>
-  </div>
-
-</div>
-
+            </div>
           </aside>
         )}
-
-
 
         {/* CARDS (SCROLLS INDEPENDENTLY) */}
         <section className="flex-1">
@@ -238,7 +238,7 @@ const ProductList = () => {
               lg:${sidebarOpen ? "grid-cols-2" : "grid-cols-3"}
             `}
           >
-            {products.map((item, i) => (
+            {filteredProducts.map((item, i) => (
               <div key={i}>
                 <div
                   className="relative rounded-[24px] md:rounded-[48px]
@@ -320,6 +320,7 @@ const ProductList = () => {
             ))}
           </div>
         </section>
+
       </div>
     </div>
   );

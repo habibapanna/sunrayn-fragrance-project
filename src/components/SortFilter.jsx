@@ -1,6 +1,7 @@
 
 import { X } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import MobileFilterSidebar from "./MobileFilterSidebar";
 
 const scentOptions = [
   {
@@ -129,6 +130,9 @@ useEffect(() => {
         rounded-full px-[18px] py-[12px]
         text-[#1D0B01] font-medium text-[16px] cursor-pointer"
       >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M17.7096 10.0002H7.4138M3.77964 10.0002H2.29297M3.77964 10.0002C3.77964 9.51842 3.97103 9.05635 4.31172 8.71566C4.65242 8.37497 5.11449 8.18357 5.5963 8.18357C6.07811 8.18357 6.54019 8.37497 6.88088 8.71566C7.22157 9.05635 7.41297 9.51842 7.41297 10.0002C7.41297 10.482 7.22157 10.9441 6.88088 11.2848C6.54019 11.6255 6.07811 11.8169 5.5963 11.8169C5.11449 11.8169 4.65242 11.6255 4.31172 11.2848C3.97103 10.9441 3.77964 10.482 3.77964 10.0002ZM17.7096 15.5061H12.9196M12.9196 15.5061C12.9196 15.988 12.7278 16.4506 12.387 16.7914C12.0462 17.1321 11.5841 17.3236 11.1021 17.3236C10.6203 17.3236 10.1582 17.1313 9.81756 16.7906C9.47687 16.45 9.28547 15.9879 9.28547 15.5061M12.9196 15.5061C12.9196 15.0241 12.7278 14.5624 12.387 14.2216C12.0462 13.8808 11.5841 13.6894 11.1021 13.6894C10.6203 13.6894 10.1582 13.8808 9.81756 14.2215C9.47687 14.5622 9.28547 15.0243 9.28547 15.5061M9.28547 15.5061H2.29297M17.7096 4.4944H15.1221M11.488 4.4944H2.29297M11.488 4.4944C11.488 4.01259 11.6794 3.55051 12.0201 3.20982C12.3607 2.86913 12.8228 2.67773 13.3046 2.67773C13.5432 2.67773 13.7794 2.72472 13.9998 2.81602C14.2203 2.90732 14.4205 3.04113 14.5892 3.20982C14.7579 3.37852 14.8917 3.57878 14.983 3.79919C15.0743 4.0196 15.1213 4.25583 15.1213 4.4944C15.1213 4.73297 15.0743 4.9692 14.983 5.18961C14.8917 5.41002 14.7579 5.61029 14.5892 5.77898C14.4205 5.94767 14.2203 6.08149 13.9998 6.17278C13.7794 6.26408 13.5432 6.31107 13.3046 6.31107C12.8228 6.31107 12.3607 6.11967 12.0201 5.77898C11.6794 5.43829 11.488 4.97621 11.488 4.4944Z" stroke="#282828" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round"/>
+</svg>
         SORT & FILTER
       </button>
 
@@ -141,208 +145,12 @@ useEffect(() => {
       )}
 
      {/* MOBILE SIDEBAR (MODAL) */}
-<aside
-  className={`
-    fixed top-0 left-0 z-50 h-full w-full
-    bg-[#EDE8D0] transition-transform duration-500
-    lg:hidden
-    ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
-  `}
->
-  <div className="p-6 space-y-6 overflow-y-auto h-full">
+{/* MOBILE SIDEBAR (MODAL) */}
+<MobileFilterSidebar
+  sidebarOpen={sidebarOpen}
+  setSidebarOpen={setSidebarOpen}
+/>
 
-    {/* HEADER WITH CLOSE ICON */}
-    <div className="flex items-center justify-end mb-4">
-     
-      <button className="cursor-pointer" onClick={() => setSidebarOpen(false)}>
-        <X />
-      </button>
-    </div>
-
-    {/* SORT BY */}
-    <div className="space-y-3">
-      <h3 className="text-[16px] font-bold uppercase text-[#1D0B01]">Sort by:</h3>
-      <div className="space-y-3 bg-[#F6F7F2] rounded-[16px] p-2">
-         <div className="flex justify-between px-2">
-      <h3 className="text-[16px] text-[#282828]">Price - high to low</h3>
-      <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
-  <path d="M10.625 5.625L5.625 0.625L0.625 5.625" stroke="#282828" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></span>
-    </div>
-        <div className="bg-white rounded-[12px] p-4 space-y-3">
-          {[
-            "Relevance (Default)",
-            "Price - high to low",
-            "Price - low to high",
-            "Best - Selling",
-            "New Arrivals",
-          ].map((item, i) => (
-            <label key={i} className="flex items-center gap-3 cursor-pointer">
-              <input
-                type="radio"
-                name="sort"
-                defaultChecked={item === "Price - high to low"}
-                className="radio radio-neutral checked:bg-[#BA9948]"
-              />
-              <span className="text-[16px]">{item}</span>
-            </label>
-          ))}
-        </div>
-      </div>
-    </div>
-
-    {/* FILTER TAGS */}
-    <div className="space-y-3">
-      <h3 className="text-[16px] font-bold uppercase text-[#1D0B01]">Filter:</h3>
-      <div className="flex flex-wrap gap-2">
-        {["Women", "Unisex", "Byredo"].map(tag => (
-          <span
-            key={tag}
-            className="flex items-center gap-2 bg-white px-3 py-1 rounded-full text-[16px]"
-          >
-            {tag}
-            <button className="text-[#000000]">✕</button>
-          </span>
-        ))}
-        <button className="ml-auto text-[16px] underline text-[#282828]">Clear all</button>
-      </div>
-    </div>
-
-    {/* DYNAMIC SECTIONS */}
-    {[
-      {
-        title: "Gender",
-        options: ["Woman", "Men", "Unisex"],
-        checked: ["Men"],
-      },
-      {
-        title: "Inspired by Brands",
-        options: ["Burberry", "Byredo", "Chanel", "Chloe", "Clinique", "Creed", "Dior"],
-        checked: ["Byredo"],
-      },
-      {
-        title: "Scent Family",
-        options: ["Flowery", "Fresh", "Gourmand", "Herbal", "Earthy", "Warm"],
-        checked: ["Fresh"],
-      },
-    ].map(section => (
-      <div key={section.title} className="space-y-3 bg-[#F6F7F2] rounded-[16px] p-2">
-        <div className="flex justify-between items-center">
-          <h3 className="font-medium">{section.title}</h3>
-          <span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
-              <path d="M10.625 5.625L5.625 0.625L0.625 5.625" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </span>
-        </div>
-        <div className="bg-white rounded-[12px] p-4 space-y-3">
-          {section.options.map(opt => (
-            <label key={opt} className="flex items-center gap-3">
-              <input
-                type="checkbox"
-                defaultChecked={section.checked.includes(opt)}
-                className="checkbox checkbox-neutral checked:bg-[#BA9948]"
-              />
-              <span className="text-[16px] text-[#282828]">{opt}</span>
-            </label>
-          ))}
-        </div>
-      </div>
-    ))}
-
-    {/* INTENSITY */}
-    <div className="space-y-3 bg-[#F6F7F2] rounded-[16px] p-2">
-      <div className="flex justify-between">
-        <h3 className="text-[16px] text-[#282828]">Scent - Intensity Scale</h3>
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
-            <path d="M10.625 5.625L5.625 0.625L0.625 5.625" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </span>
-      </div>
-      <div className="bg-white rounded-[12px] p-4 space-y-3">
-        {["Subtle", "Significant", "Statement"].map(level => (
-          <label key={level} className="flex items-center gap-3">
-            <input
-              type="checkbox"
-              defaultChecked={level === "Significant"}
-              className="checkbox checkbox-neutral checked:bg-[#BA9948]"
-            />
-            <span className="text-[16px] text-[#282828]">{level}</span>
-          </label>
-        ))}
-      </div>
-    </div>
-
-    {/* PRICE */}
-    <div className="space-y-3 bg-[#F6F7F2] rounded-[16px] p-2">
-      <div className="flex justify-between">
-        <h3 className="text-[16px] text-[#282828]">Price</h3>
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
-            <path d="M10.625 5.625L5.625 0.625L0.625 5.625" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </span>
-      </div>
-      <div className="bg-white rounded-[12px] p-4 space-y-3">
-        <input type="range" min="29" max="199" className="range range-warning" />
-        <div className="flex justify-between text-[16px] text-[#282828]">
-          <span>$29</span>
-          <span>$199</span>
-        </div>
-      </div>
-    </div>
-
-    {/* CONNECTION */}
-    <div className="space-y-3 bg-[#F6F7F2] rounded-[16px] p-2">
-      <div className="flex justify-between">
-        <h3 className="text-[16px] text-[#282828]">Connection</h3>
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
-            <path d="M10.625 5.625L5.625 0.625L0.625 5.625" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </span>
-      </div>
-      <div className="bg-white rounded-[12px] p-4 space-y-3">
-        {["Standard and Balanced", "Rich and Extreme"].map(opt => (
-          <label key={opt} className="flex items-center gap-3">
-            <input
-              type="checkbox"
-              defaultChecked={opt === "Rich and Extreme"}
-              className="checkbox checkbox-neutral checked:bg-[#BA9948]"
-            />
-            <span className="text-[16px] text-[#282828]">{opt}</span>
-          </label>
-        ))}
-      </div>
-    </div>
-
-    {/* PERFUME VOLUME */}
-    <div className="space-y-3 bg-[#F6F7F2] rounded-[16px] p-2">
-      <div className="flex justify-between">
-        <h3 className="text-[16px] text-[#282828]">Perfume Volume</h3>
-        <span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
-            <path d="M10.625 5.625L5.625 0.625L0.625 5.625" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </span>
-      </div>
-      <div className="bg-white rounded-[12px] p-4 space-y-3">
-        {["15ML", "30ML", "60ML"].map(v => (
-          <label key={v} className="flex items-center gap-3">
-            <input
-              type="checkbox"
-              defaultChecked={v === "30ML"}
-              className="checkbox checkbox-neutral checked:bg-[#BA9948]"
-            />
-            <span className="text-[16px] text-[#282828]">{v}</span>
-          </label>
-        ))}
-      </div>
-    </div>
-
-  </div>
-</aside>
 
 
 
