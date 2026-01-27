@@ -21,7 +21,7 @@ const items = [
     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
   },
 ];
-const Categories = () => {
+const Categories = ({ setSortBy }) => {
     return (
         <div>
               {/* categories */}
@@ -30,6 +30,12 @@ const Categories = () => {
     <div
       key={i}
       className="bg-[#F6F7F2] rounded-[24px] flex flex-col 2xl:flex-row items-center p-[8px] 2xl:gap-[16px] 2xl:p-[24px] w-full"
+      onClick={() => {
+              // Map category to sortBy value
+              let sortKey = item.title.toLowerCase().replace(/\s/g, "-");
+              if (item.title === "All Perfumes") sortKey = "relevance"; // show all
+              setSortBy(sortKey);
+            }}
     >
       <h3 className="text-[20px] 2xl:text-[35px] font-semibold text-[#1D0B01]">
         {item.title}

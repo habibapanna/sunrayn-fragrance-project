@@ -18,7 +18,7 @@ export const products = [
   intensity: "Significant",
   connection: "Rich and Extreme",
 
-  off: "Bestseller",
+  off: "Combo",
   createdAt: "2025-01-05",
 
   description:

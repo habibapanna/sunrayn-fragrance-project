@@ -87,6 +87,8 @@ if (sortBy === "best-selling")
   result = result.filter(p => p.off?.toLowerCase().includes("best"));
 if (sortBy === "new")
   result = result.filter(p => p.off?.toLowerCase().includes("new"));
+   else if (sortBy === "combo-sales") result = result.filter(p => p.off?.toLowerCase().includes("combo"));
+    else if (sortBy === "holiday-sale") result = result.filter(p => p.off?.toLowerCase().includes("discount"));
 
     return result;
   }, [filters, sortBy, priceRange, searchQuery]);
@@ -144,7 +146,7 @@ if (sortBy === "new")
   return (
     <div className="px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
 
-      <Categories />
+      <Categories setSortBy={setSortBy} />
 
       <SortFilter
   sidebarOpen={sidebarOpen}
