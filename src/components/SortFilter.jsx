@@ -152,8 +152,8 @@ useEffect(() => {
   <div className="p-6 space-y-6 overflow-y-auto h-full">
 
     {/* HEADER WITH CLOSE ICON */}
-    <div className="flex items-center justify-between mb-4">
-      <h2 className="font-semibold text-lg">Sort & Filter</h2>
+    <div className="flex items-center justify-end mb-4">
+     
       <button className="cursor-pointer" onClick={() => setSidebarOpen(false)}>
         <X />
       </button>
@@ -163,6 +163,12 @@ useEffect(() => {
     <div className="space-y-3">
       <h3 className="text-[16px] font-bold uppercase text-[#1D0B01]">Sort by:</h3>
       <div className="space-y-3 bg-[#F6F7F2] rounded-[16px] p-2">
+         <div className="flex justify-between px-2">
+      <h3 className="text-[16px] text-[#282828]">Price - high to low</h3>
+      <span><svg xmlns="http://www.w3.org/2000/svg" width="12" height="7" viewBox="0 0 12 7" fill="none">
+  <path d="M10.625 5.625L5.625 0.625L0.625 5.625" stroke="#282828" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span>
+    </div>
         <div className="bg-white rounded-[12px] p-4 space-y-3">
           {[
             "Relevance (Default)",

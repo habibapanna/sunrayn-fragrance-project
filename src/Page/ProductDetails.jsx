@@ -48,7 +48,7 @@ const BigBottleIcon = () => (
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-[32px] px-[16px] 2xl:px-[32px]">
 
         {/* LEFT – IMAGES */}
-        <div className="grid grid-cols-2 gap-[16px] 2xl:gap-[32px]">
+        <div className="grid grid-cols-2 gap-[16px] 2xl:gap-[32px] auto-rows-min">
           <div className="col-span-2 ] ">
             <img
               src={product.images[1]}
@@ -364,7 +364,7 @@ const BigBottleIcon = () => (
 
   <button
     onClick={() => toggle("faq")}
-    className="w-full flex justify-between items-center"
+    className="w-full flex justify-between items-center cursor-pointer"
   >
     <h3 className="text-[16px] font-medium">FAQs</h3>
     <ChevronDown
