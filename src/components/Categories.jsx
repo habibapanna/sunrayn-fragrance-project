@@ -25,7 +25,7 @@ const Categories = () => {
     return (
         <div>
               {/* categories */}
-           <div className=" flex justify-center gap-[16px] 2xl:gap-[32px] py-[16px] 2xl:pb-[32px]">
+           <div className=" flex justify-center gap-[16px] 2xl:gap-[32px] py-[16px] 2xl:pb-[32px] overflow-x-scroll">
   {items.map((item, i) => (
     <div
       key={i}
