@@ -41,6 +41,7 @@ const isFaq = location.pathname === "/faq";
 const isAbout = location.pathname === "/about";
 const isTerms = location.pathname === "/terms";
 const isBlogPage = location.pathname === "/blogs";
+const isHolidayOffer = location.pathname === "/holidayOffer";
 const isBlogDetails = location.pathname.startsWith("/blogs/");
 const isProductDetails = location.pathname.startsWith("/productList/");
 
@@ -61,19 +62,19 @@ useEffect(() => {
 }, []);
 
 
-const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails
+const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
   ? "bg-[#BA9948]"
   : scrolled
   ? "bg-white backdrop-blur-sm"
   : "bg-transparent";
 
-const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails
+const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
   ? Logo3
   : scrolled
   ? Logo2
   : Logo;
 
-const brandSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails
+const brandSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
   ? BrandName3
   : scrolled
   ? BrandName2
@@ -198,10 +199,10 @@ const MobileGrid = ({ items }) => (
 </button>
 
 
-              <span className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[7px] rounded-[100px] font-semibold flex items-center gap-[6px] w-[139px] h-[34px]">
+             <Link to='holidayOffer'> <span className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[7px] rounded-[100px] font-semibold flex items-center gap-[6px] w-[139px] h-[34px]">
                 <img src={Solar} className="h-[17px] w-[17px]" />
                 Holiday Sale
-              </span>
+              </span></Link>
             </div>
 
             {/* DESKTOP ICONS (UNCHANGED) */}
@@ -560,10 +561,11 @@ const MobileGrid = ({ items }) => (
 
 
   {/* HOLIDAY SALE */}
+  <Link to='holidayOffer'>
   <button className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[14px] rounded-[100px] font-semibold flex items-center gap-[6px] w-full justify-center">
     <img src={Solar} className="h-[17px] w-[17px]" />
     Holiday Sale
-  </button>
+  </button></Link>
 
 </div>
 

@@ -16,6 +16,7 @@ import Terms from './components/Terms.jsx';
 import BLogPage from './Page/BLogPage.jsx';
 import BlogDetails from './Page/BlogDetails.jsx';
 import ProductDetails from './Page/ProductDetails.jsx';
+import HolidayOffer from './Page/HolidayOffer.jsx';
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "/blogs/:slug",
         element: <BlogDetails></BlogDetails>
+      },
+      {
+        path: "holidayOffer",
+        element: <HolidayOffer></HolidayOffer>
       },
      
     ]
