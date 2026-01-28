@@ -27,9 +27,14 @@ const items = [
   },
 ];
 const Categories = ({ sortBy, setSortBy }) => {
-    return (
-        <div>
-<div className="flex justify-center items-center gap-4 py-8 overflow-x-scroll 2xl:overflow-x-hidden ">
+  return (
+    <div>
+      <div
+        className="flex items-center gap-4 py-8 overflow-x-auto
+                   justify-start lg:justify-center
+                   px-4 lg:px-0
+                   lg:overflow-x-hidden"
+      >
         {items.map((item, i) => {
           const isActive = sortBy === item.key;
 
@@ -37,20 +42,32 @@ const Categories = ({ sortBy, setSortBy }) => {
             <div
               key={i}
               onClick={() => setSortBy(item.key)}
-              className='flex flex-col 2xl:flex-row items-center p-2 2xl:p-6 gap-2 2xl:gap-4 text-center cursor-pointer rounded-[24px] bg-[#F6F7F2]
-              '
+              className={`
+                flex flex-col lg:flex-row items-center
+                p-2 lg:p-6 gap-2 2xl:gap-4
+                text-center cursor-pointer rounded-[24px]
+                bg-[#F6F7F2]
+                border-2
+                ${isActive ? "border-black" : "border-transparent"}
+              `}
             >
-             
-               <h3 className="text-lg 2xl:text-[35px] font-semibold text-left">
+              <h3 className="text-lg 2xl:text-[35px] font-semibold text-left">
                 {item.title}
               </h3>
-              <img className="h-[108px] w-[108px]" src={item.product} alt="" />
+
+              <img
+                className="h-[80px] w-[80px] 2xl:h-[108px] 2xl:w-[108px]"
+                src={item.product}
+                alt=""
+              />
             </div>
           );
         })}
       </div>
-        </div>
-    );
+    </div>
+  );
 };
+
+
 
 export default Categories;
