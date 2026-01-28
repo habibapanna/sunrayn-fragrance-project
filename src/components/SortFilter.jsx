@@ -163,7 +163,7 @@ const showClearAll =
   return (
     <div>
       <section className="w-full pb-[16px] 2xl:pb-[32px]">
-        <div className="flex items-center gap-[12px]">
+        <div className="flex items-center gap-[8px] 2xl:gap-[12px] overflow-x-scroll">
 
           {/* Sort & Filter Button */}
           <button
