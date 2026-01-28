@@ -15,7 +15,17 @@ const ProductList = () => {
 
   /* -------------------- UI STATES -------------------- */
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [openSection, setOpenSection] = useState(null);
+ const [openSection, setOpenSection] = useState([
+  "Sort",
+  "Gender",
+  "Inspired by Brands",
+  "Scent Family",
+  "Scent - Intensity Scale",
+  "Price",
+  "Connection",
+  "Perfume Volume",
+]);
+
   const [searchQuery, setSearchQuery] = useState("");
 
 
@@ -94,9 +104,14 @@ if (sortBy === "new")
   }, [filters, sortBy, priceRange, searchQuery]);
 
   /* -------------------- ACCORDION TOGGLE -------------------- */
-  const toggleAccordion = title => {
-    setOpenSection(prev => (prev === title ? null : title));
-  };
+ const toggleAccordion = title => {
+  setOpenSection(prev =>
+    prev.includes(title)
+      ? prev.filter(item => item !== title) // close
+      : [...prev, title] // open
+  );
+};
+
 
   /* -------------------- FILTER BLOCK -------------------- */
   const FilterBlock = ({ title, options, filterKey }) => (
@@ -108,11 +123,8 @@ if (sortBy === "new")
       >
         <h3 className="font-medium">{title}</h3>
 
-        <span
-          className={`transition-transform ${
-            openSection === title ? "rotate-180" : ""
-          }`}
-        >
+        <span className={`transition-transform ${openSection.includes(title) ? "rotate-180" : ""}`}>
+
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
             <path
               d="M15 10.833L10 5.83301L5 10.833"
@@ -125,8 +137,9 @@ if (sortBy === "new")
         </span>
       </div>
 
-      {openSection === title && (
-        <div className="bg-white rounded-[12px] p-4 space-y-3">
+      {openSection.includes(title) && (
+  <div className="bg-white rounded-[12px] p-4 space-y-3">
+
           {options.map(opt => (
             <label key={opt} className="flex items-center gap-3">
               <input
@@ -146,7 +159,8 @@ if (sortBy === "new")
   return (
     <div className="px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
 
-      <Categories setSortBy={setSortBy} />
+      <Categories sortBy={sortBy} setSortBy={setSortBy} />
+
 
       <SortFilter
   sidebarOpen={sidebarOpen}
@@ -189,14 +203,15 @@ if (sortBy === "new")
               ) || "Relevance (Default)"}
             </span>
 
-            <span className={`transition-transform ${openSection === "Sort" ? "rotate-180" : ""}`}>
+            <span className={`transition-transform ${openSection.includes("Sort") ? "rotate-180" : ""}`}>
+
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </span>
           </div>
 
-          {openSection === "Sort" && (
+          {openSection.includes("Sort") && (
             <div className="mt-4 space-y-3">
               {[
                 { label: "Relevance (Default)", value: "relevance" },
@@ -249,14 +264,15 @@ if (sortBy === "new")
       <div className="bg-[#FBFBF6] rounded-[16px] p-4 space-y-4">
         <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
           <h3 className="font-medium">Price</h3>
-          <span className={`transition-transform ${openSection === "Price" ? "rotate-180" : ""}`}>
+          <span className={`transition-transform ${openSection.includes("Price") ? "rotate-180" : ""}`}>
+
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </span>
         </div>
 
-        {openSection === "Price" && (
+        {openSection.includes("Price") && (
           <>
             <input
               type="range"
@@ -324,7 +340,8 @@ if (sortBy === "new")
               ) || "Relevance (Default)"}
             </span>
 
-            <span className={`transition-transform ${openSection === "Sort" ? "rotate-180" : ""}`}>
+            <span className={`transition-transform ${openSection.includes("Sort") ? "rotate-180" : ""}`}>
+
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -332,8 +349,9 @@ if (sortBy === "new")
           </div>
           
 
-          {openSection === "Sort" && (
-            <div className="mt-4 space-y-3">
+          {openSection.includes("Sort") && (
+  <div className="mt-4 space-y-3">
+
               {[
                 { label: "Relevance (Default)", value: "relevance" },
                 { label: "Price - high to low", value: "price-high" },
@@ -383,14 +401,16 @@ if (sortBy === "new")
       <div className="bg-[#FBFBF6] rounded-[16px] p-4 space-y-4">
         <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
           <h3 className="font-medium">Price</h3>
-          <span className={`transition-transform ${openSection === "Price" ? "rotate-180" : ""}`}>
+          <span className={`transition-transform ${openSection.includes("Price") ? "rotate-180" : ""}`}>
+
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </span>
         </div>
 
-        {openSection === "Price" && (
+        {openSection.includes("Price") && (
+
           <>
             <input
               type="range"
@@ -512,7 +532,7 @@ if (sortBy === "new")
 
       </div>
 
-      
+
       <section className="pt-[16px] 2xl:pt-[32px]"><Premium></Premium></section>
       <NewsLetter></NewsLetter>
       <MarqueeFlavour></MarqueeFlavour>

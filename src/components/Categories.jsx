@@ -30,35 +30,54 @@ const Categories = ({ sortBy, setSortBy }) => {
   return (
     <div>
       <div
-        className="flex items-center gap-4 py-8 overflow-x-auto
-                   justify-start lg:justify-center
-                   px-4 lg:px-0
-                   lg:overflow-x-hidden"
+        className="
+          flex items-center gap-[8px] 2xl:gap-[32px]
+          py-[16px] 2xl:py-[32px]
+          justify-start lg:justify-center
+        "
       >
-        {items.map((item, i) => {
+        {items.map((item) => {
           const isActive = sortBy === item.key;
 
           return (
             <div
-              key={i}
+              key={item.key}
               onClick={() => setSortBy(item.key)}
               className={`
-                flex flex-col lg:flex-row items-center
-                p-2 lg:p-6 gap-2 2xl:gap-4
-                text-center cursor-pointer rounded-[12px] 2xl:rounded-[24px]
+                flex flex-col lg:flex-row
+                items-center justify-between
+                cursor-pointer
+                rounded-[12px] 2xl:rounded-[24px]
                 bg-[#F6F7F2]
-                border-2
-                ${isActive ? "border-black" : "border-transparent"}
+
+                /* MOBILE SIZE */
+                w-[126px] h-[96px] p-[8px]
+
+                /* DESKTOP */
+                lg:w-auto lg:h-auto lg:p-6 2xl:gap-4
+
+                transition-all duration-200
+
+                ${
+                  isActive
+                    ? " outline-2 outline-black"
+                    : " outline-1 outline-transparent hover:outline-[#282828]/40"
+                }
+                
               `}
             >
-              <h3 className="text-lg 2xl:text-[35px] font-semibold text-left">
+              <h3 className="text-[12px] lg:text-[20px] 2xl:text-[35px] font-semibold text-center lg:text-left leading-tight">
                 {item.title}
               </h3>
 
               <img
-                className="h-[50px] w-[50px] 2xl:h-[108px] 2xl:w-[108px] object-cover"
                 src={item.product}
-                alt=""
+                alt={item.title}
+                className="
+                  h-[36px] w-[36px]
+                  2xl:h-[108px] 2xl:w-[108px]
+                  object-contain
+                "
               />
             </div>
           );
@@ -67,6 +86,9 @@ const Categories = ({ sortBy, setSortBy }) => {
     </div>
   );
 };
+
+
+
 
 
 
