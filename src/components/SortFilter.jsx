@@ -163,12 +163,12 @@ const showClearAll =
   return (
     <div>
       <section className="w-full pb-[16px] 2xl:pb-[32px]">
-        <div className="flex flex-wrap items-center gap-[12px]">
+        <div className="flex items-center gap-[12px]">
 
           {/* Sort & Filter Button */}
           <button
             onClick={() => setSidebarOpen((prev) => !prev)}
-            className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[#1D0B01] font-medium text-[16px] cursor-pointer"
+            className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[12px] py-[6px] 2xl:px-[18px] 2xl:py-[12px] text-[#1D0B01] font-medium text-[12px] 2xl:text-[16px] cursor-pointer"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M17.7096 10.0002H7.4138M3.77964 10.0002H2.29297M3.77964 10.0002C3.77964 9.51842 3.97103 9.05635 4.31172 8.71566C4.65242 8.37497 5.11449 8.18357 5.5963 8.18357C6.07811 8.18357 6.54019 8.37497 6.88088 8.71566C7.22157 9.05635 7.41297 9.51842 7.41297 10.0002C7.41297 10.482 7.22157 10.9441 6.88088 11.2848C6.54019 11.6255 6.07811 11.8169 5.5963 11.8169C5.11449 11.8169 4.65242 11.6255 4.31172 11.2848C3.97103 10.9441 3.77964 10.482 3.77964 10.0002ZM17.7096 15.5061H12.9196M12.9196 15.5061C12.9196 15.988 12.7278 16.4506 12.387 16.7914C12.0462 17.1321 11.5841 17.3236 11.1021 17.3236C10.6203 17.3236 10.1582 17.1313 9.81756 16.7906C9.47687 16.45 9.28547 15.9879 9.28547 15.5061M12.9196 15.5061C12.9196 15.0241 12.7278 14.5624 12.387 14.2216C12.0462 13.8808 11.5841 13.6894 11.1021 13.6894C10.6203 13.6894 10.1582 13.8808 9.81756 14.2215C9.47687 14.5622 9.28547 15.0243 9.28547 15.5061M9.28547 15.5061H2.29297M17.7096 4.4944H15.1221M11.488 4.4944H2.29297M11.488 4.4944C11.488 4.01259 11.6794 3.55051 12.0201 3.20982C12.3607 2.86913 12.8228 2.67773 13.3046 2.67773C13.5432 2.67773 13.7794 2.72472 13.9998 2.81602C14.2203 2.90732 14.4205 3.04113 14.5892 3.20982C14.7579 3.37852 14.8917 3.57878 14.983 3.79919C15.0743 4.0196 15.1213 4.25583 15.1213 4.4944C15.1213 4.73297 15.0743 4.9692 14.983 5.18961C14.8917 5.41002 14.7579 5.61029 14.5892 5.77898C14.4205 5.94767 14.2203 6.08149 13.9998 6.17278C13.7794 6.26408 13.5432 6.31107 13.3046 6.31107C12.8228 6.31107 12.3607 6.11967 12.0201 5.77898C11.6794 5.43829 11.488 4.97621 11.488 4.4944Z" stroke="#282828" stroke-width="1.25" stroke-miterlimit="10" stroke-linecap="round"/>
@@ -183,7 +183,7 @@ const showClearAll =
   placeholder="Search scents, brands, ingredients"
   value={searchQuery}
   onChange={(e) => setSearchQuery(e.target.value)}
-  className="w-full bg-[#F6F7F2] rounded-full py-[12px] pl-[16px] pr-[40px]"
+  className="w-full bg-[#F6F7F2] rounded-full py-[6px] 2xl:py-[12px] pl-[10px] pr-[40px] 2xl:pl-[16px] text[12px]"
 />
 
             <span
@@ -201,7 +201,7 @@ const showClearAll =
           <div className="relative" ref={genderRef}>
             <button
               onClick={() => setOpenGender(!openGender)}
-              className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[16px] cursor-pointer"
+              className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[12px] 2xl:px-[18px] 2xl:py-[12px] py-[6px] text-[12px] 2xl:text-[16px] cursor-pointer"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M8.67689 16.6401C6.32582 14.882 1.66797 10.8627 1.66797 7.24569C1.66797 4.85502 3.42235 2.91699 5.83464 2.91699C7.08464 2.91699 8.33464 3.33366 10.0013 5.00033C11.668 3.33366 12.918 2.91699 14.168 2.91699C16.5802 2.91699 18.3346 4.85502 18.3346 7.24569C18.3346 10.8627 13.6768 14.882 11.3257 16.6401C10.5346 17.2317 9.46805 17.2317 8.67689 16.6401Z" stroke="#1D0B01" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -239,7 +239,7 @@ const showClearAll =
           <div className="relative" ref={scentRef}>
             <button
               onClick={() => setOpenScent(!openScent)}
-              className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[16px] cursor-pointer"
+              className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[12px] 2xl:px-[18px] 2xl:py-[12px] py-[6px] text-[12px] 2xl:text-[16px] cursor-pointer"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M1.66797 13.3611C1.66797 14.9974 2.30399 16.4861 3.34362 17.5959C3.92211 18.2135 4.4392 18.3333 5.27539 18.3333H10.5606C11.3967 18.3333 11.9138 18.2135 12.4923 17.5959C13.532 16.4861 14.168 14.9974 14.168 13.3611C14.168 10.8554 12.6767 8.69617 10.5286 7.71283C10.1611 7.54464 9.83597 7.5 9.43264 7.5H6.40334C5.99994 7.5 5.67477 7.54464 5.30734 7.71283C3.15922 8.69617 1.66797 10.8554 1.66797 13.3611Z" stroke="#1D0B01" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -279,7 +279,7 @@ const showClearAll =
           <div className="relative" ref={brandRef}>
             <button
               onClick={() => setOpenBrands(!openBrands)}
-              className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[18px] py-[12px] text-[16px] cursor-pointer"
+              className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[12px] 2xl:px-[18px] 2xl:py-[12px] py-[6px] text-[12px] 2xl:text-[16px] cursor-pointer"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M12 6L8 6" stroke="#1D0B01"/>
