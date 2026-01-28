@@ -58,8 +58,20 @@ const scentOptions = [
 </svg>) },
 ];
 
-const genderOptions = ["Men", "Women", "Unisex"];
-const brandOptions = ["Burberry", "Byredo", "Chanel", "Chloe", "Clinique", "Creed", "Dior"];
+const genderOptions = [
+  { label: "MEN" },
+  { label: "WOMEN" },
+  { label: "UNISEX" },
+];
+const brandOptions = [
+  { label:"Burberry"}, 
+{ label:  "Byredo"},
+{ label:   "Chanel"},
+    { label:"Chloe"},
+   { label: "Clinique"}, 
+   { label: "Creed"},
+{ label: "Dior" },
+    ];
 const collectionOptions = ["Flowery", "Fresh", "Gourmand", "Herbal", "Earthy", "Warm"];
 
 const SortFilter = ({  sidebarOpen,

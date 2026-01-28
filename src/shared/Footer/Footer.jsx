@@ -46,10 +46,10 @@ const Footer = () => {
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Shop</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
-                  <li className="hover:underline cursor-pointer">Holiday Sale</li>
-                  <li className="hover:underline cursor-pointer">New Arrivals</li>
-                  <li className="hover:underline cursor-pointer">Featured Products</li>
-                  <li className="hover:underline cursor-pointer">Sanrayn Specials</li>
+                  <li className="hover:underline cursor-pointer"><Link to='/holidayOffer'>Holiday Sale</Link></li>
+                  <li className="hover:underline cursor-pointer"><Link to='/productList'>New Arrivals</Link></li>
+                  <li className="hover:underline cursor-pointer"><Link to='/productList'>Featured Products</Link></li>
+                  <li className="hover:underline cursor-pointer"><Link to='/productList'>Sanrayn Specials</Link></li>
                 </ul>
               </div>
 
@@ -57,7 +57,7 @@ const Footer = () => {
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Company</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
-                  <li className="hover:underline cursor-pointer">Shop by category</li>
+                  <li className="hover:underline cursor-pointer"><Link to='/productList'>Shop by category</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='about'>About us</Link></li>
                    <li className="hover:underline cursor-pointer"><Link to='blogs'>Blogs</Link></li>
                 </ul>
