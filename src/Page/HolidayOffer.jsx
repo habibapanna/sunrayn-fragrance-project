@@ -144,7 +144,8 @@ if (sortBy === "new")
   return (
     <div className="pt-[16px] 2xl:pt-[32px]">
       <Offer />
-   <SortFilter
+ <div className="px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
+         <SortFilter
   sidebarOpen={sidebarOpen}
   setSidebarOpen={setSidebarOpen}
   filters={filters}
@@ -153,7 +154,9 @@ if (sortBy === "new")
   setSearchQuery={setSearchQuery}
   clearAllFilters={clearAllFilters}
 />
-  <div className="relative flex gap-[16px] 2xl:gap-[32px]">
+
+
+      <div className="relative flex gap-[16px] 2xl:gap-[32px]">
 
         {/* -------------------- SIDEBAR -------------------- */}
         {/* -------------------- SIDEBAR -------------------- */}
@@ -412,14 +415,15 @@ if (sortBy === "new")
 )}
 
         {/* CARDS (SCROLLS INDEPENDENTLY) */}
-        <section className="flex-1 px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
-          <div
-            className={`
-              grid gap-[16px] 2xl:gap-[32px]
-              grid-cols-1
-              lg:${sidebarOpen ? "grid-cols-1" : "grid-cols-2"} & 2xl:${sidebarOpen ? "grid-cols-2" : "grid-cols-3"}
-            `}
-          >
+        <section className="flex-1">
+         <div
+  className={`
+    grid gap-[16px] 2xl:gap-[32px]
+    grid-cols-1
+    ${sidebarOpen ? "lg:grid-cols-1 2xl:grid-cols-2" : "lg:grid-cols-2 2xl:grid-cols-3"}
+  `}
+>
+
             {filteredProducts.map((item, i) => (
               <div key={i}>
                 <div
@@ -504,6 +508,7 @@ if (sortBy === "new")
         </section>
 
       </div>
+ </div>
 
       <Testimonials />
       <section className='px-[16px] 2xl:px-[32px]'>
