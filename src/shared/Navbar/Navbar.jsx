@@ -261,7 +261,8 @@ const MobileGrid = ({ items }) => (
     />
 
     {/* MEGA MENU */}
-    <div className="absolute top-[90px] lg:right-[10px] 2xl:right-[80px] -translate-x-[280px] z-50">
+    <div className="fixed top-[90px] right-[10px] 2xl:right-[350px] z-50">
+
       <div className="relative bg-white rounded-[32px] shadow-xl px-[40px] py-[32px] flex gap-[74px]">
 
         {/* ARROW TIP */}
@@ -318,7 +319,8 @@ const MobileGrid = ({ items }) => (
     />
 
     {/* MEGA MENU */}
-    <div className="absolute top-[90px] lg:right-[10px] 2xl:right-[80px] -translate-x-[150px] z-50">
+    <div className="fixed top-[90px] right-[10px] 2xl:right-[250px] z-50">
+
       <div className="relative bg-white rounded-[32px] shadow-xl px-[40px] py-[32px] flex gap-[74px]">
 
         {/* ARROW TIP */}

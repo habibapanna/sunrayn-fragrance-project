@@ -11,6 +11,8 @@ import ProductCard from "../components/ProductCard";
 
 const ProductDetails = () => {
     const [openSection, setOpenSection] = useState("notes");
+    const [selectedVolume, setSelectedVolume] = useState(null);
+
 
 const toggle = (section) => {
   setOpenSection(openSection === section ? null : section);
@@ -65,11 +67,11 @@ const BigBottleIcon = () => (
         </div>
 
         {/* RIGHT – INFO */}
-        <div className="bg-[#F6F7F2] rounded-[32px] p-[32px]">
+        <div className="bg-[#F6F7F2] rounded-[32px] p-[16px] 2xl:p-[32px]">
 
-          <span className="text-[16px] bg-[#FFFFFF] p-[8px] rounded-full">{product.gender}</span>
+          <span className="text-[14px] 2xl:text-[16px] bg-[#FFFFFF] p-[8px] rounded-full">{product.gender}</span>
 
-          <h1 className="text-[25px] 2xl:text-[35px] text-[#1D0B01] font-bold mt-2">
+          <h1 className="text-[24px] 2xl:text-[35px] text-[#1D0B01] font-bold mt-2">
             {product.title} – {product.subtitle}
           </h1>
 
@@ -85,39 +87,65 @@ const BigBottleIcon = () => (
 
           <p className="mt-4 text-[18px] 2xl:text-[20px] text-[#282828]">{product.description}</p>
 
-         {/* Volume */}
+ {/* Volume */}
 <div className="mt-[32px]">
   <p className="text-[16px] 2xl:text-[18px] mb-2">Volume</p>
 
-  <div className="flex gap-2">
+  <div className="flex gap-[8px]">
     {product.volume.map((v) => {
+      const isSelected = selectedVolume === v;
       const is15ml = v === "15ML";
 
       return (
         <button
           key={v}
-          className="
-            flex items-center gap-2
-            border border-[#282828]/35
-            px-[14px] py-[10px]
-            rounded-full
-            hover:border-[#282828]
-            transition cursor-pointer group
-          "
+          onClick={() => setSelectedVolume(v)}
+          className={`
+            flex items-center justify-center gap-[4px] 2xl:gap-[8px]
+            px-[10px] py-[8px] 2xl:px-[14px] 2xl:py-[10px]
+            rounded-full border transition cursor-pointer
+            ${
+              isSelected
+                ? "border-[#282828] bg-white"
+                : "border-[#282828]/35 hover:border-[#282828]"
+            }
+          `}
         >
           {/* Circle */}
-          <span className="h-[20px] w-[20px] rounded-full group-hover:border-4 group-hover:border-[#282828] border border-[#282828]/35" />
+          <span
+            className={`
+              h-[16px] w-[16px] 2xl:h-[20px] 2xl:w-[20px]
+              rounded-full border
+              ${
+                isSelected
+                  ? "border-[4px] border-[#282828]"
+                  : "border-[#282828]/35"
+              }
+            `}
+          />
 
           {/* Icon */}
           {is15ml ? <SmallBottleIcon /> : <BigBottleIcon />}
 
           {/* Text */}
-          <span className="text-[14px] 2xl:text-[20px] font-medium text-[#282828]/35 cursor-pointer group-hover:text-[#282828]">{v}</span>
+          <span
+            className={`
+              text-[14px] 2xl:text-[20px] font-medium
+              ${
+                isSelected
+                  ? "text-[#282828]"
+                  : "text-[#282828]/35"
+              }
+            `}
+          >
+            {v}
+          </span>
         </button>
       );
     })}
   </div>
 </div>
+
 
 
           {/* Price */}
@@ -129,12 +157,12 @@ const BigBottleIcon = () => (
           </div>
 
           {/* CTA */}
-        <div className="flex justify-between items-center gap-[16px] mt-[32px]">   <div className="flex items-center gap-3 bg-white rounded-[100px] px-[12px] py-[10px] ">
-                          <Minus className="h-[24px]" />
-                          <span className="text-[20px]">1</span>
-                          <Plus className="h-[24px]" />
+        <div className="flex justify-between items-center gap-[16px] mt-[32px]">   <div className="flex items-center gap-3 bg-white rounded-[100px] px-[10px] 2xl:px-[12px] py-[8px] 2xl:py-[10px] ">
+                          <Minus className="h-[20px] 2xl:h-[24px]" />
+                          <span className="text-[18px] 2xl:text-[20px]">1</span>
+                          <Plus className="h-[20px] 2xl:h-[24px]" />
                         </div>
-          <button className="text-[18px] 2xl:text-[20px] text-[#1D0B01] bg-[#DBAB35] w-full py-[10px] px-[24px] rounded-full font-semibold cursor-pointer">
+          <button className="text-[18px] 2xl:text-[20px] text-[#1D0B01] bg-[#DBAB35] w-full px-[20px] py-[8px] 2xl:py-[10px] 2x:px-[24px] rounded-full font-semibold cursor-pointer hover:bg-white">
             Add to cart
           </button></div>
 
@@ -154,7 +182,7 @@ const BigBottleIcon = () => (
   </button>
 
   {openSection === "notes" && (
-    <div className="mt-[24px] space-y-[24px] bg-[#FFF] p-[24px] rounded-[32px]">
+    <div className="mt-[24px] space-y-[24px] bg-[#FFF] p-[16px] 2xl:p-[24px] rounded-[32px]">
 
       {/* Intro */}
       <p className="text-[16px] 2xl:text-[18px] text-[#282828] leading-relaxed">
@@ -166,14 +194,14 @@ const BigBottleIcon = () => (
     <div key={i.name}>
       {typeof i.icon === "string" && i.icon.trim().startsWith("<svg") ? (
         <div
-          className="w-8 h-8 mx-auto mb-1"
+          className="h-7  2xl:w-8 2xl:h-8 mx-auto mb-1"
           dangerouslySetInnerHTML={{ __html: i.icon }}
         />
       ) : (
-        <div className="text-[32px] ">{i.icon}</div>
+        <div className="">{i.icon}</div>
       )}
 
-      <p className="text-[16px] 2xl:text-[18px] mt-[30px]">{i.name}</p>
+      <p className="text-[12px] 2xl:text-[18px] mt-[30px]">{i.name}</p>
     </div>
   ))}
 </div>
@@ -182,8 +210,8 @@ const BigBottleIcon = () => (
       {/* Notes */}
       <div className="space-y-[20px]">
         {["top", "middle", "base"].map((key) => (
-          <div key={key} className="flex gap-3">
-            <span className=""><svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none">
+          <div key={key} className="flex gap-[16px]">
+            <span className=""><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 56 56" fill="none">
   <circle cx="28" cy="28" r="28" fill="#F6F7F2"/>
   <path d="M27.9297 14.1338H28.9964V15.2005H27.9297V14.1338Z" fill="#1D0B01"/>
   <path d="M30.6006 12C30.742 12 30.8776 12.0563 30.9775 12.1562C31.0775 12.2562 31.1338 12.3918 31.1338 12.5332V16.2666H33.2666V19.4668H35.4004C35.5418 19.4668 35.6773 19.523 35.7773 19.623C35.8774 19.7231 35.9336 19.8586 35.9336 20V43.4668C35.9336 43.6082 35.8773 43.7438 35.7773 43.8438C35.6773 43.9437 35.5418 44 35.4004 44H21.5342C21.3927 44 21.2563 43.9438 21.1562 43.8438C21.0564 43.7438 21 43.6081 21 43.4668V20C21 19.8587 21.0564 19.723 21.1562 19.623C21.2563 19.523 21.3927 19.4668 21.5342 19.4668H23.667V16.2666H25.8008V12.5332C25.8008 12.3918 25.857 12.2562 25.957 12.1562C26.057 12.0563 26.1926 12 26.334 12H30.6006ZM22.0674 42.7334H34.8672V28.667H22.0674V42.7334ZM22.0674 23.2002H27.9336V22.1338H26.8672V20.5332H22.0674V23.2002ZM30.0674 22.1338H29V23.2002H34.8672V20.5332H30.0674V22.1338ZM26.8672 16.2666H30.0674V13.0664H26.8672V16.2666Z" fill="#1D0B01"/>
@@ -222,7 +250,7 @@ const BigBottleIcon = () => (
   </button>
 
   {openSection === "about" && (
-    <div className="mt-[20px] space-y-[16px] text-[14px] text-[#282828]/90 bg-[#FFF] p-[24px] rounded-[32px]">
+    <div className="mt-[20px] space-y-[16px] text-[14px] text-[#282828]/90 bg-[#FFF] p-[16px] 2xl:p-[24px] rounded-[32px]">
 
       <p className="font-normal text-[16px] 2xl:text-[18px] text-[#1D0B01]">{product.about.title}</p>
 
@@ -238,7 +266,7 @@ const BigBottleIcon = () => (
     >
       {/* ICON */}
       <span
-        className="flex items-center px-3 py-3 bg-[#F6F7F2] rounded-full"
+        className="flex items-center px-2 py-2 2xl:px-3 2xl:py-3 bg-[#F6F7F2] rounded-full"
         dangerouslySetInnerHTML={{ __html: item.icon }}
       />
 
@@ -255,7 +283,7 @@ const BigBottleIcon = () => (
         {product.about.tags.map((tag) => (
           <span
             key={tag}
-            className="px-3 py-1 bg-[#F6F7F2] rounded-full font-normal text-[16px]"
+            className="px-2 2xl:px-3 py-1 bg-[#F6F7F2] rounded-full font-normal 2xl:text-[16px]"
           >
             {tag}
           </span>
@@ -282,7 +310,7 @@ const BigBottleIcon = () => (
   </button>
 
   {openSection === "scentNotes" && (
-    <div className="mt-[20px] space-y-[16px] text-[14px] text-[#282828]/90 bg-[#FFF] p-[24px] rounded-[32px]">
+    <div className="mt-[20px] space-y-[16px] text-[14px] text-[#282828]/90 bg-[#FFF] p-[16px] 2xl:p-[24px] rounded-[32px]">
 
       <p className="font-normal text-[16px] 2xl:text-[18px] text-[#1D0B01]">{product.scentNotes.title}</p>
 
@@ -319,7 +347,7 @@ const BigBottleIcon = () => (
   </button>
 
   {openSection === "shipping" && (
-    <div className="mt-[16px] space-y-[12px] text-[14px] text-[#282828]/90 bg-[#FFF] p-[24px] rounded-[32px]">
+    <div className="mt-[16px] space-y-[12px] text-[14px] text-[#282828]/90 bg-[#FFF] p-[16px] 2xl:p-[24px] rounded-[32px]">
 <p className="text-[#1D0B01] text-[16px] 2xl:text-[18px] font-medium mt-2">
         {product.shipping.title}
       </p>
@@ -329,7 +357,7 @@ const BigBottleIcon = () => (
           className="flex justify-between items-center bg-[#F6F7F2] 2xl:pr-[32px] px-[16px] py-[10px] 2xl:py-[12px] rounded-lg"
         >
            <div
-  className={`flex gap-[16px] w-[400px] lg:w-[500px] border-gray-300 ${
+  className={`flex gap-[16px] w-[250px] lg:w-[500px] border-gray-300 ${
     i !== product.shipping.items.length - 1 ? "border-r" : ""
   }`}
 >
@@ -339,9 +367,9 @@ const BigBottleIcon = () => (
         dangerouslySetInnerHTML={{ __html: s.icon }}
       />
  <div className="flex flex-col">
-            <span className="text-[15px] 2xl:text-[16px] font-medium">{s.label}</span>
+            <span className="text-[12px] 2xl:text-[16px] font-medium">{s.label}</span>
             <span
-  className={`text-[14px] 2xl:text-[15px] font-medium ${
+  className={`text-[11px] 2xl:text-[15px] font-medium ${
     s.text === "View return policy" ? "underline underline-offset-2" : ""
   }`}
 >
@@ -351,7 +379,7 @@ const BigBottleIcon = () => (
           </div>
             </div>
          
-          <span className="text-[16px] 2xl:text-[18px] font-medium">{s.value}</span>
+          <span className="text-[12px] 2xl:text-[18px] font-medium">{s.value}</span>
         </div>
       ))}
     </div>
@@ -375,7 +403,7 @@ const BigBottleIcon = () => (
   </button>
 
   {openSection === "faq" && (
-    <div className="mt-[16px] space-y-[12px] text-[14px]  bg-[#FFF] p-[24px] rounded-[32px]">
+    <div className="mt-[16px] space-y-[12px] text-[14px]  bg-[#FFF] p-[16px] 2xl:p-[24px] rounded-[32px]">
 
       {product.faq.map((f, i) => (
         <p  key={i}

@@ -35,7 +35,7 @@ useEffect(() => {
             You Might Love
           </p>
 
-          <button className="bg-[#BA9948] text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] py-2xl:[12px] rounded-full text-[14px] md:text-[20px]">
+          <button className="bg-[#BA9948] text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] 2xl:py-[12px] rounded-full text-[14px] md:text-[20px]">
             <Link to='/productList'>Show More</Link>
           </button>
         

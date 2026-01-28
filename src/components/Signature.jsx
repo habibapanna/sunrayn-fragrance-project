@@ -37,10 +37,6 @@ const fadeInSoft = {
 
         {/* LEFT IMAGE */}
 <div
-  variants={fadeUpSoft}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: false, amount: 0.5 }}
   className="w-full"
 >
   <img
@@ -53,10 +49,6 @@ const fadeInSoft = {
 
         {/* RIGHT CONTENT CARD */}
        <div
-  variants={fadeInSoft}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: false, amount: 0.5 }}
   className="relative rounded-3xl lg:rounded-[48px] overflow-hidden flex items-center"
 >
 
@@ -92,13 +84,13 @@ const fadeInSoft = {
     2xl:p-[120px]"
 >
 
-            <h2 className="text-[#571313] font-semibold leading-tight
+            <h2 className="text-[#571313] font-bold
     text-[24px]
     sm:text-[30px]
     2xl:text-[48px]
-    mb-4 sm:mb-6">
-              Signature-Inspired <br />
-              Scents That Stay-On Skin <br />
+    mb-4 sm:mb-[35px]">
+              Signature-Inspired
+              Scents  That Stay-On Skin 
               and in Memory
             </h2>
 

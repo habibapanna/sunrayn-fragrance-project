@@ -20,45 +20,45 @@ const Home = () => {
         
       <Hero />
 
-      <ScrollReveal>
+    
         <Signature />
-      </ScrollReveal>
+      
 
-      <ScrollReveal>
+    
         <Category />
-      </ScrollReveal>
+      
 
-      <ScrollReveal>
+     
         <NewArrivals />
-      </ScrollReveal>
+      
 
-      <ScrollReveal>
+     
         <Featured />
-      </ScrollReveal>
+     
 
-      <ScrollReveal>
+      
         <Special />
-      </ScrollReveal>
+      
 
-      <ScrollReveal>
+     
         <BestSelling />
-      </ScrollReveal>
+      
 
-      <ScrollReveal>
+    
         <Testimonials />
-      </ScrollReveal>
+     
 
-      <ScrollReveal>
+   
         <Blogs />
-      </ScrollReveal>
+     
 
-      <ScrollReveal>
+     
         <Offer />
-      </ScrollReveal>
+     
 
-      <ScrollReveal>
+      
         <RecentPost />
-      </ScrollReveal>
+    
     </div>
   );
 };

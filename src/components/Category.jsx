@@ -75,7 +75,7 @@ const cardVariant = {
             /></Link>
 
             {/* TITLE */}
-            <h3 className="absolute top-6 left-6 z-20 text-[25px] 2xl:text-[50px] font-medium text-[#1D0B01]">
+            <h3 className="absolute top-6 left-6 z-20 text-[25px] 2xl:text-[50px] font-semibold text-[#1D0B01]">
               {item.title}
             </h3>
 
