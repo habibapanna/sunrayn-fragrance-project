@@ -45,7 +45,7 @@ const Categories = ({ sortBy, setSortBy }) => {
               className={`
                 flex flex-col lg:flex-row items-center
                 p-2 lg:p-6 gap-2 2xl:gap-4
-                text-center cursor-pointer rounded-[24px]
+                text-center cursor-pointer rounded-[12px] 2xl:rounded-[24px]
                 bg-[#F6F7F2]
                 border-2
                 ${isActive ? "border-black" : "border-transparent"}
@@ -56,7 +56,7 @@ const Categories = ({ sortBy, setSortBy }) => {
               </h3>
 
               <img
-                className="h-[80px] w-[80px] 2xl:h-[108px] 2xl:w-[108px]"
+                className="h-[50px] w-[50px] 2xl:h-[108px] 2xl:w-[108px] object-cover"
                 src={item.product}
                 alt=""
               />
