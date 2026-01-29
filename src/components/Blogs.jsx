@@ -65,7 +65,7 @@ const Blogs = () => {
           {blogs.map((item, idx) => (
             <div
               key={idx}
-              className="flex-shrink-0 px-[8px] 2xl:px-[16px]"
+              className="flex-shrink-0 px-[4px] gap-[4px] lg:px-[8px] 2xl:px-[16px]"
               style={{ width: `${100 / cardsPerView}%` }}
             >
               <div

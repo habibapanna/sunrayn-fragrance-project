@@ -1,7 +1,7 @@
 export const products = [
 {
   slug: "cerisa-aura",
-  title: "Cerisa Aura",
+  title: "Ambery Safron",
   subtitle: "Inspired By Signature Ambery Cherry Indulgence",
   gender: "WOMEN",
   brand: "Byredo",

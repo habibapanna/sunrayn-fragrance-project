@@ -233,7 +233,7 @@ const showClearAll =
 
             </button>
 {openGender && (
-  <div className="absolute top-[56px] left-0 w-[180px] bg-white rounded-[16px] shadow-lg p-[12px] z-40">
+  <div className="absolute top-[56px] left-0 w-[160px] bg-white rounded-[16px] shadow-lg p-[12px] z-40">
     {renderDropdown(genderOptions, "gender")}
 
     {showClearAll && (
@@ -314,7 +314,7 @@ const showClearAll =
 </svg>
             </button>
 {openBrands && (
-  <div className="absolute top-[56px] left-0 w-[180px] bg-white rounded-[16px] shadow-lg p-[12px] z-40">
+  <div className="absolute top-[56px] left-0 w-[160px] bg-white rounded-[16px] shadow-lg p-[12px] z-40">
     {renderDropdown(brandOptions, "brand")}
 
     {showClearAll && (
