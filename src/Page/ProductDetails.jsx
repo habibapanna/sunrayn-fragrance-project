@@ -163,7 +163,7 @@ Back
         {/* RIGHT – INFO */}
         <div className="bg-[#F6F7F2] rounded-[32px] p-[16px] 2xl:p-[32px]">
 
-          <span className="text-[14px] 2xl:text-[16px] bg-[#FFFFFF] p-[8px] rounded-full">{product.gender}</span>
+          <span className="text-[12px] 2xl:text-[16px] bg-[#FFFFFF] py-[8px] px-[16px] rounded-full">{product.gender}</span>
 
           <h1 className="text-[18px] lg:text-[24px] 2xl:text-[35px] text-[#1D0B01] font-bold mt-2">
             {product.title} – {product.subtitle}
