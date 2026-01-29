@@ -3,7 +3,7 @@ import { products } from "../data/productsData";
 import { FaStar } from "react-icons/fa";
 import { Minus, Plus } from "lucide-react";
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import MarqueeSection from "../components/MarqueeSection";
 import Testimonials from "../components/Testimonials";
 import ProductCard from "../components/ProductCard";
@@ -15,7 +15,20 @@ const ProductDetails = () => {
     const [openSection, setOpenSection] = useState("notes");
     const [selectedVolume, setSelectedVolume] = useState(null);
     const navigate = useNavigate();
+    const carouselRef = useRef(null);
+const [activeIndex, setActiveIndex] = useState(0);
 
+
+const handleScroll = () => {
+  const container = carouselRef.current;
+  if (!container) return;
+
+  const scrollLeft = container.scrollLeft;
+  const width = container.clientWidth;
+
+  const index = Math.round(scrollLeft / width);
+  setActiveIndex(index);
+};
 
 
 const toggle = (section) => {
@@ -49,7 +62,7 @@ const BigBottleIcon = () => (
   if (!product) return <div>Product not found</div>;
 
   return (
-    <div className=" py-[32px]">
+    <div className=" py-[16px] 2xl:py-[32px]">
       {/* BACK + BREADCRUMB */}
 <div className="flex items-center gap-[12px] 2xl:gap-[20px] px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
 
@@ -90,49 +103,86 @@ Back
 </div>
 
       {/* TOP SECTION */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[32px] px-[16px] 2xl:px-[32px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] 2xl:gap-[32px] px-[16px] 2xl:px-[32px]">
         
-
         {/* LEFT – IMAGES */}
-        <div className="grid grid-cols-2 gap-[16px] 2xl:gap-[32px] auto-rows-min">
+        <div className="hidden lg:grid grid-cols-2 gap-[16px] 2xl:gap-[32px] auto-rows-min">
           <div className="col-span-2 ] ">
             <img
               src={product.images[1]}
               alt={product.title}
-              className="mx-auto h-full w-full object-contain rounded-[32px]"
+              className="mx-auto h-full w-full object-contain rounded-[24px]"
             />
           </div>
 
           {product.images.slice(2).map((img, i) => (
-            <div key={i} className="rounded-[32px]">
+            <div key={i} className="rounded-[24px]">
               <img src={img} className="mx-auto h-full object-contain" />
             </div>
           ))}
         </div>
+{/* LEFT – IMAGES (MOBILE CAROUSEL) */}
+<div className="lg:hidden">
+  <div
+    ref={carouselRef}
+    onScroll={handleScroll}
+    className="
+      flex overflow-x-auto snap-x snap-mandatory
+      scroll-smooth no-scrollbar
+      gap-[16px]
+    "
+  >
+    {product.images.slice(1).map((img, i) => (
+      <div
+        key={i}
+        className="min-w-full snap-center"
+      >
+        <img
+          src={img}
+          alt={`${product.title} ${i + 1}`}
+          className="object-cover rounded-[24px] w-[343px] h-[288px]"
+        />
+      </div>
+    ))}
+  </div>
+
+  {/* DOTS */}
+  <div className="flex justify-center gap-2">
+    {product.images.slice(1).map((_, i) => (
+      <span
+        key={i}
+        className={`h-2 w-2 rounded-full transition
+          ${activeIndex === i ? "bg-[#1D0B01]" : "bg-[#1D0B01]/30"}
+        `}
+      />
+    ))}
+  </div>
+</div>
+
 
         {/* RIGHT – INFO */}
         <div className="bg-[#F6F7F2] rounded-[32px] p-[16px] 2xl:p-[32px]">
 
           <span className="text-[14px] 2xl:text-[16px] bg-[#FFFFFF] p-[8px] rounded-full">{product.gender}</span>
 
-          <h1 className="text-[24px] 2xl:text-[35px] text-[#1D0B01] font-bold mt-2">
+          <h1 className="text-[18px] lg:text-[24px] 2xl:text-[35px] text-[#1D0B01] font-bold mt-2">
             {product.title} – {product.subtitle}
           </h1>
 
           {/* Rating */}
-          <div className="flex items-center gap-2 mt-3">
+          <div className="flex items-center gap-[5px] mt-3">
             {[...Array(5)].map((_, i) => (
               <FaStar key={i} className="text-[#FF9100]" />
             ))}
-            <span className="text-[14px] 2xl:text-[16px] underline">
+            <span className="text-[16px] underline">
               {product.rating} ({product.reviews})
             </span>
           </div>
 
-          <p className="mt-4 text-[18px] 2xl:text-[20px] text-[#282828]">{product.description}</p>
+          <p className="mt-4 text-[14px] lg:text-[16px] 2xl:text-[20px] text-[#282828]">{product.description}</p>
 
  {/* Volume */}
-<div className="mt-[32px]">
+<div className="mt-[20px] 2xl:mt-[32px]">
   <p className="text-[16px] 2xl:text-[18px] mb-2">Volume</p>
 
   <div className="flex gap-[8px]">
@@ -190,10 +240,8 @@ Back
   </div>
 </div>
 
-
-
           {/* Price */}
-          <div className="flex items-center gap-3 mt-[32px]">
+          <div className="flex items-center gap-3 mt-[20px] 2xl:mt-[32px]">
             <span className="text-[25px] 2xl:text-[30px] font-bold">${product.price}</span>
             <span className="line-through text-[#282828]/50 text-[18px] 2xl:text-[20px]">
               ${product.oldPrice}
@@ -201,7 +249,7 @@ Back
           </div>
 
           {/* CTA */}
-        <div className="flex justify-between items-center gap-[16px] mt-[32px]">   <div className="flex items-center gap-3 bg-white rounded-[100px] px-[10px] 2xl:px-[12px] py-[8px] 2xl:py-[10px] ">
+        <div className="flex justify-between items-center gap-[16px] mt-[20px] 2xl:mt-[32px]">   <div className="flex items-center gap-3 bg-white rounded-[100px] px-[10px] 2xl:px-[12px] py-[8px] 2xl:py-[10px] ">
                           <Minus className="h-[20px] 2xl:h-[24px]" />
                           <span className="text-[18px] 2xl:text-[20px]">1</span>
                           <Plus className="h-[20px] 2xl:h-[24px]" />
@@ -211,7 +259,7 @@ Back
           </button></div>
 
 {/* NOTES & INGREDIENTS */}
-<div className="mt-[40px] border-t border-[#282828]/20 pt-[24px]">
+<div className="mt-[24px] 2xl:mt-[40px] border-t border-[#282828]/20 pt-[24px]">
 
   <button
     onClick={() => toggle("notes")}
