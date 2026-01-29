@@ -43,7 +43,7 @@ const Checkout = () => {
     </button>
   </div>
 
-  <p className="text-[14px] text-[#282828] text-center mt-[24px] w-2/3 mx-auto">
+  <p className="text-[14px] text-[#282828] text-center mt-[24px] w-4/5 lg:w-2/3 mx-auto">
     By continuing with your payment, you agree to the future charges listed on this page and the cancellation policy.
   </p>
 </div>

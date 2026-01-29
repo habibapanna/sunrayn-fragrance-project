@@ -159,7 +159,6 @@ Back
   </div>
 </div>
 
-
         {/* RIGHT – INFO */}
         <div className="bg-[#F6F7F2] rounded-[32px] p-[16px] 2xl:p-[32px]">
 

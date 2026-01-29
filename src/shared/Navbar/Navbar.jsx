@@ -377,7 +377,7 @@ const MobileGrid = ({ items }) => (
     {/* BLUR LAYER (same as cart) */}
     <div
       onClick={() => setSearchOpen(false)}
-      className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60]"
+      className="fixed inset-0 bg-black/30 z-[60]"
     />
 
     {/* SEARCH UI */}

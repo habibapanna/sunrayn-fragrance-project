@@ -90,7 +90,7 @@ const BestSelling = () => {
               >
                 {item.off && (
                     <div className="lg:mt-[40px] lg:ml-[40px] ml-[20px] mt-[20px]">
-                      <button className="bg-[#FFFFE3] px-[10px] 2xl:px-[16px] h-[25px] 2xl:h-[35px] rounded-full font-normal text-[12px]">
+                      <button className="bg-[#FFFFE3] px-[10px] 2xl:px-[16px] h-[25px] 2xl:h-[35px] rounded-full font-normal text-[12px] lg:text-[14px]">
                         {item.off}
                       </button>
                     </div>

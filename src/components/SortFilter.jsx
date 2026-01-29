@@ -1,5 +1,6 @@
 import { X } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import { LuSearch } from "react-icons/lu";
 
 const scentOptions = [
   { label: "Flowery", icon: (<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -92,6 +93,22 @@ clearAllFilters, }) => {
   const genderRef = useRef(null);
   const brandRef = useRef(null);
   const collectionRef = useRef(null);
+const [isSticky, setIsSticky] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    if (window.scrollY > 80) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -165,8 +182,20 @@ const showClearAll =
 
   return (
     <div>
-      <section className="w-full pb-[16px] 2xl:pb-[32px]">
-        <div className="flex justify-center items-center gap-[6px] 2xl:gap-[12px]">
+      <section
+  className={`
+    w-full pb-[16px] 2xl:pb-[32px]
+    transition-all duration-300
+    lg:static
+    ${
+      isSticky
+        ? "fixed top-[88px] pt-[16px] left-0 z-40 bg-white"
+        : "relative"
+    }
+  `}
+>
+
+        <div className="flex justify-center items-center gap-[6px] 2xl:gap-[12px]  ">
 
           {/* Sort & Filter Button */}
           <button
@@ -364,16 +393,10 @@ const showClearAll =
       {/* Search button */}
       <button
         onClick={() => setMobileSearchOpen(false)}
-        className="absolute right-[12px] top-[15px] p-2 text-[#1D0B01] cursor-pointer"
+        className="absolute right-[20px] top-[20px] p-[4px] text-[#1D0B01] cursor-pointer bg-[#FD4929] rounded-full"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M9.58464 3.33366C6.13286 3.33366 3.33464 6.13188 3.33464 9.58366C3.33464 13.0354 6.13286 15.8337 9.58464 15.8337C11.2622 15.8337 12.7854 15.1727 13.9081 14.097C13.934 14.0611 13.9631 14.0267 13.9955 13.9944C14.0278 13.9621 14.0621 13.9329 14.0981 13.907C15.1737 12.7844 15.8346 11.2612 15.8346 9.58366C15.8346 6.13188 13.0364 3.33366 9.58464 3.33366ZM15.7409 14.5614C16.8418 13.2015 17.5013 11.4696 17.5013 9.58366C17.5013 5.2114 13.9569 1.66699 9.58464 1.66699C5.21238 1.66699 1.66797 5.2114 1.66797 9.58366C1.66797 13.9559 5.21238 17.5003 9.58464 17.5003C11.4706 17.5003 13.2025 16.8408 14.5624 15.7399L16.912 18.0896C17.2375 18.415 17.7651 18.415 18.0905 18.0896C18.416 17.7642 18.416 17.2365 18.0906 16.9111L15.7409 14.5614Z"
-            fill="#1D0B01"
-          />
-        </svg>
+       <LuSearch className="text-white text-xl" />
+
       </button>
     </div>
   </div>

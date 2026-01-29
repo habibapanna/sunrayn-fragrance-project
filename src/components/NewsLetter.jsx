@@ -16,14 +16,14 @@ const NewsLetter = () => {
           <div className="w-1/2" />
 
           {/* RIGHT CONTENT */}
-          <div className="w-1/2 flex items-center px-6 py-16 md:px-16 md:py-24 2xl:px-24">
+          <div className="lg:w-1/2 flex items-center px-6 py-16 md:px-16 md:py-24 2xl:px-24">
             <div className="text-white">
 
               <h1 className="text-[28px] md:text-[40px] 2xl:text-[56px] font-light mb-6">
                 Get 30% Off
               </h1>
 
-              <p className="text-white/90 mb-10 text-[14px] md:text-[18px] leading-relaxed">
+              <p className="text-white/90 mb-10 text-[14px] lg:text-[18px] leading-relaxed">
                 Be the first to know about new collections and exclusive offers.
               </p>
 

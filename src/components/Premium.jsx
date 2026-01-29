@@ -42,8 +42,8 @@ const Premium = () => {
   return (
     <>
       {/* ================= DESKTOP ================= */}
-      <section className="hidden lg:block pb-[16px] 2xl:pb-[32px]">
-        <div className="grid grid-cols-3 gap-[16px] 2xl:gap-[32px]">
+      <section className=" pb-[16px] 2xl:pb-[32px]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[16px] 2xl:gap-[32px]">
           {premiumItems.map((item, i) => (
             <div
               key={i}
@@ -77,7 +77,7 @@ const Premium = () => {
       </section>
 
       {/* ================= MOBILE CAROUSEL ================= */}
-      <section className="lg:hidden pb-[16px]">
+      <section className="hidden pb-[16px]">
         <div className="overflow-hidden relative">
           <div
             className="flex transition-transform duration-500"

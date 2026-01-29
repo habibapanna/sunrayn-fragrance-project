@@ -25,7 +25,7 @@ const Footer = () => {
       </div>
 
       {/* ================= MAIN CONTENT ================= */}
-      <div className="relative z-10 mx-auto lg:px-6 md:pl-[180px] lg:pl-[260px] p-[16px] py-16 md:py-[250px]">
+      <div className="relative z-10 mx-auto lg:px-6 md:pl-[180px] lg:pl-[50px] 2xl:pl-[260px] p-[16px] py-16 md:py-[250px]">
 
         {/* MOBILE BIG S */}
         <div className="md:hidden flex justify-center mb-12">
@@ -35,7 +35,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start gap-16 ">
 
           {/* LEFT CONTENT */}
-          <div className="w-full md:w-auto text-left mt-[40px] md:mt-0 ">
+          <div className="w-full lg:w-lg text-left mt-[40px] md:mt-0 ">
             <Link to="/" className="inline-block">
               <img src={SANRAYN} alt="Sanrayn" className="mx-auto md:mx-0" />
             </Link>
@@ -66,7 +66,7 @@ const Footer = () => {
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Other</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
-                  <li className="hidden lg:block hover:underline cursor-pointer"><Link to='terms'>Terms of Services</Link></li>
+                  <li className="hidden  hover:underline cursor-pointer"><Link to='terms'>Terms of Services</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='faq'>FAQs</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='contact'>Contact us</Link></li>
                 </ul>
@@ -78,9 +78,8 @@ const Footer = () => {
           {/* DESKTOP BIG S */}
         <div
   className="
-    hidden 2xl:block absolute
-    right-[260px]
-    xl2:right-[320px]
+    hidden lg:block absolute
+    lg:right-[50px]
     2xl:right-[420px]
     top-1/2 -translate-y-1/2
     pointer-events-none opacity-90
@@ -89,9 +88,7 @@ const Footer = () => {
   <img
     src={BigS}
     className="
-      h-[520px]
-      lg:h-[642px]
-      xl2:h-[720px]
+      lg:h-[500px]
       2xl:h-[620px]
       w-auto
     "
@@ -106,8 +103,7 @@ const Footer = () => {
      <div
   className="
     mx-auto p-[32px]
-    lg:px-[120px]
-    xl2:px-[180px]
+    lg:px-[80px]
     2xl:px-[260px]
     md:py-[32px]
     flex flex-col md:flex-row

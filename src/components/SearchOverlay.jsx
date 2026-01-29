@@ -45,13 +45,13 @@ useEffect(() => {
    <div className="fixed inset-0 z-[70]">
 
       {/* WHITE PANEL */}
-      <div className="absolute lg:top-[106px] top-[20px] right-0 2xl:right-[164px] 2xl:w-[1001px] bg-white rounded-[24px] p-[24px]">
+      <div className="absolute lg:top-[106px] top-0 right-0 md:right-[12px] 2xl:right-[164px] w-full md:w-[680px]  lg:w-[1001px] bg-white lg:rounded-[24px] p-[24px]">
 
         {/* SEARCH BAR */}
         <div className="relative">
           <input
             type="text"
-            placeholder='Search scents, brands, ingredients. e.g. “vanilla, coconut”"'
+            placeholder='Search scents, brands etc.'
             className="w-full rounded-[100px] bg-[#F6F7F2] py-[12px] pr-[5px] pl-[24px] outline-none h-[50px] text-[#3A3F42] lg:text-[16px] text-sm"
           />
 
