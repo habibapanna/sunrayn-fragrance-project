@@ -51,31 +51,38 @@ const BigBottleIcon = () => (
   return (
     <div className=" py-[32px]">
       {/* BACK + BREADCRUMB */}
-<div className="flex items-center gap-3 px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
+<div className="flex items-center gap-[12px] 2xl:gap-[20px] px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
 
   {/* Back Button */}
   <button
     onClick={() => navigate(-1)}
-    className="flex items-center gap-[8px] bg-[#F6F7F2] pl-[16px] pr-[24px] py-[12px] rounded-full text-[14px] lg:text-[16px] font-medium h-[50px]"
+    className="hidden lg:flex items-center gap-[8px] bg-[#F6F7F2] pl-[16px] pr-[24px] py-[12px] rounded-full text-[14px] lg:text-[16px] font-medium h-[50px]"
   >
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M13 6L7 12L13 18" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 Back
   </button>
-
+  <button
+    onClick={() => navigate(-1)}
+    className="lg:hidden flex items-center bg-[#F6F7F2] p-[12px] rounded-full text-[14px]"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M13 6L7 12L13 18" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+  </button>
   {/* Breadcrumb */}
-  <div className="flex items-center gap-1 text-[14px] lg:text-[16px] px-[24px] py-[12px] text-[#282828]/70 h-[50px] bg-[#F6F7F2] rounded-full  w-full">
-    <Link to="/" className="hover:underline">Home</Link>
+  <div className="flex items-center gap-[8px]  px-[16px] py-[12px] text-[#282828]/70 bg-[#F6F7F2] rounded-full  w-full">
+    <Link to="/" className="hover:underline text-[12px] lg:text-[16px]">Home</Link>
     <span>/</span>
 
-    <Link to="/products" className="hover:underline">Perfume</Link>
+    <Link to="/products" className="hover:underline text-[12px] lg:text-[16px]">Perfume</Link>
     <span>/</span>
 
-    <span className="uppercase">{product.gender}</span>
+    <span className="uppercase text-[10px] lg:text-[16px]">{product.gender}</span>
     <span>/</span>
 
-    <span className="text-[#1D0B01] font-medium">
+    <span className="text-[#1D0B01] font-medium text-[12px] lg:text-[16px]">
       {product.title}
     </span>
   </div>
