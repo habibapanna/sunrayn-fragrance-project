@@ -28,9 +28,9 @@ const BestSelling = () => {
   const prev = () => setCurrent((prev) => (prev <= 0 ? maxIndex : prev - 1));
 
   return (
-    <div className="mx-auto px-[8px] 2xl:px-[16px] pb-[16px] 2xl:pb-[32px]">
+    <div className="mx-auto px-[8px] 2xl:px-[16px] pb-[8px] lg:pb-[16px] 2xl:pb-[32px]">
       {/* HEADER */}
-      <div className="flex justify-between items-center mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px]">
+      <div className="hidden lg:flex justify-between items-center mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px]">
         <div className="flex items-center gap-[20px] md:gap-[32px]">
           <p
             className="text-[20px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]"
@@ -59,7 +59,15 @@ const BestSelling = () => {
           </button>
         </div>
       </div>
-
+    <div className='flex lg:hidden justify-between items-center px-[16px] pb-[16px]
+            '>
+                <div>
+                    <p className='text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]'>Best Selling Perfumes</p>
+                </div>
+                <div>
+                    <button className="bg-[#BA9948] text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] 2xl:py-[12px] rounded-full text-[14px] 2xl:text-[20px] cursor-pointer w-[117px] h-[40px] md:w-[139px] md:h-[55px]"><Link to='/productList'>View All</Link></button>
+                </div>
+            </div>
       {/* CAROUSEL */}
       <section className="relative overflow-hidden">
         <div

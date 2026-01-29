@@ -35,7 +35,7 @@ const Featured = () => {
 
     return (
         <div className='mx-auto px-[8px] 2xl:px-[16px] pb-[16x] 2xl:pb-[32px]'>
-            <div className='flex justify-between mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px]'>
+            <div className='hidden lg:flex justify-between mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px]'>
             <div className='flex justify-center items-center text-center gap-[20px] 2xl:gap-[32px]'>
                 <div>
                     <p className='text-[20px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828] pl-[16px]'>Featured Perfumes</p>
@@ -53,6 +53,15 @@ const Featured = () => {
                             </button>
             </div>
 
+            </div>
+            <div className='flex lg:hidden justify-between items-center px-[16px] pb-[16px]
+            '>
+                <div>
+                    <p className='text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]'>Featured Perfumes</p>
+                </div>
+                <div>
+                    <button className="bg-[#BA9948] text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] 2xl:py-[12px] rounded-full text-[14px] 2xl:text-[20px] cursor-pointer w-[117px] h-[40px] md:w-[139px] md:h-[55px]"><Link to='/productList'>View All</Link></button>
+                </div>
             </div>
 {/* CAROUSEL */}
       <section className="relative overflow-hidden pb-[16px] 2xl:pb-[32px]">

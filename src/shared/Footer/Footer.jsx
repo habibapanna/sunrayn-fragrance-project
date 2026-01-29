@@ -25,7 +25,7 @@ const Footer = () => {
       </div>
 
       {/* ================= MAIN CONTENT ================= */}
-      <div className="relative z-10 mx-auto px-6 md:pl-[180px] lg:pl-[260px] py-16 md:py-[250px]">
+      <div className="relative z-10 mx-auto lg:px-6 md:pl-[180px] lg:pl-[260px] p-[16px] py-16 md:py-[250px]">
 
         {/* MOBILE BIG S */}
         <div className="md:hidden flex justify-center mb-12">
@@ -35,12 +35,12 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start gap-16 ">
 
           {/* LEFT CONTENT */}
-          <div className="w-full md:w-auto text-left mt-[43px] md:mt-0">
+          <div className="w-full md:w-auto text-left mt-[40px] md:mt-0 ">
             <Link to="/" className="inline-block">
               <img src={SANRAYN} alt="Sanrayn" className="mx-auto md:mx-0" />
             </Link>
 
-            <div className="flex justify-between gap-[16px] md:gap-16 mt-[48px] md:mt-[57px]">
+            <div className="flex justify-between mt-[48px] md:mt-[57px]">
 
               {/* SHOP */}
               <div className="text-left">
@@ -67,7 +67,7 @@ const Footer = () => {
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Other</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
-                  <li className="hover:underline cursor-pointer"><Link to='terms'>Terms of Services</Link></li>
+                  <li className="hidden lg:block hover:underline cursor-pointer"><Link to='terms'>Terms of Services</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='faq'>FAQs</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='contact'>Contact us</Link></li>
                 </ul>
