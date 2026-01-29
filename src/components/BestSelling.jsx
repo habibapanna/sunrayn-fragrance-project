@@ -33,13 +33,13 @@ const BestSelling = () => {
       <div className="flex justify-between items-center mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px]">
         <div className="flex items-center gap-[20px] md:gap-[32px]">
           <p
-            className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]"
+            className="text-[20px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]"
             style={{ letterSpacing: "-1px" }}
           >
             Best Selling Perfumes
           </p>
-          <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[14px] md:text-[20px]">
-            <Link to="productList">View All</Link>
+          <button className="bg-[#BA9948] text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] 2xl:py-[12px] rounded-full text-[14px] 2xl:text-[20px] cursor-pointer w-[117px] h-[40px] md:w-[139px] md:h-[55px]">
+            <Link to="/productList">View All</Link>
           </button>
         </div>
 
@@ -144,21 +144,21 @@ const BestSelling = () => {
           ))}
         </div>
 
-        {/* MOBILE ARROWS */}
-        <div className="flex lg:hidden justify-center gap-5 mt-6">
-          <button
-            onClick={prev}
-            className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA]"
-          >
-            <GoChevronLeft className="text-[30px]" />
-          </button>
-          <button
-            onClick={next}
-            className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA]"
-          >
-            <GoChevronRight className="text-[30px]" />
-          </button>
-        </div>
+        {/* ARROWS */}
+          <div className="flex lg:hidden justify-center gap-5 mt-[16px]">
+            <button
+              onClick={prev}
+              className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center"
+            >
+              <GoChevronLeft className="text-[28px]" />
+            </button>
+            <button
+              onClick={next}
+              className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center"
+            >
+              <GoChevronRight className="text-[28px]" />
+            </button>
+          </div>
       </section>
     </div>
   );

@@ -38,10 +38,10 @@ const Featured = () => {
             <div className='flex justify-between mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px]'>
             <div className='flex justify-center items-center text-center gap-[20px] 2xl:gap-[32px]'>
                 <div>
-                    <p className='text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828] pl-[16px]'>Featured Perfumes</p>
+                    <p className='text-[20px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828] pl-[16px]'>Featured Perfumes</p>
                 </div>
                 <div>
-                    <button className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full text-[14px] md:text-[20px] cursor-pointer w-[117px] h-[40px] md:w-[139px] md:h-[55px]"><Link to='productList'>View All</Link></button>
+                    <button className="bg-[#BA9948] text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] 2xl:py-[12px] rounded-full text-[14px] 2xl:text-[20px] cursor-pointer w-[117px] h-[40px] md:w-[139px] md:h-[55px]"><Link to='/productList'>View All</Link></button>
                 </div>
             </div>
             <div className='hidden lg:flex gap-5 '>
@@ -138,21 +138,21 @@ const Featured = () => {
           ))}
         </div>
 
-        {/* MOBILE ARROWS */}
-        <div className="flex lg:hidden justify-center gap-5 mt-6">
-          <button
-            onClick={prev}
-            className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA]"
-          >
-            <GoChevronLeft className="text-[30px]" />
-          </button>
-          <button
-            onClick={next}
-            className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA]"
-          >
-            <GoChevronRight className="text-[30px]" />
-          </button>
-        </div>
+       {/* ARROWS */}
+          <div className="flex lg:hidden justify-center gap-5 mt-[16px]">
+            <button
+              onClick={prev}
+              className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center"
+            >
+              <GoChevronLeft className="text-[28px]" />
+            </button>
+            <button
+              onClick={next}
+              className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center"
+            >
+              <GoChevronRight className="text-[28px]" />
+            </button>
+          </div>
       </section>
 
 <section className=' px-[8px] lg:px-[16px]'><Premium></Premium></section>
