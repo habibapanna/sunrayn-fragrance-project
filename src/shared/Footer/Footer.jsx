@@ -41,7 +41,6 @@ const Footer = () => {
             </Link>
 
             <div className="flex justify-between mt-[48px] md:mt-[57px]">
-
               {/* SHOP */}
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Shop</p>

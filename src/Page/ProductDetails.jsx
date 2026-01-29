@@ -7,11 +7,15 @@ import { useState } from "react";
 import MarqueeSection from "../components/MarqueeSection";
 import Testimonials from "../components/Testimonials";
 import ProductCard from "../components/ProductCard";
+import { useNavigate, Link } from "react-router-dom";
+
 
 
 const ProductDetails = () => {
     const [openSection, setOpenSection] = useState("notes");
     const [selectedVolume, setSelectedVolume] = useState(null);
+    const navigate = useNavigate();
+
 
 
 const toggle = (section) => {
@@ -46,8 +50,41 @@ const BigBottleIcon = () => (
 
   return (
     <div className=" py-[32px]">
+      {/* BACK + BREADCRUMB */}
+<div className="flex items-center gap-3 px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
+
+  {/* Back Button */}
+  <button
+    onClick={() => navigate(-1)}
+    className="flex items-center gap-[8px] bg-[#F6F7F2] pl-[16px] pr-[24px] py-[12px] rounded-full text-[14px] lg:text-[16px] font-medium h-[50px]"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path d="M13 6L7 12L13 18" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+Back
+  </button>
+
+  {/* Breadcrumb */}
+  <div className="flex items-center gap-1 text-[14px] lg:text-[16px] px-[24px] py-[12px] text-[#282828]/70 h-[50px] bg-[#F6F7F2] rounded-full  w-full">
+    <Link to="/" className="hover:underline">Home</Link>
+    <span>/</span>
+
+    <Link to="/products" className="hover:underline">Perfume</Link>
+    <span>/</span>
+
+    <span className="uppercase">{product.gender}</span>
+    <span>/</span>
+
+    <span className="text-[#1D0B01] font-medium">
+      {product.title}
+    </span>
+  </div>
+
+</div>
+
       {/* TOP SECTION */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-[32px] px-[16px] 2xl:px-[32px]">
+        
 
         {/* LEFT – IMAGES */}
         <div className="grid grid-cols-2 gap-[16px] 2xl:gap-[32px] auto-rows-min">

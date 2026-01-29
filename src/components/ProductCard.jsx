@@ -27,7 +27,7 @@ useEffect(() => {
         <div>
             {/* Cards */}
              <section className="relative overflow-hidden py-[16px] md:py-[32px]">
-                  <div className="flex justify-between items-center mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:[32px]">
+                  <div className="flex justify-between items-center mb-[16px] 2xl:mb-[32px] 2xl:[32px]">
           <p
             className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]"
             style={{ letterSpacing: "-1px" }}
