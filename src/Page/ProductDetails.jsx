@@ -89,7 +89,7 @@ Back
     <Link to="/" className="hover:underline text-[12px] lg:text-[16px]">Home</Link>
     <span>/</span>
 
-    <Link to="/products" className="hover:underline text-[12px] lg:text-[16px]">Perfume</Link>
+    <Link to="/productList" className="hover:underline text-[12px] lg:text-[16px]">Perfume</Link>
     <span>/</span>
 
     <span className="uppercase text-[10px] lg:text-[16px]">{product.gender}</span>
@@ -147,7 +147,7 @@ Back
   </div>
 
   {/* DOTS */}
-  <div className="flex justify-center gap-2">
+  <div className="flex justify-center gap-2 mt-[10px]">
     {product.images.slice(1).map((_, i) => (
       <span
         key={i}

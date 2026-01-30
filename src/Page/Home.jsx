@@ -19,32 +19,13 @@ const Home = () => {
     <div>
         
       <Hero />
-
-    
-        <Signature />
-      
-
-    
         <Category />
-      
-
-     
-        <NewArrivals />
-      
-
-     
+        {/* <NewArrivals /> */}
+ <Signature />    
         <Featured />
-     
-
-      
         <Special />
-      
-
      
         <BestSelling />
-      
-
-    
         <Testimonials />
      
 

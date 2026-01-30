@@ -402,7 +402,6 @@ const showClearAll =
   </div>
 )}
 
-
       </section>
     </div>
   );

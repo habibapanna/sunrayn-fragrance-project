@@ -45,7 +45,7 @@ const cardVariant = {
 };
 
   return (
-    <section className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
+    <section className="mx-auto px-[16px] 2xl:px-[32px] py-[16px] 2xl:py-[32px]">
       <div
   variants={containerVariant}
   initial="hidden"

@@ -53,7 +53,7 @@ const Categories = ({ sortBy, setSortBy }) => {
                 /* MOBILE SIZE */
                 w-[126px] h-[96px] p-[8px]
 
-                lg:w-auto lg:h-auto lg:p-6 2xl:gap-4
+                lg:w-auto lg:h-auto lg:p-6 2xl:gap-[12px]
 
                 transition-all duration-200
 
@@ -65,7 +65,7 @@ const Categories = ({ sortBy, setSortBy }) => {
                 
               `}
             >
-              <h3 className="text-[12px] lg:text-[20px] 2xl:text-[35px] font-semibold text-center lg:text-left leading-tight">
+              <h3 className="text-[12px] lg:text-[20px] 2xl:text-[25px] font-semibold text-center lg:text-left leading-normal uppercase">
                 {item.title}
               </h3>
 

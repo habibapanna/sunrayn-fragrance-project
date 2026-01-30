@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import Crown from "../assets/crown-03.png";
 import Checkmark from "../assets/checkmark-badge-01.png";
@@ -31,27 +31,90 @@ const premiumItems = [
   },
 ];
 
-
 const Premium = () => {
-  const [index, setIndex] = useState(0);
+  const sliderRef = useRef(null);
+  const [active, setActive] = useState(0);
 
-  const next = () => setIndex((i) => (i + 1) % premiumItems.length);
-  const prev = () =>
-    setIndex((i) => (i - 1 + premiumItems.length) % premiumItems.length);
+  const handleScroll = () => {
+    const el = sliderRef.current;
+    const index = Math.round(el.scrollLeft / el.offsetWidth);
+    setActive(index);
+  };
 
   return (
-    <>
-      {/* ================= DESKTOP ================= */}
-      <section className=" pb-[16px]">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[16px] 2xl:gap-[32px]">
+    <section className="pb-[16px]">
+
+      {/* ================= MOBILE SLIDER ================= */}
+      <div className="lg:hidden">
+        <div
+          ref={sliderRef}
+          onScroll={handleScroll}
+          className="
+            flex gap-[16px]
+            overflow-x-auto snap-x snap-mandatory
+            scroll-smooth
+            no-scrollbar
+          "
+        >
           {premiumItems.map((item, i) => (
             <div
               key={i}
-              className=" rounded-[24px]  p-[32px] flex justify-center items-center"
+              className="
+                min-w-[100%]
+                snap-center
+                rounded-[24px]
+                p-[24px]
+                flex items-center
+              "
               style={{ background: item.bg }}
             >
-             <div>
-                 <img
+              <div>
+                <img
+                  src={item.icon}
+                  alt={item.title}
+                  className="h-[50px] w-[50px]"
+                />
+
+                <h3
+                  className="text-[22px] font-semibold mt-[16px]"
+                  style={{ color: item.color }}
+                >
+                  {item.title}
+                </h3>
+
+                <p className="text-[#0D0C09] text-[14px] mt-2">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* DOTS */}
+        <div className="flex justify-center gap-2 mt-4">
+          {premiumItems.map((_, i) => (
+            <span
+              key={i}
+              className={`
+                h-[8px] w-[8px] rounded-full
+                transition-all duration-300
+                ${active === i ? "bg-[#1D0B01] w-[18px]" : "bg-[#CFCFCF]"}
+              `}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* ================= DESKTOP GRID ================= */}
+      <div className="hidden lg:grid grid-cols-3 gap-[16px] 2xl:gap-[32px]">
+        {premiumItems.map((item, i) => (
+          <div
+            key={i}
+            className="rounded-[24px] p-[32px] flex justify-between items-center"
+            style={{ background: item.bg }}
+          >
+            <div>
+              <img
                 src={item.icon}
                 alt={item.title}
                 className="h-[60px] w-[60px] 2xl:h-[80px] 2xl:w-[80px]"
@@ -67,15 +130,16 @@ const Premium = () => {
               <p className="text-[#0D0C09] text-[14px] 2xl:text-[18px] mt-2">
                 {item.desc}
               </p>
-             </div>
-              <div className="hidden 2xl:block">
-                <img src={item.img} alt="" />
-              </div>
             </div>
-          ))}
-        </div>
-      </section>
-    </>
+
+            <div className="hidden 2xl:block">
+              <img src={item.img} alt="" />
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </section>
   );
 };
 
