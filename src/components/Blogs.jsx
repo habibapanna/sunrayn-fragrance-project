@@ -28,7 +28,7 @@ const Blogs = () => {
   return (
     <div className="mx-auto px-[16px] pb-[16px] 2xl:pb-[32px]">
       {/* HEADER */}
-      <div className="flex justify-between mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px]">
+      <div className="hidden lg:flex justify-between mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px]">
         <div className="flex justify-between lg:justify-center items-center text-center gap-[20px] 2xl:gap-[32px]">
           <p className="text-[20px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]">
             The Sanrayn Blogs
@@ -54,6 +54,15 @@ const Blogs = () => {
         </div>
       </div>
 
+       <div className="flex lg:hidden justify-between items-center text-center gap-[20px] 2xl:gap-[32px] mb-[16px]">
+          <p className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]">
+            The Sanrayn Blogs
+          </p>
+           <button className="bg-[#BA9948] text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] 2xl:py-[12px] rounded-full text-[14px] 2xl:text-[20px] cursor-pointer w-[117px] h-[40px] md:w-[139px] md:h-[55px]">
+            <Link to="/productList">Read All</Link>
+          </button>
+        </div>
+
       {/* CAROUSEL */}
       <div className="relative overflow-hidden">
         <div
@@ -65,7 +74,7 @@ const Blogs = () => {
           {blogs.map((item, idx) => (
             <div
               key={idx}
-              className="flex-shrink-0 px-[4px] gap-[4px] lg:px-[8px] 2xl:px-[16px]"
+              className="flex-shrink-0 px-[2px] gap-[4px] lg:px-[8px] 2xl:px-[16px]"
               style={{ width: `${100 / cardsPerView}%` }}
             >
               <div

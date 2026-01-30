@@ -131,8 +131,9 @@ const BestSelling = () => {
                           ${item.oldPrice}
                         </button>
                       </div>
-                      <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[14px] 2xl:text-[16px] h-[33px] w-[68px] ">
-                        <div className="absolute -top-[5px] 2xl:-top-[10px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[6px] text-white 2xl:text-[8px] font-bold z-10 2xl:h-[14px] h-[8px] w-[32px] 2xl:w-[44px] flex items-center justify-center">
+                      <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[14px] 2xl:text-[16px] h-[33px] w-[68px] font-normal"
+                      >
+                        <div className="absolute -top-[2px] 2xl:-top-[10px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[6px] text-white 2xl:text-[8px] font-bold z-10 2xl:h-[14px] h-[8px] w-[32px] 2xl:w-[44px] flex items-center justify-center">
                           -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
                         </div>
 
@@ -145,7 +146,6 @@ const BestSelling = () => {
                             x="52.5"
                             y="30"
                             textAnchor="middle"
-                            
                             fontWeight="700"
                             fill="#FFFFFF"
                             fontFamily="sans-serif"

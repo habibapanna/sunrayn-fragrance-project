@@ -285,7 +285,7 @@ Back
     <div key={i.name}>
       {typeof i.icon === "string" && i.icon.trim().startsWith("<svg") ? (
         <div
-          className="h-7  2xl:w-8 2xl:h-8 mx-auto mb-1"
+          className="h-[24px] w-[24px] 2xl:w-[40px] 2xl:h-[40px] mx-auto mb-[9px]"
           dangerouslySetInnerHTML={{ __html: i.icon }}
         />
       ) : (
