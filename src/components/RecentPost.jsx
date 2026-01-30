@@ -83,7 +83,7 @@ const RecentPost = () => {
               {slide.map((item, idx) => (
                 <div
                   key={idx}
-                  className="relative rounded-[32px] overflow-hidden h-40 md:h-96 flex-1"
+                  className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-40 md:h-96 flex-1"
                 >
                   <img
                     src={item.product}

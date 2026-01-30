@@ -42,14 +42,14 @@ const fadeInSoft = {
   <img
     src="https://i.postimg.cc/zD20k7cK/Featured-Image.png"
     alt="Signature Perfume"
-    className="w-full h-[300px] md:h-[450px] lg:h-full object-cover rounded-3xl lg:rounded-[48px]"
+    className="w-full h-[300px] md:h-[450px] lg:h-full object-cover rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px]"
   />
 </div>
 
 
         {/* RIGHT CONTENT CARD */}
        <div
-  className="relative rounded-3xl lg:rounded-[48px] overflow-hidden flex items-center"
+  className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden flex items-center"
 >
 
 

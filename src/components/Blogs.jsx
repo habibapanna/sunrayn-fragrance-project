@@ -78,7 +78,7 @@ const Blogs = () => {
               style={{ width: `${100 / cardsPerView}%` }}
             >
               <div
-                className="relative rounded-[32px] md:rounded-[48px] overflow-hidden h-[350px] lg:h-[500px] 2xl:h-[700px] cursor-pointer"
+                className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-[350px] lg:h-[500px] 2xl:h-[700px] cursor-pointer"
                 onClick={() => navigate(`/blogs/${item.slug}`)}
               >
                 <img

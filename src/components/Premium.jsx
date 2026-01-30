@@ -47,7 +47,7 @@ const Premium = () => {
           {premiumItems.map((item, i) => (
             <div
               key={i}
-              className=" rounded-[24px] 2xl:rounded-[32px] p-[32px] flex justify-center items-center"
+              className=" rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] p-[32px] flex justify-center items-center"
               style={{ backgroundColor: item.bg }}
             >
              <div>

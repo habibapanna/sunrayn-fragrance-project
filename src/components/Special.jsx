@@ -73,7 +73,7 @@ const buttonVariants = {
       <motion.div
   whileHover="hover"
   initial="rest"
-  className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] relative cursor-pointer overflow-hidden"
+  className="bg-[#EDE8E0] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] relative cursor-pointer overflow-hidden"
 >
 
         {/* ================= CONTENT ================= */}
@@ -84,7 +84,7 @@ const buttonVariants = {
             <img
               src="https://i.postimg.cc/8kWKHMLp/Product-Image.png"
               alt="Special Perfume"
-              className="h-[292px] lg:h-[397px] 2xl:h-[700px] w-full 2xl:w-[651px] object-cover rounded-[29px] 2xl:rounded-[48px] "
+              className="h-[292px] lg:h-[397px] 2xl:h-[700px] w-full 2xl:w-[651px] object-cover rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] "
             />
             <div className="lg:hidden absolute inset-0 bg-gradient-to-b from-transparent to-[#EDE8E0]" />
           </div>

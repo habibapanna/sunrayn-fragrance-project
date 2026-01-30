@@ -450,7 +450,7 @@ if (sortBy === "new")
             {filteredProducts.map((item, i) => (
               <div key={i}>
                 <div
-                 className="relative rounded-[24px] md:rounded-[48px]
+                 className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px]
     h-[384px] lg:h-[700px]
     cursor-pointer overflow-hidden"
   style={{

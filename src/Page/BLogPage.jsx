@@ -47,7 +47,7 @@ const BLogPage = () => {
             <div
              key={blog.slug}
           onClick={() => navigate(`/blogs/${blog.slug}`)}
-              className="relative rounded-[32px] 2xl:rounded-[48px] h-[350px] 2xl:h-[700px] overflow-hidden cursor-pointer"
+              className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] h-[350px] 2xl:h-[700px] overflow-hidden cursor-pointer"
             >
               {/* Image */}
               <img

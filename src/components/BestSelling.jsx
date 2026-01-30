@@ -83,7 +83,7 @@ const BestSelling = () => {
               style={{ width: `${100 / itemsPerView}%` }}
             >
               <div
-                className="relative rounded-[24px] md:rounded-[48px]
+                className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px]
     h-[384px] lg:h-[700px]
     cursor-pointer overflow-hidden"
   style={{

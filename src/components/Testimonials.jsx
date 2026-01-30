@@ -113,7 +113,7 @@ const Testimonials = () => {
               <div className="px-[8px] 2xl:px-[16px] h-full">
                 {/* CARD */}
                 <div
-                  className="relative rounded-[31px] h-full
+                  className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] h-full
                              p-[20px] md:p-[32px] lg:p-[50px]
                              flex flex-col"
                   style={{ backgroundColor: item.bg }}

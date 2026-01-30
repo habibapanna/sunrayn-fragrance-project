@@ -15,17 +15,17 @@ const About = () => {
         <div><img
           src="https://i.postimg.cc/Rh4QBppP/Perfume-Image.png"
           alt="Purpose in Every Scent"
-          className="w-full h-[435px] 2xl:h-[780px] rounded-[24px] lg:rounded-[48px] object-cover"
+          className="w-full h-[435px] 2xl:h-[780px] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] object-cover"
         /></div>
       </section>
 
       {/* IN-HOUSE SECTION */}
       <section className="mx-auto px-[16px]  2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
-        <div className="bg-[#F6F7F2] rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-[50px] 2xl:gap-[189px] p-[16px] lg:p-[32px] items-center">
+        <div className="bg-[#F6F7F2] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] grid grid-cols-1 lg:grid-cols-2 gap-[50px] 2xl:gap-[189px] p-[16px] lg:p-[32px] items-center">
           <img
             src="https://i.postimg.cc/KvmJSjd2/Product-Image-(5).png"
             alt="Product"
-            className="rounded-[24px] lg:rounded-[48px] w-full 2xl:h-[700px] 2xl:w-[880px] object-cover"
+            className="rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] w-full 2xl:h-[700px] 2xl:w-[880px] object-cover"
           />
           <div className="2xl:w-[576px]">
             <h2 className="text-[#1D0B01] mb-4 text-[32px] 2xl:text-[50px]">
@@ -46,7 +46,7 @@ const About = () => {
 
 {/* DISCOVERY FLOW */}
 <section className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
-  <div className="bg-[#F6F7F2] rounded-[40px] 2xl:rounded-[56px] px-6 py-16 2xl:px-16 text-center relative overflow-hidden">
+  <div className="bg-[#F6F7F2] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] px-6 py-16 2xl:px-16 text-center relative overflow-hidden">
 
     {/* Title */}
     <h2 className="text-[32px] 2xl:text-[50px] font-semibold mb-20 text-[#2B1B0E]">
@@ -168,7 +168,7 @@ const About = () => {
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] 2xl:gap-[32px] items-stretch">
 
     {/* TEXT */}
-    <div className="bg-[#FAFAF7] rounded-[48px] p-[32px] 2xl:px-[48px] flex flex-col justify-center ">
+    <div className="bg-[#FAFAF7] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] p-[32px] 2xl:px-[48px] flex flex-col justify-center ">
       <h2 className="text-[#571313] mb-4 text-[32px] 2xl:text-[50px] leading-tight 2xl:w-[500px] mx-auto">
         A New Standard for Thoughtful Luxury.
       </h2>
@@ -182,7 +182,7 @@ const About = () => {
     </div>
 
     {/* IMAGE */}
-    <div className="rounded-[48px] overflow-hidden">
+    <div className="rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden">
      <img
   src="https://i.postimg.cc/vT4crfPf/Product-Image-(2).png"
   alt="Luxury Perfume"
@@ -197,7 +197,7 @@ const About = () => {
       {/* VALUES */}
       <section className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
         <div className="grid md:grid-cols-3 gap-[16px] 2xl:gap-[32px]">
-          <div className="bg-[#FFF4E8] rounded-2xl p-8 text-center">
+          <div className="bg-[#FFF4E8] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] p-8 text-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" className="mx-auto">
   <path d="M73.3307 22.5007H64.0344C62.0307 22.5007 61.0287 22.5007 60.0841 22.2146C59.1394 21.9286 58.3057 21.3728 56.6384 20.2613C54.1377 18.5941 51.2847 16.6922 49.8674 16.2631C48.4504 15.834 46.9474 15.834 43.9417 15.834C39.8544 15.834 37.2197 15.834 35.3821 16.5952C33.5444 17.3564 32.0993 18.8016 29.209 21.6919L26.6654 24.2355C26.014 24.8868 25.6883 25.2125 25.4872 25.5341C24.7419 26.726 24.8245 28.2575 25.6937 29.3624C25.9282 29.6604 26.287 29.9492 27.0047 30.5267C29.6573 32.6615 33.4814 32.4484 35.8834 30.0321L39.9974 25.8935H43.3307L63.3307 46.0125C65.1717 47.8645 65.1717 50.8669 63.3307 52.7189C61.4897 54.5709 58.5051 54.5709 56.6641 52.7189L54.9974 51.0422M54.9974 51.0422L44.9974 40.9829M54.9974 51.0422C56.8384 52.8942 56.8384 55.8969 54.9974 57.7485C53.1564 59.6005 50.1717 59.6005 48.3307 57.7485L44.9974 54.3956M44.9974 54.3956C46.8384 56.2472 46.8384 59.2499 44.9974 61.1019C43.1564 62.9535 40.1717 62.9535 38.3307 61.1019L33.3307 56.0719M44.9974 54.3956L38.3307 47.7289M33.3307 56.0719L31.6641 54.3956M33.3307 56.0719C35.1717 57.9239 35.1717 60.9266 33.3307 62.7786C31.4898 64.6302 28.505 64.6302 26.6641 62.7786L17.252 53.1702C15.3179 51.1959 14.3509 50.2089 13.1119 49.6879C11.8729 49.1672 10.491 49.1672 7.7272 49.1672H6.66406" stroke="#DC7C2A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M73.3333 49.166H65" stroke="#DC7C2A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -209,7 +209,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="bg-[#F1FFF6] rounded-2xl p-8 text-center">
+          <div className="bg-[#F1FFF6] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] p-8 text-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" className="mx-auto">
   <path d="M45.7561 11.4799L51.6221 23.3089C52.4221 24.9556 54.5551 26.535 56.3551 26.8374L66.9871 28.6185C73.7864 29.7611 75.3864 34.7347 70.4867 39.641L62.2211 47.975C60.8211 49.3863 60.0547 52.1083 60.4877 54.0577L62.8544 64.3743C64.7207 72.5403 60.4211 75.6993 53.2554 71.4313L43.2897 65.4833C41.4901 64.408 38.5237 64.408 36.6904 65.4833L26.725 71.4313C19.5924 75.6993 15.2596 72.5067 17.126 64.3743L19.4924 54.0577C19.9257 52.1083 19.1591 49.3863 17.7593 47.975L9.49353 39.641C4.62739 34.7347 6.19389 29.7611 12.9931 28.6185L23.6253 26.8374C25.3918 26.535 27.5249 24.9556 28.3248 23.3089L34.1907 11.4799C37.3904 5.06137 42.5897 5.06137 45.7561 11.4799Z" stroke="#43B583" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -219,7 +219,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="bg-[#F3F1FF] rounded-2xl p-8 text-center">
+          <div className="bg-[#F3F1FF] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] p-8 text-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" className="mx-auto">
   <path d="M27.1886 52.8113C23.5998 52.7873 18.6578 51.9093 14.7802 48.032C7.87434 41.126 10.4832 30.8439 10.4832 30.8439C10.4832 30.8439 15.8672 29.4782 21.4604 31.3398C21.4195 31.0335 21.3852 30.7233 21.3583 30.409C21.3105 29.8503 21.2851 29.2794 21.2853 28.6952C21.2851 16.6769 31.9681 10 31.9681 10C31.9681 10 38.6437 14.1725 41.441 21.8573C50.7483 15.3457 62.047 17.953 62.047 17.953C62.047 17.953 64.6543 29.2518 58.1427 38.559C65.8277 41.3563 70 48.032 70 48.032C70 48.032 63.323 58.715 51.3047 58.7147C50.3923 58.7147 49.5103 58.6533 48.6603 58.5397C50.5217 64.1327 49.156 69.5167 49.156 69.5167C49.156 69.5167 38.874 72.1257 31.9681 65.2197" stroke="#FF4242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M10 69.9993L43.3333 36.666" stroke="#FF4242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>

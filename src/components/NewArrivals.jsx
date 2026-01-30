@@ -34,7 +34,7 @@ const NewArrivals = () => {
       className="mx-auto px-[16px] pb-[16px] 2xl:px-[32px] 2xl:pb-[32px]"
     >
     <Link to='productList'>
-      <div className="bg-[#EDE8E0] rounded-[32px] md:rounded-[48px] md:p-20 relative overflow-hidden cursor-pointer">
+      <div className="bg-[#EDE8E0] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] md:p-20 relative overflow-hidden cursor-pointer">
 
         {/* ================= IMAGE GRID ================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[32px]">
