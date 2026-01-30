@@ -29,7 +29,8 @@ const Offer = () => {
         Be the first to know about new collections and exclusive offers.
       </p>
 
-      <Link to='productList'><button className="bg-white text-black px-[24px] py-[10px] rounded-[100px] h-[40px] w-[123px] md:w-[210px] md:h-[55px] text-[14px] md:text-[20px] cursor-pointer font-bold hover:bg-[#DBAB35]">
+      <Link to='productList'><button className="bg-white px-[24px] py-[10px] rounded-[100px] h-[40px] w-[123px] md:w-[210px] md:h-[55px] text-[14px] md:text-[20px] cursor-pointer font-bold  transition-all duration-300 ease-out
+    hover:bg-[#BA9948] backdrop-blur-md hover:text-white text-[#1D0B01]">
        Shop Hurry
       </button></Link>
     </div>

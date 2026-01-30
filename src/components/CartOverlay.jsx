@@ -6,6 +6,7 @@ import Truck from '../assets/Frame (8).png'
 import Discount from '../assets/Discount Price.png';
 import Original from '../assets/Original Price.png';
 import { useEffect, useState } from "react";
+import { products } from "../data/productsData";
 
 
 const items = [
@@ -163,86 +164,47 @@ const CartOverlay = ({ onClose }) => {
           </div>
         </div>
 
-        {/* ================= RECOMMENDED CAROUSEL ================= */}
-        <div className="p-[16px] m-[16px] rounded-[20px] bg-[#F6F7F2]">
-          <h3 className="font-medium text-[20px] mb-[16px]">
-            Recommended Products
-          </h3>
+      <div className="p-[16px] m-[16px] rounded-[20px] bg-[#F6F7F2]">
+  <h3 className="font-medium text-[20px] mb-[16px]">Recommended Products</h3>
 
-          <div
-            className="relative overflow-hidden cursor-grab active:cursor-grabbing"
-            onTouchStart={(e) => handleStart(e.touches[0].clientX)}
-            onTouchEnd={(e) => handleEnd(e.changedTouches[0].clientX)}
-            onMouseDown={(e) => handleStart(e.clientX)}
-            onMouseUp={(e) => handleEnd(e.clientX)}
-            onMouseLeave={() => setIsDragging(false)}
-          >
-            <div
-              className="flex transition-transform duration-500 ease-in-out"
-              style={{
-                transform: `translateX(-${(current * 100) / itemsPerView}%)`,
-              }}
-            >
-              {items.map((item, i) => (
-                <div
-                  key={i}
-                  className="px-2"
-                  style={{ minWidth: `${100 / itemsPerView}%` }}
-                >
-                  <div className="relative h-[260px] rounded-[24px] bg-[#EDE8E0] overflow-hidden">
-                    <img
-                      src={item.product}
-                      className=" mx-auto h-[148px] w-[148px] object-cover"
-                    />
+  <div className="relative overflow-x-auto">
+    <div className="flex gap-[12px] overflow-x-auto scroll-smooth snap-x snap-mandatory touch-pan-x scrollbar-hide pb-2">
+      {products.map((item, i) => (
+        <div
+          key={i}
+          className="snap-start flex-shrink-0 w-[85%] sm:w-[48%] lg:w-[49%]"
+        >
+          <div className="relative w-[215px] h-[272px] rounded-[24px] bg-[#EDE8E0] overflow-hidden">
+            <img
+              src={item.images[0]}
+              className="mx-auto h-[148px] w-[148px] object-cover"
+            />
 
-                    <div className="absolute bottom-0 left-0 w-full p-3">
-                      <div className="flex gap-1 text-[#FF9100] text-[12px]">
-                        {[...Array(5)].map((_, i) => (
-                          <FaStar key={i} />
-                        ))}
-                        <span className="text-black ml-1">1239</span>
-                      </div>
+            <div className="absolute bottom-0 left-0 w-full p-3">
+              <div className="flex gap-1 text-[#FF9100] text-[12px]">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar key={i} />
+                ))}
+                <span className="text-black ml-1">1239</span>
+              </div>
 
-                      <h3 className="text-[18px] font-semibold text-[#571313]">
-                        {item.title}
-                      </h3>
+              <h3 className="text-[18px] font-semibold text-[#571313]">{item.title}</h3>
+              <p className="text-[12px] mb-2">Sanrayn Original</p>
 
-                      <p className="text-[12px] mb-2">Sanrayn Original</p>
-
-                      <div className="flex justify-between items-center">
-                        <button className="bg-white px-4 py-1 rounded-full text-sm cursor-pointer">
-                          Add to Cart
-                        </button>
-                        <img src={Discount} className="h-[30px] w-[60px]" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* ===== CLICKABLE SCROLL INDICATOR ===== */}
-            <div className="mt-3">
-              <div
-                className="relative w-full h-[6px] bg-[#28282826] rounded-full cursor-pointer"
-                onClick={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const clickX = e.clientX - rect.left;
-                  const percent = clickX / rect.width;
-                  setCurrent(clamp(Math.round(percent * maxIndex)));
-                }}
-              >
-                <div
-                  className="absolute top-0 left-0 h-full bg-[#282828] transition-transform duration-500"
-                  style={{
-                    width: `${100 / (maxIndex + 1)}%`,
-                    transform: `translateX(${(current * 100) / (maxIndex + 1)}%)`,
-                  }}
-                />
+              <div className="flex justify-between items-center">
+                <button className="bg-white/60 backdrop-blur-md border border-[#BA9948] px-4 py-1 rounded-full text-sm cursor-pointer  text-[#1D0B01]
+    transition-all duration-300 ease-out
+    hover:bg-[#BA9948] hover:text-white">Add to Cart</button>
+                <img src={Discount} className="h-[30px] w-[60px]" />
               </div>
             </div>
           </div>
         </div>
+      ))}
+    </div>
+  </div>
+</div>
+
 
         {/* Footer */}
         <div className="bg-[#F6F7F2] rounded-[20px] m-[16px] p-[16px]">
@@ -255,7 +217,9 @@ const CartOverlay = ({ onClose }) => {
     onClose();
     navigate("/checkout");
   }}
-  className="w-full bg-[#DBAB35] text-[#1D0B01] py-[7px] px-[12px] rounded-full font-medium text-[16px] cursor-pointer"
+  className="w-full py-[7px] px-[12px] rounded-full font-medium text-[16px] cursor-pointer
+    transition-all duration-300 ease-out
+    bg-[#BA9948] text-white hover:bg-white/60 backdrop-blur-md border border-[#BA9948] hover:text-[#1D0B01] "
 >
   Process to Checkout
 </button>

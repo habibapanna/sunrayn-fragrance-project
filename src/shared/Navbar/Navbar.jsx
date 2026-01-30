@@ -63,19 +63,19 @@ useEffect(() => {
 
 
 const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? "bg-[#BA9948]"
+  ? "bg-black/60 backdrop-blur-md"
   : scrolled
   ? "bg-black/60 backdrop-blur-md"
   : "bg-transparent";
 
 const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? Logo3
+  ? Logo
   : scrolled
   ? Logo
   : Logo;
 
 const brandSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? BrandName3
+  ? BrandName
   : scrolled
   ? BrandName
   : BrandName;
@@ -210,10 +210,11 @@ const MobileGrid = ({ items }) => (
             {/* DESKTOP ICONS (UNCHANGED) */}
             <div className="hidden lg:flex items-center gap-[16px]">
               <button
+               title="Search Perfumes"
   onClick={() => setSearchOpen(true)}
   className={`
   p-[15px] rounded-full h-[50px] w-[50px]
-  transition-colors duration-300
+  transition-colors duration-300 cursor-pointer
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
 
@@ -230,7 +231,7 @@ const MobileGrid = ({ items }) => (
   onClick={() => setCartOpen(true)}
   className={`
   p-[15px] rounded-full h-[50px] w-[50px]
-  transition-colors duration-300
+  transition-colors duration-300 cursor-pointer
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
  title="View Cart"
@@ -245,9 +246,10 @@ const MobileGrid = ({ items }) => (
 </button>
 
 
-              <button className={`
+              <button
+               title="Login" className={`
   p-[15px] rounded-full h-[50px] w-[50px]
-  transition-colors duration-300
+  transition-colors duration-300 cursor-pointer
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
 >
@@ -262,12 +264,14 @@ const MobileGrid = ({ items }) => (
             {/* MOBILE ICONS */}
             <div className="flex lg:hidden items-center gap-[16px] py-[24px]">
               <button
+               title="Search Perfumes"
   onClick={() => setSearchOpen(true)}
   className="bg-white/90 p-[10px] rounded-full"
 >
   <img src={Icon} className="h-[20px] w-[20px] cursor-pointer" />
 </button>
               <button
+               title="View Cart"
   onClick={() => setCartOpen(true)}
   className="bg-white/90 p-[10px] rounded-full"
 >
@@ -275,6 +279,7 @@ const MobileGrid = ({ items }) => (
 </button>
 
               <button
+               title="Open Menu"
                 onClick={() => setOpen(true)}
                 className="bg-white/90 w-[40px] h-[40px] p-[8px] rounded-full"
               >

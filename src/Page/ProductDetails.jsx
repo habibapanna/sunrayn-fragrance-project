@@ -253,7 +253,8 @@ Back
                           <span className="text-[18px] 2xl:text-[20px]">1</span>
                           <Plus className="h-[20px] 2xl:h-[24px]" />
                         </div>
-          <button className="text-[18px] 2xl:text-[20px] text-[#1D0B01] bg-[#DBAB35] w-full px-[20px] py-[8px] 2xl:py-[10px] 2x:px-[24px] rounded-full font-semibold cursor-pointer hover:bg-white">
+          <button className="text-[18px] 2xl:text-[20px] w-full px-[20px] py-[8px] 2xl:py-[10px] 2x:px-[24px] rounded-full font-semibold cursor-pointer transition-all duration-300 ease-out
+    bg-[#BA9948] text-white hover:bg-white/60 backdrop-blur-md border border-[#BA9948] hover:text-[#1D0B01]">
             Add to cart
           </button></div>
 

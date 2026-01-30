@@ -249,11 +249,12 @@ const Checkout = () => {
           </div>
 
          <div className="rounded-[24px] p-[24px] bg-white">
-             <button className="w-full bg-[#E0B24B] py-[7px] px-[12px] rounded-full font-semibold text-[16px] cursor-pointer">Continue to Payment</button>
+             <button className="w-full  transition-all duration-300 ease-out
+    bg-[#BA9948] hover:text-[#1D0B01] hover:bg-white/60 backdrop-blur-md border border-[#BA9948] text-white py-[7px] px-[12px] rounded-full font-semibold text-[16px] cursor-pointer">Continue to Payment</button>
           <div className="flex gap-[32px] justify-center mt-[16px]">
             <span className="text-[14px] text-[#372416] cursor-pointer">Return Policy </span>
             <span className="text-[14px] text-[#372416] cursor-pointer">Cancelation Policy </span>
-            <span className="text-[14px] text-[#372416] cursor-pointer">Terms of Service</span>
+            <Link to='/terms'><span className="text-[14px] text-[#372416] cursor-pointer">Terms of Service</span></Link>
           </div>
          </div>
         </div>

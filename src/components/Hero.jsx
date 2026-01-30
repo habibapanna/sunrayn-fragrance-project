@@ -62,7 +62,8 @@ const Hero = () => {
           </p>
 
           {/* CTA */}
-         <Link to='productList'> <button className="bg-[#DBAB35] text-black px-[24px] py-[10px] rounded-[100px] text-[14px] md:text-[20px] font-bold cursor-pointer w-[116px] h-[40px] md:w-[210px] md:h-[55px] hover:bg-white">
+         <Link to='productList'> <button className="text-whte px-[24px] py-[10px] rounded-[100px] text-[14px] md:text-[20px] font-bold cursor-pointer w-[116px] h-[40px] md:w-[210px] md:h-[55px]  transition-all duration-300 ease-out
+    bg-[#BA9948] hover:bg-white backdrop-blur-md border border-[#BA9948] hover:text-[#1D0B01]">
             Shop Now
           </button></Link>
         </div>

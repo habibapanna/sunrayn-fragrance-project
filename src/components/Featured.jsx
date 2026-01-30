@@ -41,7 +41,10 @@ const Featured = () => {
                     <p className='text-[20px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828] pl-[16px]'>Featured Perfumes</p>
                 </div>
                 <div>
-                    <button className="bg-[#BA9948] text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] 2xl:py-[12px] rounded-full text-[14px] 2xl:text-[20px] cursor-pointer w-[117px] h-[40px] md:w-[139px] md:h-[55px]"><Link to='/productList'>View All</Link></button>
+                      <button className=" transition-all duration-300 ease-out
+    bg-[#BA9948] hover:bg-white/60 backdrop-blur-md border border-[#BA9948] hover:text-[#1D0B01] text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] 2xl:py-[12px] rounded-full text-[14px] lg:text-[20px] cursor-pointer w-[117px] h-[40px] lg:w-[139px] lg:h-[55px]">
+            <Link to="/productList">View All</Link>
+          </button>
                 </div>
             </div>
             <div className='hidden lg:flex gap-5 '>
@@ -89,7 +92,7 @@ const Featured = () => {
               >
                 {item.off && (
                     <div className="lg:mt-[40px] lg:ml-[40px] ml-[20px] mt-[20px]">
-                      <button className="bg-[#FFFFE3] px-[10px] 2xl:px-[16px] h-[25px] 2xl:h-[35px] rounded-full font-normal text-[12px] lg:text-[14px]">
+                      <button className="bg-[#FFFF]/60 px-[10px] 2xl:px-[16px] h-[25px] 2xl:h-[35px] rounded-full font-normal text-[12px] lg:text-[14px]">
                         {item.off}
                       </button>
                     </div>
@@ -120,9 +123,26 @@ const Featured = () => {
                   </p>
 
                   <div className="flex items-center justify-between gap-3">
-                    <button className="bg-white px-[24px] py-[10px] rounded-full font-semibold hover:bg-[#DBAB35] cursor-pointer w-[120px] h-[32px] lg:h-[45px] lg:w-[167px] text-[14px] 2xl:text-[16px] items-center justify-center flex">
-                      Add to Cart
-                    </button>
+                   <button
+  className="
+    bg-white/60 backdrop-blur-md
+    px-[24px] py-[10px]
+    rounded-full font-semibold
+    w-[120px] h-[32px]
+    lg:h-[45px] lg:w-[167px]
+    text-[14px] 2xl:text-[16px]
+    flex items-center justify-center
+    border border-[#BA9948]
+    cursor-pointer
+
+    text-[#1D0B01]
+    transition-all duration-500 ease-out
+    hover:bg-[#BA9948] hover:text-white
+  "
+>
+  Add to Cart
+</button>
+
 
                     <div className="flex gap-[12px] md:gap-[20px]">
                       <div>
@@ -130,8 +150,9 @@ const Featured = () => {
                           ${item.oldPrice}
                         </button>
                       </div>
-                      <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[14px] 2xl:text-[16px] h-[33px] w-[68px] ">
-                        <div className="absolute -top-[2px] 2xl:-top-[10px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[6px] text-white 2xl:text-[8px] font-bold z-10 2xl:h-[14px] h-[8px] w-[32px] 2xl:w-[44px] flex items-center justify-center">
+                      <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[16px] 2xl:text-[18px] h-[33px] w-[68px] font-normal"
+                      >
+                        <div className="absolute -top-[2px] 2xl:-top-[10px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[8px] text-white 2xl:text-[10px] font-bold z-10 2xl:h-[20px] h-[10px] w-[35px] 2xl:w-[50px] flex items-center justify-center">
                           -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
                         </div>
 
@@ -144,7 +165,6 @@ const Featured = () => {
                             x="52.5"
                             y="30"
                             textAnchor="middle"
-                            
                             fontWeight="700"
                             fill="#FFFFFF"
                             fontFamily="sans-serif"
