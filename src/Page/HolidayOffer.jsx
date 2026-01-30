@@ -474,7 +474,7 @@ if (sortBy === "new")
     bg-white/60 backdrop-blur-md
     px-[24px] py-[10px]
     rounded-full font-semibold
-    w-[120px] h-[32px]
+    w-[130px] h-[32px]
     lg:h-[45px] lg:w-[167px]
     text-[14px] 2xl:text-[16px]
     flex items-center justify-center
