@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 import { LiaAngleDownSolid } from "react-icons/lia";
 import Logo from "../../assets/Logo.png";
@@ -25,7 +25,9 @@ const [open, setOpen] = useState(false);
 const [scrolled, setScrolled] = useState(false);
 const [searchOpen, setSearchOpen] = useState(false);
 const [cartOpen, setCartOpen] = useState(false);
-const [openMegaMenu, setOpenMegaMenu] = useState(null);
+  const [openMegaMenu, setOpenMegaMenu] = useState(null);
+
+  const menuRef = useRef(null);
 // values: "perfume" | "collection" | null
 
 const [openPerfume, setOpenPerfume] = useState(true);
@@ -45,6 +47,21 @@ const isHolidayOffer = location.pathname === "/holidayOffer";
 const isBlogDetails = location.pathname.startsWith("/blogs/");
 const isProductDetails = location.pathname.startsWith("/productList/");
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target)
+      ) {
+        setOpenMegaMenu(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () =>
+      document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
 
 
@@ -165,38 +182,173 @@ const MobileGrid = ({ items }) => (
 
             {/* DESKTOP MENU (UNCHANGED) */}
             <div className="hidden lg:flex items-center gap-[24px] bg-white/90 text-[#282828] pr-[9px] pl-[24px] py-[12px] rounded-[100px] 2xl:mr-16 w-[515px] h-[50px]">
-             <button
-  onClick={() =>
-    setOpenMegaMenu(
-      openMegaMenu === "perfume" ? null : "perfume"
-    )
-  }
-  className="flex items-center gap-[5px] text-[16px] cursor-pointer"
->
-  Perfumes
-  <LiaAngleDownSolid
-    className={`h-[24px] w-[24px] transition-transform ${
-      openMegaMenu === "perfume" ? "rotate-180" : ""
-    }`}
-  />
-</button>
 
-
+            {/* Collection */}
+               <div ref={menuRef} className="relative">
+ <div
+        onMouseEnter={() => setOpenMegaMenu("perfume")}
+        className="relative"
+      >
 <button
-  onClick={() =>
-    setOpenMegaMenu(
-      openMegaMenu === "collection" ? null : "collection"
-    )
-  }
-  className="flex items-center gap-[5px] text-[16px] cursor-pointer"
->
-  Collections
-  <LiaAngleDownSolid
-    className={`h-[24px] w-[24px] transition-transform ${
-      openMegaMenu === "collection" ? "rotate-180" : ""
-    }`}
-  />
-</button>
+          onClick={() =>
+            setOpenMegaMenu(
+              openMegaMenu === "perfume" ? null : "perfume"
+            )
+          }
+          className="flex items-center gap-[5px] text-[16px] cursor-pointer"
+        >
+          Perfumes
+          <LiaAngleDownSolid
+            className={`h-[24px] w-[24px] transition-transform duration-300 ${
+              openMegaMenu === "perfume" ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+
+  {/* PERFUME MEGA MENU */}
+  {openMegaMenu === "perfume" && (
+          <div
+            onMouseEnter={() => setOpenMegaMenu("perfume")}
+            onMouseLeave={() => setOpenMegaMenu(null)}
+            className="absolute top-[60px] right-0 z-50"
+          >
+         <div className="fixed top-[90px] right-[10px] 2xl:right-[450px] z-50">
+
+      <div className="relative bg-white rounded-[24px] shadow-xl px-[40px] py-[32px] flex gap-[74px]">
+
+        {/* ARROW TIP */}
+        <span className="absolute -top-[10px] right-[300px] w-5 h-5 bg-white rotate-45" />
+
+        {/* COLUMN 1 */}
+        <div>
+          <h4 className="font-bold text-[15px] text-[#1D0B01] mb-[12px]">
+            Perfume Style
+          </h4>
+          <ul className="space-y-[12px] text-[16px] text-[#1D0B01]">
+            <li className="cursor-pointer hover:text-[#FD4929]">Men</li>
+            <li className="cursor-pointer hover:text-[#FD4929]">Women</li>
+            <li className="cursor-pointer hover:text-[#FD4929]">Unisex</li>
+          </ul>
+        </div>
+
+        {/* COLUMN 2 */}
+        <div>
+          <h4 className="font-bold text-[#1D0B01] mb-[12px]">
+            Perfume Family
+          </h4>
+          <ul className="space-y-[12px] text-[16px] text-[#1D0B01]  cursor-pointer">
+            <li>Flowery</li>
+            <li>Warm</li>
+            <li>Gourmand</li>
+            <li>Fresh</li>
+            <li>Earthy</li>
+            <li>Herbal</li>
+          </ul>
+        </div>
+
+        {/* RIGHT PRODUCT CARD */}
+        <div className="">
+          <div className="bg-[#FBF7F2] rounded-[24px] p-4 w-[220px] text-center">
+            <img
+              src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
+              className="rounded-xl mx-auto mb-4"
+            />
+          </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium cursor-pointer">
+              <Link to='productList'>View All Perfume</Link>
+            </p>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  )}
+</div>
+</div>
+
+{/* Collection */}
+<div ref={menuRef} className="relative">
+<div
+        onMouseEnter={() => setOpenMegaMenu("collection")}
+        className="relative"
+      >
+        <button
+          onClick={() =>
+            setOpenMegaMenu(
+              openMegaMenu === "collection" ? null : "collection"
+            )
+          }
+          className="flex items-center gap-[5px] text-[16px] cursor-pointer"
+        >
+    Collections
+    <LiaAngleDownSolid
+            className={`h-[24px] w-[24px] transition-transform duration-300 ${
+              openMegaMenu === "collection" ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+
+  {/* COLLECTION MEGA MENU */}
+   {openMegaMenu === "collection" && (
+          <div
+            onMouseEnter={() => setOpenMegaMenu("collection")}
+            onMouseLeave={() => setOpenMegaMenu(null)}
+            className="absolute top-[60px] right-0 z-50"
+          >
+        {/* MEGA MENU */}
+    <div className="fixed top-[90px] right-[10px] 2xl:right-[320px] z-50">
+
+      <div className="relative bg-white rounded-[24px] shadow-xl px-[40px] py-[32px] flex gap-[74px]">
+
+        {/* ARROW TIP */}
+        <span className="absolute -top-[10px] right-[300px] w-5 h-5 bg-white rotate-45" />
+
+        {/* COLUMN 1 */}
+        <div>
+          <h4 className="font-bold text-[15px] text-[#571313] mb-[12px]">
+            Perfume Tyle
+          </h4>
+          <ul className="space-y-[12px] text-[16px] text-[#1D0B01]">
+            <li className="cursor-pointer hover:text-[#FD4929]">All Perfumes</li>
+            <li className="cursor-pointer hover:text-[#FD4929]">New Arrivals</li>
+            <li className="cursor-pointer hover:text-[#FD4929]">Limited Editions</li>
+            <li className="cursor-pointer hover:text-[#FD4929]">LCombo Sales</li>
+          </ul>
+        </div>
+
+        {/* COLUMN 2 */}
+        <div>
+          <h4 className="font-bold text-[#571313] mb-[12px]">
+            Inspired by Brand
+          </h4>
+          <ul className="space-y-[12px] text-[16px] text-[#1D0B01] cursor-pointer">
+            <li>Bluberry</li>
+            <li>Byredo</li>
+            <li>Chanel</li>
+            <li>Creed</li>
+            <li>Dior</li>
+            <li>Gucci</li>
+          </ul>
+        </div>
+
+        {/* RIGHT PRODUCT CARD */}
+        <div className="">
+          <div className="bg-[#FBF7F2] rounded-[24px] p-4 w-[220px] text-center">
+            <img
+              src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
+              className="rounded-xl mx-auto mb-4"
+            />
+          </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium cursor-pointer">
+              <Link to='productList'>View All Perfume</Link>
+            </p>
+        </div>
+      </div>
+    </div>
+    </div>
+  )}
+</div>
+</div>
+
+
 
 <Link to='/about'><button className="cursor-pointer text-[16px]">About Us</button></Link>
 
@@ -289,124 +441,6 @@ const MobileGrid = ({ items }) => (
           </div>
         </div>
       </nav>
-
-    {openMegaMenu === "perfume" && (
-  <>
-    <div
-      onClick={() => setOpenMegaMenu(null)}
-      className="fixed inset-0 z-40"
-    />
-
-    {/* MEGA MENU */}
-    <div className="fixed top-[90px] right-[10px] 2xl:right-[350px] z-50">
-
-      <div className="relative bg-white rounded-[32px] shadow-xl px-[40px] py-[32px] flex gap-[74px]">
-
-        {/* ARROW TIP */}
-        <span className="absolute -top-[10px] right-[300px] w-5 h-5 bg-white rotate-45" />
-
-        {/* COLUMN 1 */}
-        <div>
-          <h4 className="font-bold text-[15px] text-[#1D0B01] mb-[12px]">
-            Perfume Style
-          </h4>
-          <ul className="space-y-[12px] text-[16px] text-[#1D0B01]">
-            <li className="cursor-pointer hover:text-[#FD4929]">Men</li>
-            <li className="cursor-pointer hover:text-[#FD4929]">Women</li>
-            <li className="cursor-pointer hover:text-[#FD4929]">Unisex</li>
-          </ul>
-        </div>
-
-        {/* COLUMN 2 */}
-        <div>
-          <h4 className="font-bold text-[#1D0B01] mb-[12px]">
-            Perfume Family
-          </h4>
-          <ul className="space-y-[12px] text-[16px] text-[#1D0B01]  cursor-pointer">
-            <li>Flowery</li>
-            <li>Warm</li>
-            <li>Gourmand</li>
-            <li>Fresh</li>
-            <li>Earthy</li>
-            <li>Herbal</li>
-          </ul>
-        </div>
-
-        {/* RIGHT PRODUCT CARD */}
-        <div className="">
-          <div className="bg-[#FBF7F2] rounded-[24px] p-4 w-[220px] text-center">
-            <img
-              src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
-              className="rounded-xl mx-auto mb-4"
-            />
-          </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium cursor-pointer">
-              <Link to='productList'>View All Perfume</Link>
-            </p>
-        </div>
-
-      </div>
-    </div>
-  </>
-)}
-{openMegaMenu === "collection" && (
-  <>
-    <div
-      onClick={() => setOpenMegaMenu(null)}
-      className="fixed inset-0 z-40"
-    />
-
-    {/* MEGA MENU */}
-    <div className="fixed top-[90px] right-[10px] 2xl:right-[250px] z-50">
-
-      <div className="relative bg-white rounded-[32px] shadow-xl px-[40px] py-[32px] flex gap-[74px]">
-
-        {/* ARROW TIP */}
-        <span className="absolute -top-[10px] right-[300px] w-5 h-5 bg-white rotate-45" />
-
-        {/* COLUMN 1 */}
-        <div>
-          <h4 className="font-bold text-[15px] text-[#571313] mb-[12px]">
-            Perfume Tyle
-          </h4>
-          <ul className="space-y-[12px] text-[16px] text-[#1D0B01]">
-            <li className="cursor-pointer hover:text-[#FD4929]">All Perfumes</li>
-            <li className="cursor-pointer hover:text-[#FD4929]">New Arrivals</li>
-            <li className="cursor-pointer hover:text-[#FD4929]">Limited Editions</li>
-            <li className="cursor-pointer hover:text-[#FD4929]">LCombo Sales</li>
-          </ul>
-        </div>
-
-        {/* COLUMN 2 */}
-        <div>
-          <h4 className="font-bold text-[#571313] mb-[12px]">
-            Inspired by Brand
-          </h4>
-          <ul className="space-y-[12px] text-[16px] text-[#1D0B01] cursor-pointer">
-            <li>Bluberry</li>
-            <li>Byredo</li>
-            <li>Chanel</li>
-            <li>Creed</li>
-            <li>Dior</li>
-            <li>Gucci</li>
-          </ul>
-        </div>
-
-        {/* RIGHT PRODUCT CARD */}
-        <div className="">
-          <div className="bg-[#FBF7F2] rounded-[24px] p-4 w-[220px] text-center">
-            <img
-              src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
-              className="rounded-xl mx-auto mb-4"
-            />
-          </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium cursor-pointer">
-              <Link to='productList'>View All Perfume</Link>
-            </p>
-        </div>
-
-      </div>
-    </div>
-  </>
-)}
 
 
 {searchOpen && (
