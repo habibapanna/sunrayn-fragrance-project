@@ -53,7 +53,6 @@ const Categories = ({ sortBy, setSortBy }) => {
                 /* MOBILE SIZE */
                 w-[126px] h-[96px] p-[8px]
 
-                /* DESKTOP */
                 lg:w-auto lg:h-auto lg:p-6 2xl:gap-4
 
                 transition-all duration-200
