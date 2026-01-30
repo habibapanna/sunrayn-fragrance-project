@@ -47,24 +47,24 @@ const Premium = () => {
           {premiumItems.map((item, i) => (
             <div
               key={i}
-              className="rounded-[32px] p-[32px] flex justify-center items-center"
+              className=" rounded-[24px] 2xl:rounded-[32px] p-[32px] flex justify-center items-center"
               style={{ backgroundColor: item.bg }}
             >
              <div>
                  <img
                 src={item.icon}
                 alt={item.title}
-                className="h-[80px] w-[80px]"
+                className="h-[60px] w-[60px] 2xl:h-[80px] 2xl:w-[80px]"
               />
 
               <h3
-                className="text-[32px] font-semibold mt-[20px]"
+                className="text-[25px] 2xl:text-[35px] font-semibold mt-[20px]"
                 style={{ color: item.color }}
               >
                 {item.title}
               </h3>
 
-              <p className="text-[#0D0C09] text-[18px] mt-2">
+              <p className="text-[#0D0C09] text-[14px] 2xl:text-[18px] mt-2">
                 {item.desc}
               </p>
              </div>

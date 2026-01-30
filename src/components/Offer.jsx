@@ -5,7 +5,7 @@ const Offer = () => {
     return (
         <div className='mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]'>
           <Link to='/productList'> <section
-  className="bg-cover bg-center flex rounded-[32px] md:rounded-[48px]"
+  className="bg-cover bg-center flex rounded-[24px] md:rounded-[48px]"
   style={{
     backgroundImage:
       "url('https://i.postimg.cc/W1xsfBt0/Frame-(3).png')",

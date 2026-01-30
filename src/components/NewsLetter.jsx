@@ -4,7 +4,7 @@ const NewsLetter = () => {
   return (
     <div className="mx-auto max-w-full">
       <section
-        className="relative bg-cover bg-center rounded-[32px] 2xl:rounded-[48px] overflow-hidden"
+        className="relative bg-cover bg-center rounded-[24px] 2xl:rounded-[48px] overflow-hidden"
         style={{
           backgroundImage:
             "url('https://i.postimg.cc/W1xsfBt0/Frame-(3).png')",
