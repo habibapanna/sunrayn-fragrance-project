@@ -48,7 +48,7 @@ const Premium = () => {
             <div
               key={i}
               className=" rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] p-[32px] flex justify-center items-center"
-              style={{ backgroundColor: item.bg }}
+              style={{ background: item.bg }}
             >
              <div>
                  <img
