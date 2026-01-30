@@ -38,7 +38,8 @@ const About = () => {
               a variety of fair-priced, niche luxury scents for the next
               generation.
             </p>
-            <Link to='/productList'><button className="btn rounded-full bg-[#DBAB35] hover:bg-white text-[20px] text-[#1D0B01] border-none px-[20px] py-[8px] lg:px-[24px] lg:py-[10px] 2xl:h-[55px] 2xl:w-[210px]">
+            <Link to='/productList'><button className="btn rounded-full transition-all duration-300 ease-out
+    bg-[#BA9948] hover:text-[#1D0B01] hover:bg-white/60 backdrop-blur-md border border-[#BA9948]  text-[20px] text-white  px-[20px] py-[8px] lg:px-[24px] lg:py-[10px] 2xl:h-[55px] 2xl:w-[210px]">
               Shop Now
             </button></Link>
           </div>
