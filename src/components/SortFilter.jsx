@@ -367,11 +367,11 @@ const showClearAll =
         {/* Mobile Search Modal */}
 {mobileSearchOpen && (
   <div
-    className="fixed inset-0 z-50 bg-black/40 flex items-start justify-center p-4"
+    className="fixed inset-0 z-50 bg-black/40 flex items-start justify-center p-[10px]"
     onClick={() => setMobileSearchOpen(false)} // 👈 click outside closes
   >
     <div
-      className="bg-white w-full max-w-md rounded-[16px] p-4 relative"
+      className="bg-white w-full max-w-md rounded-[10px] p-4 relative"
       onClick={(e) => e.stopPropagation()} // 👈 click inside stays open
     >
       <input
@@ -385,7 +385,7 @@ const showClearAll =
       {/* Close icon */}
       <span
         onClick={() => setMobileSearchOpen(false)}
-        className="absolute top-[5px] right-[5px] cursor-pointer"
+        className="absolute top-[2px] right-[2px] cursor-pointer"
       >
         <X size={15} />
       </span>
