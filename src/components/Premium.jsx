@@ -42,12 +42,12 @@ const Premium = () => {
   return (
     <>
       {/* ================= DESKTOP ================= */}
-      <section className=" pb-[16px] 2xl:pb-[32px]">
+      <section className=" pb-[16px]">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-[16px] 2xl:gap-[32px]">
           {premiumItems.map((item, i) => (
             <div
               key={i}
-              className=" rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] p-[32px] flex justify-center items-center"
+              className=" rounded-[24px]  p-[32px] flex justify-center items-center"
               style={{ background: item.bg }}
             >
              <div>
