@@ -276,9 +276,9 @@ const MobileGrid = ({ items }) => (
 
               <button
                 onClick={() => setOpen(true)}
-                className="bg-[#6B0F0F] w-[40px] h-[40px] p-[8px] rounded-full"
+                className="bg-white/90 w-[40px] h-[40px] p-[8px] rounded-full"
               >
-                <TbMenu className="text-white h-[24px] w-[24px] cursor-pointer" />
+                <TbMenu className="text-[#BA9948] h-[24px] w-[24px] cursor-pointer" />
               </button>
             </div>
           </div>
