@@ -161,7 +161,7 @@ const buttonVariants = {
     fill="none"
     className="
       w-[30px] h-[30px] lg:h-[39px] lg:w-[39px]
-      2xl:w-[40px] 2xl:h-[40px]
+      2xl:w-[64px] 2xl:h-[64px]
     "
   >
     <path

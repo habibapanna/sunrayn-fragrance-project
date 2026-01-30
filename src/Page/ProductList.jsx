@@ -299,7 +299,6 @@ if (sortBy === "new")
   </aside>
 )}
 
-
 {/* -------------------- MOBILE SIDEBAR -------------------- */}
 {sidebarOpen && (
   <>
