@@ -125,7 +125,7 @@ const BestSelling = () => {
                   </p>
 
                   <div className="flex items-center justify-between gap-3">
-                    <button className="bg-white px-[24px] py-[10px] rounded-full font-semibold hover:bg-[#DBAB35] cursor-pointer w-[120px] h-[32px] lg:h-[45px] lg:w-[167px] text-[14px] 2xl:text-[16px] items-center justify-center flex">
+                    <button className="bg-white/60  backdrop-blur-md px-[24px] py-[10px] rounded-full font-semibold hover:bg-[#DBAB35] cursor-pointer w-[120px] h-[32px] lg:h-[45px] lg:w-[167px] text-[14px] 2xl:text-[16px] items-center justify-center flex border border-[#BA9948]">
                       Add to Cart
                     </button>
 
