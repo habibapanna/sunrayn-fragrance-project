@@ -7,8 +7,8 @@ const BLogPage = () => {
     const navigate = useNavigate();
   return (
     <div className="px-[16px] 2xl:px-[32px] py-[16px] 2xl:py-[32px]">
-     <div className="flex flex-col lg:flex-row justify-between text-[#282828] pb-[16px] 2xl:pb-[32px]">
-            <h3 className="text-[32px] 2xl:text-[50px] ">The Sanrayn Journals</h3>
+     <div className="flex flex-col gap-[16px] lg:flex-row justify-between text-[#282828] pb-[16px] 2xl:pb-[32px]">
+            <h3 className="text-[32px] text-center lg:text-left 2xl:text-[50px] ">The Sanrayn Journals</h3>
             {/* Search bar */}
           <div className="relative">
             <input
@@ -24,17 +24,17 @@ const BLogPage = () => {
 
         </div>
       <section className="mx-auto pb-[16px] 2xl:pb-[32px]">
-        <div className="bg-[#F6F7F2] rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-[50px] 2xl:gap-[189px] p-[16px] lg:p-[32px] items-center">
+        <div className="bg-[#F6F7F2] rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[64px] 2xl:gap-[132px] p-[16px] lg:p-[32px] items-center">
           <img
             src="https://i.postimg.cc/KvmJSjd2/Product-Image-(5).png"
             alt="Product"
-            className="rounded-[24px] lg:rounded-[48px] w-full 2xl:h-[700px] 2xl:w-[880px] object-cover"
+            className="rounded-[24px] lg:rounded-[48px] w-full h-[276px] lg:h-[500px] lg:w-[522px] 2xl:h-[700px] 2xl:w-[880px] object-cover"
           />
           <div className="2xl:w-[576px]">
-            <h2 className="text-[#1D0B01] mb-4 text-[32px] 2xl:text-[50px]">
+            <h2 className="text-[#1D0B01] mb-4 text-[25px] lg:text-[45px] 2xl:text-[55px]">
               The Rise of Halal Luxury Fragrances in the Modern World
             </h2>
-            <p className="text-[#282828] text-[22px] lg:text-[24px] mb-6 ">
+            <p className="text-[#282828] text-[15px] lg:text-[18px]">
               Luxury fragrance has long been associated with artistry, emotion, and identity. In recent years, a new movement has emerged within the perfume world halal luxury fragrances.
             </p>
           </div>

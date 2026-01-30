@@ -8,30 +8,31 @@ const About = () => {
     <div className="bg-white">
       {/* HERO IMAGE */}
       <section className=" mx-auto px-[16px]  2xl:px-[32px] py-[16px] lg:py-[32px]">
-        <div className="flex flex-col lg:flex-row justify-between text-[#282828] pb-[16px] 2xl:pb-[32px]">
-            <h3 className="text-[32px] 2xl:text-[50px] "> Purpose in Every Scent</h3>
-            <p className="text-[18px] 2xl:text-[20px]">Discover halal, alcohol-free luxury perfumes crafted with <br /> intention, artistry, and unwavering commitment to purity.</p>
+        <div className="flex flex-col gap-[24px] lg:flex-row justify-between text-[#282828] pb-[16px] 2xl:pb-[32px]">
+            <h3 className="text-center lg:text-left text-[30px] lg:text-[50px] "> Purpose in Every Scent</h3>
+            <p className="hidden lg:block text-[18px] text-center lg:text-left 2xl:text-[20px]">Discover halal, alcohol-free luxury perfumes crafted with <br /> intention, artistry, and unwavering commitment to purity.</p>
+            <p className="text-[18px] text-center lg:hidden">Discover halal, alcohol-free luxury perfumes crafted with intention, artistry, and unwavering commitment to purity.</p>
         </div>
         <div><img
           src="https://i.postimg.cc/Rh4QBppP/Perfume-Image.png"
           alt="Purpose in Every Scent"
-          className="w-full h-[435px] 2xl:h-[780px] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] object-cover"
+          className="w-full h-[208px] lg:h-[547px] 2xl:h-[780px] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] object-cover"
         /></div>
       </section>
 
       {/* IN-HOUSE SECTION */}
       <section className="mx-auto px-[16px]  2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
-        <div className="bg-[#F6F7F2] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] grid grid-cols-1 lg:grid-cols-2 gap-[50px] 2xl:gap-[189px] p-[16px] lg:p-[32px] items-center">
+        <div className="bg-[#F6F7F2] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[48px] 2xl:gap-[189px] p-[16px] lg:p-[32px] items-center">
           <img
             src="https://i.postimg.cc/KvmJSjd2/Product-Image-(5).png"
             alt="Product"
-            className="rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] w-full 2xl:h-[700px] 2xl:w-[880px] object-cover"
+            className="rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] w-full h-[268px] lg:h-[520px] 2xl:h-[700px] 2xl:w-[880px] object-cover"
           />
           <div className="2xl:w-[576px]">
-            <h2 className="text-[#1D0B01] mb-4 text-[32px] 2xl:text-[50px]">
+            <h2 className="text-[#1D0B01] mb-4 text-[25px] lg:text-[50px]">
               In-house, genderless exclusives for the next generation.
             </h2>
-            <p className="text-[#282828] text-[22px] lg:text-[24px] mb-6 ">
+            <p className="text-[#282828] text-[16px] lg:text-[18px] 2xl:text-[24px] mb-6 ">
               Sanrayn Originals is our collection of in-house exclusive
               fragrances, uniquely blended by our perfumers in France to offer
               a variety of fair-priced, niche luxury scents for the next
@@ -46,15 +47,15 @@ const About = () => {
 
 {/* DISCOVERY FLOW */}
 <section className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
-  <div className="bg-[#F6F7F2] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] px-6 py-16 2xl:px-16 text-center relative overflow-hidden">
+  <div className="bg-[#F6F7F2] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] p-[24px] lg:p-[56px] text-center relative overflow-hidden">
 
     {/* Title */}
-    <h2 className="text-[32px] 2xl:text-[50px] font-semibold mb-20 text-[#2B1B0E]">
+    <h2 className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold mb-[32px] lg:mb-[56px] 2xl:mb-[96px] text-[#2B1B0E]">
       From Discovery to Devotion
     </h2>
 
     {/* Flow */}
-    <div className="relative grid md:grid-cols-3 gap-20 items-start">
+    <div className="relative grid md:grid-cols-3 gap-[32px] lg:gap-[20px] 2xl:gap-[32px] items-start">
 
       {/* Dashed Arrows */}
       <svg
@@ -111,7 +112,7 @@ const About = () => {
   <path d="M15 58.3359H65" stroke="#DC7C2A" stroke-width="3"/>
 </svg>
         </div>
-        <h3 className="text-[20px] 2xl:text-[35px] text-[#DC7C2A] mb-2">
+        <h3 className="text-[25px] 2xl:text-[35px] text-[#DC7C2A] mb-[4px]">
           Discover
         </h3>
         <p className="text-[#282828] text-[16px] 2xl:text-[18px] max-w-[260px]">
@@ -132,7 +133,7 @@ const About = () => {
   <path d="M20 13.3359H26.6667M36.6667 13.3359H53.3333" stroke="#DC7C2A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
         </div>
-        <h3 className="text-[20px] 2xl:text-[35px] text-[#DC7C2A] mb-2">
+        <h3 className="text-[25px] 2xl:text-[35px] text-[#DC7C2A] mb-[4px]">
           Wear
         </h3>
         <p className="text-[#282828] text-[16px] 2xl:text-[18px] max-w-[260px]">
@@ -149,7 +150,7 @@ const About = () => {
   <path d="M64.7217 52.3777C77.8907 35.6793 74.3331 19.1169 64.8727 13.3138C55.9337 7.83077 48.1321 10.0404 43.4454 13.56L39.9967 16.1386M64.7217 52.3777C61.5607 56.3853 57.4364 60.4013 52.1991 64.278C47.0451 68.0927 44.4681 70 39.9974 70C35.5267 70 32.9498 68.0927 27.7958 64.278C0.73646 44.2497 3.39096 20.5098 15.1222 13.3138C24.061 7.83077 31.8628 10.0404 36.5494 13.56L39.9967 16.1386M64.7217 52.3777L46.3044 31.4826C45.5504 30.6273 44.2884 30.4432 43.3214 31.0475L36.0344 35.602C33.4701 37.2047 30.1419 36.844 27.9804 34.729C25.1253 31.9354 25.4134 27.259 28.5897 24.8369L39.9967 16.1386" stroke="#DC7C2A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
         </div>
-        <h3 className="text-[20px] 2xl:text-[35px] text-[#DC7C2A] mb-2">
+        <h3 className="text-[25px] 2xl:text-[35px] text-[#DC7C2A] mb-[4px]">
           Connect
         </h3>
         <p className="text-[#282828] text-[16px] 2xl:text-[18px] max-w-[260px]">
@@ -168,12 +169,12 @@ const About = () => {
   <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] 2xl:gap-[32px] items-stretch">
 
     {/* TEXT */}
-    <div className="bg-[#FAFAF7] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] p-[32px] 2xl:px-[48px] flex flex-col justify-center ">
-      <h2 className="text-[#571313] mb-4 text-[32px] 2xl:text-[50px] leading-tight 2xl:w-[500px] mx-auto">
+    <div className="bg-[#FAFAF7] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] p-[32px] 2xl:px-[48px] flex flex-col gap-[24px] justify-center ">
+      <h2 className="text-[#571313] mb-4 text-[25px] lg:text-[50px] leading-tight 2xl:w-[500px] mx-auto">
         A New Standard for Thoughtful Luxury.
       </h2>
 
-      <p className="text-[#1D0B01] text-[22px] lg:text-[24px] leading-relaxed 2xl:w-[500px] mx-auto">
+      <p className="text-[#1D0B01] text-[16px] lg:text-[24px] leading-relaxed 2xl:w-[500px] mx-auto">
         The fragrance industry has long overlooked those who seek purity
         without sacrificing sophistication. Sanrayn was born to bridge
         that gap—bringing halal, alcohol-free fragrances into a modern,
@@ -186,7 +187,7 @@ const About = () => {
      <img
   src="https://i.postimg.cc/vT4crfPf/Product-Image-(2).png"
   alt="Luxury Perfume"
-  className="2xl:h-[700px] w-full object-cover object-top"
+  className="h-[328px] lg:h-[568px] 2xl:h-[700px] w-full object-cover object-top"
 />
 
     </div>
