@@ -26,7 +26,7 @@ const Blogs = () => {
   const prev = () => setCurrent((prev) => (prev <= 0 ? maxIndex : prev - 1));
 
   return (
-    <div className="mx-auto px-[16px] pb-[16px] 2xl:pb-[32px]">
+    <div className="mx-auto lg:px-[16px] pb-[16px] 2xl:pb-[32px]">
       {/* HEADER */}
       <div className="hidden lg:flex justify-between mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px]">
         <div className="flex justify-between lg:justify-center items-center text-center gap-[20px] 2xl:gap-[32px]">
@@ -54,7 +54,7 @@ const Blogs = () => {
         </div>
       </div>
 
-       <div className="flex lg:hidden justify-between items-center text-center gap-[20px] 2xl:gap-[32px] mb-[16px]">
+       <div className="flex px-[16px] lg:hidden justify-between items-center text-center gap-[20px] 2xl:gap-[32px] mb-[16px]">
           <p className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]">
             The Sanrayn Blogs
           </p>
@@ -74,7 +74,7 @@ const Blogs = () => {
           {blogs.map((item, idx) => (
             <div
               key={idx}
-              className="flex-shrink-0 px-[2px] gap-[4px] lg:px-[8px] 2xl:px-[16px]"
+              className="flex-shrink-0 px-[16px]"
               style={{ width: `${100 / cardsPerView}%` }}
             >
               <div

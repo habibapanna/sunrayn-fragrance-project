@@ -300,7 +300,6 @@ if (sortBy === "new")
 )}
 
 
-
 {/* -------------------- MOBILE SIDEBAR -------------------- */}
 {sidebarOpen && (
   <>
