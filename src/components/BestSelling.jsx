@@ -84,8 +84,12 @@ const BestSelling = () => {
             >
               <div
                 className="relative rounded-[24px] md:rounded-[48px]
-                  bg-[#EDE8E0] h-[384px] lg:h-[700px]
-                  cursor-pointer overflow-hidden"
+    h-[384px] lg:h-[700px]
+    cursor-pointer overflow-hidden"
+  style={{
+    background:
+      "radial-gradient(72.36% 72.36% at 50% 50%, #FBF9F7 0%, #EDE8E0 100%)",
+  }}
                 onClick={() => navigate(`/productList/${item.slug}`)}
               >
                 {item.off && (

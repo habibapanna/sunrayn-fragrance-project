@@ -427,9 +427,13 @@ if (sortBy === "new")
             {filteredProducts.map((item, i) => (
               <div key={i}>
                 <div
-                  className="relative rounded-[24px] md:rounded-[48px]
-                  bg-[#EDE8E0] h-[384px] lg:h-[700px]
-                  cursor-pointer overflow-hidden"
+                 className="relative rounded-[24px] md:rounded-[48px]
+    h-[384px] lg:h-[700px]
+    cursor-pointer overflow-hidden"
+  style={{
+    background:
+      "radial-gradient(72.36% 72.36% at 50% 50%, #FBF9F7 0%, #EDE8E0 100%)",
+  }}
                   onClick={() => navigate(`/productList/${item.slug}`)}
                 >
                   {item.off && (
@@ -476,7 +480,7 @@ if (sortBy === "new")
                         </button>
                       </div>
                       <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[14px] 2xl:text-[16px] h-[33px] w-[68px] ">
-                        <div className="absolute -top-[5px] 2xl:-top-[10px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[6px] text-white 2xl:text-[8px] font-bold z-10 2xl:h-[14px] h-[8px] w-[32px] 2xl:w-[44px] flex items-center justify-center">
+                        <div className="absolute -top-[2px] 2xl:-top-[10px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[6px] text-white 2xl:text-[8px] font-bold z-10 2xl:h-[14px] h-[8px] w-[32px] 2xl:w-[44px] flex items-center justify-center">
                           -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
                         </div>
 

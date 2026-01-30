@@ -132,12 +132,12 @@ const Testimonials = () => {
                   </div>
 
                   {/* TITLE */}
-                  <h3 className="text-[#571313] text-[22px] md:text-[28px] lg:text-[35px] font-semibold mb-[20px] md:mb-[32px]">
+                  <h3 className="text-[#571313] text-[25px] lg:text-[28px] 2xl:text-[35px] font-semibold mb-[20px] md:mb-[32px]">
                     {item.title}
                   </h3>
 
                   {/* TEXT */}
-                  <p className="text-[#0D0C09] text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed">
+                  <p className="text-[#0D0C09] text-[14px] lg:text-[18px] 2xl:text-[20px] leading-relaxed">
                     {item.text}
                   </p>
 
@@ -158,7 +158,7 @@ const Testimonials = () => {
                           className="w-[20px] h-[20px] md:w-[24px] md:h-[24px]"
                           alt=""
                         />
-                        <span className="text-[14px] md:text-[16px] text-[#282828]">
+                        <span className="text-[15px] lg::text-[16px] 2xl:text-[18px] text-[#282828]">
                           Verified Customer
                         </span>
                       </div>

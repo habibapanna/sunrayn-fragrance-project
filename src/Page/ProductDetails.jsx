@@ -276,11 +276,11 @@ Back
     <div className="mt-[24px] space-y-[24px] bg-[#FFF] p-[16px] 2xl:p-[24px] rounded-[32px]">
 
       {/* Intro */}
-      <p className="text-[16px] 2xl:text-[18px] text-[#282828] leading-relaxed">
+      <p className="text-[12px] lg:text-[16px] 2xl:text-[18px] text-[#282828] leading-relaxed">
         {product.notes.intro}
       </p>
       {/* Ingredient Icons */}
-<div className="flex justify-between text-center">
+<div className="flex justify-between text-center items-center">
   {product.ingredients.map((i) => (
     <div key={i.name}>
       {typeof i.icon === "string" && i.icon.trim().startsWith("<svg") ? (
@@ -292,7 +292,7 @@ Back
         <div className="">{i.icon}</div>
       )}
 
-      <p className="text-[12px] 2xl:text-[18px] mt-[30px]">{i.name}</p>
+      <p className="text-[12px] lg:text-[15px] 2xl:text-[18px] mt-[30p">{i.name}</p>
     </div>
   ))}
 </div>
@@ -309,10 +309,10 @@ Back
   <rect x="27.9297" y="23.7334" width="1.06667" height="19.2667" fill="#1D0B01"/>
 </svg></span>
             <div>
-              <p className="font-medium text-[16px] 2xl:text-[18px]">
+              <p className="font-medium text-[12px] lg:text-[16px] 2xl:text-[18px]">
                 {product.notes[key].title}: {product.notes[key].values}
               </p>
-              <p className="text-[14px] 2xl:text-[16px] text-[#282828]/80">
+              <p className=" text-[10px] lg:text-[14px] 2xl:text-[16px] text-[#282828]/80">
                 {product.notes[key].description}
               </p>
             </div>
@@ -343,10 +343,10 @@ Back
   {openSection === "about" && (
     <div className="mt-[20px] space-y-[16px] text-[14px] text-[#282828]/90 bg-[#FFF] p-[16px] 2xl:p-[24px] rounded-[32px]">
 
-      <p className="font-normal text-[16px] 2xl:text-[18px] text-[#1D0B01]">{product.about.title}</p>
+      <p className="font-normal text-[12px] lg:text-[16px] 2xl:text-[18px] text-[#1D0B01]">{product.about.title}</p>
 
       {product.about.paragraphs.map((p, i) => (
-        <p key={i} className="font-normal text-[16px] 2xl:text-[18px] text-[#282828]/80">{p}</p>
+        <p key={i} className="font-normal text-[12px] lg:text-[16px] 2xl:text-[18px] text-[#282828]/80">{p}</p>
       ))}
 <div className="border-t border-[#282828]/20 pt-[24px] mt-[24px] space-y-3">
 
@@ -357,13 +357,13 @@ Back
     >
       {/* ICON */}
       <span
-        className="flex items-center px-2 py-2 2xl:px-3 2xl:py-3 bg-[#F6F7F2] rounded-full"
+        className="flex items-center px-2 py-2 2xl:px-3 2xl:py-3 bg-[#F6F7F2] rounded-full h-[30px] w-[30px] lg:h-[35px] lg:w-[35px] 2xl:h-[40px] 2xl:w-[40px]"
         dangerouslySetInnerHTML={{ __html: item.icon }}
       />
 
       {/* TEXT */}
-      <span className="font-medium text-[16px] 2xl:text-[18px] text-[#1D0B01]">
-        {item.label}: <span className="text-[16px] 2xl:text-[18px] text-[#282828]/80">{item.value}</span>
+      <span className="font-medium text-[12px] lg:text-[16px] 2xl:text-[18px] text-[#1D0B01]">
+        {item.label}: <span className="text-[12px] lg:text-[16px] 2xl:text-[18px] text-[#282828]/80">{item.value}</span>
       </span>
     </div>
   ))}
@@ -374,7 +374,7 @@ Back
         {product.about.tags.map((tag) => (
           <span
             key={tag}
-            className="px-2 2xl:px-3 py-1 bg-[#F6F7F2] rounded-full font-normal 2xl:text-[16px]"
+            className="px-2 2xl:px-3 py-1 bg-[#F6F7F2] rounded-full font-normal text-[12px] lg:text-[16px] 2xl:text-[16px]"
           >
             {tag}
           </span>
@@ -403,14 +403,14 @@ Back
   {openSection === "scentNotes" && (
     <div className="mt-[20px] space-y-[16px] text-[14px] text-[#282828]/90 bg-[#FFF] p-[16px] 2xl:p-[24px] rounded-[32px]">
 
-      <p className="font-normal text-[16px] 2xl:text-[18px] text-[#1D0B01]">{product.scentNotes.title}</p>
+      <p className="font-normal text-[12px] lg:text-[16px] 2xl:text-[18px] text-[#1D0B01]">{product.scentNotes.title}</p>
 
       {product.scentNotes.paragraphs.map((p, i) => (
-        <p key={i} className="font-normal text-[16px] 2xl:text-[18px] text-[#282828]/80">{p}</p>
+        <p key={i} className="font-normal text-[12px] lg:text-[16px] 2xl:text-[18px] text-[#282828]/80">{p}</p>
       ))}
 
      <div className="mt-3">
-  <p className="text-[14px] 2xl:text-[18px] text-[#1D0B01] bg-[#F6F7F2] py-[8px] px-[16px] rounded-[100px]">
+  <p className="text-[12px] lg:text-[16px] 2xl:text-[18px] text-[#1D0B01] bg-[#F6F7F2] py-[8px] px-[16px] rounded-[100px]">
     Note: {product.scentNotes.note}
   </p>
 </div>
@@ -438,8 +438,8 @@ Back
   </button>
 
   {openSection === "shipping" && (
-    <div className="mt-[16px] space-y-[12px] text-[14px] text-[#282828]/90 bg-[#FFF] p-[16px] 2xl:p-[24px] rounded-[32px]">
-<p className="text-[#1D0B01] text-[16px] 2xl:text-[18px] font-medium mt-2">
+    <div className="mt-[16px] space-y-[12px] text-[#282828]/90 bg-[#FFF] p-[16px] 2xl:p-[24px] rounded-[32px]">
+<p className="text-[#1D0B01] text-[12px] lg:text-[16px] 2xl:text-[18px] font-medium mt-2">
         {product.shipping.title}
       </p>
       {product.shipping.items.map((s, i) => (
@@ -448,19 +448,19 @@ Back
           className="flex justify-between items-center bg-[#F6F7F2] 2xl:pr-[32px] px-[16px] py-[10px] 2xl:py-[12px] rounded-lg"
         >
            <div
-  className={`flex gap-[16px] w-[250px] lg:w-[500px] border-gray-300 ${
+  className={`flex gap-[12px] w-[220px] lg:w-[500px] border-gray-300 ${
     i !== product.shipping.items.length - 1 ? "border-r" : ""
   }`}
 >
 
                  <span
-        className="flex items-center p-2 2xl:p-3 bg-[#FFF] rounded-full"
+        className="flex items-center p-2 2xl:p-3 bg-[#FFF] rounded-full h-[30px] w-[30px] lg:h-[35px] lg:w-[35px] 2xl:h-[40px] 2xl:w-[40px]"
         dangerouslySetInnerHTML={{ __html: s.icon }}
       />
  <div className="flex flex-col">
-            <span className="text-[12px] 2xl:text-[16px] font-medium">{s.label}</span>
+            <span className="text-[10px] lg:text-[12px] 2xl:text-[16px] font-medium">{s.label}</span>
             <span
-  className={`text-[11px] 2xl:text-[15px] font-medium ${
+  className={`text-[9px] lg:text-[11px] 2xl:text-[15px] font-medium ${
     s.text === "View return policy" ? "underline underline-offset-2" : ""
   }`}
 >
@@ -470,7 +470,7 @@ Back
           </div>
             </div>
          
-          <span className="text-[12px] 2xl:text-[18px] font-medium">{s.value}</span>
+          <span className="text-[10px] lg:text-[12px] 2xl:text-[16px] font-medium">{s.value}</span>
         </div>
       ))}
     </div>
@@ -494,21 +494,21 @@ Back
   </button>
 
   {openSection === "faq" && (
-    <div className="mt-[16px] space-y-[12px] text-[14px]  bg-[#FFF] p-[16px] 2xl:p-[24px] rounded-[32px]">
+    <div className="mt-[16px] space-y-[12px] bg-[#FFF] p-[16px] 2xl:p-[24px] rounded-[32px]">
 
       {product.faq.map((f, i) => (
         <p  key={i}
         className="flex flex-col" >
-            <span className="text-[16px] 2xl:text-[18px] text-[#1D0B01]">{f.q}</span>
-            <span className="text-[16px] 2xl:text-[18px] text-[#282828]/80 mt-[16px]">{f.a}</span>
+            <span className="text-[12px] lg:text-[16px] 2xl:text-[18px] text-[#1D0B01]">{f.q}</span>
+            <span className="text-[12px] lg:text-[16px] 2xl:text-[18px] text-[#282828]/80 mt-[16px]">{f.a}</span>
         </p>
       ))}
 
-      <p>
+      <p className="text-[12px] lg:text-[16px] 2xl:text-[18px]">
         Unsure?{" "}
         <a
           href="mailto:help@sanrayn.co"
-          className="text-[#E20000] underline cursor-pointer"
+          className="text-[#E20000] underline cursor-pointer text-[12px] lg:text-[16px] 2xl:text-[18px]"
         >
           help@sanrayn.co
         </a>
