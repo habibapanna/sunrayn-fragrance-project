@@ -137,7 +137,7 @@ const MobileGrid = ({ items }) => (
 >
 
 
-        <div className="mx-auto px-[16px] md:px-[32px] md:py-[24px] flex items-center justify-between text-white">
+        <div className="mx-auto px-[16px] md:px-[32px] md:py-[20px] flex items-center justify-between text-white">
 
 {/* LOGO */}
 <Link
