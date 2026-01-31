@@ -6,7 +6,7 @@ const SignInUp = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center">
       {/* CONTAINER */}
-      <div className="relative w-full h-full lg:h-[640px] lg:max-w-[1200px] overflow-hidden rounded-[24px] lg:rounded-[32px]">
+      <div className="relative w-full lg:h-[640px] lg:max-w-[1200px] overflow-hidden rounded-[24px] lg:rounded-[32px] p-">
 
         {/* FULL IMAGE BACKGROUND (DESKTOP ONLY) */}
         <img
@@ -16,7 +16,7 @@ const SignInUp = ({ onClose }) => {
         />
 
         {/* FORM WRAPPER */}
-        <div className="relative md:absolute lg:right-0 lg:top-0 lg:h-[600px] w-full lg:w-[480px] bg-white rounded-[24px] lg:rounded-[32px] lg:m-[20px] p-[28px] lg:p-[36px] flex flex-col">
+        <div className="relative lg:absolute lg:right-0 lg:top-0 lg:h-[600px] h-full w-full lg:w-[480px] bg-white rounded-[24px] lg:rounded-[32px] lg:m-[20px] px-[20px] py-[36px] lg:p-[36px] flex flex-col">
 
           {/* CLOSE */}
           <button

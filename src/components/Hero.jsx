@@ -25,7 +25,7 @@ const Hero = () => {
 
  
       {/* Content */}
-      <div className="relative z-10 mx-auto px-[16px] mt-[400px] md:ml-[30px] lg:mt-[295px] 2xl:mb-[276px] grid grid-cols-1 lg:grid-cols-2 items-center mb-[20px]">
+      <div className="relative z-10 mx-auto px-[16px] mt-[400px] 2xl:ml-[30px] lg:mt-[295px] 2xl:mb-[276px] grid grid-cols-1 lg:grid-cols-2 items-center mb-[20px]">
         
         {/* LEFT CONTENT */}
         <div className="text-white col-span-2 2xl:col-span-1">
