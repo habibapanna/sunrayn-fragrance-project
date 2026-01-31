@@ -142,7 +142,7 @@ if (sortBy === "new")
   );
 
   return (
-    <div className="pt-[16px] 2xl:pt-[32px]">
+    <div className="pt-[16px]">
       <Offer />
  <div className="px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
          <SortFilter
@@ -531,7 +531,7 @@ if (sortBy === "new")
  </div>
 
       <Testimonials />
-      <section className='px-[16px] 2xl:px-[32px]'>
+      <section className='px-[16px] 2xl:px-[32px] 2xl:pb-[16px]'>
         <Premium />
       </section>
     </div>

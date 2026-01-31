@@ -47,20 +47,16 @@ const Categories = ({ sortBy, setSortBy }) => {
                 flex flex-col lg:flex-row
                 items-center justify-between
                 cursor-pointer
-                rounded-[12px] 2xl:rounded-[24px]
+                rounded-[8px] 2xl:rounded-[24px]
                 bg-[#F6F7F2]
-
-                /* MOBILE SIZE */
-                w-[126px] h-[96px] p-[8px]
-
+                w-[126px] h-[96px] p-[4px]
                 lg:w-auto lg:h-auto lg:p-6 2xl:gap-[12px]
-
                 transition-all duration-200
 
                 ${
                   isActive
-                    ? " outline-2 outline-black"
-                    : " outline-1 outline-transparent hover:outline-[#282828]/40"
+                    ? " border-2 border-black"
+                    : " border-none outline-transparent hover:outline-[#282828]/40"
                 }
                 
               `}
@@ -73,9 +69,9 @@ const Categories = ({ sortBy, setSortBy }) => {
                 src={item.product}
                 alt={item.title}
                 className="
-                  h-[36px] w-[36px]
+                  h-[40px] w-[40px]
                   2xl:h-[108px] 2xl:w-[108px]
-                  object-contain
+                  object-cover
                 "
               />
             </div>

@@ -6,7 +6,7 @@ const SignInUp = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center">
       {/* CONTAINER */}
-      <div className="relative w-full lg:h-[640px] lg:max-w-[1200px] overflow-hidden rounded-[24px] lg:rounded-[32px] p-">
+      <div className="relative w-full lg:h-[640px] lg:max-w-[1200px] overflow-hidden rounded-[24px] lg:rounded-[32px]">
 
         {/* FULL IMAGE BACKGROUND (DESKTOP ONLY) */}
         <img

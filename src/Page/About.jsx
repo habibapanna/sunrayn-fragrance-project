@@ -1,15 +1,14 @@
 
 import { Link } from "react-router-dom";
 import NewsLetter from "../components/NewsLetter";
-import Offer from "../components/Offer";
 
 const About = () => {
   return (
     <div className="bg-white">
       {/* HERO IMAGE */}
-      <section className=" mx-auto px-[16px]  2xl:px-[32px] py-[16px] lg:py-[32px]">
+      <section className=" mx-auto px-[16px]  2xl:px-[32px] py-[16px] 2xl:py-[32px]">
         <div className="flex flex-col gap-[24px] lg:flex-row justify-between text-[#282828] pb-[16px] 2xl:pb-[32px]">
-            <h3 className="text-center lg:text-left text-[30px] lg:text-[50px] "> Purpose in Every Scent</h3>
+            <h3 className="text-center lg:text-left text-[30px] lg:text-[40px] 2xl:text-[50px] "> Purpose in Every Scent</h3>
             <p className="hidden lg:block text-[18px] text-center lg:text-left 2xl:text-[20px]">Discover halal, alcohol-free luxury perfumes crafted with <br /> intention, artistry, and unwavering commitment to purity.</p>
             <p className="text-[18px] text-center lg:hidden">Discover halal, alcohol-free luxury perfumes crafted with intention, artistry, and unwavering commitment to purity.</p>
         </div>
@@ -29,7 +28,7 @@ const About = () => {
             className="rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] w-full h-[268px] lg:h-[520px] 2xl:h-[700px] 2xl:w-[880px] object-cover"
           />
           <div className="2xl:w-[576px]">
-            <h2 className="text-[#1D0B01] mb-4 text-[25px] lg:text-[50px]">
+            <h2 className="text-[#1D0B01] mb-4 text-[30px] lg:text-[40px] 2xl:text-[50px]">
               In-house, genderless exclusives for the next generation.
             </h2>
             <p className="text-[#282828] text-[16px] lg:text-[18px] 2xl:text-[24px] mb-6 ">
@@ -171,7 +170,7 @@ const About = () => {
 
     {/* TEXT */}
     <div className="bg-[#FAFAF7] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] p-[32px] 2xl:px-[48px] flex flex-col gap-[24px] justify-center ">
-      <h2 className="text-[#571313] mb-4 text-[25px] lg:text-[50px] leading-tight 2xl:w-[500px] mx-auto">
+      <h2 className="text-[#571313] mb-4 text-[30px] lg:text-[40px] 2xl:text-[50px] leading-tight 2xl:w-[500px] mx-auto">
         A New Standard for Thoughtful Luxury.
       </h2>
 
@@ -236,7 +235,7 @@ const About = () => {
         </div>
       </section>
 
-    <section className="px-[16px] pb-[16px] lg:px-[32px] lg:pb-[32px]"><NewsLetter></NewsLetter></section>
+    <section className="px-[16px] pb-[16px] 2xl:px-[32px] 2xl:pb-[32px]"><NewsLetter></NewsLetter></section>
     </div>
   );
 };

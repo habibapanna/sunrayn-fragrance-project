@@ -4,33 +4,9 @@ import { useNavigate } from "react-router-dom";
 import cartFrame from '../assets/Frame (7).png'
 import Truck from '../assets/Frame (8).png'
 import Discount from '../assets/Discount Price.png';
-import Original from '../assets/Original Price.png';
 import { useEffect, useState } from "react";
 import { products } from "../data/productsData";
 
-
-const items = [
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-  },
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-  },
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-  },
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-  },
-  {
-    title: "Ambery Saffron",
-    product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
-  },
-]
 
 const CartOverlay = ({ onClose }) => {
   const navigate = useNavigate();
@@ -50,7 +26,7 @@ const CartOverlay = ({ onClose }) => {
     return () => window.removeEventListener("resize", updateView);
   }, []);
 
-  const maxIndex = items.length - itemsPerView;
+  const maxIndex = products.length - itemsPerView;
   const minSwipeDistance = 50;
 
   const clamp = (value) => Math.max(0, Math.min(value, maxIndex));
@@ -172,9 +148,14 @@ const CartOverlay = ({ onClose }) => {
       {products.map((item, i) => (
         <div
           key={i}
-          className="snap-start flex-shrink-0 w-[85%] sm:w-[48%] lg:w-[49%]"
+          className="snap-start flex-shrink-0"
         >
-          <div className="relative w-[215px] h-[272px] rounded-[24px] bg-[#EDE8E0] overflow-hidden">
+          <div className="relative w-[215px] h-[272px] rounded-[24px] overflow-hidden"
+          style={{
+    background:
+      "radial-gradient(72.36% 72.36% at 50% 50%, #FBF9F7 0%, #EDE8E0 100%)",
+  }}
+          >
             <img
               src={item.images[0]}
               className="mx-auto h-[148px] w-[148px] object-cover"
@@ -195,7 +176,29 @@ const CartOverlay = ({ onClose }) => {
                 <button className="bg-white/60 backdrop-blur-md border border-[#BA9948] px-4 py-1 rounded-full text-sm cursor-pointer  text-[#1D0B01]
     transition-all duration-300 ease-out
     hover:bg-[#BA9948] hover:text-white">Add to Cart</button>
-                <img src={Discount} className="h-[30px] w-[60px]" />
+                  <div className="relative w-[60px] h-[28px] text-[16px]  font-normal"
+                      >
+                        <div className="absolute -top-[2px]  left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[6px] text-white z-10 h-[8px] w-[32px] flex items-center justify-center">
+                          -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
+                        </div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 105 45" fill="none">
+                          <path
+                            d="M95 11V0H10V11C4.47715 11 0 15.4772 0 21V24C0 29.5228 4.47715 34 10 34V45H95V34C100.523 34 105 29.5228 105 24V21C105 15.4772 100.523 11 95 11Z"
+                            fill="#BA9948"
+                          />
+                          <text
+                            x="52.5"
+                            y="30"
+                            textAnchor="middle"
+                            fontWeight="700"
+                            fill="#FFFFFF"
+                            fontFamily="sans-serif"
+                          >
+                            ${item.price.toFixed(2)}
+                          </text>
+                        </svg>
+                      </div>
               </div>
             </div>
           </div>

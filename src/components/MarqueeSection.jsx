@@ -11,7 +11,7 @@ const inspiredBy = [
 
 const MarqueeSection = () => {
   return (
-    <section className="pt-4 md:pt-8">
+    <section className="">
       <Marquee speed={40} gradient={false} pauseOnHover>
         {inspiredBy.map((item, index) => (
           <button

@@ -157,24 +157,24 @@ const MobileGrid = ({ items }) => (
 >
 
 
-        <div className="mx-auto px-[16px] 2xl:px-[32px] md:py-[20px] flex items-center justify-between text-white">
+        <div className="mx-auto px-[16px] 2xl:px-[32px] lg:py-[20px] flex items-center justify-between text-white">
 
 {/* LOGO */}
 <Link
   to="/"
-  className="flex items-center gap-[7px] md:gap-[12px] cursor-pointer transition-all duration-300"
+  className="flex items-center gap-[7px] lg:gap-[12px] cursor-pointer transition-all duration-300"
 >
  <img
   src={logoSrc}
   alt="Brand Logo"
-  className="h-[35px] w-[35px] md:h-[58px] md:w-[58px] transition-all duration-300"
+  className="h-[30px] w-[30px] lg:h-[58px] lg:w-[58px] transition-all duration-300"
 />
 
 
  <img
   src={brandSrc}
   alt="Brand Name"
-  className="h-[17px] w-[104px] md:h-[27px] md:w-[170px] transition-all duration-300"
+  className="h-[15px] w-[100px] lg:h-[27px] lg:w-[170px] transition-all duration-300"
 />
 
 </Link>
@@ -186,7 +186,7 @@ const MobileGrid = ({ items }) => (
             {/* DESKTOP MENU (UNCHANGED) */}
             <div className="hidden lg:flex items-center gap-[24px] bg-white/90 text-[#282828] pr-[9px] pl-[24px] py-[12px] rounded-[100px] 2xl:mr-16 w-[515px] h-[50px]">
 
-            {/* Collection */}
+            {/* Perfume */}
                <div ref={menuRef} className="relative">
  <div
         onMouseEnter={() => setOpenMegaMenu("perfume")}
@@ -215,7 +215,7 @@ const MobileGrid = ({ items }) => (
             onMouseLeave={() => setOpenMegaMenu(null)}
             className="absolute top-[60px] right-0 z-50"
           >
-         <div className="fixed top-[90px] right-[10px] 2xl:right-[450px] z-50">
+         <div className="fixed top-[90px] right-[350px] 2xl:right-[450px] z-50">
 
       <div className="relative bg-white rounded-[24px] shadow-xl px-[40px] py-[32px] flex gap-[74px]">
 
@@ -298,7 +298,7 @@ const MobileGrid = ({ items }) => (
             className="absolute top-[60px] right-0 z-50"
           >
         {/* MEGA MENU */}
-    <div className="fixed top-[90px] right-[10px] 2xl:right-[320px] z-50">
+    <div className="fixed top-[90px] right-[230px] 2xl:right-[320px] z-50">
 
       <div className="relative bg-white rounded-[24px] shadow-xl px-[40px] py-[32px] flex gap-[74px]">
 
@@ -423,24 +423,32 @@ const MobileGrid = ({ items }) => (
               <button
                title="Search Perfumes"
   onClick={() => setSearchOpen(true)}
-  className="bg-white/90 p-[10px] rounded-full"
+  className="bg-white/90 p-[10px] h-[35px] w-[35px] flex items-center rounded-full"
 >
-  <img src={Icon} className="h-[20px] w-[20px] cursor-pointer" />
+  <svg  className="h-[24px] w-[24px] " xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 17 17" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.91667 1.66667C4.46489 1.66667 1.66667 4.46489 1.66667 7.91667C1.66667 11.3684 4.46489 14.1667 7.91667 14.1667C9.59425 14.1667 11.1175 13.5057 12.2401 12.43C12.266 12.3941 12.2952 12.3597 12.3275 12.3274C12.3598 12.2951 12.3942 12.2659 12.4301 12.24C13.5058 11.1174 14.1667 9.59421 14.1667 7.91667C14.1667 4.46489 11.3684 1.66667 7.91667 1.66667ZM14.073 12.8944C15.1739 11.5345 15.8333 9.80261 15.8333 7.91667C15.8333 3.54441 12.2889 0 7.91667 0C3.54441 0 0 3.54441 0 7.91667C0 12.2889 3.54441 15.8333 7.91667 15.8333C9.80264 15.8333 11.5346 15.1739 12.8945 14.0729L15.2441 16.4226C15.5695 16.748 16.0971 16.748 16.4226 16.4226C16.748 16.0972 16.748 15.5695 16.4226 15.2441L14.073 12.8944Z" fill="#1D0B01"/>
+</svg>
 </button>
               <button
                title="View Cart"
   onClick={() => setCartOpen(true)}
-  className="bg-white/90 p-[10px] rounded-full"
+  className="bg-white/90 p-[10px] h-[35px] w-[35px] flex items-center rounded-full"
 >
-  <img src={Cart} className="h-[20px] w-[20px] cursor-pointer " />
+  <svg className="h-[24px] w-[24px] " xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 20 20" fill="none">
+  <g opacity="0.7">
+    <path d="M2.54616 12.661L2.85052 10.9349C3.21026 8.89463 3.39012 7.87456 4.10241 7.27059C4.8147 6.66663 5.83788 6.66663 7.88424 6.66663H12.1054C14.1517 6.66663 15.1749 6.66663 15.8872 7.27059C16.5995 7.87456 16.7793 8.89463 17.139 10.9349L17.4435 12.661C17.9412 15.4842 18.1901 16.8958 17.4237 17.8229C16.6573 18.75 15.2414 18.75 12.4097 18.75H7.57988C4.74817 18.75 3.33232 18.75 2.5659 17.8229C1.79947 16.8958 2.04837 15.4842 2.54616 12.661Z" stroke="#1D0B01" stroke-width="1.5"/>
+    <path d="M6.25 6.66663L6.38985 4.98844C6.54632 3.11084 8.11589 1.66663 10 1.66663C11.8841 1.66663 13.4537 3.11084 13.6102 4.98844L13.75 6.66663" stroke="#1D0B01" stroke-width="1.5"/>
+    <path d="M12.5 9.16663C12.3917 10.3442 11.3047 11.25 10 11.25C8.69525 11.25 7.60835 10.3442 7.5 9.16663" stroke="#1D0B01" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+</svg>
 </button>
 
               <button
                title="Open Menu"
                 onClick={() => setOpen(true)}
-                className="bg-white/90 w-[40px] h-[40px] p-[8px] rounded-full"
+                className="bg-white/90 w-[35px] h-[35px] p-[8px] rounded-full flex items-center"
               >
-                <TbMenu className="text-[#BA9948] h-[24px] w-[24px] cursor-pointer" />
+                <TbMenu className="text-[#1D0B01] h-[24px] w-[24px] cursor-pointer" />
               </button>
             </div>
           </div>

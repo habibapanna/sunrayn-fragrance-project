@@ -198,7 +198,7 @@ const Featured = () => {
           </div>
       </section>
 
-<section className=' px-[8px] lg:px-[16px]'><Premium></Premium></section>
+<section className=' px-[8px] 2xl:px-[16px]'><Premium></Premium></section>
 
         </div>
     );

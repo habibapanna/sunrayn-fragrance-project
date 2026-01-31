@@ -17,7 +17,7 @@ const Signature = () => {
           />
 
           {/* TITLE */}
-          <h3 className="absolute top-[16px] left-[16px] lg:top-[24px] lg:left-[24px] z-20 text-white font-semibold text-[25px] lg:text-[50px] uppercase">
+          <h3 className="absolute top-[16px] left-[16px] lg:top-[24px] lg:left-[24px] z-20 text-white font-semibold text-[25px] 2xl:text-[50px] uppercase">
             New Arrivals
           </h3>
 
@@ -67,7 +67,7 @@ const Signature = () => {
           />
 
           {/* TITLE */}
-          <h3 className="absolute top-[16px] left-[16px] lg:top-[24px] lg:left-[24px] z-20 text-white font-semibold text-[25px] lg:text-[50px] uppercase">
+          <h3 className="absolute top-[16px] left-[16px] lg:top-[24px] lg:left-[24px] z-20 text-white font-semibold text-[25px] 2xl:text-[50px] uppercase">
             Sanrayn Specials
           </h3>
 

@@ -13,7 +13,7 @@ const flavour = [
 
 const MarqueeFlavour = () => {
     return (
-         <section className="pt-4 md:pt-8">
+         <section className="pt-[16px] 2xl:pt-[32px] pb-[16px] 2xl:pb-[32px]">
       <Marquee speed={20} gradient={false} pauseOnHover>
         {flavour.map((item, index) => (
           <button
