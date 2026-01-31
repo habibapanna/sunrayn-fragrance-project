@@ -39,7 +39,7 @@ const BestSelling = () => {
             Best Selling Perfumes
           </p>
            <button className=" transition-all duration-300 ease-out
-              bg-[#BA9948] hover:bg-white/60 backdrop-blur-md border border-[#BA9948] hover:text-[#1D0B01] text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] 2xl:py-[12px] rounded-full text-[14px] lg:text-[20px] cursor-pointer w-[117px] h-[40px] lg:w-[139px] lg:h-[55px]">
+              bg-[#BA9948] hover:bg-white/60 backdrop-blur-md border border-[#BA9948] hover:text-[#1D0B01] text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] 2xl:py-[12px] rounded-full text-[14px] lg:text-[16px] 2xl:text-[20px] cursor-pointer w-[117px] h-[40px] lg:w-[139px] lg:h-[55px]">
                       <Link to="/productList">View All</Link>
                     </button>
         </div>

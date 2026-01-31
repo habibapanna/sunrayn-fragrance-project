@@ -6,7 +6,7 @@ const Hero = () => {
     return (
         <div>
             <section
-      className="relative min-h-screen flex items-center bg-cover bg-center max-w-full"
+      className="relative flex items-center bg-cover bg-no-repeat bg-center max-w-full"
       style={{
         backgroundImage:
           "url('https://i.postimg.cc/vHNVx6j7/Image.png')",
@@ -25,7 +25,7 @@ const Hero = () => {
 
  
       {/* Content */}
-      <div className="relative z-10 mx-auto px-[16px] mt-[400px] 2xl:ml-[30px] lg:mt-[295px] 2xl:mb-[276px] grid grid-cols-1 lg:grid-cols-2 items-center mb-[20px]">
+      <div className="relative z-10 mx-auto px-[16px] mt-[200px] 2xl:ml-[30px] lg:mt-[295px] 2xl:mb-[276px] grid grid-cols-1 lg:grid-cols-2 items-center mb-[20px]">
         
         {/* LEFT CONTENT */}
         <div className="text-white col-span-2 2xl:col-span-1">
@@ -62,7 +62,7 @@ const Hero = () => {
           </p>
 
           {/* CTA */}
-         <Link to='productList'> <button className="text-whte px-[24px] py-[10px] rounded-[100px] text-[14px] md:text-[20px] font-bold cursor-pointer w-[116px] h-[40px] md:w-[210px] md:h-[55px]  transition-all duration-300 ease-out
+         <Link to='/productList'> <button className="text-white px-[24px] py-[10px] rounded-[100px] text-[14px] md:text-[20px] font-bold cursor-pointer w-[116px] h-[40px] md:w-[210px] md:h-[55px]  transition-all duration-300 ease-out
     bg-[#BA9948] hover:bg-white backdrop-blur-md border border-[#BA9948] hover:text-[#1D0B01]">
             Shop Now
           </button></Link>

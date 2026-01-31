@@ -48,7 +48,7 @@ const RecentPost = () => {
         Instagram
         </h2>
         <div className="flex items-center gap-[24px]">
-          <button className="bg-[#F5F1EA] text-[#571313] font-semibold px-6 py-3 rounded-full flex items-center text-lg md:text-2xl cursor-pointer">
+          <button className="bg-[#F5F1EA] text-[#571313] font-semibold px-6 py-3 rounded-full flex items-center text-[14px] lg:text-[16px] 2xl:text-[20px] cursor-pointer">
             <img src={Instagram} alt="" className="mr-[4px] h-5 md:h-10" />@Sanrayn
           </button>
           {/* Nav buttons */}
@@ -70,7 +70,7 @@ const RecentPost = () => {
       </div>
 
       {/* Carousel */}
-      <div className="overflow-hidden relative">
+      <div className="overflow-hidden relative pb-[16px]">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${current * 100}%)` }}
