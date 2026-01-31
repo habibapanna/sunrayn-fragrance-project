@@ -17,6 +17,7 @@ import { TbMenu } from "react-icons/tb";
 import SearchOverlay from "../../components/SearchOverlay";
 import CartOverlay from "../../components/CartOverlay";
 import { useLocation } from "react-router-dom";
+import SignInUp from "../../Page/SignInUp";
 
 
 
@@ -25,6 +26,8 @@ const [open, setOpen] = useState(false);
 const [scrolled, setScrolled] = useState(false);
 const [searchOpen, setSearchOpen] = useState(false);
 const [cartOpen, setCartOpen] = useState(false);
+const [signInUpOpen, setSignInUpOpen] = useState(false);
+
   const [openMegaMenu, setOpenMegaMenu] = useState(null);
 
   const menuRef = useRef(null);
@@ -398,12 +401,14 @@ const MobileGrid = ({ items }) => (
 </button>
 
 
-              <button
-               title="Login" className={`
-  p-[15px] rounded-full h-[50px] w-[50px]
-  transition-colors duration-300 cursor-pointer
-  ${scrolled ? "bg-white/90" : "bg-white/90"}
-`}
+<button
+  title="Login"
+  onClick={() => setSignInUpOpen(true)}
+  className="
+    p-[15px] rounded-full h-[50px] w-[50px]
+    transition-colors duration-300 cursor-pointer
+    bg-white/90
+  "
 >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <g opacity="0.7">
@@ -473,6 +478,20 @@ const MobileGrid = ({ items }) => (
   </>
 )}
 
+{signInUpOpen && (
+  <>
+    {/* BLUR BACKGROUND */}
+    <div
+      onClick={() => setSignInUpOpen(false)}
+      className="fixed inset-0 bg-white/50 backdrop-blur-sm z-[60]"
+    />
+
+    {/* SIGN IN / UP UI */}
+    <SignInUp onClose={() => setSignInUpOpen(false)} />
+  </>
+)}
+
+
 
 
       {/* OVERLAY */}
@@ -491,7 +510,13 @@ const MobileGrid = ({ items }) => (
       >
        <div className="relative flex items-center justify-between px-[20px] py-[16px]">
   <div className="flex justify-center items-center gap-[12px]">
-    <button className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px]">
+    <button
+  onClick={() => {
+    setOpen(false);
+    setSignInUpOpen(true);
+  }}
+  className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px]"
+>
       <img src={User1} className="h-[20px] w-[20px]" />
     </button>
     <span className="font-bold text-[#282828] text-[16px]">Login</span>
