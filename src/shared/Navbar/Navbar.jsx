@@ -162,7 +162,7 @@ const MobileGrid = ({ items }) => (
 {/* LOGO */}
 <Link
   to="/"
-  className="flex items-center gap-[7px] lg:gap-[12px] cursor-pointer transition-all duration-300"
+  className="flex items-center gap-[7px] lg:gap-[12px] cursor-pointer transition-all duration-300 focus:outline-none"
 >
  <img
   src={logoSrc}
