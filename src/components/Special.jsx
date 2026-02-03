@@ -82,7 +82,7 @@ const buttonVariants = {
           {/* IMAGE */}
           <div className="relative w-full flex justify-center lg:pl-[50px] lg:py-[50px] 2xl:py-[100px]">
             <img
-              src="https://i.postimg.cc/8kWKHMLp/Product-Image.png"
+              src="https://i.postimg.cc/PNGRVQZ7/Whats-App-Image-2026-02-03-at-6-11-48-PM-(2).jpg"
               alt="Special Perfume"
               className="h-[292px] lg:h-[397px] 2xl:h-[700px] w-full 2xl:w-[651px] object-cover rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] "
             />

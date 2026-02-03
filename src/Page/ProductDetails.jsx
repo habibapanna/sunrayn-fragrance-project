@@ -111,13 +111,13 @@ Back
             <img
               src={product.images[1]}
               alt={product.title}
-              className="mx-auto h-full w-full object-contain rounded-[24px]"
+              className="mx-auto h-full w-full object-cover rounded-[24px]"
             />
           </div>
 
           {product.images.slice(2).map((img, i) => (
             <div key={i} className="rounded-[24px]">
-              <img src={img} className="mx-auto h-full object-contain" />
+              <img src={img} className="mx-auto lg:h-[484px] lg:w-[484px] object-cover rounded-[24px]" />
             </div>
           ))}
         </div>

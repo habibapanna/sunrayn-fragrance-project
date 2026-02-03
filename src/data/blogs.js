@@ -2,7 +2,7 @@ export const blogs = [
   {
     slug: "rise-of-halal-luxury-fragrances",
     title: "The Rise of Halal Luxury Fragrances in the Modern World",
-    product: "https://i.postimg.cc/KvmJSjd2/Product-Image-(5).png",
+    product: "https://i.postimg.cc/PNGRVQZ7/Whats-App-Image-2026-02-03-at-6-11-48-PM-(2).jpg",
     description:
       "Luxury fragrance has long been associated with artistry, emotion, and identity. In recent years, a new movement has emerged within the perfume world halal luxury fragrances. What was once a niche category has evolved into a global expression of mindful elegance, purity, and modern sophistication.",
     content: [
@@ -44,7 +44,7 @@ export const blogs = [
   {
     slug: "rise-of-halal-luxury-fragrances",
     title: "The Rise of Halal Luxury Fragrances in the Modern World",
-    product: "https://i.postimg.cc/Rh4QBppP/Perfume-Image.png",
+    product: "https://i.postimg.cc/pdYRfpNM/Whats-App-Image-2026-02-03-at-6-11-48-PM.jpg",
     description:
       "Luxury fragrance has long been associated with artistry, emotion, and identity. In recent years, a new movement has emerged within the perfume world halal luxury fragrances. What was once a niche category has evolved into a global expression of mindful elegance, purity, and modern sophistication.",
     content: [
@@ -86,7 +86,7 @@ export const blogs = [
   {
     slug: "rise-of-halal-luxury-fragrances",
     title: "The Rise of Halal Luxury Fragrances in the Modern World",
-    product: "https://i.postimg.cc/vTdvj2f0/Product-Image-(1).png",
+    product: "https://i.postimg.cc/XNPxgLk5/Whats-App-Image-2026-02-03-at-6-06-50-PM.jpg",
     description:
       "Luxury fragrance has long been associated with artistry, emotion, and identity. In recent years, a new movement has emerged within the perfume world halal luxury fragrances. What was once a niche category has evolved into a global expression of mindful elegance, purity, and modern sophistication.",
     content: [

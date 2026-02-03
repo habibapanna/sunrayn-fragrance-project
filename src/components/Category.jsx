@@ -7,15 +7,15 @@ import { Link } from "react-router-dom";
 const categories = [
   {
     title: "Men",
-    product: "https://i.postimg.cc/8kWKHMLp/Product-Image.png",
+    product: "https://i.postimg.cc/XNPxgLk5/Whats-App-Image-2026-02-03-at-6-06-50-PM.jpg",
   },
   {
     title: "Women",
-    product: "https://i.postimg.cc/vTdvj2f0/Product-Image-(1).png",
+    product: "https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg",
   },
   {
     title: "Unisex",
-    product: "https://i.postimg.cc/SK27KbGP/Background-Image-(1).png",
+    product: "https://i.postimg.cc/6p2k0Tvk/Whats-App-Image-2026-02-03-at-6-06-46-PM.jpg",
   },
 ];
 

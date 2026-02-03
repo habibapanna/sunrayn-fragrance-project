@@ -4,10 +4,10 @@ import Instagram from '../assets/Instagram_logo_2016 1.png';
 import MarqueeSection from './MarqueeSection';
 
 const posts = [
-  { title: 'Men', product: 'https://i.postimg.cc/mkc0WDcW/Container-(1).png' },
-  { title: 'Women', product: 'https://i.postimg.cc/prn1167M/N6Apea-UPkl-Bb-Tmrqi-Me-Hki00U-png-(3).png' },
-  { title: 'Unisex', product: 'https://i.postimg.cc/Rh4QBppP/Perfume-Image.png' },
-  { title: 'Unisex', product: 'https://i.postimg.cc/59Y4VNW2/N6Apea-UPkl-Bb-Tmrqi-Me-Hki00U-png-(4).png' },
+  { title: 'Men', product: 'https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg' },
+  { title: 'Women', product: 'https://i.postimg.cc/PNGRVQZ7/Whats-App-Image-2026-02-03-at-6-11-48-PM-(2).jpg' },
+  { title: 'Unisex', product: 'https://i.postimg.cc/pdYRfpNM/Whats-App-Image-2026-02-03-at-6-11-48-PM.jpg' },
+  { title: 'Unisex', product: 'https://i.postimg.cc/6p2k0Tvk/Whats-App-Image-2026-02-03-at-6-06-46-PM.jpg' },
 ];
 
 const RecentPost = () => {
