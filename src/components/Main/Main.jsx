@@ -13,7 +13,7 @@ const pageVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.9,
       ease: "easeOut",
     },
   },
@@ -21,7 +21,7 @@ const pageVariants = {
     opacity: 0,
     y: -20,
     transition: {
-      duration: 0.4,
+      duration: 0.9,
       ease: "easeIn",
     },
   },

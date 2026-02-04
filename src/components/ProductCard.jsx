@@ -53,7 +53,7 @@ useEffect(() => {
                                 {/* CARD */}
                                 <div className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px]
     h-[384px] lg:h-[700px]
-    cursor-pointer overflow-hidden"
+    overflow-hidden"
   style={{
     background:
       "radial-gradient(72.36% 72.36% at 50% 50%, #FBF9F7 0%, #EDE8E0 100%)",
