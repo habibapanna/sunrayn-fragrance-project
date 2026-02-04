@@ -117,7 +117,7 @@ Back
 
           {product.images.slice(2).map((img, i) => (
             <div key={i} className="rounded-[24px]">
-              <img src={img} className="mx-auto lg:h-[484px] lg:w-[484px] object-cover rounded-[24px]" />
+              <img src={img} className="mx-auto 2xl:h-[484px] 2xl:w-[484px] object-cover rounded-[24px] h-full " />
             </div>
           ))}
         </div>
