@@ -112,7 +112,7 @@ useEffect(() => {
  {/* RIGHT CARD */}
           <div className="flex justify-center lg:justify-end">
 
-            <div className="bg-[#F6F7F2] w-full max-w-[280px] h-auto rounded-[24px] p-[24px] flex flex-col justify-between">
+            <div className="bg-[#F6F7F2] w-full max-w-[280px] h-auto rounded-[24px] p-[24px] flex flex-col justify-between gap-[32px]">
 
 
 <div className="">
@@ -137,7 +137,7 @@ useEffect(() => {
       <button
         key={item.name}
         style={{ backgroundColor: item.bg }}
-        className="h-[35px] rounded-full text-[16px] text-[#282828] py-[8px]px-[16px] cursor-pointer font-medium"
+        className="h-[35px] rounded-full text-[16px] text-[#282828] py-[8px] px-[16px] cursor-pointer font-medium flex justify-center items-center"
       >
         {item.name}
       </button>
@@ -199,8 +199,8 @@ const IconFilter = ({ icon, title, items, hideArrowOnDesktop = false }) => {
             ref={scrollRef}
             className="
               flex gap-[8px]
-              overflow-x-auto scrollbar-hide
-              max-w-[260px]
+              overflow-x-auto no-scrollbar
+              max-w-[300px]
               sm:max-w-[360px]
               md:max-w-[480px]
               lg:max-w-full
