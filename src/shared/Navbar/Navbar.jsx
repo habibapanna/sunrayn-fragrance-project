@@ -50,6 +50,8 @@ const isBlogPage = location.pathname === "/blogs";
 const isHolidayOffer = location.pathname === "/holidayOffer";
 const isBlogDetails = location.pathname.startsWith("/blogs/");
 const isProductDetails = location.pathname.startsWith("/productList/");
+const isInnerPage = !isHome;
+
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -83,23 +85,27 @@ useEffect(() => {
 }, []);
 
 
-const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? "bg-black/10 backdrop-blur-md"
+const navBgClass = isHome
+  ? scrolled
+    ? "bg-black/50 backdrop-blur-2xl"
+    : "bg-transparent"
   : scrolled
   ? "bg-black/50 backdrop-blur-2xl"
-  : "bg-transparent";
+  : "bg-black/20 backdrop-blur-md";
 
-const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? Logo3
+
+const logoSrc = isHome
+  ? Logo
   : scrolled
   ? Logo
-  : Logo;
+  : Logo3;
 
-const brandSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? BrandName3
+const brandSrc = isHome
+  ? BrandName
   : scrolled
   ? BrandName
-  : BrandName;
+  : BrandName3;
+
 
   const navTopClass = isHome ? "top-0" : "top-[44px]";
 
@@ -155,12 +161,36 @@ const MobileGrid = ({ items }) => (
 
   return (
     <>
-  <nav
-  className={`fixed left-0 w-full z-50 transition-all duration-300 ${navTopClass} ${navBgClass}`}
+<nav
+  className={`fixed left-0 w-full z-50 ${navTopClass}`}
 >
 
+{/* NAV BLUR BACKGROUND */}
+<div
+  className={`
+    pointer-events-none
+    absolute inset-0
+    transition-opacity duration-300
+   ${scrolled ? "opacity-100" : "opacity-0"}
+  `}
+>
 
-        <div className="mx-auto px-[16px] 2xl:px-[32px] lg:py-[20px] flex items-center justify-between text-white">
+  <div
+    className="
+      absolute inset-0
+      bg-gradient-to-b
+      from-black/60
+      via-black/40
+      to-transparent
+      backdrop-blur-2xl
+      [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]
+    "
+  />
+</div>
+
+
+        <div className="relative z-10 mx-auto px-[16px] 2xl:px-[32px] lg:py-[10px] flex items-center justify-between text-white">
+
 
 {/* LOGO */}
 <Link
@@ -187,7 +217,7 @@ const MobileGrid = ({ items }) => (
           <div className="flex items-center gap-[16px] 2xl:gap-[24px]">
 
             {/* DESKTOP MENU (UNCHANGED) */}
-            <div className="hidden lg:flex items-center gap-[24px] bg-white/90 text-[#282828] pr-[9px] pl-[24px] py-[12px] rounded-[100px] 2xl:mr-16 w-[515px] h-[50px]">
+            <div className="hidden lg:flex items-center gap-[24px] bg-white/90 text-[#282828] pr-[5px] pl-[24px] py-[12px] rounded-[100px] 2xl:mr-16 w-[515px] border border-gray-100 shadow-lg h-[50px] ">
 
             {/* Perfume */}
                <div ref={menuRef} className="relative">
@@ -372,7 +402,7 @@ const MobileGrid = ({ items }) => (
   onClick={() => setSearchOpen(true)}
   className={`
   p-[15px] rounded-full h-[50px] w-[50px]
-  transition-colors duration-300 cursor-pointer
+  transition-colors duration-300 border border-gray-100 shadow-lg cursor-pointer
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
 
@@ -389,7 +419,7 @@ const MobileGrid = ({ items }) => (
   onClick={() => setCartOpen(true)}
   className={`
   p-[15px] rounded-full h-[50px] w-[50px]
-  transition-colors duration-300 cursor-pointer
+  transition-colors duration-300 border border-gray-100 shadow-lg cursor-pointer
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
  title="View Cart"
@@ -409,7 +439,7 @@ const MobileGrid = ({ items }) => (
   onClick={() => setSignInUpOpen(true)}
   className="
     p-[15px] rounded-full h-[50px] w-[50px]
-    transition-colors duration-300 cursor-pointer
+    transition-colors duration-300 border border-gray-100 shadow-lg cursor-pointer
     bg-white/90
   "
 >

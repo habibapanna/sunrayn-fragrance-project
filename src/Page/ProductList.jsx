@@ -310,7 +310,7 @@ if (sortBy === "new")
 
     {/* Sliding sidebar */}
     <aside
-      className={`lg:hidden fixed top-0 left-0 z-50 h-full w-ful bg-[#EDE8D0] transform transition-transform duration-300
+      className={`lg:hidden fixed top-10 left-0 z-50 h-full w-ful bg-[#EDE8D0] transform transition-transform duration-300
         ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
     >
       <div className="p-6 space-y-6 overflow-y-auto h-full">
