@@ -113,7 +113,6 @@ const Footer = () => {
   "
 >
 
-
   {/* 1. COPYRIGHT */}
   <p className="text-[16px] text-[#220B12B2] order-4 md:order-none md:mb-0">
     ©2026 Sanrayn all right reserved

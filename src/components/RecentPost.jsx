@@ -1,7 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
-import Instagram from '../assets/Instagram_logo_2016 1.png';
-import MarqueeSection from './MarqueeSection';
+import React, { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
+import { GoChevronLeft, GoChevronRight } from "react-icons/go";
+import Instagram from "../assets/Instagram_logo_2016 1.png";
+import MarqueeSection from "./MarqueeSection";
+
 
 const posts = [
   { title: 'Men', product: 'https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg' },
@@ -69,41 +75,51 @@ const RecentPost = () => {
         </div>
       </div>
 
-      {/* Carousel */}
-      <div className="overflow-hidden relative pb-[16px]">
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${current * 100}%)` }}
-        >
-          {slides.map((slide, index) => (
-            <div
-              key={index}
-              className="flex flex-shrink-0 w-full 2xl:gap-[32px] gap-[16px]"
-            >
-              {slide.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-40 md:h-96 flex-1"
-                >
-                  <img
-                    src={item.product}
-                    alt={item.title}
-                    className="absolute inset-0 object-cover w-full h-full"
-                  />
-                </div>
-              ))}
+      {/* SWIPER */}
+      <Swiper
+        modules={[Navigation]}
+        navigation={{
+          prevEl: ".recent-prev",
+          nextEl: ".recent-next",
+        }}
+        grabCursor={true}
+        spaceBetween={16}
+        breakpoints={{
+          0: {
+            slidesPerView: 2,
+            spaceBetween: 16,
+          },
+          1024: {
+            slidesPerView: 2,
+            spaceBetween: 16,
+          },
+          1536: {
+            slidesPerView: 4,
+            spaceBetween: 32,
+          },
+        }}
+      >
+        {posts.map((item, idx) => (
+          <SwiperSlide key={idx}>
+            <div className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-40 md:h-96">
+              <img
+                src={item.product}
+                alt={item.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
             </div>
-          ))}
-        </div>
-        {/* MOBILE ARROWS */}
-          <div className="flex items-center lg:hidden justify-center gap-5 mt-6">
-            <button onClick={prev} className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] flex items-center justify-center">
-              <GoChevronLeft className="text-[30px]" />
-            </button>
-            <button onClick={next} className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] flex items-center justify-center">
-              <GoChevronRight className="text-[30px]" />
-            </button>
-          </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* MOBILE ARROWS */}
+      <div className="flex lg:hidden justify-center gap-5 py-[16px] 2xl:py-[32px]">
+        <button className="recent-prev w-[40px] h-[40px] rounded-full bg-[#F5F1EA] flex items-center justify-center">
+          <GoChevronLeft className="text-[28px]" />
+        </button>
+        <button className="recent-next w-[40px] h-[40px] rounded-full bg-[#F5F1EA] flex items-center justify-center">
+          <GoChevronRight className="text-[28px]" />
+        </button>
       </div>
 
   <MarqueeSection></MarqueeSection>
