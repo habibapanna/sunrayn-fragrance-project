@@ -101,7 +101,7 @@ const RecentPost = () => {
       >
         {posts.map((item, idx) => (
           <SwiperSlide key={idx}>
-            <div className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-40 md:h-96">
+            <div className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-40 md:h-96 lg:mb-[32px]">
               <img
                 src={item.product}
                 alt={item.title}
@@ -113,7 +113,7 @@ const RecentPost = () => {
       </Swiper>
 
       {/* MOBILE ARROWS */}
-      <div className="flex lg:hidden justify-center gap-5 py-[16px] 2xl:py-[32px]">
+      <div className="flex lg:hidden justify-center gap-5 py-[16px]">
         <button className="recent-prev w-[40px] h-[40px] rounded-full bg-[#F5F1EA] flex items-center justify-center">
           <GoChevronLeft className="text-[28px]" />
         </button>
