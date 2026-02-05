@@ -15,12 +15,13 @@ const LearnMorePopup = ({ isOpen, onClose }) => {
       <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
         <div className="relative w-full max-w-[900px] bg-[#BA9948] rounded-[16px] shadow-lg overflow-hidden flex flex-col md:flex-row">
                         {/* CLOSE BUTTON */}
-            <button
-              onClick={onClose}
-              className="absolute top-3 right-3 text-[14px] underline cursor-pointer"
-            >
-              Close
-            </button>
+           <button
+  onClick={onClose}
+  className="absolute top-4 right-4 z-50 text-[14px] underline cursor-pointer"
+>
+  Close
+</button>
+
 
           {/* LEFT: IMAGE */}
           <div className="w-full md:w-3/5 flex items-center justify-center py-6 md:py-12 px-4 md:px-6">
@@ -56,7 +57,7 @@ const LearnMorePopup = ({ isOpen, onClose }) => {
 
             <Link
               to="/learn-more"
-              className="text-[14px] underline mt-2 text-center md:text-left"
+              className="text-[14px] underline mt-2 text-center"
             >
               Learn More about Sanrayn+
             </Link>
