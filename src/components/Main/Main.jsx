@@ -1,57 +1,49 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+import TopAnnouncementBar from "../TopAnnouncementBar";
 import Navbar from "../../shared/Navbar/Navbar";
 import Footer from "../../shared/Footer/Footer";
-import ScrollToTop from "../ScrollToTop";
-
-const pageVariants = {
-  initial: {
-    opacity: 0,
-    y: 40,
-  },
-  animate: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.9,
-      ease: "easeOut",
-    },
-  },
-  exit: {
-    opacity: 0,
-    y: -20,
-    transition: {
-      duration: 0.9,
-      ease: "easeIn",
-    },
-  },
-};
+import RouteLoader from "../RouteLoader";
 
 const Main = () => {
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    // always jump to top instantly
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
+    // show loader on route change
+    setLoading(true);
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
 
   return (
-    <div className="min-h-screen mx-auto flex flex-col bg-white">
-      <ScrollToTop />
+    <div className="min-h-screen flex flex-col bg-white">
+
+      {/* ✅ TOP ANNOUNCEMENT BAR */}
+      <TopAnnouncementBar />
+
+      {/* ✅ NAVBAR */}
       <Navbar />
 
+      {/* ✅ PAGE LOADER (content only) */}
+      {loading && <RouteLoader />}
+
+      {/* ✅ PAGE CONTENT */}
       <section
         className={`flex-grow ${
-          isHome ? "" : "pt-[90px] md:pt-[110px]"
+          isHome ? "" : "pt-[134px] md:pt-[154px]"
         }`}
       >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={location.pathname}
-            variants={pageVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-          >
-            <Outlet />
-          </motion.div>
-        </AnimatePresence>
+        <Outlet />
       </section>
 
       <Footer />

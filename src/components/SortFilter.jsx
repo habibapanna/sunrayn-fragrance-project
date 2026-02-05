@@ -166,7 +166,7 @@ const renderDropdown = (items, filterKey) => (
           {item.icon && <span className="flex">{item.icon}</span>}
 
           {/* Label */}
-          <span className="text-[14px]">{value}</span>
+          <span className="text-[12px] lg:text-[14px]">{value}</span>
         </li>
       );
     })}
@@ -263,7 +263,7 @@ SORT & FILTER
 
             </button>
 {openGender && (
-  <div className="absolute top-[56px] left-0 w-[160px] bg-white rounded-[16px] shadow-lg p-[12px] z-40">
+  <div className="absolute top-[55px] left-0 w-[140px] lg:w-[160px] bg-white rounded-[16px] shadow-lg p-[6px] lg:p-[12px] z-40">
     {renderDropdown(genderOptions, "gender")}
 
     {showClearAll && (
@@ -304,7 +304,7 @@ SORT & FILTER
 </svg>
             </button>
 {openScent && (
-  <div className="absolute top-[56px] left-0 w-[160px] bg-white rounded-[16px] shadow-lg p-[12px] z-40">
+  <div className="absolute top-[55px] left-0 w-[140px] lg:w-[160px] bg-white rounded-[16px] shadow-lg p-[6px] lg:p-[12px] z-40">
     {renderDropdown(scentOptions, "scentFamily")}
 
     {showClearAll && (
@@ -344,7 +344,7 @@ SORT & FILTER
 </svg>
             </button>
 {openBrands && (
-  <div className="absolute top-[56px] left-0 w-[160px] bg-white rounded-[16px] shadow-lg p-[12px] z-40">
+  <div className="absolute top-[55px] left-0 w-[150px] lg:w-[160px] bg-white rounded-[16px] shadow-lg p-[6px] lg:p-[12px] z-40">
     {renderDropdown(brandOptions, "brand")}
 
     {showClearAll && (

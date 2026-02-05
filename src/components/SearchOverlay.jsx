@@ -56,25 +56,35 @@ useEffect(() => {
           />
 
           {/* ANIMATED RED SEARCH BUTTON */}
-         <button
-  className={`absolute top-1/2 -translate-y-1/2 h-[40px] w-[40px] rounded-[100px] bg-[#FD4929]
-  flex items-center justify-center cursor-pointer
-  transition-[left,right] duration-[9000ms] ease-in-out
-  ${animateIcon ? "right-[6px]" : "left-[24px]"}`}
+<button
+  className={`
+    absolute top-1/2 -translate-y-1/2
+    right-[6px]
+    h-[40px] w-[40px]
+    rounded-full bg-[#FD4929]
+    flex items-center justify-center cursor-pointer
+    transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]
+    ${
+      animateIcon
+        ? "translate-x-0"
+        : "-translate-x-[350px] lg:-translate-x-[900px]"
+    }
+  `}
 >
 
-            <svg
-              width="20"
-              height="20"
-              fill="none"
-              stroke="white"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-          </button>
+  <svg
+    width="20"
+    height="20"
+    fill="none"
+    stroke="white"
+    strokeWidth="2"
+    viewBox="0 0 24 24"
+  >
+    <circle cx="11" cy="11" r="8" />
+    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+  </svg>
+</button>
+
         </div>
 
         {/* CONTENT GRID */}

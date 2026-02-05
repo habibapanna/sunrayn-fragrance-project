@@ -40,6 +40,7 @@ const [openCollection, setOpenCollection] = useState(false);
 const location = useLocation();
 
 // adjust this path to match your ProductList route
+const isHome = location.pathname === "/";
 const isProductList = location.pathname === "/productList";
 const isContact = location.pathname === "/contact";
 const isFaq = location.pathname === "/faq";
@@ -100,6 +101,8 @@ const brandSrc = isProductList || isContact || isFaq || isAbout || isTerms || is
   ? BrandName
   : BrandName;
 
+  const navTopClass = isHome ? "top-0" : "top-[44px]";
+
   const perfumeStyles = ["Men", "Women", "Unisex"];
 
 const perfumeFamilies = [
@@ -153,7 +156,7 @@ const MobileGrid = ({ items }) => (
   return (
     <>
   <nav
-  className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${navBgClass}`}
+  className={`fixed left-0 w-full z-50 transition-all duration-300 ${navTopClass} ${navBgClass}`}
 >
 
 
