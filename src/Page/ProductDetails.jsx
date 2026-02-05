@@ -86,16 +86,16 @@ Back
   </button>
   {/* Breadcrumb */}
   <div className="flex items-center gap-[8px]  px-[16px] py-[12px] text-[#282828]/70 bg-[#F6F7F2] rounded-full  w-full">
-    <Link to="/" className="hover:underline text-[12px] lg:text-[16px]">Home</Link>
+    <Link to="/" className="hover:underline text-[12px] lg:text-[16px] text-[#1D0B01]">Home</Link>
     <span>/</span>
 
-    <Link to="/productList" className="hover:underline text-[12px] lg:text-[16px]">Perfume</Link>
+    <Link to="/productList" className="hover:underline text-[12px] lg:text-[16px] text-[#1D0B01]">Perfume</Link>
     <span>/</span>
 
-    <span className="uppercase text-[10px] lg:text-[16px]">{product.gender}</span>
+    <Link to="/productList" className="uppercase hover:underline text-[10px] lg:text-[16px] text-[#1D0B01]">{product.gender}</Link>
     <span>/</span>
 
-    <span className="text-[#1D0B01] font-medium text-[12px] lg:text-[16px]">
+    <span className=" font-medium text-[12px] lg:text-[16px]">
       {product.title}
     </span>
   </div>
@@ -140,7 +140,7 @@ Back
         <img
           src={img}
           alt={`${product.title} ${i + 1}`}
-          className="object-cover rounded-[24px] 2xl:w-[343px] 2xl:h-[288px] h-full"
+          className="object-cover rounded-[24px] h-[343px] w-full "
         />
       </div>
     ))}
