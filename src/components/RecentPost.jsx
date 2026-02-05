@@ -96,11 +96,11 @@ const RecentPost = () => {
           ))}
         </div>
         {/* MOBILE ARROWS */}
-          <div className="flex lg:hidden justify-center gap-5 mt-6">
-            <button onClick={prev} className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA]">
+          <div className="flex items-center lg:hidden justify-center gap-5 mt-6">
+            <button onClick={prev} className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] flex items-center justify-center">
               <GoChevronLeft className="text-[30px]" />
             </button>
-            <button onClick={next} className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA]">
+            <button onClick={next} className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] flex items-center justify-center">
               <GoChevronRight className="text-[30px]" />
             </button>
           </div>

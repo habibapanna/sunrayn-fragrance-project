@@ -36,7 +36,7 @@ const Footer = () => {
 
           {/* LEFT CONTENT */}
           <div className="w-full lg:w-lg text-left mt-[40px] md:mt-0 ">
-            <Link to="/" className="inline-block">
+            <Link to="/" className="lg:inline-block">
               <img src={SANRAYN} alt="Sanrayn" className="mx-auto md:mx-0" />
             </Link>
 
@@ -115,29 +115,29 @@ const Footer = () => {
 
 
   {/* 1. COPYRIGHT */}
-  <p className="text-[16px] text-[#220B12B2] order-1 md:order-none mb-[16px] md:mb-0">
+  <p className="text-[16px] text-[#220B12B2] order-4 md:order-none md:mb-0">
     ©2026 Sanrayn all right reserved
   </p>
 
   {/* 2. FOLLOW US TEXT */}
-  <span className="text-[16px] text-[#220B12B2] order-2 md:hidden">
+  <span className="text-[16px] text-[#220B12B2] order-1 md:hidden">
     Follow us
   </span>
 
   {/* 3. SOCIAL ICONS */}
-  <div className="flex items-center gap-4 md:gap-2 lg:gap-4 order-3 md:order-none mb-[16px] md:mb-0">
-    <img src={Facebook} className="h-4" />
-    <img src={Instagram} className="h-4" />
-    <img src={Tiktok} className="h-4" />
+  <div className="flex items-center gap-4 md:gap-2 lg:gap-4 order-2 md:order-none mb-[16px] md:mb-0">
+    <img src={Facebook} className="h-5" />
+    <img src={Instagram} className="h-5" />
+    <img src={Tiktok} className="h-5" />
   </div>
 
   {/* 4. MADE BY */}
-  <p className="text-[16px] text-[#220B12B2] order-4 md:order-none mb-[32px] md:mb-0">
+  {/* <p className="text-[16px] text-[#220B12B2] order-4 md:order-none mb-[32px] md:mb-0">
     Made by <span>Niyot.agency</span>
-  </p>
+  </p> */}
 
   {/* 5. PAYMENTS */}
-  <div className="flex items-center gap-[33px] md:gap-[20px] lg:gap-[33px] justify-center order-5 md:order-none">
+  <div className="flex items-center gap-[33px] md:gap-[20px] lg:gap-[33px] justify-center order-3 md:order-none">
     <img src={Visa} className="h-6" />
     <img src={MasterCard} className="h-6" />
     <img src={Paypal} className="h-6" />
