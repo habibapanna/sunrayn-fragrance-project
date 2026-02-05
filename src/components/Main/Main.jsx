@@ -12,32 +12,23 @@ const Main = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // always jump to top instantly
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 
-    // show loader on route change
     setLoading(true);
-
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-
+    const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
 
-      {/* ✅ TOP ANNOUNCEMENT BAR */}
-      <TopAnnouncementBar />
+      {/* ❌ Hide top bar on Home */}
+      {!isHome && <TopAnnouncementBar />}
 
-      {/* ✅ NAVBAR */}
       <Navbar />
 
-      {/* ✅ PAGE LOADER (content only) */}
       {loading && <RouteLoader />}
 
-      {/* ✅ PAGE CONTENT */}
       <section
         className={`flex-grow ${
           isHome ? "" : "pt-[134px] md:pt-[154px]"
@@ -50,5 +41,6 @@ const Main = () => {
     </div>
   );
 };
+
 
 export default Main;
