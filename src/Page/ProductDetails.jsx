@@ -140,7 +140,7 @@ Back
         <img
           src={img}
           alt={`${product.title} ${i + 1}`}
-          className="object-cover rounded-[24px] w-[343px] h-[288px]"
+          className="object-cover rounded-[24px] 2xl:w-[343px] 2xl:h-[288px]"
         />
       </div>
     ))}
