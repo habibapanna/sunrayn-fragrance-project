@@ -16,20 +16,31 @@ const Footer = () => {
     <footer className="relative max-w-full bg-gradient-to-t from-[#FDFCFC] to-[#F0ECE5] overflow-hidden">
 
       {/* BACKGROUND LOGO */}
-      <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 pointer-events-none z-0 top-40 md:top-0">
+      {/* <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 pointer-events-none z-0 top-40 md:top-0">
         <img
           src={Logo}
           alt="Background Logo"
           className="h-full w-full object-cover opacity-80"
         />
-      </div>
+      </div> */}
 
       {/* ================= MAIN CONTENT ================= */}
       <div className="relative z-10 mx-auto lg:px-6 md:pl-[180px] lg:pl-[50px] 2xl:pl-[200px] p-[16px] py-16 md:py-[150px]">
 
         {/* MOBILE BIG S */}
-        <div className="md:hidden flex justify-center mb-12">
+        <div className="md:hidden flex justify-center mb-[24px]">
           <img src={BigS} alt="Big S" className="h-[260px]" />
+           {/* LOGO BACKGROUND */}
+  <img
+    src={Logo}
+    alt="Brand Background"
+    className="
+      absolute
+      inset-0
+      m-auto
+      h-full w-full object-cover
+    "
+  />
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-start gap-16 ">
@@ -81,12 +92,12 @@ const Footer = () => {
     hidden lg:flex
     absolute
     lg:right-[50px]
-    2xl:right-[200px]
+    2xl:right-[100px]
     top-1/2 -translate-y-1/2
     items-center justify-center
     pointer-events-none
     w-[420px] h-[420px]
-    2xl:w-[550px] 2xl:h-[550px]
+    2xl:w-[650px] 2xl:h-[650px]
   "
 >
   {/* LOGO BACKGROUND */}
@@ -97,9 +108,7 @@ const Footer = () => {
       absolute
       inset-0
       m-auto
-      w-full h-full
-      object-contain
-      scale-110
+      h-full w-full object-cover
     "
   />
 
