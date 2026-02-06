@@ -17,6 +17,7 @@ const CartOverlay = ({ onClose }) => {
   const [isDragging, setIsDragging] = useState(false);
   const sliderRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const isHome = location.pathname === "/";
 
 /* ================= RESPONSIVE ================= */
   useEffect(() => {
@@ -53,7 +54,7 @@ const CartOverlay = ({ onClose }) => {
     setStartX(null);
   };
 
-  useEffect(() => {
+    useEffect(() => {
   // When overlay opens
   document.body.style.overflow = "hidden";
 
@@ -63,12 +64,10 @@ const CartOverlay = ({ onClose }) => {
   };
 }, []);
 
-
-
-
+ const navTopClass = isHome ? "top-0" : "top-[30px]";
     
   return (
-    <aside className="fixed top-0 right-0 h-full w-full lg:w-[541px] bg-white z-50 flex flex-col">
+    <aside className={`fixed ${navTopClass} right-0 h-full w-full lg:w-[541px] bg-white z-50 flex flex-col`}>
 {/* TOP FIXED AREA */}
 <div className="sticky top-0 z-10 bg-white">
       {/* Header */}
@@ -157,7 +156,7 @@ const CartOverlay = ({ onClose }) => {
           </div>
         </div>
 {/* card slider */}
-      <div className="p-[16px] rounded-[20px] bg-[#F6F7F2]">
+      <div className="p-[16px] m-[16px] rounded-[20px] bg-[#F6F7F2]">
   <h3 className="font-medium text-[20px] mb-[16px]">Recommended Products</h3>
 
   <div className="relative overflow-x-auto">
@@ -169,7 +168,7 @@ const CartOverlay = ({ onClose }) => {
           el.scrollLeft / (el.scrollWidth - el.clientWidth);
         setScrollProgress(progress);
       }}
-    className="flex gap-[12px] overflow-x-auto scroll-smooth snap-x snap-mandatory touch-pan-x no-scrollbar pb-2">
+    className="flex gap-[12px] overflow-x-auto scroll-smooth snap-x snap-mandatory touch-pan-x scrollbar-hide pb-2">
       {products.map((item, i) => (
         <div
           key={i}
@@ -230,13 +229,7 @@ const CartOverlay = ({ onClose }) => {
         </div>
       ))}
     </div>
-      {/* FAKE SCROLLBAR */}
-    <div className="mt-[8px] h-[3px] bg-[#E5E5E5] rounded-full overflow-hidden">
-      <div
-        className="h-full bg-black rounded-full transition-all"
-        style={{ width: `${scrollProgress * 100}%` }}
-      />
-    </div>
+    
   </div>
 </div>
       </div>
