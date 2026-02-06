@@ -17,7 +17,7 @@ const Main = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 
     setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 1000);
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
