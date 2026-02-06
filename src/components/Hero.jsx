@@ -9,7 +9,7 @@ const Hero = () => {
       className="relative flex items-center bg-cover bg-no-repeat bg-center max-w-full"
       style={{
         backgroundImage:
-          "url('https://i.postimg.cc/vHNVx6j7/Image.png')",
+          "url('https://i.postimg.cc/zXjZMN4b/imgi-415-temp-hp-musky-buttercream-desktop-jpg.jpg')",
       }}
     >
 {/* MOBILE CONTENT OVERLAY */}

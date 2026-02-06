@@ -441,109 +441,88 @@ if (sortBy === "new")
   className={`
     grid gap-[16px] 2xl:gap-[32px]
     grid-cols-1
-    ${sidebarOpen ? "lg:grid-cols-1 2xl:grid-cols-2" : "lg:grid-cols-2 2xl:grid-cols-3"}
+    ${sidebarOpen ? "lg:grid-cols-1 2xl:grid-cols-2" : "lg:grid-cols-2 2xl:grid-cols-4"}
   `}
 >
 
             {filteredProducts.map((item, i) => (
-              <div key={i}>
-                <div
-                 className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px]
-    h-[384px] lg:h-[700px]
-    cursor-pointer overflow-hidden"
-  style={{
-    background:
-      "radial-gradient(72.36% 72.36% at 50% 50%, #FBF9F7 0%, #EDE8E0 100%)",
-  }}
-                  onClick={() => navigate(`/productList/${item.slug}`)}
-                >
-                  {item.off && (
-                    <div className="lg:mt-[40px] lg:ml-[40px] ml-[20px] mt-[20px]">
-                      <button className="bg-[#FFFF]/60 px-[10px] 2xl:px-[16px] h-[25px] 2xl:h-[35px] rounded-full font-normal text-[12px] lg:text-[14px]">
-                        {item.off}
-                      </button>
-                    </div>
-                  )}
-
-                  <img
-                    src={item.images[0]}
-                    alt={item.title}
-                    className="absolute inset-0 mx-auto h-[236px] lg:h-[501px] object-cover"
-                  />
-
-                  <div className="absolute bottom-0 left-0 w-full z-20 p-[20px] lg:p-[40px]">
-                  <div className="flex items-center gap-[2px] 2xl:gap-[8px] text-[#FF9100]">
-                    {[...Array(5)].map((_, i) => (
-                      <FaStar key={i} className="h-[12px] lg:h-[15px]" />
-                    ))}
-                    <span className="text-[#0D0C09] text-[12px] 2xl:text-[14px] font-normal">
-                      1239
-                    </span>
-                  </div>
-
-                  <h3 className="text-[20px] md:text-[35px] font-normal text-[#571313]">
-                    {item.title}
-                  </h3>
-
-                  <p className="text-[12px] 2xl:text-[18px] text-[#0D0C09] mb-[12px] md:mb-[26px]">
-                    Sanrayn Original
-                  </p>
-
-                  <div className="flex items-center justify-between gap-3">
-                    <button
-  className="
-    bg-white/60 backdrop-blur-md
-    px-[24px] py-[10px]
-    rounded-full font-semibold
-    w-[130px] h-[32px]
-    lg:h-[45px] lg:w-[167px]
-    text-[14px] 2xl:text-[16px]
-    flex items-center justify-center
-    border border-[#BA9948]
-    cursor-pointer
-
-    text-[#1D0B01]
-    transition-all duration-500 ease-out
-    hover:bg-[#BA9948] hover:text-white
-  "
+             <div
+  key={i}
+  onClick={() => navigate(`/productList/${item.slug}`)}
+  className="bg-[#F4EFE9] rounded-[24px] overflow-hidden 
+cursor-pointer transition hover:shadow-lg
+flex flex-col
+md:flex-col
+sm:flex-row"
 >
-  Add to Cart
-</button>
+  {/* IMAGE SECTION */}
+  <div className="relative">
 
-                    <div className="flex gap-[12px] md:gap-[20px]">
-                      <div>
-                        <button className="text-[#FC2525] text-[16px] bg-[#FFFFFF80]/50 py-[10px] px-[20px] rounded-[100px] line-through hidden lg:block">
-                          ${item.oldPrice}
-                        </button>
-                      </div>
-                      <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[16px] 2xl:text-[18px] h-[33px] w-[68px] font-normal"
-                      >
-                        <div className="absolute -top-[2px] 2xl:-top-[10px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[8px] text-white 2xl:text-[10px] font-bold z-10 2xl:h-[20px] h-[10px] w-[35px] 2xl:w-[50px] flex items-center justify-center">
-                          -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
-                        </div>
+    {/* Top Tags */}
+    <div className="absolute top-3 left-3 z-10">
+      <span className="bg-white/80 text-[12px] px-3 py-1 rounded-full border text-[#BA9948] border-[#BA9948]">
+        {item.gender}
+      </span>
+    </div>
 
-                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 105 45" fill="none">
-                          <path
-                            d="M95 11V0H10V11C4.47715 11 0 15.4772 0 21V24C0 29.5228 4.47715 34 10 34V45H95V34C100.523 34 105 29.5228 105 24V21C105 15.4772 100.523 11 95 11Z"
-                            fill="#BA9948"
-                          />
-                          <text
-                            x="52.5"
-                            y="30"
-                            textAnchor="middle"
-                            fontWeight="700"
-                            fill="#FFFFFF"
-                            fontFamily="sans-serif"
-                          >
-                            ${item.price.toFixed(2)}
-                          </text>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                </div>
-              </div>
+    <div className="absolute top-3 right-3 z-10">
+      <span className="bg-white/80 text-[12px] px-3 py-1 rounded-full">
+        {item.off}
+      </span>
+    </div>
+
+    <img
+      src={item.images[0]}
+      alt={item.title}
+      className="w-full h-[171px] lg:h-[260px] object-cover"
+    />
+  </div>
+
+  {/* CONTENT SECTION */}
+  <div className="p-[16px]">
+
+    {/* Rating */}
+    <div className="flex items-center gap-2 text-[#FF9100]">
+      {[...Array(5)].map((_, index) => (
+        <FaStar key={index} className="text-[14px]" />
+      ))}
+      <span className="text-[#1D0B01] text-sm">1239</span>
+    </div>
+
+    {/* Title + Price Row */}
+    <div className="flex justify-between items-start mt-2">
+      <h3 className="text-[#571313] text-[18px] font-semibold">
+        {item.title}
+      </h3>
+
+      <div className="text-right">
+        <p className="text-red-400 line-through text-sm">
+          ${item.oldPrice}
+        </p>
+        <p className="text-[#1D0B01] font-semibold text-lg">
+          ${item.price}
+        </p>
+      </div>
+    </div>
+
+    <p className="text-sm text-gray-600 mt-1">
+      Inspired by <br />
+      <span className="font-semibold text-[#1D0B01]">
+        Tom Ford's Oud Wood
+      </span>
+    </p>
+
+    {/* Add to Cart */}
+    <button
+      className="mt-4 w-full border border-[#571313] text-[#571313] 
+      rounded-full py-2 font-medium 
+      hover:bg-[#571313] hover:text-white transition"
+    >
+      Add to cart
+    </button>
+  </div>
+</div>
+
             ))}
           </div>
         </section>
