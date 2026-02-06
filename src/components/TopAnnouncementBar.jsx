@@ -23,7 +23,8 @@ const TopAnnouncementBar = () => {
     setIndex((prev) => (prev === messages.length - 1 ? 0 : prev + 1));
 
   return (
-    <div className="fixed top-0 left-0 right-0 md:left-[32px] md:right-[32px] w-full z-[60] bg-[#1C1C1C] text-white lg:rounded-full ">
+    <div className="fixed top-0 left-0 right-0
+ z-[60] bg-[#1C1C1C] text-white lg:rounded-full ">
       <div className="max-w-[1600px] mx-auto px-4 h-[44px] flex items-center justify-between rounded-b-[24px]">
 
         {/* DESKTOP */}

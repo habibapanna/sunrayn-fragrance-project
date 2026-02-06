@@ -477,7 +477,7 @@ if (sortBy === "new")
   <img
     src={item.images[0]}
     alt={item.title}
-    className="w-full h-full md:h-[260px] object-cover"
+    className="w-full h-full md:h-[360px] object-cover"
   />
 
   {/* DESKTOP HOVER ADD TO CART */}
