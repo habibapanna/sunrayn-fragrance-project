@@ -84,9 +84,9 @@ useEffect(() => {
 
 
 const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? "bg-[#F6F7F2] backdrop-blur-md"
+  ? "bg-[#BA9948]/45 backdrop-blur-2xl rounded-full"
   : scrolled
-  ? "bg-[#BA9948]/40 backdrop-blur-2xl rounded-full "
+  ? "bg-[#BA9948]/45 backdrop-blur-2xl rounded-full "
   : "bg-transparent";
 
 const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
