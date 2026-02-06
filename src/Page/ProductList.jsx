@@ -435,91 +435,120 @@ if (sortBy === "new")
   </>
 )}
 
-        {/* CARDS (SCROLLS INDEPENDENTLY) */}
+        {/* CARDS */}
         <section className="flex-1">
          <div
   className={`
     grid gap-[16px] 2xl:gap-[32px]
     grid-cols-1
-    ${sidebarOpen ? "lg:grid-cols-1 2xl:grid-cols-2" : "lg:grid-cols-2 2xl:grid-cols-4"}
+    ${sidebarOpen ? "lg:grid-cols-1 2xl:grid-cols-3" : "lg:grid-cols-2 2xl:grid-cols-4"}
   `}
 >
-
             {filteredProducts.map((item, i) => (
-             <div
+        <div
   key={i}
   onClick={() => navigate(`/productList/${item.slug}`)}
-  className="bg-[#F4EFE9] rounded-[24px] overflow-hidden 
-cursor-pointer transition hover:shadow-lg
-flex flex-col
-md:flex-col
-sm:flex-row"
+  className="group bg-[#F6F7F2] rounded-[16px] md:rounded-[24px]
+  overflow-hidden cursor-pointer transition duration-500 ease-out
+  flex flex-row md:flex-col"
 >
-  {/* IMAGE SECTION */}
-  <div className="relative">
 
-    {/* Top Tags */}
-    <div className="absolute top-3 left-3 z-10">
-      <span className="bg-white/80 text-[12px] px-3 py-1 rounded-full border text-[#BA9948] border-[#BA9948]">
-        {item.gender}
-      </span>
-    </div>
 
-    <div className="absolute top-3 right-3 z-10">
-      <span className="bg-white/80 text-[12px] px-3 py-1 rounded-full">
-        {item.off}
-      </span>
-    </div>
+{/* IMAGE SECTION */}
+<div className="relative overflow-hidden w-[120px] sm:w-[140px] md:w-full flex-shrink-0">
 
-    <img
-      src={item.images[0]}
-      alt={item.title}
-      className="w-full h-[171px] lg:h-[260px] object-cover"
-    />
+  {/* Tags */}
+  <div className="absolute top-[8px] left-[8px] md:top-[16px] md:left-[16px] z-10">
+    <span className="bg-white/60 text-[10px] md:text-[12px] px-2 rounded-full border text-[#BA9948] border-[#BA9948]">
+      {item.gender}
+    </span>
+  </div>
+  <div className="absolute hidden md:block top-[16px] right-[16px] z-10">
+    <span className="bg-white/60 text-[10px] md:text-[12px] px-2 rounded-full uppercase">
+      {item.off}
+    </span>
+  </div>
+  <div className="absolute md:hidden bottom-[8px] left-[8px] z-10">
+    <span className="bg-white/60 text-[10px] md:text-[12px] px-2 rounded-full uppercase">
+      {item.off}
+    </span>
   </div>
 
+  <img
+    src={item.images[0]}
+    alt={item.title}
+    className="w-full h-full md:h-[260px] object-cover"
+  />
+
+  {/* DESKTOP HOVER ADD TO CART */}
+  <div className="hidden md:block absolute bottom-0 left-0 w-full
+    translate-y-full opacity-0
+    group-hover:translate-y-0 group-hover:opacity-100
+    transition-all duration-300 ease-out
+    p-3 bg-gradient-to-t from-black/60 to-transparent"
+  >
+    <button
+      onClick={(e) => e.stopPropagation()}
+      className="w-full bg-white/80 text-[#BA9948]
+      rounded-full py-2 font-medium
+      hover:bg-[#BA9948] hover:text-white
+      border border-[#BA9948] transition"
+    >
+      Add to cart
+    </button>
+  </div>
+</div>
+
+
+
   {/* CONTENT SECTION */}
-  <div className="p-[16px]">
+ <div className="flex-1 p-[12px] md:p-[16px] flex flex-col justify-between">
 
     {/* Rating */}
-    <div className="flex items-center gap-2 text-[#FF9100]">
+<div className="flex items-center gap-[8px]">   
+   <div className="flex items-center gap-[4px] text-[#FF9100]">
       {[...Array(5)].map((_, index) => (
-        <FaStar key={index} className="text-[14px]" />
+        <FaStar key={index} className="text-[12px]" />
       ))}
-      <span className="text-[#1D0B01] text-sm">1239</span>
+     
+    </div>
+     <span className="text-[#1D0B01] text-[12px]">1239</span>
     </div>
 
     {/* Title + Price Row */}
-    <div className="flex justify-between items-start mt-2">
-      <h3 className="text-[#571313] text-[18px] font-semibold">
+    <div className="flex justify-between items-center mt-[12px] md:[4px]">
+      <h3 className="text-[#571313] text-[12px] md:text-[15px] font-semibold uppercase">
         {item.title}
       </h3>
-
-      <div className="text-right">
-        <p className="text-red-400 line-through text-sm">
+      <div className="flex gap-[6px]">
+        <p className="text-[#F80000] line-through text-[13px] md:text-[15px]">
           ${item.oldPrice}
         </p>
-        <p className="text-[#1D0B01] font-semibold text-lg">
+        <p className="text-[#571313] font-semibold text-[13px] md:text-[15px]">
           ${item.price}
         </p>
       </div>
     </div>
 
-    <p className="text-sm text-gray-600 mt-1">
+    <p className="text-[12px] mt-[12px] md:[4px] text-[#0D0C09]">
       Inspired by <br />
       <span className="font-semibold text-[#1D0B01]">
         Tom Ford's Oud Wood
       </span>
     </p>
+    {/* MOBILE ADD TO CART */}
+<div className="flex justify-end mt-[12px] md:hidden">
+  <button
+    onClick={(e) => e.stopPropagation()}
+    className="px-[24px] py-[10px] text-[12px]
+    rounded-full border border-[#BA9948]
+    text-[#BA9948] hover:bg-[#BA9948]
+    hover:text-white transition w-full"
+  >
+    Add to cart
+  </button>
+</div>
 
-    {/* Add to Cart */}
-    <button
-      className="mt-4 w-full border border-[#571313] text-[#571313] 
-      rounded-full py-2 font-medium 
-      hover:bg-[#571313] hover:text-white transition"
-    >
-      Add to cart
-    </button>
   </div>
 </div>
 

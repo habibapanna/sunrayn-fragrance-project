@@ -63,7 +63,7 @@ useEffect(() => {
     ${
       animateIcon
         ? "translate-x-0"
-        : "-translate-x-[350px] lg:-translate-x-[900px]"
+        : "-translate-x-[300px] lg:-translate-x-[900px]"
     }
   `}
 >

@@ -34,7 +34,13 @@ const [signInUpOpen, setSignInUpOpen] = useState(false);
 // values: "perfume" | "collection" | null
 
 const [openPerfume, setOpenPerfume] = useState(true);
-const [activeSection, setActiveSection] = useState(null);
+const [activeSection, setActiveSection] = useState({
+  style: true,
+  family: true,
+  type: true,
+  brand: true,
+});
+
 const [selectedItem, setSelectedItem] = useState(null);
 const [openCollection, setOpenCollection] = useState(false);
 const location = useLocation();
@@ -84,7 +90,7 @@ useEffect(() => {
 
 
 const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? "bg-[#BA9948]/45 backdrop-blur-2xl rounded-full"
+  ? "bg-[#F0ECE5] backdrop-blur-2xl"
   : scrolled
   ? "bg-[#BA9948]/45 backdrop-blur-2xl rounded-full "
   : "bg-transparent";
@@ -160,11 +166,9 @@ const MobileGrid = ({ items }) => (
     fixed z-50 transition-all duration-300
     ${navTopClass}
     ${navBgClass}
-    ${scrolled ? "left-[32px] right-[32px]" : "left-0 right-0"}
+    ${scrolled ? "left-[16px] right-[16px] 2xl:left-[32px] 2xl:right-[32px]" : "left-0 right-0"}
   `}
 >
-
-
 
         <div className="mx-auto px-[16px] 2xl:px-[32px] lg:py-[10px] flex items-center justify-between text-white ">
 
@@ -428,11 +432,11 @@ const MobileGrid = ({ items }) => (
             </div>
 
             {/* MOBILE ICONS */}
-            <div className="flex lg:hidden items-center gap-[16px] py-[24px]">
+            <div className="flex lg:hidden items-center gap-[16px] py-[10px]">
               <button
                title="Search Perfumes"
   onClick={() => setSearchOpen(true)}
-  className="bg-white/90 p-[10px] h-[35px] w-[35px] flex items-center rounded-full"
+  className="bg-white/90 p-[8px] h-[30px] w-[30px] flex items-center rounded-full"
 >
   <svg  className="h-[24px] w-[24px] " xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 17 17" fill="none">
   <path fill-rule="evenodd" clip-rule="evenodd" d="M7.91667 1.66667C4.46489 1.66667 1.66667 4.46489 1.66667 7.91667C1.66667 11.3684 4.46489 14.1667 7.91667 14.1667C9.59425 14.1667 11.1175 13.5057 12.2401 12.43C12.266 12.3941 12.2952 12.3597 12.3275 12.3274C12.3598 12.2951 12.3942 12.2659 12.4301 12.24C13.5058 11.1174 14.1667 9.59421 14.1667 7.91667C14.1667 4.46489 11.3684 1.66667 7.91667 1.66667ZM14.073 12.8944C15.1739 11.5345 15.8333 9.80261 15.8333 7.91667C15.8333 3.54441 12.2889 0 7.91667 0C3.54441 0 0 3.54441 0 7.91667C0 12.2889 3.54441 15.8333 7.91667 15.8333C9.80264 15.8333 11.5346 15.1739 12.8945 14.0729L15.2441 16.4226C15.5695 16.748 16.0971 16.748 16.4226 16.4226C16.748 16.0972 16.748 15.5695 16.4226 15.2441L14.073 12.8944Z" fill="#1D0B01"/>
@@ -441,7 +445,7 @@ const MobileGrid = ({ items }) => (
               <button
                title="View Cart"
   onClick={() => setCartOpen(true)}
-  className="bg-white/90 p-[10px] h-[35px] w-[35px] flex items-center rounded-full"
+  className="bg-white/90 p-[8px] h-[30px] w-[30px] flex items-center rounded-full"
 >
   <svg className="h-[24px] w-[24px] " xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 20 20" fill="none">
   <g opacity="0.7">
@@ -455,7 +459,7 @@ const MobileGrid = ({ items }) => (
               <button
                title="Open Menu"
                 onClick={() => setOpen(true)}
-                className="bg-white/90 w-[35px] h-[35px] p-[8px] rounded-full flex items-center"
+                className="bg-white/90 p-[8px] h-[30px] w-[30px] rounded-full flex items-center"
               >
                 <TbMenu className="text-[#1D0B01] h-[24px] w-[24px] cursor-pointer" />
               </button>
@@ -509,8 +513,6 @@ const MobileGrid = ({ items }) => (
 )}
 
 
-
-
       {/* OVERLAY */}
       {open && (
         <div
@@ -519,158 +521,180 @@ const MobileGrid = ({ items }) => (
         />
       )}
 
-      {/* MOBILE SIDEBAR */}
-      <aside
-        className={`fixed top-0 left-0 h-full w-[100%] bg-[#F6F7F2] z-50
-        transform transition-transform overflow-y-auto duration-500 lg:hidden
-        ${open ? "translate-x-0" : "-translate-x-full"}`}
-      >
-       <div className="relative flex items-center justify-between px-[20px] py-[16px]">
-  <div className="flex justify-center items-center gap-[12px]">
-    <button
-  onClick={() => {
-    setOpen(false);
-    setSignInUpOpen(true);
-  }}
-  className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px]"
+    {/* MOBILE SIDEBAR */}
+<aside
+  className={`fixed top-0 left-0 h-full w-[100%] bg-[#F6F7F2] z-50
+  transform transition-transform overflow-y-auto duration-500 lg:hidden
+  ${open ? "translate-x-0" : "-translate-x-full"}`}
 >
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  {/* HEADER */}
+  <div className="relative flex items-center justify-between px-[20px] py-[16px]">
+    <div className="flex items-center gap-[12px]">
+      <button
+        onClick={() => {
+          setOpen(false);
+          setSignInUpOpen(true);
+        }}
+        className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px]"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <g opacity="0.7">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0009 3.33329C8.39002 3.33329 7.08419 4.63913 7.08419 6.24996C7.08419 7.86079 8.39002 9.16663 10.0009 9.16663C11.6117 9.16663 12.9175 7.86079 12.9175 6.24996C12.9175 4.63913 11.6117 3.33329 10.0009 3.33329ZM5.41752 6.24996C5.41752 3.71865 7.46955 1.66663 10.0009 1.66663C12.5322 1.66663 14.5842 3.71865 14.5842 6.24996C14.5842 8.78126 12.5322 10.8333 10.0009 10.8333C7.46955 10.8333 5.41752 8.78126 5.41752 6.24996ZM10.0009 13.3333C7.63499 13.3333 5.52626 14.4744 4.17906 16.2573C4.09664 16.3664 4.03357 16.45 3.9811 16.5234C3.94127 16.5792 3.91409 16.6201 3.89516 16.6511C4.01902 16.6653 4.19549 16.6666 4.52355 16.6666H15.4782C15.8062 16.6666 15.9827 16.6653 16.1065 16.6511C16.0876 16.6201 16.0604 16.5792 16.0206 16.5234C15.9681 16.45 15.9051 16.3664 15.8227 16.2573C14.4755 14.4744 12.3667 13.3333 10.0009 13.3333ZM2.84931 15.2526C4.49344 13.0766 7.08325 11.6666 10.0009 11.6666C12.9185 11.6666 15.5083 13.0766 17.1524 15.2526C17.1598 15.2624 17.1673 15.2723 17.1748 15.2822C17.3162 15.4691 17.4677 15.6696 17.5761 15.8629C17.7072 16.097 17.8043 16.3678 17.7983 16.6971C17.7935 16.9618 17.7133 17.2096 17.6159 17.4053C17.5185 17.601 17.3691 17.8143 17.1608 17.9778C16.8831 18.1958 16.5806 18.2729 16.312 18.3051C16.0763 18.3334 15.797 18.3334 15.5161 18.3333C15.5035 18.3333 15.4908 18.3333 15.4782 18.3333H4.52355C4.51089 18.3333 4.49823 18.3333 4.48557 18.3333C4.20474 18.3334 3.92542 18.3334 3.68972 18.3051C3.42107 18.2729 3.11864 18.1958 2.84087 17.9778C2.63258 17.8143 2.48323 17.601 2.38583 17.4053C2.28844 17.2096 2.20823 16.9618 2.20339 16.6971C2.19737 16.3678 2.29454 16.097 2.42565 15.8629C2.53397 15.6696 2.68555 15.4691 2.82691 15.2822C2.83441 15.2723 2.84188 15.2624 2.84931 15.2526Z" fill="#744F18"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0009 3.33335C8.39002 3.33335 7.08419 4.63919 7.08419 6.25002C7.08419 7.86085 8.39002 9.16669 10.0009 9.16669C11.6117 9.16669 12.9175 7.86085 12.9175 6.25002C12.9175 4.63919 11.6117 3.33335 10.0009 3.33335ZM5.41752 6.25002C5.41752 3.71872 7.46955 1.66669 10.0009 1.66669C12.5322 1.66669 14.5842 3.71872 14.5842 6.25002C14.5842 8.78133 12.5322 10.8334 10.0009 10.8334C7.46955 10.8334 5.41752 8.78133 5.41752 6.25002ZM10.0009 13.3334C7.63499 13.3334 5.52626 14.4744 4.17906 16.2574C4.09664 16.3664 4.03357 16.45 3.9811 16.5235C3.94127 16.5792 3.91409 16.6202 3.89516 16.6512C4.01902 16.6653 4.19549 16.6667 4.52355 16.6667H15.4782C15.8062 16.6667 15.9827 16.6653 16.1065 16.6512C16.0876 16.6202 16.0604 16.5792 16.0206 16.5235C15.9681 16.45 15.9051 16.3664 15.8227 16.2574C14.4755 14.4744 12.3667 13.3334 10.0009 13.3334ZM2.84931 15.2526C4.49344 13.0767 7.08325 11.6667 10.0009 11.6667C12.9185 11.6667 15.5083 13.0767 17.1524 15.2526C17.1598 15.2624 17.1673 15.2723 17.1748 15.2822C17.3162 15.4692 17.4677 15.6696 17.5761 15.863C17.7072 16.0971 17.8043 16.3678 17.7983 16.6972C17.7935 16.9619 17.7133 17.2097 17.6159 17.4053C17.5185 17.601 17.3691 17.8144 17.1608 17.9778C16.8831 18.1958 16.5806 18.273 16.312 18.3052C16.0763 18.3335 15.797 18.3334 15.5161 18.3334C15.5035 18.3334 15.4908 18.3334 15.4782 18.3334H4.52355C4.51089 18.3334 4.49823 18.3334 4.48557 18.3334C4.20474 18.3334 3.92542 18.3335 3.68972 18.3052C3.42107 18.273 3.11864 18.1958 2.84087 17.9778C2.63258 17.8144 2.48323 17.601 2.38583 17.4053C2.28844 17.2097 2.20823 16.9619 2.20339 16.6972C2.19737 16.3678 2.29454 16.0971 2.42565 15.863C2.53397 15.6696 2.68555 15.4692 2.82691 15.2822C2.83441 15.2723 2.84188 15.2624 2.84931 15.2526Z" fill="#1D0B01"/>
   </g>
 </svg>
+      </button>
+      <span className="font-bold text-[#282828] text-[16px]">Login</span>
+    </div>
+
+    <button
+      className="underline text-[#282828] text-[16px]"
+      onClick={() => setOpen(false)}
+    >
+      Close
     </button>
-    <span className="font-bold text-[#282828] text-[16px]">Login</span>
+
+    <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#571313]/10" />
   </div>
 
-  <button className="underline cursor-pointer text-[#282828] text-[16px]" onClick={() => setOpen(false)}>
-   Close
-  </button>
+  <div className="p-5 space-y-6">
 
-  {/* Figma-style header divider */}
-  <span className="absolute bottom-0 left-0 right-0 h-[1px] bg-[#571313]/10" />
-</div>
+    {/* PERFUMES */}
+    <div>
+      <h3 className="text-[14px] font-semibold mb-3">Perfumes</h3>
 
+      <div className="bg-white rounded-[24px] p-4 space-y-3">
 
-       <div className="p-5 space-y-6">
+        {/* Perfume Style */}
+        <button
+          onClick={() =>
+            setActiveSection(prev => ({ ...prev, style: !prev.style }))
+          }
+          className="w-full flex justify-between items-center text-[14px]"
+        >
+          Perfume Style
+          <LiaAngleDownSolid
+            className={`text-xl transition-transform duration-300 ${
+              activeSection.style ? "rotate-180" : ""
+            }`}
+          />
+        </button>
 
-{/* PERFUMES */}
-<div>
-  <h3 className="text-[14px] font-semibold mb-3">Perfumes</h3>
+        <div
+          className={`overflow-hidden transition-all duration-500 ease-in-out ${
+            activeSection.style
+              ? "max-h-[500px] opacity-100 mt-3"
+              : "max-h-0 opacity-0"
+          }`}
+        >
+          <MobileGrid items={perfumeStyles} />
+        </div>
 
-  <div className="bg-white rounded-[24px] p-4 space-y-3">
-    
-    {/* Perfume Style */}
-    <button
-      onClick={() =>
-        setActiveSection(
-          activeSection === "style" ? null : "style"
-        )
-      }
-      className="w-full flex justify-between items-center text-[14px]"
-    >
-      Perfume Style
-      <LiaAngleDownSolid
-        className={`text-xl transition-transform ${
-          activeSection === "style" ? "rotate-180" : ""
-        }`}
-      />
-    </button>
+        <div className="border border-[#571313]/10" />
 
-    {activeSection === "style" && (
-      <MobileGrid items={perfumeStyles} />
-    )}
-<div className="border border-[#571313]/10"></div>
-    {/* Perfume Family */}
-    <button
-      onClick={() =>
-        setActiveSection(
-          activeSection === "family" ? null : "family"
-        )
-      }
-      className="w-full flex justify-between items-center text-[14px]"
-    >
-      Perfume Family
-      <LiaAngleDownSolid
-        className={`text-xl transition-transform ${
-          activeSection === "family" ? "rotate-180" : ""
-        }`}
-      />
-    </button>
+        {/* Perfume Family */}
+        <button
+          onClick={() =>
+            setActiveSection(prev => ({ ...prev, family: !prev.family }))
+          }
+          className="w-full flex justify-between items-center text-[14px]"
+        >
+          Perfume Family
+          <LiaAngleDownSolid
+            className={`text-xl transition-transform duration-300 ${
+              activeSection.family ? "rotate-180" : ""
+            }`}
+          />
+        </button>
 
-    {activeSection === "family" && (
-      <MobileGrid items={perfumeFamilies} />
-    )}
-  <div className="border border-[#571313]/10"></div>
-  </div>
+        <div
+          className={`overflow-hidden transition-all duration-500 ease-in-out ${
+            activeSection.family
+              ? "max-h-[500px] opacity-100 mt-3"
+              : "max-h-0 opacity-0"
+          }`}
+        >
+          <MobileGrid items={perfumeFamilies} />
+        </div>
 
-</div>
+        <div className="border border-[#571313]/10" />
+      </div>
+    </div>
 
+    {/* COLLECTIONS */}
+    <div>
+      <h3 className="text-[14px] font-semibold mb-3">Collections</h3>
 
- {/* COLLECTIONS */}
-<div>
-  <h3 className="text-[14px] font-semibold mb-3">Collections</h3>
+      <div className="bg-white rounded-[24px] p-4 space-y-3">
 
-  <div className="bg-white rounded-[24px] p-4 space-y-3">
+        {/* Perfume Type */}
+        <button
+          onClick={() =>
+            setActiveSection(prev => ({ ...prev, type: !prev.type }))
+          }
+          className="w-full flex justify-between items-center text-[14px]"
+        >
+          Perfume Type
+          <LiaAngleDownSolid
+            className={`text-xl transition-transform duration-300 ${
+              activeSection.type ? "rotate-180" : ""
+            }`}
+          />
+        </button>
 
-    {/* Perfume Type */}
-    <button
-      onClick={() =>
-        setActiveSection(
-          activeSection === "type" ? null : "type"
-        )
-      }
-      className="w-full flex justify-between items-center text-[14px]"
-    >
-      Perfume Type
-      <LiaAngleDownSolid
-        className={`text-xl transition-transform ${
-          activeSection === "type" ? "rotate-180" : ""
-        }`}
-      />
-    </button>
+        <div
+          className={`overflow-hidden transition-all duration-500 ease-in-out ${
+            activeSection.type
+              ? "max-h-[500px] opacity-100 mt-3"
+              : "max-h-0 opacity-0"
+          }`}
+        >
+          <MobileGrid items={perfumeTypes} />
+        </div>
 
-    {activeSection === "type" && (
-      <MobileGrid items={perfumeTypes} />
-    )}
-<div className="border border-[#571313]/10"></div>
-    {/* Inspired by Brand */}
-    <button
-      onClick={() =>
-        setActiveSection(
-          activeSection === "brand" ? null : "brand"
-        )
-      }
-      className="w-full flex justify-between items-center text-[14px]"
-    >
-      Inspired by Brand
-      <LiaAngleDownSolid
-        className={`text-xl transition-transform ${
-          activeSection === "brand" ? "rotate-180" : ""
-        }`}
-      />
-    </button>
+        <div className="border border-[#571313]/10" />
 
-    {activeSection === "brand" && (
-      <MobileGrid items={inspiredBrands} />
-    )}
-  <div className="border border-[#571313]/10"></div>
-  </div>
-</div>
+        {/* Inspired by Brand */}
+        <button
+          onClick={() =>
+            setActiveSection(prev => ({ ...prev, brand: !prev.brand }))
+          }
+          className="w-full flex justify-between items-center text-[14px]"
+        >
+          Inspired by Brand
+          <LiaAngleDownSolid
+            className={`text-xl transition-transform duration-300 ${
+              activeSection.brand ? "rotate-180" : ""
+            }`}
+          />
+        </button>
 
+        <div
+          className={`overflow-hidden transition-all duration-500 ease-in-out ${
+            activeSection.brand
+              ? "max-h-[500px] opacity-100 mt-3"
+              : "max-h-0 opacity-0"
+          }`}
+        >
+          <MobileGrid items={inspiredBrands} />
+        </div>
 
-  {/* HOLIDAY SALE */}
-  <Link to='/holidayOffer'>
-  <button className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[14px] rounded-[100px] font-semibold flex items-center gap-[6px] w-full justify-center">
-    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+        <div className="border border-[#571313]/10" />
+      </div>
+    </div>
+
+    {/* HOLIDAY SALE */}
+    <Link to="/holidayOffer">
+      <button className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[14px] rounded-[100px] font-semibold flex items-center gap-[6px] w-full justify-center">
+       <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
   <path fill-rule="evenodd" clip-rule="evenodd" d="M0.102704 9.01322C0.341871 9.84906 0.986038 10.4924 2.27354 11.7799L3.79854 13.3049C6.04021 15.5474 7.1602 16.6666 8.55187 16.6666C9.94437 16.6666 11.0644 15.5466 13.3052 13.3057C15.5469 11.0641 16.6669 9.94406 16.6669 8.55156C16.6669 7.15989 15.5469 6.03906 13.306 3.79822L11.781 2.27322C10.4927 0.985722 9.84937 0.341555 9.01354 0.102389C8.1777 -0.137611 7.29021 0.0673885 5.51604 0.477389L4.4927 0.713222C2.99937 1.05739 2.2527 1.22989 1.74104 1.74072C1.22937 2.25156 1.05854 2.99989 0.713538 4.49239L0.476871 5.51572C0.0677045 7.29072 -0.136462 8.17739 0.102704 9.01322ZM6.76854 4.39239C6.92927 4.54739 7.0575 4.73287 7.14575 4.93799C7.234 5.1431 7.28049 5.36375 7.28252 5.58703C7.28454 5.81032 7.24205 6.03177 7.15754 6.23845C7.07302 6.44513 6.94817 6.6329 6.79028 6.7908C6.63239 6.94869 6.44462 7.07354 6.23793 7.15806C6.03125 7.24257 5.8098 7.28506 5.58651 7.28303C5.36323 7.28101 5.14259 7.23451 4.93747 7.14627C4.73235 7.05802 4.54688 6.92978 4.39187 6.76906C4.08608 6.45197 3.91699 6.02752 3.92099 5.58703C3.92498 5.14654 4.10174 4.72522 4.41322 4.41374C4.72471 4.10225 5.14603 3.9255 5.58651 3.9215C6.027 3.91751 6.45146 4.0866 6.76854 4.39239ZM14.2085 8.37572L8.3927 14.1924C8.27477 14.3062 8.11687 14.3691 7.953 14.3676C7.78912 14.3661 7.63239 14.3003 7.51657 14.1844C7.40074 14.0684 7.33509 13.9116 7.33374 13.7478C7.33239 13.5839 7.39547 13.426 7.50937 13.3082L13.3244 7.49156C13.4416 7.37431 13.6006 7.30844 13.7665 7.30844C13.9323 7.30844 14.0913 7.37431 14.2085 7.49156C14.3258 7.6088 14.3917 7.76783 14.3917 7.93364C14.3917 8.09945 14.3258 8.25847 14.2085 8.37572Z" fill="white"/>
 </svg>
-    Holiday Sale
-  </button></Link>
+        Holiday Sale
+      </button>
+    </Link>
 
-</div>
+  </div>
+</aside>
 
-      </aside>
     </>
   );
 };
