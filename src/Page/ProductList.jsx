@@ -455,21 +455,21 @@ if (sortBy === "new")
 
 
 {/* IMAGE SECTION */}
-<div className="relative overflow-hidden w-[120px] sm:w-[140px] md:w-full flex-shrink-0">
+<div className="relative overflow-hidden w-[150px] md:w-full flex-shrink-0">
 
   {/* Tags */}
   <div className="absolute top-[8px] left-[8px] md:top-[16px] md:left-[16px] z-10">
-    <span className="bg-white/60 text-[10px] md:text-[12px] px-2 rounded-full border text-[#BA9948] border-[#BA9948]">
+    <span className="bg-white/60 text-[10px] md:text-[12px] px-[8px] py-[2px] rounded-full border text-[#BA9948] border-[#BA9948]">
       {item.gender}
     </span>
   </div>
   <div className="absolute hidden md:block top-[16px] right-[16px] z-10">
-    <span className="bg-white/60 text-[10px] md:text-[12px] px-2 rounded-full uppercase">
+    <span className="bg-white/60 text-[10px] md:text-[12px] px-[8px] py-[2px] rounded-full uppercase">
       {item.off}
     </span>
   </div>
   <div className="absolute md:hidden bottom-[8px] left-[8px] z-10">
-    <span className="bg-white/60 text-[10px] md:text-[12px] px-2 rounded-full uppercase">
+    <span className="bg-white/60 text-[10px] md:text-[12px] px-[8px] py-[2px] rounded-full uppercase">
       {item.off}
     </span>
   </div>
@@ -489,7 +489,7 @@ if (sortBy === "new")
   >
     <button
       onClick={(e) => e.stopPropagation()}
-      className="w-full bg-white/80 text-[#BA9948]
+      className="w-full bg-white/80 text-black cursor-pointer
       rounded-full py-2 font-medium
       hover:bg-[#BA9948] hover:text-white
       border border-[#BA9948] transition"

@@ -97,7 +97,7 @@ const Featured = () => {
                 <img
                   src={item.images}
                   alt={item.title}
-                  className="absolute inset-0 mx-auto h-full object-cover"
+                  className="absolute inset-0 mx-auto h-full w-full object-cover"
                 />
  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 w-full z-20 p-[20px] lg:p-[40px]">
@@ -118,19 +118,19 @@ const Featured = () => {
                     Sanrayn Original
                   </p>  
                   <div className="flex items-center justify-between gap-3">
-                    <button
+                     <button
   className="
-    bg-white backdrop-blur-md
+    hover:bg-white backdrop-blur-md
     px-[24px] py-[10px]
     rounded-full font-semibold
     w-[130px] h-[32px]
     lg:h-[45px] lg:w-[167px]
     text-[14px] 2xl:text-[16px]
     flex items-center justify-center
-    cursor-pointer
-    text-[#1D0B01]
+    cursor-pointer bg-[#1D0B01]/50
+    hover:text-[#1D0B01]
     transition-all duration-500 ease-out
-    hover:bg-[#BA9948] hover:text-white
+   text-white border border-white
   "
 >
   Add to Cart
