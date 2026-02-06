@@ -179,31 +179,29 @@ const CartOverlay = ({ onClose }) => {
           className="snap-start flex-shrink-0 w-[215px]"
         >
           <div className="relative h-[272px] rounded-[24px] overflow-hidden"
-          style={{
-    background:
-      "radial-gradient(72.36% 72.36% at 50% 50%, #FBF9F7 0%, #EDE8E0 100%)",
-  }}
+      
           >
             <img
-              src={item.images[0]}
-              className="mx-auto h-[148px] w-[148px] object-cover"
+              src={item.images}
+              className="absolute inset-0 mx-auto h-full w-full object-cover"
             />
-
+<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+              
             <div className="absolute bottom-0 left-0 w-full p-3">
-              <div className="flex gap-1 text-[#FF9100] text-[12px]">
+              <div className="flex gap-[2px] text-[#FF9100] text-[12px]">
                 {[...Array(5)].map((_, i) => (
                   <FaStar key={i} />
                 ))}
-                <span className="text-black ml-1">1239</span>
+                <span className="text-white ml-[4px]">1239</span>
               </div>
 
-              <h3 className="text-[18px] font-semibold text-[#571313]">{item.title}</h3>
-              <p className="text-[12px] mb-2">Sanrayn Original</p>
+              <h3 className="text-[18px] font-semibold text-white">{item.title}</h3>
+              <p className="text-[12px] mb-2 text-white">Sanrayn Original</p>
 
               <div className="flex justify-between items-center">
-                <button className="bg-white/60 backdrop-blur-md border border-[#BA9948] px-4 py-1 rounded-full text-sm cursor-pointer  text-[#1D0B01]
+                <button className="bg-[#1D0B01]/60 backdrop-blur-md px-4 py-1 rounded-full text-sm cursor-pointer hover:text-[#1D0B01] border border-white
     transition-all duration-300 ease-out
-    hover:bg-[#BA9948] hover:text-white">Add to Cart</button>
+    hover:bg-white text-white">Add to Cart</button>
                   <div className="relative w-[60px] h-[28px] text-[16px]  font-normal"
                       >
                         <div className="absolute -top-[2px]  left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[6px] text-white z-10 h-[8px] w-[32px] flex items-center justify-center">
