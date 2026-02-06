@@ -64,10 +64,10 @@ const CartOverlay = ({ onClose }) => {
   };
 }, []);
 
- const navTopClass = isHome ? "top-0" : "top-[30px]";
+ const navTopClass = isHome ? "top-0" : "top-0";
     
   return (
-    <aside className={`fixed ${navTopClass} right-0 h-full w-full lg:w-[541px] bg-white z-50 flex flex-col`}>
+    <aside className={`fixed ${navTopClass} right-0 h-full w-full lg:w-[541px] bg-white z-60 flex flex-col`}>
 {/* TOP FIXED AREA */}
 <div className="sticky top-0 z-10 bg-white">
       {/* Header */}

@@ -184,12 +184,12 @@ const showClearAll =
     <div>
       <section
   className={`
-    w-full pb-[16px] 2xl:pb-[32px]
+    w-full py-[16px] 2xl:pb-[32px]
     transition-all duration-300
     lg:static
     ${
       isSticky
-        ? "fixed top-[108px] pt-[16px] left-0 z-50 bg-white"
+        ? "fixed top-[108px] pt-[16px] left-0 z-40 bg-white"
         : "relative"
     }
   `}

@@ -32,7 +32,7 @@ const Categories = ({ sortBy, setSortBy }) => {
       <div
         className="
           flex items-center gap-[8px] 2xl:gap-[32px]
-          pb-[16px] 2xl:pb-[32px]
+           2xl:py-[32px]
           justify-start lg:justify-center
         "
       >

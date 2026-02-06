@@ -168,7 +168,7 @@ const navPaddingClass = (() => {
 
 // Determine navbar background (unchanged)
 const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? "bg-[#BA9948]/45 backdrop-blur-2xl rounded-full mt-[15px]"
+  ? "bg-[#BA9948]/45 backdrop-blur-2xl rounded-full mt-[10px] md:mt-[15px]"
   : scrolled
   ? "bg-[#BA9948]/45 backdrop-blur-2xl rounded-full mt-[6px] 2xl:mt-[10px] mx-[16px] 2xl:mx-[32px]"
   : "bg-transparent";
@@ -542,7 +542,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
     {/* MOBILE SIDEBAR */}
 <aside
-  className={`fixed top-0 left-0 h-full w-[100%] bg-[#F6F7F2] z-50
+  className={`fixed top-0 left-0 h-full w-[100%] bg-[#F6F7F2] z-60
   transform transition-transform overflow-y-auto duration-500 lg:hidden
   ${open ? "translate-x-0" : "-translate-x-full"}`}
 >
