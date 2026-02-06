@@ -1,17 +1,24 @@
-import { useEffect, useState } from "react";
-import { FaArrowUp } from "react-icons/fa";
-import { MdKeyboardArrowUp, MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
+import { useEffect, useState, useRef } from "react";
+import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 
 const ScrollToTopButton = () => {
   const [show, setShow] = useState(false);
+  const footerRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShow(window.scrollY > 300);
-    };
+    const footer = document.querySelector("footer"); // Make sure your footer tag exists
+    if (!footer) return;
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShow(entry.isIntersecting); // Show button only when footer is visible
+      },
+      { root: null, threshold: 0.1 } // Trigger when 10% of footer is visible
+    );
+
+    observer.observe(footer);
+
+    return () => observer.disconnect();
   }, []);
 
   const scrollToTop = () => {
