@@ -552,7 +552,7 @@ if (sortBy === "new")
 
 
       <section className="pt-[16px] 2xl:pt-[32px]"><Premium></Premium></section>
-      <NewsLetter></NewsLetter>
+      <section className="2xl:mt-[16px]"><NewsLetter></NewsLetter></section>
       <MarqueeFlavour></MarqueeFlavour>
       <MarqueeSection></MarqueeSection>
     </div>

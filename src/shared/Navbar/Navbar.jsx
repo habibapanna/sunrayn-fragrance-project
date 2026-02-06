@@ -84,19 +84,19 @@ useEffect(() => {
 
 
 const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? "bg-black/60 backdrop-blur-md"
+  ? "bg-[#F6F7F2] backdrop-blur-md"
   : scrolled
   ? "bg-black/60 backdrop-blur-md"
   : "bg-transparent";
 
 const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? Logo
+  ? Logo3
   : scrolled
   ? Logo
   : Logo;
 
 const brandSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? BrandName
+  ? BrandName3
   : scrolled
   ? BrandName
   : BrandName;
@@ -160,7 +160,7 @@ const MobileGrid = ({ items }) => (
 >
 
 
-        <div className="mx-auto px-[16px] 2xl:px-[32px] lg:py-[20px] flex items-center justify-between text-white">
+        <div className="mx-auto px-[16px] 2xl:px-[32px] lg:py-[20px] flex items-center justify-between text-white ">
 
 {/* LOGO */}
 <Link
@@ -481,7 +481,7 @@ const MobileGrid = ({ items }) => (
     {/* Blur background */}
     <div
       onClick={() => setCartOpen(false)}
-      className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50"
+      className="fixed inset-0 bg-black/40 z-50"
     />
 
     {/* Cart UI */}
@@ -528,13 +528,17 @@ const MobileGrid = ({ items }) => (
   }}
   className="bg-white/90 p-[15px] rounded-full h-[50px] w-[50px]"
 >
-      <img src={User1} className="h-[20px] w-[20px]" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <g opacity="0.7">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0009 3.33329C8.39002 3.33329 7.08419 4.63913 7.08419 6.24996C7.08419 7.86079 8.39002 9.16663 10.0009 9.16663C11.6117 9.16663 12.9175 7.86079 12.9175 6.24996C12.9175 4.63913 11.6117 3.33329 10.0009 3.33329ZM5.41752 6.24996C5.41752 3.71865 7.46955 1.66663 10.0009 1.66663C12.5322 1.66663 14.5842 3.71865 14.5842 6.24996C14.5842 8.78126 12.5322 10.8333 10.0009 10.8333C7.46955 10.8333 5.41752 8.78126 5.41752 6.24996ZM10.0009 13.3333C7.63499 13.3333 5.52626 14.4744 4.17906 16.2573C4.09664 16.3664 4.03357 16.45 3.9811 16.5234C3.94127 16.5792 3.91409 16.6201 3.89516 16.6511C4.01902 16.6653 4.19549 16.6666 4.52355 16.6666H15.4782C15.8062 16.6666 15.9827 16.6653 16.1065 16.6511C16.0876 16.6201 16.0604 16.5792 16.0206 16.5234C15.9681 16.45 15.9051 16.3664 15.8227 16.2573C14.4755 14.4744 12.3667 13.3333 10.0009 13.3333ZM2.84931 15.2526C4.49344 13.0766 7.08325 11.6666 10.0009 11.6666C12.9185 11.6666 15.5083 13.0766 17.1524 15.2526C17.1598 15.2624 17.1673 15.2723 17.1748 15.2822C17.3162 15.4691 17.4677 15.6696 17.5761 15.8629C17.7072 16.097 17.8043 16.3678 17.7983 16.6971C17.7935 16.9618 17.7133 17.2096 17.6159 17.4053C17.5185 17.601 17.3691 17.8143 17.1608 17.9778C16.8831 18.1958 16.5806 18.2729 16.312 18.3051C16.0763 18.3334 15.797 18.3334 15.5161 18.3333C15.5035 18.3333 15.4908 18.3333 15.4782 18.3333H4.52355C4.51089 18.3333 4.49823 18.3333 4.48557 18.3333C4.20474 18.3334 3.92542 18.3334 3.68972 18.3051C3.42107 18.2729 3.11864 18.1958 2.84087 17.9778C2.63258 17.8143 2.48323 17.601 2.38583 17.4053C2.28844 17.2096 2.20823 16.9618 2.20339 16.6971C2.19737 16.3678 2.29454 16.097 2.42565 15.8629C2.53397 15.6696 2.68555 15.4691 2.82691 15.2822C2.83441 15.2723 2.84188 15.2624 2.84931 15.2526Z" fill="#744F18"/>
+  </g>
+</svg>
     </button>
     <span className="font-bold text-[#282828] text-[16px]">Login</span>
   </div>
 
-  <button onClick={() => setOpen(false)}>
-    <X className="h-[40px] w-[40px] text-[#1D0B01] cursor-pointer" />
+  <button className="underline cursor-pointer text-[#282828] text-[16px]" onClick={() => setOpen(false)}>
+   Close
   </button>
 
   {/* Figma-style header divider */}
@@ -592,16 +596,6 @@ const MobileGrid = ({ items }) => (
       <MobileGrid items={perfumeFamilies} />
     )}
   <div className="border border-[#571313]/10"></div>
-  <div className="">
-          <div className="bg-[#FBF7F2] p-4 text-center  rounded-[8px] ">
-            <img
-              src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
-              className="mx-auto mb-4"
-            />
-          </div><Link to='/productList'> <p className="text-[16px] text-center text-[#1D0B01] font-medium">
-              View All Perfume
-            </p></Link>
-        </div>
   </div>
 
 </div>
@@ -655,24 +649,16 @@ const MobileGrid = ({ items }) => (
       <MobileGrid items={inspiredBrands} />
     )}
   <div className="border border-[#571313]/10"></div>
-  <div className="">
-          <div className="bg-[#FBF7F2] p-4 text-center  rounded-[8px] ">
-            <img
-              src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
-              className="mx-auto mb-4"
-            />
-          </div><Link to='/productList'> <p className="text-[16px] text-center text-[#1D0B01] font-medium">
-              View All Perfume
-            </p></Link>
-        </div>
   </div>
 </div>
 
 
   {/* HOLIDAY SALE */}
-  <Link to='holidayOffer'>
+  <Link to='/holidayOffer'>
   <button className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[14px] rounded-[100px] font-semibold flex items-center gap-[6px] w-full justify-center">
-    <img src={Solar} className="h-[17px] w-[17px]" />
+    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.102704 9.01322C0.341871 9.84906 0.986038 10.4924 2.27354 11.7799L3.79854 13.3049C6.04021 15.5474 7.1602 16.6666 8.55187 16.6666C9.94437 16.6666 11.0644 15.5466 13.3052 13.3057C15.5469 11.0641 16.6669 9.94406 16.6669 8.55156C16.6669 7.15989 15.5469 6.03906 13.306 3.79822L11.781 2.27322C10.4927 0.985722 9.84937 0.341555 9.01354 0.102389C8.1777 -0.137611 7.29021 0.0673885 5.51604 0.477389L4.4927 0.713222C2.99937 1.05739 2.2527 1.22989 1.74104 1.74072C1.22937 2.25156 1.05854 2.99989 0.713538 4.49239L0.476871 5.51572C0.0677045 7.29072 -0.136462 8.17739 0.102704 9.01322ZM6.76854 4.39239C6.92927 4.54739 7.0575 4.73287 7.14575 4.93799C7.234 5.1431 7.28049 5.36375 7.28252 5.58703C7.28454 5.81032 7.24205 6.03177 7.15754 6.23845C7.07302 6.44513 6.94817 6.6329 6.79028 6.7908C6.63239 6.94869 6.44462 7.07354 6.23793 7.15806C6.03125 7.24257 5.8098 7.28506 5.58651 7.28303C5.36323 7.28101 5.14259 7.23451 4.93747 7.14627C4.73235 7.05802 4.54688 6.92978 4.39187 6.76906C4.08608 6.45197 3.91699 6.02752 3.92099 5.58703C3.92498 5.14654 4.10174 4.72522 4.41322 4.41374C4.72471 4.10225 5.14603 3.9255 5.58651 3.9215C6.027 3.91751 6.45146 4.0866 6.76854 4.39239ZM14.2085 8.37572L8.3927 14.1924C8.27477 14.3062 8.11687 14.3691 7.953 14.3676C7.78912 14.3661 7.63239 14.3003 7.51657 14.1844C7.40074 14.0684 7.33509 13.9116 7.33374 13.7478C7.33239 13.5839 7.39547 13.426 7.50937 13.3082L13.3244 7.49156C13.4416 7.37431 13.6006 7.30844 13.7665 7.30844C13.9323 7.30844 14.0913 7.37431 14.2085 7.49156C14.3258 7.6088 14.3917 7.76783 14.3917 7.93364C14.3917 8.09945 14.3258 8.25847 14.2085 8.37572Z" fill="white"/>
+</svg>
     Holiday Sale
   </button></Link>
 

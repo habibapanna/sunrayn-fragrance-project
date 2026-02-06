@@ -5,6 +5,8 @@ import TopAnnouncementBar from "../TopAnnouncementBar";
 import Navbar from "../../shared/Navbar/Navbar";
 import Footer from "../../shared/Footer/Footer";
 import RouteLoader from "../RouteLoader";
+import ScrollToTopButton from "../ScrollToTopButton";
+import ChatWidget from "../ChatWidget";
 
 const Main = () => {
   const location = useLocation();
@@ -38,6 +40,8 @@ const Main = () => {
       </section>
 
       <Footer />
+      <ChatWidget />
+      <ScrollToTopButton />
     </div>
   );
 };
