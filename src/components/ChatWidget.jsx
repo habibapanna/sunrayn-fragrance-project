@@ -35,7 +35,7 @@ const ChatWidget = () => {
       {/* Floating Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 z-[999] bg-[#BA9948] text-white p-4 rounded-full shadow-lg transition cursor-pointer"
+        className="fixed bottom-6 right-6 z-40 bg-[#BA9948] text-white p-4 rounded-full shadow-lg transition cursor-pointer"
       >
         {open ? <FaTimes size={30} /> : <FaCommentDots size={30} />}
       </button>
