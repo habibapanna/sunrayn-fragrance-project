@@ -8,13 +8,11 @@ const Offer = () => {
   className="bg-cover bg-center flex rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px]"
   style={{
     backgroundImage:
-      "url('https://i.postimg.cc/ZnqhvCC9/imgi-81-hero-banner-21-d.png')",
+      "url('https://i.postimg.cc/x1PD5vMm/imgi-187-Frame-1430102878-2.png')",
   }}
 >
   {/* LEFT EMPTY SPACE */}
-
-
- 
+  <div className="w-1/3 xl:w-1/2" />
   <div className="w-2/3 xl2:w-1/2 flex items-center justify-center px-10 py-16 md:px-[150px] md:py-[241px]">
     <div className="text-white text-left">
 
@@ -35,8 +33,9 @@ const Offer = () => {
       </button></Link>
     </div>
   </div>
+
  {/* RIGHT CONTENT */}
-    <div className="w-1/3 xl:w-1/2" />
+   
 </section></Link>
 
         </div>
