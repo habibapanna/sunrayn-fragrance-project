@@ -69,7 +69,7 @@ const BigBottleIcon = () => (
   {/* Back Button */}
   <button
     onClick={() => navigate(-1)}
-    className="hidden lg:flex items-center gap-[8px] bg-[#F6F7F2] pl-[16px] pr-[24px] py-[12px] rounded-full text-[14px] lg:text-[16px] font-medium h-[50px]"
+    className="hidden lg:flex items-center gap-[8px] bg-[#BA9948]/45 pl-[16px] pr-[24px] py-[12px] rounded-full text-[14px] lg:text-[16px] font-medium h-[50px] cursor-pointer"
   >
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M13 6L7 12L13 18" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -117,7 +117,7 @@ Back
 
           {product.images.slice(2).map((img, i) => (
             <div key={i} className="rounded-[24px]">
-              <img src={img} className="mx-auto 2xl:h-[484px] 2xl:w-[484px] object-cover rounded-[24px] h-full " />
+              <img src={img} className="mx-auto 2xl:h-[450px] 2xl:w-[450px] object-cover rounded-[24px] h-full " />
             </div>
           ))}
         </div>
@@ -158,9 +158,9 @@ Back
     ))}
   </div>
 </div>
-
-        {/* RIGHT – INFO */}
-        <div className="bg-[#F6F7F2] rounded-[32px] p-[16px] 2xl:p-[32px]">
+ {/* RIGHT – INFO */}
+<div className="lg:sticky lg:top-[100px] h-fit">
+  <div className="bg-[#F6F7F2] rounded-[32px] p-[16px] 2xl:p-[32px]">
 
           <span className="text-[12px] 2xl:text-[16px] bg-[#FFFFFF] py-[8px] px-[16px] rounded-full">{product.gender}</span>
 
@@ -520,6 +520,12 @@ Back
 </div>
 
         </div>
+
+
+  </div>
+
+       
+        
 
       </div>
       <section className="px-[16px] 2xl:px-[32px]"><ProductCard></ProductCard></section>

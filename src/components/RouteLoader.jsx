@@ -62,7 +62,6 @@ const RouteLoader = () => {
 </motion.div>
 
 
-
         {/* BOTTLE */}
         <div className="relative flex flex-col items-center">
 
