@@ -86,7 +86,7 @@ useEffect(() => {
 const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
   ? "bg-[#F6F7F2] backdrop-blur-md"
   : scrolled
-  ? "bg-[#571313]/40 backdrop-blur-2xl rounded-full"
+  ? "bg-[#571313]/40 backdrop-blur-2xl rounded-full "
   : "bg-transparent";
 
 const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
@@ -155,12 +155,18 @@ const MobileGrid = ({ items }) => (
 
   return (
     <>
-  <nav
-  className={`fixed left-0 w-full z-50 transition-all duration-300 ${navTopClass} ${navBgClass}`}
+<nav
+  className={`
+    fixed z-50 transition-all duration-300
+    ${navTopClass}
+    ${navBgClass}
+    ${scrolled ? "left-[32px] right-[32px]" : "left-0 right-0"}
+  `}
 >
 
 
-        <div className="mx-auto px-[16px] 2xl:px-[32px] lg:py-[20px] flex items-center justify-between text-white ">
+
+        <div className="mx-auto px-[16px] 2xl:px-[32px] lg:py-[10px] flex items-center justify-between text-white ">
 
 {/* LOGO */}
 <Link
