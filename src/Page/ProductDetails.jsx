@@ -62,7 +62,7 @@ const BigBottleIcon = () => (
   if (!product) return <div>Product not found</div>;
 
   return (
-    <div className=" py-[16px] 2xl:py-[32px]">
+    <div className=" py-[16px] 2xl:pb-[32px]">
       {/* BACK + BREADCRUMB */}
 <div className="flex items-center gap-[12px] 2xl:gap-[20px] px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
 

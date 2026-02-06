@@ -38,8 +38,8 @@ const BestSelling = () => {
           >
             Best Selling Perfumes
           </p>
-           <button className=" transition-all duration-300 ease-out
-              bg-[#BA9948] hover:bg-white/60 backdrop-blur-md border border-[#BA9948] hover:text-[#1D0B01] text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] 2xl:py-[12px] rounded-full text-[14px] lg:text-[16px] 2xl:text-[20px] cursor-pointer w-[117px] h-[40px] lg:w-[139px] lg:h-[55px]">
+           <button className="transition-all duration-300 ease-out
+    hover:bg-[#BA9948] hover:text-white border border-[#BA9948] text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center">
                       <Link to="/productList">View All</Link>
                     </button>
         </div>
@@ -66,7 +66,7 @@ const BestSelling = () => {
                     <p className='text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]'>Best Selling Perfumes</p>
                 </div>
                 <div>
-                    <button className="bg-[#BA9948] text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] 2xl:py-[12px] rounded-full text-[14px] 2xl:text-[20px] cursor-pointer w-[117px] h-[40px] md:w-[139px] md:h-[55px]"><Link to='/productList'>View All</Link></button>
+                    <button className="hover:bg-[#BA9948] hover:text-white border border-[#BA9948] text-[#1D0B01] px-[24px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[100px] h-[30px]"><Link to='/productList'>View All</Link></button>
                 </div>
             </div>
       {/* CAROUSEL */}

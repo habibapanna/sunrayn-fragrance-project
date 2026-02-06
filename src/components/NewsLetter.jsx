@@ -7,7 +7,7 @@ const NewsLetter = () => {
         className="relative bg-cover bg-center rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden"
         style={{
           backgroundImage:
-            "url('https://i.postimg.cc/W1xsfBt0/Frame-(3).png')",
+            "url('https://i.postimg.cc/x1PD5vMm/imgi-187-Frame-1430102878-2.png')",
         }}
       >
         <div className="flex">
@@ -15,8 +15,9 @@ const NewsLetter = () => {
           {/* LEFT IMAGE SPACE */}
           <div className="w-1/2" />
 
+
           {/* RIGHT CONTENT */}
-          <div className="lg:w-1/2 flex items-center px-6 py-16 md:px-16 md:py-24 2xl:px-24">
+          <div className="relative z-10 lg:w-1/2 flex items-center px-6 py-16 md:px-16 md:py-24 2xl:px-24">
             <div className="text-white">
 
               <h1 className="text-[28px] md:text-[40px] 2xl:text-[56px] font-light mb-6">
@@ -40,7 +41,7 @@ const NewsLetter = () => {
                     className="absolute right-2 top-1/2 -translate-y-1/2 
                     h-[24px] w-[24px] 2xl:h-[40px] 2xl:w-[40px]
                     rounded-full bg-[#BA9948] 
-                    flex items-center justify-center transition cursor-pointer"
+                    flex items-center justify-center transition cursor-pointer hover:bg-white"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -58,10 +59,13 @@ const NewsLetter = () => {
                     </svg>
                   </button>
               </div>
-
             </div>
           </div>
-
+ {/* RIGHT SIDE OVERLAY */}
+          <div className="
+            absolute right-0 top-0 h-full w-2/3 xl:w-1/2
+            bg-gradient-to-l from-black/70 via-black/40 to-transparent
+          " />
         </div>
       </section>
     </div>

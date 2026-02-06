@@ -21,8 +21,8 @@ const Blogs = () => {
 
           <Link
             to="/productList"
-            className="text-white font-semibold px-[32px] py-[12px] rounded-full cursor-pointer transition-all duration-300 ease-out
-    bg-[#BA9948] hover:bg-white backdrop-blur-md border border-[#BA9948] hover:text-[#1D0B01] text-[14px] lg:text-[16px] 2xl:text-[20px]"
+            className="transition-all duration-300 ease-out
+    hover:bg-[#BA9948] hover:text-white border border-[#BA9948] text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center"
           >
             Read All
           </Link>
@@ -46,7 +46,7 @@ const Blogs = () => {
 
           <Link
             to="/productList"
-            className="bg-[#BA9948] text-white font-semibold px-[32px] py-[12px] rounded-full cursor-pointer text-[14px]
+            className="hover:bg-[#BA9948] hover:text-white border border-[#BA9948] text-[#1D0B01] px-[24px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[100px] h-[30px]
             "
           >
             Read All

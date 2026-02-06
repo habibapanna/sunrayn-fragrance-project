@@ -31,11 +31,11 @@ const Offer = () => {
 
               <button
                 className="bg-white px-[24px] py-[10px]
-                rounded-[100px] h-[40px] w-[123px]
+                rounded-[100px] h-[30px] w-[123px]
                 md:w-[210px] md:h-[55px]
                 text-[14px] md:text-[20px]
-                font-bold transition-all duration-300 ease-out
-                hover:bg-[#BA9948] hover:text-white text-[#1D0B01]"
+                2xl:font-bold transition-all duration-300 ease-out
+                hover:bg-[#BA9948] hover:text-white text-[#1D0B01] flex items-center justify-center cursor-pointer "
               >
                 Shop Hurry
               </button>
