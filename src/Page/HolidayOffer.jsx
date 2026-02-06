@@ -528,10 +528,10 @@ if (sortBy === "new")
       </div>
     </div>
 
-    <p className="text-[12px] mt-[12px] md:[4px] text-[#0D0C09]">
-      Inspired by <br />
+   <p className="text-[12px] mt-[12px] md:[4px] text-[#0D0C09]">
+      Tops: <br />
       <span className="font-semibold text-[#1D0B01]">
-        Tom Ford's Oud Wood
+        Cherry, Almond, Cinnamon
       </span>
     </p>
     {/* MOBILE ADD TO CART */}
