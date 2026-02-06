@@ -151,7 +151,7 @@ const buttonVariants = {
     rounded-full
     flex items-center justify-center
 
-    h-[35px] w-[35px]
+    h-[30px] w-[30px]
     lg:h-[50px] lg:w-[50px]
     2xl:h-[70px] 2xl:w-[70px]
   "
@@ -161,7 +161,7 @@ const buttonVariants = {
     viewBox="0 0 30 30"
     fill="none"
     className="
-      w-[30px] h-[30px] lg:h-[39px] lg:w-[39px]
+      w-[25px] h-[25px] lg:h-[39px] lg:w-[39px]
       2xl:w-[60px] 2xl:h-[60px]
     "
   >
