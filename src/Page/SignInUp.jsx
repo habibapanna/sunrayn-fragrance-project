@@ -59,20 +59,20 @@ const SignInUp = ({ onClose }) => {
               <input
                 type="text"
                 placeholder="Name"
-                className="w-full border rounded-full px-5 py-3 outline-none border-[#BA9948]"
+                className="w-full border rounded-full px-5 py-3 outline-none border-gray-200"
               />
             )}
 
             <input
               type="email"
               placeholder="Email"
-              className="w-full border rounded-full px-5 py-3 outline-none border-[#BA9948]"
+              className="w-full border rounded-full px-5 py-3 outline-none border-gray-200"
             />
 
             <input
               type="password"
               placeholder="Password"
-              className="w-full border border-[#BA9948] rounded-full px-5 py-3 outline-none"
+              className="w-full border border-gray-200 rounded-full px-5 py-3 outline-none"
             />
 
             {mode === "signup" && (
