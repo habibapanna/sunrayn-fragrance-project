@@ -15,17 +15,9 @@ const Footer = () => {
   return (
     <footer className="relative max-w-full bg-gradient-to-t from-[#FDFCFC] to-[#F0ECE5] overflow-hidden">
 
-      {/* BACKGROUND LOGO */}
-      {/* <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 pointer-events-none z-0 top-40 md:top-0">
-        <img
-          src={Logo}
-          alt="Background Logo"
-          className="h-full w-full object-cover opacity-80"
-        />
-      </div> */}
 
       {/* ================= MAIN CONTENT ================= */}
-      <div className="relative z-10 mx-auto lg:px-6 md:pl-[180px] lg:pl-[50px] 2xl:pl-[200px] p-[16px] py-16 md:py-[150px]">
+      <div className="relative z-10 mx-auto lg:px-6 md:pl-[180px] lg:pl-[50px] p-[16px] py-16 md:py-[150px]">
 
         {/* MOBILE BIG S */}
         <div className="md:hidden flex justify-center mb-[24px]">
@@ -43,18 +35,18 @@ const Footer = () => {
   />
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-start gap-16 ">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-16">
 
           {/* LEFT CONTENT */}
-          <div className="w-full lg:w-lg text-left mt-[40px] md:mt-0 ">
+          <div className="w-full lg:max-w-3xl text-left mt-[40px] md:mt-0">
             <Link to="/" className="lg:inline-block">
-              <img src={SANRAYN} alt="Sanrayn" className="mx-auto md:mx-0" />
+              <img src={SANRAYN} alt="Sanrayn" className="mx-auto" />
             </Link>
 
-            <div className="flex justify-between mt-[48px] md:mt-[57px]">
+            <div className="flex flex-wrap justify-between gap-[32px] mt-[48px] md:mt-[57px]">
               {/* SHOP */}
               <div className="text-left">
-                <p className="text-[#571313] mb-4 text-[25px]">Shop</p>
+                <p className="text-[#571313] mb-4 text-[25px]">Shop by Category</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
                   <li className="hover:underline cursor-pointer"><Link to='/holidayOffer'>Holiday Sale</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='/productList'>New Arrivals</Link></li>
@@ -63,23 +55,41 @@ const Footer = () => {
                 </ul>
               </div>
 
-              {/* COMPANY */}
+              {/* Quick Links */}
               <div className="text-left">
-                <p className="text-[#571313] mb-4 text-[25px]">Company</p>
+                <p className="text-[#571313] mb-4 text-[25px]">Quick Links</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
-                  <li className="hover:underline cursor-pointer"><Link to='/productList'>Shop by category</Link></li>
-                  <li className="hover:underline cursor-pointer"><Link to='about'>About us</Link></li>
                    <li className="hover:underline cursor-pointer"><Link to='blogs'>Blogs</Link></li>
+                  <li className="hover:underline cursor-pointer"><Link to='/faq'>FAQs</Link></li>
+                  <li className="hover:underline cursor-pointer"><Link to='about'>About Us</Link></li>
+                   <li className="hover:underline cursor-pointer"><Link to='/contact'>Contact Us</Link></li>
                 </ul>
               </div>
 
-              {/* OTHER */}
+              {/* Customer Support */}
               <div className="text-left">
-                <p className="text-[#571313] mb-4 text-[25px]">Other</p>
+                <p className="text-[#571313] mb-4 text-[25px]">Customer Support</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
                   <li className="hidden  hover:underline cursor-pointer"><Link to='terms'>Terms of Services</Link></li>
-                  <li className="hover:underline cursor-pointer"><Link to='faq'>FAQs</Link></li>
-                  <li className="hover:underline cursor-pointer"><Link to='contact'>Contact us</Link></li>
+                  <li className="hover:underline cursor-pointer">Support@sanrayn.com</li>
+                  <li className="hover:underline cursor-pointer">Track my Order</li>
+                  <li className="hover:underline cursor-pointer">Return/Exchange Portal</li>
+                  <li className="hover:underline cursor-pointer">Refund Policy</li>
+                  <li className="hover:underline cursor-pointer">Privacy Policy</li>
+                  <li className="hover:underline cursor-pointer">Accessibility Statement</li>
+                </ul>
+              </div>
+
+              {/* Quick Links */}
+              <div className="text-left">
+                <p className="text-[#571313] mb-4 text-[25px]">Contact Info</p>
+                <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
+                   <li className="text-[14px] lg:text-[16px]">Follow us</li>
+                  <li className="hover:underline cursor-pointer"><div className="flex items-center gap-4 md:gap-2 lg:gap-4 order-2 md:order-none mb-[16px] md:mb-0">
+    <img src={Facebook} className="h-5" />
+    <img src={Instagram} className="h-5" />
+    <img src={Tiktok} className="h-5" />
+  </div></li>
                 </ul>
               </div>
 
@@ -92,7 +102,6 @@ const Footer = () => {
     hidden lg:flex
     absolute
     lg:right-[50px]
-    2xl:right-[100px]
     top-1/2 -translate-y-1/2
     items-center justify-center
     pointer-events-none
@@ -109,6 +118,7 @@ const Footer = () => {
       inset-0
       m-auto
       h-full w-full object-cover
+      opacity-100
     "
   />
 
@@ -122,7 +132,6 @@ const Footer = () => {
       lg:h-[300px]
       2xl:h-[400px]
       w-auto
-      opacity-90
     "
   />
 </div>
@@ -152,24 +161,11 @@ const Footer = () => {
     ©2026 Sanrayn all right reserved
   </p>
 
-  {/* 2. FOLLOW US TEXT */}
-  <span className="text-[16px] text-[#220B12B2] order-1 md:hidden">
-    Follow us
-  </span>
+  {/* 2. SOCIAL ICONS */}
+  
 
-  {/* 3. SOCIAL ICONS */}
-  <div className="flex items-center gap-4 md:gap-2 lg:gap-4 order-2 md:order-none mb-[16px] md:mb-0">
-    <img src={Facebook} className="h-5" />
-    <img src={Instagram} className="h-5" />
-    <img src={Tiktok} className="h-5" />
-  </div>
 
-  {/* 4. MADE BY */}
-  {/* <p className="text-[16px] text-[#220B12B2] order-4 md:order-none mb-[32px] md:mb-0">
-    Made by <span>Niyot.agency</span>
-  </p> */}
-
-  {/* 5. PAYMENTS */}
+  {/* 2. PAYMENTS */}
   <div className="flex items-center gap-[33px] md:gap-[20px] lg:gap-[33px] justify-center order-3 md:order-none">
     <img src={Visa} className="h-6" />
     <img src={MasterCard} className="h-6" />
