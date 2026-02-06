@@ -12,9 +12,9 @@ const Offer = () => {
   }}
 >
   {/* LEFT EMPTY SPACE */}
-  <div className="w-1/3 xl2:w-1/2" />
 
-  {/* RIGHT CONTENT */}
+
+ 
   <div className="w-2/3 xl2:w-1/2 flex items-center justify-center px-10 py-16 md:px-[150px] md:py-[241px]">
     <div className="text-white text-left">
 
@@ -35,6 +35,8 @@ const Offer = () => {
       </button></Link>
     </div>
   </div>
+ {/* RIGHT CONTENT */}
+    <div className="w-1/3 xl:w-1/2" />
 </section></Link>
 
         </div>
