@@ -80,7 +80,7 @@ const Footer = () => {
   className="
     hidden lg:block absolute
     lg:right-[50px]
-    2xl:right-[420px]
+    2xl:right-[200px]
     top-1/2 -translate-y-1/2
     pointer-events-none opacity-90
   "
@@ -88,8 +88,8 @@ const Footer = () => {
   <img
     src={BigS}
     className="
-      lg:h-[500px]
-      2xl:h-[620px]
+      lg:h-[300px]
+      2xl:h-[400px]
       w-auto
     "
   />
