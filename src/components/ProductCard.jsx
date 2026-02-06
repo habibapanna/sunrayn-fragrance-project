@@ -51,60 +51,54 @@ useEffect(() => {
                               className=""
                             >
                                 {/* CARD */}
-                                <div className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px]
+                               <div
+                className="relative rounded-[16px]  md:rounded-[24px]
     h-[384px] lg:h-[700px]
-    overflow-hidden"
-  style={{
-    background:
-      "radial-gradient(72.36% 72.36% at 50% 50%, #FBF9F7 0%, #EDE8E0 100%)",
-  }}
-                                >
-                                    {item.off && (
+    cursor-pointer overflow-hidden"
+                onClick={() => navigate(`/productList/${item.slug}`)}
+              >
+                {item.off && (
                     <div className="lg:mt-[40px] lg:ml-[40px] ml-[20px] mt-[20px]">
                       <button className="bg-[#FFFF]/60 px-[10px] 2xl:px-[16px] h-[25px] 2xl:h-[35px] rounded-full font-normal text-[12px] lg:text-[14px]">
                         {item.off}
                       </button>
                     </div>
                   )}
-            
-            
-                                  <img
-                                    src={item.images[0]}
-                                    alt={item.title}
-                                    className="absolute inset-0 mx-auto h-[236px] lg:h-[501px] object-cover"
-                                  />
-                
-                                    <div className="absolute bottom-0 left-0 w-full z-20 p-[20px] lg:p-[40px]">
+
+                <img
+                  src={item.images}
+                  alt={item.title}
+                  className="absolute inset-0 mx-auto h-full object-cover"
+                />
+ <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 w-full z-20 p-[20px] lg:p-[40px]">
                   <div className="flex items-center gap-[2px] 2xl:gap-[8px] text-[#FF9100]">
                     {[...Array(5)].map((_, i) => (
                       <FaStar key={i} className="h-[12px] lg:h-[15px]" />
                     ))}
-                    <span className="text-[#0D0C09] text-[12px] 2xl:text-[14px] font-normal">
+                    <span className="text-[#FFF] text-[12px] 2xl:text-[14px] font-normal">
                       1239
                     </span>
                   </div>
 
-                  <h3 className="text-[20px] md:text-[35px] font-normal text-[#571313]">
+                  <h3 className="text-[20px] md:text-[35px] font-normal text-[#FFF]">
                     {item.title}
                   </h3>
 
-                  <p className="text-[12px] 2xl:text-[18px] text-[#0D0C09] mb-[12px] md:mb-[26px]">
+                  <p className="text-[12px] 2xl:text-[18px] text-[#FFF] mb-[12px] md:mb-[26px]">
                     Sanrayn Original
-                  </p>
-
-                   <div className="flex items-center justify-between gap-3">
+                  </p>  
+                  <div className="flex items-center justify-between gap-3">
                     <button
   className="
-    bg-white/60 backdrop-blur-md
+    bg-white backdrop-blur-md
     px-[24px] py-[10px]
     rounded-full font-semibold
     w-[130px] h-[32px]
     lg:h-[45px] lg:w-[167px]
     text-[14px] 2xl:text-[16px]
     flex items-center justify-center
-    border border-[#BA9948]
     cursor-pointer
-
     text-[#1D0B01]
     transition-all duration-500 ease-out
     hover:bg-[#BA9948] hover:text-white
@@ -115,7 +109,7 @@ useEffect(() => {
 
                     <div className="flex gap-[12px] md:gap-[20px]">
                       <div>
-                        <button className="text-[#FC2525] text-[16px] bg-[#FFFFFF80]/50 py-[10px] px-[20px] rounded-[100px] line-through hidden lg:block">
+                        <button className="text-[#FFF] text-[16px] py-[10px] px-[20px] rounded-[100px] line-through hidden lg:block border border-white">
                           ${item.oldPrice}
                         </button>
                       </div>
@@ -144,8 +138,9 @@ useEffect(() => {
                       </div>
                     </div>
                   </div>
+                  
                 </div>
-                                </div>
+              </div>
                               </div>
                           ))}
                         </div>
