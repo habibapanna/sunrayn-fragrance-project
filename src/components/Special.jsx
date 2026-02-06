@@ -153,7 +153,7 @@ const buttonVariants = {
 
     h-[35px] w-[35px]
     lg:h-[50px] lg:w-[50px]
-    2xl:h-[80px] 2xl:w-[80px]
+    2xl:h-[70px] 2xl:w-[70px]
   "
 >
   <svg
@@ -162,7 +162,7 @@ const buttonVariants = {
     fill="none"
     className="
       w-[30px] h-[30px] lg:h-[39px] lg:w-[39px]
-      2xl:w-[64px] 2xl:h-[64px]
+      2xl:w-[60px] 2xl:h-[60px]
     "
   >
     <path
