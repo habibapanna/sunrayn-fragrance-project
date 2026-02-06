@@ -8,7 +8,7 @@ const Offer = () => {
   className="bg-cover bg-center flex rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px]"
   style={{
     backgroundImage:
-      "url('https://i.postimg.cc/PqqNhrMt/Whats-App-Image-2026-02-06-at-11-22-32-PM-(1).jpg')",
+      "url('https://i.postimg.cc/HkVfCqyJ/imgi-121-Layering-Banner-EXTENDED2-1.png')",
   }}
 >
   {/* LEFT EMPTY SPACE */}
