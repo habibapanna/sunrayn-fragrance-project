@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
-import Logo2 from "../assets/Logo (2).png";
-import SANRAYN from '../assets/SANRAYN (1).png';
+import Logo2 from "../assets/Logo (2).svg";
+import SANRAYN from '../assets/SANRAYN (1).svg';
 import shopPay from '../assets/shopPayLogo.png';
 import PayPal from '../assets/XMLID_1_.png';
 import Gpay  from '../assets/G pay logo.png';
