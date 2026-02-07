@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import BigS from "../../assets/Footer Logo.png";
+import BigS from "../../assets/Footer Logo.svg";
 import Facebook from "../../assets/Facebook logo.png";
 import Instagram from "../../assets/instagram logo.png";
 import Tiktok from "../../assets/Social Media Icon.png";
 import Visa from "../../assets/Visa logo.png";
 import Paypal from "../../assets/XMLID_1_.png";
-import SANRAYN from "../../assets/SANRAYN.png";
+import SANRAYN from "../../assets/SANRAYN.svg";
 import MasterCard from "../../assets/MasterCard logo.png";
-import Logo from "../../assets/Logo (1).png";
+import Logo from "../../assets/Logo (1).svg";
 
 const Footer = () => {
   return (

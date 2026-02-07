@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Button from "../assets/Button Container.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Link } from "react-router-dom";

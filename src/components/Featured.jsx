@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
-import Discount from '../assets/Discount Price.png';
 import { FaStar } from 'react-icons/fa';
 import Premium from './Premium';
 import { Link, useNavigate } from 'react-router-dom';

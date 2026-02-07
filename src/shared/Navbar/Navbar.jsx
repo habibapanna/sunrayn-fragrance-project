@@ -1,23 +1,14 @@
 import { useEffect, useRef, useState } from "react";
-import { X } from "lucide-react";
 import { LiaAngleDownSolid } from "react-icons/lia";
-import Logo from "../../assets/Logo.png";
-import Logo2 from "../../assets/Logo (2).png";
-import Logo3 from "../../assets/Logo (3).png";
-import Solar from "../../assets/solar_tag-bold.png";
-import Icon from "../../assets/Icon (Stroke).png";
-import Cart from "../../assets/Frame (1).png";
-import Users from "../../assets/User Icon.png";
-import User1 from "../../assets/User Icon (1).png";
-import BrandName from "../../assets/Brand Name.png";
-import BrandName2 from "../../assets/SANRAYN (1).png";
-import BrandName3 from "../../assets/Brand Name (2).png";
+import Logo from "../../assets/Logo.svg";
+import BrandName from "../../assets/Brand Name.svg";
 import { Link } from "react-router-dom";
 import { TbMenu } from "react-icons/tb";
 import SearchOverlay from "../../components/SearchOverlay";
 import CartOverlay from "../../components/CartOverlay";
-import { useLocation } from "react-router-dom";
 import SignInUp from "../../Page/SignInUp";
+import { useNavigate, useLocation } from "react-router-dom";
+
 
 
 
@@ -72,6 +63,26 @@ const isProductDetails = location.pathname.startsWith("/productList/");
     return () =>
       document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const navigate = useNavigate();
+
+const handleLogoClick = (e) => {
+  e.preventDefault();
+
+  if (location.pathname === "/") {
+    // Already on home → scroll to top + reload
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // Small delay so scroll feels natural
+    setTimeout(() => {
+      window.location.reload();
+    }, 300);
+  } else {
+    // From another page → go home
+    navigate("/");
+  }
+};
+
 
 
 
@@ -190,10 +201,12 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
         <div className="mx-auto px-[16px] 2xl:px-[32px] lg:py-[8px] flex items-center justify-between text-white ">
 
 {/* LOGO */}
-<Link
-  to="/"
-  className="flex items-center gap-[7px] lg:gap-[12px] cursor-pointer transition-all duration-300 focus:outline-none"
+<a
+  href="/"
+  onClick={handleLogoClick}
+  className="flex items-center gap-[7px] lg:gap-[12px] cursor-pointer transition-all duration-300"
 >
+
  <img
   src={logoSrc}
   alt="Brand Logo"
@@ -207,7 +220,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
   className="h-[15px] w-[100px] lg:h-[27px] lg:w-[170px] transition-all duration-300"
 />
 
-</Link>
+</a>
 
 
           {/* RIGHT SIDE */}

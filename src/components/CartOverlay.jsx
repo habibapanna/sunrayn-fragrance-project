@@ -1,9 +1,7 @@
 import { X, Minus, Plus } from "lucide-react";
 import { FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import cartFrame from '../assets/Frame (7).png'
 import Truck from '../assets/Frame (8).png'
-import Discount from '../assets/Discount Price.png';
 import { useEffect, useRef, useState } from "react";
 import { products } from "../data/productsData";
 
