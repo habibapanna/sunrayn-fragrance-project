@@ -30,7 +30,7 @@ const Hero = () => {
         {/* LEFT CONTENT */}
         <div className="text-white col-span-2 2xl:col-span-1">
           {/* Rating */}
-<div className="flex flex-col md:flex-row md:items-center md:gap-[8px] text-[#DBAB35]">
+<div className="flex flex-col md:flex-row md:items-center md:gap-[8px] text-[#BA9948]">
   {/* Stars */}
   <div className="flex gap-[6px] mb-[8px] md:mb-0 items-center">
     <FaStar className="h-[15px] w-[15px]" />

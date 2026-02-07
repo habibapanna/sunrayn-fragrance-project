@@ -504,7 +504,7 @@ if (sortBy === "new")
 
     {/* Rating */}
 <div className="flex items-center gap-[8px]">   
-   <div className="flex items-center gap-[4px] text-[#FF9100]">
+   <div className="flex items-center gap-[4px] text-[#BA9948]">
       {[...Array(5)].map((_, index) => (
         <FaStar key={index} className="text-[12px]" />
       ))}

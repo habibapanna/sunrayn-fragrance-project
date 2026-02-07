@@ -104,7 +104,7 @@ const BestSelling = () => {
                 />
  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 w-full z-20 p-[20px] lg:p-[40px]">
-                  <div className="flex items-center gap-[2px] 2xl:gap-[8px] text-[#FF9100]">
+                  <div className="flex items-center gap-[2px] 2xl:gap-[8px] text-[#BA9948]">
                     {[...Array(5)].map((_, i) => (
                       <FaStar key={i} className="h-[12px] lg:h-[15px]" />
                     ))}
