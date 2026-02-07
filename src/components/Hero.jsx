@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Hero = () => {
   return (
     <div>
-      <section className="relative flex items-center max-w-full overflow-hidden">
+      <section className="relative flex items-center max-w-full overflow-hidden min-h-screen">
 
         {/* VIDEO BACKGROUND */}
         <video
