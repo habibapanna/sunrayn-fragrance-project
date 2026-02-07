@@ -38,12 +38,12 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start gap-16">
 
           {/* LEFT CONTENT */}
-          <div className="w-full lg:max-w-3xl text-left mt-[40px] md:mt-0">
-            <Link to="/" className="lg:inline-block">
+          <div className="w-full 2xl:max-w-3xl text-left mt-[40px] lg:mt-0">
+            <Link to="/" className="2xl:inline-block">
               <img src={SANRAYN} alt="Sanrayn" className="mx-auto" />
             </Link>
 
-            <div className="flex flex-wrap justify-between gap-[32px] mt-[48px] md:mt-[57px]">
+            <div className="flex flex-wrap justify-between gap-[32px] mt-[48px] lg:mt-[57px]">
               {/* SHOP */}
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Shop by Category</p>
@@ -99,7 +99,7 @@ const Footer = () => {
 {/* DESKTOP BIG S + LOGO BACKGROUND */}
 <div
   className="
-    hidden lg:flex
+    hidden 2xl:flex
     absolute
     lg:right-[50px]
     top-1/2 -translate-y-1/2

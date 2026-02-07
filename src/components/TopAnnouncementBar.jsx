@@ -24,8 +24,8 @@ const TopAnnouncementBar = () => {
 
   return (
    <div className="
-  fixed top-0 md:top-[8px] left-0 right-0
-  md:mx-[32px]
+  fixed top-0 md:top-[8px] left-0 right-0 lg:mx-[16px]
+  2xl:mx-[32px]
   z-[60]
   bg-[#1C1C1C] text-white
   lg:rounded-full

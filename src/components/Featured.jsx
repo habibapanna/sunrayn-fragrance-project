@@ -42,7 +42,7 @@ const Featured = () => {
                 </div>
                 <div>
                       <button className="transition-all duration-300 ease-out
-    hover:bg-[#BA9948] hover:text-white border border-[#BA9948] text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center">
+    hover:bg-[#BA9948] hover:text-white border border-[#BA9948] text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center">
             <Link to="/productList">View All</Link>
           </button>
                 </div>
