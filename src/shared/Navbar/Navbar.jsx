@@ -170,7 +170,7 @@ const navPaddingClass = (() => {
 const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
   ? "bg-[#BA9948]/60 backdrop-blur-2xl rounded-full mt-[6px] md:mt-[15px]"
   : scrolled
-  ? "bg-[#BA9948]/45 backdrop-blur-2xl rounded-full mt-[6px] 2xl:mt-[10px] mx-[16px] 2xl:mx-[32px]"
+  ? "bg-[#BA9948]/80 backdrop-blur-2xl rounded-full mt-[6px] 2xl:mt-[10px] mx-[16px] 2xl:mx-[32px]"
   : "bg-transparent";
 
 // Determine top position
