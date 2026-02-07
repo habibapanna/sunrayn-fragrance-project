@@ -530,12 +530,22 @@ if (sortBy === "new")
       </div>
     </div>
 
-    <p className="text-[12px] mt-[12px] md:[4px] text-[#0D0C09]">
-      Tops: <br />
-      <span className="font-semibold text-[#1D0B01]">
+   <div className="fle">
+     <p className="text-[12px] mt-[12px] md:[4px] text-[#0D0C09]">
+      Tops: <span className="font-semibold text-[#1D0B01]">
         Cherry, Almond, Cinnamon
       </span>
     </p>
+    <p className="text-[12px] mt-[12px] md:[4px] text-[#0D0C09]">
+      Middle: <span className="font-semibold text-[#1D0B01]">
+        Clove, Rose, Jasmine, Plum
+      </span>
+    </p>
+   </div>
+    <div className="flex justify-between">
+      <p className="text-[12px] mt-[12px] md:[4px] text-[#0D0C09]">Crafted in <span  className="font-semibold text-[#1D0B01]">USA</span></p>
+    <p className="text-[12px] mt-[12px] md:[4px] text-[#0D0C09]">Scent Family: <span  className="font-semibold text-[#1D0B01]">{item.scentFamily}</span></p>
+    </div>
     {/* MOBILE ADD TO CART */}
 <div className="flex justify-end mt-[12px] md:hidden">
   <button
