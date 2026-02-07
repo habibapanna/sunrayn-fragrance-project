@@ -114,7 +114,7 @@ const Testimonials = () => {
                 {/* CARD */}
                 <div
                   className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] h-full
-                             p-[16px] lg:p-[32px]
+                             p-[16px] lg:p-[40px]
                              flex flex-col"
                   style={{ backgroundColor: item.bg }}
                 >

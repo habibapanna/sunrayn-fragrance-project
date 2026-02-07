@@ -17,15 +17,15 @@ const Hero = () => {
   absolute bottom-0 left-0 w-full
   h-[70%]
   bg-gradient-to-t
-  from-[#210E07]/95
-  via-[#210E07]/80
+  from-[#210E07]/60
+  via-[#210E07]/55
   to-transparent
-  2xl:hidden
+  
 "></div>
 
  
       {/* Content */}
-      <div className="relative z-10 mx-auto px-[16px] mt-[200px] 2xl:ml-[30px] lg:mt-[295px] 2xl:mb-[276px] grid grid-cols-1 lg:grid-cols-2 items-center mb-[20px]">
+      <div className="relative z-10 mx-auto px-[16px] mt-[200px] 2xl:ml-[30px] lg:mt-[295px] 2xl:mb-[100px] grid grid-cols-1 lg:grid-cols-2 items-center mb-[20px]">
         
         {/* LEFT CONTENT */}
         <div className="text-white col-span-2 2xl:col-span-1">
