@@ -24,17 +24,17 @@ const TopAnnouncementBar = () => {
 
   return (
    <div className="
-  fixed top-0 md:top-[8px] left-0 right-0 lg:mx-[16px]
+  fixed top-0 md:top-[8px] left-0 right-0 md:mx-[16px]
   2xl:mx-[32px]
   z-[60]
   bg-[#1C1C1C] text-white
-  lg:rounded-full
+  md:rounded-full
 ">
 
       <div className="max-w-[1600px] mx-auto px-4 h-[44px] flex items-center justify-between rounded-b-[24px]">
 
         {/* DESKTOP */}
-        <div className="hidden md:flex w-full items-center text-[14px] relative">
+        <div className="hidden lg:flex w-full items-center text-[14px] relative">
           {/* First content - left */}
           <div className="opacity-90 flex items-center gap-1">
             {messages[0].content}{" "}
@@ -53,7 +53,7 @@ const TopAnnouncementBar = () => {
         </div>
 
         {/* MOBILE SLIDER */}
-        <div className="flex md:hidden items-center w-full justify-between">
+        <div className="flex lg:hidden items-center w-full justify-between">
           <button onClick={prev}>
             <ChevronLeft className="h-5 w-5 opacity-80" />
           </button>

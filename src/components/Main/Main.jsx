@@ -33,7 +33,7 @@ const Main = () => {
 
       <section
         className={`flex-grow ${
-          isHome ? "" : "pt-[120px] md:pt-[140px]"
+          isHome ? "" : "pt-[118px] lg:pt-[150px] 2xl:pt-[140px]"
         }`}
       >
         <Outlet />

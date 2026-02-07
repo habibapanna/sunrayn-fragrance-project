@@ -50,7 +50,7 @@ const Categories = ({ sortBy, setSortBy }) => {
                 rounded-[8px] 2xl:rounded-[24px]
                 bg-[#F6F7F2]
                 w-[126px] h-[96px] p-[4px]
-                lg:w-auto lg:h-auto lg:p-6 2xl:gap-[12px]
+                md:w-full md:h-full md:p-6 md:gap-[12px]
                 transition-all duration-200
 
                 ${
