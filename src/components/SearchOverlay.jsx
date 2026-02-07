@@ -140,7 +140,6 @@ useEffect(() => {
 
             <div className="bg-[#F6F7F2] w-full max-w-[280px] h-auto rounded-[24px] p-[12px] 2xl:p-[24px] flex flex-col justify-between gap-[32px]">
 
-
 <div className="">
       <h3 className="text-[25px] font-semibold text-[#1D0B01]">
     Scents Families

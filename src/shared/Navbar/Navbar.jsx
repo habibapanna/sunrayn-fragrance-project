@@ -159,7 +159,7 @@ const MobileGrid = ({ items }) => (
 const navPaddingClass = (() => {
   if (isHome) {
     // On home page: no padding initially, add px-[32px] when scrolled
-    return scrolled ? "px-[32px]" : "px-0";
+    return scrolled ? "px-0" : "px-0";
   } else {
     // On other pages: always have mx-[16px] or mx-[32px] for 2xl screens
     return "mx-[16px] 2xl:mx-[32px]";
