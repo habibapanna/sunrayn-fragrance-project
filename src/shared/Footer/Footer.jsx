@@ -17,7 +17,7 @@ const Footer = () => {
 
 
       {/* ================= MAIN CONTENT ================= */}
-      <div className="relative z-10 mx-auto lg:px-6 md:pl-[180px] lg:pl-[50px] 2xl:pl-[80px] p-[16px] py-16 md:py-[150px]">
+      <div className="relative z-10 mx-auto lg:px-6 lg:pl-[50px] 2xl:pl-[80px] p-[16px] py-16 md:py-[150px]">
 
         {/* MOBILE BIG S */}
         <div className="md:hidden flex justify-center mb-[24px]">
