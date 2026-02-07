@@ -189,7 +189,7 @@ const showClearAll =
     lg:static
     ${
       isSticky
-        ? "fixed top-[108px] pt-[16px] left-0 z-40 bg-white"
+        ? "fixed top-[106px] pt-[16px] left-0 z-40 bg-white"
         : "relative"
     }
   `}

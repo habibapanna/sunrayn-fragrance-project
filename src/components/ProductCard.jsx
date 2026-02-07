@@ -36,7 +36,7 @@ useEffect(() => {
           </p>
 
            <button className=" transition-all duration-300 ease-out
-    hover:bg-[#BA9948] bg-white backdrop-blur-md border border-[#BA9948] text-[#1D0B01] hover:text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer w-[120px] h-[30px] lg:w-[170px] lg:h-[55px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center">
+    hover:bg-[#BA9948] bg-white backdrop-blur-md border border-[#BA9948] text-[#1D0B01] hover:text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer w-[125px] h-[30px] lg:w-[170px] lg:h-[55px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center">
             <Link to="/productList">Show More</Link>
           </button>
         

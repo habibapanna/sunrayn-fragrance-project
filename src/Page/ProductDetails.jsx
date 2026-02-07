@@ -11,12 +11,19 @@ import { useNavigate, Link } from "react-router-dom";
 
 
 
+
 const ProductDetails = () => {
     const [openSection, setOpenSection] = useState("notes");
     const [selectedVolume, setSelectedVolume] = useState(null);
     const navigate = useNavigate();
     const carouselRef = useRef(null);
 const [activeIndex, setActiveIndex] = useState(0);
+// for accordion
+const notesRef = useRef(null);
+const aboutRef = useRef(null);
+const scentNotesRef = useRef(null);
+const shippingRef = useRef(null);
+const faqRef = useRef(null);
 
 
 const handleScroll = () => {
@@ -31,9 +38,30 @@ const handleScroll = () => {
 };
 
 
-const toggle = (section) => {
-  setOpenSection(openSection === section ? null : section);
+const toggle = (section, ref) => {
+  const isOpening = openSection !== section;
+  setOpenSection(isOpening ? section : null);
+
+  if (!isOpening) return;
+
+  setTimeout(() => {
+    if (!ref?.current) return;
+
+    const yOffset = window.innerWidth >= 1024 ? -120 : -80; // header offset
+    const y =
+      ref.current.getBoundingClientRect().top +
+      window.pageYOffset +
+      yOffset;
+
+    window.scrollTo({
+      top: y,
+      behavior: "smooth",
+    });
+  }, 300);
 };
+
+
+
 
     const SmallBottleIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -259,12 +287,12 @@ Back
           </button></div>
 
 {/* NOTES & INGREDIENTS */}
-<div className="mt-[24px] 2xl:mt-[40px] border-t border-[#282828]/20 pt-[24px]">
-
+<div ref={notesRef} className="mt-[24px] border-t border-[#282828]/20 pt-[24px]">
   <button
-    onClick={() => toggle("notes")}
+    onClick={() => toggle("notes", notesRef)}
     className="w-full flex justify-between items-center cursor-pointer"
   >
+
     <h3 className="text-[16px] 2xl:text-[18px] font-medium">Notes and Ingredients</h3>
     <ChevronDown
       className={`transition-transform ${
@@ -327,12 +355,12 @@ Back
 
 
 {/* ABOUT */}
-<div className="border-t border-[#282828]/20 pt-[24px] mt-[24px]">
-
+<div ref={aboutRef} className="border-t border-[#282828]/20 pt-[24px] mt-[24px]">
   <button
-    onClick={() => toggle("about")}
+    onClick={() => toggle("about", aboutRef)}
     className="w-full flex justify-between items-center cursor-pointer"
   >
+
     <h3 className="text-[16px] 2xl:text-[18px] font-medium">About</h3>
     <ChevronDown
       className={`transition-transform ${
@@ -388,11 +416,12 @@ Back
 
 
 {/* Scent Notes */}
-<div className="border-t border-[#282828]/20 pt-[24px] mt-[24px]">
- <button
-    onClick={() => toggle("scentNotes")}
+<div ref={scentNotesRef} className="border-t border-[#282828]/20 pt-[24px] mt-[24px]">
+  <button
+    onClick={() => toggle("scentNotes", scentNotesRef)}
     className="w-full flex justify-between items-center cursor-pointer"
   >
+
     <h3 className="text-[16px] 2xl:text-[18px] font-medium">Scent Notes</h3>
     <ChevronDown
       className={`transition-transform ${
@@ -424,12 +453,12 @@ Back
 
 
 {/* SHIPPING */}
-<div className="border-t border-[#282828]/20 pt-[24px] mt-[24px]">
-
+<div ref={shippingRef} className="border-t border-[#282828]/20 pt-[24px] mt-[24px]">
   <button
-    onClick={() => toggle("shipping")}
+    onClick={() => toggle("shipping", shippingRef)}
     className="w-full flex justify-between items-center cursor-pointer"
   >
+
     <h3 className="text-[16px] 2xl:text-[18px] font-medium">Shipping + Returns</h3>
     <ChevronDown
       className={`transition-transform ${
@@ -480,12 +509,12 @@ Back
 
 
 {/* FAQ */}
-<div className="border-t border-[#282828]/20 pt-[24px] mt-[24px]">
-
+<div ref={faqRef} className="border-t border-[#282828]/20 pt-[24px] mt-[24px]">
   <button
-    onClick={() => toggle("faq")}
+    onClick={() => toggle("faq", faqRef)}
     className="w-full flex justify-between items-center cursor-pointer"
   >
+
     <h3 className="text-[16px] font-medium">FAQs</h3>
     <ChevronDown
       className={`transition-transform ${
