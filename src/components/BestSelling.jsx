@@ -13,7 +13,7 @@ const BestSelling = () => {
   useEffect(() => {
     const updateView = () => {
       if (window.innerWidth >= 1280) setItemsPerView(3); // xl
-      else if (window.innerWidth >= 1024) setItemsPerView(2); // lg
+      else if (window.innerWidth >= 768) setItemsPerView(2); // lg
       else setItemsPerView(1); // mobile
     };
 

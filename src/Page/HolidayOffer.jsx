@@ -174,7 +174,7 @@ if (sortBy === "new")
         {/* -------------------- SIDEBAR -------------------- */}
         {/* -------------------- SIDEBAR -------------------- */}
 {sidebarOpen && (
-  <aside className="hidden lg:block sticky top-[120px] w-[420px] h-[calc(100vh-140px)] bg-[#F2EFD8] rounded-[16px] overflow-y-auto shrink-0">
+  <aside className="hidden md:block sticky top-[120px] 2xl:w-[420px] h-[calc(100vh-140px)] bg-[#F2EFD8] rounded-[16px] overflow-y-auto shrink-0">
 
     <div className="p-5 space-y-6 text-[#1D0B01]">
 
@@ -302,13 +302,13 @@ if (sortBy === "new")
   <>
     {/* Overlay */}
     <div
-      className="lg:hidden fixed inset-0 bg-black/40 z-40"
+      className="md:hidden fixed inset-0 bg-black/40 z-40"
       onClick={() => setSidebarOpen(false)}
     />
 
     {/* Sliding sidebar */}
     <aside
-      className={`lg:hidden fixed top-0 left-0 z-50 h-full w-ful bg-[#EDE8D0] transform transition-transform duration-300
+      className={`md:hidden fixed top-0 left-0 z-50 h-full w-ful bg-[#EDE8D0] transform transition-transform duration-300
         ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
     >
       <div className="p-6 space-y-6 overflow-y-auto h-full">
@@ -439,7 +439,7 @@ if (sortBy === "new")
   className={`
     grid gap-[16px] 2xl:gap-[32px]
     grid-cols-1
-    ${sidebarOpen ? "lg:grid-cols-1 2xl:grid-cols-3" : "lg:grid-cols-2 2xl:grid-cols-4"}
+    ${sidebarOpen ?  "md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3" : "md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"}
   `}
 >
             {filteredProducts.map((item, i) => (

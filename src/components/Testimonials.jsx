@@ -114,13 +114,13 @@ const Testimonials = () => {
                 {/* CARD */}
                 <div
                   className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] h-full
-                             p-[20px] md:p-[32px] lg:p-[50px]
+                             p-[16px] lg:p-[32px]
                              flex flex-col"
                   style={{ backgroundColor: item.bg }}
                 >
                   <img
                     src={Quote}
-                    className="w-[100px] md:w-[145px]"
+                    className="w-[100px] lg:w-[145px]"
                     alt=""
                   />
 
