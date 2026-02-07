@@ -232,7 +232,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
         >
           Perfumes
           <LiaAngleDownSolid
-            className={`h-[24px] w-[24px] transition-transform duration-300 ${
+            className={`h-[24px] w-[24px] transition-transform duration-500 ${
               openMegaMenu === "perfume" ? "rotate-180" : ""
             }`}
           />
@@ -314,7 +314,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
         >
     Collections
     <LiaAngleDownSolid
-            className={`h-[24px] w-[24px] transition-transform duration-300 ${
+            className={`h-[24px] w-[24px] transition-transform duration-500 ${
               openMegaMenu === "collection" ? "rotate-180" : ""
             }`}
           />

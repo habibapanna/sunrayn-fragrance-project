@@ -492,7 +492,7 @@ if (sortBy === "new")
       className="w-full bg-white/80 text-black cursor-pointer
       rounded-full py-2 font-medium
       hover:bg-[#BA9948] hover:text-white
-      border border-[#BA9948] transition"
+      border border-[#BA9948] transition-all ease-in-out duration-500"
     >
       Add to cart
     </button>
