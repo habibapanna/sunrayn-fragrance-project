@@ -109,7 +109,7 @@ useEffect(() => {
     items={["Tom Ford", "LeLabo", "YSL", "Chanel", "Jo Malone", "Valentino", "Dio"]}
   />
 
-  <IconFilter
+  {/* <IconFilter
     icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M12 6.00012L8 6.00012" stroke="#282828"/>
   <rect x="4" y="8.00012" width="12" height="11" rx="1" stroke="#282828" stroke-width="1.25"/>
@@ -119,7 +119,7 @@ useEffect(() => {
 </svg>}
     title="Originals by Collection"
     items={["Lauren Collection", "Aliyah Collection", "mgk Collection", "Icons Collection"]}
-  />
+  /> */}
 
   <IconFilter
     icon={<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -138,7 +138,7 @@ useEffect(() => {
  {/* RIGHT CARD */}
           <div className="flex justify-center lg:justify-end">
 
-            <div className="bg-[#F6F7F2] w-full max-w-[280px] h-auto rounded-[24px] p-[24px] flex flex-col justify-between gap-[32px]">
+            <div className="bg-[#F6F7F2] w-full max-w-[280px] h-auto rounded-[24px] p-[12px] 2xl:p-[24px] flex flex-col justify-between gap-[32px]">
 
 
 <div className="">
