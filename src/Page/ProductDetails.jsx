@@ -36,7 +36,30 @@ const handleScroll = () => {
   const index = Math.round(scrollLeft / width);
   setActiveIndex(index);
 };
+// for Accordion
+const smoothScrollTo = (targetY, duration = 900) => {
+  const startY = window.scrollY;
+  const distance = targetY - startY;
+  let startTime = null;
 
+  const easeInOutCubic = (t) =>
+    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+  const step = (currentTime) => {
+    if (!startTime) startTime = currentTime;
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = easeInOutCubic(progress);
+
+    window.scrollTo(0, startY + distance * eased);
+
+    if (elapsed < duration) {
+      requestAnimationFrame(step);
+    }
+  };
+
+  requestAnimationFrame(step);
+};
 
 const toggle = (section, ref) => {
   const isOpening = openSection !== section;
@@ -44,24 +67,21 @@ const toggle = (section, ref) => {
 
   if (!isOpening) return;
 
-  setTimeout(() => {
-    if (!ref?.current) return;
+  // wait for accordion content to render + expand
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      if (!ref?.current) return;
 
-    const yOffset = window.innerWidth >= 1024 ? -120 : -80; // header offset
-    const y =
-      ref.current.getBoundingClientRect().top +
-      window.pageYOffset +
-      yOffset;
+      const yOffset = window.innerWidth >= 1024 ? -120 : -80;
+      const y =
+        ref.current.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
 
-    window.scrollTo({
-      top: y,
-      behavior: "smooth",
+      smoothScrollTo(y, 1000); // 👈 ultra smooth
     });
-  }, 300);
+  });
 };
-
-
-
 
     const SmallBottleIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">

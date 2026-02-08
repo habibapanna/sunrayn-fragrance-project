@@ -103,7 +103,6 @@ const Footer = () => {
    {/* BIG S FOREGROUND */} 
    <img src={BigS} alt="Big S" className=" relative z-10 lg:h-[300px] 2xl:h-[400px] w-auto " /> </div>
 
-
         </div>
       </div>
 

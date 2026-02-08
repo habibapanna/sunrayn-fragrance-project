@@ -18,9 +18,7 @@ body {
   font-family: "Satoshi", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+
 
 /* DaisyUI range custom color */
 input[type="range"].custom-range::-webkit-slider-thumb {
@@ -55,6 +53,9 @@ input[type="range"].custom-range::-moz-range-track {
 
 
 
+html {
+  scroll-behavior: auto;
+}
 
 
 

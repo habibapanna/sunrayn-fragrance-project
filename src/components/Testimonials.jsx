@@ -2,9 +2,9 @@ import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 
-import Quote from "../../src/assets/Review text (1).png";
-import Reviewer from "../../src/assets/Reviewer photo (1).png";
-import material from "../../src/assets/material-symbols-light_verified-rounded.png";
+import Quote from "../../src/assets/Review text.svg";
+import Reviewer from "../../src/assets/Reviewer photo.svg";
+import material from "../../src/assets/material-symbols-light_verified-rounded.svg";
 
 const testimonials = [
   {
