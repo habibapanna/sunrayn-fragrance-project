@@ -99,34 +99,6 @@ const brandSrc = isProductList || isContact || isFaq || isAbout || isTerms || is
   : BrandName;
 
 
-  const perfumeStyles = ["Men", "Women", "Unisex"];
-
-const perfumeFamilies = [
-  "Flowery",
-  "Warm",
-  "Gourmand",
-  "Fresh",
-  "Earthy",
-  "Herbal",
-];
-
-const perfumeTypes = [
-  "All Perfumes",
-  "Best Sellers",
-  "New Arrivals",
-  "Limited Editions",
-  "Combo Sales",
-];
-
-const inspiredBrands = [
-  "Blueberry",
-  "Byredo",
-  "Chanel",
-  "Creed",
-  "Dior",
-  "Guccu",
-];
-
 const MobileGrid = ({ items }) => (
   <div className="grid grid-cols-1 gap-3 bg-[#F6F7F2] p-3 rounded-[8px] mt-3 ">
     {items.map((item) => (
@@ -159,7 +131,7 @@ const navPaddingClass = (() => {
 
 // Determine navbar background (unchanged)
 const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? "bg-[#997E3D]/80 backdrop-blur-2xl rounded-full mt-[4px] md:mt-[12px]"
+  ? "bg-[#997E3D]/80 backdrop-blur-2xl rounded-full  md:mt-[12px]"
   : scrolled
   ? "bg-[#997E3D]/80 backdrop-blur-2xl rounded-full mt-[6px] 2xl:mt-[8px] mx-[16px] 2xl:mx-[32px]"
   : "bg-transparent";
@@ -442,11 +414,11 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
             </div>
 
             {/* MOBILE ICONS */}
-            <div className="flex lg:hidden items-center gap-[16px] py-[10px]">
+            <div className="flex lg:hidden items-center gap-[10px] py-[6px]">
               <button
                title="Search Perfumes"
   onClick={() => setSearchOpen(true)}
-  className="bg-white/90 p-[8px] h-[30px] w-[30px] flex items-center rounded-full cursor-pointer"
+  className="bg-white/90 p-[8px] h-[28px] w-[28px] flex items-center rounded-full cursor-pointer"
 >
   <svg  className="h-[24px] w-[24px] " xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 17 17" fill="none">
   <path fill-rule="evenodd" clip-rule="evenodd" d="M7.91667 1.66667C4.46489 1.66667 1.66667 4.46489 1.66667 7.91667C1.66667 11.3684 4.46489 14.1667 7.91667 14.1667C9.59425 14.1667 11.1175 13.5057 12.2401 12.43C12.266 12.3941 12.2952 12.3597 12.3275 12.3274C12.3598 12.2951 12.3942 12.2659 12.4301 12.24C13.5058 11.1174 14.1667 9.59421 14.1667 7.91667C14.1667 4.46489 11.3684 1.66667 7.91667 1.66667ZM14.073 12.8944C15.1739 11.5345 15.8333 9.80261 15.8333 7.91667C15.8333 3.54441 12.2889 0 7.91667 0C3.54441 0 0 3.54441 0 7.91667C0 12.2889 3.54441 15.8333 7.91667 15.8333C9.80264 15.8333 11.5346 15.1739 12.8945 14.0729L15.2441 16.4226C15.5695 16.748 16.0971 16.748 16.4226 16.4226C16.748 16.0972 16.748 15.5695 16.4226 15.2441L14.073 12.8944Z" fill="#1D0B01"/>
@@ -455,7 +427,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
               <button
                title="View Cart"
   onClick={() => setCartOpen(true)}
-  className="bg-white/90 p-[8px] h-[30px] w-[30px] flex items-center rounded-full cursor-pointer"
+  className="bg-white/90 p-[8px] h-[28px] w-[28px] flex items-center rounded-full cursor-pointer"
 >
   <svg className="h-[24px] w-[24px] " xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 20 20" fill="none">
   <g opacity="0.7">
@@ -469,7 +441,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
              <button
   title="Open Search"
   onClick={() => setSearchOpen(true)}
-  className="bg-white/90 p-[8px] h-[30px] w-[30px] rounded-full flex items-center cursor-pointer"
+  className="bg-white/90 p-[8px] h-[28px] w-[28px] rounded-full flex items-center cursor-pointer"
 >
   <TbMenu className="text-[#1D0B01] h-[24px] w-[24px]" />
 </button>

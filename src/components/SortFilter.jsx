@@ -192,7 +192,7 @@ const showClearAll =
     md:static
     ${
       isSticky
-        ? "fixed top-[100px] left-0 z-40 pt-[16px] bg-white"
+        ? "fixed top-[90px] left-0 z-40 pt-[16px] bg-white"
         : "relative"
     }
   
