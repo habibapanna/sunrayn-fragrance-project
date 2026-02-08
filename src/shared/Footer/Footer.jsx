@@ -31,6 +31,7 @@ const Footer = () => {
       inset-0
       m-auto
       h-full w-full object-cover
+      pointer-events-none
     "
   />
         </div>
