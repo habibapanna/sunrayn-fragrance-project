@@ -204,7 +204,13 @@ const showClearAll =
           {/* Sort & Filter Button */}
           <button
             onClick={() => setSidebarOpen((prev) => !prev)}
-            className="hidden md:flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[12px] py-[6px] 2xl:px-[18px] 2xl:py-[12px] text-[#1D0B01] font-medium text-[12px] 2xl:text-[16px] cursor-pointer"
+            className={`hidden md:flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[12px] py-[6px] 2xl:px-[18px] 2xl:py-[12px] text-[#1D0B01] font-medium text-[12px] 2xl:text-[16px] cursor-pointer
+              ${
+      isSticky
+        ? "fixed top-[145px] left-0 z-40 mx-[32px] border-2 border-black bg-white text-black font-semibold"
+        : "relative"
+    }
+              `}
           >
            <img src={Sort} alt="" />
             SORT & FILTER
