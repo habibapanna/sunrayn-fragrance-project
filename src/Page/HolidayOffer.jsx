@@ -155,7 +155,7 @@ if (sortBy === "new")
   );
 
   return (
-    <div className="2xl:pt-[16px]">
+    <div className="2xl:pt-[32px]">
       <Offer />
  <div className="px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
          <SortFilter
