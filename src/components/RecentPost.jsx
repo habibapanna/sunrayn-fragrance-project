@@ -55,7 +55,7 @@ const RecentPost = () => {
         </h2>
         <div className="flex items-center gap-[24px]">
           <button className="bg-[#F5F1EA] text-[#571313] font-semibold px-6 py-3 rounded-full flex items-center text-[14px] lg:text-[16px] 2xl:text-[20px] cursor-pointer">
-            <img src={Instagram} alt="" className="mr-[4px] h-5 md:h-10" />@Sanrayn
+            <img src={Instagram} alt="" className="mr-[4px] h-[20px] lg:h-10" />@Sanrayn
           </button>
           {/* Nav buttons */}
           <div className="hidden lg:flex gap-[20px]">
@@ -101,11 +101,11 @@ const RecentPost = () => {
       >
         {posts.map((item, idx) => (
           <SwiperSlide key={idx}>
-            <div className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-40 md:h-96 lg:mb-[32px]">
+            <div className="group relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-40 md:h-96 lg:mb-[32px]">
               <img
                 src={item.product}
                 alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-125 duration-1000"
               />
             </div>
           </SwiperSlide>

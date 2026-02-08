@@ -72,7 +72,7 @@ const toggle = (section, ref) => {
     requestAnimationFrame(() => {
       if (!ref?.current) return;
 
-      const yOffset = window.innerWidth >= 1024 ? -120 : -80;
+      const yOffset = window.innerWidth >= 768 ? -120 : -80;
       const y =
         ref.current.getBoundingClientRect().top +
         window.pageYOffset +
@@ -151,10 +151,10 @@ Back
 </div>
 
       {/* TOP SECTION */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] 2xl:gap-[32px] px-[16px] 2xl:px-[32px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] 2xl:gap-[32px] px-[16px] 2xl:px-[32px]">
         
         {/* LEFT – IMAGES */}
-        <div className="hidden lg:grid grid-cols-2 gap-[16px] 2xl:gap-[32px] auto-rows-min">
+        <div className="hidden md:grid grid-cols-2 gap-[16px] 2xl:gap-[32px] auto-rows-min">
           <div className="col-span-2 ] ">
             <img
               src={product.images[1]}
@@ -170,7 +170,7 @@ Back
           ))}
         </div>
 {/* LEFT – IMAGES (MOBILE CAROUSEL) */}
-<div className="lg:hidden">
+<div className="md:hidden">
   <div
     ref={carouselRef}
     onScroll={handleScroll}
@@ -207,7 +207,7 @@ Back
   </div>
 </div>
  {/* RIGHT – INFO */}
-<div className="lg:sticky lg:top-[100px] h-fit">
+<div className="md:sticky md:top-[100px] h-fit">
   <div className="bg-[#F6F7F2] rounded-[32px] p-[16px] 2xl:p-[32px]">
 
           <span className="text-[12px] 2xl:text-[16px] bg-[#FFFFFF] py-[8px] px-[16px] rounded-full">{product.gender}</span>
@@ -219,7 +219,7 @@ Back
           {/* Rating */}
           <div className="flex items-center gap-[5px] mt-3">
             {[...Array(5)].map((_, i) => (
-              <FaStar key={i} className="text-[#FF9100]" />
+              <FaStar key={i} className="text-[#BA9948]" />
             ))}
             <span className="text-[16px] underline">
               {product.rating} ({product.reviews})

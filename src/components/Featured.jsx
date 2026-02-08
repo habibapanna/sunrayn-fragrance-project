@@ -80,7 +80,7 @@ const Featured = () => {
               style={{ width: `${100 / itemsPerView}%` }}
             >
               <div
-                className="relative rounded-[16px]  md:rounded-[24px]
+                className="group relative rounded-[16px]  md:rounded-[24px]
     h-[384px] lg:h-[700px]
     cursor-pointer overflow-hidden"
                 onClick={() => navigate(`/productList/${item.slug}`)}
@@ -96,7 +96,7 @@ const Featured = () => {
                 <img
                   src={item.images}
                   alt={item.title}
-                  className="absolute inset-0 mx-auto h-full w-full object-cover"
+                  className="absolute inset-0 mx-auto h-full w-full object-cover group-hover:scale-125 duration-1000"
                 />
  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 w-full z-20 p-[20px] lg:p-[40px]">

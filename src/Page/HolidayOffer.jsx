@@ -457,17 +457,17 @@ if (sortBy === "new")
 
   {/* Tags */}
   <div className="absolute top-[8px] left-[8px] md:top-[16px] md:left-[16px] z-10">
-    <span className="bg-white/60 text-[10px] md:text-[12px] px-[8px] py-[2px] rounded-full border text-[#BA9948] border-[#BA9948]">
+    <span className="bg-white/90 text-[8px] md:text-[10px] 2xl:text-[12px] px-[8px] py-[2px] rounded-full border text-[#BA9948] border-[#BA9948]">
       {item.gender}
     </span>
   </div>
   <div className="absolute hidden md:block top-[16px] right-[16px] z-10">
-    <span className="bg-white/60 text-[10px] md:text-[12px] px-[8px] py-[2px] rounded-full uppercase">
+    <span className="bg-white/90 text-[8px] md:text-[10px] 2xl:text-[12px] px-[8px] py-[2px] rounded-full uppercase">
       {item.off}
     </span>
   </div>
   <div className="absolute md:hidden bottom-[8px] left-[8px] z-10">
-    <span className="bg-white/60 text-[10px] md:text-[12px] px-[8px] py-[2px] rounded-full uppercase">
+    <span className="bg-white/90 text-[8px] md:text-[10px] 2xl:text-[12px]  px-[8px] py-[2px] rounded-full uppercase">
       {item.off}
     </span>
   </div>
@@ -475,7 +475,7 @@ if (sortBy === "new")
   <img
     src={item.images[0]}
     alt={item.title}
-    className="w-full h-full md:h-[360px] object-cover"
+    className="w-full h-full md:h-[360px] object-cover group-hover:scale-125 duration-1000"
   />
 
   {/* DESKTOP HOVER ADD TO CART */}
@@ -487,10 +487,10 @@ if (sortBy === "new")
   >
     <button
       onClick={(e) => e.stopPropagation()}
-      className="w-full bg-white/80 text-black
+      className="w-full bg-white/80 text-black cursor-pointer
       rounded-full py-2 font-medium
       hover:bg-[#BA9948] hover:text-white
-      border border-[#BA9948] transition-all ease-in-out duration-500 cursor-pointer"
+      border border-[#BA9948] transition-all ease-in-out duration-500 md:text-[15px] 2xl:text-[18px]"
     >
       Add to cart
     </button>
@@ -506,43 +506,36 @@ if (sortBy === "new")
 <div className="flex items-center gap-[8px]">   
    <div className="flex items-center gap-[4px] text-[#BA9948]">
       {[...Array(5)].map((_, index) => (
-        <FaStar key={index} className="text-[12px]" />
+        <FaStar key={index} className="text-[12px] md:text-[14px] 2xl:text-[16px]" />
       ))}
      
     </div>
-     <span className="text-[#1D0B01] text-[12px]">1239</span>
+     <span className="text-[#1D0B01] text-[12px] md:text-[14px] 2xl:text-[16px]">1239</span>
     </div>
 
     {/* Title + Price Row */}
     <div className="flex justify-between items-center mt-[12px] md:[4px]">
-      <h3 className="text-[#571313] text-[12px] md:text-[15px] font-semibold uppercase">
+      <h3 className="text-[#571313] text-[12px] md:text-[16px] 2xl:text-[20px] font-semibold uppercase">
         {item.title}
       </h3>
       <div className="flex gap-[6px]">
-        <p className="text-[#F80000] line-through text-[13px] md:text-[15px]">
+        <p className="text-[#F80000] line-through text-[13px] md:text-[16px] 2xl:text-[20px]">
           ${item.oldPrice}
         </p>
-        <p className="text-[#571313] font-semibold text-[13px] md:text-[15px]">
+        <p className="text-[#571313] font-semibold text-[13px] md:text-[16px] 2xl:text-[20px]">
           ${item.price}
         </p>
       </div>
     </div>
 
    <div className="">
-     <p className="text-[12px] mt-[12px] md:[4px] text-[#0D0C09]">
-      Tops: <span className="font-semibold text-[#1D0B01]">
-        Cherry, Almond, Cinnamon
-      </span>
-    </p>
-    <p className="text-[12px] mt-[12px] md:[4px] text-[#0D0C09]">
-      Middle: <span className="font-semibold text-[#1D0B01]">
-        Clove, Rose, Jasmine, Plum
-      </span>
+     <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">
+      Alluring cherry and almond fragrance that balances sweetness and depth, playful at first, irresistibly smooth as it unfolds.
     </p>
    </div>
     <div className="flex justify-between">
-      <p className="text-[12px] mt-[12px] md:[4px] text-[#0D0C09]">Crafted in <span  className="font-semibold text-[#1D0B01]">USA</span></p>
-    <p className="text-[12px] mt-[12px] md:[4px] text-[#0D0C09]">Scent Family: <span  className="font-semibold text-[#1D0B01]">{item.scentFamily}</span></p>
+      <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Crafted in <span  className="font-semibold text-[#1D0B01]">USA</span></p>
+    <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Scent Family: <span  className="font-semibold text-[#1D0B01]">{item.scentFamily}</span></p>
     </div>
     {/* MOBILE ADD TO CART */}
 <div className="flex justify-end mt-[12px] md:hidden">

@@ -80,12 +80,12 @@ const Blogs = () => {
           <SwiperSlide key={idx}>
             <div
               onClick={() => navigate(`/blogs/${item.slug}`)}
-              className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-[350px] lg:h-[500px] 2xl:h-[700px] cursor-pointer"
+              className="group relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-[350px] lg:h-[500px] 2xl:h-[700px] cursor-pointer"
             >
               <img
                 src={item.product}
                 alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-125 duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
               <div className="absolute left-[16px] bottom-[16px] right-[16px] 2xl:bottom-[32px] 2xl:left-[32px] 2xl:right-[32px] text-white text-[25px] md:text-[30px] 2xl:text-[40px] font-medium">

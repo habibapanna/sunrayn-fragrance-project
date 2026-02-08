@@ -13,15 +13,15 @@ const Offer = () => {
           }}
         >
           {/* LEFT EMPTY SPACE */}
-          <div className="w-1/3 xl:w-1/2" />
+          <div className="w-1/3 md:w-1/2" />
 
           {/* RIGHT CONTENT */}
-          <div className="relative z-10 w-2/3 xl:w-1/2
+          <div className="relative z-10 w-2/3 md:w-1/2
             flex items-center justify-center
-            px-6 py-16 md:px-[150px] md:py-[241px]"
+            px-6 py-16  md:py-[241px]"
           >
             <div className="text-white text-left">
-              <h1 className="text-[25px] lg:text-[40px] 2xl:text-[90px] leading-tight mb-6">
+              <h1 className="text-[25px] md:text-[40px] 2xl:text-[90px] leading-tight mb-6">
                 Get 30% Off
               </h1>
 
@@ -31,9 +31,9 @@ const Offer = () => {
 
               <button
                 className="bg-white px-[24px] py-[10px]
-                rounded-[100px] h-[30px] w-[123px]
-                md:w-[210px] md:h-[55px]
-                text-[14px] md:text-[20px]
+                rounded-[100px] h-[30px] w-[123px] md:h-[40px] md:w-[200px] md:font-semibold md:text-[16px]
+                lg:w-[210px] lg:h-[55px]
+                text-[14px] lg:text-[20px]
                 2xl:font-bold transition-all duration-300 ease-out
                 hover:bg-[#BA9948] hover:text-white text-[#1D0B01] flex items-center justify-center cursor-pointer "
               >
