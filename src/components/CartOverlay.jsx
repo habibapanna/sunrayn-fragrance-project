@@ -65,7 +65,7 @@ const CartOverlay = ({ onClose }) => {
  const navTopClass = isHome ? "top-0" : "top-0";
     
   return (
-    <aside className={`fixed ${navTopClass} right-0 h-full w-full lg:w-[541px] bg-white z-60 flex flex-col`}>
+    <aside className={`fixed ${navTopClass} right-0 h-full w-full md:w-[431px] lg:w-[541px] bg-white z-60 flex flex-col`}>
 {/* TOP FIXED AREA */}
 <div className="sticky top-0 z-10 bg-white">
       {/* Header */}
@@ -186,7 +186,7 @@ const CartOverlay = ({ onClose }) => {
 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               
             <div className="absolute bottom-0 left-0 w-full p-3">
-              <div className="flex gap-[2px] text-[#FF9100] text-[12px]">
+              <div className="flex gap-[2px] text-[#BA9948] text-[12px]">
                 {[...Array(5)].map((_, i) => (
                   <FaStar key={i} />
                 ))}

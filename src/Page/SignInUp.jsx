@@ -6,17 +6,17 @@ const SignInUp = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center">
       {/* CONTAINER */}
-      <div className="relative w-full h-full lg:h-[640px] lg:max-w-[1200px] overflow-hidden rounded-[24px] lg:rounded-[32px]">
+      <div className="relative w-full h-full md:h-[540px] lg:h-[640px] md:max-w-[700px] lg:max-w-[1200px] overflow-hidden rounded-[24px] lg:rounded-[32px]">
 
         {/* FULL IMAGE BACKGROUND (DESKTOP ONLY) */}
         <img
           src="https://i.postimg.cc/3w2FjYZ4/imgi-422-Desktop-Login-Popup.png"
           alt="Perfume"
-          className="hidden lg:block absolute inset-0 w-full h-full object-cover bg-no-repeat"
+          className="hidden md:block absolute inset-0 w-full h-full object-cover bg-no-repeat"
         />
 
         {/* FORM WRAPPER */}
-        <div className="relative lg:absolute lg:right-0 lg:top-0 lg:h-[600px] h-full w-full lg:w-[480px] bg-white rounded-[24px] lg:rounded-[32px] lg:m-[20px] px-[20px] py-[36px] lg:p-[36px] flex flex-col">
+        <div className="relative md:absolute md:right-0 lg:top-0 lg:h-[600px] h-full w-full md:w-[350px] lg:w-[480px] bg-white rounded-[24px] lg:rounded-[32px] lg:m-[20px] px-[20px] py-[36px] lg:p-[36px] flex flex-col">
 
           {/* CLOSE */}
           <button

@@ -35,7 +35,6 @@ useEffect(() => {
 }, [location.pathname, open]);
 
 
-
 useEffect(() => {
   if (open) {
     setAnimateSearch(false);
@@ -73,10 +72,10 @@ useEffect(() => {
      <div
   className="
     absolute
-    top-0 lg:top-[106px]
-    right-0 md:right-[12px] 2xl:right-[164px]
+    top-0 md:top-[50px] lg:top-[106px]
+    right-0 md:right-[45px] lg:right-[12px] 2xl:right-[164px]
     w-full md:w-[680px] lg:w-[1001px]
-    bg-white lg:rounded-[24px]
+    bg-white md:rounded-[24px]
     px-[24px] pb-[32px] md:pb-[4px]
     max-h-screen
     lg:max-h-[calc(100vh-140px)]
