@@ -73,7 +73,7 @@ const Hero = () => {
                 border border-[#BA9948]
                 hover:text-[#1D0B01]
                 transition-all duration-300 ease-out
-                flex items-center justify-center
+                flex items-center justify-center cursor-pointer
               ">
                 Shop Now
               </button>
