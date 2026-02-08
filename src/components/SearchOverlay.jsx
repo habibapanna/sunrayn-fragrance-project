@@ -6,6 +6,10 @@ import Originals from '../assets/Frame (4).svg';
 import Family from '../assets/Frame (5).svg';
 import User from '../assets/User Icon.svg';
 import SignInUp from "../Page/SignInUp";
+import { Link } from "react-router-dom";
+import Solar from '../assets/Vector (4).svg';
+import { useLocation } from "react-router-dom";
+
 
 
 const SearchOverlay = ({ open, onClose, onOpenSignIn }) => {
@@ -13,6 +17,23 @@ const SearchOverlay = ({ open, onClose, onOpenSignIn }) => {
   const [animateSearch, setAnimateSearch] = useState(false);
 const [showPlaceholder, setShowPlaceholder] = useState(false);
 const [signInUpOpen, setSignInUpOpen] = useState(false);
+const location = useLocation();
+const prevPathRef = useRef(location.pathname);
+
+
+useEffect(() => {
+  if (!open) {
+    prevPathRef.current = location.pathname;
+    return;
+  }
+
+  if (location.pathname !== prevPathRef.current) {
+    onClose();
+  }
+
+  prevPathRef.current = location.pathname;
+}, [location.pathname, open]);
+
 
 
 useEffect(() => {
@@ -56,9 +77,7 @@ useEffect(() => {
     right-0 md:right-[12px] 2xl:right-[164px]
     w-full md:w-[680px] lg:w-[1001px]
     bg-white lg:rounded-[24px]
-    px-[24px]
-
-   
+    px-[24px] pb-[32px] md:pb-[4px]
     max-h-screen
     lg:max-h-[calc(100vh-140px)]
     overflow-y-auto
@@ -194,6 +213,16 @@ useEffect(() => {
           </div>
         </div>
 
+    {/* HOLIDAY SALE */}
+    <Link
+     to="/holidayOffer">
+      <button
+      onClick={onClose}
+       className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[14px] rounded-[100px] font-semibold flex items-center gap-[6px] w-full justify-center md:hidden">
+     <img src={Solar} alt="" /> Holiday Sale
+      </button>
+    </Link>
+
         {signInUpOpen && (
   <>
     {/* BLUR BACKGROUND */}
@@ -300,5 +329,4 @@ const IconFilter = ({ icon, title, items, hideArrowOnDesktop = false }) => {
 
 
 export default SearchOverlay;
-
 
