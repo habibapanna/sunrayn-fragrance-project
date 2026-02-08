@@ -97,14 +97,11 @@ const Footer = () => {
           </div>
 
 {/* DESKTOP BIG S + LOGO BACKGROUND */}
- <div className=" hidden 2xl:flex absolute lg:right-[50px] top-1/2 -translate-y-1/2 items-center justify-center pointer-events-none w-[420px] h-[420px] 2xl:w-[650px] 2xl:h-[650px] " >
+ <div className=" hidden lg:flex absolute lg:right-[50px] top-1/2 -translate-y-1/2 items-center justify-center pointer-events-none w-[420px] h-[420px] 2xl:w-[650px] 2xl:h-[650px] " >
   {/* LOGO BACKGROUND */} 
   <img src={Logo} alt="Brand Background" className=" absolute inset-0 m-auto h-full w-full object-cover opacity-100 " />
    {/* BIG S FOREGROUND */} 
    <img src={BigS} alt="Big S" className=" relative z-10 lg:h-[300px] 2xl:h-[400px] w-auto " /> </div>
-
-
-
 
 
         </div>
@@ -128,10 +125,7 @@ const Footer = () => {
   <p className="text-[16px] text-[#220B12B2] order-4 md:order-none md:mb-0">
     ©2026 Sanrayn all right reserved
   </p>
-
-  {/* 2. SOCIAL ICONS */}
   
-
 
   {/* 2. PAYMENTS */}
   <div className="flex items-center gap-[33px] md:gap-[20px] lg:gap-[33px] justify-center order-3 md:order-none">
@@ -141,40 +135,6 @@ const Footer = () => {
   </div>
 
 </div>
-<footer className="relative bg-gradient-to-t from-[#FDFCFC] to-[#F0ECE5]">
-
-  {/* DESKTOP BIG S + LOGO BACKGROUND */}
-  {/* <div
-    className="
-      hidden 2xl:flex
-      absolute
-      right-[80px]
-      bottom-[120px]
-      w-[650px] h-[650px]
-      items-center justify-center
-      pointer-events-none
-      z-0
-    "
-  >
-    <img
-      src={Logo}
-      alt="Brand Background"
-      className="absolute inset-0 w-full h-full object-cover"
-    />
-    <img
-      src={BigS}
-      alt="Big S"
-      className="relative z-10 h-[400px]"
-    />
-  </div> */}
-
-  {/* MAIN CONTENT */}
-  <div className="relative z-10 mx-auto px-6 py-16">
-    {/* your existing footer content */}
-  </div>
-
-</footer>
-
     </footer>
   );
 };
