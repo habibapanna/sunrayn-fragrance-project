@@ -4,7 +4,7 @@ import { GoChevronRight } from "react-icons/go";
 import Heart from '../assets/Heart.svg';
 import Originals from '../assets/Frame (4).svg';
 import Family from '../assets/Frame (5).svg';
-import User from '../assets/User icon.svg';
+import User from '../assets/User Icon.svg';
 import SignInUp from "../Page/SignInUp";
 
 

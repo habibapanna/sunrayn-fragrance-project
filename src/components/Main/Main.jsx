@@ -2,11 +2,11 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import TopAnnouncementBar from "../TopAnnouncementBar";
-import Navbar from "../../shared/Navbar/Navbar";
 import Footer from "../../shared/Footer/Footer";
 import RouteLoader from "../RouteLoader";
 import ScrollToTopButton from "../ScrollToTopButton";
 import ChatWidget from "../ChatWidget";
+import Navbar from "../../shared/Navbar/Navbar";
 
 const Main = () => {
   const location = useLocation();
