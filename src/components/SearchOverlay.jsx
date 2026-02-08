@@ -143,8 +143,8 @@ useEffect(() => {
 
   <IconFilter
     icon={Originals}
-    title="Impressions of Inspired-by Brands"
-    items={["Tom Ford", "LeLabo", "YSL", "Chanel", "Jo Malone", "Valentino", "Dio"]}
+    title="ORIGINALS BY COLLECTION"
+    items={["Lauren Collection", "Allyiah Collection", "mgk Collection", "Icons Collection",]}
   />
 
 
