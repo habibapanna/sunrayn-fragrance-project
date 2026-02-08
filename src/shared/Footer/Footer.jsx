@@ -97,7 +97,7 @@ const Footer = () => {
           </div>
 
 {/* DESKTOP BIG S + LOGO BACKGROUND */}
- <div className=" hidden lg:flex absolute lg:right-[50px] top-1/2 -translate-y-1/2 items-center justify-center pointer-events-none w-[420px] h-[420px] 2xl:w-[650px] 2xl:h-[650px] " >
+ <div className=" hidden 2xl:flex absolute lg:right-[50px] top-1/2 -translate-y-1/2 items-center justify-center pointer-events-none w-[420px] h-[420px] 2xl:w-[650px] 2xl:h-[650px] " >
   {/* LOGO BACKGROUND */} 
   <img src={Logo} alt="Brand Background" className=" absolute inset-0 m-auto h-full w-full object-cover opacity-100 " />
    {/* BIG S FOREGROUND */} 
