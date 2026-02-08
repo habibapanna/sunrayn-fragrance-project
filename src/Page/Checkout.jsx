@@ -2,12 +2,12 @@
 import { Link } from "react-router-dom";
 import Logo2 from "../assets/Logo (2).svg";
 import SANRAYN from '../assets/SANRAYN (1).svg';
-import shopPay from '../assets/shopPayLogo.png';
-import PayPal from '../assets/XMLID_1_.png';
-import Gpay  from '../assets/G pay logo.png';
-import Visa  from '../assets/Visa logo.png';
-import MasterCard  from '../assets/MasterCard logo.png';
-import Flag from '../assets/Flag Pack.png';
+import shopPay from '../assets/ShopPay.svg';
+import PayPal from '../assets/Paypal Logo.svg';
+import Gpay  from '../assets/G pay logo.svg';
+import Visa  from '../assets/credit-card.svg';
+import MasterCard  from '../assets/credit-card (1).svg';
+import Flag from '../assets/Flag Pack.svg';
 import { LuSearch } from "react-icons/lu";
 
 const Checkout = () => {

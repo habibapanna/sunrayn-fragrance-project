@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import BigS from "../../assets/Footer Logo.svg";
-import Facebook from "../../assets/Facebook logo.png";
-import Instagram from "../../assets/instagram logo.png";
-import Tiktok from "../../assets/Social Media Icon.png";
-import Visa from "../../assets/Visa logo.png";
-import Paypal from "../../assets/XMLID_1_.png";
+import Facebook from "../../assets/Facebook logo.svg";
+import Instagram from "../../assets/instagram logo.svg";
+import Tiktok from "../../assets/Footer Social.svg";
+import Visa from "../../assets/Visa logo.svg";
+import Paypal from "../../assets/XMLID_1_.svg";
 import SANRAYN from "../../assets/SANRAYN.svg";
-import MasterCard from "../../assets/MasterCard logo.png";
+import MasterCard from "../../assets/MasterCard logo.svg";
 import Logo from "../../assets/Logo (1).svg";
 
 const Footer = () => {
@@ -97,44 +97,12 @@ const Footer = () => {
           </div>
 
 {/* DESKTOP BIG S + LOGO BACKGROUND */}
-<div
-  className="
-    hidden 2xl:flex
-    absolute
-    lg:right-[50px]
-    top-1/2 -translate-y-1/2
-    items-center justify-center
-    pointer-events-none
-    w-[420px] h-[420px]
-    2xl:w-[650px] 2xl:h-[650px]
-  "
->
-  {/* LOGO BACKGROUND */}
-  <img
-    src={Logo}
-    alt="Brand Background"
-    className="
-      absolute
-      inset-0
-      m-auto
-      h-full w-full object-cover
-      opacity-100
-    "
-  />
+ <div className=" hidden 2xl:flex absolute lg:right-[50px] top-1/2 -translate-y-1/2 items-center justify-center pointer-events-none w-[420px] h-[420px] 2xl:w-[650px] 2xl:h-[650px] " >
+  {/* LOGO BACKGROUND */} 
+  <img src={Logo} alt="Brand Background" className=" absolute inset-0 m-auto h-full w-full object-cover opacity-100 " />
+   {/* BIG S FOREGROUND */} 
+   <img src={BigS} alt="Big S" className=" relative z-10 lg:h-[300px] 2xl:h-[400px] w-auto " /> </div>
 
-  {/* BIG S FOREGROUND */}
-  <img
-    src={BigS}
-    alt="Big S"
-    className="
-      relative
-      z-10
-      lg:h-[300px]
-      2xl:h-[400px]
-      w-auto
-    "
-  />
-</div>
 
 
 
@@ -173,6 +141,39 @@ const Footer = () => {
   </div>
 
 </div>
+<footer className="relative bg-gradient-to-t from-[#FDFCFC] to-[#F0ECE5]">
+
+  {/* DESKTOP BIG S + LOGO BACKGROUND */}
+  {/* <div
+    className="
+      hidden 2xl:flex
+      absolute
+      right-[80px]
+      bottom-[120px]
+      w-[650px] h-[650px]
+      items-center justify-center
+      pointer-events-none
+      z-0
+    "
+  >
+    <img
+      src={Logo}
+      alt="Brand Background"
+      className="absolute inset-0 w-full h-full object-cover"
+    />
+    <img
+      src={BigS}
+      alt="Big S"
+      className="relative z-10 h-[400px]"
+    />
+  </div> */}
+
+  {/* MAIN CONTENT */}
+  <div className="relative z-10 mx-auto px-6 py-16">
+    {/* your existing footer content */}
+  </div>
+
+</footer>
 
     </footer>
   );
