@@ -12,7 +12,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 
 
-const Navbar = () => {
+const Navbar = ({ showTopBar }) => {
 const [open, setOpen] = useState(false);
 const [scrolled, setScrolled] = useState(false);
 const [searchOpen, setSearchOpen] = useState(false);
@@ -166,7 +166,6 @@ const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || 
 
 // Determine top position
 const navTopClass = isHome ? "top-0" : "top-[44px]";
-
 
 
   return (

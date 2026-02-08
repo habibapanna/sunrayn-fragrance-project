@@ -529,8 +529,8 @@ if (sortBy === "new")
         </p>
       </div>
     </div>
-
-   <div className="fle">
+    
+   <div className="">
      <p className="text-[12px] mt-[12px] md:[4px] text-[#0D0C09]">
       Tops: <span className="font-semibold text-[#1D0B01]">
         Cherry, Almond, Cinnamon
