@@ -24,11 +24,11 @@ const TopAnnouncementBar = () => {
 
   return (
    <div className="
-  fixed top-0 md:top-[8px] left-0 right-0 md:mx-[16px]
+  fixed top-[2px] md:top-[6px] left-0 right-0 mx-[16px]
   2xl:mx-[32px]
-  z-[60]
+  z-50
   bg-[#1C1C1C] text-white
-  md:rounded-full
+  rounded-full
 ">
 
       <div className="max-w-[1600px] mx-auto px-4 h-[44px] flex items-center justify-between rounded-b-[24px]">

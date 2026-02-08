@@ -159,9 +159,9 @@ const navPaddingClass = (() => {
 
 // Determine navbar background (unchanged)
 const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? "bg-[#997E3D]/80 backdrop-blur-2xl rounded-full mt-[6px] md:mt-[15px]"
+  ? "bg-[#997E3D]/80 backdrop-blur-2xl rounded-full mt-[4px] md:mt-[12px]"
   : scrolled
-  ? "bg-[#997E3D]/80 backdrop-blur-2xl rounded-full mt-[6px] 2xl:mt-[10px] mx-[16px] 2xl:mx-[32px]"
+  ? "bg-[#997E3D]/80 backdrop-blur-2xl rounded-full mt-[6px] 2xl:mt-[8px] mx-[16px] 2xl:mx-[32px]"
   : "bg-transparent";
 
 // Determine top position
@@ -177,7 +177,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
     ${navPaddingClass} left-0 right-0`}
 >
 
-        <div className="mx-auto px-[16px] 2xl:px-[32px] lg:py-[8px] flex items-center justify-between text-white ">
+        <div className="mx-auto px-[16px] 2xl:px-[32px] lg:py-[4px] 2xl:py-[8px] flex items-center justify-between text-white ">
 
 {/* LOGO */}
 <a

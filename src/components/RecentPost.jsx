@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
-import Instagram from "../assets/Instagram_logo_2016 1.png";
+import Instagram from "../assets/Instagram_logo_2016 1.svg";
 import MarqueeSection from "./MarqueeSection";
 
 
