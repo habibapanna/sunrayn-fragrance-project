@@ -1,6 +1,5 @@
 import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-
 import Categories from "../components/Categories";
 import SortFilter from "../components/SortFilter";
 import { products } from "../data/productsData";
@@ -9,10 +8,10 @@ import MarqueeSection from '../components/MarqueeSection';
 import MarqueeFlavour from '../components/MarqueeFlavour';
 import Premium from '../components/Premium';
 import NewsLetter from '../components/NewsLetter';
+import { motion, AnimatePresence } from "framer-motion";
 
 const ProductList = () => {
   const navigate = useNavigate();
-
   /* -------------------- UI STATES -------------------- */
   const [sidebarOpen, setSidebarOpen] = useState(false);
  const [openSection, setOpenSection] = useState([
@@ -25,19 +24,14 @@ const ProductList = () => {
   "Connection",
   "Perfume Volume",
 ]);
-
   const [searchQuery, setSearchQuery] = useState("");
-
-
   /* -------------------- SORT STATE -------------------- */
   const [sortBy, setSortBy] = useState("relevance");
-
   /* -------------------- PRICE RANGE -------------------- */
   const prices = products.map(p => p.price);
   const MIN_PRICE = Math.min(...prices);
   const MAX_PRICE = Math.max(...prices);
   const [priceRange, setPriceRange] = useState([MIN_PRICE, MAX_PRICE]);
-
   /* -------------------- FILTER STATES -------------------- */
   const [filters, setFilters] = useState({
     gender: [],
@@ -47,7 +41,6 @@ const ProductList = () => {
     connection: [],
     volume: [],
   });
-
   /* -------------------- FILTER HANDLER -------------------- */
   const toggleFilter = (type, value) => {
     setFilters(prev => ({
@@ -57,7 +50,6 @@ const ProductList = () => {
         : [...prev[type], value],
     }));
   };
-
   /* -------------------- CLEAR ALL -------------------- */
   const clearAllFilters = () => {
     setFilters({
@@ -71,7 +63,6 @@ const ProductList = () => {
     setSortBy("relevance");
     setPriceRange([MIN_PRICE, MAX_PRICE]);
   };
-
   /* -------------------- FILTER + SORT LOGIC -------------------- */
   const filteredProducts = useMemo(() => {
     let result = products.filter(p => {
@@ -102,7 +93,6 @@ if (sortBy === "new")
 
     return result;
   }, [filters, sortBy, priceRange, searchQuery]);
-
   /* -------------------- ACCORDION TOGGLE -------------------- */
  const toggleAccordion = title => {
   setOpenSection(prev =>
@@ -111,8 +101,6 @@ if (sortBy === "new")
       : [...prev, title] // open
   );
 };
-
-
   /* -------------------- FILTER BLOCK -------------------- */
   const FilterBlock = ({ title, options, filterKey }) => (
     <div className="bg-[#F6F7F2] rounded-[16px] p-3 space-y-2">
@@ -160,8 +148,6 @@ if (sortBy === "new")
     <div className="px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
 
       <Categories sortBy={sortBy} setSortBy={setSortBy} />
-
-
       <SortFilter
   sidebarOpen={sidebarOpen}
   setSidebarOpen={setSidebarOpen}
@@ -171,11 +157,8 @@ if (sortBy === "new")
   setSearchQuery={setSearchQuery}
   clearAllFilters={clearAllFilters}
 />
-
-
       <div className="relative flex gap-[16px] 2xl:gap-[32px]">
 
-        {/* -------------------- SIDEBAR -------------------- */}
         {/* -------------------- SIDEBAR -------------------- */}
 {sidebarOpen && (
   <aside className="hidden md:block sticky top-[120px] 2xl:w-[420px] h-[calc(100vh-140px)] bg-[#F2EFD8] rounded-[16px] overflow-y-auto shrink-0">
@@ -434,24 +417,38 @@ if (sortBy === "new")
     </aside>
   </>
 )}
-
         {/* CARDS */}
         <section className="flex-1">
-         <div
+<motion.div
+  layout
   className={`
     grid gap-[16px] 2xl:gap-[32px]
-    grid-cols-1 
-    ${sidebarOpen ? "md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3" : "md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"}
+    grid-cols-1
+    ${sidebarOpen
+      ? "md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3"
+      : "md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"}
   `}
 >
-            {filteredProducts.map((item, i) => (
-        <div
-  key={i}
+
+            <AnimatePresence mode="popLayout">
+  {filteredProducts.map((item) => (
+
+<motion.div
+  key={item.slug}
+  layout
+  initial={{ opacity: 0, scale: 0.96 }}
+  animate={{ opacity: 1, scale: 1 }}
+  exit={{ opacity: 0, scale: 0.9 }}
+  transition={{
+    duration: 0.45,
+    ease: [0.22, 1, 0.36, 1], // luxury easing
+  }}
   onClick={() => navigate(`/productList/${item.slug}`)}
   className="group bg-[#F6F7F2] rounded-[16px] md:rounded-[24px]
-  overflow-hidden cursor-pointer transition duration-500 ease-out
+  overflow-hidden cursor-pointer
   flex flex-row md:flex-col"
 >
+
 
 
 {/* IMAGE SECTION */}
@@ -553,15 +550,15 @@ if (sortBy === "new")
 </div>
 
   </div>
-</div>
+</motion.div>
 
             ))}
-          </div>
+            </AnimatePresence>
+
+          </motion.div>
         </section>
 
       </div>
-
-
       <section className="pt-[16px] 2xl:pt-[32px]"><Premium></Premium></section>
       <section className="2xl:mt-[16px]"><NewsLetter></NewsLetter></section>
       <MarqueeFlavour></MarqueeFlavour>
