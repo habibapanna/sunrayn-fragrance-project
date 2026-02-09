@@ -7,7 +7,7 @@ const Signature = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] 2xl:gap-[32px]">
 
         {/* LEFT CARD */}
-        <div className="group relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-[392px] 2xl:h-[700px]">
+        <div className="group relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-[392px] 2xl:h-[700px] cursor-pointer">
 
           {/* IMAGE */}
           <img
@@ -57,7 +57,7 @@ const Signature = () => {
         </div>
 
         {/* RIGHT CARD */}
-        <div className="group relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-[392px] 2xl:h-[700px]">
+        <div className="group relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-[392px] 2xl:h-[700px] cursor-pointer">
 
           {/* IMAGE */}
           <img
