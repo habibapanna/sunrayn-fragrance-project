@@ -17,7 +17,7 @@ const Contact = () => {
       </div>
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left Card */}
         <div className="bg-[#F6F7F2]  rounded-3xl p-10">
           <h2 className="text-[25px] lg:text-[32px] font-semibold mb-2 text-[#1D0B01]">Contact SANRAYN</h2>

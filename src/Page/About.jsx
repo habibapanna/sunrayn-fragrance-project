@@ -6,26 +6,26 @@ const About = () => {
   return (
     <div className="bg-white">
       {/* HERO IMAGE */}
-      <section className=" mx-auto px-[16px]  2xl:px-[32px] py-[16px] 2xl:py-[32px]">
-        <div className="flex flex-col gap-[24px] lg:flex-row justify-between text-[#282828] pb-[16px] 2xl:pb-[32px]">
-            <h3 className="text-center lg:text-left text-[30px] lg:text-[40px] 2xl:text-[50px] "> Purpose in Every Scent</h3>
+      <section className=" mx-auto px-[16px]  2xl:px-[32px] pb-[16px] lg:py-[16px] 2xl:py-[32px]">
+        <div className="flex flex-col gap-[24px] md:flex-row justify-between text-[#282828] pb-[16px] 2xl:pb-[32px]">
+            <h3 className="text-center md:text-left text-[30px] lg:text-[40px] 2xl:text-[50px] "> Purpose in Every Scent</h3>
             <p className="hidden lg:block text-[18px] text-center lg:text-left 2xl:text-[20px]">Discover halal, alcohol-free luxury perfumes crafted with <br /> intention, artistry, and unwavering commitment to purity.</p>
-            <p className="text-[18px] text-center lg:hidden">Discover halal, alcohol-free luxury perfumes crafted with intention, artistry, and unwavering commitment to purity.</p>
+            <p className="text-[18px] text-center md:text-left md:w-sm lg:hidden">Discover halal, alcohol-free luxury perfumes crafted with intention, artistry, and unwavering commitment to purity.</p>
         </div>
         <div><img
           src="https://i.postimg.cc/Rh4QBppP/Perfume-Image.png"
           alt="Purpose in Every Scent"
-          className="w-full h-[208px] lg:h-[547px] 2xl:h-[780px] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] object-cover"
+          className="w-full h-[208px] md:h-[350px] lg:h-[547px] 2xl:h-[780px] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] object-cover"
         /></div>
       </section>
 
       {/* IN-HOUSE SECTION */}
       <section className="mx-auto px-[16px]  2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
-        <div className="bg-[#F6F7F2] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[48px] 2xl:gap-[189px] p-[16px] lg:p-[32px] items-center">
+        <div className="bg-[#F6F7F2] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] grid grid-cols-1 md:grid-cols-2 gap-[16px] lg:gap-[48px] 2xl:gap-[189px] p-[16px] lg:p-[32px] items-center">
           <img
             src="https://i.postimg.cc/KvmJSjd2/Product-Image-(5).png"
             alt="Product"
-            className="rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] w-full h-[268px] lg:h-[520px] 2xl:h-[700px] 2xl:w-[880px] object-cover"
+            className="rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] w-full h-[268px] md:h-[350px] lg:h-[520px] 2xl:h-[700px] 2xl:w-[880px] object-cover"
           />
           <div className="2xl:w-[576px]">
             <h2 className="text-[#1D0B01] mb-4 text-[30px] lg:text-[40px] 2xl:text-[50px]">
@@ -166,7 +166,7 @@ const About = () => {
 
    {/* THOUGHTFUL LUXURY */}
 <section className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] 2xl:gap-[32px] items-stretch">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] 2xl:gap-[32px] items-stretch">
 
     {/* TEXT */}
     <div className="bg-[#FAFAF7] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] p-[32px] 2xl:px-[48px] flex flex-col gap-[24px] justify-center ">

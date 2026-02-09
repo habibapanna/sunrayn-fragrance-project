@@ -11,20 +11,17 @@ const NewsLetter = () => {
         }}
       >
         <div className="flex">
-
           {/* LEFT IMAGE SPACE */}
           <div className="w-1/2" />
-
-
           {/* RIGHT CONTENT */}
           <div className="relative z-10 lg:w-1/2 flex items-center px-6 py-16 md:px-16 md:py-24 2xl:px-24">
             <div className="text-white">
 
-              <h1 className="text-[28px] md:text-[40px] 2xl:text-[56px] font-light mb-6">
+              <h1 className="text-[35px] md:text-[55px] lg:text-[65px] 2xl:text-[96px] font-light mb-[10px] md:mb-6">
                 Get 30% Off
               </h1>
 
-              <p className="text-white/90 mb-10 text-[14px] lg:text-[18px] leading-relaxed">
+              <p className="text-white/90 md:mb-10 mb-[20px] text-[14px] lg:text-[18px] leading-relaxed">
                 Be the first to know about new collections and exclusive offers.
               </p>
 
@@ -33,13 +30,12 @@ const NewsLetter = () => {
                 <input
                   type="email"
                   placeholder="yourname@gmail.com"
-                  className="w-full h-[40px] md:h-[50px] rounded-full bg-white text-black pl-6 pr-16 text-[14px] md:text-[16px] focus:outline-none"
+                  className="w-full h-[35px] md:h-[40px] 2xl:h-[50px] rounded-full bg-white text-black pl-6 md:pr-16 text-[14px] md:text-[16px] focus:outline-none"
                 />
 
-                
                   <button
                     className="absolute right-2 top-1/2 -translate-y-1/2 
-                    h-[24px] w-[24px] 2xl:h-[40px] 2xl:w-[40px]
+                    h-[22px] w-[22px] md:w-[30px] md:h-[30px] 2xl:h-[40px] 2xl:w-[40px]
                     rounded-full bg-[#BA9948] 
                     flex items-center justify-center transition cursor-pointer hover:bg-white"
                   >

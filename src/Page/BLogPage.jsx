@@ -6,9 +6,9 @@ import { blogs } from "../data/blogs";
 const BLogPage = () => {
     const navigate = useNavigate();
   return (
-    <div className="px-[16px] 2xl:px-[32px] py-[16px] 2xl:py-[32px]">
-     <div className="flex flex-col gap-[16px] lg:flex-row justify-between text-[#282828] pb-[16px] 2xl:pb-[32px]">
-            <h3 className="text-[32px] text-center lg:text-left 2xl:text-[50px] ">The Sanrayn Journals</h3>
+    <div className="px-[16px] 2xl:px-[32px] pb-[16px] lg:py-[16px] 2xl:py-[32px]">
+     <div className="flex flex-col gap-[16px] md:flex-row justify-between items-center text-[#282828] pb-[16px] 2xl:pb-[32px]">
+            <h3 className="text-[32px] text-center md:text-left 2xl:text-[50px] ">The Sanrayn Journals</h3>
             {/* Search bar */}
           <div className="relative">
             <input
@@ -21,10 +21,9 @@ const BLogPage = () => {
 </svg></span>
           </div>
  
-
         </div>
       <section className="mx-auto pb-[16px] 2xl:pb-[32px]">
-        <div className="bg-[#F6F7F2] rounded-3xl grid grid-cols-1 lg:grid-cols-2 gap-[16px] lg:gap-[64px] 2xl:gap-[132px] p-[16px] lg:p-[32px] items-center">
+        <div className="bg-[#F6F7F2] rounded-3xl grid grid-cols-1 md:grid-cols-2 gap-[16px] lg:gap-[64px] 2xl:gap-[132px] p-[16px] lg:p-[32px] items-center">
           <img
             src="https://i.postimg.cc/KvmJSjd2/Product-Image-(5).png"
             alt="Product"
@@ -47,13 +46,13 @@ const BLogPage = () => {
             <div
              key={blog.slug}
           onClick={() => navigate(`/blogs/${blog.slug}`)}
-              className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] h-[350px] 2xl:h-[700px] overflow-hidden cursor-pointer"
+              className="group relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] h-[350px] 2xl:h-[700px] overflow-hidden cursor-pointer"
             >
               {/* Image */}
               <img
                 src={blog.product}
                 alt={blog.title}
-                className="absolute inset-0 w-full h-full object-cover z-10"
+                className="absolute inset-0 w-full h-full object-cover z-10 group-hover:scale-125 duration-1000"
               />
 
               {/* Gradient */}

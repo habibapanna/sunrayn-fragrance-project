@@ -12,7 +12,7 @@ const BlogDetails = () => {
   if (!blog) return <div>Blog not found</div>;
 
   return (
-    <div className="pt-[16px] 2xl:pt-[32px]">
+    <div className="2xl:pt-[32px]">
 <div className="flex px-[16px] 2xl:px-[32px] gap-[10px] cursor-pointer mb-[20px]">
             <div><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M10.0013 15.8327L4.16797 9.99935L10.0013 4.16602" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -25,7 +25,7 @@ const BlogDetails = () => {
         <img
           src={blog.product}
           alt={blog.title}
-          className="rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] w-full 2xl:w-[800px] 2xl:h-[500px] object-cover"
+          className="rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] w-full 2xl:w-[800px] md:h-[500px] object-cover"
         />
 
         <div className="">

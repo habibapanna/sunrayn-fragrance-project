@@ -20,7 +20,7 @@ const Blogs = () => {
           </p>
 
           <Link
-            to="/productList"
+            to="/blogs"
             className="transition-all duration-300 ease-out
     hover:bg-[#BA9948] hover:text-white border border-[#BA9948] text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center"
           >
@@ -45,7 +45,7 @@ const Blogs = () => {
           </p>
 
           <Link
-            to="/productList"
+            to="/blogs"
             className="hover:bg-[#BA9948] hover:text-white border border-[#BA9948] text-[#1D0B01] px-[24px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[105px] h-[30px]
             "
           >
