@@ -210,12 +210,12 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
             onMouseLeave={() => setOpenMegaMenu(null)}
             className="absolute top-[60px] right-0 z-50"
           >
-         <div className="fixed top-[90px] right-[350px] 2xl:right-[450px] z-50">
+         <div className="fixed top-[60px] right-[70px] lg:top-[90px] lg:right-[350px] 2xl:right-[450px] z-50">
 
       <div className="relative bg-white rounded-[24px] shadow-xl px-[40px] py-[32px] flex gap-[74px]">
 
         {/* ARROW TIP */}
-        <span className="absolute -top-[10px] right-[300px] w-5 h-5 bg-white rotate-45" />
+        <span className="absolute md:right-[400px] -top-[10px] lg:right-[300px] w-5 h-5 bg-white rotate-45" />
 
         {/* COLUMN 1 */}
         <div>
@@ -293,12 +293,12 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
             className="absolute top-[60px] right-0 z-50"
           >
         {/* MEGA MENU */}
-    <div className="fixed top-[90px] right-[230px] 2xl:right-[320px] z-50">
+    <div className="fixed top-[60px] right-[40px] lg:top-[90px] lg:right-[230px] 2xl:right-[320px] z-50">
 
       <div className="relative bg-white rounded-[24px] shadow-xl px-[40px] py-[32px] flex gap-[74px]">
 
         {/* ARROW TIP */}
-        <span className="absolute -top-[10px] right-[300px] w-5 h-5 bg-white rotate-45" />
+        <span className="absolute -top-[10px] right-[320px] lg:right-[300px] w-5 h-5 bg-white rotate-45" />
 
         {/* COLUMN 1 */}
         <div>
