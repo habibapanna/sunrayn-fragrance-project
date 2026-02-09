@@ -11,7 +11,7 @@ useEffect(() => {
   const updateLimit = () => {
     if (window.innerWidth >= 1536) {
       setLimit(3); // 2xl
-    } else if (window.innerWidth >= 1024) {
+    } else if (window.innerWidth >= 768) {
       setLimit(2); // lg
     } else {
       setLimit(1); // mobile

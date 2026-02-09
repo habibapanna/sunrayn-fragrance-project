@@ -154,13 +154,14 @@ Back
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] 2xl:gap-[32px] px-[16px] 2xl:px-[32px]">
         
         {/* LEFT – IMAGES */}
-        <div className="hidden md:grid grid-cols-2 gap-[16px] 2xl:gap-[32px] auto-rows-min">
+       <div className="hidden md:grid grid-cols-2 gap-[16px] 2xl:gap-[32px] auto-rows-min md:sticky md:top-[100px] h-fit">
+
           <div className="col-span-2 ] ">
             <img
-              src={product.images[1]}
-              alt={product.title}
-              className="mx-auto h-full w-full object-cover rounded-[24px]"
-            />
+  src={product.images[1]}
+  className="mx-auto h-full min-h-[500px] 2xl:min-h-[700px] w-full object-cover rounded-[24px]"
+/>
+
           </div>
 
           {product.images.slice(2).map((img, i) => (
@@ -211,7 +212,6 @@ Back
   <div className="bg-[#F6F7F2] rounded-[32px] p-[16px] 2xl:p-[32px]">
 
           <span className="text-[12px] 2xl:text-[16px] bg-[#FFFFFF] py-[8px] px-[16px] rounded-full">{product.gender}</span>
-
           <h1 className="text-[18px] lg:text-[24px] 2xl:text-[35px] text-[#1D0B01] font-bold mt-2">
             {product.title} – {product.subtitle}
           </h1>
