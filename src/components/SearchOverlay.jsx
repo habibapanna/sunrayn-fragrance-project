@@ -122,11 +122,11 @@ useEffect(() => {
     h-[30px] w-[30px]
     rounded-full bg-[#FD4929]
     flex items-center justify-center cursor-pointer
-    transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]
+    transition-transform duration-[1500ms] ease-[cubic-bezier(0.22,1,0.36,1)]
     ${
       animateIcon
         ? "translate-x-0"
-        : "-translate-x-[340px] lg:-translate-x-[900px]"
+        : "-translate-x-[340px] md:-translate-x-[580px] lg:-translate-x-[900px]"
     }
   `}
 >
