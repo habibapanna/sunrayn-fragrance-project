@@ -51,7 +51,7 @@ const cardVariant = {
   initial="hidden"
   whileInView="visible"
   viewport={{ once: false, amount: 0.3 }}
-  className="grid grid-cols-1 lg:grid-cols-3 gap-[16px] 2xl:gap-[32px]"
+  className="grid grid-cols-1 md:grid-cols-3 gap-[16px] 2xl:gap-[32px]"
 >
 
         {categories.map((item, index) => (
@@ -60,8 +60,8 @@ const cardVariant = {
   variants={cardVariant}
   className="
     group relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px]
-    overflow-hidden cursor-pointer
-    h-[392px]
+    overflow-hidden cursor-pointer md:h-[300px]
+    lg:h-[392px]
     2xl:h-[700px] group
   "
 >

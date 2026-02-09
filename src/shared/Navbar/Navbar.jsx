@@ -210,19 +210,19 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
             onMouseLeave={() => setOpenMegaMenu(null)}
             className="absolute top-[60px] right-0 z-50"
           >
-         <div className="fixed top-[60px] right-[70px] lg:top-[90px] lg:right-[350px] 2xl:right-[450px] z-50">
+         <div className="fixed top-[60px] right-[220px] lg:top-[90px] lg:right-[350px] 2xl:right-[450px] z-50">
 
-      <div className="relative bg-white rounded-[24px] shadow-xl px-[40px] py-[32px] flex gap-[74px]">
+      <div className="relative bg-white rounded-[24px] shadow-xl px-[30px] py-[20px] lg:px-[40px] lg:py-[32px] flex gap-[40px] lg:gap-[74px]">
 
         {/* ARROW TIP */}
-        <span className="absolute md:right-[400px] -top-[10px] lg:right-[300px] w-5 h-5 bg-white rotate-45" />
+        <span className="absolute md:right-[240px] -top-[10px] lg:right-[300px] w-5 h-5 bg-white rotate-45" />
 
         {/* COLUMN 1 */}
         <div>
-          <h4 className="font-bold text-[15px] text-[#1D0B01] mb-[12px]">
+          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#1D0B01] mb-[12px]">
             Perfume Style
           </h4>
-          <ul className="space-y-[12px] text-[16px] text-[#1D0B01]">
+          <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]">
             <li className="cursor-pointer hover:text-[#FD4929]">Men</li>
             <li className="cursor-pointer hover:text-[#FD4929]">Women</li>
             <li className="cursor-pointer hover:text-[#FD4929]">Unisex</li>
@@ -231,10 +231,10 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
         {/* COLUMN 2 */}
         <div>
-          <h4 className="font-bold text-[#1D0B01] mb-[12px]">
+          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#1D0B01] mb-[12px]">
             Perfume Family
           </h4>
-          <ul className="space-y-[12px] text-[16px] text-[#1D0B01]  cursor-pointer">
+          <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]  cursor-pointer">
             <li>Flowery</li>
             <li>Warm</li>
             <li>Gourmand</li>
@@ -246,7 +246,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
         {/* RIGHT PRODUCT CARD */}
         <div className="">
-          <div className="bg-[#FBF7F2] rounded-[24px] p-4 w-[220px] text-center">
+          <div className="bg-[#FBF7F2] rounded-[24px] p-4 w-[160px] lg:w-[220px] text-center">
             <img
               src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
               className="rounded-xl mx-auto mb-4"
@@ -293,19 +293,19 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
             className="absolute top-[60px] right-0 z-50"
           >
         {/* MEGA MENU */}
-    <div className="fixed top-[60px] right-[40px] lg:top-[90px] lg:right-[230px] 2xl:right-[320px] z-50">
+    <div className="fixed top-[60px] right-[120px] lg:top-[90px] lg:right-[230px] 2xl:right-[320px] z-50">
 
-      <div className="relative bg-white rounded-[24px] shadow-xl px-[40px] py-[32px] flex gap-[74px]">
+      <div className="relative bg-white rounded-[24px] shadow-xl px-[30px] py-[20px] lg:px-[40px] lg:py-[32px] flex gap-[40px] lg:gap-[74px]">
 
         {/* ARROW TIP */}
-        <span className="absolute -top-[10px] right-[320px] lg:right-[300px] w-5 h-5 bg-white rotate-45" />
+        <span className="absolute -top-[10px] right-[250px] lg:right-[300px] w-5 h-5 bg-white rotate-45" />
 
         {/* COLUMN 1 */}
         <div>
-          <h4 className="font-bold text-[15px] text-[#571313] mb-[12px]">
+          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#571313] mb-[12px]">
             Perfume Tyle
           </h4>
-          <ul className="space-y-[12px] text-[16px] text-[#1D0B01]">
+          <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]">
             <li className="cursor-pointer hover:text-[#FD4929]">All Perfumes</li>
             <li className="cursor-pointer hover:text-[#FD4929]">New Arrivals</li>
             <li className="cursor-pointer hover:text-[#FD4929]">Limited Editions</li>
@@ -315,10 +315,10 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
         {/* COLUMN 2 */}
         <div>
-          <h4 className="font-bold text-[#571313] mb-[12px]">
+          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#571313] mb-[12px]">
             Inspired by Brand
           </h4>
-          <ul className="space-y-[12px] text-[16px] text-[#1D0B01] cursor-pointer">
+          <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01] cursor-pointer">
             <li>Bluberry</li>
             <li>Byredo</li>
             <li>Chanel</li>
@@ -330,12 +330,12 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
         {/* RIGHT PRODUCT CARD */}
         <div className="">
-          <div className="bg-[#FBF7F2] rounded-[24px] p-4 w-[220px] text-center">
+          <div className="bg-[#FBF7F2] rounded-[24px] p-4 w-[160px] lg:w-[220px] text-center">
             <img
               src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
               className="rounded-xl mx-auto mb-4"
             />
-          </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium cursor-pointer">
+          </div> <p className="text-[14px] lg:text-[16px] text-center text-[#1D0B01] font-medium cursor-pointer">
               <Link to='productList'>View All Perfume</Link>
             </p>
         </div>

@@ -43,9 +43,8 @@ const Hero = () => {
               5 star rating | Based on 200+ happy customers
             </span>
           </div>
-
           {/* HEADING */}
-          <h1 className="text-[30px] md:text-[60px] font-semibold leading-tight mb-[20px]">
+          <h1 className="text-[30px] md:text-[50px] lg:text-[60px] font-semibold leading-tight mb-[20px]">
             Designer-Inspired Luxury <br />
             Fragrances with Everyday <br />
             Affordability

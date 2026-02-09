@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Signature = () => {
   return (
     <section className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[16px] 2xl:gap-[32px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] 2xl:gap-[32px]">
 
         {/* LEFT CARD */}
         <div className="group relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-[392px] 2xl:h-[700px]">

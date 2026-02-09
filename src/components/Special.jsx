@@ -32,7 +32,7 @@ useEffect(() => {
       setTextStyle({ left: "260px", top: "100px", fontSize: "73px" });
     }
     else if (w >= 768) {
-      setTextStyle({ left: "90px", top: "650px", fontSize: "55px" });
+      setTextStyle({ left: "160px", top: "50px", fontSize: "50px" });
     }
     else {
       // ✅ MOBILE FIX
@@ -76,20 +76,20 @@ const buttonVariants = {
 >
 
         {/* ================= CONTENT ================= */}
-        <div className="flex flex-col lg:flex-row items-center lg:gap-[20px]">
+        <div className="flex flex-col md:flex-row items-center md:gap-[20px]">
 
           {/* IMAGE */}
-          <div className="relative w-full flex justify-center lg:pl-[50px] lg:py-[50px] 2xl:py-[100px]">
+          <div className="relative w-full flex justify-center md:pl-[30px] lg:pl-[50px] py-[30px] lg:py-[50px] 2xl:py-[100px]">
             <img
               src="https://i.postimg.cc/PNGRVQZ7/Whats-App-Image-2026-02-03-at-6-11-48-PM-(2).jpg"
               alt="Special Perfume"
-              className="h-[292px] lg:h-[397px] 2xl:h-[700px] w-full 2xl:w-[651px] object-cover rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] "
+              className="h-[292px] md:h-[250px] lg:h-[397px] 2xl:h-[700px] w-full 2xl:w-[651px] object-cover rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] "
             />
-            <div className="lg:hidden absolute inset-0 bg-gradient-to-b from-transparent to-[#EDE8E0]" />
+            <div className="md:hidden absolute inset-0 bg-gradient-to-b from-transparent to-[#EDE8E0]" />
           </div>
 
           {/* DESCRIPTION */}
-          <div className="p-[16px] lg:p-[32px] lg:mt-[100px] 2xl:mt-[200px]">
+          <div className="p-[16px] md:mt-[80px] lg:p-[32px] lg:mt-[100px] 2xl:mt-[200px]">
             <p className="text-[14px] lg:text-[18px] 2xl:text-[25px] lg:w-lg lg:pr-[32px] 2xl:w-3/4">
               An exclusive creation from Sanrayn, this special perfume delivers a
               luxurious, long-lasting aroma crafted with integrity. Elegant,
@@ -150,7 +150,7 @@ const buttonVariants = {
     rounded-full
     flex items-center justify-center
 
-    h-[30px] w-[30px]
+    h-[30px] w-[30px] md:h-[40px] md:w-[40px]
     lg:h-[50px] lg:w-[50px]
     2xl:h-[70px] 2xl:w-[70px]
   "
@@ -160,7 +160,7 @@ const buttonVariants = {
     viewBox="0 0 30 30"
     fill="none"
     className="
-      w-[25px] h-[25px] lg:h-[39px] lg:w-[39px]
+      w-[25px] h-[25px] md:h-[30px] md:w-[30px] lg:h-[39px] lg:w-[39px]
       2xl:w-[60px] 2xl:h-[60px]
     "
   >
