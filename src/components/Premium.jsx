@@ -42,7 +42,7 @@ const Premium = () => {
   };
 
   return (
-    <section className="pb-[16px]">
+    <section className="">
 
       {/* ================= MOBILE SLIDER ================= */}
       <div className="md:hidden">

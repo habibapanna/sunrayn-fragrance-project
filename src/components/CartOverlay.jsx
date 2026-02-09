@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Truck from '../assets/Frame (8).png'
 import { useEffect, useRef, useState } from "react";
 import { products } from "../data/productsData";
-
+import { motion, AnimatePresence } from "framer-motion";
 
 const CartOverlay = ({ onClose }) => {
   const navigate = useNavigate();
@@ -63,9 +63,61 @@ const CartOverlay = ({ onClose }) => {
 }, []);
 
  const navTopClass = isHome ? "top-0" : "top-0";
-    
+   
+ const cartVariants = {
+  hidden: {
+    x: "100%",
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.45,
+      ease: [0.22, 1, 0.36, 1], // luxury easing
+    },
+  },
+  exit: {
+    x: "100%",
+    opacity: 0,
+    transition: {
+      duration: 0.35,
+      ease: [0.4, 0, 0.2, 1],
+    },
+  },
+};
+
+const backdropVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.3 },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.25 },
+  },
+};
+
+
+
   return (
-    <aside className={`fixed ${navTopClass} right-0 h-full w-full md:w-[431px] lg:w-[541px] bg-white z-60 flex flex-col`}>
+    <AnimatePresence>
+  <motion.div
+    className="fixed inset-0 bg-black/40 z-50"
+    variants={backdropVariants}
+    initial="hidden"
+    animate="visible"
+    exit="exit"
+    onClick={onClose}
+  />
+    <motion.aside
+    className={`fixed ${navTopClass} right-0 h-full w-full md:w-[431px] lg:w-[541px] bg-white z-60 flex flex-col`}
+    variants={cartVariants}
+    initial="hidden"
+    animate="visible"
+    exit="exit"
+  >
 {/* TOP FIXED AREA */}
 <div className="sticky top-0 z-10 bg-white">
       {/* Header */}
@@ -262,7 +314,8 @@ const CartOverlay = ({ onClose }) => {
   </div>
 </div>
 
-    </aside>
+  </motion.aside>
+</AnimatePresence>
   );
 };
 

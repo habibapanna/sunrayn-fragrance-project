@@ -23,7 +23,7 @@ useEffect(() => {
     const w = window.innerWidth;
 
     if (w >= 1535 && w <= 1750) {
-      setTextStyle({ left: "450px", top: "180px", fontSize: "90px" });
+      setTextStyle({ left: "440px", top: "200px", fontSize: "90px" });
     } 
     else if (w >= 1756) {
       setTextStyle({ left: "510px", top: "200px", fontSize: "120px" });
@@ -65,7 +65,7 @@ const buttonVariants = {
   return (
     <section
   ref={sectionRef}
-  className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]"
+  className="mx-auto px-[16px] 2xl:px-[32px] py-[16px] 2xl:py-[0px] 2xl:pb-[32px]"
 >
 
     <Link to='productList'>
@@ -76,10 +76,10 @@ const buttonVariants = {
 >
 
         {/* ================= CONTENT ================= */}
-        <div className="flex flex-col md:flex-row items-center md:gap-[20px]">
+        <div className="flex flex-col md:flex-row items-center justify-center md:gap-[20px]">
 
           {/* IMAGE */}
-          <div className="relative w-full flex justify-center md:pl-[30px] lg:pl-[50px] py-[30px] lg:py-[50px] 2xl:py-[100px]">
+          <div className="relative w-full flex justify-center items-center md:pl-[30px] lg:pl-[50px] py-[30px] lg:py-[50px 2xl:py-[100px]">
             <img
               src="https://i.postimg.cc/PNGRVQZ7/Whats-App-Image-2026-02-03-at-6-11-48-PM-(2).jpg"
               alt="Special Perfume"

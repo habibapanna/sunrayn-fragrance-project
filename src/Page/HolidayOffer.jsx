@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { motion, AnimatePresence } from "framer-motion";
 import Offer from '../components/Offer';
 import SortFilter from '../components/SortFilter';
 import Testimonials from '../components/Testimonials';
@@ -10,7 +10,6 @@ import { products } from '../data/productsData';
 
 const HolidayOffer = () => {
 const navigate = useNavigate();
-
   /* -------------------- UI STATES -------------------- */
   const [sidebarOpen, setSidebarOpen] = useState(false);
  const [openSection, setOpenSection] = useState([
@@ -23,13 +22,9 @@ const navigate = useNavigate();
   "Connection",
   "Perfume Volume",
 ]);
-
   const [searchQuery, setSearchQuery] = useState("");
-
-
   /* -------------------- SORT STATE -------------------- */
   const [sortBy, setSortBy] = useState("relevance");
-
   /* -------------------- PRICE RANGE -------------------- */
   const prices = products.map(p => p.price);
   const MIN_PRICE = Math.min(...prices);
@@ -45,7 +40,6 @@ const navigate = useNavigate();
     connection: [],
     volume: [],
   });
-
   /* -------------------- FILTER HANDLER -------------------- */
   const toggleFilter = (type, value) => {
     setFilters(prev => ({
@@ -55,7 +49,6 @@ const navigate = useNavigate();
         : [...prev[type], value],
     }));
   };
-
   /* -------------------- CLEAR ALL -------------------- */
   const clearAllFilters = () => {
     setFilters({
@@ -69,7 +62,6 @@ const navigate = useNavigate();
     setSortBy("relevance");
     setPriceRange([MIN_PRICE, MAX_PRICE]);
   };
-
   /* -------------------- FILTER + SORT LOGIC -------------------- */
   const filteredProducts = useMemo(() => {
     let result = products.filter(p => {
@@ -154,6 +146,42 @@ if (sortBy === "new")
     </div>
   );
 
+  /*---------sidebar animation--------*/ 
+const mobileSidebarVariants = {
+  hidden: {
+    x: "-100%",
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.45,
+      ease: [0.22, 1, 0.36, 1], // luxury easing
+    },
+  },
+  exit: {
+    x: "-100%",
+    opacity: 0,
+    transition: {
+      duration: 0.35,
+      ease: [0.4, 0, 0.2, 1],
+    },
+  },
+};
+
+const overlayVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.3 },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.25 },
+  },
+};
+
   return (
     <div className="2xl:pt-[32px]">
       <Offer />
@@ -170,9 +198,8 @@ if (sortBy === "new")
 
 
       <div className="relative flex gap-[16px] 2xl:gap-[32px]">
-
         {/* -------------------- SIDEBAR -------------------- */}
-        {/* -------------------- SIDEBAR -------------------- */}
+ <AnimatePresence>
 {sidebarOpen && (
   <aside className="hidden md:block sticky top-[120px] 2xl:w-[420px] h-[calc(100vh-140px)] bg-[#F2EFD8] rounded-[16px] overflow-y-auto shrink-0">
 
@@ -294,27 +321,33 @@ if (sortBy === "new")
     </div>
   </aside>
 )}
-
-
-
+</AnimatePresence>
 {/* -------------------- MOBILE SIDEBAR -------------------- */}
+<AnimatePresence>
 {sidebarOpen && (
   <>
     {/* Overlay */}
-    <div
-      className="md:hidden fixed inset-0 bg-black/40 z-40"
-      onClick={() => setSidebarOpen(false)}
-    />
+      <motion.div
+        className="md:hidden fixed inset-0 bg-black/40 z-50"
+        variants={overlayVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        onClick={() => setSidebarOpen(false)}
+      />
 
-    {/* Sliding sidebar */}
-    <aside
-      className={`md:hidden fixed top-0 left-0 z-50 h-full w-ful bg-[#EDE8D0] transform transition-transform duration-300
-        ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
-    >
+   {/* Sliding sidebar */}
+      <motion.aside
+        className="md:hidden fixed top-0 left-0 z-50 h-full w-full bg-[#EDE8D0]"
+        variants={mobileSidebarVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
       <div className="p-6 space-y-6 overflow-y-auto h-full">
         {/* Close button */}
-        <div className="flex justify-end">
-          <button onClick={() => setSidebarOpen(false)}>✕</button>
+        <div className="flex justify-end ">
+          <button className="cursor-pointer" onClick={() => setSidebarOpen(false)}>✕</button>
         </div>
 <div className="space-y-2">
         <h3 className="text-[14px] font-bold uppercase">Sort by:</h3>
@@ -429,45 +462,59 @@ if (sortBy === "new")
       <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
       <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
       </div>
-    </aside>
+    </motion.aside>
   </>
 )}
-
+</AnimatePresence>
         {/* CARDS */}
-<section className="flex-1">
-         <div
+        <section className="flex-1">
+<motion.div
+  layout
   className={`
     grid gap-[16px] 2xl:gap-[32px]
     grid-cols-1
-    ${sidebarOpen ?  "md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3" : "md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"}
+    ${sidebarOpen
+      ? "md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3"
+      : "md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"}
   `}
 >
-            {filteredProducts.map((item, i) => (
-        <div
-  key={i}
+
+            <AnimatePresence mode="popLayout">
+  {filteredProducts.map((item) => (
+
+<motion.div
+  key={item.slug}
+  layout
+  initial={{ opacity: 0, scale: 0.96 }}
+  animate={{ opacity: 1, scale: 1 }}
+  exit={{ opacity: 0, scale: 0.9 }}
+  transition={{
+    duration: 0.99,
+    ease: [0.22, 1, 0.36, 1], // luxury easing
+  }}
   onClick={() => navigate(`/productList/${item.slug}`)}
   className="group bg-[#F6F7F2] rounded-[16px] md:rounded-[24px]
-  overflow-hidden cursor-pointer transition duration-500 ease-out
+  overflow-hidden cursor-pointer
   flex flex-row md:flex-col"
 >
 
 
+
 {/* IMAGE SECTION */}
 <div className="relative overflow-hidden w-[150px] md:w-full flex-shrink-0">
-
-  {/* Tags */}
+{/* Tags */}
   <div className="absolute top-[8px] left-[8px] md:top-[16px] md:left-[16px] z-10">
     <span className="bg-white/90 text-[8px] md:text-[10px] 2xl:text-[12px] px-[8px] py-[2px] rounded-full border text-[#BA9948] border-[#BA9948]">
       {item.gender}
     </span>
   </div>
   <div className="absolute hidden md:block top-[16px] right-[16px] z-10">
-    <span className="bg-white/90 text-[8px] md:text-[10px] 2xl:text-[12px] px-[8px] py-[2px] rounded-full uppercase">
+    <span className="bg-white/90 text-[10px] md:text-[14px] px-[8px] py-[2px] rounded-full uppercase">
       {item.off}
     </span>
   </div>
   <div className="absolute md:hidden bottom-[8px] left-[8px] z-10">
-    <span className="bg-white/90 text-[8px] md:text-[10px] 2xl:text-[12px]  px-[8px] py-[2px] rounded-full uppercase">
+    <span className="bg-white/90 text-[12px]  px-[8px] py-[2px] rounded-full uppercase">
       {item.off}
     </span>
   </div>
@@ -551,10 +598,12 @@ if (sortBy === "new")
 </div>
 
   </div>
-</div>
+</motion.div>
 
             ))}
-          </div>
+            </AnimatePresence>
+
+          </motion.div>
         </section>
 
       </div>

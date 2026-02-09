@@ -143,6 +143,42 @@ if (sortBy === "new")
       )}
     </div>
   );
+/*---------sidebar animation--------*/ 
+const mobileSidebarVariants = {
+  hidden: {
+    x: "-100%",
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.45,
+      ease: [0.22, 1, 0.36, 1], // luxury easing
+    },
+  },
+  exit: {
+    x: "-100%",
+    opacity: 0,
+    transition: {
+      duration: 0.35,
+      ease: [0.4, 0, 0.2, 1],
+    },
+  },
+};
+
+const overlayVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.3 },
+  },
+  exit: {
+    opacity: 0,
+    transition: { duration: 0.25 },
+  },
+};
+
 
   return (
     <div className="px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
@@ -160,6 +196,7 @@ if (sortBy === "new")
       <div className="relative flex gap-[16px] 2xl:gap-[32px]">
 
         {/* -------------------- SIDEBAR -------------------- */}
+ <AnimatePresence>
 {sidebarOpen && (
   <aside className="hidden md:block sticky top-[120px] 2xl:w-[420px] h-[calc(100vh-140px)] bg-[#F2EFD8] rounded-[16px] overflow-y-auto shrink-0">
 
@@ -281,25 +318,33 @@ if (sortBy === "new")
     </div>
   </aside>
 )}
-
+</AnimatePresence>
 {/* -------------------- MOBILE SIDEBAR -------------------- */}
+<AnimatePresence>
 {sidebarOpen && (
   <>
     {/* Overlay */}
-    <div
-      className="md:hidden fixed inset-0 bg-black/40 z-50"
-      onClick={() => setSidebarOpen(false)}
-    />
+      <motion.div
+        className="md:hidden fixed inset-0 bg-black/40 z-50"
+        variants={overlayVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        onClick={() => setSidebarOpen(false)}
+      />
 
-    {/* Sliding sidebar */}
-    <aside
-      className={`md:hidden fixed top-0 left-0 z-50 h-full w-ful bg-[#EDE8D0] transform transition-transform duration-300
-        ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
-    >
+   {/* Sliding sidebar */}
+      <motion.aside
+        className="md:hidden fixed top-0 left-0 z-50 h-full w-full bg-[#EDE8D0]"
+        variants={mobileSidebarVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
       <div className="p-6 space-y-6 overflow-y-auto h-full">
         {/* Close button */}
-        <div className="flex justify-end">
-          <button onClick={() => setSidebarOpen(false)}>✕</button>
+        <div className="flex justify-end ">
+          <button className="cursor-pointer" onClick={() => setSidebarOpen(false)}>✕</button>
         </div>
 <div className="space-y-2">
         <h3 className="text-[14px] font-bold uppercase">Sort by:</h3>
@@ -414,9 +459,10 @@ if (sortBy === "new")
       <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
       <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
       </div>
-    </aside>
+    </motion.aside>
   </>
 )}
+</AnimatePresence>
         {/* CARDS */}
         <section className="flex-1">
 <motion.div
@@ -440,7 +486,7 @@ if (sortBy === "new")
   animate={{ opacity: 1, scale: 1 }}
   exit={{ opacity: 0, scale: 0.9 }}
   transition={{
-    duration: 0.45,
+    duration: 0.99,
     ease: [0.22, 1, 0.36, 1], // luxury easing
   }}
   onClick={() => navigate(`/productList/${item.slug}`)}
@@ -461,12 +507,12 @@ if (sortBy === "new")
     </span>
   </div>
   <div className="absolute hidden md:block top-[16px] right-[16px] z-10">
-    <span className="bg-white/90 text-[10px] md:text-[14px] px-[8px] py-[2px] rounded-full uppercase">
+    <span className="bg-white/90 text-[8px] md:text-[10px] 2xl:text-[12px] px-[8px] py-[2px] rounded-full uppercase">
       {item.off}
     </span>
   </div>
   <div className="absolute md:hidden bottom-[8px] left-[8px] z-10">
-    <span className="bg-white/90 text-[12px]  px-[8px] py-[2px] rounded-full uppercase">
+    <span className="bg-white/90 text-[8px] md:text-[10px] 2xl:text-[12px]  px-[8px] py-[2px] rounded-full uppercase">
       {item.off}
     </span>
   </div>

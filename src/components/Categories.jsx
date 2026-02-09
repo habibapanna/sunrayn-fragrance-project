@@ -40,27 +40,29 @@ const Categories = ({ sortBy, setSortBy }) => {
           const isActive = sortBy === item.key;
 
           return (
-            <div
-              key={item.key}
-              onClick={() => setSortBy(item.key)}
-              className={`
-                flex flex-col lg:flex-row
-                items-center justify-between
-                cursor-pointer
-                rounded-[8px] 2xl:rounded-[24px]
-                bg-[#F6F7F2]
-                w-[126px] h-[96px] p-[4px]
-                md:w-full md:h-full md:p-6 md:gap-[12px]
-                transition-all duration-200
+           <div
+  key={item.key}
+  onClick={() => setSortBy(item.key)}
+  className={`
+    group
+    flex flex-col lg:flex-row
+    items-center justify-between
+    cursor-pointer
+    rounded-[8px] 2xl:rounded-[24px]
+    bg-[#F6F7F2]
+    w-[126px] h-[96px] p-[4px]
+    md:w-full md:h-full md:p-6 md:gap-[12px]
+    border
+    transition-all duration-500 ease-out
+    will-change-transform
+    ${
+      isActive
+        ? "border-[#1D0B01] scale-[1.03] shadow-lg"
+        : "border-transparent hover:border-[#BA9948] hover:scale-[1.01] hover:shadow-xl"
+    }
+  `}
+>
 
-                ${
-                  isActive
-                    ? " border-2 border-black"
-                    : " border-none outline-transparent hover:outline-[#282828]/40"
-                }
-                
-              `}
-            >
               <h3 className="text-[12px] lg:text-[20px] 2xl:text-[25px] font-semibold text-center lg:text-left leading-normal uppercase">
                 {item.title}
               </h3>
