@@ -207,7 +207,7 @@ const overlayVariants = {
         <h3 className="text-[14px] font-bold uppercase">Sort by:</h3>
 
         <div
-          className="bg-[#FBFBF6] rounded-[12px] p-4 cursor-pointer"
+          className="bg-white rounded-[12px] p-4 cursor-pointer"
           onClick={() => toggleAccordion("Sort")}
         >
           <div className="flex justify-between items-center">
