@@ -33,7 +33,7 @@ const BestSelling = () => {
       <div className="hidden lg:flex justify-between items-center mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px]">
         <div className="flex items-center gap-[20px] md:gap-[32px]">
           <p
-            className="text-[20px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]"
+            className="text-[20px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#571313]"
             style={{ letterSpacing: "-1px" }}
           >
             Best Selling Perfumes
@@ -63,7 +63,7 @@ const BestSelling = () => {
     <div className='flex lg:hidden justify-between items-center px-[16px] pb-[16px]
             '>
                 <div>
-                    <p className='text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]'>Best Selling Perfumes</p>
+                    <p className='text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#571313]'>Best Selling Perfumes</p>
                 </div>
                 <div>
                     <button className="hover:bg-[#BA9948] hover:text-white border border-[#BA9948] text-[#1D0B01] px-[24px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[100px] h-[30px]"><Link to='/productList'>View All</Link></button>
@@ -100,7 +100,7 @@ const BestSelling = () => {
                 <img
                   src={item.images}
                   alt={item.title}
-                  className="absolute inset-0 mx-auto h-full object-cover w-full group-hover:scale-125 duration-1000"
+                  className="absolute inset-0 mx-auto h-full object-cover w-full group-hover:scale-105 duration-1000"
                 />
  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 w-full z-20 p-[20px] lg:p-[40px]">

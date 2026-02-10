@@ -47,15 +47,15 @@ const RecentPost = () => {
     <div className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
       {/* Header */}
       <div className="flex justify-between items-center mb-[16px] 2xl:mb-[32px] gap-4">
-        <h2 className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828] hidden md:block">
+        <h2 className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#571313] hidden md:block">
           Recent Post on Instagram
         </h2>
-        <h2 className="text-[25px] font-semibold text-[#282828] md:hidden">
+        <h2 className="text-[25px] font-semibold text-[#571313] md:hidden">
         Instagram
         </h2>
         <div className="flex items-center gap-[24px]">
           <button className="bg-[#F5F1EA] text-[#571313] font-semibold px-6 py-3 rounded-full flex items-center text-[14px] lg:text-[16px] 2xl:text-[20px] cursor-pointer">
-            <img src={Instagram} alt="" className="mr-[4px] h-[20px] lg:h-10" />@Sanrayn
+            <img src={Instagram} alt="" className="mr-[8px] h-[15px] lg:h-[30px]" />@Sanrayn
           </button>
           {/* Nav buttons */}
           <div className="hidden lg:flex gap-[20px]">

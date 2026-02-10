@@ -1,17 +1,64 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import LearnMorePopup from "./LearnMorePopup";
+import Truck from '../assets/Frame (8).png';
 
 const messages = [
   {
     id: 1,
-    content: "Free 3ml samples Sanrayn+",
+    content: <>Free 3ml samples Sanrayn+</>,
   },
   {
     id: 2,
-    content: "Sanrayn+ Member: Up to 30% OFF + FREE shipping",
+    content: (
+      <div className="">
+        <div className="grid grid-cols-4 gap-[10px] text-center">
+          <div>
+            <div className="w-[70px] lg:w-[72px] h-[4px] lg:h-[6px] bg-white rounded-[100px]" />
+            <div className="text-[8px] lg:text-[12px] border-r border-white leading-tight w-[80px]">
+              1–2 items
+              <br />
+              <span className="font-normal text-[10px] lg:text-[14px] leading-tight">
+                10% OFF
+              </span>
+            </div>
+          </div>
+          <div>
+            <div className="w-[70px] lg:w-[72px] h-[4px] lg:h-[6px] bg-white/40 rounded-[100px]" />
+            <div className="text-[8px] lg:text-[12px] border-r border-white leading-tight w-[80px]">
+              3 items
+              <br />
+              <span className="font-normal text-[10px] lg:text-[14px]">
+                20% OFF
+              </span>
+            </div>
+          </div>
+          <div>
+            <div className="w-[70px] lg:w-[72px] h-[4px] lg:h-[6px] bg-white/40 rounded-[100px]" />
+            <div className="text-[8px] lg:text-[12px] border-r border-white leading-tight w-[80px]">
+              4 items
+              <br />
+              <span className="font-normal text-[10px] lg:text-[14px]">
+                25% OFF
+              </span>
+            </div>
+          </div>
+          <div>
+            <div className="w-[70px] lg:w-[72px] h-[4px] lg:h-[6px] bg-white/40 rounded-[100px]" />
+            <div className="text-[8px] lg:text-[12px] leading-tight w-[80px]">
+              5 items
+              <br />
+              <span className="font-normal text-[10px] lg:text-[14px]">
+                30% OFF
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
   },
 ];
+
 
 const TopAnnouncementBar = () => {
   const [index, setIndex] = useState(0);

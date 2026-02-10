@@ -29,7 +29,7 @@ useEffect(() => {
              <section className="relative overflow-hidden py-[16px] 2xl:py-[32px]">
                   <div className="flex justify-between items-center mb-[16px] 2xl:mb-[32px] 2xl:[32px]">
           <p
-            className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]"
+            className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#571313]"
             style={{ letterSpacing: "-1px" }}
           >
             You Might Love
@@ -68,7 +68,7 @@ useEffect(() => {
                 <img
                   src={item.images}
                   alt={item.title}
-                  className="absolute inset-0 mx-auto h-full w-full object-cover group-hover:scale-125 duration-1000"
+                  className="absolute inset-0 mx-auto h-full w-full object-cover group-hover:scale-105 duration-1000"
                 />
  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 w-full z-20 p-[20px] lg:p-[40px]">

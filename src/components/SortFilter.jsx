@@ -109,8 +109,6 @@ useEffect(() => {
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
 
-
-
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (scentRef.current && !scentRef.current.contains(e.target)) setOpenScent(false);
@@ -173,8 +171,6 @@ const renderDropdown = (items, filterKey) => (
     })}
   </ul>
 );
-
-
 
 const getFilterCount = (key) => filters?.[key]?.length || 0;
 const showClearAll =

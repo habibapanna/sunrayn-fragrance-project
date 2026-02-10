@@ -71,7 +71,7 @@ const cardVariant = {
             <img
               src={item.product}
               alt={item.title}
-              className="absolute inset-0 h-full w-full object-cover  group-hover:scale-125 duration-1000"
+              className="absolute inset-0 h-full w-full object-cover  group-hover:scale-105 duration-1000"
             /></Link>
 
             {/* TITLE */}

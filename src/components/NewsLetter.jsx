@@ -2,7 +2,7 @@
 
 const NewsLetter = () => {
   return (
-    <div className="mx-auto max-w-full">
+    <div className="mx-auto max-w-full 2xl:pt-[16px]">
       <section
         className="relative bg-cover bg-center rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden"
         style={{

@@ -1,10 +1,11 @@
 import { X, Minus, Plus } from "lucide-react";
 import { FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import Truck from '../assets/Frame (8).png'
+import Truck from '../assets/Frame (8).png';
 import { useEffect, useRef, useState } from "react";
 import { products } from "../data/productsData";
 import { motion, AnimatePresence } from "framer-motion";
+import { RiDeleteBinLine } from "react-icons/ri";
 
 const CartOverlay = ({ onClose }) => {
   const navigate = useNavigate();
@@ -166,38 +167,37 @@ const backdropVariants = {
 </div>
       {/* SCROLLABLE CONTENT */}
 <div className="flex-1 overflow-y-auto px-[16px]">
-
-
         {/* Cart Item */}
         <div className="my-[12px] lg:my-[16px]  rounded-[16px] p-[16px] flex gap-[16px] bg-[#F6F7F2]">
-         <div className=" bg-[#EDE8E0] h-[89px] w-[89px] lg:w-[156px] lg:h-[156px] rounded-[16px] py-[24px] px-[25px]">
+         <div className="relative bg-[#EDE8E0] h-[89px] w-[89px] lg:w-[156px] lg:h-[156px] rounded-[16px] py-[24px] px-[25px]">
              <img
             src="https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png"
             className="h-[55px] w-[55px] lg:w-[107px] lg:h-[107px]  object-cover"
           />
+          <span className="absolute left-[16px] top-[16px] text-[12px] bg-white px-[8px] py-[2px] rounded-[30px] border border-[#571313] text-[#1D0B01]">Woman</span>
          </div>
           <div className="flex-1">
-            <div className="flex justify-between">
-              <h3 className="font-medium text-[#1D0B01] text-[14px] lg:text-[16px] 2xl:text-[20px]">Cerisa Aura</h3>
-              <span className="text-[10px] lg:text-[14px] bg-white p-[5px] lg:p-[10px] rounded-[30px] text-[#1D0B01]">Woman</span>
-            </div>
-            <p className="hidden lg:block text-[14px] text-[#282828]">Alluring cherry and almond fragrance</p>
-            <p className="text-[12px] lg:text-[14px] text-[#282828]">Size: 15ML / 1oz</p>
-
-            <div className="flex items-center justify-between mt-[6px] lg:mt-3">
-              <div className="flex items-center gap-3 bg-white rounded-[100px] py-[8px] px-[10px] 2xl:px-[12px] 2xl:py-[10px]">
-                <Minus className="h-[24px]" />
-                <span className="text-[15px] lg:text-[16px] 2xl:text-[20px]">1</span>
-                <Plus className="h-[24px]" />
-              </div>
+            <div>
+               <div className="flex justify-between">
+              <h3 className="font-medium text-[#571313] text-[14px] lg:text-[16px] 2xl:text-[20px]">Cerisa Aura</h3>
               <div className="text-right flex items-center gap-[8px]">
                 <p className="text-[12px] lg:text-[14px] line-through text-[#3A3F42]">$40</p>
-                <p className="font-medium text-[#372416] text-[18px] 2xl:text-[20px]">$32</p>
+                <p className="font-medium text-[#571313] text-[18px] 2xl:text-[20px]">$32</p>
               </div>
+            </div>
+              <p className="hidden lg:block text-[14px] text-[#282828]">Alluring cherry and almond fragrance</p>
+            <p className="text-[12px] lg:text-[14px] text-[#282828]">Size: 15ML / 1oz</p>
+            </div>
+            <div className="flex items-center justify-between mt-[40px]">
+              <div className="flex items-center gap-3 bg-white rounded-[100px] py-[6px] px-[10px] 2xl:px-[12px] 2xl:py-[6px]">
+                <Minus className="text-[24px]" />
+                <span className="text-[15px] lg:text-[16px] 2xl:text-[20px]">1</span>
+                <Plus className="text-[24px]" />
+              </div>
+            <div><RiDeleteBinLine className="text-[30px] text-[#571313] cursor-pointer" /></div>
             </div>
           </div>
         </div>
-
         {/* Order Summary */}
         <div className="my-[12px] lg:my-[16px] bg-[#F6F7F2] rounded-[20px] p-[16px]">
           <h3 className="font-medium text-[18px] 2xl:text-[20px] mb-[16px]">Order Summary</h3>
@@ -228,12 +228,12 @@ const backdropVariants = {
           key={i}
           className="snap-start flex-shrink-0 w-[215px]"
         >
-          <div className="relative h-[272px] rounded-[24px] overflow-hidden"
+          <div className="group relative h-[272px] rounded-[24px] overflow-hidden"
       
           >
             <img
               src={item.images}
-              className="absolute inset-0 mx-auto h-full w-full object-cover"
+              className="absolute inset-0 mx-auto h-full w-full object-cover group-hover:scale-105 duration-1000"
             />
 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               

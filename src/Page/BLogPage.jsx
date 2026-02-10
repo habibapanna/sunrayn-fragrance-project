@@ -52,7 +52,7 @@ const BLogPage = () => {
               <img
                 src={blog.product}
                 alt={blog.title}
-                className="absolute inset-0 w-full h-full object-cover z-10 group-hover:scale-125 duration-1000"
+                className="absolute inset-0 w-full h-full object-cover z-10 group-hover:scale-105 duration-1000"
               />
 
               {/* Gradient */}

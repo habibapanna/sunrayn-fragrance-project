@@ -15,7 +15,7 @@ const Blogs = () => {
       {/* HEADER */}
       <div className="hidden lg:flex justify-between mb-[16px] 2xl:mb-[32px]">
         <div className="flex items-center gap-[32px]">
-          <p className="text-[35px] 2xl:text-[50px] font-semibold text-[#282828]">
+          <p className="text-[35px] 2xl:text-[50px] font-semibold text-[#571313]">
             The Sanrayn Blogs
           </p>
 
@@ -40,7 +40,7 @@ const Blogs = () => {
 
       </div>
       <div className="flex lg:hidden items-center justify-between pb-[16px]">
-          <p className="text-[25px] 2xl:text-[50px] font-semibold text-[#282828]">
+          <p className="text-[25px] 2xl:text-[50px] font-semibold text-[#571313]">
             The Sanrayn Blogs
           </p>
 
@@ -85,7 +85,7 @@ const Blogs = () => {
               <img
                 src={item.product}
                 alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-125 duration-1000"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
               <div className="absolute left-[16px] bottom-[16px] right-[16px] 2xl:bottom-[32px] 2xl:left-[32px] 2xl:right-[32px] text-white text-[25px] md:text-[30px] 2xl:text-[40px] font-medium">

@@ -17,11 +17,11 @@ const Footer = () => {
 
 
       {/* ================= MAIN CONTENT ================= */}
-      <div className="relative z-10 mx-auto lg:px-6 lg:pl-[50px] 2xl:pl-[80px] p-[16px] py-16 md:py-[150px]">
+      <div className="relative z-10 mx-auto lg:px-6 lg:pl-[50px] 2xl:pl-[80px] p-[16px] py-10 md:py-[150px]">
 
         {/* MOBILE BIG S */}
-        <div className="md:hidden flex justify-center mb-[24px]">
-          <img src={BigS} alt="Big S" className="h-[260px]" />
+        <div className="md:hidden flex justify-center">
+          <img src={BigS} alt="Big S" className="h-[200px]" />
            {/* LOGO BACKGROUND */}
   <img
     src={Logo}
@@ -39,7 +39,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start gap-16">
 
           {/* LEFT CONTENT */}
-          <div className="w-full 2xl:max-w-3xl text-left mt-[40px] lg:mt-0">
+          <div className="w-full 2xl:max-w-5xl text-left mt-[40px] lg:mt-0">
             <Link to="/" className="2xl:inline-block">
               <img src={SANRAYN} alt="Sanrayn" className="mx-auto" />
             </Link>
@@ -55,10 +55,9 @@ const Footer = () => {
                   <li className="hover:underline cursor-pointer"><Link to='/productList'>Sanrayn Specials</Link></li>
                 </ul>
               </div>
-
               {/* Quick Links */}
               <div className="text-left">
-                <p className="text-[#571313] mb-4 text-[25px]">Quick Links</p>
+                <p className="text-[#571313] mb-4 text-[25px]">About SANRAYN</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
                    <li className="hover:underline cursor-pointer"><Link to='blogs'>Blogs</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='/faq'>FAQs</Link></li>
@@ -66,13 +65,11 @@ const Footer = () => {
                    <li className="hover:underline cursor-pointer"><Link to='/contact'>Contact Us</Link></li>
                 </ul>
               </div>
-
               {/* Customer Support */}
               <div className="text-left">
-                <p className="text-[#571313] mb-4 text-[25px]">Customer Support</p>
+                <p className="text-[#571313] mb-4 text-[25px]">Care & Support</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
                   <li className="hidden  hover:underline cursor-pointer"><Link to='terms'>Terms of Services</Link></li>
-                  <li className="hover:underline cursor-pointer">Support@sanrayn.com</li>
                   <li className="hover:underline cursor-pointer">Track my Order</li>
                   <li className="hover:underline cursor-pointer">Return/Exchange Portal</li>
                   <li className="hover:underline cursor-pointer">Refund Policy</li>
@@ -80,12 +77,12 @@ const Footer = () => {
                   <li className="hover:underline cursor-pointer">Accessibility Statement</li>
                 </ul>
               </div>
-
               {/* Quick Links */}
               <div className="text-left">
-                <p className="text-[#571313] mb-4 text-[25px]">Contact Info</p>
+                <p className="text-[#571313] mb-4 text-[25px]">Stay Connected</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
-                   <li className="text-[14px] lg:text-[16px]">Follow us</li>
+                   <li className="hover:underline cursor-pointer">Support@sanrayn.com</li>
+                   <li className="text-[14px] lg:text-[16px]">Follow SANRAYN</li>
                   <li className="hover:underline cursor-pointer"><div className="flex items-center gap-4 md:gap-2 lg:gap-4 order-2 md:order-none mb-[16px] md:mb-0">
     <img src={Facebook} className="h-5" />
     <img src={Instagram} className="h-5" />

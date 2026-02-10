@@ -522,7 +522,7 @@ const overlayVariants = {
   <img
     src={item.images[0]}
     alt={item.title}
-    className="w-full h-full md:h-[360px] object-cover group-hover:scale-125 duration-1000"
+    className="w-full h-full md:h-[360px] object-cover group-hover:scale-105 duration-1000"
   />
 
   {/* DESKTOP HOVER ADD TO CART */}

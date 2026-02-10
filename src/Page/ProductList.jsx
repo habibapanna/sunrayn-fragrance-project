@@ -198,7 +198,7 @@ const overlayVariants = {
         {/* -------------------- SIDEBAR -------------------- */}
  <AnimatePresence>
 {sidebarOpen && (
-  <aside className="hidden md:block sticky top-[120px] 2xl:w-[420px] h-[calc(100vh-140px)] bg-[#F2EFD8] rounded-[16px] overflow-y-auto shrink-0">
+  <aside className="hidden md:block sticky top-[120px] 2xl:w-[420px] h-[calc(100vh-140px)] bg-[#F6F7F2] rounded-[16px] overflow-y-auto shrink-0">
 
     <div className="p-5 space-y-6 text-[#1D0B01]">
 
@@ -281,7 +281,7 @@ const overlayVariants = {
       <FilterBlock title="Scent - Intensity Scale" options={["Subtle", "Significant", "Statement"]} filterKey="intensity" />
 
       {/* ================= PRICE RANGE ================= */}
-      <div className="bg-[#FBFBF6] rounded-[16px] p-4 space-y-4">
+      <div className="bg-white rounded-[16px] p-4 space-y-4 mx-[16px]">
         <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
           <h3 className="font-medium">Price</h3>
           <span className={`transition-transform ${openSection.includes("Price") ? "rotate-180" : ""}`}>
@@ -335,7 +335,7 @@ const overlayVariants = {
 
    {/* Sliding sidebar */}
       <motion.aside
-        className="md:hidden fixed top-0 left-0 z-50 h-full w-full bg-[#EDE8D0]"
+        className="md:hidden fixed top-0 left-0 z-50 h-full w-full bg-[#F6F7F2]"
         variants={mobileSidebarVariants}
         initial="hidden"
         animate="visible"
@@ -350,7 +350,7 @@ const overlayVariants = {
         <h3 className="text-[14px] font-bold uppercase">Sort by:</h3>
 
         <div
-          className="bg-[#FBFBF6] rounded-[12px] p-4 cursor-pointer"
+          className="bg-white rounded-[12px] p-4 cursor-pointer"
           onClick={() => toggleAccordion("Sort")}
         >
           <div className="flex justify-between items-center">
@@ -424,7 +424,7 @@ const overlayVariants = {
         <FilterBlock title="Scent - Intensity Scale" options={["Subtle","Significant","Statement"]} filterKey="intensity" />
 
         {/* ================= PRICE RANGE ================= */}
-      <div className="bg-[#FBFBF6] rounded-[16px] p-4 space-y-4">
+      <div className="bg-white mx-[16px] rounded-[16px] p-4 space-y-4">
         <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
           <h3 className="font-medium">Price</h3>
           <span className={`transition-transform ${openSection.includes("Price") ? "rotate-180" : ""}`}>
@@ -496,7 +496,6 @@ const overlayVariants = {
 >
 
 
-
 {/* IMAGE SECTION */}
 <div className="relative overflow-hidden w-[150px] md:w-full flex-shrink-0">
 
@@ -520,7 +519,7 @@ const overlayVariants = {
   <img
     src={item.images[0]}
     alt={item.title}
-    className="w-full h-full md:h-[360px] object-cover group-hover:scale-125 duration-1000"
+    className="w-full h-full md:h-[360px] object-cover group-hover:scale-105 duration-1000"
   />
 
   {/* DESKTOP HOVER ADD TO CART */}
@@ -534,15 +533,13 @@ const overlayVariants = {
       onClick={(e) => e.stopPropagation()}
       className="w-full bg-white/80 text-black cursor-pointer
       rounded-full py-2 font-medium
-      hover:bg-[#BA9948] hover:text-white
-      border border-[#BA9948] transition-all ease-in-out duration-500 md:text-[15px] 2xl:text-[18px]"
+      hover:bg-[#A0174A] hover:text-white
+      border border-[#571313] transition-all ease-in-out duration-500 md:text-[15px] 2xl:text-[18px]"
     >
       Add to cart
     </button>
   </div>
 </div>
-
-
 
   {/* CONTENT SECTION */}
  <div className="flex-1 p-[12px] md:p-[16px] flex flex-col justify-between">
@@ -563,8 +560,8 @@ const overlayVariants = {
       <h3 className="text-[#571313] text-[12px] md:text-[16px] 2xl:text-[20px] font-semibold uppercase">
         {item.title}
       </h3>
-      <div className="flex gap-[6px]">
-        <p className="text-[#F80000] line-through text-[13px] md:text-[16px] 2xl:text-[20px]">
+      <div className="flex gap-[16px]">
+        <p className="text-[#F80000]/50 line-through text-[13px] md:text-[16px] 2xl:text-[20px]">
           ${item.oldPrice}
         </p>
         <p className="text-[#571313] font-semibold text-[13px] md:text-[16px] 2xl:text-[20px]">
@@ -579,17 +576,17 @@ const overlayVariants = {
     </p>
    </div>
     <div className="flex justify-between">
-      <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Crafted in <span  className="font-semibold text-[#1D0B01]">USA</span></p>
-    <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Scent Family: <span  className="font-semibold text-[#1D0B01]">{item.scentFamily}</span></p>
+      <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Crafted in <span  className="font-semibold text-[#571313]">USA</span></p>
+    <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Scent Family: <span  className="font-semibold text-[#571313]">{item.scentFamily}</span></p>
     </div>
     {/* MOBILE ADD TO CART */}
 <div className="flex justify-end mt-[12px] md:hidden">
   <button
     onClick={(e) => e.stopPropagation()}
     className="px-[24px] py-[10px] text-[12px]
-    rounded-full border border-[#BA9948]
-    text-[#BA9948] hover:bg-[#BA9948]
-    hover:text-white transition w-full"
+    rounded-full border border-[#571313]
+    text-[#571313] hover:bg-[#571313]
+    hover:text-white transition w-full cursor-pointer duration-500"
   >
     Add to cart
   </button>
