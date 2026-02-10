@@ -10,8 +10,6 @@ import ProductCard from "../components/ProductCard";
 import { useNavigate, Link } from "react-router-dom";
 
 
-
-
 const ProductDetails = () => {
     const [openSection, setOpenSection] = useState("notes");
     const [selectedVolume, setSelectedVolume] = useState(null);
@@ -108,6 +106,16 @@ const BigBottleIcon = () => (
   const product = products.find((p) => p.slug === slug);
 
   if (!product) return <div>Product not found</div>;
+
+  const scentFamilyColors = {
+  Flowery: "#FFE6F0",
+  Warm: "#FFE5C3",
+  Gourmand: "#FFD3C8",
+  Fresh: "#BEFFBA",
+  Earthy: "#BFDDFF",
+  Herbal: "#BCBAFF",
+};
+
 
   return (
     <div className=" pb-[16px] 2xl:py-[32px]">
@@ -221,10 +229,15 @@ Back
             {[...Array(5)].map((_, i) => (
               <FaStar key={i} className="text-[#BA9948]" />
             ))}
-            <span className="text-[16px] underline">
+            <span className="text-[16px] ml-[6px] underline">
               {product.rating} ({product.reviews})
             </span>
           </div>
+            
+ <p className="text-[14px] 2xl:text-[16px] mt-2">
+  Eau de Perfume{selectedVolume && `: ${selectedVolume}`}/oz
+</p>
+
 
           <p className="mt-4 text-[14px] lg:text-[16px] 2xl:text-[20px] text-[#282828]">{product.description}</p>
 
@@ -233,62 +246,82 @@ Back
   <p className="text-[16px] 2xl:text-[18px] mb-2">Volume</p>
 
   <div className="flex gap-[8px]">
-    {product.volume.map((v) => {
-      const isSelected = selectedVolume === v;
-      const is15ml = v === "15ML";
+   {product.volume.map((v) => {
+  const isSelected = selectedVolume === v;
+  const is15ml = v === "15ML";
+  const isBestValue = v === "30ML";
 
-      return (
-        <button
-          key={v}
-          onClick={() => setSelectedVolume(v)}
-          className={`
-            flex items-center justify-center gap-[4px] 2xl:gap-[8px]
-            px-[10px] py-[8px] 2xl:px-[14px] 2xl:py-[10px]
-            rounded-full border transition cursor-pointer
-            ${
-              isSelected
-                ? "border-[#282828] bg-white"
-                : "border-[#282828]/35 hover:border-[#282828]"
-            }
-          `}
-        >
-          {/* Circle */}
-          <span
-            className={`
-              h-[16px] w-[16px] 2xl:h-[20px] 2xl:w-[20px]
-              rounded-full border
-              ${
-                isSelected
-                  ? "border-[4px] border-[#282828]"
-                  : "border-[#282828]/35"
-              }
-            `}
-          />
+  return (
+<button
+  type="button"
+  key={v}
+  onClick={() => setSelectedVolume(v)}
+  className={`relative
+    flex items-center justify-center gap-[4px] 2xl:gap-[8px]
+    px-[10px] py-[8px] 2xl:px-[14px] 2xl:py-[10px]
+    rounded-full border transition cursor-pointer
+    ${
+      isSelected
+        ? "border-[#282828] bg-white"
+        : "border-[#282828]/35 hover:border-[#282828]"
+    }
+  `}
+>
 
-          {/* Icon */}
-          {is15ml ? <SmallBottleIcon /> : <BigBottleIcon />}
+      {/* Best Value Badge */}
+      {isBestValue && (
+        <span className="absolute -top-[8px] right-[6px] text-[10px] lg:text-[12px] 
+          bg-[#BA9948] text-white px-[6px] py-[2px] rounded-full">
+          Best Value
+        </span>
+      )}
 
-          {/* Text */}
-          <span
-            className={`
-              text-[14px] 2xl:text-[20px] font-medium
-              ${
-                isSelected
-                  ? "text-[#282828]"
-                  : "text-[#282828]/35"
-              }
-            `}
-          >
-            {v}
-          </span>
-        </button>
-      );
-    })}
+      {/* Circle */}
+      <span
+        className={`
+          h-[16px] w-[16px] 2xl:h-[20px] 2xl:w-[20px]
+          rounded-full border
+          ${
+            isSelected
+              ? "border-[4px] border-[#282828]"
+              : "border-[#282828]/35"
+          }
+        `}
+      />
+
+      {/* Icon */}
+      {is15ml ? <SmallBottleIcon /> : <BigBottleIcon />}
+
+      {/* Text */}
+      <span
+        className={`
+          text-[14px] 2xl:text-[20px] font-medium
+          ${isSelected ? "text-[#282828]" : "text-[#282828]/35"}
+        `}
+      >
+        {v}
+      </span>
+    </button>
+  );
+})}
   </div>
 </div>
 
+<div className="mt-[16px] lg:mt-[20px] flex gap-[16px]">
+  <p className="bg-white border border-gray-200 px-[10px] py-[4px] rounded-full">Crafted in <span className="text-[#BA9948]">USA</span>
+</p>
+<span
+  className="px-[12px] py-[6px] rounded-full text-[14px] font-medium"
+  style={{
+    backgroundColor: scentFamilyColors[product.scentFamily] || "#F6F7F2",
+  }}
+>
+  Scent Family: {product.scentFamily}
+</span>
+</div>
+
           {/* Price */}
-          <div className="flex items-center gap-3 mt-[20px] 2xl:mt-[32px]">
+          <div className="flex items-center gap-3 mt-[16px] lg:mt-[20px]">
             <span className="text-[25px] 2xl:text-[30px] font-bold">${product.price}</span>
             <span className="line-through text-[#282828]/50 text-[18px] 2xl:text-[20px]">
               ${product.oldPrice}
@@ -296,11 +329,7 @@ Back
           </div>
 
           {/* CTA */}
-        <div className="flex justify-between items-center gap-[16px] mt-[20px] 2xl:mt-[32px]">   <div className="flex items-center gap-3 bg-white rounded-[100px] px-[10px] 2xl:px-[12px] py-[8px] 2xl:py-[10px] ">
-                          <Minus className="h-[20px] 2xl:h-[24px]" />
-                          <span className="text-[18px] 2xl:text-[20px]">1</span>
-                          <Plus className="h-[20px] 2xl:h-[24px]" />
-                        </div>
+        <div className="flex justify-between items-center gap-[16px] mt-[16px] lg:mt-[20px]"> 
           <button className="text-[18px] 2xl:text-[20px] w-full px-[20px] py-[8px] 2xl:py-[10px] 2x:px-[24px] rounded-full font-semibold cursor-pointer transition-all duration-300 ease-out
     bg-[#BA9948] text-white hover:bg-white/60 backdrop-blur-md border border-[#BA9948] hover:text-[#1D0B01]">
             Add to cart

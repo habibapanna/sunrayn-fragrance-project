@@ -565,8 +565,8 @@ const overlayVariants = {
       <h3 className="text-[#571313] text-[12px] md:text-[16px] 2xl:text-[20px] font-semibold uppercase">
         {item.title}
       </h3>
-      <div className="flex gap-[6px]">
-        <p className="text-[#F80000] line-through text-[13px] md:text-[16px] 2xl:text-[20px]">
+      <div className="flex gap-[16px]">
+        <p className="text-[#F80000]/50 line-through text-[13px] md:text-[16px] 2xl:text-[20px]">
           ${item.oldPrice}
         </p>
         <p className="text-[#571313] font-semibold text-[13px] md:text-[16px] 2xl:text-[20px]">

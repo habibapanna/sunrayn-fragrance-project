@@ -77,9 +77,8 @@ const buttonVariants = {
 
         {/* ================= CONTENT ================= */}
         <div className="flex flex-col md:flex-row items-center justify-center md:gap-[20px]">
-
           {/* IMAGE */}
-          <div className="relative w-full flex justify-center items-center md:pl-[30px] lg:pl-[50px] py-[30px] lg:py-[50px 2xl:py-[100px]">
+          <div className="relative w-full flex justify-center items-center md:pl-[30px] lg:pl-[50px] md:py-[30px] lg:py-[50px 2xl:py-[100px]">
             <img
               src="https://i.postimg.cc/PNGRVQZ7/Whats-App-Image-2026-02-03-at-6-11-48-PM-(2).jpg"
               alt="Special Perfume"

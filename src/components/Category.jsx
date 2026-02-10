@@ -60,7 +60,7 @@ const cardVariant = {
   variants={cardVariant}
   className="
     group relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px]
-    overflow-hidden cursor-pointer md:h-[300px]
+    overflow-hidden cursor-pointer h-[392px] md:h-[292px]
     lg:h-[392px]
     2xl:h-[700px] group
   "
@@ -71,7 +71,7 @@ const cardVariant = {
             <img
               src={item.product}
               alt={item.title}
-              className="absolute inset-0 h-full w-full object-cover  group-hover:scale-105 duration-1000"
+              className="absolute inset-0 h-full w-full object-cover  group-hover:scale-125 duration-1000"
             /></Link>
 
             {/* TITLE */}

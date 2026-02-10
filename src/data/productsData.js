@@ -1,7 +1,7 @@
 export const products = [
 {
-  slug: "cerisa-aura",
-  title: "Ambery Safron",
+  slug: "Floral Rhubarb",
+  title: "Floral Rhubarb",
   subtitle: "Inspired By Signature Ambery Cherry Indulgence",
   gender: "WOMEN",
   brand: "Byredo",
@@ -623,8 +623,8 @@ export const products = [
   ]
 },
 {
-  slug: "cerisa-aura",
-  title: "Cerisa Aura",
+  slug: "Powdery Coconut",
+  title: "Powdery Coconut",
   subtitle: "Inspired By Signature Ambery Cherry Indulgence",
   gender: "UNISEX",
   brand: "Byredo",
@@ -1246,8 +1246,8 @@ export const products = [
   ]
 },
 {
-  slug: "cerisa-aura",
-  title: "Cerisa Aura",
+  slug: "Muskey Green Tea",
+  title: "Muskey Green Tea",
   subtitle: "Inspired By Signature Ambery Cherry Indulgence",
   gender: "UNISEX",
   brand: "Byredo",
@@ -1869,8 +1869,8 @@ export const products = [
   ]
 },
 {
-  slug: "cerisa-aura",
-  title: "Cerisa Aura",
+  slug: "Floral Honeysuckle",
+  title: "Floral Honeysuckle",
   subtitle: "Inspired By Signature Ambery Cherry Indulgence",
   gender: "UNISEX",
   brand: "Byredo",
@@ -2492,8 +2492,8 @@ export const products = [
   ]
 },
 {
-  slug: "cerisa-aura",
-  title: "Cerisa Aura",
+  slug: "Woody Oakmoss",
+  title: "Ambery Safron",
   subtitle: "Inspired By Signature Ambery Cherry Indulgence",
   gender: "MEN",
   brand: "Chloe",
@@ -3115,8 +3115,8 @@ export const products = [
   ]
 },
 {
-  slug: "cerisa-aura",
-  title: "Cerisa Aura",
+  slug: "Ambery Peach",
+  title: "Ambery Peach",
   subtitle: "Inspired By Signature Ambery Cherry Indulgence",
   gender: "UNISEX",
   brand: "Byredo",
@@ -3738,8 +3738,8 @@ export const products = [
   ]
 },
 {
-  slug: "cerisa-aura",
-  title: "Cerisa Aura",
+  slug: "Fruity Mangolia",
+  title: "Fruity Mangolia",
   subtitle: "Inspired By Signature Ambery Cherry Indulgence",
   gender: "UNISEX",
   brand: "Chanel",
@@ -4361,8 +4361,8 @@ export const products = [
   ]
 },
 {
-  slug: "cerisa-aura",
-  title: "Ambery Safron",
+  slug: "Citrus Neroli",
+  title: "Citrus Neroli",
   subtitle: "Inspired By Signature Ambery Cherry Indulgence",
   gender: "WOMEN",
   brand: "Clinique",
@@ -4984,8 +4984,8 @@ export const products = [
   ]
 },
 {
-  slug: "cerisa-aura",
-  title: "Cerisa Aura",
+  slug: "Spicy Orchid",
+  title: "Spicy Orchid",
   subtitle: "Inspired By Signature Ambery Cherry Indulgence",
   gender: "UNISEX",
   brand: "Creed",
@@ -5607,8 +5607,8 @@ export const products = [
   ]
 },
 {
-  slug: "cerisa-aura",
-  title: "Ambery Safron",
+  slug: "Fougere Oud",
+  title: "Fougere Oud",
   subtitle: "Inspired By Signature Ambery Cherry Indulgence",
   gender: "MEN",
   brand: "Dior",
@@ -6230,8 +6230,8 @@ export const products = [
   ]
 },
 {
-  slug: "cerisa-aura",
-  title: "Cerisa Aura",
+  slug: "Woody Sandalwood",
+  title: "Woody Sandalwood",
   subtitle: "Inspired By Signature Ambery Cherry Indulgence",
   gender: "WOMEN",
   brand: "Chloe",
@@ -6853,8 +6853,8 @@ export const products = [
   ]
 },
 {
-  slug: "cerisa-aura",
-  title: "Ambery Safron",
+  slug: "Ambery vanilla",
+  title: "Ambery vanilla",
   subtitle: "Inspired By Signature Ambery Cherry Indulgence",
   gender: "MEN",
   brand: "Burberry",
@@ -7475,6 +7475,5 @@ export const products = [
     },
   ]
 },
-
 
 ];
