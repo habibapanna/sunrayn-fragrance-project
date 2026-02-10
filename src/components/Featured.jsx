@@ -37,7 +37,7 @@ const Featured = () => {
             <div className='hidden lg:flex justify-between mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px]'>
             <div className='flex justify-center items-center text-center gap-[20px] 2xl:gap-[32px]'>
                 <div>
-                    <p className='text-[20px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#571313] pl-[16px]'>Featured Perfumes</p>
+                    <p className='text-[20px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828] pl-[16px]'>Featured Perfumes</p>
                 </div>
                 <div>
                       <button className="transition-all duration-300 ease-out
@@ -59,7 +59,7 @@ const Featured = () => {
             <div className='flex lg:hidden justify-between items-center px-[16px] pb-[16px]
             '>
                 <div>
-                    <p className='text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#571313]'>Featured Perfumes</p>
+                    <p className='text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]'>Featured Perfumes</p>
                 </div>
                 <div>
                     <button className="hover:bg-[#BA9948] hover:text-white border border-[#BA9948] text-[#1D0B01] px-[24px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[100px] h-[30px] "><Link to='/productList'>View All</Link></button>

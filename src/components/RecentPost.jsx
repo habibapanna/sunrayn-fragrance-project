@@ -47,10 +47,10 @@ const RecentPost = () => {
     <div className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
       {/* Header */}
       <div className="flex justify-between items-center mb-[16px] 2xl:mb-[32px] gap-4">
-        <h2 className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#571313] hidden md:block">
+        <h2 className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-black hidden md:block">
           Recent Post on Instagram
         </h2>
-        <h2 className="text-[25px] font-semibold text-[#571313] md:hidden">
+        <h2 className="text-[25px] font-semibold text-black md:hidden">
         Instagram
         </h2>
         <div className="flex items-center gap-[24px]">

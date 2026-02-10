@@ -15,7 +15,7 @@ const Blogs = () => {
       {/* HEADER */}
       <div className="hidden lg:flex justify-between mb-[16px] 2xl:mb-[32px]">
         <div className="flex items-center gap-[32px]">
-          <p className="text-[35px] 2xl:text-[50px] font-semibold text-[#571313]">
+          <p className="text-[35px] 2xl:text-[50px] font-semibold text-[#282828]">
             The Sanrayn Blogs
           </p>
 
@@ -40,7 +40,7 @@ const Blogs = () => {
 
       </div>
       <div className="flex lg:hidden items-center justify-between pb-[16px]">
-          <p className="text-[25px] 2xl:text-[50px] font-semibold text-[#571313]">
+          <p className="text-[25px] 2xl:text-[50px] font-semibold text-[#282828]">
             The Sanrayn Blogs
           </p>
 
