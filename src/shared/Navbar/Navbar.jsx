@@ -11,8 +11,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import Solar from '../../assets/Vector (4).svg';
 
 
-
-
 const Navbar = ({ showTopBar }) => {
 const [open, setOpen] = useState(false);
 const [scrolled, setScrolled] = useState(false);
@@ -346,12 +344,10 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 </div>
 </div>
 
-
-
 <Link to='/about'><button className="cursor-pointer text-[10px] lg:text-[12px] 2xl:text-[15px] uppercase">About Us</button></Link>
 
 
-             <Link to='holidayOffer'> <span className="bg-[#FD4929] text-white gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] px-[14px] lg:px-[20px] py-[8px] rounded-[100px] font-semibold flex items-center justify-center w-[110px] lg:w-[150px] h-[20px] lg:h-[30px] 2xl:w-[170px] 2xl:h-[35px] uppercase">
+             <Link to='holidayOffer'> <span className="bg-[#A0174A] text-white gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] px-[14px] lg:px-[20px] py-[8px] rounded-[100px] font-semibold flex items-center justify-center w-[110px] lg:w-[150px] h-[20px] lg:h-[30px] 2xl:w-[170px] 2xl:h-[35px] uppercase">
                 <img className="h-[10px] w-[10px] lg:h-[16px] lg:w-[16px]" src={Solar} alt="" />
                 Holiday Sale
               </span></Link>

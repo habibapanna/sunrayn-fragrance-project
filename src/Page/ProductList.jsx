@@ -520,7 +520,6 @@ const overlayVariants = {
     alt={item.title}
     className="w-full h-full md:h-[360px] object-cover group-hover:scale-105 duration-1000"
   />
-
   {/* DESKTOP HOVER ADD TO CART */}
   <div className="hidden md:block absolute bottom-0 left-0 w-full
     translate-y-full opacity-0
@@ -533,7 +532,7 @@ const overlayVariants = {
       className="w-full bg-white/80 text-black cursor-pointer
       rounded-full py-2 font-medium
       hover:bg-[#A0174A] hover:text-white
-      border border-[#571313] transition-all ease-in-out duration-500 md:text-[15px] 2xl:text-[18px]"
+      border border-[#A0174A] hover:border-none transition-all ease-in-out duration-500 md:text-[15px] 2xl:text-[18px]"
     >
       Add to cart
     </button>
@@ -549,21 +548,20 @@ const overlayVariants = {
       {[...Array(5)].map((_, index) => (
         <FaStar key={index} className="text-[12px] md:text-[14px] 2xl:text-[16px]" />
       ))}
-     
     </div>
      <span className="text-[#1D0B01] text-[12px] md:text-[14px] 2xl:text-[16px]">1239</span>
     </div>
 
     {/* Title + Price Row */}
     <div className="flex justify-between items-center mt-[12px] md:[4px]">
-      <h3 className="text-[#571313] text-[12px] md:text-[16px] 2xl:text-[20px] font-semibold uppercase">
+      <h3 className="text-[#A0174A] text-[12px] md:text-[16px] 2xl:text-[20px] font-semibold uppercase">
         {item.title}
       </h3>
       <div className="flex gap-[16px]">
-        <p className="text-[#F80000]/50 line-through text-[13px] md:text-[16px] 2xl:text-[20px]">
+        <p className="text-[#A0174A]/50 line-through text-[13px] md:text-[16px] 2xl:text-[20px]">
           ${item.oldPrice}
         </p>
-        <p className="text-[#571313] font-semibold text-[13px] md:text-[16px] 2xl:text-[20px]">
+        <p className="text-[#A0174A] font-semibold text-[13px] md:text-[16px] 2xl:text-[20px]">
           ${item.price}
         </p>
       </div>
@@ -575,8 +573,8 @@ const overlayVariants = {
     </p>
    </div>
     <div className="flex justify-between">
-      <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Crafted in <span  className="font-semibold text-[#571313]">USA</span></p>
-    <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Scent Family: <span  className="font-semibold text-[#571313]">{item.scentFamily}</span></p>
+      <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Crafted in <span  className="font-semibold text-[#A0174A]">USA</span></p>
+    <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Scent Family: <span  className="font-semibold text-[#A0174A]">{item.scentFamily}</span></p>
     </div>
     {/* MOBILE ADD TO CART */}
 <div className="flex justify-end mt-[12px] md:hidden">

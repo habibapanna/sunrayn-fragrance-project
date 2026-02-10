@@ -220,9 +220,19 @@ Back
   <div className="bg-[#F6F7F2] rounded-[32px] p-[16px] 2xl:p-[32px]">
 
           <span className="text-[12px] 2xl:text-[16px] bg-[#FFFFFF] py-[8px] px-[16px] rounded-full">{product.gender}</span>
-          <h1 className="text-[18px] lg:text-[24px] 2xl:text-[35px] text-[#1D0B01] font-bold mt-2">
-            {product.title} – {product.subtitle}
+          <div className="flex justify-between">
+            <h1 className="text-[18px] lg:text-[24px] 2xl:text-[35px] text-[#1D0B01] font-bold mt-2">
+            {product.title}
           </h1>
+          {/* Price */}
+          <div className="flex items-center gap-3 mt-[16px] lg:mt-[20px]">
+            <span className="text-[25px] 2xl:text-[30px] text-[#A0174A] font-bold">${product.price}</span>
+            <span className="line-through text-[#A0174A]/50 text-[18px] 2xl:text-[20px]">
+              ${product.oldPrice}
+            </span>
+          </div>
+          </div>
+          <h3 className="text-[18px]">{product.subtitle}</h3>
 
           {/* Rating */}
           <div className="flex items-center gap-[5px] mt-3">
@@ -237,8 +247,6 @@ Back
  <p className="text-[14px] 2xl:text-[16px] mt-2">
   Eau de Perfume{selectedVolume && `: ${selectedVolume}`}/oz
 </p>
-
-
           <p className="mt-4 text-[14px] lg:text-[16px] 2xl:text-[20px] text-[#282828]">{product.description}</p>
 
  {/* Volume */}
@@ -271,7 +279,7 @@ Back
       {/* Best Value Badge */}
       {isBestValue && (
         <span className="absolute -top-[8px] right-[6px] text-[10px] lg:text-[12px] 
-          bg-[#BA9948] text-white px-[6px] py-[2px] rounded-full">
+          bg-[#A0174A] text-white px-[6px] py-[2px] rounded-full">
           Best Value
         </span>
       )}
@@ -308,25 +316,17 @@ Back
 </div>
 
 <div className="mt-[16px] lg:mt-[20px] flex gap-[16px]">
-  <p className="bg-white border border-gray-200 px-[10px] py-[4px] rounded-full">Crafted in <span className="text-[#BA9948]">USA</span>
+  <p className="bg-white border border-gray-200 px-[10px] py-[4px] rounded-full">Crafted in <span className="text-[#A0174A] font-semibold">USA</span>
 </p>
 <span
-  className="px-[12px] py-[6px] rounded-full text-[14px] font-medium"
+  className="px-[12px] py-[6px] rounded-full text-[14px] font-semibold"
   style={{
     backgroundColor: scentFamilyColors[product.scentFamily] || "#F6F7F2",
   }}
 >
-  Scent Family: {product.scentFamily}
+  Scent Family: <span className="font-medium">{product.scentFamily}</span>
 </span>
 </div>
-
-          {/* Price */}
-          <div className="flex items-center gap-3 mt-[16px] lg:mt-[20px]">
-            <span className="text-[25px] 2xl:text-[30px] font-bold">${product.price}</span>
-            <span className="line-through text-[#282828]/50 text-[18px] 2xl:text-[20px]">
-              ${product.oldPrice}
-            </span>
-          </div>
 
           {/* CTA */}
         <div className="flex justify-between items-center gap-[16px] mt-[16px] lg:mt-[20px]"> 

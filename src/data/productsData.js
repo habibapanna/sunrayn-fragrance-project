@@ -7475,5 +7475,4 @@ export const products = [
     },
   ]
 },
-
 ];
