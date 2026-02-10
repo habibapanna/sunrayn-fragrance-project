@@ -3,7 +3,7 @@ import { products } from "../data/productsData";
 import { FaStar } from "react-icons/fa";
 import { Minus, Plus } from "lucide-react";
 import { ChevronDown } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MarqueeSection from "../components/MarqueeSection";
 import Testimonials from "../components/Testimonials";
 import ProductCard from "../components/ProductCard";
@@ -13,6 +13,7 @@ import { useNavigate, Link } from "react-router-dom";
 const ProductDetails = () => {
     const [openSection, setOpenSection] = useState("notes");
     const [selectedVolume, setSelectedVolume] = useState(null);
+
     const navigate = useNavigate();
     const carouselRef = useRef(null);
 const [activeIndex, setActiveIndex] = useState(0);
@@ -22,7 +23,6 @@ const aboutRef = useRef(null);
 const scentNotesRef = useRef(null);
 const shippingRef = useRef(null);
 const faqRef = useRef(null);
-
 
 const handleScroll = () => {
   const container = carouselRef.current;
@@ -115,6 +115,12 @@ const BigBottleIcon = () => (
   Earthy: "#BFDDFF",
   Herbal: "#BCBAFF",
 };
+
+useEffect(() => {
+  if (product?.volume?.length) {
+    setSelectedVolume(product.volume[0]); // 👈 default selected (e.g. 15ML)
+  }
+}, [product]);
 
 
   return (
