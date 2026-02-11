@@ -9,12 +9,14 @@ import CartOverlay from "../../components/CartOverlay";
 import SignInUp from "../../Page/SignInUp";
 import { useNavigate, useLocation } from "react-router-dom";
 import Solar from '../../assets/Vector (4).svg';
+import MenuOverlay from "../../components/MenuOverlay";
 
 
 const Navbar = ({ showTopBar }) => {
 const [open, setOpen] = useState(false);
 const [scrolled, setScrolled] = useState(false);
 const [searchOpen, setSearchOpen] = useState(false);
+const [menuOpen, setMenuOpen] = useState(false);
 const [cartOpen, setCartOpen] = useState(false);
 const [signInUpOpen, setSignInUpOpen] = useState(false);
 
@@ -434,8 +436,8 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 </button>
 
              <button
-  title="Open Search"
-  onClick={() => setSearchOpen(true)}
+  title="Open Menu"
+  onClick={() => setMenuOpen(true)}
   className="bg-white/90 p-[8px] h-[28px] w-[28px] md:h-[30px] md:w-[30px] rounded-full flex items-center cursor-pointer"
 >
   <TbMenu className="text-[#1D0B01] h-[24px] w-[24px]" />
@@ -447,6 +449,25 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
       </nav>
 
 
+{menuOpen && (
+  <>
+    {/* BLUR LAYER (same as cart) */}
+    <div
+      onClick={() => setMenuOpen(false)}
+      className="fixed inset-0 bg-black/30 z-[60]"
+    />
+
+    {/* SEARCH UI */}
+    <MenuOverlay
+      open={menuOpen}
+      onClose={() => setMenuOpen(false)}
+       onOpenSignIn={() => {
+    setSearchOpen(false);     // close search
+    setSignInUpOpen(true);    // open login
+  }}
+    />
+  </>
+)}
 {searchOpen && (
   <>
     {/* BLUR LAYER (same as cart) */}

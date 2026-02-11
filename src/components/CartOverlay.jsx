@@ -169,10 +169,10 @@ const backdropVariants = {
 <div className="flex-1 overflow-y-auto px-[16px]">
         {/* Cart Item */}
         <div className="my-[12px] lg:my-[16px]  rounded-[16px] p-[16px] flex gap-[16px] bg-[#F6F7F2]">
-         <div className="relative bg-[#EDE8E0] h-[89px] w-[89px] lg:w-[156px] lg:h-[156px] rounded-[16px] py-[24px] px-[25px]">
+         <div className="relative bg-[#EDE8E0] md:h-[89px] md:w-[89px] lg:w-[156px] lg:h-[156px] rounded-[16px] py-[24px] px-[25px]">
              <img
             src="https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png"
-            className="h-[55px] w-[55px] lg:w-[107px] lg:h-[107px]  object-cover"
+            className="h-full md:h-[55px] w-[55px] lg:w-[107px] lg:h-[107px] object-cover"
           />
           <span className="absolute left-[8px] top-[8px] text-[12px] bg-white px-[8px]  rounded-[30px] border border-[#571313] text-[#1D0B01]">Woman</span>
          </div>

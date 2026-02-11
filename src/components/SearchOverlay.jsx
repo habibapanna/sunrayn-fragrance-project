@@ -212,16 +212,6 @@ useEffect(() => {
           </div>
         </div>
 
-    {/* HOLIDAY SALE */}
-    <Link
-     to="/holidayOffer">
-      <button
-      onClick={onClose}
-       className="bg-[#FD4929] text-white text-[16px] px-[12px] py-[14px] rounded-[100px] font-semibold flex items-center gap-[6px] w-full justify-center md:hidden">
-     <img src={Solar} alt="" /> Holiday Sale
-      </button>
-    </Link>
-
         {signInUpOpen && (
   <>
     {/* BLUR BACKGROUND */}
