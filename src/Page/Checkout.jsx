@@ -12,7 +12,8 @@ import { LuSearch } from "react-icons/lu";
 
 const Checkout = () => {
   return (
-    <section className="min-h-screen bg-[#F6F7F2]">
+    <div className="bg-[#F6F7F2]">
+      <section className="min-h-screen md:max-w-7xl mx-auto px-[16px]">
       {/* Logo */}
       <div className="flex flex-col w-[174px] h-[118px] justify-center mb-10 mx-auto items-center">
        <Link to="/" className="cursor-pointer"> <img src={Logo2} alt="Sanrayn" className="h-[89px] w-[89px]" /></Link>
@@ -262,7 +263,7 @@ const Checkout = () => {
         {/* RIGHT */}
        <div className="2xl:col-span-2"> <div className="bg-white rounded-[20px] p-[16px] 2xl:p-[24px] w-full
       2xl:sticky 2xl:top-[32px]">
-          <p className="font-medium text-[16px] 2xl:text-[18px] 2xl:text-[20px] mb-4">Product Details</p>
+          <p className="font-medium text-[16px] lg:text-[18px] 2xl:text-[20px] mb-4">Product Details</p>
           <div className="flex justify-between items-center mb-[20px]">
             <div className="flex gap-3 items-center">
   {/* IMAGE + BADGE */}
@@ -317,6 +318,7 @@ const Checkout = () => {
         </div></div>
       </div>
     </section>
+    </div>
   );
 };
 
