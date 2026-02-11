@@ -134,7 +134,7 @@ const backdropVariants = {
         </button>
       </div>
               {/* Discount */}
-        <div className="mx-[16px] bg-[#EDE8D0] rounded-[20px] py-[8px] px-[16px]">
+        <div className="mx-[16px] bg-[#EDE8D0] rounded-[20px] py-[8px] px-[16px] group cursor-pointer">
           <p className="text-[14px] lg:text-[16px] 2xl:text-[20px] text-[#282828] font-medium mb-[8px]">Special discount</p>
           <div className="grid grid-cols-4 gap-[4px] lg:gap-[8px] text-center">
 
@@ -160,7 +160,8 @@ const backdropVariants = {
 
           <div className="border border-white mt-[8px] lg:mt-[16px]"></div>
 
-          <div className="flex items-center gap-2 text-[14px] lg:text-[18px] mt-[8px] lg:mt-[16px]">
+          <div className="flex items-center gap-2 text-[14px] lg:text-[18px] mt-[8px] lg:mt-[16px] text-[#282828] group-hover:text-[#A0174A] transition-colors duration-500">
+
             <img src={Truck} alt="" className="h-[24px] w-[24px]" /> FREE shipping on 3+ items
           </div>
         </div>
@@ -174,15 +175,15 @@ const backdropVariants = {
             src="https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png"
             className="h-full md:h-[55px] w-[55px] lg:w-[107px] lg:h-[107px] object-cover"
           />
-          <span className="absolute left-[8px] top-[8px] text-[12px] bg-white px-[8px]  rounded-[30px] border border-[#571313] text-[#1D0B01]">Woman</span>
+          <span className="absolute left-[8px] top-[8px] text-[12px] bg-white px-[8px]  rounded-[30px] border border-[#A0174A] text-[#1D0B01]">Woman</span>
          </div>
           <div className="flex-1">
             <div>
                <div className="flex justify-between">
-              <h3 className="font-medium text-[#571313] text-[14px] lg:text-[16px] 2xl:text-[20px]">Cerisa Aura</h3>
+              <h3 className="font-medium text-[#A0174A] text-[14px] lg:text-[16px] 2xl:text-[20px]">Cerisa Aura</h3>
               <div className="text-right flex items-center gap-[8px]">
                 <p className="text-[12px] lg:text-[14px] line-through text-[#3A3F42]">$40</p>
-                <p className="font-medium text-[#571313] text-[18px] 2xl:text-[20px]">$32</p>
+                <p className="font-medium text-[#A0174A] text-[18px] 2xl:text-[20px]">$32</p>
               </div>
             </div>
               <p className="hidden lg:block text-[14px] text-[#282828]">Alluring cherry and almond fragrance</p>

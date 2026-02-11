@@ -554,14 +554,14 @@ const overlayVariants = {
 
     {/* Title + Price Row */}
     <div className="flex justify-between items-center mt-[12px] md:[4px]">
-      <h3 className="group-hover:text-[#A0174A] duration-500 text-[12px] md:text-[16px] 2xl:text-[20px] font-semibold uppercase">
+      <h3 className="group-hover:text-[#A0174A] duration-500 text-[12px] transition-colors md:text-[16px] 2xl:text-[20px] font-semibold uppercase">
         {item.title}
       </h3>
       <div className="flex gap-[16px]">
         <p className="text-[#A0174A]/50 line-through text-[13px] md:text-[16px] 2xl:text-[20px]">
           ${item.oldPrice}
         </p>
-        <p className="group-hover:text-[#A0174A] font-semibold text-[13px] md:text-[16px] 2xl:text-[20px] duration-500">
+        <p className="group-hover:text-[#A0174A] font-semibold text-[13px] md:text-[16px] 2xl:text-[20px] transition-colors duration-500">
           ${item.price}
         </p>
       </div>
@@ -573,8 +573,8 @@ const overlayVariants = {
     </p>
    </div>
     <div className="flex justify-between">
-      <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Crafted in <span  className="font-semibold group-hover:text-[#A0174A] duration-500">USA</span></p>
-    <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Scent Family: <span  className="font-semibold group-hover:text-[#A0174A] duration-500">{item.scentFamily}</span></p>
+      <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Crafted in <span  className="font-semibold group-hover:text-[#A0174A] transition-colors duration-500">USA</span></p>
+    <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Scent Family: <span  className="font-semibold group-hover:text-[#A0174A] transition-colors duration-500">{item.scentFamily}</span></p>
     </div>
     {/* MOBILE ADD TO CART */}
 <div className="flex justify-end mt-[12px] md:hidden">

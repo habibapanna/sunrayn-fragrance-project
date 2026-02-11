@@ -131,7 +131,7 @@ useEffect(() => {
   {/* Back Button */}
   <button
     onClick={() => navigate(-1)}
-    className="hidden lg:flex items-center gap-[8px] bg-[#BA9948]/45 pl-[16px] pr-[24px] py-[12px] rounded-full text-[14px] lg:text-[16px] font-medium h-[50px] cursor-pointer"
+    className="hidden lg:flex items-center gap-[8px] bg-[#BA9948]/30 pl-[16px] pr-[24px] py-[12px] rounded-full text-[14px] lg:text-[16px] font-medium h-[50px] cursor-pointer hover:underline"
   >
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M13 6L7 12L13 18" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -250,8 +250,14 @@ Back
             </span>
           </div>
             
- <p className="text-[14px] 2xl:text-[16px] mt-2">
-  Eau de Perfume{selectedVolume && `: ${selectedVolume}`}/oz
+<p className="text-[14px] 2xl:text-[16px] mt-2">
+  Eau de Perfume
+  {selectedVolume && (
+    <>
+      : <span className="text-[#A0174A] font-medium">{selectedVolume}</span>
+    </>
+  )}
+  /oz
 </p>
           <p className="mt-4 text-[14px] lg:text-[16px] 2xl:text-[20px] text-[#282828]">{product.description}</p>
 
