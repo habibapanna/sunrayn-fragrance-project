@@ -1,12 +1,14 @@
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, useOutletContext } from "react-router-dom";
 import { products } from "../data/productsData";
+
 
 const BestSelling = () => {
   const [current, setCurrent] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
+    const { cartOpen, setCartOpen } = useOutletContext();
   const navigate = useNavigate();
 
   // Adjust number of items per view based on screen width
@@ -26,6 +28,11 @@ const BestSelling = () => {
 
   const next = () => setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1));
   const prev = () => setCurrent((prev) => (prev <= 0 ? maxIndex : prev - 1));
+
+   const handleAddToCart = () => {
+   
+    setCartOpen(true); 
+  };
 
   return (
     <div className="mx-auto px-[8px] 2xl:px-[16px] pb-[8px] lg:pb-[16px] 2xl:pb-[32px]">
@@ -122,6 +129,10 @@ const BestSelling = () => {
                   </p>  
                   <div className="flex items-center justify-between gap-3">
                     <button
+                    onClick={(e) => {
+    e.stopPropagation(); 
+    handleAddToCart(item); 
+  }}
   className="
     hover:bg-white backdrop-blur-md
     px-[24px] py-[10px]

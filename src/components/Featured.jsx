@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { GoChevronLeft, GoChevronRight } from 'react-icons/go';
 import { FaStar } from 'react-icons/fa';
 import Premium from './Premium';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useOutletContext } from 'react-router-dom';
 import { products } from '../data/productsData';
 
 
@@ -13,6 +13,7 @@ const Featured = () => {
   const [current, setCurrent] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
   const navigate = useNavigate();
+    const { cartOpen, setCartOpen } = useOutletContext();
 
   // Adjust number of items per view based on screen width
   useEffect(() => {
@@ -31,6 +32,10 @@ const Featured = () => {
 
   const next = () => setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1));
   const prev = () => setCurrent((prev) => (prev <= 0 ? maxIndex : prev - 1));
+
+   const handleAddToCart = () => {
+    setCartOpen(true); 
+  };
 
     return (
         <div className='mx-auto px-[8px] 2xl:px-[16px] pb-[16x] 2xl:pb-[32px]'>
@@ -118,6 +123,10 @@ const Featured = () => {
                   </p>  
                   <div className="flex items-center justify-between gap-3">
                      <button
+                     onClick={(e) => {
+    e.stopPropagation(); 
+    handleAddToCart(item); 
+  }}
   className="
     hover:bg-white backdrop-blur-md
     px-[24px] py-[10px]

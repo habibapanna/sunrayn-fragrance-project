@@ -1,11 +1,12 @@
 import { FaStar } from "react-icons/fa";
 import { products } from "../data/productsData";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 
 const ProductCard = () => {
   const [limit, setLimit] = useState(2);
+const { cartOpen, setCartOpen } = useOutletContext();
 
 useEffect(() => {
   const updateLimit = () => {
@@ -22,6 +23,11 @@ useEffect(() => {
   window.addEventListener("resize", updateLimit);
   return () => window.removeEventListener("resize", updateLimit);
 }, []);
+
+ const handleAddToCart = () => {
+   
+    setCartOpen(true); 
+  };
 
     return (
         <div>
@@ -90,6 +96,10 @@ useEffect(() => {
                   </p>  
                   <div className="flex items-center justify-between gap-3">
                      <button
+                      onClick={(e) => {
+    e.stopPropagation(); 
+    handleAddToCart(item); 
+  }}
   className="
     hover:bg-white backdrop-blur-md
     px-[24px] py-[10px]
