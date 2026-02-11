@@ -8,6 +8,8 @@ import ScrollToTopButton from "../ScrollToTopButton";
 import ChatWidget from "../ChatWidget";
 import Navbar from "../../shared/Navbar/Navbar";
 import CartOverlay from "../CartOverlay";
+import SignupPopup from "../SignupPopup";
+import LivePurchasePopup from "../LivePurchasePopup";
 
 const Main = () => {
   const location = useLocation();
@@ -15,6 +17,7 @@ const Main = () => {
   const [loading, setLoading] = useState(false);
   // New: Cart state lifted here
   const [cartOpen, setCartOpen] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -23,6 +26,19 @@ const Main = () => {
     const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, [location.pathname]);
+
+// useEffect(() => {
+//   const hasVisited = localStorage.getItem("hasVisited");
+
+//   if (!hasVisited) {
+//     setShowPopup(true);
+//     localStorage.setItem("hasVisited", "true");
+//   }
+// }, []);
+
+useEffect(() => {
+  setShowPopup(true);
+}, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -41,10 +57,15 @@ const Main = () => {
       >
         <Outlet context={{ setCartOpen }}/>
       </section>
+{showPopup && (
+  <SignupPopup onClose={() => setShowPopup(false)} />
+)}
 
       <Footer />
       <ChatWidget />
       <ScrollToTopButton />
+      <LivePurchasePopup />
+
       {/* CartOverlay always rendered at top-level */}
       {cartOpen && (
         <>
