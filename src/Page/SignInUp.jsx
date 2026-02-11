@@ -1,165 +1,111 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const SignInUp = ({ onClose }) => {
   const [mode, setMode] = useState("signup");
 
-const FloatingInput = ({ label, type }) => {
-  const id = label.toLowerCase().replace(/\s+/g, "-");
-
   return (
-    <div className="relative">
-      <input
-        id={id}
-        type={type}
-        required
-        placeholder=" "
-        className="peer w-full border border-gray-300 rounded-full px-5 pt-5 pb-2 outline-none focus:border-[#BA9948]"
-      />
+    <div className="fixed inset-0 z-[70] flex items-center justify-center">
+      {/* CONTAINER */}
+      <div className="relative w-full h-full md:h-[540px] lg:h-[640px] md:max-w-[700px] lg:max-w-[1200px] overflow-hidden rounded-[24px] lg:rounded-[32px]">
 
-      <label
-        htmlFor={id}
-        className="
-          absolute left-4 top-3 text-gray-400 text-sm
-          transition-all duration-300
-          peer-placeholder-shown:top-3
-          peer-placeholder-shown:text-sm
-          peer-focus:-top-2
-          peer-focus:text-xs
-          peer-focus:text-[#BA9948]
-          peer-valid:-top-2
-          peer-valid:text-xs
-          
-          bg-white px-2
-          rounded-full
-        "
-      >
-        {label}
-      </label>
-    </div>
-  );
-};
+        {/* FULL IMAGE BACKGROUND (DESKTOP ONLY) */}
+        <img
+          src="https://i.postimg.cc/3w2FjYZ4/imgi-422-Desktop-Login-Popup.png"
+          alt="Perfume"
+          className="hidden md:block absolute inset-0 w-full h-full object-cover bg-no-repeat"
+        />
 
+        {/* FORM WRAPPER */}
+        <div className="relative md:absolute md:right-0 lg:top-0 lg:h-[600px] h-full w-full md:w-[350px] lg:w-[480px] bg-white rounded-[24px] lg:rounded-[32px] lg:m-[20px] px-[20px] py-[36px] lg:p-[36px] flex flex-col">
 
+          {/* CLOSE */}
+          <button
+            onClick={onClose}
+            className="absolute top-[18px] right-[18px] cursor-pointer text-[14px] lg:text-[16px] underline text-sm"
+          >
+            Close
+          </button>
 
+          {/* HEADING */}
+          <h2 className="text-[18px] lg:text-[25px] font-bold leading-snug mb-6 pr-6">
+            {mode === "signup"
+              ? "Hi! Enter info below to better track your orders."
+              : "Hi! Please enter your email."}
+          </h2>
 
-
-
-
-  return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="fixed inset-0 z-[70] flex items-center justify-center bg-black/40 backdrop-blur-sm"
-      >
-        {/* CONTAINER */}
-        <motion.div
-          initial={{ scale: 0.9, y: 40 }}
-          animate={{ scale: 1, y: 0 }}
-          exit={{ scale: 0.9, y: 40 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="relative w-full h-full md:h-[540px] lg:h-[640px] md:max-w-[700px] lg:max-w-[1200px] overflow-hidden rounded-[28px]"
-        >
-          {/* BACKGROUND IMAGE */}
-          <img
-            src="https://i.postimg.cc/3w2FjYZ4/imgi-422-Desktop-Login-Popup.png"
-            alt=""
-            className="hidden md:block absolute inset-0 w-full h-full object-cover"
-          />
+          {/* TOGGLE */}
+          <div className="flex bg-[#F6F6F6] rounded-full mb-6 shadow-lg">
+            <button
+              onClick={() => setMode("signup")}
+              className={`flex-1 py-[12px] rounded-full duration-500 ease-out text-[14px] lg:text-[16px] 2xl:text-[18px]  transition
+                ${mode === "signup" ? "bg-[#BA9948] font-semibold text-white" : "text-black cursor-pointer"}
+              `}
+            >
+              SIGN UP
+            </button>
+            <button
+              onClick={() => setMode("login")}
+              className={`flex-1 py-[10px] rounded-full text-[14px] lg:text-[16px] 2xl:text-[18px] cursor-pointer transition duration-500 ease-out
+                ${mode === "login" ? "bg-[#BA9948] font-semibold text-white" : "text-black "}
+              `}
+            >
+              LOG IN
+            </button>
+          </div>
 
           {/* FORM */}
-          <div className="left-0 absolute md:right-0 h-full w-full md:w-[380px] lg:w-[480px] bg-white/90 backdrop-blur-xl rounded-[28px] lg:m-[24px] p-[28px] lg:p-[36px] flex flex-col shadow-2xl">
+          <div className="space-y-4 flex-1">
+            {mode === "signup" && (
+              <input
+                type="text"
+                placeholder="Name"
+                className="w-full border rounded-full px-5 py-3 outline-none border-gray-200"
+              />
+            )}
 
-            {/* CLOSE */}
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 text-sm underline opacity-60 hover:opacity-100 transition cursor-pointer"
-            >
-              Close
+            <input
+              type="email"
+              placeholder="Email"
+              className="w-full border rounded-full px-5 py-3 outline-none border-gray-200"
+            />
+
+            <input
+              type="password"
+              placeholder="Password"
+              className="w-full border border-gray-200 rounded-full px-5 py-3 outline-none"
+            />
+
+            {mode === "signup" && (
+              <p className="text-[14px] lg:text-[16px] text-gray-500">
+                Minimum 5 characters
+              </p>
+            )}
+
+            <button className="w-full bg-[#BA9948] text-white hover:bg-white border border-[#BA9948] cursor-pointer hover:text-black transition-all duration-500 ease-out py-3 rounded-full text-[14px] lg:text-[16px] 2xl:text-[18px] font-semibold mt-2">
+              {mode === "signup" ? "SIGN UP" : "LOGIN"}
             </button>
 
-            {/* TITLE */}
-            <h2 className="text-[20px] lg:text-[26px] font-bold mb-6">
-              {mode === "signup"
-                ? "Create your account"
-                : "Welcome back"}
-            </h2>
-
-            {/* TOGGLE */}
-            <div className="relative bg-white rounded-full p-1 flex mb-8">
-              <motion.div
-                layout
-                className="absolute top-1 bottom-1 w-1/2 bg-[#BA9948] rounded-full"
-                style={{ left: mode === "signup" ? "4px" : "50%" }}
-                transition={{ type: "spring", stiffness: 300, damping: 25 }}
-              />
-
-              <button
-                onClick={() => setMode("signup")}
-                className={`flex-1 z-10 py-2 text-sm lg:text-base font-medium ${
-                  mode === "signup" ? "text-white" : "text-black cursor-pointer"
-                }`}
-              >
-                SIGN UP
-              </button>
-
-              <button
-                onClick={() => setMode("login")}
-                className={`flex-1 z-10 py-2 text-sm lg:text-base font-medium ${
-                  mode === "login" ? "text-white" : "text-black cursor-pointer"
-                }`}
-              >
-                LOG IN
-              </button>
-            </div>
-
-            {/* FORM */}
-            <div className="space-y-5 flex-1">
-              <AnimatePresence mode="wait">
-                {mode === "signup" && (
-                  <motion.div
-                    key="name"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                  >
-                    <FloatingInput label="Name" type="text" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-              <FloatingInput label="Email" type="email" />
-              <FloatingInput label="Password" type="password" />
-
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                className="w-full bg-[#BA9948] text-white border border-[#BA9948] hover:bg-white hover:text-black transition py-3 rounded-full font-semibold"
-              >
-                {mode === "signup" ? "Create Account" : "Login"}
-              </motion.button>
-
-              {mode === "login" && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="text-center text-sm text-gray-600 space-y-2"
-                >
-                  <p className="underline cursor-pointer text-[#BA9948]">
-                    Forgot password?
-                  </p>
-                  <p className="underline cursor-pointer text-[#BA9948]">
-                    Need help?
-                  </p>
-                </motion.div>
-              )}
-            </div>
+            {mode === "login" && (
+              <div className="text-center text-[14px] lg:text-[16px] mt-4 space-y-2">
+                <p>
+                  Having issues managing your subscriptions?{" "}
+                  <span className="text-[#BA9948] underline cursor-pointer">
+                    Click here
+                  </span>
+                </p>
+                <p>
+                  Click{" "}
+                  <span className="text-[#BA9948] underline cursor-pointer">
+                    here
+                  </span>{" "}
+                  to reset your password
+                </p>
+              </div>
+            )}
           </div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
+        </div>
+      </div>
+    </div>
   );
 };
 
