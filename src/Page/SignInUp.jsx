@@ -5,24 +5,42 @@ const SignInUp = ({ onClose }) => {
   const [mode, setMode] = useState("signup");
 
 const FloatingInput = ({ label, type }) => {
+  const id = label.toLowerCase().replace(/\s+/g, "-");
+
   return (
     <div className="relative">
       <input
+        id={id}
         type={type}
         required
+        placeholder=" "
         className="peer w-full border border-gray-300 rounded-full px-5 pt-5 pb-2 outline-none focus:border-[#BA9948]"
       />
-      <label className="
-        absolute left-5 top-3 text-gray-400 text-sm
-        peer-focus:text-xs peer-focus:-top-2 peer-focus:text-[#BA9948]
-        peer-valid:text-xs peer-valid:-top-2
-        transition-all bg-white px-1
-      ">
+
+      <label
+        htmlFor={id}
+        className="
+          absolute left-4 top-3 text-gray-400 text-sm
+          transition-all duration-300
+          peer-placeholder-shown:top-3
+          peer-placeholder-shown:text-sm
+          peer-focus:-top-2
+          peer-focus:text-xs
+          peer-focus:text-[#BA9948]
+          peer-valid:-top-2
+          peer-valid:text-xs
+          
+          bg-white px-2
+          rounded-full
+        "
+      >
         {label}
       </label>
     </div>
   );
 };
+
+
 
 
 
@@ -52,7 +70,7 @@ const FloatingInput = ({ label, type }) => {
           />
 
           {/* FORM */}
-          <div className="relative md:absolute md:right-0 h-full w-full md:w-[380px] lg:w-[480px] bg-white/90 backdrop-blur-xl rounded-[28px] m-[16px] lg:m-[24px] p-[28px] lg:p-[36px] flex flex-col shadow-2xl">
+          <div className="left-0 absolute md:right-0 h-full w-full md:w-[380px] lg:w-[480px] bg-white/90 backdrop-blur-xl rounded-[28px] lg:m-[24px] p-[28px] lg:p-[36px] flex flex-col shadow-2xl">
 
             {/* CLOSE */}
             <button

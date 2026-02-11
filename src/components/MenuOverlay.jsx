@@ -3,7 +3,7 @@ import { GoChevronDown } from "react-icons/go";
 import { useNavigate, Link } from "react-router-dom";
 import User from "../assets/User Icon.svg";
 import Solar from "../assets/Vector (4).svg";
-
+import { motion, AnimatePresence } from "framer-motion";
 const MenuOverlay = ({ open, onClose, onOpenSignIn }) => {
   const navigate = useNavigate();
 
@@ -14,7 +14,6 @@ const [animateIcon, setAnimateIcon] = useState(false);
   const [selectedCollection, setSelectedCollection] = useState(null);
   const [selectedAbout, setSelectedAbout] = useState(null);
 
-  if (!open) return null;
 
   const handleNavigate = (path, type, value) => {
     if (type === "perfume") setSelectedPerfume(value);
@@ -38,10 +37,28 @@ const [animateIcon, setAnimateIcon] = useState(false);
 
 
   return (
-    <div className="fixed inset-0 z-[70] bg-black/40 ">
+  <AnimatePresence>
+  {open && (
+    <motion.div
+      className="fixed inset-0 z-[70]"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.9 }}
+    >
+    
 
-      {/* PANEL */}
-      <div className="absolute left-0 top-0 w-full max-w-full h-full bg-white overflow-y-auto px-[20px] pb-[30px]">
+      {/* SLIDE PANEL */}
+      <motion.div
+        initial={{ x: "-100%" }}
+        animate={{ x: 0 }}
+        exit={{ x: "-100%" }}
+        transition={{
+          duration: 0.9,
+          ease: [0.22, 1, 0.36, 1], // luxury easing
+        }}
+        className="absolute left-0 top-0 w-full max-w-full h-full bg-white overflow-y-auto px-[20px] pb-[30px]"
+      >
 
         {/* HEADER */}
         <div className="flex items-center justify-between py-[16px]">
@@ -102,18 +119,22 @@ const [animateIcon, setAnimateIcon] = useState(false);
         </div>
 
         {/* MOBILE TABS */}
-        <div className="tabs tabs-lift">
+        <div className="tabs bg-white p-1">
 
           {/* SHOP TAB */}
-          <input
-            type="radio"
-            name="menu_tabs"
-            className="tab"
-            aria-label="SHOP"
-            defaultChecked
-          />
+         <input
+  type="radio"
+  name="menu_tabs"
+  className="tab rounded-t-[16px] 
+             checked:bg-[#F6F7F2] 
+             checked:text-black 
+             transition-all"
+  aria-label="SHOP"
+  defaultChecked
+/>
 
-          <div className="tab-content bg-base-100 p-4">
+
+          <div className="tab-content bg-[#F6F7F2] p-4 rounded-r-[16px] rounded-bl-[16px]">
 
             {/* PERFUMES */}
             <div className="bg-white rounded-[16px] p-[16px] mb-[16px]">
@@ -127,7 +148,7 @@ const [animateIcon, setAnimateIcon] = useState(false);
               </div>
 
               {openPerfume && (
-                <div className="mt-[12px] space-y-[8px] bg-[#F6F7F2] p-3 rounded-xl text-[14px]">
+                <div className="mt-[12px] space-y-[8px] bg-[#F6F7F2] hover:bg-white p-3 rounded-xl text-[14px]">
 
                   {["Men", "Women", "Unisex"].map((item) => (
                     <div
@@ -161,7 +182,7 @@ const [animateIcon, setAnimateIcon] = useState(false);
               </div>
 
               {openCollection && (
-                <div className="mt-[12px] space-y-[8px] bg-[#F6F7F2] p-3 rounded-xl text-[14px]">
+                <div className="mt-[12px] space-y-[8px] bg-[#F6F7F2] hover:bg-white p-3 rounded-xl text-[14px]">
 
                   {[
                     "All Perfumes",
@@ -191,16 +212,20 @@ const [animateIcon, setAnimateIcon] = useState(false);
           </div>
 
           {/* ABOUT TAB */}
-          <input
-            type="radio"
-            name="menu_tabs"
-            className="tab"
-            aria-label="ABOUT"
-          />
+         <input
+  type="radio"
+  name="menu_tabs"
+  className="tab rounded-t-[16px] 
+             checked:bg-[#F6F7F2] 
+             checked:text-black 
+             transition-all"
+  aria-label="ABOUT"
+/>
 
-          <div className="tab-content bg-base-100 p-4">
 
-            <div className="bg-[#F6F7F2] p-3 rounded-xl space-y-[8px] text-[14px]">
+          <div className="tab-content bg-[#F6F7F2] rounded-[16px]">
+
+            <div className=" space-y-[8px] text-[14px] p-[16px]">
 
               {[
                 { label: "About Us", path: "/about" },
@@ -214,7 +239,7 @@ const [animateIcon, setAnimateIcon] = useState(false);
                   className={`px-3 py-2 rounded-lg cursor-pointer ${
                     selectedAbout === item.label
                       ? "bg-white"
-                      : "bg-[#F6F7F2]"
+                      : "bg-white"
                   }`}
                 >
                   {item.label}
@@ -238,8 +263,10 @@ const [animateIcon, setAnimateIcon] = useState(false);
           </button>
         </Link>
 
-      </div>
-    </div>
+  </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
   );
 };
 

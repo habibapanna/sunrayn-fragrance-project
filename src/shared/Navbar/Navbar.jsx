@@ -485,7 +485,6 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
     />
   </>
 )}
-
 {cartOpen && (
   <>
     {/* Blur background */}
@@ -498,7 +497,6 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
     <CartOverlay onClose={() => setCartOpen(false)} />
   </>
 )}
-
 {signInUpOpen && (
   <>
     {/* BLUR BACKGROUND */}
