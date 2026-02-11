@@ -251,7 +251,7 @@ const Checkout = () => {
 
          <div className="rounded-[24px] p-[24px] bg-white">
              <button className="w-full  transition-all duration-300 ease-out
-    bg-[#BA9948] hover:text-[#1D0B01] hover:bg-white/60 backdrop-blur-md border border-[#BA9948] text-white py-[5px] 2xl:py-[7px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
+    bg-[#BA9948] hover:text-[#1D0B01] hover:bg-white/60 backdrop-blur-md border border-[#BA9948] text-white py-[5px] 2xl:py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
           <div className="flex gap-[32px] justify-center mt-[16px]">
             <span className="text-[12px] 2xl:text-[14px] text-[#372416] cursor-pointer">Return Policy </span>
             <span className="text-[12px] 2xl:text-[14px] text-[#372416] cursor-pointer">Cancelation Policy </span>
@@ -271,17 +271,17 @@ const Checkout = () => {
     {/* BADGE */}
     <span className="absolute -top-[6px] -right-[6px] 
       w-[25px] h-[25px] rounded-full 
-      bg-[#571313] text-white 
+      bg-[#A0174A] text-white 
       text-[12px] font-medium 
       flex items-center justify-center">
       1
     </span>
 
     {/* IMAGE WRAPPER */}
-    <div className="bg-[#EDE8E0] p-[10px] rounded-[7px]">
+    <div className="p-[10px] rounded-[7px]">
       <img
-        src="https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png"
-        className="w-12 h-12 rounded-2xl"
+        src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
+        className="w-[70px] h-[70px] rounded-[12px]"
         alt=""
       />
     </div>
@@ -289,14 +289,14 @@ const Checkout = () => {
 
   {/* TEXT */}
   <div>
-    <p className="text-[15px] 2xl:text-[18px] font-medium">Cerisa Aura</p>
+    <p className="text-[15px] 2xl:text-[18px] font-medium text-[#A0174A]">Cerisa Aura</p>
     <p className="text-[12px] text-gray-500">15ML / 1oz</p>
   </div>
 </div>
 
            <div>
              <p className="font-normal text-[12px] text-[#282828]">$32.00</p>
-            <p className="font-normal text-[#282828]">$28.80</p>
+            <p className="font-normal text-[#A0174A]">$28.80</p>
            </div>
           </div>
           <div className="border-1 mb-[20px] border-[#bfc7cd]"></div>
