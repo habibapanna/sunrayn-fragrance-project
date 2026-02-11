@@ -35,16 +35,14 @@ const Footer = () => {
     "
   />
         </div>
-
-        <div className="flex flex-col md:flex-row justify-between items-start gap-16">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-[32px]">
 
           {/* LEFT CONTENT */}
-          <div className="w-full 2xl:max-w-5xl text-left mt-[40px] lg:mt-0">
+          <div className="w-full 2xl:max-w-2xl text-left mt-[40px] lg:mt-0">
             <Link to="/" className="2xl:inline-block">
               <img src={SANRAYN} alt="Sanrayn" className="mx-auto" />
             </Link>
-
-            <div className="flex flex-wrap justify-between gap-[32px] mt-[48px] lg:mt-[57px]">
+            <div className="flex flex-wrap justify-between gap-[32px] mt-[40px] lg:mt-[57px]">
               {/* SHOP */}
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Shop by Category</p>
@@ -55,7 +53,7 @@ const Footer = () => {
                   <li className="hover:underline cursor-pointer"><Link to='/productList'>Sanrayn Specials</Link></li>
                 </ul>
               </div>
-              {/* Quick Links */}
+              {/* About */}
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">About SANRAYN</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
@@ -65,10 +63,11 @@ const Footer = () => {
                    <li className="hover:underline cursor-pointer"><Link to='/contact'>Contact Us</Link></li>
                 </ul>
               </div>
-              {/* Customer Support */}
+              {/* Care Support */}
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Care & Support</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
+                  <li className="hover:underline cursor-pointer">Support@sanrayn.com</li>
                   <li className="hidden  hover:underline cursor-pointer"><Link to='terms'>Terms of Services</Link></li>
                   <li className="hover:underline cursor-pointer">Track my Order</li>
                   <li className="hover:underline cursor-pointer">Return/Exchange Portal</li>
@@ -77,20 +76,6 @@ const Footer = () => {
                   <li className="hover:underline cursor-pointer">Accessibility Statement</li>
                 </ul>
               </div>
-              {/* Quick Links */}
-              <div className="text-left">
-                <p className="text-[#571313] mb-4 text-[25px]">Stay Connected</p>
-                <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
-                   <li className="hover:underline cursor-pointer">Support@sanrayn.com</li>
-                   <li className="text-[14px] lg:text-[16px]">Follow SANRAYN</li>
-                  <li className="hover:underline cursor-pointer"><div className="flex items-center gap-4 md:gap-2 lg:gap-4 order-2 md:order-none mb-[16px] md:mb-0">
-    <img src={Facebook} className="h-5" />
-    <img src={Instagram} className="h-5" />
-    <img src={Tiktok} className="h-5" />
-  </div></li>
-                </ul>
-              </div>
-
             </div>
           </div>
 
@@ -122,7 +107,16 @@ const Footer = () => {
   <p className="text-[16px] text-[#220B12B2] order-4 md:order-none md:mb-0">
     ©2026 Sanrayn all right reserved
   </p>
-  
+<div> <ul className="flex flex-col gap-[16px] 2xl:flex-row text-[14px] md:text-[16px] text-[#282828]">
+                   
+                   <li className="text-[14px] lg:text-[16px]">Follow SANRAYN</li>
+                  <li className="hover:underline cursor-pointer">
+                    <div className="flex items-center gap-4 md:gap-2 lg:gap-4 order-2 md:order-none mb-[16px] md:mb-0">
+    <img src={Facebook} className="h-5" />
+    <img src={Instagram} className="h-5" />
+    <img src={Tiktok} className="h-5" />
+  </div></li>
+                </ul></div>
 
   {/* 2. PAYMENTS */}
   <div className="flex items-center gap-[33px] md:gap-[20px] lg:gap-[33px] justify-center order-3 md:order-none">
