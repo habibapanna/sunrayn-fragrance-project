@@ -105,7 +105,7 @@ const RecentPost = () => {
               <img
                 src={item.product}
                 alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-125 duration-1000"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 duration-1000"
               />
             </div>
           </SwiperSlide>
