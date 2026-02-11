@@ -17,7 +17,7 @@ const Footer = () => {
 
 
       {/* ================= MAIN CONTENT ================= */}
-      <div className="relative z-10 mx-auto lg:px-6 lg:pl-[16px] 2xl:pl-[80px] p-[16px] py-10 md:py-[150px">
+      <div className="relative z-10 mx-auto lg:px-6 lg:pl-[50px] 2xl:pl-[80px] p-[16px] py-10 md:py-[150px]">
 
         {/* MOBILE BIG S */}
         <div className="md:hidden flex justify-center">
@@ -39,12 +39,12 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start gap-16">
 
           {/* LEFT CONTENT */}
-          <div className="w-full md:max-w-[450px] lg:max-w-lg text-left mt-[40px] lg:mt-0">
-            <Link to="/" className="md:inline-block">
+          <div className="w-full 2xl:max-w-5xl text-left mt-[40px] lg:mt-0">
+            <Link to="/" className="2xl:inline-block">
               <img src={SANRAYN} alt="Sanrayn" className="mx-auto" />
             </Link>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-[32px] mt-[40px]">
+            <div className="flex flex-wrap justify-between gap-[32px] mt-[48px] lg:mt-[57px]">
               {/* SHOP */}
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Shop by Category</p>
@@ -93,13 +93,14 @@ const Footer = () => {
 
             </div>
           </div>
-          
+
 {/* DESKTOP BIG S + LOGO BACKGROUND */}
- <div className=" hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 items-center justify-center pointer-events-none w-full lg:w-[600px] h-[420px] 2xl:w-[650px] 2xl:h-[650px]" >
+ <div className=" hidden 2xl:flex absolute lg:right-[50px] top-1/2 -translate-y-1/2 items-center justify-center pointer-events-none w-[420px] h-[420px] 2xl:w-[650px] 2xl:h-[650px] " >
   {/* LOGO BACKGROUND */} 
   <img src={Logo} alt="Brand Background" className=" absolute inset-0 m-auto h-full w-full object-cover opacity-100" />
    {/* BIG S FOREGROUND */} 
-   <img src={BigS} alt="Big S" className=" lg:relative z-10 h-[450px] lg:h-[500px] 2xl:h-[400px] w-auto absolute md:right-0" /> </div>
+   <img src={BigS} alt="Big S" className=" relative z-10 lg:h-[300px] 2xl:h-[400px] w-auto " /> </div>
+
         </div>
       </div>
 
