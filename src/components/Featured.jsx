@@ -150,9 +150,9 @@ const Featured = () => {
                           ${item.oldPrice}
                         </button>
                       </div>
-                       <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[18px] 2xl:text-[22px] h-[33px] w-[68px] font-normal"
+                       <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[22px] h-[33px] w-[68px] font-normal"
                       >
-                        <div className="absolute -top-[4px] 2xl:-top-[12px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[12px] text-white 2xl:text-[14px] font-bold z-10 2xl:h-[22px] h-[14px] w-[40px] 2xl:w-[58px] flex items-center justify-center">
+                        <div className="absolute -top-[8px] 2xl:-top-[12px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[10px] text-white 2xl:text-[14px] font-bold z-10 2xl:h-[22px] h-[14px] w-[40px] 2xl:w-[58px] flex items-center justify-center">
                           -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
                         </div>
 
