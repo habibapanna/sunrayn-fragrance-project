@@ -27,7 +27,7 @@ const BLogPage = () => {
           <img
             src="https://i.postimg.cc/KvmJSjd2/Product-Image-(5).png"
             alt="Product"
-            className="rounded-[24px] lg:rounded-[48px] w-full h-[276px] lg:h-[500px] lg:w-[522px] 2xl:h-[700px] 2xl:w-[880px] object-cover"
+            className="rounded-[16px] w-full h-[276px] lg:h-[500px] lg:w-[522px] 2xl:h-[700px] 2xl:w-[880px] object-cover"
           />
           <div className="2xl:w-[576px]">
             <h2 className="text-[#1D0B01] mb-4 text-[25px] lg:text-[45px] 2xl:text-[55px]">
@@ -46,7 +46,7 @@ const BLogPage = () => {
             <div
              key={blog.slug}
           onClick={() => navigate(`/blogs/${blog.slug}`)}
-              className="group relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] h-[350px] 2xl:h-[700px] overflow-hidden cursor-pointer"
+              className="group relative rounded-[16px] h-[350px] 2xl:h-[700px] overflow-hidden cursor-pointer"
             >
               {/* Image */}
               <img

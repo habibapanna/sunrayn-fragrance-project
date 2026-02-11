@@ -59,7 +59,7 @@ const cardVariant = {
   key={index}
   variants={cardVariant}
   className="
-    group relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px]
+    group relative rounded-[16px]
     overflow-hidden cursor-pointer h-[392px] md:h-[292px]
     lg:h-[392px]
     2xl:h-[700px] group

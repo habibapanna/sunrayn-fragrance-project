@@ -17,32 +17,34 @@ const Footer = () => {
 
 
       {/* ================= MAIN CONTENT ================= */}
-      <div className="relative z-10 mx-auto lg:px-6 lg:pl-[50px] 2xl:pl-[80px] p-[16px] py-10 md:py-[150px]">
+      <div className="relative z-10 mx-auto lg:px-6 lg:pl-[50px] 2xl:pl-[80px] p-[16px] py-10 2xl:py-[150px]">
 
         {/* MOBILE BIG S */}
-        <div className="md:hidden flex justify-center">
-          <img src={BigS} alt="Big S" className="h-[200px]" />
-           {/* LOGO BACKGROUND */}
+      <div className="2xl:hidden relative flex justify-center items-center">
+
   <img
     src={Logo}
     alt="Brand Background"
-    className="
-      absolute
-      inset-0
-      m-auto
-      h-full w-full object-cover
-      pointer-events-none
-    "
+    className="absolute inset-0 m-auto h-[280px] w-[400px] object-contain pointer-events-none"
   />
-        </div>
+
+  <img
+    src={BigS}
+    alt="Big S"
+    className="relative z-10 h-[200px]"
+  />
+
+</div>
+
+
         <div className="flex flex-col md:flex-row justify-between items-start gap-[32px]">
 
           {/* LEFT CONTENT */}
-          <div className="w-full 2xl:max-w-2xl text-left mt-[40px] lg:mt-0">
+          <div className="w-full 2xl:max-w-2xl text-left mt-[40px] 2xl:mt-0">
             <Link to="/" className="2xl:inline-block">
               <img src={SANRAYN} alt="Sanrayn" className="mx-auto" />
             </Link>
-            <div className="flex flex-wrap justify-between gap-[32px] mt-[40px] lg:mt-[57px]">
+            <div className="flex flex-wrap justify-between gap-[32px] mt-[40px] 2xl:mt-[57px]">
               {/* SHOP */}
               <div className="text-left">
                 <p className="text-[#571313] mb-4 text-[25px]">Shop by Category</p>

@@ -25,7 +25,7 @@ const BlogDetails = () => {
         <img
           src={blog.product}
           alt={blog.title}
-          className="rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] w-full 2xl:w-[800px] md:h-[500px] object-cover"
+          className="rounded-[16px] w-full 2xl:w-[800px] md:h-[500px] object-cover"
         />
 
         <div className="">
@@ -58,7 +58,7 @@ const BlogDetails = () => {
       <img
         src={section.img}
         alt={section.heading}
-        className="rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] w-full 2xl:w-[800px] object-cover mt-[32px]"
+        className="rounded-[16px] w-full 2xl:w-[800px] object-cover mt-[32px]"
       />
     )}
   </div>

@@ -4,7 +4,7 @@ const NewsLetter = () => {
   return (
     <div className="mx-auto max-w-full 2xl:pt-[16px]">
       <section
-        className="relative bg-cover bg-center rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden"
+        className="relative bg-cover bg-center rounded-[16px] 2xl:rounded-[48px] overflow-hidden"
         style={{
           backgroundImage:
             "url('https://i.postimg.cc/x1PD5vMm/imgi-187-Frame-1430102878-2.png')",
@@ -21,7 +21,7 @@ const NewsLetter = () => {
                 Get 30% Off
               </h1>
 
-              <p className="text-white/90 md:mb-10 mb-[20px] text-[14px] lg:text-[18px] leading-relaxed">
+              <p className="text-white/90 md:mb-10 mb-[20px] text-[14px] lg:text-[22px] leading-relaxed">
                 Be the first to know about new collections and exclusive offers.
               </p>
 

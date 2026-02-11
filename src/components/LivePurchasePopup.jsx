@@ -1,23 +1,30 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { X } from "lucide-react";
 
 const LivePurchasePopup = () => {
   const [visible, setVisible] = useState(false);
   const [progress, setProgress] = useState(0);
 
+  const progressRef = useRef(null);
+  const intervalRef = useRef(null);
+
   useEffect(() => {
-    const interval = setInterval(() => {
+    // ✅ Check if user already closed it
+    const closed = localStorage.getItem("livePopupClosed");
+    if (closed === "true") return;
+
+    intervalRef.current = setInterval(() => {
       setVisible(true);
       setProgress(0);
 
       let start = Date.now();
 
-      const progressInterval = setInterval(() => {
+      progressRef.current = setInterval(() => {
         const elapsed = Date.now() - start;
         const percent = (elapsed / 5000) * 100;
 
         if (percent >= 100) {
-          clearInterval(progressInterval);
+          clearInterval(progressRef.current);
           setVisible(false);
         } else {
           setProgress(percent);
@@ -25,55 +32,79 @@ const LivePurchasePopup = () => {
       }, 50);
 
       setTimeout(() => {
-        clearInterval(progressInterval);
+        clearInterval(progressRef.current);
         setVisible(false);
       }, 5000);
-    }, 10000); // show every 10 seconds
 
-    return () => clearInterval(interval);
+    }, 10000);
+
+    return () => {
+      clearInterval(intervalRef.current);
+      clearInterval(progressRef.current);
+    };
   }, []);
 
-  if (!visible) return null;
+  const handleClose = () => {
+    setVisible(false);
+
+    // ✅ Stop everything
+    clearInterval(intervalRef.current);
+    clearInterval(progressRef.current);
+
+    // ✅ Save flag so it never shows again
+    localStorage.setItem("livePopupClosed", "true");
+  };
 
   return (
-    <div className="fixed bottom-6 left-6 z-[9999] animate-slideUp">
-      <div className="bg-white w-[320px] lg:w-[420px] rounded-lg shadow-xl p-4 relative border border-gray-200">
+    <div
+      className={`fixed bottom-[30px] left-[30px] z-[9999]
+      transition-all duration-500 ease-out
+      ${
+        visible
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-6 pointer-events-none"
+      }`}
+    >
+      <div className="bg-white w-[300px] rounded-lg shadow-xl p-3 relative border border-gray-200">
 
         {/* Close */}
         <button
-          onClick={() => setVisible(false)}
-          className="absolute top-3 right-3 text-black cursor-pointer"
+          onClick={handleClose}
+          className="absolute top-2 right-2 text-black cursor-pointer"
         >
-          <X size={18} />
+          <X size={16} />
         </button>
 
-        <div className="flex gap-4">
+        <div className="flex gap-3 items-center">
           <img
             src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
             alt="product"
-            className="w-[60px] h-fll rounded-[12px] object-cover"
+            className="w-[50px] h-[50px] rounded-[10px] object-cover"
           />
 
           <div className="flex-1">
-            <p className="text-[12px] text-gray-500">
-              Someone in Berlin, Germany just bought
+            <p className="text-[11px] text-gray-500 leading-tight">
+              Someone in Berlin just bought
             </p>
-            <h3 className="font-semibold text-[16px]">
+
+            <h3 className="font-semibold text-[14px] leading-tight">
               Eden Spark
             </h3>
-            <p className="text-[12px] text-gray-400 mt-1">
+
+            <p className="text-[11px] text-gray-400 mt-0.5">
               ⏱ 3 mins ago • <span className="text-red-500">Verify</span>
             </p>
           </div>
         </div>
 
         {/* Progress Bar */}
-        <div className="mt-4 h-[4px] bg-gray-200 rounded-full overflow-hidden">
+        <div className="mt-3 h-[3px] bg-gray-200 rounded-full overflow-hidden">
           <div
-            className="h-full bg-[#A0174A] transition-all duration-75"
+            className="h-full bg-[#A0174A]"
             style={{ width: `${progress}%` }}
           />
         </div>
+
       </div>
     </div>
   );

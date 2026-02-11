@@ -203,7 +203,7 @@ const overlayVariants = {
         {/* -------------------- SIDEBAR -------------------- */}
  <AnimatePresence>
 {sidebarOpen && (
-  <aside className="hidden md:block sticky top-[120px] 2xl:w-[420px] h-[calc(100vh-140px)] bg-[#F6F7F2] rounded-[16px] overflow-y-auto shrink-0">
+  <aside className="hidden md:block sticky top-[120px] md:w-[360px] 2xl:w-[420px] h-[calc(100vh-140px)] bg-[#F6F7F2] rounded-[16px] overflow-y-auto shrink-0">
 
     <div className="p-5 space-y-6 text-[#1D0B01]">
 
@@ -495,7 +495,7 @@ const overlayVariants = {
     ease: [0.22, 1, 0.36, 1], // luxury easing
   }}
   onClick={() => navigate(`/productList/${item.slug}`)}
-  className="group bg-[#F6F7F2] rounded-[16px] md:rounded-[24px]
+  className="group bg-[#F6F7F2] rounded-[16px]
   overflow-hidden cursor-pointer
   flex flex-row md:flex-col"
 >
@@ -578,7 +578,7 @@ const overlayVariants = {
 
    <div className="">
      <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">
-      Alluring cherry and almond fragrance that balances sweetness and depth, playful at first, irresistibly smooth as it unfolds.
+      Alluring cherry and almond fragrance that balances sweetness and depth.
     </p>
    </div>
     <div className="flex justify-between">
@@ -612,7 +612,7 @@ const overlayVariants = {
 
       </div>
       <section className="pt-[16px] 2xl:pt-[32px]"><Premium></Premium></section>
-      <section className="2xl:mt-[16px]"><NewsLetter></NewsLetter></section>
+      <section className="mt-[16px]"><NewsLetter></NewsLetter></section>
       <MarqueeFlavour></MarqueeFlavour>
       <MarqueeSection></MarqueeSection>
     </div>

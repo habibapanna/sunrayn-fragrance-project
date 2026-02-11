@@ -48,7 +48,7 @@ const Categories = ({ sortBy, setSortBy }) => {
     flex flex-col lg:flex-row
     items-center justify-between
     cursor-pointer
-    rounded-[8px] 2xl:rounded-[24px]
+    rounded-[8px] 2xl:rounded-[16px]
     bg-[#F6F7F2]
     w-[126px] h-[96px] p-[4px]
     md:w-full md:h-full md:p-6 md:gap-[12px]
@@ -57,7 +57,7 @@ const Categories = ({ sortBy, setSortBy }) => {
     will-change-transform
     ${
       isActive
-        ? "border-[#A0174A] scale-[1.03] shadow-lg"
+        ? "border-[#A0174A] scale-[1.01] shadow-lg"
         : "border-transparent hover:border-[#BA9948] hover:scale-[1.01] hover:shadow-xl"
     }
   `}

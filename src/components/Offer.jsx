@@ -6,7 +6,7 @@ const Offer = () => {
       <Link to="/productList">
         <section
           className="relative bg-cover bg-center flex overflow-hidden
-          rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px]"
+          rounded-[16px]"
           style={{
             backgroundImage:
               "url('https://i.postimg.cc/x1PD5vMm/imgi-187-Frame-1430102878-2.png')",
@@ -25,7 +25,7 @@ const Offer = () => {
                 Get 30% Off
               </h1>
 
-              <p className="mb-8 text-[14px] md:text-[20px]">
+              <p className="mb-8 text-[14px] md:text-[25px]">
                 Be the first to know about new collections and exclusive offers.
               </p>
 

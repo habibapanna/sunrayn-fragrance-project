@@ -133,7 +133,7 @@ const navPaddingClass = (() => {
 const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
   ? "bg-[#997E3D]/80 backdrop-blur-2xl rounded-full md:mt-[2px]  lg:mt-[12px]"
   : scrolled
-  ? "bg-[#997E3D]/80 backdrop-blur-2xl rounded-full mt-[6px] 2xl:mt-[8px] mx-[16px] 2xl:mx-[32px]"
+  ? "bg-[#997E3D]/80 backdrop-blur-2xl rounded-full mt-[8px] 2xl:mt-[10px] mx-[16px] 2xl:mx-[32px]"
   : "bg-transparent";
 
 // Determine top position
@@ -149,7 +149,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
     ${navPaddingClass} left-0 right-0`}
 >
 
-        <div className="mx-auto px-[16px] 2xl:px-[32px] md:py-[10px] 2xl:py-[12px] flex items-center justify-between text-white ">
+        <div className="mx-auto px-[16px] 2xl:px-[32px] md:py-[12px] 2xl:py-[14px] flex items-center justify-between text-white ">
 
 {/* LOGO */}
 <a
@@ -173,12 +173,8 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
 </a>
 
-
-          {/* RIGHT SIDE */}
-          <div className="flex items-center gap-[16px] 2xl:gap-[24px]">
-
             {/* DESKTOP MENU (UNCHANGED) */}
-            <div className="hidden md:flex items-center gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] 2xl:mr-16 lg:w-[488px] h-[30px] lg:h-[40px] 2xl:w-[563px] 2xl:h-[50px]">
+            <div className="hidden md:flex items-center gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] 2xl:mr-16 lg:w-[488px] h-[30px] lg:h-[40px] 2xl:w-[551px] 2xl:h-[50px]">
 
             {/* Perfume */}
                <div ref={menuRef} className="relative">
@@ -196,7 +192,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
         >
           Perfumes
           <LiaAngleDownSolid
-            className={`h-[14px] w-[14px] lg:h-[24px] lg:w-[24px] transition-transform duration-500 ${
+            className={`h-[12px] w-[12px] lg:h-[18px] lg:w-[18px] transition-transform duration-500 ${
               openMegaMenu === "perfume" ? "rotate-180" : ""
             }`}
           />
@@ -209,7 +205,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
             onMouseLeave={() => setOpenMegaMenu(null)}
             className="absolute top-[60px] right-0 z-50"
           >
-         <div className="fixed top-[60px] right-[220px] lg:top-[90px] lg:right-[350px] 2xl:right-[450px] z-50">
+         <div className="fixed top-[60px] right-[220px] lg:top-[90px] lg:right-[350px] 2xl:right-[850px] z-50">
 
       <div className="relative bg-white rounded-[24px] shadow-xl px-[30px] py-[20px] lg:px-[40px] lg:py-[32px] flex gap-[40px] lg:gap-[74px]">
 
@@ -278,7 +274,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
         >
     Collections
     <LiaAngleDownSolid
-            className={`h-[14px] w-[14px] lg:h-[24px] lg:w-[24px] transition-transform duration-500 ${
+            className={`h-[12px] w-[12px] lg:h-[18px] lg:w-[18px] transition-transform duration-500 ${
               openMegaMenu === "collection" ? "rotate-180" : ""
             }`}
           />
@@ -292,7 +288,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
             className="absolute top-[60px] right-0 z-50"
           >
         {/* MEGA MENU */}
-    <div className="fixed top-[60px] right-[120px] lg:top-[90px] lg:right-[230px] 2xl:right-[320px] z-50">
+    <div className="fixed top-[60px] right-[120px] lg:top-[90px] lg:right-[230px] 2xl:right-[700px] z-50">
 
       <div className="relative bg-white rounded-[24px] shadow-xl px-[30px] py-[20px] lg:px-[40px] lg:py-[32px] flex gap-[40px] lg:gap-[74px]">
 
@@ -309,21 +305,6 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
             <li className="cursor-pointer hover:text-[#FD4929]">New Arrivals</li>
             <li className="cursor-pointer hover:text-[#FD4929]">Limited Editions</li>
             <li className="cursor-pointer hover:text-[#FD4929]">LCombo Sales</li>
-          </ul>
-        </div>
-
-        {/* COLUMN 2 */}
-        <div>
-          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#571313] mb-[12px]">
-            Inspired by Brand
-          </h4>
-          <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01] cursor-pointer">
-            <li>Bluberry</li>
-            <li>Byredo</li>
-            <li>Chanel</li>
-            <li>Creed</li>
-            <li>Dior</li>
-            <li>Gucci</li>
           </ul>
         </div>
 
@@ -354,6 +335,8 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
               </span></Link>
             </div>
 
+          {/* RIGHT SIDE */}
+          <div className="flex items-center gap-[16px] 2xl:gap-[24px]">
             {/* DESKTOP ICONS (UNCHANGED) */}
             <div className="hidden md:flex items-center gap-[8px] 2xl:gap-[16px]">
               <button

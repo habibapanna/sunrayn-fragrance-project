@@ -72,7 +72,7 @@ const buttonVariants = {
       <motion.div
   whileHover="hover"
   initial="rest"
-  className="bg-[#EDE8E0] rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] relative cursor-pointer overflow-hidden"
+  className="bg-[#EDE8E0] rounded-[16px] relative cursor-pointer overflow-hidden"
 >
 
         {/* ================= CONTENT ================= */}
@@ -82,7 +82,7 @@ const buttonVariants = {
             <img
               src="https://i.postimg.cc/PNGRVQZ7/Whats-App-Image-2026-02-03-at-6-11-48-PM-(2).jpg"
               alt="Special Perfume"
-              className="h-[292px] md:h-[250px] lg:h-[397px] 2xl:h-[700px] w-full 2xl:w-[651px] object-cover rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] "
+              className="h-[292px] md:h-[250px] lg:h-[397px] 2xl:h-[700px] w-full 2xl:w-[651px] object-cover rounded-[16px] "
             />
             <div className="md:hidden absolute inset-0 bg-gradient-to-b from-transparent to-[#EDE8E0]" />
           </div>
@@ -97,7 +97,7 @@ const buttonVariants = {
             </p>
 
             <Link to='productList'><button className=" transition-all duration-300 ease-out
-    bg-[#BA9948] text-white hover:bg-white/60 backdrop-blur-md border border-[#BA9948] hover:text-[#1D0B01] px-5 py-2 md:px-6 md:py-3 rounded-full text-[14px] lg:text-[18px] 2xl:text-[20px] font-bold lg:w-[210px] w-[116px] h-[40px] lg:h-[55px] cursor-pointer mt-5 2xl:my-12 flex items-center justify-center">
+    bg-[#BA9948] text-white hover:bg-white backdrop-blur-md border hover:border-[#A0174A] hover:text-[#1D0B01] px-5 py-2 md:px-6 md:py-3 rounded-full text-[14px] lg:text-[18px] 2xl:text-[20px] font-bold lg:w-[210px] w-[116px] h-[40px] lg:h-[55px] cursor-pointer mt-5 2xl:my-12 flex items-center justify-center">
               Shop Now
             </button></Link>
           </div>

@@ -124,6 +124,13 @@ useEffect(() => {
   }
 }, [product]);
 
+const volumeToOz = {
+  "15ML": "0.5oz",
+  "30ML": "1oz",
+  "60ML": "2oz",
+};
+
+
   const handleAddToCart = () => {
     // add item to cart logic...
     setCartOpen(true); // open overlay
@@ -179,14 +186,14 @@ Back
           <div className="col-span-2 ] ">
             <img
   src={product.images[1]}
-  className="mx-auto h-full min-h-[500px] 2xl:min-h-[700px] w-full object-cover rounded-[24px]"
+  className="mx-auto h-full min-h-[500px] 2xl:min-h-[700px] w-full object-cover rounded-[16px]"
 />
 
           </div>
 
           {product.images.slice(2).map((img, i) => (
             <div key={i} className="rounded-[24px]">
-              <img src={img} className="mx-auto 2xl:h-[450px] 2xl:w-[450px] object-cover rounded-[24px] h-full " />
+              <img src={img} className="mx-auto 2xl:h-[450px] 2xl:w-[450px] object-cover rounded-[16px] h-full " />
             </div>
           ))}
         </div>
@@ -209,7 +216,7 @@ Back
         <img
           src={img}
           alt={`${product.title} ${i + 1}`}
-          className="object-cover rounded-[24px] h-[343px] w-full "
+          className="object-cover rounded-[16px] h-[343px] w-full "
         />
       </div>
     ))}
@@ -229,10 +236,10 @@ Back
 </div>
  {/* RIGHT – INFO */}
 <div className="md:sticky md:top-[100px] h-fit">
-  <div className="bg-[#F6F7F2] rounded-[32px] p-[16px] 2xl:p-[32px]">
+  <div className="bg-[#F6F7F2] rounded-[16px] p-[16px] 2xl:p-[32px]">
 
-          <span className="text-[12px] 2xl:text-[16px] bg-[#FFFFFF] py-[8px] px-[16px] rounded-full">{product.gender}</span>
-          <div className="flex justify-between">
+          <span className="text-[12px] 2xl:text-[16px] bg-[#FFFFFF] border border-[#A0174A] py-[8px] px-[16px] rounded-full">{product.gender}</span>
+          <div className="flex justify-between items-center">
             <h1 className="text-[18px] lg:text-[24px] 2xl:text-[35px] text-[#1D0B01] font-bold mt-2">
             {product.title}
           </h1>
@@ -244,7 +251,6 @@ Back
             </span>
           </div>
           </div>
-          <h3 className="text-[18px]">{product.subtitle}</h3>
 
           {/* Rating */}
           <div className="flex items-center gap-[5px] mt-3">
@@ -260,11 +266,14 @@ Back
   Eau de Perfume
   {selectedVolume && (
     <>
-      : <span className="text-[#A0174A] font-medium">{selectedVolume}</span>
+      :{" "}
+      <span className="text-[#A0174A] font-medium">
+        {selectedVolume} / {volumeToOz[selectedVolume]}
+      </span>
     </>
   )}
-  /oz
 </p>
+
           <p className="mt-4 text-[14px] lg:text-[16px] 2xl:text-[20px] text-[#282828]">{product.description}</p>
 
  {/* Volume */}
@@ -350,7 +359,7 @@ Back
         <div onClick={handleAddToCart}
         className="flex justify-between items-center gap-[16px] mt-[16px] lg:mt-[20px]"> 
           <button className="text-[18px] 2xl:text-[20px] w-full px-[20px] py-[8px] 2xl:py-[10px] 2x:px-[24px] rounded-full font-semibold cursor-pointer transition-all duration-300 ease-out
-    bg-[#BA9948] text-white hover:bg-white/60 backdrop-blur-md border border-[#BA9948] hover:text-[#1D0B01]">
+    bg-[#BA9948] text-white hover:bg-white/60 backdrop-blur-md border hover:border-[#A0174A] hover:text-[#1D0B01]">
             Add to cart
           </button>
           </div>

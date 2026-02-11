@@ -46,7 +46,7 @@ const Featured = () => {
                 </div>
                 <div>
                       <button className="transition-all duration-300 ease-out
-    hover:bg-[#BA9948] hover:text-white border border-[#BA9948] text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center">
+    hover:bg-[#BA9948] hover:text-white border border-[#A0174A] hover:border-none text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center">
             <Link to="/productList">View All</Link>
           </button>
                 </div>
@@ -67,7 +67,7 @@ const Featured = () => {
                     <p className='text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]'>Featured Perfumes</p>
                 </div>
                 <div>
-                    <button className="hover:bg-[#BA9948] hover:text-white border border-[#BA9948] text-[#1D0B01] px-[24px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[100px] h-[30px] "><Link to='/productList'>View All</Link></button>
+                    <button className="hover:bg-[#BA9948] hover:text-white border border-[#A0174A] hover:border-none text-[#1D0B01] px-[24px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[100px] h-[30px] "><Link to='/productList'>View All</Link></button>
                 </div>
             </div>
 {/* CAROUSEL */}
@@ -85,7 +85,7 @@ const Featured = () => {
               style={{ width: `${100 / itemsPerView}%` }}
             >
               <div
-                className="group relative rounded-[16px]  md:rounded-[24px]
+                className="group relative rounded-[16px]
     h-[384px] lg:h-[700px]
     cursor-pointer overflow-hidden"
                 onClick={() => navigate(`/productList/${item.slug}`)}
@@ -150,9 +150,9 @@ const Featured = () => {
                           ${item.oldPrice}
                         </button>
                       </div>
-                      <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[16px] 2xl:text-[18px] h-[33px] w-[68px] font-normal"
+                       <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[18px] 2xl:text-[22px] h-[33px] w-[68px] font-normal"
                       >
-                        <div className="absolute -top-[2px] 2xl:-top-[10px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[8px] text-white 2xl:text-[10px] font-bold z-10 2xl:h-[20px] h-[10px] w-[35px] 2xl:w-[50px] flex items-center justify-center">
+                        <div className="absolute -top-[4px] 2xl:-top-[12px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[12px] text-white 2xl:text-[14px] font-bold z-10 2xl:h-[22px] h-[14px] w-[40px] 2xl:w-[58px] flex items-center justify-center">
                           -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
                         </div>
 

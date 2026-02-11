@@ -223,7 +223,7 @@ const backdropVariants = {
       </div>
 
       {/* Delete */}
-      <RiDeleteBinLine className="text-[22px] lg:text-[26px] text-[#571313] cursor-pointer hover:text-red-600 transition" />
+      <RiDeleteBinLine className="text-[22px] lg:text-[26px] text-[#571313] cursor-pointer hover:text-red-600 transition-all duration-500" />
 
     </div>
 
@@ -283,9 +283,9 @@ const backdropVariants = {
                 <button className="bg-[#1D0B01]/60 backdrop-blur-md px-4 py-1 rounded-full text-sm cursor-pointer hover:text-[#1D0B01] border border-white
     transition-all duration-300 ease-out
     hover:bg-white text-white">Add to Cart</button>
-                  <div className="relative w-[60px] h-[28px] text-[16px]  font-normal"
+                  <div className="relative w-[60px] h-[28px] text-[20px]  font-normal"
                       >
-                        <div className="absolute -top-[2px]  left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[6px] text-white z-10 h-[8px] w-[32px] flex items-center justify-center">
+                        <div className="absolute -top-[6px]  left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[10px] text-white z-10 h-[12px] w-[40px] flex items-center justify-center">
                           -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
                         </div>
 
@@ -333,13 +333,13 @@ const backdropVariants = {
       }}
       className="w-full py-[10px] rounded-full font-medium text-[16px]
         bg-[#BA9948] text-white hover:bg-white/60
-        backdrop-blur-md border border-[#BA9948] hover:text-[#1D0B01]
+        backdrop-blur-md border hover:border-[#A0174A] hover:text-[#1D0B01]
         transition-all duration-300 cursor-pointer"
     >
       Process to Checkout
     </button>
 
-    <p className="text-center text-[14px] mt-[12px]">
+    <p className="text-center text-[#A0174A] text-[14px] lg:text-[16px] mt-[12px]">
       Pay with Visa, Mastercard, Apple Pay and more
     </p>
   </div>

@@ -101,7 +101,7 @@ const RecentPost = () => {
       >
         {posts.map((item, idx) => (
           <SwiperSlide key={idx}>
-            <div className="group relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] overflow-hidden h-40 md:h-96 lg:mb-[32px] cursor-pointer">
+            <div className="group relative rounded-[16px] overflow-hidden h-40 md:h-96 lg:mb-[32px] cursor-pointer">
               <img
                 src={item.product}
                 alt={item.title}

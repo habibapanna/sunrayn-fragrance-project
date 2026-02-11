@@ -69,20 +69,22 @@ useEffect(() => {
    <div className="fixed inset-0 z-[70]">
 
       {/* WHITE PANEL */}
-     <div
+    <div
   className="
     absolute
-    top-0 md:top-[50px] lg:top-[106px]
-    right-0 md:right-[45px] lg:right-[12px] 2xl:right-[164px]
-    w-full md:w-[680px] lg:w-[1001px]
-    bg-white md:rounded-[24px]
-    px-[24px] pb-[32px] md:pb-[4px]
-    max-h-screen
-    lg:max-h-[calc(100vh-140px)]
+    top-1/2 left-1/2
+    -translate-x-1/2 -translate-y-1/2
+    w-[95%] md:w-[680px] lg:w-[1001px]
+    max-h-[90vh]
+    bg-white rounded-[16px]
+    px-[24px] pb-[32px]
     overflow-y-auto
     overscroll-contain
+    shadow-2xl
+    transition-all duration-300
   "
 >
+
 
           {/* HEADER */}
   <div className="relative flex items-center justify-between py-[16px]">

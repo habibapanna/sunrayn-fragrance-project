@@ -71,7 +71,7 @@ const Testimonials = () => {
     <div className="mx-auto px-[8px] 2xl:px-[16px] pb-[16px] 2xl:pb-[32px]">
       {/* HEADER */}
       <div className="flex justify-between items-center mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px] ">
-        <p className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828] md:px-[16px]">
+        <p className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828] 2xl:px-[16px]">
           What Fragrance Lovers Are Saying About Sanrayn
         </p>
 
@@ -113,7 +113,7 @@ const Testimonials = () => {
               <div className="px-[8px] 2xl:px-[16px] h-full">
                 {/* CARD */}
                 <div
-                  className="relative rounded-[24px] lg:rounded-[32px] 2xl:rounded-[48px] h-full
+                  className="relative rounded-[16px] h-full
                              p-[16px] lg:p-[40px]
                              flex flex-col"
                   style={{ backgroundColor: item.bg }}

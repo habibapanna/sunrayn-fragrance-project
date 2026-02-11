@@ -27,18 +27,18 @@ const Main = () => {
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
-// useEffect(() => {
-//   const hasVisited = localStorage.getItem("hasVisited");
-
-//   if (!hasVisited) {
-//     setShowPopup(true);
-//     localStorage.setItem("hasVisited", "true");
-//   }
-// }, []);
-
 useEffect(() => {
-  setShowPopup(true);
+  const hasVisited = localStorage.getItem("hasVisited");
+
+  if (!hasVisited) {
+    setShowPopup(true);
+    localStorage.setItem("hasVisited", "true");
+  }
 }, []);
+
+// useEffect(() => {
+//   setShowPopup(true);
+// }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-white">

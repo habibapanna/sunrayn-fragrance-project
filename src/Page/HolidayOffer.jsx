@@ -499,7 +499,7 @@ const overlayVariants = {
     ease: [0.22, 1, 0.36, 1], // luxury easing
   }}
   onClick={() => navigate(`/productList/${item.slug}`)}
-  className="group bg-[#F6F7F2] rounded-[16px] md:rounded-[24px]
+  className="group bg-[#F6F7F2] rounded-[16px]
   overflow-hidden cursor-pointer
   flex flex-row md:flex-col"
 >
@@ -582,7 +582,7 @@ const overlayVariants = {
 
    <div className="">
      <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">
-      Alluring cherry and almond fragrance that balances sweetness and depth, playful at first, irresistibly smooth as it unfolds.
+      Alluring cherry and almond fragrance that balances sweetness and depth.
     </p>
    </div>
     <div className="flex justify-between">
