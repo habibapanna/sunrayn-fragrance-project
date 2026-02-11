@@ -1,7 +1,6 @@
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 import { products } from "../data/productsData";
 import { FaStar } from "react-icons/fa";
-import { Minus, Plus } from "lucide-react";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import MarqueeSection from "../components/MarqueeSection";
@@ -10,9 +9,12 @@ import ProductCard from "../components/ProductCard";
 import { useNavigate, Link } from "react-router-dom";
 
 
+
 const ProductDetails = () => {
     const [openSection, setOpenSection] = useState("notes");
     const [selectedVolume, setSelectedVolume] = useState(null);
+  
+     const { cartOpen, setCartOpen } = useOutletContext();
 
     const navigate = useNavigate();
     const carouselRef = useRef(null);
@@ -122,6 +124,10 @@ useEffect(() => {
   }
 }, [product]);
 
+  const handleAddToCart = () => {
+    // add item to cart logic...
+    setCartOpen(true); // open overlay
+  };
 
   return (
     <div className=" pb-[16px] 2xl:py-[32px]">
@@ -341,11 +347,13 @@ Back
 </div>
 
           {/* CTA */}
-        <div className="flex justify-between items-center gap-[16px] mt-[16px] lg:mt-[20px]"> 
+        <div onClick={handleAddToCart}
+        className="flex justify-between items-center gap-[16px] mt-[16px] lg:mt-[20px]"> 
           <button className="text-[18px] 2xl:text-[20px] w-full px-[20px] py-[8px] 2xl:py-[10px] 2x:px-[24px] rounded-full font-semibold cursor-pointer transition-all duration-300 ease-out
     bg-[#BA9948] text-white hover:bg-white/60 backdrop-blur-md border border-[#BA9948] hover:text-[#1D0B01]">
             Add to cart
-          </button></div>
+          </button>
+          </div>
 
 {/* NOTES & INGREDIENTS */}
 <div ref={notesRef} className="mt-[24px] border-t border-[#282828]/20 pt-[24px]">
@@ -611,11 +619,8 @@ Back
 
         </div>
 
-
   </div>
-
-       
-        
+     
 
       </div>
       <section className="px-[16px] 2xl:px-[32px]"><ProductCard></ProductCard></section>

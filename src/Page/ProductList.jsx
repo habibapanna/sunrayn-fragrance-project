@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import Categories from "../components/Categories";
 import SortFilter from "../components/SortFilter";
 import { products } from "../data/productsData";
@@ -25,6 +25,7 @@ const ProductList = () => {
   "Perfume Volume",
 ]);
   const [searchQuery, setSearchQuery] = useState("");
+  const { cartOpen, setCartOpen } = useOutletContext();
   /* -------------------- SORT STATE -------------------- */
   const [sortBy, setSortBy] = useState("relevance");
   /* -------------------- PRICE RANGE -------------------- */
@@ -178,6 +179,11 @@ const overlayVariants = {
     transition: { duration: 0.25 },
   },
 };
+
+  const handleAddToCart = () => {
+    // add item to cart logic...
+    setCartOpen(true); // open overlay
+  };
 
   return (
     <div className="px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
@@ -528,7 +534,10 @@ const overlayVariants = {
     p-3 bg-gradient-to-t from-black/60 to-transparent"
   >
     <button
-      onClick={(e) => e.stopPropagation()}
+      onClick={(e) => {
+    e.stopPropagation(); 
+    handleAddToCart(item); 
+  }}
       className="w-full bg-white/80 text-black cursor-pointer
       rounded-full py-2 font-medium
       hover:bg-[#A0174A] hover:text-white
@@ -579,7 +588,10 @@ const overlayVariants = {
     {/* MOBILE ADD TO CART */}
 <div className="flex justify-end mt-[12px] md:hidden">
   <button
-    onClick={(e) => e.stopPropagation()}
+    onClick={(e) => {
+    e.stopPropagation(); 
+    handleAddToCart(item);
+  }}
     className="px-[24px] py-[10px] text-[12px]
     rounded-full border border-[#571313]
     text-[#571313] hover:bg-[#571313]

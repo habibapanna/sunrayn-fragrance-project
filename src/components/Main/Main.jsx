@@ -7,11 +7,14 @@ import RouteLoader from "../RouteLoader";
 import ScrollToTopButton from "../ScrollToTopButton";
 import ChatWidget from "../ChatWidget";
 import Navbar from "../../shared/Navbar/Navbar";
+import CartOverlay from "../CartOverlay";
 
 const Main = () => {
   const location = useLocation();
   const isHome = location.pathname === "/";
   const [loading, setLoading] = useState(false);
+  // New: Cart state lifted here
+  const [cartOpen, setCartOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -27,7 +30,7 @@ const Main = () => {
       {/* ❌ Hide top bar on Home */}
       {!isHome && <TopAnnouncementBar />}
 
-      <Navbar />
+      <Navbar  cartOpen={cartOpen} setCartOpen={setCartOpen} />
 
       {loading && <RouteLoader />}
 
@@ -36,12 +39,22 @@ const Main = () => {
           isHome ? "" : "pt-[110px] md:pt-[130px] lg:pt-[147px] 2xl:pt-[130px]"
         }`}
       >
-        <Outlet />
+        <Outlet context={{ setCartOpen }}/>
       </section>
 
       <Footer />
       <ChatWidget />
       <ScrollToTopButton />
+      {/* CartOverlay always rendered at top-level */}
+      {cartOpen && (
+        <>
+          <div
+            onClick={() => setCartOpen(false)}
+            className="fixed inset-0 bg-black/10 z-50"
+          />
+          <CartOverlay onClose={() => setCartOpen(false)} />
+        </>
+      )}
     </div>
   );
 };

@@ -105,7 +105,7 @@ const backdropVariants = {
   return (
     <AnimatePresence>
   <motion.div
-    className="fixed inset-0 bg-black/40 z-50"
+    className="fixed inset-0  z-50"
     variants={backdropVariants}
     initial="hidden"
     animate="visible"
@@ -167,15 +167,15 @@ const backdropVariants = {
         </div>
 </div>
       {/* SCROLLABLE CONTENT */}
-<div className="flex-1 overflow-y-auto px-[16px]">
+<div className="overflow-y-auto px-[16px]">
         {/* Cart Item */}
-        <div className="my-[12px] lg:my-[16px]  rounded-[16px] p-[16px] flex gap-[16px] bg-[#F6F7F2]">
-         <div className="relative bg-[#EDE8E0] md:h-[89px] md:w-[89px] lg:w-[156px] lg:h-[156px] rounded-[16px] py-[24px] px-[25px]">
+        <div className="my-[12px] lg:my-[16px]  rounded-[16px] p-[16px] grid grid-cols-2 gap-[16px] bg-[#F6F7F2]">
+         <div className="relative">
              <img
-            src="https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png"
-            className="h-full md:h-[55px] w-[55px] lg:w-[107px] lg:h-[107px] object-cover"
+            src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
+            className="h-full md:h-[55px] w-[55px] lg:w-[107px] lg:h-[107px] object-cover rounded-[16px]"
           />
-          <span className="absolute left-[8px] top-[8px] text-[12px] bg-white px-[8px]  rounded-[30px] border border-[#A0174A] text-[#1D0B01]">Woman</span>
+          <span className="absolute left-[2px] top-[2px] text-[12px] bg-white px-[8px]  rounded-[30px] border border-[#A0174A] text-[#1D0B01]">Woman</span>
          </div>
           <div className="flex-1">
             <div>

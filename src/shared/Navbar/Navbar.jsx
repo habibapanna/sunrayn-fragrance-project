@@ -12,12 +12,11 @@ import Solar from '../../assets/Vector (4).svg';
 import MenuOverlay from "../../components/MenuOverlay";
 
 
-const Navbar = ({ showTopBar }) => {
+const Navbar = ({ showTopBar, cartOpen, setCartOpen }) => {
 const [open, setOpen] = useState(false);
 const [scrolled, setScrolled] = useState(false);
 const [searchOpen, setSearchOpen] = useState(false);
 const [menuOpen, setMenuOpen] = useState(false);
-const [cartOpen, setCartOpen] = useState(false);
 const [signInUpOpen, setSignInUpOpen] = useState(false);
 
 const [openMegaMenu, setOpenMegaMenu] = useState(null);
@@ -132,9 +131,9 @@ const navPaddingClass = (() => {
 
 // Determine navbar background (unchanged)
 const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? "bg-[#997E3D]/80 backdrop-blur-2xl rounded-full md:mt-[2px]  lg:mt-[12px]"
+  ? "bg-[#A0174A]/60 backdrop-blur-2xl rounded-full md:mt-[2px]  lg:mt-[12px]"
   : scrolled
-  ? "bg-[#997E3D]/80 backdrop-blur-2xl rounded-full mt-[6px] 2xl:mt-[8px] mx-[16px] 2xl:mx-[32px]"
+  ? "bg-[#A0174A]/60 backdrop-blur-2xl rounded-full mt-[6px] 2xl:mt-[8px] mx-[16px] 2xl:mx-[32px]"
   : "bg-transparent";
 
 // Determine top position
@@ -434,7 +433,6 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
   </g>
 </svg>
 </button>
-
              <button
   title="Open Menu"
   onClick={() => setMenuOpen(true)}
@@ -513,7 +511,6 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
     <SignInUp onClose={() => setSignInUpOpen(false)} />
   </>
 )}
-
       {/* OVERLAY */}
       {open && (
         <div

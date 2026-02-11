@@ -36,8 +36,8 @@ const NewsLetter = () => {
                   <button
                     className="absolute right-2 top-1/2 -translate-y-1/2 
                     h-[22px] w-[22px] md:w-[30px] md:h-[30px] 2xl:h-[40px] 2xl:w-[40px]
-                    rounded-full bg-[#BA9948] 
-                    flex items-center justify-center transition cursor-pointer hover:bg-white"
+                    rounded-full bg-[#A0174A] 
+                    flex items-center justify-center transition cursor-pointer "
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
