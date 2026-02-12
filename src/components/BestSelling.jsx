@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { FaCheck, FaStar } from "react-icons/fa";
 import { useNavigate, Link, useOutletContext } from "react-router-dom";
 import { products } from "../data/productsData";
+import { IoCheckmarkSharp } from "react-icons/io5";
 
 
 const BestSelling = () => {
@@ -10,6 +11,11 @@ const BestSelling = () => {
   const [itemsPerView, setItemsPerView] = useState(3);
     const { cartOpen, setCartOpen } = useOutletContext();
         const [showCartToast, setShowCartToast] = useState(false);
+        const [touchStart, setTouchStart] = useState(null);
+const [touchEnd, setTouchEnd] = useState(null);
+
+const minSwipeDistance = 50;
+
   const navigate = useNavigate();
 
   // Adjust number of items per view based on screen width
@@ -24,6 +30,29 @@ const BestSelling = () => {
     window.addEventListener("resize", updateView);
     return () => window.removeEventListener("resize", updateView);
   }, []);
+
+  const onTouchStart = (e) => {
+  setTouchEnd(null);
+  setTouchStart(e.targetTouches[0].clientX);
+};
+
+const onTouchMove = (e) => {
+  setTouchEnd(e.targetTouches[0].clientX);
+};
+
+const onTouchEnd = () => {
+  if (!touchStart || !touchEnd) return;
+
+  const distance = touchStart - touchEnd;
+
+  const isLeftSwipe = distance > minSwipeDistance;
+  const isRightSwipe = distance < -minSwipeDistance;
+
+  if (isLeftSwipe) next();
+  if (isRightSwipe) prev();
+};
+
+
 
   const maxIndex = products.length - itemsPerView;
 
@@ -94,6 +123,9 @@ useEffect(() => {
       <section className="relative overflow-hidden">
         <div
           className="flex transition-transform duration-500 ease-in-out"
+  onTouchStart={onTouchStart}
+  onTouchMove={onTouchMove}
+  onTouchEnd={onTouchEnd}
           style={{
             transform: `translateX(-${(current * 100) / itemsPerView}%)`,
           }}
@@ -170,9 +202,9 @@ useEffect(() => {
                           ${item.oldPrice}
                         </button>
                       </div>
-                       <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[22px] h-[33px] w-[68px] font-normal"
+                       <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[22px] h-[33px] w-[68px]"
                       >
-                        <div className="absolute -top-[8px] 2xl:-top-[12px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[8px] text-white 2xl:text-[14px] font-bold z-10 2xl:h-[22px] h-[14px] w-[40px] 2xl:w-[58px] flex items-center justify-center">
+                        <div className="absolute -top-[8px] 2xl:-top-[12px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[8px] text-white 2xl:text-[14px] z-10 2xl:h-[22px] h-[14px] w-[40px] 2xl:w-[58px] flex items-center justify-center font-medium ">
                           -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
                         </div>
 
@@ -185,7 +217,7 @@ useEffect(() => {
                             x="52.5"
                             y="30"
                             textAnchor="middle"
-                            fontWeight="700"
+                            fontWeight="500"
                             fill="#FFFFFF"
                             fontFamily="sans-serif"
                           >
@@ -221,11 +253,11 @@ useEffect(() => {
             {/* MOBILE CART POPUP */}
 {showCartToast && (
   <div className="fixed top-20 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
-    <div className="flex items-center justify-between bg-[#A0174A] text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
+    <div className="flex items-center justify-between bg-black text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
 
       <div className="flex items-center gap-2 text-sm font-medium">
         <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center ">
-         <FaCheck className="text-black" />
+         <IoCheckmarkSharp className="text-black" />
         </span>
         Item added to your cart
       </div>
@@ -235,7 +267,7 @@ useEffect(() => {
           setShowCartToast(false);
           setCartOpen(true);
         }}
-        className="bg-black text-white px-5 py-[2px] rounded-full text-sm font-medium"
+        className="bg-[#A0174A] text-white px-5 py-[4px] rounded-[10px] text-[12px] font-medium flex items-center justify-center"
       >
         View card
       </button>

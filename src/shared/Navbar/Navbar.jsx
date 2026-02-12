@@ -174,7 +174,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 </a>
 
             {/* DESKTOP MENU (UNCHANGED) */}
-            <div className="hidden md:flex items-center gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] 2xl:mr-16 lg:w-[488px] h-[30px] lg:h-[40px] 2xl:w-[551px] 2xl:h-[50px]">
+            <div className="hidden md:flex items-center gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] 2xl:mr-16 lg:w-[488px] h-[30px] lg:h-[40px] 2xl:w-[550px] 2xl:h-[50px]">
 
             {/* Perfume */}
                <div ref={menuRef} className="relative">
@@ -188,7 +188,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
               openMegaMenu === "perfume" ? null : "perfume"
             )
           }
-          className="flex items-center gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] cursor-pointer uppercase"
+          className="flex items-center gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] cursor-pointer uppercase hover:text-[#A0174A]"
         >
           Perfumes
           <LiaAngleDownSolid
@@ -214,28 +214,30 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
         {/* COLUMN 1 */}
         <div>
-          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#1D0B01] mb-[12px]">
+          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px]">
             Perfume Style
           </h4>
           <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]">
-            <li className="cursor-pointer hover:text-[#FD4929]">Men</li>
-            <li className="cursor-pointer hover:text-[#FD4929]">Women</li>
-            <li className="cursor-pointer hover:text-[#FD4929]">Unisex</li>
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>Men</Link></li>
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>Women</Link></li>
+           <li className="hover:text-[#A0174A]"><Link to='/productList'>Unisex</Link></li>
           </ul>
         </div>
 
         {/* COLUMN 2 */}
         <div>
-          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#1D0B01] mb-[12px]">
+          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px]">
             Perfume Family
           </h4>
           <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]  cursor-pointer">
-            <li>Flowery</li>
-            <li>Warm</li>
-            <li>Gourmand</li>
-            <li>Fresh</li>
-            <li>Earthy</li>
-            <li>Herbal</li>
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>Flowery</Link></li>
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>Warm</Link></li>
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>Gourmand</Link></li>
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>Fresh</Link></li>
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>Earthy</Link></li>
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>Herbal</Link></li>
+            <li className="hover:text-[#A0174A]">Fresh</li>
+            <li className="hover:text-[#A0174A]">Earthy</li>
           </ul>
         </div>
 
@@ -270,7 +272,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
               openMegaMenu === "collection" ? null : "collection"
             )
           }
-          className="flex items-center gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] cursor-pointer uppercase"
+          className="flex items-center gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] cursor-pointer uppercase hover:text-[#A0174A]"
         >
     Collections
     <LiaAngleDownSolid
@@ -297,14 +299,14 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
         {/* COLUMN 1 */}
         <div>
-          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#571313] mb-[12px]">
+          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px]">
             Perfume Tyle
           </h4>
           <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]">
-            <li className="cursor-pointer hover:text-[#FD4929]">All Perfumes</li>
-            <li className="cursor-pointer hover:text-[#FD4929]">New Arrivals</li>
-            <li className="cursor-pointer hover:text-[#FD4929]">Limited Editions</li>
-            <li className="cursor-pointer hover:text-[#FD4929]">LCombo Sales</li>
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>All Perumes</Link></li>
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>New Arrivals</Link></li>
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>LCombo Sales</Link></li>
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>Limited Editions</Link></li>
           </ul>
         </div>
 
@@ -326,7 +328,72 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 </div>
 </div>
 
-<Link to='/about'><button className="cursor-pointer text-[10px] lg:text-[12px] 2xl:text-[15px] uppercase">About Us</button></Link>
+{/* About */}
+<div ref={menuRef} className="relative">
+  <div
+    onMouseEnter={() => setOpenMegaMenu("about")}
+    className="relative"
+  >
+    <button
+      onClick={() =>
+        setOpenMegaMenu(
+          openMegaMenu === "about" ? null : "about"
+        )
+      }
+      className="flex items-center gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] cursor-pointer uppercase hover:text-[#A0174A] transition-colors duration-300"
+    >
+      About
+      <LiaAngleDownSolid
+        className={`h-[12px] w-[12px] lg:h-[18px] lg:w-[18px] transition-transform duration-500 ${
+          openMegaMenu === "about" ? "rotate-180" : ""
+        }`}
+      />
+    </button>
+
+    {/* ABOUT DROPDOWN */}
+    {openMegaMenu === "about" && (
+      <div
+        onMouseEnter={() => setOpenMegaMenu("about")}
+        onMouseLeave={() => setOpenMegaMenu(null)}
+        className="absolute top-[60px] right-0 z-50"
+      >
+      <div className="fixed top-[60px] right-[70px] lg:top-[90px] lg:right-[120px] 2xl:right-[600px] z-50">
+
+      <div className="relative bg-white rounded-[16px] shadow-xl px-[30px] py-[20px] lg:px-[40px] lg:py-[32px] flex gap-[40px] lg:gap-[74px]">
+
+        {/* ARROW TIP */}
+        <span className="absolute -top-[10px] right-[250px] lg:right-[300px] w-5 h-5 bg-white rotate-45" />
+
+        {/* COLUMN 1 */}
+        <div>
+           <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px]">
+            About SANRAYN
+          </h4>
+          <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]">
+            <li className="cursor-pointer hover:text-[#A0174A]"><Link to='/about'>About Us</Link></li>
+            <li className="cursor-pointer hover:text-[#A0174A]"><Link to='/contact'>Contact Us</Link></li>
+            <li className="cursor-pointer hover:text-[#A0174A]"><Link to='/faq'>FAQ</Link></li>
+          </ul>
+        </div>
+
+        {/* RIGHT PRODUCT CARD */}
+        <div className="">
+          <div className="bg-[#FBF7F2] rounded-[24px] p-4 w-[160px] lg:w-[220px] text-center">
+            <img
+              src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
+              className="rounded-xl mx-auto mb-4"
+            />
+          </div> <p className="text-[14px] lg:text-[16px] text-center text-[#1D0B01] font-medium cursor-pointer">
+              <Link to='productList'>View All Perfume</Link>
+            </p>
+        </div>
+      </div>
+    </div>
+      </div>
+    )}
+  </div>
+</div>
+
 
 
              <Link to='holidayOffer'> <span className="bg-[#A0174A] text-white gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] px-[14px] lg:px-[20px] py-[8px] rounded-[100px] font-semibold flex items-center justify-center w-[110px] lg:w-[150px] h-[20px] lg:h-[30px] 2xl:w-[170px] 2xl:h-[35px] uppercase">
@@ -428,7 +495,6 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
           </div>
         </div>
       </nav>
-
 
 {menuOpen && (
   <>

@@ -9,6 +9,7 @@ import MarqueeFlavour from '../components/MarqueeFlavour';
 import Premium from '../components/Premium';
 import NewsLetter from '../components/NewsLetter';
 import { motion, AnimatePresence } from "framer-motion";
+import { IoCheckmarkSharp } from "react-icons/io5";
 
 const ProductList = () => {
   const navigate = useNavigate();
@@ -221,7 +222,64 @@ useEffect(() => {
 
     <div className="p-5 space-y-6 text-[#1D0B01]">
 
-      {/* ================= SORT BY ================= */}
+      {/* ================= PRICE RANGE ================= */}
+      <div className="bg-white rounded-[16px] p-4 space-y-4 mx-[16px]">
+        <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
+          <h3 className="font-medium">Price</h3>
+          <span className={`transition-transform ${openSection.includes("Price") ? "rotate-180" : ""}`}>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </span>
+        </div>
+
+        {openSection.includes("Price") && (
+          <>
+            <input
+              type="range"
+              min={MIN_PRICE}
+              max={MAX_PRICE}
+              value={priceRange[1]}
+              onChange={e => setPriceRange([priceRange[0], Number(e.target.value)])}
+              className="w-full h-[3px] rounded-full appearance-none"
+              style={{ background: "#DBAB35" }}
+            />
+
+            <div className="flex justify-between text-sm font-medium">
+              <span>${priceRange[0]}</span>
+              <span>${priceRange[1]}</span>
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* ================= FILTER TITLE ================= */}
+      <h3 className="text-[14px] font-bold uppercase">Filter:</h3>
+
+      {/* ACTIVE TAGS */}
+      <div className="flex flex-wrap gap-2">
+        {Object.entries(filters).map(([key, values]) =>
+          values.map(v => (
+            <span key={`${key}-${v}`} className="flex items-center gap-2 bg-white px-4 py-1 rounded-full text-sm">
+              {v}
+              <button onClick={() => toggleFilter(key, v)}>✕</button>
+            </span>
+          ))
+        )}
+        <button onClick={clearAllFilters} className="ml-auto underline text-sm">
+          Clear all
+        </button>
+      </div>
+
+      {/* ================= FILTER BLOCKS ================= */}
+      <FilterBlock title="Gender" options={["Women", "Men", "Unisex"]} filterKey="gender" />
+      <FilterBlock title="Scent Family" options={["Flowery", "Fresh", "Gourmand", "Herbal", "Earthy", "Warm"]} filterKey="scentFamily" />
+      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
+       <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
+      <FilterBlock title="Scent - Intensity Scale" options={["Subtle", "Significant", "Statement"]} filterKey="intensity" />
+
+            {/* ================= SORT BY ================= */}
       <div className="space-y-2">
         <h3 className="text-[14px] font-bold uppercase">Sort by:</h3>
 
@@ -275,31 +333,37 @@ useEffect(() => {
         </div>
       </div>
 
-      {/* ================= FILTER TITLE ================= */}
-      <h3 className="text-[14px] font-bold uppercase">Filter:</h3>
+    </div>
+  </aside>
+)}
+</AnimatePresence>
+{/* -------------------- MOBILE SIDEBAR -------------------- */}
+<AnimatePresence>
+{sidebarOpen && (
+  <>
+    {/* Overlay */}
+      <motion.div
+        className="md:hidden fixed inset-0 bg-black/40 z-50"
+        variants={overlayVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        onClick={() => setSidebarOpen(false)}
+      />
 
-      {/* ACTIVE TAGS */}
-      <div className="flex flex-wrap gap-2">
-        {Object.entries(filters).map(([key, values]) =>
-          values.map(v => (
-            <span key={`${key}-${v}`} className="flex items-center gap-2 bg-white px-4 py-1 rounded-full text-sm">
-              {v}
-              <button onClick={() => toggleFilter(key, v)}>✕</button>
-            </span>
-          ))
-        )}
-        <button onClick={clearAllFilters} className="ml-auto underline text-sm">
-          Clear all
-        </button>
-      </div>
-
-      {/* ================= FILTER BLOCKS ================= */}
-      <FilterBlock title="Gender" options={["Women", "Men", "Unisex"]} filterKey="gender" />
-      <FilterBlock title="Scent Family" options={["Flowery", "Fresh", "Gourmand", "Herbal", "Earthy", "Warm"]} filterKey="scentFamily" />
-      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
-       <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
-      <FilterBlock title="Scent - Intensity Scale" options={["Subtle", "Significant", "Statement"]} filterKey="intensity" />
-
+   {/* Sliding sidebar */}
+      <motion.aside
+        className="md:hidden fixed top-0 left-0 z-50 h-full w-full bg-[#F6F7F2]"
+        variants={mobileSidebarVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
+    <div className="p-5 space-y-6 text-[#1D0B01]">
+             {/* Close button */}
+     <div className="flex justify-end ">
+          <button className="cursor-pointer border border-gray-300 p-2 rounded-full h-[30px] w-[30px] hover:bg-black hover:text-white flex items-center justify-center" onClick={() => setSidebarOpen(false)}>✕</button>
+        </div>
       {/* ================= PRICE RANGE ================= */}
       <div className="bg-white rounded-[16px] p-4 space-y-4 mx-[16px]">
         <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
@@ -332,38 +396,33 @@ useEffect(() => {
         )}
       </div>
 
-    </div>
-  </aside>
-)}
-</AnimatePresence>
-{/* -------------------- MOBILE SIDEBAR -------------------- */}
-<AnimatePresence>
-{sidebarOpen && (
-  <>
-    {/* Overlay */}
-      <motion.div
-        className="md:hidden fixed inset-0 bg-black/40 z-50"
-        variants={overlayVariants}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-        onClick={() => setSidebarOpen(false)}
-      />
+      {/* ================= FILTER TITLE ================= */}
+      <h3 className="text-[14px] font-bold uppercase">Filter:</h3>
 
-   {/* Sliding sidebar */}
-      <motion.aside
-        className="md:hidden fixed top-0 left-0 z-50 h-full w-full bg-[#F6F7F2]"
-        variants={mobileSidebarVariants}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-      >
-      <div className="p-6 space-y-6 overflow-y-auto h-full">
-        {/* Close button */}
-        <div className="flex justify-end ">
-          <button className="cursor-pointer" onClick={() => setSidebarOpen(false)}>✕</button>
-        </div>
-<div className="space-y-2">
+      {/* ACTIVE TAGS */}
+      <div className="flex flex-wrap gap-2">
+        {Object.entries(filters).map(([key, values]) =>
+          values.map(v => (
+            <span key={`${key}-${v}`} className="flex items-center gap-2 bg-white px-4 py-1 rounded-full text-sm">
+              {v}
+              <button onClick={() => toggleFilter(key, v)}>✕</button>
+            </span>
+          ))
+        )}
+        <button onClick={clearAllFilters} className="ml-auto underline text-sm">
+          Clear all
+        </button>
+      </div>
+
+      {/* ================= FILTER BLOCKS ================= */}
+      <FilterBlock title="Gender" options={["Women", "Men", "Unisex"]} filterKey="gender" />
+      <FilterBlock title="Scent Family" options={["Flowery", "Fresh", "Gourmand", "Herbal", "Earthy", "Warm"]} filterKey="scentFamily" />
+      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
+       <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
+      <FilterBlock title="Scent - Intensity Scale" options={["Subtle", "Significant", "Statement"]} filterKey="intensity" />
+
+            {/* ================= SORT BY ================= */}
+      <div className="space-y-2">
         <h3 className="text-[14px] font-bold uppercase">Sort by:</h3>
 
         <div
@@ -390,11 +449,9 @@ useEffect(() => {
               </svg>
             </span>
           </div>
-          
 
           {openSection.includes("Sort") && (
-  <div className="mt-4 space-y-3">
-
+            <div className="mt-4 space-y-3">
               {[
                 { label: "Relevance (Default)", value: "relevance" },
                 { label: "Price - high to low", value: "price-high" },
@@ -417,63 +474,8 @@ useEffect(() => {
           )}
         </div>
       </div>
-      {/* ================= FILTER TITLE ================= */}
-      <h3 className="text-[14px] font-bold uppercase">Filter:</h3>
 
-      {/* ACTIVE TAGS */}
-      <div className="flex flex-wrap gap-2">
-        {Object.entries(filters).map(([key, values]) =>
-          values.map(v => (
-            <span key={`${key}-${v}`} className="flex items-center gap-2 bg-white px-4 py-1 rounded-full text-sm">
-              {v}
-              <button onClick={() => toggleFilter(key, v)}>✕</button>
-            </span>
-          ))
-        )}
-        <button onClick={clearAllFilters} className="ml-auto underline text-sm">
-          Clear all
-        </button>
-      </div>
-        {/* Filter blocks (reuse your FilterBlock component) */}
-        <FilterBlock title="Gender" options={["Women", "Men", "Unisex"]} filterKey="gender" />
-        <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
-      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
-        <FilterBlock title="Scent Family" options={["Flowery","Fresh","Gourmand","Herbal","Earthy","Warm"]} filterKey="scentFamily" />
-        <FilterBlock title="Scent - Intensity Scale" options={["Subtle","Significant","Statement"]} filterKey="intensity" />
-
-        {/* ================= PRICE RANGE ================= */}
-      <div className="bg-white mx-[16px] rounded-[16px] p-4 space-y-4">
-        <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
-          <h3 className="font-medium">Price</h3>
-          <span className={`transition-transform ${openSection.includes("Price") ? "rotate-180" : ""}`}>
-
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </span>
-        </div>
-
-        {openSection.includes("Price") && (
-
-          <>
-            <input
-              type="range"
-              min={MIN_PRICE}
-              max={MAX_PRICE}
-              value={priceRange[1]}
-              onChange={e => setPriceRange([priceRange[0], Number(e.target.value)])}
-              className="w-full h-[3px] rounded-full appearance-none"
-              style={{ background: "#DBAB35" }}
-            />
-
-            <div className="flex justify-between text-sm font-medium">
-              <span>${priceRange[0]}</span>
-              <span>${priceRange[1]}</span>
-            </div>
-          </>
-        )}
-      </div>
-      </div>
+    </div>
     </motion.aside>
   </>
 )}
@@ -550,7 +552,7 @@ useEffect(() => {
   }}
       className="w-full bg-white/80 text-black cursor-pointer
       rounded-full py-2 font-medium
-      hover:bg-[#A0174A] hover:text-white
+      hover:bg-[#BA9948] hover:text-white
       border border-[#A0174A] hover:border-none transition-all ease-in-out duration-500 md:text-[15px] 2xl:text-[18px]"
     >
       Add to cart
@@ -603,8 +605,8 @@ useEffect(() => {
     handleAddToCart(item);
   }}
     className="px-[24px] py-[10px] text-[12px]
-    rounded-full border border-[#571313]
-    text-[#571313] hover:bg-[#571313]
+    rounded-full border border-[#A0174A]
+    text-[#571313] hover:bg-[#BA9948] hover:border-none
     hover:text-white transition w-full cursor-pointer duration-500"
   >
     Add to cart
@@ -619,30 +621,31 @@ useEffect(() => {
 
           </motion.div>
         </section>
-          {showCartToast && (
-                <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
-                  <div className="flex items-center justify-between bg-[#A0174A] text-white px-4 py-3 rounded-full shadow-lg">
-              
-                    <div className="flex items-center gap-2 text-sm font-medium">
-                      <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center ">
-                       <FaCheck className="text-black" />
-                      </span>
-                      Item added to your cart
-                    </div>
-              
-                    <button
-                      onClick={() => {
-                        setShowCartToast(false);
-                        setCartOpen(true);
-                      }}
-                      className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium"
-                    >
-                      VIEW CART
-                    </button>
-              
-                  </div>
-                </div>
-              )}
+                       {/* MOBILE CART POPUP */}
+                                              {showCartToast && (
+                                                <div className="fixed top-42 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+                                                  <div className="flex items-center justify-between bg-black text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
+                                              
+                                                    <div className="flex items-center gap-2 text-sm font-medium">
+                                                      <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center ">
+                                                       <IoCheckmarkSharp className="text-black" />
+                                                      </span>
+                                                      Item added to your cart
+                                                    </div>
+                                              
+                                                    <button
+                                                      onClick={() => {
+                                                        setShowCartToast(false);
+                                                        setCartOpen(true);
+                                                      }}
+                                                      className="bg-[#A0174A] text-white px-5 py-[4px] rounded-[10px] text-[12px] font-medium flex items-center justify-center"
+                                                    >
+                                                      View card
+                                                    </button>
+                                              
+                                                  </div>
+                                                </div>
+                                              )}
 
       </div>
       <section className="pt-[16px] 2xl:pt-[32px]"><Premium></Premium></section>

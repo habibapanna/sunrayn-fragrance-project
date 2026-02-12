@@ -10,6 +10,7 @@ import Paypal from "../../assets/XMLID_1_.svg";
 import SANRAYN from "../../assets/SANRAYN.svg";
 import MasterCard from "../../assets/MasterCard logo.svg";
 import Logo from "../../assets/Logo (1).svg";
+import { ImFacebook2 } from "react-icons/im";
 
 const Footer = () => {
   return (
@@ -47,7 +48,7 @@ const Footer = () => {
             <div className="flex flex-wrap justify-between gap-[32px] mt-[40px] 2xl:mt-[57px]">
               {/* SHOP */}
               <div className="text-left">
-                <p className="text-[#571313] mb-4 text-[25px]">Shop by Category</p>
+                <p className="text-[#571313] mb-4 text-[25px]">SANRAYN Collections</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
                   <li className="hover:underline cursor-pointer"><Link to='/holidayOffer'>Holiday Sale</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='/productList'>New Arrivals</Link></li>
@@ -57,7 +58,7 @@ const Footer = () => {
               </div>
               {/* About */}
               <div className="text-left">
-                <p className="text-[#571313] mb-4 text-[25px]">About SANRAYN</p>
+                <p className="text-[#571313] mb-4 text-[25px]">About Us</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
                    <li className="hover:underline cursor-pointer"><Link to='blogs'>Blogs</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='/faq'>FAQs</Link></li>
@@ -114,7 +115,7 @@ const Footer = () => {
                    <li className="text-[14px] lg:text-[16px]">Follow SANRAYN</li>
                   <li className="hover:underline cursor-pointer">
                     <div className="flex items-center gap-4 md:gap-2 lg:gap-4 order-2 md:order-none mb-[16px] md:mb-0">
-    <img src={Facebook} className="h-5" />
+    <ImFacebook2 className="h-5" />
     <img src={Instagram} className="h-5" />
     <img src={Tiktok} className="h-5" />
   </div></li>

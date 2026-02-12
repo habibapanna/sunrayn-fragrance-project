@@ -135,7 +135,7 @@ const backdropVariants = {
 <div className="sticky top-0 z-10 bg-white">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-[2px] lg:py-[16px] ">
-    <button className="flex justify-between items-center rounded-[100px] cursor-pointer hover:underline py-[8px] lg:py-[4px] " onClick={onClose}>
+    <button className="flex justify-between items-center rounded-[100px] cursor-pointer hover:underline py-[8px] lg:py-[4px] text-[14px] lg:text-[16px] 2xl:text-[18px]" onClick={onClose}>
          <MdKeyboardArrowLeft className="text-xl" /> Go Back 
         </button>
 
@@ -144,10 +144,10 @@ const backdropVariants = {
   <path d="M6.25 6.66663L6.38985 4.98844C6.54632 3.11084 8.11589 1.66663 10 1.66663C11.8841 1.66663 13.4537 3.11084 13.6102 4.98844L13.75 6.66663" stroke="#050C29" stroke-width="1.25"/>
   <path d="M12.5 9.16663C12.3917 10.3442 11.3047 11.25 10 11.25C8.69525 11.25 7.60835 10.3442 7.5 9.16663" stroke="#050C29" stroke-width="1.25" stroke-linecap="round"/>
 </svg>
-        <h2 className="font-medium text-[14px] lg:text-[16px] 2xl:text-[20px]">Your cart (1)</h2></div> 
+        <h2 className="font-medium text-[14px] lg:text-[16px] 2xl:text-[18px]">Your cart (1)</h2></div> 
       </div>
               {/* Discount */}
-        <div className="mx-[16px] bg-[#EDE8D0] rounded-[20px] py-[8px] px-[16px] cursor-pointer">
+        <div className="mx-[16px] bg-[#EDE8D0] rounded-[16px] py-[8px] px-[16px] cursor-pointer">
           <p className="text-[14px] lg:text-[16px] 2xl:text-[20px] text-[#282828] font-medium mb-[8px]">Special discount</p>
           <div className="grid grid-cols-4 gap-[4px] lg:gap-[8px] text-center">
   {tiers.map((tier) => (
@@ -319,7 +319,7 @@ const backdropVariants = {
                             x="52.5"
                             y="30"
                             textAnchor="middle"
-                            fontWeight="700"
+                            fontWeight="500"
                             fill="#FFFFFF"
                             fontFamily="sans-serif"
                           >

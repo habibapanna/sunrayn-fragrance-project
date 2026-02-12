@@ -2,6 +2,7 @@ import { FaCheck, FaStar } from "react-icons/fa";
 import { products } from "../data/productsData";
 import { Link, useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { IoCheckmarkSharp } from "react-icons/io5";
 
 
 const ProductCard = () => {
@@ -154,7 +155,7 @@ useEffect(() => {
                             x="52.5"
                             y="30"
                             textAnchor="middle"
-                            fontWeight="700"
+                            fontWeight="500"
                             fill="#FFFFFF"
                             fontFamily="sans-serif"
                           >
@@ -172,31 +173,33 @@ useEffect(() => {
                               </div>
                           ))}
                         </div>
-                                      {showCartToast && (
-                <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
-                  <div className="flex items-center justify-between bg-[#A0174A] text-white px-4 py-3 rounded-full shadow-lg">
-              
-                    <div className="flex items-center gap-2 text-sm font-medium">
-                      <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center ">
-                       <FaCheck className="text-black" />
-                      </span>
-                      Item added to your cart
-                    </div>
-              
-                    <button
-                      onClick={() => {
-                        setShowCartToast(false);
-                        setCartOpen(true);
-                      }}
-                      className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium"
-                    >
-                      VIEW CART
-                    </button>
-              
-                  </div>
-                </div>
-              )}
+                                                     
                       </section>
+                           {/* MOBILE CART POPUP */}
+                                              {showCartToast && (
+                                                <div className="fixed top-20 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+                                                  <div className="flex items-center justify-between bg-black text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
+                                              
+                                                    <div className="flex items-center gap-2 text-sm font-medium">
+                                                      <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center ">
+                                                       <IoCheckmarkSharp className="text-black" />
+                                                      </span>
+                                                      Item added to your cart
+                                                    </div>
+                                              
+                                                    <button
+                                                      onClick={() => {
+                                                        setShowCartToast(false);
+                                                        setCartOpen(true);
+                                                      }}
+                                                      className="bg-[#A0174A] text-white px-5 py-[4px] rounded-[10px] text-[12px] font-medium flex items-center justify-center"
+                                                    >
+                                                      View card
+                                                    </button>
+                                              
+                                                  </div>
+                                                </div>
+                                              )}
         </div>
     );
 };

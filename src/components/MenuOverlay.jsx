@@ -48,26 +48,36 @@ const [animateIcon, setAnimateIcon] = useState(false);
     >
     
 
-      {/* SLIDE PANEL */}
-      <motion.div
-        initial={{ x: "-100%" }}
-        animate={{ x: 0 }}
-        exit={{ x: "-100%" }}
-        transition={{
-          duration: 0.9,
-          ease: [0.22, 1, 0.36, 1], // luxury easing
-        }}
-        className="absolute left-0 top-0 w-full max-w-full h-full bg-white overflow-y-auto px-[20px] pb-[30px]"
-      >
+     {/* SLIDE PANEL */}
+<motion.div
+  initial={{ y: 80, opacity: 0, scale: 0.96 }}
+  animate={{ y: 0, opacity: 1, scale: 1 }}
+  exit={{ y: 80, opacity: 0, scale: 0.96 }}
+  transition={{
+    duration: 0.6,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+  className="
+    absolute left-1/2 top-1/2
+    -translate-x-1/2 -translate-y-1/2
+    w-[92%] max-w-[480px]
+    h-[85vh]
+    bg-white rounded-[28px]
+    shadow-2xl
+    overflow-y-auto
+    px-[20px] pb-[30px]
+  "
+>
+
 
         {/* HEADER */}
         <div className="flex items-center justify-between py-[16px]">
           <button
             onClick={onOpenSignIn}
-            className="flex items-center gap-[8px]"
+            className="flex items-center gap-[10px]"
           >
-            <img src={User} alt="" />
-            <span className="font-semibold text-[16px]">Login</span>
+            <img className="bg-[#F6F7F2] p-3 rounded-full" src={User} alt="" />
+            <span className="font-semibold  text-[16px]">Login</span>
           </button>
 
           <button
@@ -119,7 +129,7 @@ const [animateIcon, setAnimateIcon] = useState(false);
         </div>
 
         {/* MOBILE TABS */}
-        <div className="tabs bg-white p-1">
+        <div className="tabs bg-whit">
 
           {/* SHOP TAB */}
          <input
@@ -230,6 +240,7 @@ const [animateIcon, setAnimateIcon] = useState(false);
               {[
                 { label: "About Us", path: "/about" },
                 { label: "Contact Us", path: "/contact" },
+                { label: "Contact Us", path: "/faq" },
               ].map((item) => (
                 <div
                   key={item.label}
