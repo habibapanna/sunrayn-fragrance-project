@@ -87,18 +87,7 @@ useEffect(() => {
 
 
           {/* HEADER */}
-  <div className="relative flex items-center justify-between py-[16px]">
-    <div className="">
-    <button
- onClick={onOpenSignIn}
-  className="bg-white/10 flex items-center justify-center gap-[12px] cursor-pointe lg:hidden"
->
-
-       <img src={User} alt="" />
-       <span className="font-bold text-[#282828] text-[16px]">Login</span>
-      </button>
-      
-    </div>
+  <div className="relative flex items-center justify-end py-[16px]">
 
     <button
       className="underline text-[#282828] text-[16px] cursor-pointer"
