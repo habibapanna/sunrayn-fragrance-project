@@ -10,8 +10,11 @@ import MasterCard  from '../assets/credit-card (1).svg';
 import Flag from '../assets/Flag Pack.svg';
 import { LuSearch } from "react-icons/lu";
 import { IoChevronDown } from "react-icons/io5";
+import { useState } from "react";
 
 const Checkout = () => {
+  const [openSummary, setOpenSummary] = useState(false);
+
   return (
     <div className="bg-[#F6F7F2]">
       <section className="min-h-screen md:max-w-7xl mx-auto px-[16px]">
@@ -20,6 +23,86 @@ const Checkout = () => {
        <Link to="/" className="cursor-pointer"> <img src={Logo2} alt="Sanrayn" className="h-[89px] w-[89px]" /></Link>
        <Link to="/" className="cursor-pointer"><img src={SANRAYN} alt="" className="w-[174px]h-[28px]"/></Link>
       </div>
+      {/* MOBILE ORDER SUMMARY */}
+<div className="md:hidden mb-6">
+
+  {/* HEADER BAR */}
+  <div
+    onClick={() => setOpenSummary(!openSummary)}
+    className="flex justify-between items-center bg-white px-4 py-3 rounded-t-[14px] shadow border border-gray-300 cursor-pointer"
+  >
+    <span className="text-[#A0174A] font-medium flex items-center gap-2">
+      Order summary
+      <IoChevronDown
+        className={`transition-transform duration-300 ${
+          openSummary ? "rotate-180" : ""
+        }`}
+      />
+    </span>
+
+    <span className="font-bold text-[18px]">$231.70</span>
+  </div>
+
+  {/* DROPDOWN CONTENT */}
+<div
+  className={`overflow-hidden transition-all duration-300 ${
+    openSummary ? "max-h-[500px]" : "max-h-0"
+  }`}
+>
+  <div className="bg-white rounded-b-[16px] p-[16px] shadow border border-gray-300 space-y-4">
+
+      {/* PRODUCT */}
+      <div className="flex justify-between items-center">
+        <div className="flex gap-3 items-center">
+          <div className="relative">
+            <span className="absolute -top-[6px] -right-[6px] 
+              w-[25px] h-[25px] rounded-full 
+              bg-[#A0174A] text-white text-[12px]
+              flex items-center justify-center">
+              1
+            </span>
+
+            <img
+              src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
+              className="w-[70px] h-[70px] rounded-[12px]"
+              alt=""
+            />
+          </div>
+
+          <div>
+            <p className="text-[15px] font-medium text-[#A0174A]">
+              Cerisa Aura
+            </p>
+            <p className="text-[12px] text-gray-500">15ML / 1oz</p>
+          </div>
+        </div>
+
+        <div>
+          <p className="text-[12px]">$32.00</p>
+          <p className="text-[#A0174A]">$28.80</p>
+        </div>
+      </div>
+
+      <div className="border border-[#bfc7cd]" />
+
+      {/* TOTALS */}
+      <div className="space-y-2 text-[14px]">
+        <div className="flex justify-between"><span>Subtotal</span><span>$32</span></div>
+        <div className="flex justify-between"><span>Discount</span><span>$2</span></div>
+        <div className="flex justify-between"><span>Shipping</span><span>$4</span></div>
+        <div className="flex justify-between"><span>VAT (5%)</span><span>$1.75</span></div>
+
+        <div className="border my-3 border-[#bfc7cd]" />
+
+        <div className="flex justify-between font-bold text-[16px]">
+          <span>Total</span>
+          <span>$231.70</span>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+
 
       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 md:gap-4 2xl:px-10 relative">
 
@@ -63,7 +146,7 @@ const Checkout = () => {
           {/* Contact */}
           <div className="bg-white rounded-2xl p-[16px] 2xl:p-6 space-y-4 border border-gray-300 shadow-lg">
             <div className="flex justify-between text-sm font-medium">
-              <span className="text-[18px] 2xl:text-[20px] text-[#050C29] font-semibold">Contact Information</span>
+              <span className="text-[16px] lg:text-[18px] 2xl:text-[20px] text-[#050C29] font-semibold">Contact Information</span>
               <span className="text-[#282828] text-[14px] 2xl:text-[16px]"><span className="underline text-[14px] 2xl:text-[16px] font-semibold">Log in</span></span>
             </div>
             <div>
@@ -193,7 +276,6 @@ const Checkout = () => {
   </label>
 
 </div>
-
 
           {/* Payment */}
           <div className="bg-[#FFFFFF] rounded-[16px] p-[16px] 2xl:p-[24px] space-y-4 shadow-lg border border-gray-300">
