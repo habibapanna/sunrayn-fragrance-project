@@ -1,111 +1,109 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-const SignInUp = ({ onClose }) => {
-  const [mode, setMode] = useState("signup");
+const SignInUp = ({ open, onClose }) => {
+  const [mode, setMode] = useState("login");
 
   return (
-    <div className="fixed inset-0 z-[70] flex items-center justify-center">
-      {/* CONTAINER */}
-      <div className="relative w-full h-full md:h-[540px] lg:h-[640px] md:max-w-[700px] lg:max-w-[1200px] overflow-hidden rounded-[24px] lg:rounded-[32px]">
+    <AnimatePresence>
+      {open && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center">
 
-        {/* FULL IMAGE BACKGROUND (DESKTOP ONLY) */}
-        <img
-          src="https://i.postimg.cc/3w2FjYZ4/imgi-422-Desktop-Login-Popup.png"
-          alt="Perfume"
-          className="hidden md:block absolute inset-0 w-full h-full object-cover bg-no-repeat"
-        />
-
-        {/* FORM WRAPPER */}
-        <div className="relative md:absolute md:right-0 lg:top-0 lg:h-[600px] h-full w-full md:w-[350px] lg:w-[480px] bg-white rounded-[24px] lg:rounded-[32px] lg:m-[20px] px-[20px] py-[36px] lg:p-[36px] flex flex-col">
-
-          {/* CLOSE */}
-          <button
+          {/* OVERLAY */}
+          <motion.div
+            className="absolute inset-0 bg-black/20"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute top-[18px] right-[18px] cursor-pointer text-[14px] lg:text-[16px] underline text-sm"
+          />
+
+          {/* MODAL */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 40 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 40 }}
+            transition={{ duration: 0.35 }}
+            className="relative bg-white w-[92%] max-w-[420px] rounded-[16px] p-20 shadow-xl"
           >
-            Close
-          </button>
-
-          {/* HEADING */}
-          <h2 className="text-[18px] lg:text-[25px] font-bold leading-snug mb-6 pr-6">
-            {mode === "signup"
-              ? "Hi! Enter info below to better track your orders."
-              : "Hi! Please enter your email."}
-          </h2>
-
-          {/* TOGGLE */}
-          <div className="flex bg-[#F6F6F6] rounded-full mb-6 shadow-lg">
+            {/* CLOSE */}
             <button
-              onClick={() => setMode("signup")}
-              className={`flex-1 py-[12px] rounded-full duration-500 ease-out text-[14px] lg:text-[16px] 2xl:text-[18px]  transition
-                ${mode === "signup" ? "bg-[#BA9948] font-semibold text-white" : "text-black cursor-pointer"}
-              `}
+              onClick={onClose}
+              className="absolute right-5 top-4 text-black transition-all duration-500 border border-gray-300 p-2 rounded-full h-8 w-8 items-center flex justify-center hover:bg-black hover:text-white cursor-pointer"
             >
-              SIGN UP
+              ✕
             </button>
-            <button
-              onClick={() => setMode("login")}
-              className={`flex-1 py-[10px] rounded-full text-[14px] lg:text-[16px] 2xl:text-[18px] cursor-pointer transition duration-500 ease-out
-                ${mode === "login" ? "bg-[#BA9948] font-semibold text-white" : "text-black "}
-              `}
-            >
-              LOG IN
-            </button>
-          </div>
 
-          {/* FORM */}
-          <div className="space-y-4 flex-1">
-            {mode === "signup" && (
+            {/* TOGGLE */}
+            <div className="flex gap-6 border-b pb-3 mb-6 text-[18px] font-semibold">
+              <button
+                onClick={() => setMode("login")}
+                className={`transition-all duration-500 cursor-pointer ${
+                  mode === "login"
+                    ? "text-[#BA9948]"
+                    : "text-gray-800 hover:text-black "
+                }`}
+              >
+                Login
+              </button>
+
+              <button
+                onClick={() => setMode("signup")}
+                className={`transition-all duration-500 cursor-pointer ${
+                  mode === "signup"
+                    ? "text-[#BA9948]"
+                    : "text-gray-800 hover:text-black"
+                }`}
+              >
+                Register
+              </button>
+            </div>
+
+            {/* FORM */}
+            <div className="space-y-4">
+
+              {mode === "signup" && (
+                <input
+                  type="text"
+                  placeholder="Name"
+                  className="w-full rounded-full border border-gray-300 px-5 py-3 outline-none focus:border-[#BA9948] transition"
+                />
+              )}
+
               <input
-                type="text"
-                placeholder="Name"
-                className="w-full border rounded-full px-5 py-3 outline-none border-gray-200"
+                type="email"
+                placeholder="Email"
+                className="w-full rounded-full border border-gray-300 px-5 py-3 outline-none focus:border-[#BA9948] transition"
               />
-            )}
 
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full border rounded-full px-5 py-3 outline-none border-gray-200"
-            />
+              <input
+                type="password"
+                placeholder="Password"
+                className="w-full rounded-full border border-gray-300 px-5 py-3 outline-none focus:border-[#BA9948] transition"
+              />
 
-            <input
-              type="password"
-              placeholder="Password"
-              className="w-full border border-gray-200 rounded-full px-5 py-3 outline-none"
-            />
+              {mode === "login" && (
+                <label className="flex items-center gap-2 text-gray-600 text-sm">
+                  <input type="checkbox" />
+                  Remember me
+                </label>
+              )}
 
-            {mode === "signup" && (
-              <p className="text-[14px] lg:text-[16px] text-gray-500">
-                Minimum 5 characters
-              </p>
-            )}
+              {/* BUTTON */}
+              <button className="w-full bg-[#BA9948] hover:bg-white border hover:text-black hover:border-[#BA9948] text-white font-semibold py-3 rounded-full transition duration-500 cursor-pointer">
+                {mode === "login" ? "LOGIN" : "REGISTER"}
+              </button>
 
-            <button className="w-full bg-[#BA9948] text-white hover:bg-white border border-[#BA9948] cursor-pointer hover:text-black transition-all duration-500 ease-out py-3 rounded-full text-[14px] lg:text-[16px] 2xl:text-[18px] font-semibold mt-2">
-              {mode === "signup" ? "SIGN UP" : "LOGIN"}
-            </button>
-
-            {mode === "login" && (
-              <div className="text-center text-[14px] lg:text-[16px] mt-4 space-y-2">
-                <p>
-                  Having issues managing your subscriptions?{" "}
-                  <span className="text-[#BA9948] underline cursor-pointer">
-                    Click here
-                  </span>
+              {mode === "login" && (
+                <p className="text-center text-[#BA9948] text-sm cursor-pointer hover:underline">
+                  Lost your password?
                 </p>
-                <p>
-                  Click{" "}
-                  <span className="text-[#BA9948] underline cursor-pointer">
-                    here
-                  </span>{" "}
-                  to reset your password
-                </p>
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </div>
+      )}
+    </AnimatePresence>
   );
 };
 

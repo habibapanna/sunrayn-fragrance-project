@@ -551,7 +551,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
     {/* BLUR BACKGROUND */}
     <div
       onClick={() => setSignInUpOpen(false)}
-      className="fixed  inset-0 bg-white/50 backdrop-blur-sm z-[60]"
+      className="fixed  inset-0 bg-black/20 z-[60]"
     />
 
     {/* SIGN IN / UP UI */}
@@ -562,10 +562,14 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
       {open && (
         <div
           onClick={() => setOpen(false)}
-          className="fixed inset-0 bg-black/40 z-40 md:hidden"
+          className="fixed inset-0 bg-black/20 z-40 md:hidden"
         />
       )}
 
+<SignInUp
+  open={signInUpOpen}
+  onClose={() => setSignInUpOpen(false)}
+/>
 
     </>
   );
