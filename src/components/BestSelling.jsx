@@ -220,8 +220,8 @@ useEffect(() => {
       </section>
             {/* MOBILE CART POPUP */}
 {showCartToast && (
-  <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
-    <div className="flex items-center justify-between bg-[#A0174A] text-white px-4 py-3 rounded-full shadow-lg">
+  <div className="fixed top-20 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+    <div className="flex items-center justify-between bg-[#A0174A] text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
 
       <div className="flex items-center gap-2 text-sm font-medium">
         <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center ">
@@ -235,9 +235,9 @@ useEffect(() => {
           setShowCartToast(false);
           setCartOpen(true);
         }}
-        className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium"
+        className="bg-black text-white px-5 py-[2px] rounded-full text-sm font-medium"
       >
-        VIEW CART
+        View card
       </button>
 
     </div>

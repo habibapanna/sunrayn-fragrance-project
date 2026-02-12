@@ -8,6 +8,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 
+
+
+const tiers = [
+  { id: 1, label: "1-2 items", off: "10% OFF" },
+  { id: 2, label: "3 items", off: "20% OFF" },
+  { id: 3, label: "4 items", off: "25% OFF" },
+  { id: 4, label: "5 items", off: "30% OFF" }
+];
+
 const CartOverlay = ({ onClose }) => {
   const navigate = useNavigate();
  /* ================= CAROUSEL STATE ================= */
@@ -17,6 +26,9 @@ const CartOverlay = ({ onClose }) => {
   const [isDragging, setIsDragging] = useState(false);
   const sliderRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+ const [selectedTier, setSelectedTier] = useState(tiers[0].id);
+
+
   const isHome = location.pathname === "/";
 
 /* ================= RESPONSIVE ================= */
@@ -102,7 +114,6 @@ const backdropVariants = {
 };
 
 
-
   return (
     <AnimatePresence>
   <motion.div
@@ -124,8 +135,8 @@ const backdropVariants = {
 <div className="sticky top-0 z-10 bg-white">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-[2px] lg:py-[16px] ">
-    <button className="flex justify-between items-center rounded-[100px] cursor-pointer" onClick={onClose}>
-         <MdKeyboardArrowLeft className="text-xl" /> Go Back
+    <button className="flex justify-between items-center rounded-[100px] cursor-pointer hover:underline py-[8px] lg:py-[4px] " onClick={onClose}>
+         <MdKeyboardArrowLeft className="text-xl" /> Go Back 
         </button>
 
         <div className="flex gap-[12px] items-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -136,37 +147,45 @@ const backdropVariants = {
         <h2 className="font-medium text-[14px] lg:text-[16px] 2xl:text-[20px]">Your cart (1)</h2></div> 
       </div>
               {/* Discount */}
-        <div className="mx-[16px] bg-[#EDE8D0] rounded-[20px] py-[8px] px-[16px] group cursor-pointer">
+        <div className="mx-[16px] bg-[#EDE8D0] rounded-[20px] py-[8px] px-[16px] cursor-pointer">
           <p className="text-[14px] lg:text-[16px] 2xl:text-[20px] text-[#282828] font-medium mb-[8px]">Special discount</p>
           <div className="grid grid-cols-4 gap-[4px] lg:gap-[8px] text-center">
+  {tiers.map((tier) => (
+    <div
+      key={tier.id}
+      onClick={() => setSelectedTier(tier.id)}
+      className={`cursor-pointer transition-all duration-300 group ${
+        selectedTier === tier.id
+          ? "text-[#A0174A]"
+          : "text-[#282828] border-transparent"
+      }`}
+    >
+      <div
+        className={`w-[73px] lg:w-[96px] h-[8px] rounded-[100px] mb-[10px] lg:mb-[13px] mx-auto
+        ${selectedTier === tier.id ? "bg-[#1D0B01]" : "bg-white group-hover:bg-[#1D0B01] transition-all duration-500"}
+        `}
+      />
 
-            <div className="">
-                <div className="w-[73px] lg:w-[96px] h-[8px] bg-[#1D0B01] rounded-[100px] mb-[10px] lg:mb-[13px]"></div>
-                <div className="text-[12px] lg:text-[16px] border-r border-white ">
-                1-2 items<br /><span className="font-normal text-[14px] lg:text-[18px] text-[#282828]">10% OFF</span></div>
-            </div>
+      <div className="text-[12px] lg:text-[16px] border-r border-white group-hover:text-[#A0174A] transition-all duration-500">
+        {tier.label}
+        <br />
+        <span className="font-normal text-[14px] lg:text-[18px] group-hover:text-[#A0174A] transition-all duration-500">
+          {tier.off}
+        </span>
+      </div>
+    </div>
+  ))}
+</div>
 
-           <div className=""> <div className="w-[73px] lg:w-[96px] h-[8px] bg-white rounded-[100px] mb-[10px] lg:mb-[13px]"></div>
-            <div className="text-[12px] lg:text-[16px] border-r border-white">3 items<br /><span className="font-normal text-[14px] lg:text-[18px] text-[#282828]">20% OFF</span></div></div>
-
-            <div className="">
-                <div className="w-[73px] lg:w-[96px] h-[8px] bg-white rounded-[100px] mb-[10px] lg:mb-[13px]"></div>
-         <div className="text-[12px] lg:text-[16px] border-r border-white">4 items<br /><span className="font-normal text-[14px] lg:text-[18px] text-[#282828]">25% OFF</span></div>
-            </div>
-
-           <div className="">
-            <div className="w-[73px] lg:w-[96px] h-[8px] bg-white rounded-[100px] mb-[10px] lg:mb-[13px]"></div>
-            <div className="text-[12px] lg:text-[16px]">5 items<br /><span className="font-normal text-[14px] lg:text-[18px] text-[#282828]">30% OFF</span></div>
-           </div>
-          </div>
 
           <div className="border border-white mt-[8px] lg:mt-[16px]"></div>
 
-          <div className="flex items-center gap-2 text-[14px] lg:text-[18px] mt-[8px] lg:mt-[16px] text-[#282828] group-hover:text-[#A0174A] transition-colors duration-500">
+          <div className="hidden lg:flex items-center gap-2 text-[14px] lg:text-[18px] mt-[8px] lg:mt-[16px] text-[#A0174A] transition-all duration-500">
 
             <img src={Truck} alt="" className="h-[24px] w-[24px]" /> FREE shipping on 3+ items
           </div>
         </div>
+        
 </div>
       {/* SCROLLABLE CONTENT */}
 <div className="overflow-y-auto px-[16px]">
@@ -178,7 +197,7 @@ const backdropVariants = {
     <img
       src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
       alt="Cerisa Aura"
-      className="w-[140px] h-full lg:w-[120px]  object-cover rounded-[16px]"
+      className="w-[140px] h-full lg:w-[130px]  object-cover rounded-[16px]"
     />
     <span className="absolute top-[2px] left-[2px] text-[10px] lg:text-[12px] bg-white px-[8px] py-[2px] rounded-full border border-[#A0174A] text-[#1D0B01]">
       Woman
