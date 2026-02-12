@@ -221,7 +221,7 @@ useEffect(() => {
         {/* -------------------- SIDEBAR -------------------- */}
  <AnimatePresence>
 {sidebarOpen && (
-  <aside className="hidden md:block sticky top-[120px] 2xl:w-[420px] h-[calc(100vh-140px)] bg-[#F2EFD8] rounded-[16px] overflow-y-auto shrink-0">
+  <aside className="hidden md:block sticky top-[120px] md:w-[360px] 2xl:w-[420px] h-[calc(100vh-140px)] bg-[#F6F7F2] rounded-[16px] overflow-y-auto shrink-0">
 
     <div className="p-5 space-y-6 text-[#1D0B01]">
 
@@ -230,7 +230,7 @@ useEffect(() => {
         <h3 className="text-[14px] font-bold uppercase">Sort by:</h3>
 
         <div
-          className="bg-[#FBFBF6] rounded-[12px] p-4 cursor-pointer"
+          className="bg-white rounded-[12px] p-4 cursor-pointer"
           onClick={() => toggleAccordion("Sort")}
         >
           <div className="flex justify-between items-center">
@@ -299,12 +299,13 @@ useEffect(() => {
 
       {/* ================= FILTER BLOCKS ================= */}
       <FilterBlock title="Gender" options={["Women", "Men", "Unisex"]} filterKey="gender" />
-      <FilterBlock title="Inspired by Brands" options={["Burberry", "Byredo", "Chanel", "Chloe", "Clinique", "Creed", "Dior"]} filterKey="brand" />
       <FilterBlock title="Scent Family" options={["Flowery", "Fresh", "Gourmand", "Herbal", "Earthy", "Warm"]} filterKey="scentFamily" />
+      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
+       <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
       <FilterBlock title="Scent - Intensity Scale" options={["Subtle", "Significant", "Statement"]} filterKey="intensity" />
 
       {/* ================= PRICE RANGE ================= */}
-      <div className="bg-[#FBFBF6] rounded-[16px] p-4 space-y-4">
+      <div className="bg-white rounded-[16px] p-4 space-y-4 mx-[16px]">
         <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
           <h3 className="font-medium">Price</h3>
           <span className={`transition-transform ${openSection.includes("Price") ? "rotate-180" : ""}`}>
@@ -335,9 +336,6 @@ useEffect(() => {
         )}
       </div>
 
-      <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
-      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
-
     </div>
   </aside>
 )}
@@ -358,7 +356,7 @@ useEffect(() => {
 
    {/* Sliding sidebar */}
       <motion.aside
-        className="md:hidden fixed top-0 left-0 z-50 h-full w-full bg-[#EDE8D0]"
+        className="md:hidden fixed top-0 left-0 z-50 h-full w-full bg-[#F6F7F2]"
         variants={mobileSidebarVariants}
         initial="hidden"
         animate="visible"
@@ -373,7 +371,7 @@ useEffect(() => {
         <h3 className="text-[14px] font-bold uppercase">Sort by:</h3>
 
         <div
-          className="bg-[#FBFBF6] rounded-[12px] p-4 cursor-pointer"
+          className="bg-white rounded-[12px] p-4 cursor-pointer"
           onClick={() => toggleAccordion("Sort")}
         >
           <div className="flex justify-between items-center">
@@ -442,12 +440,13 @@ useEffect(() => {
       </div>
         {/* Filter blocks (reuse your FilterBlock component) */}
         <FilterBlock title="Gender" options={["Women", "Men", "Unisex"]} filterKey="gender" />
-        <FilterBlock title="Inspired by Brands" options={["Burberry","Byredo","Chanel","Chloe","Clinique","Creed","Dior"]} filterKey="brand" />
+        <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
+      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
         <FilterBlock title="Scent Family" options={["Flowery","Fresh","Gourmand","Herbal","Earthy","Warm"]} filterKey="scentFamily" />
         <FilterBlock title="Scent - Intensity Scale" options={["Subtle","Significant","Statement"]} filterKey="intensity" />
 
         {/* ================= PRICE RANGE ================= */}
-      <div className="bg-[#FBFBF6] rounded-[16px] p-4 space-y-4">
+      <div className="bg-white mx-[16px] rounded-[16px] p-4 space-y-4">
         <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
           <h3 className="font-medium">Price</h3>
           <span className={`transition-transform ${openSection.includes("Price") ? "rotate-180" : ""}`}>
@@ -478,9 +477,6 @@ useEffect(() => {
           </>
         )}
       </div>
-
-      <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
-      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
       </div>
     </motion.aside>
   </>

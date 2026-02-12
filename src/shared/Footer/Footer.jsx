@@ -94,7 +94,7 @@ const Footer = () => {
       {/* ================= BOTTOM BAR ================= */}
      <div
   className="
-    mx-auto p-[32px]
+    mx-auto p-[16px]
     lg:px-[80px]
     2xl:px-[260px]
     md:py-[32px]

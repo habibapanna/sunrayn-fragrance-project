@@ -9,6 +9,7 @@ import Visa  from '../assets/credit-card.svg';
 import MasterCard  from '../assets/credit-card (1).svg';
 import Flag from '../assets/Flag Pack.svg';
 import { LuSearch } from "react-icons/lu";
+import { IoChevronDown } from "react-icons/io5";
 
 const Checkout = () => {
   return (
@@ -20,12 +21,12 @@ const Checkout = () => {
        <Link to="/" className="cursor-pointer"><img src={SANRAYN} alt="" className="w-[174px]h-[28px]"/></Link>
       </div>
 
-      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-4 2xl:px-10 relative">
+      <div className="mx-auto grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 md:gap-4 2xl:px-10 relative">
 
         {/* LEFT */}
         <div className="2xl:col-span-2 space-y-6">
           {/* Express Checkout */}
-          <div className="bg-white rounded-2xl p-[16px] 2xl:p-6">
+          <div className="bg-white rounded-[16px] p-[16px] 2xl:p-6 border border-gray-300 shadow-lg">
   <p className="text-[14px] 2xl:text-[16px] text-[#282828] text-center font-medium mb-[16px] 2xl:mb-[24px]">
     Express checkout
   </p>
@@ -49,16 +50,24 @@ const Checkout = () => {
   </p>
 </div>
 
+<div className="flex justify-between items-center gap-3">
+  <span className="flex-1 h-px bg-gray-300"></span>
+
+  <span className="whitespace-nowrap text-sm text-gray-500">
+    Or checkout with credit card below
+  </span>
+
+  <span className="flex-1 h-px bg-gray-300"></span>
+</div>
 
           {/* Contact */}
-          <div className="bg-white rounded-2xl p-[16px] 2xl:p-6 space-y-4">
+          <div className="bg-white rounded-2xl p-[16px] 2xl:p-6 space-y-4 border border-gray-300 shadow-lg">
             <div className="flex justify-between text-sm font-medium">
-              <span className="text-[16px] 2xl:text-[20px] text-[#050C29]">Contact Information</span>
-              <span className="text-[#282828] text-[14px] 2xl:text-[16px]">Already have an account? <span className="underline text-[14px] 2xl:text-[16px] font-semibold">Log in</span></span>
+              <span className="text-[18px] 2xl:text-[20px] text-[#050C29] font-semibold">Contact Information</span>
+              <span className="text-[#282828] text-[14px] 2xl:text-[16px]"><span className="underline text-[14px] 2xl:text-[16px] font-semibold">Log in</span></span>
             </div>
             <div>
-                <label className=" text-[15px] 2xl:text-[18px]">Email</label>
-            <input className="w-full bg-[#F6F7F2] rounded-full px-[16px] py-[8px] 2xl:py-[12px] text-[16px] focus:outline-none" placeholder="samwalter@gmail.com" />
+            <input className="w-full bg-[#F6F7F2] rounded-lg px-[16px] py-[8px] 2xl:py-[12px] text-[16px] focus:outline-none" placeholder="Email" />
             </div>
             <label className="flex items-center gap-2 text-[14px] 2xl:text-[16px] cursor-pointer">
               <input type="checkbox" className="h-[14px] w-[14px] 2xl:w-[16px] 2xl:h-[16px] border-[1.5px] border-[#3A3F42] checkbox checkbox-sm rounded-[4px] cursor-pointer"/> Subscribe for new and daily update
@@ -66,35 +75,44 @@ const Checkout = () => {
           </div>
 
         {/* Delivery Information */}
-<div className="bg-white rounded-[24px] p-[16px] 2xl:p-6 space-y-5">
+<div className="bg-white rounded-[16px] p-[16px] 2xl:p-6 space-y-5 border border-gray-300 shadow-lg">
 
-  <p className="text-[14px] 2xl:text-[16px] font-medium text-[#1D1D1D]">
+  <p className="text-[16px] 2xl:text-[16px] text-[#1D1D1D] font-semibold">
     Delivery Information
   </p>
 
   {/* Country */}
-  <div className="space-y-2">
-    <label className="text-[13px] 2xl:text-[15px] text-[#1D1D1D]">Country</label>
-    <select className="w-full bg-[#F6F7F2] rounded-full px-5 py-2 2xl:py-3 text-[13px] 2xl:text-[15px] focus:outline-none">
+<div className="space-y-2">
+  <label className="text-[14px] 2xl:text-[15px] text-[#1D1D1D]">
+    Country
+  </label>
+
+  <div className="relative">
+    <select className="w-full appearance-none bg-[#F6F7F2] rounded-lg px-[8px] lg:px-5 pr-10 py-2 2xl:py-3 text-[13px] 2xl:text-[15px] focus:outline-none">
       <option>United State</option>
     </select>
+
+    {/* custom arrow */}
+    <div className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
+     <IoChevronDown />
+    </div>
   </div>
+</div>
+
 
   {/* Name */}
   <div className="grid grid-cols-2 gap-4">
     <div className="space-y-2">
-      <label className="text-[14px] 2xl:text-[16px]">First Name</label>
       <input
-        placeholder="Sam"
-        className="w-full bg-[#F6F7F2] rounded-full px-5 py-2 2xl:py-3 text-[13px] 2xl:text-[15px] focus:outline-none"
+        placeholder="First Name"
+        className="w-full bg-[#F6F7F2] rounded-lg px-5 py-2 2xl:py-3 text-[13px] 2xl:text-[15px] focus:outline-none"
       />
     </div>
 
     <div className="space-y-2">
-      <label className="text-[14px] 2xl:text-[16px]">Last Name</label>
       <input
-        placeholder="Walter"
-        className="w-full bg-[#F6F7F2] rounded-full px-5 py-2 2xl:py-3 text-[14px] 2xl:text-[16px] focus:outline-none"
+        placeholder="Last Name"
+        className="w-full bg-[#F6F7F2] rounded-lg px-5 py-2 2xl:py-3 text-[14px] 2xl:text-[16px] focus:outline-none"
       />
     </div>
   </div>
@@ -105,7 +123,7 @@ const Checkout = () => {
     <div className="relative">
       <input
         placeholder="Enter delivery address"
-        className="w-full bg-[#F6F7F2] rounded-full px-5 py-2 2xl:py-3 pr-12 text-[13px] 2xl:text-[15px] focus:outline-none"
+        className="w-full bg-[#F6F7F2] rounded-lg px-5 py-2 2xl:py-3 pr-12 text-[13px] 2xl:text-[15px] focus:outline-none"
       />
       <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400">
         <LuSearch className="2xl:h-[20px] 2xl:w-[20px] text-[#1D0B01]" />
@@ -114,34 +132,49 @@ const Checkout = () => {
   </div>
 
   {/* City / State / Zip */}
-  <div className="grid grid-cols-3 gap-4">
-    <div className="space-y-2">
-      <label className="text-[14px] 2xl:text-[16px]">City</label>
-      <select className="w-full bg-[#F6F7F2] rounded-full px-5 py-2 2xl:py-3 text-[14px] 2xl:text-[16px] focus:outline-none">
+<div className="grid grid-cols-3 gap-4">
+
+  {/* City */}
+  <div className="space-y-2">
+    <label className="text-[14px] 2xl:text-[16px]">City</label>
+
+    <div className="relative">
+      <select className="w-full appearance-none bg-[#F6F7F2] rounded-lg px-5 pr-10 py-2 2xl:py-3 text-[14px] 2xl:text-[16px] focus:outline-none">
         <option>Select</option>
       </select>
-    </div>
 
-    <div className="space-y-2">
-      <label className="text-[14px] 2xl:text-[16px]">State</label>
-      <select className="w-full bg-[#F6F7F2] rounded-full px-5 py-2 2xl:py-3 text-[14px] 2xl:text-[16px] focus:outline-none">
-        <option>Select</option>
-      </select>
-    </div>
-
-    <div className="space-y-2">
-      <label className="text-[14px] 2xl:text-[16px]">Zip Code</label>
-      <input
-        placeholder="13265"
-        className="w-full bg-[#F6F7F2] rounded-full px-5 py-2 2xl:py-3 text-[14px] 2xl:text-[16px] focus:outline-none"
-      />
+      <IoChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-[18px]" />
     </div>
   </div>
+
+  {/* State */}
+  <div className="space-y-2">
+    <label className="text-[14px] 2xl:text-[16px]">State</label>
+
+    <div className="relative">
+      <select className="w-full appearance-none bg-[#F6F7F2] rounded-lg px-5 pr-10 py-2 2xl:py-3 text-[14px] 2xl:text-[16px] focus:outline-none">
+        <option>Select</option>
+      </select>
+
+      <IoChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 text-[18px]" />
+    </div>
+  </div>
+
+  {/* Zip */}
+  <div className="space-y-2">
+    <label className="text-[14px] 2xl:text-[16px]">Zip Code</label>
+    <input
+      placeholder="13265"
+      className="w-full bg-[#F6F7F2] rounded-lg px-5 py-2 2xl:py-3 text-[14px] 2xl:text-[16px] focus:outline-none"
+    />
+  </div>
+
+</div>
 
   {/* Phone Number */}
   <div className="space-y-2">
     <label className="text-[14px] 2xl:text-[16px]">Phone Number</label>
-    <div className="flex items-center gap-3 bg-[#F6F7F2] rounded-full px-5 py-2 2xl:py-3">
+    <div className="flex items-center gap-3 bg-[#F6F7F2] rounded-lg px-5 py-2 2xl:py-3">
       <span className="flex items-center gap-2 text-[14px] 2xl:text-[16px]">
         <img src={Flag} alt="" />
         <span className="text-gray-500"></span>
@@ -163,17 +196,17 @@ const Checkout = () => {
 
 
           {/* Payment */}
-          <div className="bg-[#FFFFFF] rounded-[24px] p-[16px] 2xl:p-[24px] space-y-4">
-            <p className="font-medium text-[16px] 2xl:text-[18px] 2x:text-[20px] text-[#050C29]">Payment</p>
-            <label className="flex items-center justify-between bg-[#F6F7F2] px-4 py-2 2xl:py-3 rounded-[100px]">
-              <span className="flex items-center text-[14px] 2xl:text-[16px] text-[#282828] gap-2 "><input type="radio" className="h-[16px] w-[16px] 2xl:h-[20px] 2xl:w-[20px] rounded-[24px] border-[2px] border-[#282828]" /> PayPal</span>
+          <div className="bg-[#FFFFFF] rounded-[16px] p-[16px] 2xl:p-[24px] space-y-4 shadow-lg border border-gray-300">
+            <p className="text-[16px] 2xl:text-[18px] font-semibold 2x:text-[20px] text-[#050C29]">Payment</p>
+            <label className="flex items-center justify-between bg-[#F6F7F2] px-4 py-2 2xl:py-3 rounded-lg">
+              <span className="flex items-center text-[14px] 2xl:text-[16px] text-[#282828] gap-2 "><input type="radio" className="h-[16px] w-[16px] 2xl:h-[20px] 2xl:w-[20px] rounded-[16px border-[2px] border-[#282828]" /> PayPal</span>
               <img src={PayPal} alt="" className="h-[14px] w-[45px] 2xl:h-[16px] 2xl:w-[60px] cursor-pointer" />
             </label>
-            <label className="flex items-center justify-between bg-[#F6F7F2] px-4 py-2 2xl:py-3 rounded-[100px]">
-              <span className="flex items-center gap-2 text-[14px] 2xl:text-[16px]"><input  className="border-4 rounded-full h-[16px] w-[16px] 2xl:h-[20px] 2xl:w-[20px] border-[#BA9948] " defaultChecked /> Credit Card</span>
+            <label className="flex items-center justify-between bg-[#F6F7F2] px-4 py-2 2xl:py-3 rounded-lg">
+              <span className="flex items-center gap-2 text-[14px] 2xl:text-[16px]"><input type="radio"  className=" rounded-full h-[16px] w-[16px] 2xl:h-[20px] 2xl:w-[20px]  " defaultChecked /> Credit Card</span>
               <div className="flex gap-2"><img src={Visa} alt="" className="h-[18px] w-[25px] 2xl:h-[24px] 2xl:w-[35px] cursor-pointer" /><img src={MasterCard} alt="" className="h-[18px] w-[25px] 2xl:h-[24px] 2xl:w-[35px] cursor-pointer" /></div>
             </label>
-            <div className="bg-[#F6F7F2] rounded-[24px] p-[16px] space-y-[12px]">
+            <div className="bg-[#F6F7F2] rounded-[16px] p-[16px] space-y-[12px]">
 
   {/* Cardholder Name */}
   <div className="space-y-[6px]">
@@ -183,7 +216,7 @@ const Checkout = () => {
     <input
       type="text"
       placeholder="James Walter"
-      className="w-full bg-white rounded-full px-[20px] py-[8px] 2xl:py-[12px] text-[14px] 2xl:text-[16px] outline-none"
+      className="w-full bg-white rounded-lg px-[20px] py-[8px] 2xl:py-[12px] text-[14px] 2xl:text-[16px] outline-none"
     />
   </div>
 
@@ -197,7 +230,7 @@ const Checkout = () => {
       <input
         type="text"
         placeholder="4173 1029 6866 2351"
-        className="w-full bg-white rounded-full px-[20px] pr-[40px] 2xl:pr-[56px] py-[8px] 2xl:py-[12px] text-[14px] 2xl:text-[16px] outline-none"
+        className="w-full bg-white rounded-lg px-[20px] pr-[40px] 2xl:pr-[56px] py-[8px] 2xl:py-[12px] text-[14px] 2xl:text-[16px] outline-none"
       />
 
       {/* Visa Logo */}
@@ -219,7 +252,7 @@ const Checkout = () => {
       <input
         type="text"
         placeholder="20 / 28"
-        className="w-full bg-white rounded-full px-[20px] py-[8px] 2xl:py-[12px] text-[14px] 2xl:text-[16px] outline-none"
+        className="w-full bg-white rounded-lg px-[20px] py-[8px] 2xl:py-[12px] text-[14px] 2xl:text-[16px] outline-none"
       />
     </div>
 
@@ -230,7 +263,7 @@ const Checkout = () => {
       <input
         type="password"
         placeholder="654"
-        className="w-full bg-white rounded-full px-[20px] py-[8px] 2xl:py-[12px] text-[14px] 2xl:text-[16px] outline-none"
+        className="w-full bg-white rounded-lg px-[20px] py-[8px] 2xl:py-[12px] text-[14px] 2xl:text-[16px] outline-none"
       />
     </div>
 
@@ -249,21 +282,21 @@ const Checkout = () => {
 
           </div>
 
-         <div className="rounded-[24px] p-[24px] bg-white">
+         <div className="hidden md:block rounded-t-[16px] p-[24px] bg-white">
              <button className="w-full  transition-all duration-300 ease-out
     bg-[#BA9948] hover:text-[#1D0B01] hover:bg-white backdrop-blur-md border hover:border-[#A0174A] text-white py-[5px] 2xl:py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
           <div className="flex gap-[32px] justify-center mt-[16px]">
-            <span className="text-[12px] 2xl:text-[14px] text-[#372416] cursor-pointer">Return Policy </span>
-            <span className="text-[12px] 2xl:text-[14px] text-[#372416] cursor-pointer">Cancelation Policy </span>
-            <Link to='/terms'><span className="text-[12px] 2xl:text-[14px] text-[#372416] cursor-pointer">Terms of Service</span></Link>
+            <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer">Return Policy </span>
+            <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer">Cancelation Policy </span>
+           <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer"> <Link to='/terms'>Terms of Service</Link></span>
           </div>
          </div>
         </div>
 
         {/* RIGHT */}
-       <div className="2xl:col-span-2"> <div className="bg-white rounded-[20px] p-[16px] 2xl:p-[24px] w-full
-      2xl:sticky 2xl:top-[32px]">
-          <p className="font-medium text-[16px] lg:text-[18px] 2xl:text-[20px] mb-4">Product Details</p>
+       <div className="2xl:col-span-2 "> <div className="bg-white rounded-[16px] p-[16px] 2xl:p-[24px] w-full
+      2xl:sticky 2xl:top-[32px] shadow-lg border border-gray-300">
+          <p className="text-[16px] font-semibold lg:text-[18px] 2xl:text-[20px] mb-4">Product Details</p>
           <div className="flex justify-between items-center mb-[20px]">
             <div className="flex gap-3 items-center">
   {/* IMAGE + BADGE */}
@@ -278,7 +311,7 @@ const Checkout = () => {
     </span>
 
     {/* IMAGE WRAPPER */}
-    <div className="p-[10px] rounded-[7px]">
+    <div className="">
       <img
         src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
         className="w-[70px] h-[70px] rounded-[12px]"
@@ -315,7 +348,17 @@ const Checkout = () => {
             <div className="border-1 my-[20px] border-[#bfc7cd]"></div>
             <div className="flex justify-between font-semibold"><span className="text-[15px] 2xl:text-[20px] font-bold">Total</span><span className="text-[15px] 2xl:text-[20px] font-bold">$32</span></div>
           </div>
-        </div></div>
+        </div>
+        </div>
+        <div className="mt-6 md:hidden rounded-t-[16px] p-[24px] shadow-lg border border-gray-300 bg-white">
+             <button className="w-full  transition-all duration-300 ease-out
+    bg-[#BA9948] hover:text-[#1D0B01] hover:bg-white backdrop-blur-md border hover:border-[#A0174A] text-white py-[7px] 2xl:py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
+          <div className="flex gap-[32px] justify-center mt-[16px]">
+            <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer hover:underline">Return Policy </span>
+            <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer hover:underline">Cancelation Policy </span>
+           <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer hover:underline"> <Link to='/terms'>Terms of Service</Link></span>
+          </div>
+         </div>
       </div>
     </section>
     </div>

@@ -295,8 +295,9 @@ useEffect(() => {
 
       {/* ================= FILTER BLOCKS ================= */}
       <FilterBlock title="Gender" options={["Women", "Men", "Unisex"]} filterKey="gender" />
-      <FilterBlock title="Inspired by Brands" options={["Burberry", "Byredo", "Chanel", "Chloe", "Clinique", "Creed", "Dior"]} filterKey="brand" />
       <FilterBlock title="Scent Family" options={["Flowery", "Fresh", "Gourmand", "Herbal", "Earthy", "Warm"]} filterKey="scentFamily" />
+      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
+       <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
       <FilterBlock title="Scent - Intensity Scale" options={["Subtle", "Significant", "Statement"]} filterKey="intensity" />
 
       {/* ================= PRICE RANGE ================= */}
@@ -330,9 +331,6 @@ useEffect(() => {
           </>
         )}
       </div>
-
-      <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
-      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
 
     </div>
   </aside>
@@ -438,7 +436,8 @@ useEffect(() => {
       </div>
         {/* Filter blocks (reuse your FilterBlock component) */}
         <FilterBlock title="Gender" options={["Women", "Men", "Unisex"]} filterKey="gender" />
-        <FilterBlock title="Inspired by Brands" options={["Burberry","Byredo","Chanel","Chloe","Clinique","Creed","Dior"]} filterKey="brand" />
+        <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
+      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
         <FilterBlock title="Scent Family" options={["Flowery","Fresh","Gourmand","Herbal","Earthy","Warm"]} filterKey="scentFamily" />
         <FilterBlock title="Scent - Intensity Scale" options={["Subtle","Significant","Statement"]} filterKey="intensity" />
 
@@ -474,9 +473,6 @@ useEffect(() => {
           </>
         )}
       </div>
-
-      <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
-      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
       </div>
     </motion.aside>
   </>
