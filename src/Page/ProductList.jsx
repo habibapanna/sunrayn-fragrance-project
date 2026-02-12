@@ -1,9 +1,9 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import Categories from "../components/Categories";
 import SortFilter from "../components/SortFilter";
 import { products } from "../data/productsData";
-import { FaStar } from "react-icons/fa";
+import { FaCheck, FaStar } from "react-icons/fa";
 import MarqueeSection from '../components/MarqueeSection';
 import MarqueeFlavour from '../components/MarqueeFlavour';
 import Premium from '../components/Premium';
@@ -26,6 +26,7 @@ const ProductList = () => {
 ]);
   const [searchQuery, setSearchQuery] = useState("");
   const { cartOpen, setCartOpen } = useOutletContext();
+      const [showCartToast, setShowCartToast] = useState(false);
   /* -------------------- SORT STATE -------------------- */
   const [sortBy, setSortBy] = useState("relevance");
   /* -------------------- PRICE RANGE -------------------- */
@@ -180,10 +181,23 @@ const overlayVariants = {
   },
 };
 
-  const handleAddToCart = () => {
-    // add item to cart logic...
-    setCartOpen(true); // open overlay
-  };
+const isMobile = window.innerWidth < 768;
+
+const handleAddToCart = () => {
+  // add item logic here
+
+  if (window.innerWidth < 768) {
+    setShowCartToast(true); // mobile → show popup
+  } else {
+    setCartOpen(true); // desktop → open overlay
+  }
+};
+
+useEffect(() => {
+  if (!showCartToast) return;
+  const t = setTimeout(() => setShowCartToast(false), 4000);
+  return () => clearTimeout(t);
+}, [showCartToast]);
 
   return (
     <div className="px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
@@ -609,6 +623,30 @@ const overlayVariants = {
 
           </motion.div>
         </section>
+          {showCartToast && (
+                <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+                  <div className="flex items-center justify-between bg-[#A0174A] text-white px-4 py-3 rounded-full shadow-lg">
+              
+                    <div className="flex items-center gap-2 text-sm font-medium">
+                      <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center ">
+                       <FaCheck className="text-black" />
+                      </span>
+                      Item added to your cart
+                    </div>
+              
+                    <button
+                      onClick={() => {
+                        setShowCartToast(false);
+                        setCartOpen(true);
+                      }}
+                      className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium"
+                    >
+                      VIEW CART
+                    </button>
+              
+                  </div>
+                </div>
+              )}
 
       </div>
       <section className="pt-[16px] 2xl:pt-[32px]"><Premium></Premium></section>

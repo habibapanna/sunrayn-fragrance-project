@@ -1,6 +1,6 @@
 import { useOutletContext, useParams } from "react-router-dom";
 import { products } from "../data/productsData";
-import { FaStar } from "react-icons/fa";
+import { FaCheck, FaStar } from "react-icons/fa";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import MarqueeSection from "../components/MarqueeSection";
@@ -13,6 +13,10 @@ import { useNavigate, Link } from "react-router-dom";
 const ProductDetails = () => {
     const [openSection, setOpenSection] = useState("notes");
     const [selectedVolume, setSelectedVolume] = useState(null);
+    const [showCartToast, setShowCartToast] = useState(false);
+   
+
+
   
      const { cartOpen, setCartOpen } = useOutletContext();
 
@@ -130,11 +134,24 @@ const volumeToOz = {
   "60ML": "2oz",
 };
 
+const isMobile = window.innerWidth < 768;
 
-  const handleAddToCart = () => {
-    // add item to cart logic...
-    setCartOpen(true); // open overlay
-  };
+const handleAddToCart = () => {
+  // add item logic here
+
+  if (window.innerWidth < 768) {
+    setShowCartToast(true); // mobile → show popup
+  } else {
+    setCartOpen(true); // desktop → open overlay
+  }
+};
+
+useEffect(() => {
+  if (!showCartToast) return;
+  const t = setTimeout(() => setShowCartToast(false), 4000);
+  return () => clearTimeout(t);
+}, [showCartToast]);
+
 
   return (
     <div className=" pb-[16px] 2xl:py-[32px]">
@@ -629,9 +646,34 @@ Back
         </div>
 
   </div>
-     
 
       </div>
+      {/* MOBILE CART POPUP */}
+{showCartToast && (
+  <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+    <div className="flex items-center justify-between bg-[#A0174A] text-white px-4 py-3 rounded-full shadow-lg">
+
+      <div className="flex items-center gap-2 text-sm font-medium">
+        <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center ">
+         <FaCheck className="text-black" />
+        </span>
+        Item added to your cart
+      </div>
+
+      <button
+        onClick={() => {
+          setShowCartToast(false);
+          setCartOpen(true);
+        }}
+        className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium"
+      >
+        VIEW CART
+      </button>
+
+    </div>
+  </div>
+)}
+
       <section className="px-[16px] 2xl:px-[32px]"><ProductCard></ProductCard></section>
       <Testimonials></Testimonials>
       <MarqueeSection></MarqueeSection>

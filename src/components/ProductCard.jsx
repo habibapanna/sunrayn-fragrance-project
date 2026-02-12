@@ -1,4 +1,4 @@
-import { FaStar } from "react-icons/fa";
+import { FaCheck, FaStar } from "react-icons/fa";
 import { products } from "../data/productsData";
 import { Link, useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 const ProductCard = () => {
   const [limit, setLimit] = useState(2);
 const { cartOpen, setCartOpen } = useOutletContext();
+    const [showCartToast, setShowCartToast] = useState(false);
 
 useEffect(() => {
   const updateLimit = () => {
@@ -24,10 +25,25 @@ useEffect(() => {
   return () => window.removeEventListener("resize", updateLimit);
 }, []);
 
- const handleAddToCart = () => {
-   
-    setCartOpen(true); 
-  };
+const isMobile = window.innerWidth < 768;
+
+const handleAddToCart = () => {
+  // add item logic here
+
+  if (window.innerWidth < 768) {
+    setShowCartToast(true); // mobile → show popup
+  } else {
+    setCartOpen(true); // desktop → open overlay
+  }
+};
+
+useEffect(() => {
+  if (!showCartToast) return;
+  const t = setTimeout(() => setShowCartToast(false), 4000);
+  return () => clearTimeout(t);
+}, [showCartToast]);
+
+  
 
     return (
         <div>
@@ -151,9 +167,35 @@ useEffect(() => {
                   
                 </div>
               </div>
+                    {/* MOBILE CART POPUP */}
+
                               </div>
                           ))}
                         </div>
+                                      {showCartToast && (
+                <div className="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+                  <div className="flex items-center justify-between bg-[#A0174A] text-white px-4 py-3 rounded-full shadow-lg">
+              
+                    <div className="flex items-center gap-2 text-sm font-medium">
+                      <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center ">
+                       <FaCheck className="text-black" />
+                      </span>
+                      Item added to your cart
+                    </div>
+              
+                    <button
+                      onClick={() => {
+                        setShowCartToast(false);
+                        setCartOpen(true);
+                      }}
+                      className="bg-black text-white px-5 py-2 rounded-full text-sm font-medium"
+                    >
+                      VIEW CART
+                    </button>
+              
+                  </div>
+                </div>
+              )}
                       </section>
         </div>
     );

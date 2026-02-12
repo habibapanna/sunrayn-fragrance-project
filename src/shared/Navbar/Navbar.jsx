@@ -149,7 +149,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
     ${navPaddingClass} left-0 right-0`}
 >
 
-        <div className="mx-auto px-[16px] 2xl:px-[32px] md:py-[12px] 2xl:py-[14px] flex items-center justify-between text-white ">
+        <div className="mx-auto px-[16px] 2xl:px-[32px] py-[4px] md:py-[14px] flex items-center justify-between text-white ">
 
 {/* LOGO */}
 <a
