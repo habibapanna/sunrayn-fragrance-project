@@ -243,7 +243,7 @@ useEffect(() => {
               value={priceRange[1]}
               onChange={e => setPriceRange([priceRange[0], Number(e.target.value)])}
               className="w-full h-[3px] rounded-full appearance-none"
-              style={{ background: "#DBAB35" }}
+              style={{ background: "#A0174A" }}
             />
 
             <div className="flex justify-between text-sm font-medium">
@@ -353,7 +353,10 @@ useEffect(() => {
 
    {/* Sliding sidebar */}
       <motion.aside
-        className="md:hidden fixed top-0 left-0 z-50 h-full w-full bg-[#F6F7F2]"
+        className="md:hidden fixed left-1/2 top-1/2
+    -translate-x-1/2 -translate-y-1/2
+    w-[92%] max-w-[480px]
+    h-[85vh] rounded-lg overflow-y-auto z-50 bg-[#F6F7F2]"
         variants={mobileSidebarVariants}
         initial="hidden"
         animate="visible"
@@ -385,7 +388,7 @@ useEffect(() => {
               value={priceRange[1]}
               onChange={e => setPriceRange([priceRange[0], Number(e.target.value)])}
               className="w-full h-[3px] rounded-full appearance-none"
-              style={{ background: "#DBAB35" }}
+              style={{ background: "#A0174A" }}
             />
 
             <div className="flex justify-between text-sm font-medium">

@@ -4,6 +4,7 @@ import { LuSearch } from "react-icons/lu";
 import Heart from '../assets/Heart.svg';
 import Family from '../assets/Frame (5).svg';
 import Sort from '../assets/Vector.svg';
+import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
 
 const scentOptions = [
   { label: "Flowery", icon: (<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -196,19 +197,21 @@ const showClearAll =
         <div className="flex justify-center items-center gap-[6px] lg:gap-[12px] ">
 
           {/* Sort & Filter Button */}
-          <button
-            onClick={() => setSidebarOpen((prev) => !prev)}
-            className={`hidden md:flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[12px] py-[6px] 2xl:px-[18px] 2xl:py-[12px] text-[#1D0B01] font-medium text-[12px] 2xl:text-[16px] cursor-pointer
-              ${
+<button
+  onClick={() => setSidebarOpen((prev) => !prev)}
+  className={`
+    hidden md:flex items-center gap-[8px] rounded-full px-[12px] py-[6px] 2xl:px-[18px] 2xl:py-[12px] text-[#1D0B01] font-medium text-[12px] 2xl:text-[16px] cursor-pointer
+    ${
       isSticky
-        ? "fixed md:top-[105px] lg:top-[140px] 2xl:top-[145px] left-0 z-40 md:mx-[16px] 2xl:mx-[32px] border-1 border-black bg-white text-black"
-        : "relative"
+        ? "fixed md:top-[105px] lg:top-[140px] 2xl:top-[146px] left-0 z-40 md:mx-[16px] 2xl:mx-[32px] bg-[#A0174A] text-white"
+        : "relative bg-[#F6F7F2]"
     }
-              `}
-          >
-           <img src={Sort} alt="" />
-            SORT & FILTER
-          </button>
+  `}
+>
+  <HiOutlineAdjustmentsHorizontal className="text-2xl" />
+  SORT & FILTER
+</button>
+
            {/* Sort & Filter Button for mobile*/}
           <button
             onClick={() => setSidebarOpen((prev) => !prev)}
@@ -309,46 +312,6 @@ SORT & FILTER
   </div>
 )}
 
-
-
-          </div>
-
-          {/* Inspired-by Brands */}
-          <div className="relative hidden" ref={brandRef}>
-            <button
-              onClick={() => setOpenBrands(!openBrands)}
-              className="flex items-center gap-[8px] bg-[#F6F7F2] rounded-full px-[12px] 2xl:px-[18px] 2xl:py-[12px] py-[6px] text-[12px] 2xl:text-[16px] cursor-pointer"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path d="M12 6L8 6" stroke="#1D0B01"/>
-  <rect x="4" y="8" width="12" height="11" rx="1" stroke="#1D0B01" stroke-width="1.25"/>
-  <rect x="6" y="11" width="8" height="5" rx="0.15" stroke="#1D0B01" stroke-width="1.25"/>
-  <rect x="8" y="4" width="4" height="4" rx="0.15" stroke="#1D0B01" stroke-width="1.25"/>
-  <rect x="7" y="1" width="6" height="3" rx="0.15" stroke="#1D0B01" stroke-width="1.25"/>
-</svg>
-              Inspired-by Brands 
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path d="M5 9.16699L10 14.167L15 9.16699" stroke="#282828" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-            </button>
-{openBrands && (
-  <div className="absolute top-[55px] left-0 w-[150px] lg:w-[160px] bg-white rounded-[16px] shadow-lg p-[6px] lg:p-[12px] z-40">
-    {renderDropdown(brandOptions, "brand")}
-
-    {showClearAll && (
-    <button
-  onClick={clearAllFilters}
-  className="w-full text-left text-[13px] underline text-[#1D0B01] mt-[10px]"
->
-  Clear all
-  {filters.brand.length > 0 && (
-    <span className="ml-[4px]">({filters.brand.length})</span>
-  )}
-</button>
-
-    )}
-  </div>
-)}
 
 
           </div>
