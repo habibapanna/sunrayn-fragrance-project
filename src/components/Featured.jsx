@@ -85,7 +85,7 @@ useEffect(() => {
             <div className='hidden lg:flex justify-between mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px]'>
             <div className='flex justify-center items-center text-center gap-[20px] 2xl:gap-[32px]'>
                 <div>
-                    <p className='text-[20px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828] pl-[16px]'>Featured Perfumes</p>
+                    <p className='text-[20px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828'>Featured Perfumes</p>
                 </div>
                 <div>
                       <button className="transition-all duration-300 ease-out
