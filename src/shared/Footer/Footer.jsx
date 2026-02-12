@@ -10,7 +10,9 @@ import Paypal from "../../assets/XMLID_1_.svg";
 import SANRAYN from "../../assets/SANRAYN.svg";
 import MasterCard from "../../assets/MasterCard logo.svg";
 import Logo from "../../assets/Logo (1).svg";
-import { ImFacebook2 } from "react-icons/im";
+import { SlSocialFacebook } from "react-icons/sl";
+import { IoLogoInstagram } from "react-icons/io5";
+import { PiTiktokLogo } from "react-icons/pi";
 
 const Footer = () => {
   return (
@@ -110,16 +112,41 @@ const Footer = () => {
   <p className="text-[16px] text-[#220B12B2] order-4 md:order-none md:mb-0">
     ©2026 Sanrayn all right reserved
   </p>
-<div> <ul className="flex flex-col gap-[16px] 2xl:flex-row text-[14px] md:text-[16px] text-[#282828]">
-                   
-                   <li className="text-[14px] lg:text-[16px]">Follow SANRAYN</li>
-                  <li className="hover:underline cursor-pointer">
-                    <div className="flex items-center gap-4 md:gap-2 lg:gap-4 order-2 md:order-none mb-[16px] md:mb-0">
-    <ImFacebook2 className="h-5" />
-    <img src={Instagram} className="h-5" />
-    <img src={Tiktok} className="h-5" />
-  </div></li>
-                </ul></div>
+<div>
+  <ul className="flex flex-col gap-[16px] 2xl:flex-row text-[14px] items-center md:text-[16px] text-[#282828]">
+    
+    <li className="text-[14px] lg:text-[16px]">Follow SANRAYN</li>
+
+    <li>
+      <div className="flex items-center gap-4 md:gap-2 lg:gap-5">
+
+        {/* Facebook */}
+        <span className="border border-[#BA9948] p-2 cursor-pointer 
+                         hover:bg-black hover:text-white 
+                         transition-all duration-500">
+          <SlSocialFacebook className="text-2xl text-[#BA9948]" />
+        </span>
+
+        {/* Instagram */}
+        <span className="border border-[#BA9948] p-2 cursor-pointer 
+                         hover:bg-black hover:text-white 
+                         transition-all duration-500">
+          <IoLogoInstagram className="text-2xl text-[#BA9948]" />
+        </span>
+
+        {/* TikTok */}
+        <span className="border border-[#BA9948] p-2 cursor-pointer 
+                         hover:bg-black hover:text-white 
+                         transition-all duration-500">
+          <PiTiktokLogo className="text-2xl text-[#BA9948]" />
+        </span>
+
+      </div>
+    </li>
+
+  </ul>
+</div>
+
 
   {/* 2. PAYMENTS */}
   <div className="flex items-center gap-[33px] md:gap-[20px] lg:gap-[33px] justify-center order-3 md:order-none">
