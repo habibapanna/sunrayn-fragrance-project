@@ -200,6 +200,10 @@ useEffect(() => {
   return () => clearTimeout(t);
 }, [showCartToast]);
 
+
+
+
+
   return (
     <div className="px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
 

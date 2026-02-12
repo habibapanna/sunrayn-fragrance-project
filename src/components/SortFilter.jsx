@@ -80,13 +80,16 @@ const brandOptions = [
     ];
 const collectionOptions = ["Flowery", "Fresh", "Gourmand", "Herbal", "Earthy", "Warm"];
 
-const SortFilter = ({  sidebarOpen,
+const SortFilter = ({
+  sidebarOpen,
   setSidebarOpen,
   filters,
   toggleFilter,
   searchQuery,
   setSearchQuery,
-clearAllFilters, }) => {
+  clearAllFilters,
+  resultCount
+}) => {
   const [openScent, setOpenScent] = useState(false);
   const [openGender, setOpenGender] = useState(false);
   const [openBrands, setOpenBrands] = useState(false);
@@ -180,19 +183,17 @@ const showClearAll =
 
   return (
     <div>
-      <section
+  <section
   className={`
     w-full pb-[16px] 2xl:pb-[32px]
     transition-all duration-300
     md:static
-    ${
-      isSticky
-        ? "fixed top-[96px] left-0 z-40 pt-[16px] bg-white"
-        : "relative"
-    }
-  
+    ${isSticky
+      ? "fixed top-[96px] left-0 z-40 pt-[16px] bg-white"
+      : "relative"}
   `}
 >
+
 
         <div className="flex justify-center items-center gap-[6px] lg:gap-[12px] ">
 
@@ -316,6 +317,12 @@ SORT & FILTER
 
           </div>
         </div>
+         {/* RESULT COUNT ROW */}
+  <div className="flex justify-end items-center px-[16px] 2xl:px-[32px] mb-[8px]">
+    <p className="text-[12px] md:text-[14px] 2xl:text-[16px] font-medium text-[#1D0B01]">
+      Showing <span className="text-[#A0174A] font-semibold">{resultCount}</span> results
+    </p>
+  </div>
       </section>
     </div>
   );
