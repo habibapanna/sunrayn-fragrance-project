@@ -5,6 +5,8 @@ import { IoArrowUp } from "react-icons/io5";
 
 const ChatWidget = () => {
   const [open, setOpen] = useState(false);
+const [closing, setClosing] = useState(false);
+
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [email, setEmail] = useState("");
   const [input, setInput] = useState("");
@@ -30,11 +32,19 @@ const ChatWidget = () => {
     setInput("");
   };
 
+  const handleClose = () => {
+  setClosing(true);
+  setTimeout(() => {
+    setOpen(false);
+    setClosing(false);
+  }, 300); // animation duration
+};
+
   return (
     <>
       {/* Floating Button */}
       <button
-        onClick={() => setOpen(!open)}
+        onClick={() => (open ? handleClose() : setOpen(true))}
         className="fixed bottom-6 right-6 z-40 bg-[#A0174A] text-white p-4 rounded-full shadow-lg transition cursor-pointer"
       >
         {open ? <FaTimes size={25} /> : <FaCommentDots size={25} />}
@@ -42,10 +52,24 @@ const ChatWidget = () => {
 
       {/* Chat Popup */}
       {open && (
-        <div className="fixed bottom-20 right-4 md:right-6 
-        w-[95%] sm:w-[380px] 
-        h-[550px] bg-white rounded-2xl shadow-2xl 
-        flex flex-col overflow-hidden z-[999]">
+       <div
+  className={`fixed bottom-20 right-4 md:right-6
+  w-[95%] sm:w-[380px]
+  h-[550px] bg-white rounded-2xl shadow-2xl
+  flex flex-col overflow-hidden z-[999]
+  transform transition-all duration-300
+  ${closing ? "opacity-0 translate-y-10 scale-95" : "opacity-100 translate-y-0 scale-100"}`}
+>
+
+<div className="flex items-center justify-between px-4 py-3 border-b border-gray-300 bg-white">
+  <h3 className="font-semibold text-[15px]">Support Chat</h3>
+  <button
+    onClick={handleClose}
+    className="p-2 rounded-full border border-gray-300 hover:bg-black transition-all duration-500 cursor-pointer hover:text-white"
+  >
+    <FaTimes className="" size={16} />
+  </button>
+</div>
 
           {/* EMAIL SECTION */}
           {!emailSubmitted && (
