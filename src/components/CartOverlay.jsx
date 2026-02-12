@@ -1,11 +1,12 @@
 import { X, Minus, Plus } from "lucide-react";
-import { FaStar } from "react-icons/fa";
+import { FaAngleLeft, FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import Truck from '../assets/Frame (8).png';
 import { useEffect, useRef, useState } from "react";
 import { products } from "../data/productsData";
 import { motion, AnimatePresence } from "framer-motion";
 import { RiDeleteBinLine } from "react-icons/ri";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 
 const CartOverlay = ({ onClose }) => {
   const navigate = useNavigate();
@@ -123,15 +124,16 @@ const backdropVariants = {
 <div className="sticky top-0 z-10 bg-white">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-[2px] lg:py-[16px] ">
+    <button className="flex justify-between items-center rounded-[100px] cursor-pointer" onClick={onClose}>
+         <MdKeyboardArrowLeft className="text-xl" /> Go Back
+        </button>
+
         <div className="flex gap-[12px] items-center"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M2.55397 12.661L2.85834 10.9349C3.21807 8.89463 3.39794 7.87456 4.11022 7.27059C4.82251 6.66663 5.8457 6.66663 7.89205 6.66663H12.1132C14.1595 6.66663 15.1827 6.66663 15.895 7.27059C16.6073 7.87456 16.7871 8.89463 17.1469 10.9349L17.4513 12.661C17.949 15.4842 18.1979 16.8958 17.4315 17.8229C16.6651 18.75 15.2492 18.75 12.4175 18.75H7.58769C4.75599 18.75 3.34014 18.75 2.57371 17.8229C1.80729 16.8958 2.05619 15.4842 2.55397 12.661Z" stroke="#050C29" stroke-width="1.25"/>
   <path d="M6.25 6.66663L6.38985 4.98844C6.54632 3.11084 8.11589 1.66663 10 1.66663C11.8841 1.66663 13.4537 3.11084 13.6102 4.98844L13.75 6.66663" stroke="#050C29" stroke-width="1.25"/>
   <path d="M12.5 9.16663C12.3917 10.3442 11.3047 11.25 10 11.25C8.69525 11.25 7.60835 10.3442 7.5 9.16663" stroke="#050C29" stroke-width="1.25" stroke-linecap="round"/>
 </svg>
-        <h2 className="font-medium text-[14px] lg:text-[16px] 2xl:text-[20px]">Your cart (1)</h2></div>
-        <button className="rounded-[100px] p-2 cursor-pointer" onClick={onClose}>
-          <X className="h-[20px] w-[20px]" />
-        </button>
+        <h2 className="font-medium text-[14px] lg:text-[16px] 2xl:text-[20px]">Your cart (1)</h2></div> 
       </div>
               {/* Discount */}
         <div className="mx-[16px] bg-[#EDE8D0] rounded-[20px] py-[8px] px-[16px] group cursor-pointer">
@@ -176,7 +178,7 @@ const backdropVariants = {
     <img
       src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
       alt="Cerisa Aura"
-      className="w-[80px] h-full lg:w-[110px]  object-cover rounded-[16px]"
+      className="w-[140px] h-full lg:w-[120px]  object-cover rounded-[16px]"
     />
     <span className="absolute top-[2px] left-[2px] text-[10px] lg:text-[12px] bg-white px-[8px] py-[2px] rounded-full border border-[#A0174A] text-[#1D0B01]">
       Woman
