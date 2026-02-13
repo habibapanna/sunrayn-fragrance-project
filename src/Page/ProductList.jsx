@@ -581,7 +581,6 @@ const resultCount = filteredProducts.length;
     </div>
      <span className="text-[#1D0B01] text-[12px] md:text-[14px] 2xl:text-[16px]">1239</span>
     </div>
-
     {/* Title + Price Row */}
     <div className="flex justify-between items-center mt-[12px] md:[4px]">
       <h3 className="group-hover:text-[#A0174A] duration-500 text-[12px] transition-colors md:text-[16px] 2xl:text-[20px] font-semibold uppercase">
@@ -598,8 +597,8 @@ const resultCount = filteredProducts.length;
     </div>
 
    <div className="">
-     <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">
-      Alluring cherry and almond fragrance that balances sweetness and depth.
+     <p className=" md:w-[200px] 2xl:w-[300px] text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">
+      Alluring cherry and almond fragrance.
     </p>
    </div>
     <div className="flex justify-between">

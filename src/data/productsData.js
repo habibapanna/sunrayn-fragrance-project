@@ -3121,8 +3121,8 @@ export const products = [
   gender: "UNISEX",
   brand: "Byredo",
 
-  price: 29.4,
-  oldPrice: 40,
+  price: 69.4,
+  oldPrice: 80,
 
   rating: 4.8,
   reviews: 1239,
@@ -4990,8 +4990,8 @@ export const products = [
   gender: "UNISEX",
   brand: "Creed",
 
-  price: 29.4,
-  oldPrice: 40,
+  price: 45.4,
+  oldPrice: 70,
 
   rating: 4.8,
   reviews: 1239,
@@ -5613,8 +5613,8 @@ export const products = [
   gender: "MEN",
   brand: "Dior",
 
-  price: 2734,
-  oldPrice: 30,
+  price: 35.5,
+  oldPrice: 60,
 
   rating: 4.7,
   reviews: 1239,
