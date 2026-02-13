@@ -225,7 +225,64 @@ useEffect(() => {
 
     <div className="p-5 space-y-6 text-[#1D0B01]">
 
-      {/* ================= SORT BY ================= */}
+      {/* ================= PRICE RANGE ================= */}
+      <div className="bg-white rounded-[16px] p-4 space-y-4 mx-[16px]">
+        <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
+          <h3 className="font-medium">Price</h3>
+          <span className={`transition-transform ${openSection.includes("Price") ? "rotate-180" : ""}`}>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </span>
+        </div>
+
+        {openSection.includes("Price") && (
+          <>
+            <input
+              type="range"
+              min={MIN_PRICE}
+              max={MAX_PRICE}
+              value={priceRange[1]}
+              onChange={e => setPriceRange([priceRange[0], Number(e.target.value)])}
+              className="w-full h-[3px] rounded-full appearance-none"
+              style={{ background: "#A0174A" }}
+            />
+
+            <div className="flex justify-between text-sm font-medium">
+              <span>${priceRange[0]}</span>
+              <span>${priceRange[1]}</span>
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* ================= FILTER TITLE ================= */}
+      <h3 className="text-[14px] font-bold uppercase">Filter:</h3>
+
+      {/* ACTIVE TAGS */}
+      <div className="flex flex-wrap gap-2">
+        {Object.entries(filters).map(([key, values]) =>
+          values.map(v => (
+            <span key={`${key}-${v}`} className="flex items-center gap-2 bg-white px-4 py-1 rounded-full text-sm">
+              {v}
+              <button onClick={() => toggleFilter(key, v)}>✕</button>
+            </span>
+          ))
+        )}
+        <button onClick={clearAllFilters} className="ml-auto underline text-sm">
+          Clear all
+        </button>
+      </div>
+
+      {/* ================= FILTER BLOCKS ================= */}
+      <FilterBlock title="Gender" options={["Women", "Men", "Unisex"]} filterKey="gender" />
+      <FilterBlock title="Scent Family" options={["Flowery", "Fresh", "Gourmand", "Herbal", "Earthy", "Warm"]} filterKey="scentFamily" />
+      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
+       <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
+      <FilterBlock title="Scent - Intensity Scale" options={["Subtle", "Significant", "Statement"]} filterKey="intensity" />
+
+            {/* ================= SORT BY ================= */}
       <div className="space-y-2">
         <h3 className="text-[14px] font-bold uppercase">Sort by:</h3>
 
@@ -279,6 +336,72 @@ useEffect(() => {
         </div>
       </div>
 
+    </div>
+  </aside>
+)}
+</AnimatePresence>
+{/* -------------------- MOBILE SIDEBAR -------------------- */}
+<AnimatePresence>
+{sidebarOpen && (
+  <>
+    {/* Overlay */}
+      <motion.div
+        className="md:hidden fixed inset-0 bg-black/40 z-50"
+        variants={overlayVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        onClick={() => setSidebarOpen(false)}
+      />
+
+   {/* Sliding sidebar */}
+      <motion.aside
+        className="md:hidden fixed left-1/2 top-1/2
+    -translate-x-1/2 -translate-y-1/2
+    w-[92%] max-w-[480px]
+    h-[85vh] rounded-lg overflow-y-auto z-50 bg-[#F6F7F2]"
+        variants={mobileSidebarVariants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
+    <div className="p-5 space-y-6 text-[#1D0B01]">
+             {/* Close button */}
+     <div className="flex justify-end ">
+          <button className="cursor-pointer border border-gray-300 p-2 rounded-full h-[30px] w-[30px] hover:bg-black hover:text-white flex items-center justify-center" onClick={() => setSidebarOpen(false)}>✕</button>
+        </div>
+      {/* ================= PRICE RANGE ================= */}
+      <div className="bg-white rounded-[16px] p-4 space-y-4 mx-[16px]">
+        <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
+          <h3 className="font-medium">Price</h3>
+          <span className={`transition-transform ${openSection.includes("Price") ? "rotate-180" : ""}`}>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </span>
+        </div>
+
+        {openSection.includes("Price") && (
+          <>
+            <input
+              type="range"
+              min={MIN_PRICE}
+              max={MAX_PRICE}
+              value={priceRange[1]}
+              onChange={e => setPriceRange([priceRange[0], Number(e.target.value)])}
+              className="w-full h-[3px] rounded-full appearance-none"
+              style={{ background: "#A0174A" }}
+            />
+
+            <div className="flex justify-between text-sm font-medium">
+              <span>${priceRange[0]}</span>
+              <span>${priceRange[1]}</span>
+            </div>
+          </>
+        )}
+      </div>
+
       {/* ================= FILTER TITLE ================= */}
       <h3 className="text-[14px] font-bold uppercase">Filter:</h3>
 
@@ -304,70 +427,8 @@ useEffect(() => {
        <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
       <FilterBlock title="Scent - Intensity Scale" options={["Subtle", "Significant", "Statement"]} filterKey="intensity" />
 
-      {/* ================= PRICE RANGE ================= */}
-      <div className="bg-white rounded-[16px] p-4 space-y-4 mx-[16px]">
-        <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
-          <h3 className="font-medium">Price</h3>
-          <span className={`transition-transform ${openSection.includes("Price") ? "rotate-180" : ""}`}>
-
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </span>
-        </div>
-
-        {openSection.includes("Price") && (
-          <>
-            <input
-              type="range"
-              min={MIN_PRICE}
-              max={MAX_PRICE}
-              value={priceRange[1]}
-              onChange={e => setPriceRange([priceRange[0], Number(e.target.value)])}
-              className="w-full h-[3px] rounded-full appearance-none"
-              style={{ background: "#DBAB35" }}
-            />
-
-            <div className="flex justify-between text-sm font-medium">
-              <span>${priceRange[0]}</span>
-              <span>${priceRange[1]}</span>
-            </div>
-          </>
-        )}
-      </div>
-
-    </div>
-  </aside>
-)}
-</AnimatePresence>
-{/* -------------------- MOBILE SIDEBAR -------------------- */}
-<AnimatePresence>
-{sidebarOpen && (
-  <>
-    {/* Overlay */}
-      <motion.div
-        className="md:hidden fixed inset-0 bg-black/40 z-50"
-        variants={overlayVariants}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-        onClick={() => setSidebarOpen(false)}
-      />
-
-   {/* Sliding sidebar */}
-      <motion.aside
-        className="md:hidden fixed top-0 left-0 z-50 h-full w-full bg-[#F6F7F2]"
-        variants={mobileSidebarVariants}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-      >
-      <div className="p-6 space-y-6 overflow-y-auto h-full">
-        {/* Close button */}
-        <div className="flex justify-end ">
-          <button className="cursor-pointer" onClick={() => setSidebarOpen(false)}>✕</button>
-        </div>
-<div className="space-y-2">
+            {/* ================= SORT BY ================= */}
+      <div className="space-y-2">
         <h3 className="text-[14px] font-bold uppercase">Sort by:</h3>
 
         <div
@@ -394,11 +455,9 @@ useEffect(() => {
               </svg>
             </span>
           </div>
-          
 
           {openSection.includes("Sort") && (
-  <div className="mt-4 space-y-3">
-
+            <div className="mt-4 space-y-3">
               {[
                 { label: "Relevance (Default)", value: "relevance" },
                 { label: "Price - high to low", value: "price-high" },
@@ -421,63 +480,8 @@ useEffect(() => {
           )}
         </div>
       </div>
-      {/* ================= FILTER TITLE ================= */}
-      <h3 className="text-[14px] font-bold uppercase">Filter:</h3>
 
-      {/* ACTIVE TAGS */}
-      <div className="flex flex-wrap gap-2">
-        {Object.entries(filters).map(([key, values]) =>
-          values.map(v => (
-            <span key={`${key}-${v}`} className="flex items-center gap-2 bg-white px-4 py-1 rounded-full text-sm">
-              {v}
-              <button onClick={() => toggleFilter(key, v)}>✕</button>
-            </span>
-          ))
-        )}
-        <button onClick={clearAllFilters} className="ml-auto underline text-sm">
-          Clear all
-        </button>
-      </div>
-        {/* Filter blocks (reuse your FilterBlock component) */}
-        <FilterBlock title="Gender" options={["Women", "Men", "Unisex"]} filterKey="gender" />
-        <FilterBlock title="Connection" options={["Standard and Balanced", "Rich and Extreme"]} filterKey="connection" />
-      <FilterBlock title="Perfume Volume" options={["15ML", "30ML", "60ML"]} filterKey="volume" />
-        <FilterBlock title="Scent Family" options={["Flowery","Fresh","Gourmand","Herbal","Earthy","Warm"]} filterKey="scentFamily" />
-        <FilterBlock title="Scent - Intensity Scale" options={["Subtle","Significant","Statement"]} filterKey="intensity" />
-
-        {/* ================= PRICE RANGE ================= */}
-      <div className="bg-white mx-[16px] rounded-[16px] p-4 space-y-4">
-        <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
-          <h3 className="font-medium">Price</h3>
-          <span className={`transition-transform ${openSection.includes("Price") ? "rotate-180" : ""}`}>
-
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M15 10.833L10 5.83301L5 10.833" stroke="#282828" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </span>
-        </div>
-
-        {openSection.includes("Price") && (
-
-          <>
-            <input
-              type="range"
-              min={MIN_PRICE}
-              max={MAX_PRICE}
-              value={priceRange[1]}
-              onChange={e => setPriceRange([priceRange[0], Number(e.target.value)])}
-              className="w-full h-[3px] rounded-full appearance-none"
-              style={{ background: "#DBAB35" }}
-            />
-
-            <div className="flex justify-between text-sm font-medium">
-              <span>${priceRange[0]}</span>
-              <span>${priceRange[1]}</span>
-            </div>
-          </>
-        )}
-      </div>
-      </div>
+    </div>
     </motion.aside>
   </>
 )}
@@ -554,7 +558,7 @@ useEffect(() => {
   }}
       className="w-full bg-white/80 text-black cursor-pointer
       rounded-full py-2 font-medium
-      hover:bg-[#A0174A] hover:text-white
+      hover:bg-[#BA9948] hover:text-white
       border border-[#A0174A] hover:border-none transition-all ease-in-out duration-500 md:text-[15px] 2xl:text-[18px]"
     >
       Add to cart
@@ -574,7 +578,6 @@ useEffect(() => {
     </div>
      <span className="text-[#1D0B01] text-[12px] md:text-[14px] 2xl:text-[16px]">1239</span>
     </div>
-
     {/* Title + Price Row */}
     <div className="flex justify-between items-center mt-[12px] md:[4px]">
       <h3 className="group-hover:text-[#A0174A] duration-500 text-[12px] transition-colors md:text-[16px] 2xl:text-[20px] font-semibold uppercase">
@@ -591,8 +594,8 @@ useEffect(() => {
     </div>
 
    <div className="">
-     <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">
-      Alluring cherry and almond fragrance that balances sweetness and depth.
+     <p className=" md:w-[200px] 2xl:w-[300px] text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">
+      Alluring cherry and almond fragrance.
     </p>
    </div>
     <div className="flex justify-between">
@@ -607,8 +610,8 @@ useEffect(() => {
     handleAddToCart(item);
   }}
     className="px-[24px] py-[10px] text-[12px]
-    rounded-full border border-[#571313]
-    text-[#A0174A] hover:bg-[#571313]
+    rounded-full border border-[#A0174A]
+    text-[#A0174A] hover:bg-[#BA9948] hover:border-none
     hover:text-white transition w-full cursor-pointer duration-500"
   >
     Add to cart
