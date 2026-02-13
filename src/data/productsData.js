@@ -1249,7 +1249,7 @@ export const products = [
   slug: "Muskey Green Tea",
   title: "Muskey Green Tea",
   subtitle: "Inspired By Signature Ambery Cherry Indulgence",
-  gender: "UNISEX",
+  gender: "MEN",
   brand: "Byredo",
 
   price: 29.4,

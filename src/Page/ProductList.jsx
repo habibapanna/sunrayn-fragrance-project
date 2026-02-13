@@ -527,9 +527,20 @@ const resultCount = filteredProducts.length;
 
  {/* Tags */}
   <div className="absolute top-[8px] left-[8px] md:top-[16px] md:left-[16px] z-10">
-    <span className="bg-white/90 text-[8px] md:text-[10px] 2xl:text-[12px] px-[8px] py-[2px] rounded-full border text-[#A0174A] border-[#A0174A]">
-      {item.gender}
-    </span>
+   <span
+    className={`text-[8px] md:text-[10px] 2xl:text-[12px] px-[8px] py-[2px] rounded-full border flex items-center justify-center
+      ${
+        item.gender === "WOMEN"
+          ? "bg-white/90 text-[#A0174A] border-[#A0174A]"
+          : item.gender === "MEN"
+          ? "bg-white/90 text-[#1D0B01] border-black"
+          : item.gender === "UNISEX"
+          ? "bg-white/90 text-[#BA9948] border-[#BA9948]"
+          : "bg-white/90 text-[#A0174A] border-[#A0174A]" // fallback
+      }`}
+  >
+    {item.gender}
+  </span>
   </div>
   <div className="absolute hidden md:block top-[16px] right-[16px] z-10">
     <span className="bg-white/90 text-[8px] md:text-[10px] 2xl:text-[12px] px-[8px] py-[2px] rounded-full uppercase text-[#A0174A]">
