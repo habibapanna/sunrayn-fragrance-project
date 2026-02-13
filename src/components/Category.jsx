@@ -80,6 +80,7 @@ const cardVariant = {
             </h3>
 
             {/* EXPANDING BUTTON */}
+            <Link to='productList'>
             <button
               className="
                 absolute bottom-6 right-6 z-20 h-[40px] w-[40px]
@@ -108,7 +109,7 @@ const cardVariant = {
               >
                 Shop {item.title}
               </span>
-            </button>
+            </button></Link>
          </div>
         ))}
       </div>
