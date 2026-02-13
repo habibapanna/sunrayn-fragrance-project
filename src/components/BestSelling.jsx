@@ -89,7 +89,7 @@ useEffect(() => {
             Best Selling Perfumes
           </p>
            <button className="transition-all duration-300 ease-out
-    hover:bg-[#BA9948] hover:text-white border border-[#A0174A] hover:border-none text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center">
+    hover:bg-[#BA9948] hover:text-white border border-[#BA9948] hover:border-none text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center">
                       <Link to="/productList">View All</Link>
                     </button>
         </div>
@@ -100,13 +100,13 @@ useEffect(() => {
             onClick={prev}
             className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer"
           >
-            <GoChevronLeft className="text-[35px] text-[#A0174A]" />
+            <GoChevronLeft className="text-[35px]" />
           </button>
           <button
             onClick={next}
             className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer"
           >
-            <GoChevronRight className="text-[35px] text-[#A0174A]" />
+            <GoChevronRight className="text-[35px]" />
           </button>
         </div>
       </div>
@@ -240,13 +240,13 @@ useEffect(() => {
               onClick={prev}
               className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center"
             >
-              <GoChevronLeft className="text-[28px] text-[#A0174A]" />
+              <GoChevronLeft className="text-[28px]" />
             </button>
             <button
               onClick={next}
               className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center"
             >
-              <GoChevronRight className="text-[28px] text-[#A0174A]" />
+              <GoChevronRight className="text-[28px]" />
             </button>
           </div>
       </section>

@@ -54,7 +54,7 @@ const RecentPost = () => {
         Instagram
         </h2>
         <div className="flex items-center gap-[24px]">
-          <button className="bg-[#F5F1EA] text-[#A0174A] font-semibold px-6 py-3 rounded-full flex items-center text-[14px] lg:text-[16px] 2xl:text-[20px] cursor-pointer">
+          <button className="bg-[#F5F1EA] text-[#571313] font-semibold px-6 py-3 rounded-full flex items-center text-[14px] lg:text-[16px] 2xl:text-[20px] cursor-pointer">
             <img src={Instagram} alt="" className="mr-[8px] h-[15px] lg:h-[30px]" />@Sanrayn
           </button>
           {/* Nav buttons */}
@@ -63,13 +63,13 @@ const RecentPost = () => {
               onClick={prev}
               className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer"
             >
-              <GoChevronLeft className="text-2xl md:text-3xl text-[#A0174A]" />
+              <GoChevronLeft className="text-2xl md:text-3xl" />
             </button>
             <button
               onClick={next}
               className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer"
             >
-              <GoChevronRight className="text-2xl md:text-3xl text-[#A0174A]" />
+              <GoChevronRight className="text-2xl md:text-3xl" />
             </button>
           </div>
         </div>
@@ -115,10 +115,10 @@ const RecentPost = () => {
       {/* MOBILE ARROWS */}
       <div className="flex lg:hidden justify-center gap-5 py-[16px]">
         <button className="recent-prev w-[40px] h-[40px] rounded-full bg-[#F5F1EA] flex items-center justify-center">
-          <GoChevronLeft className="text-[28px] text-[#A0174A]" />
+          <GoChevronLeft className="text-[28px]" />
         </button>
         <button className="recent-next w-[40px] h-[40px] rounded-full bg-[#F5F1EA] flex items-center justify-center">
-          <GoChevronRight className="text-[28px] text-[#A0174A]" />
+          <GoChevronRight className="text-[28px]" />
         </button>
       </div>
 

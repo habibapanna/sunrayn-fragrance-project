@@ -97,7 +97,7 @@ const buttonVariants = {
             </p>
 
             <Link to='productList'><button className=" transition-all duration-300 ease-out
-    bg-[#BA9948] text-white hover:bg-white backdrop-blur-md border hover:border-[#A0174A] hover:text-[#1D0B01] px-5 py-2 md:px-6 md:py-3 rounded-full text-[14px] lg:text-[18px] 2xl:text-[20px] font-bold lg:w-[210px] w-[116px] h-[40px] lg:h-[55px] cursor-pointer mt-5 2xl:my-12 flex items-center justify-center">
+    bg-[#BA9948] text-white hover:bg-white backdrop-blur-md hover:text-[#1D0B01] px-5 py-2 md:px-6 md:py-3 rounded-full text-[14px] lg:text-[18px] 2xl:text-[20px] font-bold lg:w-[210px] w-[116px] h-[40px] lg:h-[55px] cursor-pointer mt-5 2xl:my-12 flex items-center justify-center">
               Shop Now
             </button></Link>
           </div>

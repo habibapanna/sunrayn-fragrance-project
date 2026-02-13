@@ -80,13 +80,13 @@ const Testimonials = () => {
             onClick={prev}
             className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
           >
-            <GoChevronLeft className="text-[35px] text-[#A0174A]" />
+            <GoChevronLeft className="text-[35px]" />
           </button>
           <button
             onClick={next}
             className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
           >
-            <GoChevronRight className="text-[35px] text-[#A0174A]" />
+            <GoChevronRight className="text-[35px]" />
           </button>
         </div>
       </div>
@@ -132,7 +132,7 @@ const Testimonials = () => {
                   </div>
 
                   {/* TITLE */}
-                  <h3 className="text-[#A0174A] text-[25px] lg:text-[28px] 2xl:text-[35px] font-semibold mb-[20px] md:mb-[32px]">
+                  <h3 className="text-[#571313] text-[25px] lg:text-[28px] 2xl:text-[35px] font-semibold mb-[20px] md:mb-[32px]">
                     {item.title}
                   </h3>
 
@@ -176,13 +176,13 @@ const Testimonials = () => {
             onClick={prev}
             className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
           >
-            <GoChevronLeft className="text-[28px] text-[#A0174A]" />
+            <GoChevronLeft className="text-[28px]" />
           </button>
           <button
             onClick={next}
             className="w-[40px] h-[40px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center"
           >
-            <GoChevronRight className="text-[28px] text-[#A0174A]" />
+            <GoChevronRight className="text-[28px]" />
           </button>
         </div>
       </section>

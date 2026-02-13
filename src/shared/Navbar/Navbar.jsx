@@ -55,6 +55,7 @@ const isProductDetails = location.pathname.startsWith("/productList/");
     return () =>
       document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+  
 
   const navigate = useNavigate();
 
@@ -177,32 +178,37 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
             <div className="hidden md:flex items-center gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] 2xl:mr-16 lg:w-[475px] h-[30px] lg:h-[40px] 2xl:w-[550px] 2xl:h-[50px]">
 
             {/* Perfume */}
-<div
-  ref={menuRef}
-  className="relative"
-  onMouseEnter={() => setOpenMegaMenu("perfume")}
-  onMouseLeave={() => setOpenMegaMenu(null)}
->
-  <button
-    onClick={() =>
-      setOpenMegaMenu(openMegaMenu === "perfume" ? null : "perfume")
-    }
-    className="flex items-center gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] cursor-pointer uppercase hover:text-[#A0174A]"
-  >
-    Perfumes
-    <LiaAngleDownSolid
-      className={`h-[12px] w-[12px] lg:h-[18px] lg:w-[18px] transition-transform duration-500 ${
-        openMegaMenu === "perfume" ? "rotate-180" : ""
-      }`}
-    />
-  </button>
+               <div className="relative">
+ <div
+        onMouseEnter={() => setOpenMegaMenu("perfume")}
+        className="relative"
+      >
+<button
+          onClick={() =>
+            setOpenMegaMenu(
+              openMegaMenu === "perfume" ? null : "perfume"
+            )
+          }
+          className="flex items-center gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] cursor-pointer uppercase hover:text-[#A0174A]"
+        >
+          Perfumes
+          <LiaAngleDownSolid
+            className={`h-[12px] w-[12px] lg:h-[18px] lg:w-[18px] transition-transform duration-500 ${
+              openMegaMenu === "perfume" ? "rotate-180" : ""
+            }`}
+          />
+        </button>
 
   {/* PERFUME MEGA MENU */}
   {openMegaMenu === "perfume" && (
-    <div className="absolute top-[60px] right-0 z-50">
-         <div className="fixed top-[60px] right-[220px] lg:top-[90px] lg:right-[350px] 2xl:right-[850px] z-50">
+          <div
+            onMouseEnter={() => setOpenMegaMenu("perfume")}
+            onMouseLeave={() => setOpenMegaMenu(null)}
+            className="absolute top-[60px] right-0 z-50"
+          >
+         <div className="fixed top-[60px] right-[250px] lg:top-[90px] lg:right-[350px] 2xl:right-[850px] z-50">
 
-      <div className="relative bg-white rounded-[24px] shadow-xl px-[30px] py-[20px] lg:px-[40px] lg:py-[32px] flex gap-[40px] lg:gap-[74px]">
+      <div className="relative bg-white rounded-[16px] shadow-xl px-[30px] py-[20px] lg:px-[40px] lg:py-[32px] flex gap-[40px] lg:gap-[74px]">
 
         {/* ARROW TIP */}
         <span className="absolute md:right-[240px] -top-[10px] lg:right-[300px] w-5 h-5 bg-white rotate-45" />
@@ -231,8 +237,6 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
             <li className="hover:text-[#A0174A]"><Link to='/productList'>Fresh</Link></li>
             <li className="hover:text-[#A0174A]"><Link to='/productList'>Earthy</Link></li>
             <li className="hover:text-[#A0174A]"><Link to='/productList'>Herbal</Link></li>
-            <li className="hover:text-[#A0174A]">Fresh</li>
-            <li className="hover:text-[#A0174A]">Earthy</li>
           </ul>
         </div>
 
@@ -253,9 +257,10 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
     </div>
   )}
 </div>
+</div>
 
 {/* Collection */}
-<div ref={menuRef} className="relative">
+<div className="relative">
 <div
         onMouseEnter={() => setOpenMegaMenu("collection")}
         className="relative"
@@ -284,9 +289,9 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
             className="absolute top-[60px] right-0 z-50"
           >
         {/* MEGA MENU */}
-    <div className="fixed top-[60px] right-[120px] lg:top-[90px] lg:right-[230px] 2xl:right-[700px] z-50">
+    <div className="fixed top-[60px] right-[150px] lg:top-[90px] lg:right-[230px] 2xl:right-[700px] z-50">
 
-      <div className="relative bg-white rounded-[24px] shadow-xl px-[30px] py-[20px] lg:px-[40px] lg:py-[32px] flex gap-[40px] lg:gap-[74px]">
+      <div className="relative bg-white rounded-[16px] shadow-xl px-[30px] py-[20px] lg:px-[40px] lg:py-[32px] flex gap-[40px] lg:gap-[74px]">
 
         {/* ARROW TIP */}
         <span className="absolute -top-[10px] right-[250px] lg:right-[300px] w-5 h-5 bg-white rotate-45" />
@@ -323,7 +328,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 </div>
 
 {/* About */}
-<div ref={menuRef} className="relative">
+<div className="relative">
   <div
     onMouseEnter={() => setOpenMegaMenu("about")}
     className="relative"
@@ -365,8 +370,8 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
           </h4>
           <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]">
             <li className="cursor-pointer hover:text-[#A0174A]"><Link to='/about'>About Us</Link></li>
-            <li className="cursor-pointer hover:text-[#A0174A]"><Link to='/contact'>Contact Us</Link></li>
             <li className="cursor-pointer hover:text-[#A0174A]"><Link to='/faq'>FAQ</Link></li>
+             <li className="cursor-pointer hover:text-[#A0174A]"><Link to='/contact'>Contact Us</Link></li>
           </ul>
         </div>
 

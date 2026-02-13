@@ -36,6 +36,18 @@ const BLogPage = () => {
             <p className="text-[#282828] text-[15px] lg:text-[18px]">
               Luxury fragrance has long been associated with artistry, emotion, and identity. In recent years, a new movement has emerged within the perfume world halal luxury fragrances.
             </p>
+            
+            <button
+            
+                className="hover:bg-white mt-[16px] 2xl:mt-[32px] px-[24px] py-[10px]
+                rounded-[100px] h-[30px] w-[150px] md:h-[40px] md:w-[200px] md:font-semibold md:text-[16px]
+                lg:w-[210px] lg:h-[55px]
+                text-[14px] lg:text-[20px]
+                2xl:font-bold transition-all duration-300 ease-out
+                bg-[#BA9948] text-white hover:text-[#1D0B01] flex items-center justify-center cursor-pointer "
+              >
+                Continue Read
+              </button>
           </div>
         </div>
       </section>

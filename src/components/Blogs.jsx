@@ -22,7 +22,7 @@ const Blogs = () => {
           <Link
             to="/blogs"
             className="transition-all duration-300 ease-out
-    hover:bg-[#BA9948] hover:text-white border border-[#A0174A] hover:border-none text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center"
+    hover:bg-[#BA9948] hover:text-white border border-[#BA9948] hover:border-none text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center"
           >
             Read All
           </Link>
@@ -31,10 +31,10 @@ const Blogs = () => {
         {/* DESKTOP ARROWS */}
         <div className="flex gap-5">
           <button className="blog-prev w-[55px] h-[55px] rounded-full bg-[#F5F1EA] flex items-center justify-center cursor-pointer">
-            <GoChevronLeft className="text-[35px] text-[#A0174A]" />
+            <GoChevronLeft className="text-[35px]" />
           </button>
           <button className="blog-next w-[55px] h-[55px] rounded-full bg-[#F5F1EA] flex items-center justify-center cursor-pointer">
-            <GoChevronRight className="text-[35px] text-[#A0174A]" />
+            <GoChevronRight className="text-[35px]" />
           </button>
         </div>
 
@@ -46,7 +46,7 @@ const Blogs = () => {
 
           <Link
             to="/blogs"
-            className="hover:bg-[#BA9948] hover:text-white border border-[#A0174A] hover:border-none text-[#1D0B01] px-[24px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[105px] h-[30px]
+            className="hover:bg-[#BA9948] hover:text-white border border-[#BA9948] hover:border-none text-[#1D0B01] px-[24px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[105px] h-[30px]
             "
           >
             Read All
@@ -99,10 +99,10 @@ const Blogs = () => {
       {/* MOBILE ARROWS */}
       <div className="flex lg:hidden justify-center gap-5 mt-[16px]">
         <button className="blog-prev w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center">
-          <GoChevronLeft className="text-[28px] text-[#A0174A]" />
+          <GoChevronLeft className="text-[28px]" />
         </button>
         <button className="blog-next w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center">
-          <GoChevronRight className="text-[28px] text-[#A0174A]" />
+          <GoChevronRight className="text-[28px]" />
         </button>
       </div>
     </div>
