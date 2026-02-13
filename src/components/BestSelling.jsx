@@ -100,13 +100,13 @@ useEffect(() => {
             onClick={prev}
             className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer"
           >
-            <GoChevronLeft className="text-[35px]" />
+            <GoChevronLeft className="text-[35px] text-[#A0174A]" />
           </button>
           <button
             onClick={next}
             className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer"
           >
-            <GoChevronRight className="text-[35px]" />
+            <GoChevronRight className="text-[35px] text-[#A0174A]" />
           </button>
         </div>
       </div>
@@ -240,13 +240,13 @@ useEffect(() => {
               onClick={prev}
               className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center"
             >
-              <GoChevronLeft className="text-[28px]" />
+              <GoChevronLeft className="text-[28px] text-[#A0174A]" />
             </button>
             <button
               onClick={next}
               className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center"
             >
-              <GoChevronRight className="text-[28px]" />
+              <GoChevronRight className="text-[28px] text-[#A0174A]" />
             </button>
           </div>
       </section>

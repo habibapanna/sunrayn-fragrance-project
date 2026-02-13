@@ -63,13 +63,13 @@ const RecentPost = () => {
               onClick={prev}
               className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer"
             >
-              <GoChevronLeft className="text-2xl md:text-3xl" />
+              <GoChevronLeft className="text-2xl md:text-3xl text-[#A0174A]" />
             </button>
             <button
               onClick={next}
               className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer"
             >
-              <GoChevronRight className="text-2xl md:text-3xl" />
+              <GoChevronRight className="text-2xl md:text-3xl text-[#A0174A]" />
             </button>
           </div>
         </div>
@@ -115,10 +115,10 @@ const RecentPost = () => {
       {/* MOBILE ARROWS */}
       <div className="flex lg:hidden justify-center gap-5 py-[16px]">
         <button className="recent-prev w-[40px] h-[40px] rounded-full bg-[#F5F1EA] flex items-center justify-center">
-          <GoChevronLeft className="text-[28px]" />
+          <GoChevronLeft className="text-[28px] text-[#A0174A]" />
         </button>
         <button className="recent-next w-[40px] h-[40px] rounded-full bg-[#F5F1EA] flex items-center justify-center">
-          <GoChevronRight className="text-[28px]" />
+          <GoChevronRight className="text-[28px] text-[#A0174A]" />
         </button>
       </div>
 

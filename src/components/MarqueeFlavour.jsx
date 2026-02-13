@@ -1,21 +1,12 @@
 import Marquee from "react-fast-marquee";
+import { products } from "../data/productsData";
 
-const flavour = [
-  { title: "Vanilla Perfume" },
-  { title: "Oud Perfume" },
-  { title: "Lavender Perfume" },
-  { title: "Amber Perfume" },
-  { title: "Musk Perfume" },
-  { title: "Gardenia Perfume" },
-  { title: "Rose Perfume" },
-  { title: "Jasmine Perfume" },
-];
 
 const MarqueeFlavour = () => {
     return (
          <section className="pt-[16px] 2xl:pt-[32px] pb-[16px] 2xl:pb-[32px]">
       <Marquee speed={20} gradient={false} pauseOnHover>
-        {flavour.map((item, index) => (
+        {products.map((item, index) => (
           <button
             key={index}
             className="bg-[#F5F1EA] text-[#571313] px-8 py-3 rounded-full

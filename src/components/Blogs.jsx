@@ -31,10 +31,10 @@ const Blogs = () => {
         {/* DESKTOP ARROWS */}
         <div className="flex gap-5">
           <button className="blog-prev w-[55px] h-[55px] rounded-full bg-[#F5F1EA] flex items-center justify-center cursor-pointer">
-            <GoChevronLeft className="text-[35px]" />
+            <GoChevronLeft className="text-[35px] text-[#A0174A]" />
           </button>
           <button className="blog-next w-[55px] h-[55px] rounded-full bg-[#F5F1EA] flex items-center justify-center cursor-pointer">
-            <GoChevronRight className="text-[35px]" />
+            <GoChevronRight className="text-[35px] text-[#A0174A]" />
           </button>
         </div>
 
@@ -99,10 +99,10 @@ const Blogs = () => {
       {/* MOBILE ARROWS */}
       <div className="flex lg:hidden justify-center gap-5 mt-[16px]">
         <button className="blog-prev w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center">
-          <GoChevronLeft className="text-[28px]" />
+          <GoChevronLeft className="text-[28px] text-[#A0174A]" />
         </button>
         <button className="blog-next w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center">
-          <GoChevronRight className="text-[28px]" />
+          <GoChevronRight className="text-[28px] text-[#A0174A]" />
         </button>
       </div>
     </div>

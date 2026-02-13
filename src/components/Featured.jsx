@@ -96,10 +96,10 @@ useEffect(() => {
             </div>
             <div className='hidden lg:flex gap-5 '>
                 <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">
-                              <GoChevronLeft  onClick={prev}  className='text-[35px] ' />
+                              <GoChevronLeft  onClick={prev}  className='text-[35px] text-[#A0174A]' />
                             </button>
                 <button className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer">
-                              <GoChevronRight onClick={next} className='text-[35px]' />
+                              <GoChevronRight onClick={next} className='text-[35px] text-[#A0174A]' />
                             </button>
             </div>
 
@@ -234,13 +234,13 @@ useEffect(() => {
               onClick={prev}
               className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center"
             >
-              <GoChevronLeft className="text-[28px]" />
+              <GoChevronLeft className="text-[28px] text-[#A0174A]" />
             </button>
             <button
               onClick={next}
               className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center"
             >
-              <GoChevronRight className="text-[28px]" />
+              <GoChevronRight className="text-[28px] text-[#A0174A]" />
             </button>
           </div>
       </section>
