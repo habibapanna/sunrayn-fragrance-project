@@ -201,6 +201,7 @@ useEffect(() => {
 }, [showCartToast]);
 
 
+const resultCount = filteredProducts.length;
 
 
 
@@ -216,6 +217,7 @@ useEffect(() => {
   searchQuery={searchQuery}
   setSearchQuery={setSearchQuery}
   clearAllFilters={clearAllFilters}
+  resultCount={resultCount}
 />
       <div className="relative flex gap-[16px] 2xl:gap-[32px]">
 

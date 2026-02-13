@@ -185,11 +185,11 @@ const showClearAll =
     <div>
   <section
   className={`
-    w-full pb-[16px] 2xl:pb-[32px]
+    w-full
     transition-all duration-300
     md:static
     ${isSticky
-      ? "fixed top-[96px] left-0 z-40 pt-[16px] bg-white"
+      ? "fixed top-[105px] left-0 z-40 py-[16px] bg-white"
       : "relative"}
   `}
 >
@@ -317,13 +317,18 @@ SORT & FILTER
 
           </div>
         </div>
-         {/* RESULT COUNT ROW */}
-  <div className="flex justify-end items-center px-[16px] 2xl:px-[32px] mb-[8px]">
-    <p className="text-[12px] md:text-[14px] 2xl:text-[16px] font-medium text-[#1D0B01]">
-      Showing <span className="text-[#A0174A] font-semibold">{resultCount}</span> results
-    </p>
-  </div>
       </section>
+               {/* RESULT COUNT ROW */}
+         <div className="md:flex md:justify-between items-center my-[16px] 2xl:my-[32px]">
+           <div className="">
+            <p className="text-[12px] md:text-[14px] 2xl:text-[18px] font-medium text-[#1D0B01]">Explore <span className="text-[#A0174A] font-semibold">100+ </span> designer-inspired Impressions perfumes, developed in <span className="text-[#A0174A] font-semibold">USA</span>.</p>
+         </div>
+<div className="">
+  <p className="text-[12px] md:text-[14px] 2xl:text-[18px] font-medium text-[#1D0B01]">
+   <span className="text-[#A0174A] font-semibold">{resultCount}</span> Products
+  </p>
+</div>
+         </div>
     </div>
   );
 };

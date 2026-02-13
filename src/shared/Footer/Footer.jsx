@@ -50,7 +50,7 @@ const Footer = () => {
             <div className="flex flex-wrap justify-between gap-[32px] mt-[40px] 2xl:mt-[57px]">
               {/* SHOP */}
               <div className="text-left">
-                <p className="text-[#A0174A] mb-4 text-[25px]">SANRAYN Collections</p>
+                <p className="text-[#571313] mb-4 text-[25px]">SANRAYN Collections</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
                   <li className="hover:underline cursor-pointer"><Link to='/holidayOffer'>Holiday Sale</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='/productList'>New Arrivals</Link></li>
@@ -60,7 +60,7 @@ const Footer = () => {
               </div>
               {/* About */}
               <div className="text-left">
-                <p className="text-[#A0174A] mb-4 text-[25px]">About Us</p>
+                <p className="text-[#571313] mb-4 text-[25px]">About Us</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
                    <li className="hover:underline cursor-pointer"><Link to='blogs'>Blogs</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='/faq'>FAQs</Link></li>
@@ -70,7 +70,7 @@ const Footer = () => {
               </div>
               {/* Care Support */}
               <div className="text-left">
-                <p className="text-[#A0174A] mb-4 text-[25px]">Care & Support</p>
+                <p className="text-[#571313] mb-4 text-[25px]">Care & Support</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
                   <li className="hover:underline cursor-pointer">Support@sanrayn.com</li>
                   <li className="hidden  hover:underline cursor-pointer"><Link to='terms'>Terms of Services</Link></li>
