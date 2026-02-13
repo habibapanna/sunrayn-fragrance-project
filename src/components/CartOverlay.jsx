@@ -180,7 +180,7 @@ const backdropVariants = {
 
           <div className="border border-white mt-[8px] lg:mt-[16px]"></div>
 
-          <div className="hidden lg:flex items-center gap-2 text-[14px] lg:text-[18px] mt-[8px] lg:mt-[16px] text-[#A0174A] transition-all duration-500">
+          <div className="flex items-center gap-2 text-[14px] lg:text-[18px] mt-[8px] lg:mt-[16px] text-[#A0174A] transition-all duration-500">
 
             <img src={Truck} alt="" className="h-[24px] w-[24px]" /> FREE shipping on 3+ items
           </div>
@@ -244,7 +244,7 @@ const backdropVariants = {
       </div>
 
       {/* Delete */}
-      <RiDeleteBinLine className="text-[22px] lg:text-[26px] text-[#571313] cursor-pointer hover:text-red-600 transition-all duration-500" />
+      <RiDeleteBinLine className="text-[22px] lg:text-[26px] text-[#A0174A] cursor-pointer hover:text-red-600 transition-all duration-500" />
 
     </div>
 

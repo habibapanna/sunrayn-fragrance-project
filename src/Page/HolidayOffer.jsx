@@ -608,7 +608,7 @@ useEffect(() => {
   }}
     className="px-[24px] py-[10px] text-[12px]
     rounded-full border border-[#571313]
-    text-[#571313] hover:bg-[#571313]
+    text-[#A0174A] hover:bg-[#571313]
     hover:text-white transition w-full cursor-pointer duration-500"
   >
     Add to cart

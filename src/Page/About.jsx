@@ -170,7 +170,7 @@ const About = () => {
 
     {/* TEXT */}
     <div className="bg-[#FAFAF7] rounded-[16px]  p-[32px] 2xl:px-[48px] flex flex-col gap-[24px] justify-center ">
-      <h2 className="text-[#571313] mb-4 text-[30px] lg:text-[40px] 2xl:text-[50px] leading-tight 2xl:w-[500px] mx-auto">
+      <h2 className="text-[#A0174A] mb-4 text-[30px] lg:text-[40px] 2xl:text-[50px] leading-tight 2xl:w-[500px] mx-auto">
         A New Standard for Thoughtful Luxury.
       </h2>
 

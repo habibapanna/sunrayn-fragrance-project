@@ -85,7 +85,7 @@ const RouteLoader = () => {
 
             {/* Brand */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-              <p className="text-[11px] tracking-[0.3em] text-[#571313]">
+              <p className="text-[11px] tracking-[0.3em] text-[#A0174A]">
                 SANRAYN
               </p>
             </div>

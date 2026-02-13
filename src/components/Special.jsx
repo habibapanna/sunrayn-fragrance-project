@@ -105,7 +105,7 @@ const buttonVariants = {
 
       {/* ================= FLOATING DESKTOP TEXT ================= */}
 <motion.div
-  className="flex absolute text-[#571313] items-center"
+  className="flex absolute text-[#A0174A] items-center"
   style={{
     left: textStyle.left,
     top: textStyle.top,
@@ -144,7 +144,7 @@ const buttonVariants = {
 
    <span
   className="
-    bg-[#571313]
+    bg-[#A0174A]
     ml-[12px]
     rounded-full
     flex items-center justify-center

@@ -132,7 +132,7 @@ const Testimonials = () => {
                   </div>
 
                   {/* TITLE */}
-                  <h3 className="text-[#571313] text-[25px] lg:text-[28px] 2xl:text-[35px] font-semibold mb-[20px] md:mb-[32px]">
+                  <h3 className="text-[#A0174A] text-[25px] lg:text-[28px] 2xl:text-[35px] font-semibold mb-[20px] md:mb-[32px]">
                     {item.title}
                   </h3>
 

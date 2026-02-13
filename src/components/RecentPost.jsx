@@ -54,7 +54,7 @@ const RecentPost = () => {
         Instagram
         </h2>
         <div className="flex items-center gap-[24px]">
-          <button className="bg-[#F5F1EA] text-[#571313] font-semibold px-6 py-3 rounded-full flex items-center text-[14px] lg:text-[16px] 2xl:text-[20px] cursor-pointer">
+          <button className="bg-[#F5F1EA] text-[#A0174A] font-semibold px-6 py-3 rounded-full flex items-center text-[14px] lg:text-[16px] 2xl:text-[20px] cursor-pointer">
             <img src={Instagram} alt="" className="mr-[8px] h-[15px] lg:h-[30px]" />@Sanrayn
           </button>
           {/* Nav buttons */}

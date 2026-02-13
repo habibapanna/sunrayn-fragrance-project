@@ -131,9 +131,9 @@ const navPaddingClass = (() => {
 
 // Determine navbar background (unchanged)
 const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
-  ? "bg-[#997E3D]/80 backdrop-blur-2xl rounded-full md:mt-[2px]  lg:mt-[12px]"
+  ? "bg-[#BA9948] backdrop-blur-2xl rounded-full md:mt-[2px]  lg:mt-[12px]"
   : scrolled
-  ? "bg-[#997E3D]/80 backdrop-blur-2xl rounded-full mt-[8px] 2xl:mt-[10px] mx-[16px] 2xl:mx-[32px]"
+  ? "bg-[#BA9948] backdrop-blur-2xl rounded-full mt-[8px] 2xl:mt-[10px] mx-[16px] 2xl:mx-[32px]"
   : "bg-transparent";
 
 // Determine top position

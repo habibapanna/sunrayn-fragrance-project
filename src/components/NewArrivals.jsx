@@ -79,7 +79,7 @@ const NewArrivals = () => {
         {/* ================= TEXT SECTION ================= */}
 
         {/* 🔹 MOBILE (NO ANIMATION) */}
-        <div className="absolute top-[300px] left-[40px] md:hidden text-[#571313] text-center">
+        <div className="absolute top-[300px] left-[40px] md:hidden text-[#A0174A] text-center">
           <div className="flex items-center justify-center gap-3">
             <h2 className="text-[30px] font-bold">NEW ARRIVALS</h2>
             <img src={Button} className="h-[23px] w-[23px]" />
@@ -91,7 +91,7 @@ const NewArrivals = () => {
 
         {/* 🔹 DESKTOP (ANIMATED) */}
         {!isMobile && (
-          <div className="hidden md:block absolute md:top-[400px] md:left-[50px] lg:left-[150px] lg:top-[300px] 2xl:top-[600px] 2xl:left-[300px] left-[150px] -translate-y-1/2 text-[#571313]">
+          <div className="hidden md:block absolute md:top-[400px] md:left-[50px] lg:left-[150px] lg:top-[300px] 2xl:top-[600px] 2xl:left-[300px] left-[150px] -translate-y-1/2 text-[#A0174A]">
 
             {/* NEW ARRIVALS */}
             <motion.div style={{ x: newArrivalsX }}>
