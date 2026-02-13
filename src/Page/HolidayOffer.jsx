@@ -7,6 +7,7 @@ import Testimonials from '../components/Testimonials';
 import Premium from '../components/Premium';
 import { FaCheck, FaStar } from 'react-icons/fa';
 import { products } from '../data/productsData';
+import { IoCheckmarkSharp } from "react-icons/io5";
 
 const HolidayOffer = () => {
 const navigate = useNavigate();
@@ -639,7 +640,7 @@ useEffect(() => {
         </section>
                       {/* MOBILE CART POPUP */}
           {showCartToast && (
-            <div className="fixed top-20 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+            <div className="fixed top-45 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
               <div className="flex items-center justify-between bg-[#A0174A] text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
           
                 <div className="flex items-center gap-2 text-sm font-medium">
