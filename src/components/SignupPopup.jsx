@@ -39,7 +39,7 @@ const SignupPopup = ({ onClose }) => {
             placeholder="Enter your email..."
             className="border border-gray-300 px-[16px] py-[11px] w-full md:w-[60%] rounded-l-lg"
           />
-          <button className="bg-black text-white px-[16px] py-[12px] rounded-r-lg uppercase">
+          <button className="bg-[#A0174A] text-white px-[16px] py-[12px] rounded-r-lg uppercase">
             Subscribe
           </button>
         </div>
