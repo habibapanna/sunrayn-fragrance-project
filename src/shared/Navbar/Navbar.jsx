@@ -174,7 +174,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 </a>
 
             {/* DESKTOP MENU (UNCHANGED) */}
-            <div className="hidden md:flex items-center gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] 2xl:mr-16 lg:w-[488px] h-[30px] lg:h-[40px] 2xl:w-[550px] 2xl:h-[50px]">
+            <div className="hidden md:flex items-center gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] 2xl:mr-16 lg:w-[475px] h-[30px] lg:h-[40px] 2xl:w-[550px] 2xl:h-[50px]">
 
             {/* Perfume */}
                <div ref={menuRef} className="relative">
