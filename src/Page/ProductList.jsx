@@ -521,7 +521,6 @@ const resultCount = filteredProducts.length;
   flex flex-row md:flex-col"
 >
 
-
 {/* IMAGE SECTION */}
 <div className="relative overflow-hidden w-[150px] md:w-full flex-shrink-0">
 
