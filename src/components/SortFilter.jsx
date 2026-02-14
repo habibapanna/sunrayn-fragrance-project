@@ -319,9 +319,9 @@ SORT & FILTER
         </div>
       </section>
                {/* RESULT COUNT ROW */}
-         <div className="md:flex md:justify-between items-center my-[16px] 2xl:my-[32px]">
+         <div className="flex justify-between items-center my-[16px] 2xl:my-[32px]">
            <div className="">
-            <p className="text-[12px] md:text-[14px] 2xl:text-[18px] font-medium text-[#1D0B01]">Explore <span className="text-[#A0174A] font-semibold">100+ </span> designer-inspired Impressions perfumes, developed in <span className="text-[#A0174A] font-semibold">USA</span>.</p>
+            <p className="text-[12px] md:text-[14px] 2xl:text-[18px] font-medium text-[#1D0B01]">Explore <span className="text-[#A0174A] font-semibold">10+ </span>  Impressions perfumes, crafted in <span className="text-[#A0174A] font-semibold">USA</span>.</p>
          </div>
 <div className="">
   <p className="text-[12px] md:text-[14px] 2xl:text-[18px] font-medium text-[#1D0B01]">

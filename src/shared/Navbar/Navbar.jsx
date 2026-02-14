@@ -327,7 +327,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
           <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]">
             <li className="hover:text-[#A0174A]"><Link to='/productList'>All Perumes</Link></li>
             <li className="hover:text-[#A0174A]"><Link to='/productList'>New Arrivals</Link></li>
-            <li className="hover:text-[#A0174A]"><Link to='/productList'>LCombo Sales</Link></li>
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>Combo Sales</Link></li>
             <li className="hover:text-[#A0174A]"><Link to='/productList'>Limited Editions</Link></li>
           </ul>
         </div>
