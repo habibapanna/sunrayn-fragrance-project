@@ -1,7 +1,9 @@
 import { useEffect } from "react";
+import Image from "../assets/image 15.svg";
+import Logo from "../assets/Logo (3).svg";
+import BrandName from "../assets/Brand Name (1).svg";
 
 const SignupPopup = ({ onClose }) => {
-  // Prevent background scroll
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -10,48 +12,74 @@ const SignupPopup = ({ onClose }) => {
   }, []);
 
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 px-4">
-     <div className="p-[20px] bg-white rounded-lg">
-         <div className="relative bg-white max-w-[900px] w-full rounded-lg p-[32px] md:p-12 text-center border border-gray-300">
-
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-xl border border-gray-300 rounded-full p-[18px] cursor-pointer hover:bg-black hover:text-white h-[25px] w-[25px] flex items-center justify-center transition-all duration-500"
-        >
-          ✕
-        </button>
-
-        <h4 className="text-[18px] lg:text-[22px] font-semibold tracking-widest mb-4">SIGNUP FOR EMAILS</h4>
-        <div className="mx-auto mb-4 border-2 w-[96px]"></div>
-
-        <h2 className="text-[25px] lg:text-[32px] font-semibold mb-6 leading-relaxed">
-          GET 20% DISCOUNT <br /> SHIPPED TO YOUR INBOX
-        </h2>
-
-        <p className="text-gray-600 mb-8">
-          Subscribe to our newsletter and receive your 20% discount code today.
-        </p>
-
-        <div className="flex flex-col md:flex-row items-center justify-center gap-[">
-          <input
-            type="email"
-            placeholder="Enter your email..."
-            className="border border-gray-300 px-[16px] py-[11px] w-full md:w-[60%] rounded-l-lg"
+    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 p-4">
+      
+      {/* Modal */}
+      <div className="relative w-full max-w-[950px] rounded-[16px] overflow-hidden bg-white shadow-2xl grid md:grid-cols-2">
+        
+        {/* LEFT IMAGE */}
+        <div className="hidden md:block h-full">
+          <img
+            src={Image}
+            alt="Perfume"
+            className="h-full w-full object-cover"
           />
-          <button className="bg-[#A0174A] text-white px-[16px] py-[12px] rounded-r-lg uppercase">
-            Subscribe
-          </button>
         </div>
 
-        <button
-          onClick={onClose}
-          className="mt-6 underline text-[14px] lg:text-[16px] cursor-pointer"
-        >
-          No, Thanks.
-        </button>
+        {/* RIGHT CONTENT */}
+        <div className="relative flex flex-col justify-center px-6 py-10 md:px-12 text-center">
+          
+          {/* Close */}
+          <button
+            onClick={onClose}
+            className="absolute top-5 right-5 w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white transition cursor-pointer"
+          >
+            ✕
+          </button>
+
+        {/* Logo + Brand */}
+<div className="flex flex-col items-center mb-6">
+  <img
+    src={Logo}
+    alt="Logo"
+    className="h-[48px] mb-3"
+  />
+  <img
+    src={BrandName}
+    alt="Brand Name"
+    className="h-[18px]"
+  />
+</div>
+
+
+          {/* Title */}
+          <h2 className="text-[28px] md:text-[34px] font-semibold text-[#2a221c] leading-snug mb-6">
+            Unlock 20% off your <br /> first order
+          </h2>
+
+          {/* Email */}
+          <div className="text-left mb-3 text-[16px] text-black">Email</div>
+
+          <input
+            type="email"
+            placeholder="info@yourmail.com"
+            className="w-full border border-gray-300 rounded-lg px-4 py-3 mb-5 outline-none focus:ring-2 focus:ring-[#A0174A]/30"
+          />
+
+          {/* YOUR BUTTON (kept style) */}
+          <button className="bg-[#A0174A] text-white py-3 rounded-lg font-medium hover:opacity-90 transition">
+            Shop Now
+          </button>
+
+          {/* No thanks */}
+          <button
+            onClick={onClose}
+            className="mt-6 text-[16px] text-black"
+          >
+            No, Thanks
+          </button>
+        </div>
       </div>
-     </div>
     </div>
   );
 };
