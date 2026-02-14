@@ -377,8 +377,8 @@ Back
           {/* CTA */}
         <div onClick={handleAddToCart}
         className="flex justify-between items-center gap-[16px] mt-[16px] lg:mt-[20px]"> 
-          <button className="text-[18px] 2xl:text-[20px] w-full px-[20px] py-[8px] 2xl:py-[10px] 2x:px-[24px] rounded-full font-semibold cursor-pointer transition-all duration-300 ease-out
-    bg-[#BA9948] text-white hover:bg-white/60 backdrop-blur-md border hover:border-[#A0174A] hover:text-[#1D0B01]">
+          <button className="text-[18px] 2xl:text-[20px] w-full px-[20px] py-[8px] 2xl:py-[10px] 2x:px-[24px] rounded-full font-semibold cursor-pointer transition-all duration-500 ease-out
+    bg-[#BA9948] text-white hover:bg-white backdrop-blur-md border hover:border-[#A0174A] hover:text-[#1D0B01]">
             Add to cart
           </button>
           </div>
