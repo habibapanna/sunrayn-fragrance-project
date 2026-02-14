@@ -146,7 +146,6 @@ const Hero2 = () => {
           </div> */}
         </div>
 
-
         {/* RIGHT IMAGE */}
         <div className="flex justify-center md:justify-end">
           <img

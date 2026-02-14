@@ -308,6 +308,17 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
             <li className="hover:text-[#A0174A]"><Link to='/productList'>Limited Editions</Link></li>
           </ul>
         </div>
+        {/* COLUMN 2 */}
+        <div>
+          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px]">
+            Shop by Theme
+          </h4>
+          <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]">
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>Best Offers</Link></li>
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>Event Perfumes</Link></li>
+            <li className="hover:text-[#A0174A]"><Link to='/productList'>Best Sellers</Link></li>
+          </ul>
+        </div>
 
         {/* RIGHT PRODUCT CARD */}
         <div className="">
