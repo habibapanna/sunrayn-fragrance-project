@@ -121,7 +121,7 @@ const ForgotPassword = ({ onClose }) => {
                   value={digit}
                   ref={(el) => (inputsRef.current[index] = el)}
                   onChange={(e) => handleChange(e.target.value, index)}
-                  className="w-12 h-12 text-center text-lg rounded-full bg-white shadow-sm outline-none"
+                  className="w-12 h-12 text-center text-lg rounded-full bg-white shadow-sm border border-[#28282826] outline-none"
                 />
               ))}
             </div>

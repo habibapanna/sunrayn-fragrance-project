@@ -29,11 +29,6 @@ const [signInUpOpen, setSignInUpOpen] = useState(false);
  const [showForgot, setShowForgot] = useState(false);
 const [openMegaMenu, setOpenMegaMenu] = useState(null);
 const [accountOpen, setAccountOpen] = useState(false);
-const accountRef = useRef(null);
-
-
-  const menuRef = useRef(null);
-// values: "perfume" | "collection" | null
 
 
 const [selectedItem, setSelectedItem] = useState(null);
@@ -464,8 +459,8 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 >
 <img src={Cart} alt="" className="w-[20px] h-[20px]" />
 </button>
-
-<div className="relative" ref={accountRef}>
+{/* Login */}
+<div className="relative">
   <button
     title="Account"
     onClick={() => setAccountOpen(!accountOpen)}
@@ -531,23 +526,69 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
   onClick={() => setSearchOpen(true)}
   className="bg-white/90 p-[8px] h-[28px] w-[28px] flex items-center rounded-full cursor-pointer"
 >
-  <svg  className="h-[24px] w-[24px] " xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 17 17" fill="none">
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.91667 1.66667C4.46489 1.66667 1.66667 4.46489 1.66667 7.91667C1.66667 11.3684 4.46489 14.1667 7.91667 14.1667C9.59425 14.1667 11.1175 13.5057 12.2401 12.43C12.266 12.3941 12.2952 12.3597 12.3275 12.3274C12.3598 12.2951 12.3942 12.2659 12.4301 12.24C13.5058 11.1174 14.1667 9.59421 14.1667 7.91667C14.1667 4.46489 11.3684 1.66667 7.91667 1.66667ZM14.073 12.8944C15.1739 11.5345 15.8333 9.80261 15.8333 7.91667C15.8333 3.54441 12.2889 0 7.91667 0C3.54441 0 0 3.54441 0 7.91667C0 12.2889 3.54441 15.8333 7.91667 15.8333C9.80264 15.8333 11.5346 15.1739 12.8945 14.0729L15.2441 16.4226C15.5695 16.748 16.0971 16.748 16.4226 16.4226C16.748 16.0972 16.748 15.5695 16.4226 15.2441L14.073 12.8944Z" fill="#1D0B01"/>
-</svg>
+<img src={Search} alt="" />
 </button>
               <button
                title="View Cart"
   onClick={() => setCartOpen(true)}
   className="bg-white/90 p-[8px] h-[28px] w-[28px] md:h-[30px] md:w-[30px] flex items-center rounded-full cursor-pointer"
 >
-  <svg className="h-[24px] w-[24px] " xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 20 20" fill="none">
-  <g opacity="0.7">
-    <path d="M2.54616 12.661L2.85052 10.9349C3.21026 8.89463 3.39012 7.87456 4.10241 7.27059C4.8147 6.66663 5.83788 6.66663 7.88424 6.66663H12.1054C14.1517 6.66663 15.1749 6.66663 15.8872 7.27059C16.5995 7.87456 16.7793 8.89463 17.139 10.9349L17.4435 12.661C17.9412 15.4842 18.1901 16.8958 17.4237 17.8229C16.6573 18.75 15.2414 18.75 12.4097 18.75H7.57988C4.74817 18.75 3.33232 18.75 2.5659 17.8229C1.79947 16.8958 2.04837 15.4842 2.54616 12.661Z" stroke="#1D0B01" stroke-width="1.5"/>
-    <path d="M6.25 6.66663L6.38985 4.98844C6.54632 3.11084 8.11589 1.66663 10 1.66663C11.8841 1.66663 13.4537 3.11084 13.6102 4.98844L13.75 6.66663" stroke="#1D0B01" stroke-width="1.5"/>
-    <path d="M12.5 9.16663C12.3917 10.3442 11.3047 11.25 10 11.25C8.69525 11.25 7.60835 10.3442 7.5 9.16663" stroke="#1D0B01" stroke-width="1.5" stroke-linecap="round"/>
-  </g>
-</svg>
+<img src={Cart} alt="" />
 </button>
+{/* Login */}
+<div className="relative">
+  <button
+    title="Account"
+    onClick={() => setAccountOpen(!accountOpen)}
+    className="
+      bg-white/90 p-[8px] h-[28px] w-[28px] flex items-center rounded-full cursor-pointer
+    "
+  >
+  <img src={User} alt="" />
+  </button>
+
+  {/* ACCOUNT DROPDOWN */}
+  {accountOpen && (
+  <div className="absolute -right-18 mt-3 w-[170px] bg-white rounded-[16px] shadow-xl p-2 z-[80]">
+
+      
+      {/* Triangle */}
+      <div className="absolute -top-2 right-20 w-4 h-4 bg-white rotate-45"></div>
+
+      {/* My Account */}
+      <button
+        onClick={() => {
+          setAccountOpen(false);
+          setSignInUpOpen(true);
+        }}
+        className="w-full flex items-center gap-3 px-4 py-3 text-[14px] text-[#1D0B01] hover:bg-[#F6F7F2] transition-all duration-500 cursor-pointer rounded-[16px] mt-2"
+      >
+        <img src={User2} alt="" /> My Account
+      </button>
+
+      {/* My Orders */}
+      <button
+        className="w-full flex items-center gap-3 px-4 py-3 text-[14px] text-[#1D0B01] hover:bg-[#F6F7F2] transition-all duration-500 cursor-pointer rounded-[16px]"
+      >
+       <img src={User3} alt="" /> My Orders
+      </button>
+
+      {/* Help Centre */}
+      <button
+        className="w-full flex items-center gap-3 px-4 py-3 text-[14px] text-[#1D0B01] hover:bg-[#F6F7F2] transition-all duration-500 cursor-pointer rounded-[16px]"
+      >
+       <img src={User4} alt="" /> Help Centre
+      </button>
+
+      {/* Log Out */}
+      <button
+        className="w-full flex items-center gap-3 px-4 py-3 text-[14px] text-[#1D0B01] hover:bg-[#F6F7F2] transition-all duration-500 cursor-pointer rounded-[16px] mb-2"
+      >
+       <img src={User5} alt="" /> Log Out
+      </button>
+    </div>
+  )}
+</div>
              <button
   title="Open Menu"
   onClick={() => setMenuOpen(true)}
