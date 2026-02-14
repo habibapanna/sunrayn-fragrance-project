@@ -3,6 +3,7 @@ import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import HeroImage from '../assets/kling_20260208_作品_Image1Crea_5099_0 1.svg';
 import HandImage from '../assets/FInal Hand 1 (1).svg';
+import WhiteBar from '../assets/Rectangle 8980.svg';
 
 const Hero2 = () => {
   return (

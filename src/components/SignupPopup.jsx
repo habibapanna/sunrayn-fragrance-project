@@ -43,7 +43,7 @@ const SignupPopup = ({ onClose }) => {
         </div>
 
         {/* RIGHT CONTENT */}
-        <div className="relative flex flex-col justify-center px-6 py-10 md:px-12 text-center">
+        <div className="relative flex flex-col justify-center px-6 py-10 md:px-12 text-center bg-[#F6F7F2]">
           
           {/* Close */}
           <button
@@ -55,8 +55,8 @@ const SignupPopup = ({ onClose }) => {
 
           {/* Logo + Brand */}
           <div className="flex flex-col items-center mb-6">
-            <img src={Logo} alt="Logo" className="h-[48px] mb-3" />
-            <img src={BrandName} alt="Brand Name" className="h-[18px]" />
+            <img src={Logo} alt="Logo" className="h-[58px] mb-3" />
+            <img src={BrandName} alt="Brand Name" className="h-[20px]" />
           </div>
 
           {/* Title */}
@@ -70,12 +70,12 @@ const SignupPopup = ({ onClose }) => {
           <input
             type="email"
             placeholder="info@yourmail.com"
-            className="w-full border border-gray-300 rounded-lg px-4 py-3 mb-5 outline-none focus:ring-2 focus:ring-[#A0174A]/30"
+            className="w-full border border-gray-300 rounded-full px-4 py-3 mb-5 outline-none focus:ring-2 focus:ring-[#A0174A]/30"
           />
 
           {/* Button */}
-          <button className="bg-[#A0174A] text-white py-3 rounded-lg text-[16px] cursor-pointer font-medium hover:opacity-90 hover:border border-[#A0174A] hover:bg-white hover:text-black transition-all duration-500">
-            Shop Now
+          <button className="bg-[#DBAB35] py-3 rounded-full text-[15px] cursor-pointer hover:opacity-90 hover:border border-[#DBAB35] hover:bg-white text-black transition-all duration-500 font-normal">
+            Continue
           </button>
 
           {/* No thanks */}

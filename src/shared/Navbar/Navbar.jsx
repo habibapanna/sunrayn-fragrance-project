@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { LiaAngleDownSolid } from "react-icons/lia";
-import Logo from "../../assets/Logo (3).svg";
-import BrandName from "../../assets/Brand Name (1).svg";
+import Logo from "../../assets/Logo (4).svg";
+import BrandName from "../../assets/Brand Name (2).svg";
 import { Link } from "react-router-dom";
 import { TbMenu } from "react-icons/tb";
 import SearchOverlay from "../../components/SearchOverlay";
@@ -9,7 +9,15 @@ import CartOverlay from "../../components/CartOverlay";
 import SignInUp from "../../Page/SignInUp";
 import { useNavigate, useLocation } from "react-router-dom";
 import Solar from '../../assets/Vector (4).svg';
+import User from '../../assets/User Icon (1).svg';
+import Cart from '../../assets/Frame (7).svg';
+import Search from '../../assets/Search Icon.svg';
+import User2 from '../../assets/First Name.svg';
+import User3 from '../../assets/Frame (8).svg';
+import User4 from '../../assets/Frame (9).svg';
+import User5 from '../../assets/Frame (10).svg';
 import MenuOverlay from "../../components/MenuOverlay";
+import ForgotPassword from "../../components/ForgotPassword";
 
 
 const Navbar = ({ showTopBar, cartOpen, setCartOpen }) => {
@@ -18,8 +26,11 @@ const [scrolled, setScrolled] = useState(false);
 const [searchOpen, setSearchOpen] = useState(false);
 const [menuOpen, setMenuOpen] = useState(false);
 const [signInUpOpen, setSignInUpOpen] = useState(false);
-
+ const [showForgot, setShowForgot] = useState(false);
 const [openMegaMenu, setOpenMegaMenu] = useState(null);
+const [accountOpen, setAccountOpen] = useState(false);
+const accountRef = useRef(null);
+
 
   const menuRef = useRef(null);
 // values: "perfume" | "collection" | null
@@ -86,6 +97,18 @@ useEffect(() => {
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
 
+useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (accountRef.current && !accountRef.current.contains(event.target)) {
+      setAccountOpen(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+  return () => document.removeEventListener("mousedown", handleClickOutside);
+}, []);
+
+
 
 const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
   ? Logo
@@ -134,8 +157,8 @@ const navPaddingClass = (() => {
 const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
   ? "bg-[#BA9948] backdrop-blur-2xl rounded-full md:mt-[2px]  lg:mt-[12px]"
   : scrolled
-  ? "bg-[#BA9948] backdrop-blur-2xl rounded-full mt-[8px] 2xl:mt-[10px] mx-[32px] 2xl:mx-[350px]"
-  : "bg-transparent";
+  ? "bg-[#FFFFFF66] border-[2px] border-[#FFFFFF1A] backdrop-blur-sm rounded-full mt-[8px] 2xl:mt-[10px] mx-[32px] 2xl:mx-[350px]"
+  : "bg-transparent border-transparent";
 
 // Determine top position
 const navTopClass = isHome ? "top-0" : "top-[44px]";
@@ -152,11 +175,11 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
         <div className="mx-auto px-[16px] 2xl:px-[32px] py-[4px] md:py-[14px] flex items-center justify-between text-white ">
 
-{/* LOGO */}
+{/* left LOGO */}
 <a
   href="/"
   onClick={handleLogoClick}
-  className="flex items-center gap-[7px] lg:gap-[10px] cursor-pointer transition-all duration-300"
+  className="flex items-center gap-[7px] lg:gap-[12px] cursor-pointer transition-all duration-300"
 >
 
  <img
@@ -174,7 +197,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
 </a>
 
-            {/* DESKTOP MENU (UNCHANGED) */}
+            {/* DESKTOP middle MENU  */}
             <div className="hidden md:flex items-center gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] 2xl:mr-16 lg:w-[475px] h-[30px] lg:h-[40px] 2xl:w-[550px] 2xl:h-[50px]">
 
             {/* Perfume */}
@@ -299,7 +322,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
         {/* COLUMN 1 */}
         <div>
           <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px]">
-            Perfume Tyle
+            Perfume Type
           </h4>
           <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]">
             <li className="hover:text-[#A0174A]"><Link to='/productList'>All Perumes</Link></li>
@@ -413,9 +436,9 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
             </div>
 
           {/* RIGHT SIDE */}
-          <div className="flex items-center gap-[16px]  2xl:gap-[32px]">
+          <div className="flex items-center gap-[16px]">
             {/* DESKTOP ICONS (UNCHANGED) */}
-            <div className="hidden md:flex items-center gap-[16px] 2xl:gap-[32px]">
+            <div className="hidden md:flex items-center gap-[16px] ">
               <button
                title="Search Perfumes"
   onClick={() => setSearchOpen(true)}
@@ -426,11 +449,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 `}
 
 >
-<svg  className="h-[24px] w-[24px] lg:h-[40px] lg:w-[40px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none">
-  <g opacity="0.7">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.58464 3.33329C6.13286 3.33329 3.33464 6.13151 3.33464 9.58329C3.33464 13.0351 6.13286 15.8333 9.58464 15.8333C11.2622 15.8333 12.7854 15.1723 13.9081 14.0967C13.934 14.0607 13.9631 14.0264 13.9955 13.994C14.0278 13.9617 14.0621 13.9326 14.0981 13.9067C15.1737 12.784 15.8346 11.2608 15.8346 9.58329C15.8346 6.13151 13.0364 3.33329 9.58464 3.33329ZM15.7409 14.561C16.8418 13.2011 17.5013 11.4692 17.5013 9.58329C17.5013 5.21104 13.9569 1.66663 9.58464 1.66663C5.21238 1.66663 1.66797 5.21104 1.66797 9.58329C1.66797 13.9555 5.21238 17.5 9.58464 17.5C11.4706 17.5 13.2025 16.8405 14.5624 15.7395L16.912 18.0892C17.2375 18.4146 17.7651 18.4147 18.0905 18.0892C18.416 17.7638 18.416 17.2362 18.0906 16.9107L15.7409 14.561Z" fill="#744F18"/>
-  </g>
-</svg>
+<img src={Search} alt="" className="w-[20px] h-[20px]" />
 
 </button>
 
@@ -443,30 +462,66 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 `}
  title="View Cart"
 >
-  <svg xmlns="http://www.w3.org/2000/svg"   className="h-[24px] w-[24px] lg:h-[40px] lg:w-[40px]" viewBox="0 0 20 20" fill="none">
-  <g opacity="0.7">
-    <path d="M2.55006 12.661L2.85443 10.9349C3.21416 8.89463 3.39403 7.87456 4.10631 7.27059C4.81861 6.66663 5.84179 6.66663 7.88815 6.66663H12.1093C14.1556 6.66663 15.1788 6.66663 15.8911 7.27059C16.6034 7.87456 16.7832 8.89463 17.1429 10.9349L17.4474 12.661C17.9451 15.4842 18.194 16.8958 17.4276 17.8229C16.6612 18.75 15.2453 18.75 12.4136 18.75H7.58378C4.75208 18.75 3.33623 18.75 2.56981 17.8229C1.80338 16.8958 2.05228 15.4842 2.55006 12.661Z" stroke="#744F18" stroke-width="1.5"/>
-    <path d="M6.25 6.66663L6.38985 4.98844C6.54632 3.11084 8.11589 1.66663 10 1.66663C11.8841 1.66663 13.4537 3.11084 13.6102 4.98844L13.75 6.66663" stroke="#744F18" stroke-width="1.5"/>
-    <path d="M12.5 9.16663C12.3917 10.3442 11.3047 11.25 10 11.25C8.69525 11.25 7.60835 10.3442 7.5 9.16663" stroke="#744F18" stroke-width="1.5" stroke-linecap="round"/>
-  </g>
-</svg>
+<img src={Cart} alt="" className="w-[20px] h-[20px]" />
 </button>
 
-<button
-  title="Login"
-  onClick={() => setSignInUpOpen(true)}
-  className="
-   lg:p-[10px] p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[15px] rounded-full 2xl:h-[50px] 2xl:w-[50px]
-  transition-colors duration-300 cursor-pointer flex items-center justify-center
-    bg-white/90
-  "
->
-                <svg xmlns="http://www.w3.org/2000/svg"   className="h-[24px] w-[24px] lg:h-[40px] lg:w-[40px]" viewBox="0 0 20 20" fill="none">
-  <g opacity="0.7">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.0009 3.33329C8.39002 3.33329 7.08419 4.63913 7.08419 6.24996C7.08419 7.86079 8.39002 9.16663 10.0009 9.16663C11.6117 9.16663 12.9175 7.86079 12.9175 6.24996C12.9175 4.63913 11.6117 3.33329 10.0009 3.33329ZM5.41752 6.24996C5.41752 3.71865 7.46955 1.66663 10.0009 1.66663C12.5322 1.66663 14.5842 3.71865 14.5842 6.24996C14.5842 8.78126 12.5322 10.8333 10.0009 10.8333C7.46955 10.8333 5.41752 8.78126 5.41752 6.24996ZM10.0009 13.3333C7.63499 13.3333 5.52626 14.4744 4.17906 16.2573C4.09664 16.3664 4.03357 16.45 3.9811 16.5234C3.94127 16.5792 3.91409 16.6201 3.89516 16.6511C4.01902 16.6653 4.19549 16.6666 4.52355 16.6666H15.4782C15.8062 16.6666 15.9827 16.6653 16.1065 16.6511C16.0876 16.6201 16.0604 16.5792 16.0206 16.5234C15.9681 16.45 15.9051 16.3664 15.8227 16.2573C14.4755 14.4744 12.3667 13.3333 10.0009 13.3333ZM2.84931 15.2526C4.49344 13.0766 7.08325 11.6666 10.0009 11.6666C12.9185 11.6666 15.5083 13.0766 17.1524 15.2526C17.1598 15.2624 17.1673 15.2723 17.1748 15.2822C17.3162 15.4691 17.4677 15.6696 17.5761 15.8629C17.7072 16.097 17.8043 16.3678 17.7983 16.6971C17.7935 16.9618 17.7133 17.2096 17.6159 17.4053C17.5185 17.601 17.3691 17.8143 17.1608 17.9778C16.8831 18.1958 16.5806 18.2729 16.312 18.3051C16.0763 18.3334 15.797 18.3334 15.5161 18.3333C15.5035 18.3333 15.4908 18.3333 15.4782 18.3333H4.52355C4.51089 18.3333 4.49823 18.3333 4.48557 18.3333C4.20474 18.3334 3.92542 18.3334 3.68972 18.3051C3.42107 18.2729 3.11864 18.1958 2.84087 17.9778C2.63258 17.8143 2.48323 17.601 2.38583 17.4053C2.28844 17.2096 2.20823 16.9618 2.20339 16.6971C2.19737 16.3678 2.29454 16.097 2.42565 15.8629C2.53397 15.6696 2.68555 15.4691 2.82691 15.2822C2.83441 15.2723 2.84188 15.2624 2.84931 15.2526Z" fill="#744F18"/>
-  </g>
-</svg>
-              </button>
+<div className="relative" ref={accountRef}>
+  <button
+    title="Account"
+    onClick={() => setAccountOpen(!accountOpen)}
+    className="
+      lg:p-[10px] p-[8px] md:h-[30px] md:w-[30px] 
+      lg:h-[40px] lg:w-[40px] 2xl:p-[15px] 
+      rounded-full 2xl:h-[50px] 2xl:w-[50px]
+      bg-white/90 flex items-center justify-center cursor-pointer
+    "
+  >
+  <img src={User} alt="" className="w-[20px] h-[20px]" />
+  </button>
+
+  {/* ACCOUNT DROPDOWN */}
+  {accountOpen && (
+  <div className="absolute right-0 mt-3 w-[170px] bg-white rounded-[16px] shadow-xl p-2 z-[80]">
+
+      
+      {/* Triangle */}
+      <div className="absolute -top-2 right-6 w-4 h-4 bg-white rotate-45"></div>
+
+      {/* My Account */}
+      <button
+        onClick={() => {
+          setAccountOpen(false);
+          setSignInUpOpen(true);
+        }}
+        className="w-full flex items-center gap-3 px-4 py-3 text-[14px] text-[#1D0B01] hover:bg-[#F6F7F2] transition-all duration-500 cursor-pointer rounded-[16px] mt-2"
+      >
+        <img src={User2} alt="" /> My Account
+      </button>
+
+      {/* My Orders */}
+      <button
+        className="w-full flex items-center gap-3 px-4 py-3 text-[14px] text-[#1D0B01] hover:bg-[#F6F7F2] transition-all duration-500 cursor-pointer rounded-[16px]"
+      >
+       <img src={User3} alt="" /> My Orders
+      </button>
+
+      {/* Help Centre */}
+      <button
+        className="w-full flex items-center gap-3 px-4 py-3 text-[14px] text-[#1D0B01] hover:bg-[#F6F7F2] transition-all duration-500 cursor-pointer rounded-[16px]"
+      >
+       <img src={User4} alt="" /> Help Centre
+      </button>
+
+      {/* Log Out */}
+      <button
+        className="w-full flex items-center gap-3 px-4 py-3 text-[14px] text-[#1D0B01] hover:bg-[#F6F7F2] transition-all duration-500 cursor-pointer rounded-[16px] mb-2"
+      >
+       <img src={User5} alt="" /> Log Out
+      </button>
+    </div>
+  )}
+</div>
+
             </div>
 
             {/* MOBILE ICONS */}
@@ -558,16 +613,30 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 )}
 {signInUpOpen && (
   <>
-    {/* BLUR BACKGROUND */}
     <div
       onClick={() => setSignInUpOpen(false)}
-      className="fixed  inset-0 bg-black/20 z-[60]"
+      className="fixed inset-0 bg-black/20 z-[60]"
     />
-
-    {/* SIGN IN / UP UI */}
-    <SignInUp onClose={() => setSignInUpOpen(false)} />
+    <SignInUp
+      onClose={() => setSignInUpOpen(false)}
+      openForgot={() => {
+        setSignInUpOpen(false); // close login modal
+        setShowForgot(true);    // open forgot modal
+      }}
+    />
   </>
 )}
+
+{showForgot && (
+  <>
+    <div
+      onClick={() => setShowForgot(false)}
+      className="fixed inset-0 bg-black/40 z-[70]"
+    />
+    <ForgotPassword onClose={() => setShowForgot(false)} />
+  </>
+)}
+
       {/* OVERLAY */}
       {open && (
         <div
@@ -576,10 +645,6 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
         />
       )}
 
-<SignInUp
-  open={signInUpOpen}
-  onClose={() => setSignInUpOpen(false)}
-/>
 
     </>
   );
