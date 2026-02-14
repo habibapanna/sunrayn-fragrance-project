@@ -476,11 +476,11 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
   {/* ACCOUNT DROPDOWN */}
   {accountOpen && (
-  <div className="absolute right-0 mt-3 w-[170px] bg-white rounded-[16px] shadow-xl p-2 z-[80]">
+  <div className="absolute -right-4 mt-3 w-[170px] bg-white rounded-[16px] shadow-xl p-2 z-[80]">
 
       
       {/* Triangle */}
-      <div className="absolute -top-2 right-6 w-4 h-4 bg-white rotate-45"></div>
+      <div className="absolute -top-2 right-8 w-4 h-4 bg-white rotate-45"></div>
 
       {/* My Account */}
       <button
@@ -549,11 +549,11 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
   {/* ACCOUNT DROPDOWN */}
   {accountOpen && (
-  <div className="absolute -right-18 mt-3 w-[170px] bg-white rounded-[16px] shadow-xl p-2 z-[80]">
+  <div className="absolute -right-9 mt-3 w-[170px] bg-white rounded-[16px] shadow-xl p-2 z-[80]">
 
       
       {/* Triangle */}
-      <div className="absolute -top-2 right-20 w-4 h-4 bg-white rotate-45"></div>
+      <div className="absolute -top-2 right-10 w-4 h-4 bg-white rotate-45"></div>
 
       {/* My Account */}
       <button
