@@ -1,7 +1,7 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import HeroImage from '../assets/kling_20260208_作品_Image1Crea_5099_0 1.svg';
+import HeroImage from '../assets/WhatsApp Image 2026-02-14 at 9.04.15 PM.jpeg';
 import HandImage from '../assets/FInal Hand 1 (1).svg';
 
 const Hero2 = () => {
@@ -19,7 +19,7 @@ const Hero2 = () => {
       {/* vertical light stripes */}
       <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-[size:80px_100%]" />
 
-      <div className="mx-auto pt-[100px] md:pt-[200px]  grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10 px-[16px] 2xl:px-[200px] ">
+      <div className="mx-auto pt-[100px] md:pt-[150px]  grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10 px-[16px] 2xl:px-[200px] ">
                 {/* RIGHT IMAGE */}
         <div className="hidden justify-center md:justify-end">
           <img
@@ -38,16 +38,16 @@ const Hero2 = () => {
                             <FaStar key={i} className="h-[18px] w-[18px]" />
                           ))}
                         </div>
-                        <span className="text-[14px] md:text-[18px] text-[#1D0B01]">
+                        <span className="text-[14px] md:text-[18px] text-white">
                           5 star rating
                         </span>
                       </div>
 
-          <h1 className="text-[35px] lg:text-[60px] font-bold text-[#A0174A] leading-tight">
+          <h1 className="text-[35px] lg:text-[60px] font-bold text-[#BA9948] leading-tight">
             Luxury Fragrances with <br /> Everyday Affordability
           </h1>
 
-          <p className="mt-6 text-black text-[15px] md:text-[16px] lg:text-[20px] max-w-xl">
+          <p className="mt-6 text-white text-[15px] md:text-[16px] lg:text-[20px] max-w-xl">
            Sanrayn brings perfumes that linger with grace, purity, and devotion. Our luxury designer-inspired aromas are artfully blended to complement your sophistication.
           </p>
 
@@ -80,8 +80,8 @@ const Hero2 = () => {
               </div>
 
               <div>
-                <p className="font-semibold text-lg text-[#A0174A]">200+</p>
-                <p className="text-sm text-[#A0174A]">Happy Customers</p>
+                <p className="font-semibold text-lg text-[#BA9948]">200+</p>
+                <p className="text-sm text-[#BA9948]">Happy Customers</p>
               </div>
             </div>
           </div>
