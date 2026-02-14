@@ -116,21 +116,21 @@ const Footer = () => {
       <div className="flex items-center gap-4 md:gap-2 lg:gap-5">
 
         {/* Facebook */}
-        <span className="border border-[#BA9948] p-2 cursor-pointer hover:border-none
+        <span className="border border-[#BA9948] p-2 cursor-pointer hover:border-none rounded-full
                          hover:bg-[#A0174A] hover:text-white 
                          transition-all duration-500">
           <SlSocialFacebook className="text-2xl text-[#BA9948] hover:text-white" />
         </span>
 
         {/* Instagram */}
-        <span className="border border-[#BA9948] p-2 cursor-pointer hover:border-none
+        <span className="border border-[#BA9948] p-2 cursor-pointer hover:border-none rounded-full
                          hover:bg-[#A0174A]  
                          transition-all duration-500">
           <IoLogoInstagram className="text-2xl text-[#BA9948] hover:text-white" />
         </span>
 
         {/* TikTok */}
-        <span className="border border-[#BA9948] p-2 cursor-pointer hover:border-none
+        <span className="border border-[#BA9948] p-2 cursor-pointer hover:border-none rounded-full
                          hover:bg-[#A0174A] hover:text-white 
                          transition-all duration-500">
           <PiTiktokLogo className="text-2xl text-[#BA9948] hover:text-white" />
