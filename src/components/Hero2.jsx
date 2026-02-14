@@ -1,10 +1,20 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import HeroImage from '../assets/kling_20260208_作品_Image1Crea_5099_0 1.svg';
+import HandImage from '../assets/FInal Hand 1.svg';
 
 const Hero2 = () => {
   return (
-    <section className="w-full min-h- bg-gradient-to-r from-[#d9b06f] via-[#e1bb78] to-[#f3d59a] relative overflow-hidden">
+    <section className="w-full min-h- bg-gradient-to-r from-[#d9b06f] via-[#e1bb78] to-[#f3d59a] relative overflow-hidden"
+     style={{
+    backgroundImage:
+     `url(${HeroImage})`,
+    backgroundSize: "cover", // shows full image
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "left center",
+  }}
+    >
 
       {/* vertical light stripes */}
       <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-[size:80px_100%]" />
@@ -21,15 +31,24 @@ const Hero2 = () => {
 
         {/* LEFT CONTENT */}
         <div>
+                      {/* RATING */}
+                      <div className="flex flex-col md:flex-row items-center gap-[8px] text-[#FCFF11] mb-[16px]">
+                        <div className="flex gap-[6px]">
+                          {[...Array(5)].map((_, i) => (
+                            <FaStar key={i} className="h-[18px] w-[18px]" />
+                          ))}
+                        </div>
+                        <span className="text-[14px] md:text-[18px] text-[#1D0B01]">
+                          5 star rating
+                        </span>
+                      </div>
 
-          <h1 className="text-4xl 2xl:text-6xl font-bold text-[#A0174A] leading-tight">
-            Luxury Perfumes & <br /> Attars | USA
+          <h1 className="text-4xl 2xl:text-[60px] font-bold text-[#A0174A] leading-tight">
+           Designer-Inspired Luxury <br /> Fragrances with <br /> Everyday Affordability
           </h1>
 
           <p className="mt-6 text-black 2xl:text-[20px] max-w-xl">
-            Sanrayn brings perfumes that linger with grace, purity, and devotion.
-            Our luxury designer-inspired aromas are artfully blended to complement
-            your sophistication.
+           Sanrayn brings perfumes that linger with grace, purity, and devotion. Our luxury designer-inspired aromas are artfully blended to complement your sophistication.
           </p>
 
           {/* CTA + Customers */}
@@ -62,7 +81,7 @@ const Hero2 = () => {
 
               <div>
                 <p className="font-semibold text-lg text-[#A0174A]">200+</p>
-                <p className="text-sm text-[#6b5634]">Happy Customers</p>
+                <p className="text-sm text-[#A0174A]">Happy Customers</p>
               </div>
             </div>
           </div>
@@ -131,10 +150,10 @@ const Hero2 = () => {
         {/* RIGHT IMAGE */}
         <div className="hidden md:flex justify-center md:justify-end">
           <img
-            src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
-            alt="Perfume"
-            className="object-cover drop-shadow-2xl 2xl:h-[500px] rounded-[16px]"
-          />
+    src={HandImage}
+    alt="Perfume Hand"
+    className="object-cover h-[600px] w-[600px]"
+  />
         </div>
       </div>
     </section>
