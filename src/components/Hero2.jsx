@@ -2,7 +2,7 @@ import React from "react";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import HeroImage from '../assets/kling_20260208_作品_Image1Crea_5099_0 1.svg';
-import HandImage from '../assets/FInal Hand 1.svg';
+import HandImage from '../assets/FInal Hand 1 (1).svg';
 
 const Hero2 = () => {
   return (
@@ -19,13 +19,13 @@ const Hero2 = () => {
       {/* vertical light stripes */}
       <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-[size:80px_100%]" />
 
-      <div className="mx-auto pt-[100px] md:pt-[200px] pb-10 md:pb-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10 px-[16px] 2xl:px-[200px] ">
+      <div className="mx-auto pt-[100px] md:pt-[200px]  grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10 px-[16px] 2xl:px-[200px] ">
                 {/* RIGHT IMAGE */}
-        <div className="flex md:hidden justify-center md:justify-end">
+        <div className="hidden justify-center md:justify-end">
           <img
             src={HandImage}
     alt="Perfume Hand"
-            className="object-cover drop-shadow-2xl md:h-[500px] rounded-[16px]"
+            className="object-cover drop-shadow-2xl h-[300px] rounded-[16px]"
           />
         </div>
 
@@ -148,11 +148,11 @@ const Hero2 = () => {
 
 
         {/* RIGHT IMAGE */}
-        <div className="hidden md:flex justify-center md:justify-end">
+        <div className="flex justify-center md:justify-end">
           <img
     src={HandImage}
     alt="Perfume Hand"
-    className="object-cover h-[600px] w-[600px]"
+    className="object-cover 2xl:h-[600px]"
   />
         </div>
       </div>
