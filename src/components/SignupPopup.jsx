@@ -1,21 +1,37 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "../assets/image 15.svg";
 import Logo from "../assets/Logo (3).svg";
 import BrandName from "../assets/Brand Name (1).svg";
 
 const SignupPopup = ({ onClose }) => {
+  const [show, setShow] = useState(false);
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
+    setShow(true);
+
     return () => {
       document.body.style.overflow = "auto";
     };
   }, []);
 
+  const handleClose = () => {
+    setShow(false);
+    setTimeout(onClose, 300); // wait for animation
+  };
+
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/40 p-4">
-      
+    <div
+      className={`fixed inset-0 z-[999] flex items-center justify-center p-4
+      transition-opacity duration-300
+      ${show ? "bg-black/40 opacity-100" : "bg-black/0 opacity-0"}`}
+    >
       {/* Modal */}
-      <div className="relative w-full max-w-[950px] rounded-[16px] overflow-hidden bg-white shadow-2xl grid md:grid-cols-2">
+      <div
+        className={`relative w-full max-w-[950px] rounded-[16px] overflow-hidden bg-white shadow-2xl grid md:grid-cols-2
+        transform transition-all duration-300
+        ${show ? "scale-100 translate-y-0 opacity-100" : "scale-95 translate-y-6 opacity-0"}`}
+      >
         
         {/* LEFT IMAGE */}
         <div className="hidden md:block h-full">
@@ -31,26 +47,17 @@ const SignupPopup = ({ onClose }) => {
           
           {/* Close */}
           <button
-            onClick={onClose}
+            onClick={handleClose}
             className="absolute top-5 right-5 w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white transition cursor-pointer"
           >
             ✕
           </button>
 
-        {/* Logo + Brand */}
-<div className="flex flex-col items-center mb-6">
-  <img
-    src={Logo}
-    alt="Logo"
-    className="h-[48px] mb-3"
-  />
-  <img
-    src={BrandName}
-    alt="Brand Name"
-    className="h-[18px]"
-  />
-</div>
-
+          {/* Logo + Brand */}
+          <div className="flex flex-col items-center mb-6">
+            <img src={Logo} alt="Logo" className="h-[48px] mb-3" />
+            <img src={BrandName} alt="Brand Name" className="h-[18px]" />
+          </div>
 
           {/* Title */}
           <h2 className="text-[28px] md:text-[34px] font-semibold text-[#2a221c] leading-snug mb-6">
@@ -66,14 +73,14 @@ const SignupPopup = ({ onClose }) => {
             className="w-full border border-gray-300 rounded-lg px-4 py-3 mb-5 outline-none focus:ring-2 focus:ring-[#A0174A]/30"
           />
 
-          {/* YOUR BUTTON (kept style) */}
-          <button className="bg-[#A0174A] text-white py-3 rounded-lg font-medium hover:opacity-90 transition">
+          {/* Button */}
+          <button className="bg-[#A0174A] text-white py-3 rounded-lg text-[16px] cursor-pointer font-medium hover:opacity-90 hover:border border-[#A0174A] hover:bg-white hover:text-black transition-all duration-500">
             Shop Now
           </button>
 
           {/* No thanks */}
           <button
-            onClick={onClose}
+            onClick={handleClose}
             className="mt-6 text-[16px] text-black"
           >
             No, Thanks

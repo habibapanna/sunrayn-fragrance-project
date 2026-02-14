@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { LiaAngleDownSolid } from "react-icons/lia";
-import Logo from "../../assets/Logo.svg";
-import BrandName from "../../assets/Brand Name.svg";
+import Logo from "../../assets/Logo (3).svg";
+import BrandName from "../../assets/Brand Name (1).svg";
 import { Link } from "react-router-dom";
 import { TbMenu } from "react-icons/tb";
 import SearchOverlay from "../../components/SearchOverlay";
