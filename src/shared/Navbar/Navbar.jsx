@@ -134,7 +134,7 @@ const navPaddingClass = (() => {
 const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
   ? "bg-[#BA9948] backdrop-blur-2xl rounded-full md:mt-[2px]  lg:mt-[12px]"
   : scrolled
-  ? "bg-[#BA9948] backdrop-blur-2xl rounded-full mt-[8px] 2xl:mt-[10px] mx-[16px] 2xl:mx-[32px]"
+  ? "bg-[#BA9948] backdrop-blur-2xl rounded-full mt-[8px] 2xl:mt-[10px] mx-[32px] 2xl:mx-[350px]"
   : "bg-transparent";
 
 // Determine top position
@@ -156,7 +156,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 <a
   href="/"
   onClick={handleLogoClick}
-  className="flex items-center gap-[7px] lg:gap-[12px] cursor-pointer transition-all duration-300"
+  className="flex items-center gap-[7px] lg:gap-[10px] cursor-pointer transition-all duration-300"
 >
 
  <img
@@ -413,9 +413,9 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
             </div>
 
           {/* RIGHT SIDE */}
-          <div className="flex items-center gap-[16px] 2xl:gap-[24px]">
+          <div className="flex items-center gap-[16px]  2xl:gap-[32px]">
             {/* DESKTOP ICONS (UNCHANGED) */}
-            <div className="hidden md:flex items-center gap-[8px] 2xl:gap-[16px]">
+            <div className="hidden md:flex items-center gap-[16px] 2xl:gap-[32px]">
               <button
                title="Search Perfumes"
   onClick={() => setSearchOpen(true)}

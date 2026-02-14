@@ -11,7 +11,7 @@ const Signature = () => {
 
           {/* IMAGE */}
           <img
-            src="https://i.postimg.cc/PNGRVQZ7/Whats-App-Image-2026-02-03-at-6-11-48-PM-(2).jpg"
+            src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
             alt=""
             className="absolute inset-0 w-full h-full object-cover hover:scale-105 duration-500"
           />
@@ -61,7 +61,7 @@ const Signature = () => {
 
           {/* IMAGE */}
           <img
-            src="https://i.postimg.cc/pdYRfpNM/Whats-App-Image-2026-02-03-at-6-11-48-PM.jpg"
+            src="https://i.postimg.cc/6p2k0Tvk/Whats-App-Image-2026-02-03-at-6-06-46-PM.jpg"
             alt=""
             className="absolute inset-0 w-full h-full object-cover  hover:scale-105 duration-500"
           />
