@@ -6,7 +6,7 @@ const Offer = () => {
       <Link to="/productList">
         <section
           className="relative bg-cover bg-center flex overflow-hidden
-          rounded-[16px]"
+          rounded-[16px] h-[400px] 2xl:h-[550px]"
           style={{
             backgroundImage:
               "url('https://i.postimg.cc/x1PD5vMm/imgi-187-Frame-1430102878-2.png')",
@@ -45,7 +45,7 @@ const Offer = () => {
           {/* RIGHT SIDE OVERLAY */}
           <div className="
             absolute right-0 top-0 h-full w-2/3 xl:w-1/2
-            bg-gradient-to-l from-black/70 via-black/40 to-transparent
+            bg-gradient-to-l from-black/80 via-black/50 to-transparent
           " />
         </section>
       </Link>

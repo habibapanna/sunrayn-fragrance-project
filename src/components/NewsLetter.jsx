@@ -4,7 +4,7 @@ const NewsLetter = () => {
   return (
     <div className="mx-auto max-w-full 2xl:pt-[16px]">
       <section
-        className="relative bg-cover bg-center rounded-[16px] 2xl:rounded-[48px] overflow-hidden"
+        className="relative bg-cover bg-center rounded-[16px] overflow-hidden h-[400px] 2xl:h-[550px]"
         style={{
           backgroundImage:
             "url('https://i.postimg.cc/x1PD5vMm/imgi-187-Frame-1430102878-2.png')",
@@ -60,7 +60,7 @@ const NewsLetter = () => {
  {/* RIGHT SIDE OVERLAY */}
           <div className="
             absolute right-0 top-0 h-full w-2/3 xl:w-1/2
-            bg-gradient-to-l from-black/70 via-black/40 to-transparent
+            bg-gradient-to-l from-black/80 via-black/50 to-transparent
           " />
         </div>
       </section>

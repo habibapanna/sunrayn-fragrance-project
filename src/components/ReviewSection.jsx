@@ -75,7 +75,7 @@ const ReviewSection = ({ productSlug }) => {
             <FaStar key={i} />
           ))}
         </div>
-        <span className="text-[14px] text-white/80">
+        <span className="text-[14px] text-white/90">
           Based on 6316 reviews
         </span>
       </div>
