@@ -22,7 +22,7 @@ const Hero2 = () => {
         {/* LEFT CONTENT */}
         <div>
 
-          <h1 className="text-4xl 2xl:text-6xl font-bold text-[#571313] leading-tight">
+          <h1 className="text-4xl 2xl:text-6xl font-bold text-[#A0174A] leading-tight">
             Luxury Perfumes & <br /> Attars | USA
           </h1>
 
@@ -39,7 +39,7 @@ const Hero2 = () => {
             <button
               className="
                 bg-white 
-                text-[#571313]               
+                text-[#A0174A]               
                 transition-all duration-300 ease-out
                 rounded-full
                 px-[24px] py-[10px]
@@ -61,7 +61,7 @@ const Hero2 = () => {
               </div>
 
               <div>
-                <p className="font-semibold text-lg text-[#4a2a12]">200+</p>
+                <p className="font-semibold text-lg text-[#A0174A]">200+</p>
                 <p className="text-sm text-[#6b5634]">Happy Customers</p>
               </div>
             </div>
