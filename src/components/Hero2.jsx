@@ -1,0 +1,144 @@
+import React from "react";
+import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+const Hero2 = () => {
+  return (
+    <section className="w-full min-h- bg-gradient-to-r from-[#d9b06f] via-[#e1bb78] to-[#f3d59a] relative overflow-hidden">
+
+      {/* vertical light stripes */}
+      <div className="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-[size:80px_100%]" />
+
+      <div className="mx-auto pt-[100px] md:pt-[200px] pb-10 md:pb-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10 px-[16px] 2xl:px-[200px] ">
+                {/* RIGHT IMAGE */}
+        <div className="flex md:hidden justify-center md:justify-end">
+          <img
+            src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
+            alt="Perfume"
+            className="object-cover drop-shadow-2xl md:h-[500px] rounded-[16px]"
+          />
+        </div>
+
+        {/* LEFT CONTENT */}
+        <div>
+
+          <h1 className="text-4xl 2xl:text-6xl font-bold text-[#571313] leading-tight">
+            Luxury Perfumes & <br /> Attars | USA
+          </h1>
+
+          <p className="mt-6 text-black 2xl:text-[20px] max-w-xl">
+            Sanrayn brings perfumes that linger with grace, purity, and devotion.
+            Our luxury designer-inspired aromas are artfully blended to complement
+            your sophistication.
+          </p>
+
+          {/* CTA + Customers */}
+          <div className="flex items-center gap-4 lg:gap-6 mt-8">
+            {/* CTA */}
+          <Link to="/productList">
+            <button
+              className="
+                bg-white 
+                text-[#571313]               
+                transition-all duration-300 ease-out
+                rounded-full
+                px-[24px] py-[10px]
+                lg:px-[48px] lg:py-[14px]
+                text-[14px] lg:text-[20px]
+                flex items-center justify-center
+                cursor-pointer w-[120px] lg:w-[200px] 2xl:font-semibold
+              "
+            >
+              Shop Now
+            </button>
+          </Link>
+
+            <div className="flex items-center gap-3">
+              <div className="flex -space-x-3">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" className="w-10 h-10 rounded-full border-2 border-white"/>
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" className="w-10 h-10 rounded-full border-2 border-white"/>
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" className="w-10 h-10 rounded-full border-2 border-white"/>
+              </div>
+
+              <div>
+                <p className="font-semibold text-lg text-[#4a2a12]">200+</p>
+                <p className="text-sm text-[#6b5634]">Happy Customers</p>
+              </div>
+            </div>
+          </div>
+
+          {/* BEST SELLING */}
+          
+          {/* <div className="mt-14">
+            <h3 className="text-xl font-semibold text-[#5b1b1b] mb-4">
+              Best Selling Products
+            </h3>
+            
+            <div className="flex gap-5 flex-wrap">
+
+             
+              {[1,2].map((i)=>(
+                <div
+                  key={i}
+                  className="bg-white rounded-2xl shadow-lg w-[260px] p-4 flex gap-4 hover:scale-[1.02] transition"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1594035910387-fea47794261f"
+                    className="w-20 h-28 object-cover rounded-lg"
+                  />
+
+                  <div className="flex flex-col justify-between">
+                    <div>
+                      <p className="text-xs bg-gray-100 px-2 py-1 rounded w-fit mb-1">
+                        Unisex
+                      </p>
+
+                      <h4 className="font-semibold text-sm text-[#5a2a2a]">
+                        AMBERY SAFFRON
+                      </h4>
+
+                      <div className="flex items-center gap-1 text-amber-400 text-xs mt-1">
+                        {[...Array(5)].map((_,i)=>
+                          <FaStar key={i}/>
+                        )}
+                        <span className="text-gray-500 ml-1">1239</span>
+                      </div>
+
+                      <p className="text-xs text-gray-500 mt-1">
+                        Inspired by Tom Ford's Oud Wood
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-2 mt-2">
+                      <span className="text-sm line-through text-gray-400">
+                        $39
+                      </span>
+                      <span className="font-semibold text-[#5a2a2a]">$29</span>
+                    </div>
+
+                    <button className="mt-2 border border-[#5a2a2a] rounded-full text-sm py-1 hover:bg-[#5a2a2a] hover:text-white transition">
+                      Add to cart
+                    </button>
+                  </div>
+                </div>
+              ))}
+
+            </div>
+          </div> */}
+        </div>
+
+
+        {/* RIGHT IMAGE */}
+        <div className="hidden md:flex justify-center md:justify-end">
+          <img
+            src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
+            alt="Perfume"
+            className="object-cover drop-shadow-2xl 2xl:h-[500px] rounded-[16px]"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero2;

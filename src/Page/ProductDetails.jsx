@@ -8,6 +8,7 @@ import Testimonials from "../components/Testimonials";
 import ProductCard from "../components/ProductCard";
 import { useNavigate, Link } from "react-router-dom";
 import { IoCheckmarkSharp } from "react-icons/io5";
+import ReviewSection from "../components/ReviewSection";
 
 
 
@@ -675,7 +676,10 @@ Back
                                                 </div>
                                               )}
 
+
       <section className="px-[16px] 2xl:px-[32px]"><ProductCard></ProductCard></section>
+      {/* REVIEWS */}
+<ReviewSection productSlug={product.slug} />
       <MarqueeSection></MarqueeSection>
     </div>
   );

@@ -9,13 +9,14 @@ import Testimonials from '../components/Testimonials';
 import Blogs from '../components/Blogs';
 import Offer from '../components/Offer';
 import RecentPost from '../components/RecentPost';
+import Hero2 from '../components/Hero2';
 
 
 const Home = () => {
   return (
     <div>
         
-      <Hero />
+      <Hero2 />
         <Category />
  <Signature />    
         <Featured />

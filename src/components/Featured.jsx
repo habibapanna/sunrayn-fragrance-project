@@ -198,7 +198,7 @@ useEffect(() => {
                       </div>
                        <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[22px] h-[33px] w-[68px]"
                       >
-                        <div className="absolute -top-[8px] 2xl:-top-[12px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[8px] text-white 2xl:text-[14px] z-10 2xl:h-[22px] h-[14px] w-[40px] 2xl:w-[58px] flex items-center justify-center font-medium ">
+                        <div className="absolute -top-[8px] 2xl:-top-[12px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[10px] text-white 2xl:text-[14px] z-10 2xl:h-[22px] h-[14px] w-[42px] 2xl:w-[58px] flex items-center justify-center font-medium ">
                           -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
                         </div>
 
@@ -211,7 +211,6 @@ useEffect(() => {
                             x="52.5"
                             y="30"
                             textAnchor="middle"
-                            fontWeight="500"
                             fill="#FFFFFF"
                             fontFamily="sans-serif"
                           >
