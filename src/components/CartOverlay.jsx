@@ -26,7 +26,7 @@ const CartOverlay = ({ onClose }) => {
   const [isDragging, setIsDragging] = useState(false);
   const sliderRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
- const [selectedTier, setSelectedTier] = useState(tiers[0].id);
+ const [selectedTier, setSelectedTier] = useState(tiers[1].id);
 
 
   const isHome = location.pathname === "/";
