@@ -23,8 +23,8 @@ const Hero2 = () => {
                 {/* RIGHT IMAGE */}
         <div className="flex md:hidden justify-center md:justify-end">
           <img
-            src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
-            alt="Perfume"
+            src={HandImage}
+    alt="Perfume Hand"
             className="object-cover drop-shadow-2xl md:h-[500px] rounded-[16px]"
           />
         </div>
@@ -32,7 +32,7 @@ const Hero2 = () => {
         {/* LEFT CONTENT */}
         <div>
                       {/* RATING */}
-                      <div className="flex flex-col md:flex-row items-center gap-[8px] text-[#FCFF11] mb-[16px]">
+                      <div className="flex  items-center gap-[8px] text-[#FCFF11] mb-[16px]">
                         <div className="flex gap-[6px]">
                           {[...Array(5)].map((_, i) => (
                             <FaStar key={i} className="h-[18px] w-[18px]" />
