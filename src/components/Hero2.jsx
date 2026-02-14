@@ -44,7 +44,7 @@ const Hero2 = () => {
                       </div>
 
           <h1 className="text-[35px] lg:text-[60px] font-bold text-[#A0174A] leading-tight">
-           Designer-Inspired Luxury <br /> Fragrances with <br /> Everyday Affordability
+            Luxury Fragrances with <br /> Everyday Affordability
           </h1>
 
           <p className="mt-6 text-black text-[15px] md:text-[16px] lg:text-[20px] max-w-xl">
