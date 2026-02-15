@@ -15,7 +15,7 @@ const Footer = () => {
 
 
       {/* ================= MAIN CONTENT ================= */}
-      <div className="relative z-10 mx-auto lg:px-6 lg:pl-[50px] 2xl:pl-[80px] p-[16px] py-10 2xl:py-[150px]">
+      <div className="relative z-10 mx-auto lg:px-6  2xl:pl-[80px] p-[16px] py-10 2xl:py-[150px]">
 
         {/* MOBILE BIG S */}
       <div className="2xl:hidden relative flex justify-center items-center">
@@ -33,7 +33,6 @@ const Footer = () => {
   />
 
 </div>
-
 
         <div className="flex flex-col md:flex-row justify-between items-start gap-[32px]">
 

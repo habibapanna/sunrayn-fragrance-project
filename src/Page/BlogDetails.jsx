@@ -2,21 +2,24 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { blogs } from "../data/blogs";
 import Blogs from "../components/Blogs";
-import { FaAngleLeft } from "react-icons/fa";
-import { FaArrowLeftLong } from "react-icons/fa6";
+import { BsArrowLeft, BsChevronDown } from "react-icons/bs";
+import { useState } from "react";
+import { AiOutlineDown } from "react-icons/ai";
 
 const BlogDetails = () => {
   const navigate = useNavigate();
   const { slug } = useParams();
+  const [tocOpen, setTocOpen] = useState(false);
+
   const blog = blogs.find((b) => b.slug === slug);
 
   if (!blog) return <div>Blog not found</div>;
 
   return (
 <div>
-      <div className="px-[16px] 2xl:px-[32px] pt-[20px] md:pt-[40px]">
+      <div className="px-[16px] 2xl:px-[32px] pt-[20px] lg:pt-[40px]">
 
-<div className="flex flex-col gap-[16px] lg:flex-row lg:items-center mb-[16px] 2xl:mb-[32px]">
+<div className="flex flex-col gap-[16px] md:flex-row lg:items-center mb-[16px] 2xl:mb-[32px]">
 
   {/* Go Back */}
   <div
@@ -36,7 +39,7 @@ const BlogDetails = () => {
       w-fit
     "
   >
-    <FaArrowLeftLong className="text-xl"/>
+    <BsArrowLeft className="text-xl"/>
     <span className="font-semibold whitespace-nowrap">
    Go Back
     </span>
@@ -106,6 +109,51 @@ const BlogDetails = () => {
           className="w-full rounded-[24px] object-cover h-[288px] md:h-[505px] lg:h-[560px]"
         />
       </div>
+{/* ===== MOBILE / MD TABLE OF CONTENTS (ACCORDION) ===== */}
+<div className="lg:hidden max-w-[1100px] mx-auto mb-[40px]">
+
+  {/* Accordion Header */}
+  <div
+    onClick={() => setTocOpen(!tocOpen)}
+    className="flex items-center justify-between bg-[#F6F7F2  py-[14px]  cursor-pointer "
+  >
+    <h3 className="text-[26px] font-semibold text-[#282828]">
+      Table of Contents
+    </h3>
+
+    <span
+      className={`transition-transform duration-300 ${
+        tocOpen ? "rotate-180" : ""
+      }`}
+    >
+     <BsChevronDown />
+    </span>
+  </div>
+
+  {/* Accordion Body */}
+  <div
+    className={`overflow-hidden transition-all duration-500 ${
+      tocOpen ? "max-h-[500px] mt-[16px]" : "max-h-0"
+    }`}
+  >
+    <ul className="space-y-[12px] text-[16px] text-[#3A3F42] bg-white p-[20px] shadow">
+      {blog.content.map((section, index) => (
+        <li
+          key={index}
+          className="cursor-pointer hover:text-[#1D0B01]"
+          onClick={() => {
+            document
+              .getElementById(`section-${index}`)
+              ?.scrollIntoView({ behavior: "smooth" });
+            setTocOpen(false);
+          }}
+        >
+          {index + 1}. {section.heading}
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
 
       {/* ===== MAIN CONTENT AREA ===== */}
       <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-[70px]">

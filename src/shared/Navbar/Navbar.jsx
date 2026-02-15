@@ -173,13 +173,13 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
     ${navBgClass}
     ${navPaddingClass} left-0 right-0`}
 >
-        <div className="mx-auto px-[16px] 2xl:px-[32px] py-[10px] md:py-[14px] flex items-center justify-between text-white ">
+        <div className="mx-auto px-[16px] 2xl:px-[32px] py-[8px] md:py-[14px] flex items-center justify-between text-white ">
 
 {/* left LOGO */}
 <a
   href="/"
   onClick={handleLogoClick}
-  className="flex items-center gap-[7px] lg:gap-[12px] cursor-pointer transition-all duration-300"
+  className="flex items-center md:gap-[7px] lg:gap-[12px] cursor-pointer transition-all duration-300"
 >
 
  <img
@@ -430,9 +430,9 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
               </span></Link>
             </div>
           {/* RIGHT SIDE */}
-          <div className="flex items-center gap-[16px]">
+          <div className="flex items-center gap-[10px]">
             {/* DESKTOP ICONS (UNCHANGED) */}
-            <div className="flex items-center gap-[12px] md:gap-[16px] ">
+            <div className="flex items-center gap-[10px] md:gap-[16px] ">
               <button
                title="Search Perfumes"
   onClick={() => setSearchOpen(true)}

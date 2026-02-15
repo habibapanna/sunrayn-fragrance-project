@@ -638,37 +638,37 @@ useEffect(() => {
 
           </motion.div>
         </section>
-                      {/* MOBILE CART POPUP */}
-          {showCartToast && (
-            <div className="fixed top-45 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
-              <div className="flex items-center justify-between bg-[#A0174A] text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
-          
-                <div className="flex items-center gap-2 text-sm font-medium">
-                  <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center ">
-                   <IoCheckmarkSharp className="text-black" />
-                  </span>
-                  Item added to your cart
-                </div>
-          
-                <button
-                  onClick={() => {
-                    setShowCartToast(false);
-                    setCartOpen(true);
-                  }}
-                  className="bg-black text-white px-5 py-[4px] rounded-[10px] text-[12px] font-medium flex items-center justify-center"
-                >
-                  View card
-                </button>
-          
-              </div>
-            </div>
-          )}
+ {/* MOBILE CART POPUP */}
+                                              {showCartToast && (
+                                                <div className="fixed top-50 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+                                                  <div className="flex items-center justify-between bg-black text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
+                                              
+                                                    <div className="flex items-center gap-2 text-sm font-medium">
+                                                      <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center ">
+                                                       <IoCheckmarkSharp className="text-black" />
+                                                      </span>
+                                                      Item added to your cart
+                                                    </div>
+                                              
+                                                    <button
+                                                      onClick={() => {
+                                                        setShowCartToast(false);
+                                                        setCartOpen(true);
+                                                      }}
+                                                      className="bg-[#A0174A] text-white px-5 py-[4px] rounded-[10px] text-[12px] font-medium flex items-center justify-center"
+                                                    >
+                                                      View card
+                                                    </button>
+                                              
+                                                  </div>
+                                                </div>
+                                              )}
 
       </div>
  </div>
 
       <Testimonials />
-      <section className='px-[16px] 2xl:px-[32px] 2xl:pb-[16px]'>
+      <section className='px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]'>
         <Premium />
       </section>
     </div>
