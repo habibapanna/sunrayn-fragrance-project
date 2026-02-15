@@ -92,8 +92,6 @@ const SortFilter = ({
 }) => {
   const [openScent, setOpenScent] = useState(false);
   const [openGender, setOpenGender] = useState(false);
-  const [openBrands, setOpenBrands] = useState(false);
-  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const scentRef = useRef(null);
   const genderRef = useRef(null);
   const brandRef = useRef(null);
@@ -204,7 +202,7 @@ const showClearAll =
     hidden md:flex items-center gap-[8px] rounded-full px-[12px] py-[6px] 2xl:px-[18px] 2xl:py-[12px] text-[#1D0B01] font-medium text-[12px] 2xl:text-[16px] cursor-pointer
     ${
       isSticky
-        ? "fixed md:top-[113px] lg:top-[148px] left-0 z-40 md:mx-[16px] 2xl:mx-[32px] bg-[#A0174A] text-white"
+        ? "fixed md:top-[115px] lg:top-[150px] left-0 z-40 md:mx-[16px] 2xl:mx-[32px] bg-[#A0174A] text-white"
         : "relative bg-[#F6F7F2]"
     }
   `}
