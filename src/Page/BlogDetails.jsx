@@ -16,7 +16,7 @@ const BlogDetails = () => {
 <div>
       <div className="px-[16px] 2xl:px-[32px] pt-[20px] md:pt-[40px]">
 
-<div className="flex flex-col gap-[16px] lg:flex-row lg:items-center">
+<div className="flex flex-col gap-[16px] lg:flex-row lg:items-center mb-[16px] 2xl:mb-[32px]">
 
   {/* Go Back */}
   <div
