@@ -3,70 +3,104 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { blogs } from "../data/blogs";
 import Blogs from "../components/Blogs";
 
-
 const BlogDetails = () => {
-     const navigate = useNavigate();
+  const navigate = useNavigate();
   const { slug } = useParams();
   const blog = blogs.find((b) => b.slug === slug);
 
   if (!blog) return <div>Blog not found</div>;
 
   return (
-    <div className="2xl:pt-[32px]">
-<div className="flex px-[16px] 2xl:px-[32px] gap-[10px] cursor-pointer mb-[20px]">
-            <div><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-  <path d="M10.0013 15.8327L4.16797 9.99935L10.0013 4.16602" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M15.8346 10H4.16797" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg></div>
-            <button className="text-16px cursor-pointer font-semibold"
-            onClick={() => navigate(-1)}>Go Back</button></div>
-      {/* Hero Section */}
-      <section className="px-[16px] 2xl:px-[32px] 2xl:max-w-[800px] mx-auto grid grid-cols-1 gap-[50px] items-center">
+<div>
+      <div className="px-[16px] 2xl:px-[32px] pt-[40px]">
+
+      {/* Go Back */}
+      <div
+        className="flex items-center gap-2 cursor-pointer mb-[32px]"
+        onClick={() => navigate(-1)}
+      >
+        <span className="text-[16px] font-semibold">← Go Back</span>
+      </div>
+
+      {/* ===== TOP TITLE SECTION ===== */}
+      <div className="max-w-[1000px] mx-auto text-center mb-[40px]">
+        <h1 className="text-[32px] 2xl:text-[50px] font-semibold text-[#1D0B01] mb-[16px]">
+          {blog.title}
+        </h1>
+
+       <div className="flex items-center justify-center gap-[16px] text-[#282828] text-[18px]">
+         <p className="">
+  {blog.date} 
+</p>
+<span> • </span>
+<p> {blog.readTime}</p>
+       </div>
+      </div>
+
+      {/* ===== HERO IMAGE ===== */}
+      <div className="max-w-[1100px] mx-auto mb-[60px]">
         <img
           src={blog.product}
           alt={blog.title}
-          className="rounded-[16px] w-full 2xl:w-[800px] md:h-[500px] object-cover"
+          className="w-full rounded-[24px] object-cover h-[288px] md:h-[505px] lg:h-[560px]"
         />
-
-        <div className="">
-          <h1 className="text-[#1D0B01] mb-[16px] text-[30px] 2xl:text-[40px] text-center">
-            {blog.title}
-          </h1>
-        <div className="border mb-[16px] border-[#282828]/25"></div>
-          <p className="text-[#282828] text-[16px] lg:text-[18px]">
-            {blog.description}
-          </p>
-        </div>
-      </section>
-
-      {/* Content */}
-      <div className="px-[16px] 2xl:px-[32px] 2xl:max-w-[800px] mx-auto space-y-[32px] mt-[32px]">
-       {blog.content.map((section, index) => (
-  <div key={index} className="mb-[48px]">
-    <h2 className="text-[28px] 2xl:text-[35px] text-[#1D0B01] mb-[32px]">
-      {section.heading}
-    </h2>
-    <p className="text-[#282828] text-[16px] 2xl:text-[18px] leading-relaxed mb-[32px]">
-      {section.text}
-    </p>
-    <p className="text-[#282828] text-[16px] 2xl:text-[18px] leading-relaxed mb-[32px]">
-      {section.subText}
-    </p>
-
-    {/* Show image if exists */}
-    {section.img && (
-      <img
-        src={section.img}
-        alt={section.heading}
-        className="rounded-[16px] w-full 2xl:w-[800px] object-cover mt-[32px]"
-      />
-    )}
-  </div>
-))}
       </div>
-      <Blogs></Blogs>
+
+      {/* ===== MAIN CONTENT AREA ===== */}
+      <div className="max-w-[1100px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-[70px]">
+
+        {/* ===== TABLE OF CONTENTS (LEFT SIDE) ===== */}
+        <div className="hidden lg:block sticky top-[150px] h-fit">
+          <h3 className="text-[25px] md:text-[32px] font-semibold mb-[20px] text-[#282828]">
+            Table of Contents
+          </h3>
+
+          <ul className="space-y-[12px] text-[18px] text-[#3A3F42]">
+            {blog.content.map((section, index) => (
+              <li key={index} className="cursor-pointer hover:text-[#1D0B01]">
+                {index + 1}. {section.heading}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ===== BLOG CONTENT (RIGHT SIDE) ===== */}
+        <div className="lg:col-span-2 space-y-[60px]">
+          {blog.content.map((section, index) => (
+            <div key={index}>
+              <h2 className="text-[26px] 2xl:text-[34px] font-semibold text-[#282828] mb-[24px]">
+                {section.heading}
+              </h2>
+
+              <p className="text-[#282828] text-[16px] 2xl:text-[18px] leading-relaxed mb-[24px]">
+                {section.text}
+              </p>
+
+              {section.subText && (
+                <p className="text-[#282828] text-[16px] 2xl:text-[18px] leading-relaxed mb-[24px]">
+                  {section.subText}
+                </p>
+              )}
+
+              {section.img && (
+                <img
+                  src={section.img}
+                  alt={section.heading}
+                  className="w-full rounded-[20px] object-cover mt-[32px]"
+                />
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
+    {/* Related Blogs */}
+      <div className="mt-[80px]">
+        <Blogs />
+      </div>
+</div>
   );
 };
+
 
 export default BlogDetails;
