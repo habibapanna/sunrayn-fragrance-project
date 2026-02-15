@@ -2,6 +2,8 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { blogs } from "../data/blogs";
 import Blogs from "../components/Blogs";
+import { FaAngleLeft } from "react-icons/fa";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const BlogDetails = () => {
   const navigate = useNavigate();
@@ -12,15 +14,74 @@ const BlogDetails = () => {
 
   return (
 <div>
-      <div className="px-[16px] 2xl:px-[32px] pt-[40px]">
+      <div className="px-[16px] 2xl:px-[32px] pt-[20px] md:pt-[40px]">
 
-      {/* Go Back */}
-      <div
-        className="flex items-center gap-2 cursor-pointer mb-[32px]"
-        onClick={() => navigate(-1)}
-      >
-        <span className="text-[16px] font-semibold">← Go Back</span>
-      </div>
+<div className="flex flex-col gap-[16px] lg:flex-row lg:items-center">
+
+  {/* Go Back */}
+  <div
+    onClick={() => navigate(-1)}
+    className="
+      flex items-center justify-center
+      gap-[8px]
+      bg-[#BA9948]/30
+      px-[20px]
+      py-[8px]
+      rounded-full
+      text-[12px] md:text-[14px]
+      font-medium
+      h-[40px] md:h-[50px]
+      cursor-pointer
+      hover:underline
+      w-fit
+    "
+  >
+    <FaArrowLeftLong className="text-xl"/>
+    <span className="font-semibold whitespace-nowrap">
+   Go Back
+    </span>
+  </div>
+
+  {/* ===== BREADCRUMBS ===== */}
+  <div
+    className="
+      flex items-center
+      gap-[6px]
+      px-[16px]
+      py-[8px]
+      md:py-[10px]
+      bg-[#F6F7F2]
+      rounded-full
+      text-[13px] md:text-[15px]
+      text-[#282828]/70
+      overflow-hidden h-[40px] md:h-[50px]
+      w-full
+      
+    "
+  >
+    <Link
+      to="/"
+      className="hover:underline text-[#1D0B01] whitespace-nowrap text-[16px]"
+    >
+      Home
+    </Link>
+
+    <span>/</span>
+
+    <Link
+      to="/blogs"
+      className="hover:underline text-[#1D0B01] whitespace-nowrap text-[16px]"
+    >
+      Blogs
+    </Link>
+
+    <span>/</span>
+
+    <span className="text-[#1D0B01]/60 font-medium truncate text-[16px]">
+      {blog.title}
+    </span>
+  </div>
+</div>
 
       {/* ===== TOP TITLE SECTION ===== */}
       <div className="max-w-[1000px] mx-auto text-center mb-[40px]">
