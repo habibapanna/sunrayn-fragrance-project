@@ -237,7 +237,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
         {/* COLUMN 1 */}
         <div>
-          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px]">
+          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px] whitespace-nowrap">
             Perfume Style
           </h4>
           <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]">
@@ -249,7 +249,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
         {/* COLUMN 2 */}
         <div>
-          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px]">
+          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px] whitespace-nowrap">
             Perfume Family
           </h4>
           <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]  cursor-pointer">
@@ -269,7 +269,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
               src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
               className="rounded-xl mx-auto mb-4"
             />
-          </div> <p className="text-[16px] text-center text-[#1D0B01] font-medium cursor-pointer">
+          </div> <p className="text-[16px] text-center text-[#A0174A] font-medium cursor-pointer">
               <Link to='productList'>View All Perfume</Link>
             </p>
         </div>
@@ -319,24 +319,24 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
         {/* COLUMN 1 */}
         <div>
-          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px]">
+          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px] whitespace-nowrap">
             Perfume Type
           </h4>
           <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]">
             <li className="hover:text-[#A0174A]"><Link to='/productList'>All Perumes</Link></li>
             <li className="hover:text-[#A0174A]"><Link to='/productList'>New Arrivals</Link></li>
             <li className="hover:text-[#A0174A]"><Link to='/productList'>Combo Sales</Link></li>
-            <li className="hover:text-[#A0174A]"><Link to='/productList'>Limited Editions</Link></li>
+            <li className="hover:text-[#A0174A] whitespace-nowrap"><Link to='/productList'>Limited Editions</Link></li>
           </ul>
         </div>
         {/* COLUMN 2 */}
         <div>
-          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px]">
+          <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px] whitespace-nowrap">
             Shop by Theme
           </h4>
           <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]">
             <li className="hover:text-[#A0174A]"><Link to='/productList'>Best Offers</Link></li>
-            <li className="hover:text-[#A0174A]"><Link to='/productList'>Event Perfumes</Link></li>
+            <li className="hover:text-[#A0174A] whitespace-nowrap"><Link to='/productList'>Event Perfumes</Link></li>
             <li className="hover:text-[#A0174A]"><Link to='/productList'>Best Sellers</Link></li>
           </ul>
         </div>
@@ -348,7 +348,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
               src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
               className="rounded-xl mx-auto mb-4"
             />
-          </div> <p className="text-[14px] lg:text-[16px] text-center text-[#1D0B01] font-medium cursor-pointer">
+          </div> <p className="text-[14px] lg:text-[16px] text-center text-[#A0174A] font-medium cursor-pointer">
               <Link to='productList'>View All Perfume</Link>
             </p>
         </div>
@@ -396,7 +396,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 
         {/* COLUMN 1 */}
         <div>
-           <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px]">
+           <h4 className="font-bold text-[14px] lg:text-[16px] text-[#A0174A] mb-[12px] whitespace-nowrap">
             About SANRAYN
           </h4>
           <ul className="space-y-[12px] text-[14px] lg:text-[16px] text-[#1D0B01]">
