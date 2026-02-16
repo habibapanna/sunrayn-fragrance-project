@@ -197,7 +197,7 @@ const backdropVariants = {
     <img
       src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
       alt="Cerisa Aura"
-      className="w-[140px] h-full lg:w-[130px]  object-cover rounded-[16px]"
+      className="w-[140px] h-full lg:w-[130px]  object-cover rounded-[8px]"
     />
     <span className="absolute top-[2px] left-[2px] text-[10px] lg:text-[12px] bg-white px-[8px] py-[2px] rounded-full border border-[#DBAB35] text-[#1D0B01]">
       Woman
@@ -280,7 +280,7 @@ const backdropVariants = {
           key={i}
           className="snap-start flex-shrink-0 w-[215px]"
         >
-          <div className="group relative h-[272px] rounded-[24px] overflow-hidden"
+          <div className="group relative h-[272px] rounded-[16px] overflow-hidden"
       
           >
             <img
