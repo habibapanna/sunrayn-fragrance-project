@@ -295,13 +295,13 @@ const [question, setQuestion] = useState("");
         onClick={() => setQaOpen(false)}
         className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white 
         flex items-center justify-center shadow hover:bg-black 
-        hover:text-white transition-all duration-300"
+        hover:text-white transition-all duration-500 cursor-pointer"
       >
         <X size={18} />
       </button>
 
       {/* TITLE */}
-      <h2 className="text-center text-[22px] sm:text-[24px] font-semibold mb-6">
+      <h2 className="text-center text-[22px] sm:text-[24px] font-semibold my-6">
         Ask a question about It Factor
       </h2>
 

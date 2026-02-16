@@ -120,7 +120,7 @@ export default function ReviewList() {
         </div>
 
         {/* RIGHT — DATE */}
-        <div className="w-[120px] text-right hidden md:block">
+        <div className="w-[120px] text-right hidden md:block md:w-[170px] 2xl:w-[500px]">
           <span className="text-[#3A3F42] text-[17px]">{r.date}</span>
         </div>
 
