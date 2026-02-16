@@ -131,8 +131,6 @@ export default function ReviewList() {
 
 </div>
 
-
-
       {/* Pagination */}
       <div className="flex justify-center items-center gap-4 mt-10">
 

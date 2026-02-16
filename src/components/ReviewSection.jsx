@@ -12,6 +12,11 @@ const [activeTab, setActiveTab] = useState("reviews");
   const [rating, setRating] = useState(0);
   const [title, setTitle] = useState("");
   const [comment, setComment] = useState("");
+  const [qaOpen, setQaOpen] = useState(false);
+const [qaName, setQaName] = useState("");
+const [qaEmail, setQaEmail] = useState("");
+const [question, setQuestion] = useState("");
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -120,10 +125,15 @@ const [activeTab, setActiveTab] = useState("reviews");
             Be the first to ask something about this product.
           </p>
 
-          <button className="px-8 py-3 rounded-full bg-[#A0174A] text-white hover:bg-white  font-semibold border border-transparent hover:border-[#DBAB35]
-        transition-all duration-500 text-[16px] 2xl:text-[20px] cursor-pointer hover:text-black w-full">
-            Ask a question
-          </button>
+         <button
+  onClick={() => setQaOpen(true)}
+  className="px-8 py-3 rounded-full bg-[#A0174A] hover:text-black font-semibold text-white
+  hover:bg-white border border-transparent hover:border-[#DBAB35]
+  transition-all duration-500 text-[16px] 2xl:text-[20px] cursor-pointer w-full"
+>
+  Ask a question
+</button>
+
         </>
       )}
     </div>
@@ -266,6 +276,98 @@ const [activeTab, setActiveTab] = useState("reviews");
           type="submit"
           className="w-full bg-[#D4A437] border hover:border-[#DBAB35] border-transparent transition-all duration-500 hover:bg-white
                      text-black font-medium py-3 rounded-full mt-2 cursor-pointer"
+        >
+          Send
+        </button>
+
+      </form>
+    </div>
+  </div>
+)}
+
+{qaOpen && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4">
+
+    <div className="relative w-full max-w-xl bg-[#F4F4F2] rounded-[28px] p-6 sm:p-8 shadow-xl">
+
+      {/* CLOSE */}
+      <button
+        onClick={() => setQaOpen(false)}
+        className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white 
+        flex items-center justify-center shadow hover:bg-black 
+        hover:text-white transition-all duration-300"
+      >
+        <X size={18} />
+      </button>
+
+      {/* TITLE */}
+      <h2 className="text-center text-[22px] sm:text-[24px] font-semibold mb-6">
+        Ask a question about It Factor
+      </h2>
+
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (!question || !qaName || !qaEmail) return;
+
+          // You can handle submission here
+          setQaOpen(false);
+          setQuestion("");
+          setQaName("");
+          setQaEmail("");
+        }}
+        className="space-y-5"
+      >
+
+        {/* QUESTION */}
+        <div>
+          <label className="block mb-2 text-sm font-medium">
+            Ask a question
+          </label>
+
+          <textarea
+            rows={5}
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
+            placeholder="Write your question here..."
+            className="w-full rounded-2xl bg-white px-5 py-4 outline-none 
+            border border-gray-200 focus:border-gray-400 resize-none"
+          />
+        </div>
+
+        {/* NAME */}
+        <div>
+          <input
+            value={qaName}
+            onChange={(e) => setQaName(e.target.value)}
+            placeholder="Name"
+            className="w-full rounded-full bg-white px-5 py-3 outline-none 
+            border border-gray-200 focus:border-gray-400"
+          />
+        </div>
+
+        {/* EMAIL */}
+        <div>
+          <input
+            type="email"
+            value={qaEmail}
+            onChange={(e) => setQaEmail(e.target.value)}
+            placeholder="Email"
+            className="w-full rounded-full bg-white px-5 py-3 outline-none 
+            border border-gray-200 focus:border-gray-400"
+          />
+        </div>
+
+        <p className="text-sm text-gray-500">
+          We'll send you an email to verify this question came from you.
+        </p>
+
+        {/* BUTTON */}
+        <button
+          type="submit"
+          className="w-full bg-[#D4A437] text-black font-semibold 
+          py-3 rounded-full hover:bg-white border border-transparent 
+          hover:border-[#DBAB35] transition-all duration-500"
         >
           Send
         </button>
