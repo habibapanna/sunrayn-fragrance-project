@@ -73,13 +73,13 @@ const [activeTab, setActiveTab] = useState("reviews");
     className={`transition-all duration-300
       ${
         activeTab === "reviews"
-          ? "flex flex-col md:flex-row items-center justify-between"
-          : "flex flex-col items-center text-center py-10"
+          ? "flex flex-col md:flex-row items-center justify-between py-10 md:py-1"
+          : "flex flex-col items-center text-center py-10 md:py-1"
       }`}
   >
 
     {/* LEFT SIDE CONTENT */}
-    <div className={`${activeTab === "reviews" ? "w-full md:w-1/2" : "max-w-xl"}`}>
+    <div className={`${activeTab === "reviews" ? "w-full text-center md:text-left md:w-1/2" : "max-w-xl"}`}>
 
       {activeTab === "reviews" ? (
         <>
@@ -87,7 +87,7 @@ const [activeTab, setActiveTab] = useState("reviews");
             Customer Reviews
           </h3>
 
-          <div className="flex items-center gap-[10px]">
+          <div className="flex items-center justify-center md:justify-start gap-[10px]">
             <span className="text-[25px] 2xl:text-[35px] text-[#FF9100]">
               4.5
             </span>
