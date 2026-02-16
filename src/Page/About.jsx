@@ -38,7 +38,7 @@ const About = () => {
               generation.
             </p>
             <Link to='/productList'><button className="btn rounded-full transition-all duration-300 ease-out
-    bg-[#DBAB35] hover:text-[#1D0B01] hover:bg-white backdrop-blur-md border hover:border-[#DBAB35]  text-[20px] text-white  px-[20px] py-[8px] lg:px-[24px] lg:py-[10px] 2xl:h-[55px] 2xl:w-[210px]">
+    bg-[#DBAB35] text-[#1D0B01] hover:bg-white backdrop-blur-md border hover:border-[#DBAB35]  text-[20px]  px-[20px] py-[8px] lg:px-[24px] lg:py-[10px] 2xl:h-[55px] 2xl:w-[210px]">
               Shop Now
             </button></Link>
           </div>

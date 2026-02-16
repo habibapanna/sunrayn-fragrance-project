@@ -44,7 +44,7 @@ const BLogPage = () => {
                 lg:w-[210px] lg:h-[55px]
                 text-[14px] lg:text-[20px]
                 2xl:font-bold transition-all duration-300 ease-out
-                bg-[#DBAB35] text-white hover:text-[#1D0B01] flex items-center justify-center cursor-pointer "
+                bg-[#DBAB35] text-[#1D0B01] flex items-center justify-center cursor-pointer border border-[#DBAB35]"
               >
                 Continue Read
               </button>

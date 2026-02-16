@@ -436,7 +436,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
                title="Search Perfumes"
   onClick={() => setSearchOpen(true)}
   className={`
-  lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[15px] rounded-full 2xl:h-[50px] 2xl:w-[50px]
+  lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full 2xl:h-[50px] 2xl:w-[50px]
   transition-colors duration-300 cursor-pointer flex items-center justify-center  p-[6px] h-[28px] w-[28px]
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
@@ -449,7 +449,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
               <button
   onClick={() => setCartOpen(true)}
   className={`
- lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[15px] rounded-full 2xl:h-[50px] 2xl:w-[50px]
+ lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full 2xl:h-[50px] 2xl:w-[50px]
   transition-colors duration-300 cursor-pointer flex items-center justify-center  p-[6px] h-[28px] w-[28px]
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
@@ -464,7 +464,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
     onClick={() => setAccountOpen(!accountOpen)}
     className="
       lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] 
-      lg:h-[40px] lg:w-[40px] 2xl:p-[15px] 
+      lg:h-[40px] lg:w-[40px] 2xl:p-[12px] 
       rounded-full 2xl:h-[50px] 2xl:w-[50px]
       bg-white/90 flex items-center justify-center cursor-pointer  p-[6px] h-[28px] w-[28px]
     "

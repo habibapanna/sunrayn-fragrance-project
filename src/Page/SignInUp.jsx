@@ -288,7 +288,7 @@ return (
           )}
 
           {/* BUTTON */}
-          <button className="w-full bg-[#DBAB35] text-black py-[12px] rounded-full font-semibold  transition-all duration-500 cursor-pointer hover:bg-white hover:text-black border hover:border-[#DBAB35] border-transparent
+          <button className="w-full bg-[#DBAB35] text-black py-[12px] rounded-full font-semibold  transition-all duration-500 cursor-pointer hover:bg-white hover:text-black border border-[#DBAB35]
         ">
             {mode === "signup" ? "SIGN IN" : "LOG IN"}
           </button>

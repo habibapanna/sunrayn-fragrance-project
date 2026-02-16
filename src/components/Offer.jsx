@@ -35,7 +35,7 @@ const Offer = () => {
                 lg:w-[210px] lg:h-[55px]
                 text-[14px] lg:text-[20px]
                 2xl:font-bold transition-all duration-300 ease-out
-                hover:bg-[#DBAB35] hover:text-white text-[#1D0B01] flex items-center justify-center cursor-pointer "
+                hover:bg-[#DBAB35] text-[#1D0B01] flex items-center justify-center cursor-pointer "
               >
                 Shop Hurry
               </button>
