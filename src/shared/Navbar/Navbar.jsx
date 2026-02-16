@@ -188,7 +188,6 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
   className="w-[35px] h-[35px] md:h-[40px] md:w-[40px] lg:h-[58px] lg:w-[58px] transition-all duration-300"
 />
 
-
  <img
   src={brandSrc}
   alt="Brand Name"

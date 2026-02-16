@@ -16,10 +16,6 @@ const ProductDetails = () => {
     const [openSection, setOpenSection] = useState("notes");
     const [selectedVolume, setSelectedVolume] = useState(null);
     const [showCartToast, setShowCartToast] = useState(false);
-   
-
-
-  
      const { cartOpen, setCartOpen } = useOutletContext();
 
     const navigate = useNavigate();
@@ -154,6 +150,13 @@ useEffect(() => {
   return () => clearTimeout(t);
 }, [showCartToast]);
 
+const genderStyles = {
+  WOMEN: "border-[#A0174A] text-[#A0174A]",
+  MEN: "border-black text-black",
+  UNISEX: "border-[#DBAB35] text-[#DBAB35]",
+};
+
+
 
   return (
     <div className=" pb-[16px] 2xl:py-[32px]">
@@ -257,7 +260,14 @@ Back
 <div className="md:sticky md:top-[100px] h-fit">
   <div className="bg-[#F6F7F2] rounded-[16px] p-[16px] 2xl:p-[32px]">
 
-          <span className="text-[12px] 2xl:text-[16px] bg-[#FFFFFF] border border-[#DBAB35] py-[8px] px-[16px] rounded-full">{product.gender}</span>
+<span
+  className={`text-[12px] 2xl:text-[16px] bg-white border py-[8px] px-[16px] rounded-full ${
+    genderStyles[product.gender?.toUpperCase()] || "border-[#DBAB35]"
+  }`}
+>
+  {product.gender}
+</span>
+
           <div className="flex justify-between items-center">
             <h1 className="text-[18px] lg:text-[24px] 2xl:text-[35px] text-[#1D0B01] font-bold mt-2">
             {product.title}
