@@ -86,7 +86,7 @@ const ProductCard = () => {
 
         <Link
           to="/productList"
-          className="hover:bg-[#DBAB35] bg-white border border-[#DBAB35] hover:border-none text-[#1D0B01] hover:text-white font-semibold px-[24px] py-[8px] rounded-full"
+          className="hover:bg-[#DBAB35] bg-white border border-[#DBAB35] text-[#1D0B01] font-semibold px-[24px] py-[8px] rounded-full transition-all duration-500"
         >
           Show More
         </Link>

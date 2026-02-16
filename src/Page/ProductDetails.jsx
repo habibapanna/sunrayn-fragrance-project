@@ -686,9 +686,10 @@ Back
                                                 </div>
                                               )}
 
-<ReviewSection productSlug={product.slug} />
+
       <section className="px-[16px] 2xl:px-[32px]"><ProductCard></ProductCard></section>
       {/* REVIEWS */}
+      <ReviewSection productSlug={product.slug} />
       <MarqueeSection></MarqueeSection>
     </div>
   );

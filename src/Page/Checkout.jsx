@@ -366,7 +366,7 @@ const Checkout = () => {
 
          <div className="hidden md:block rounded-t-[16px] shadow-lg border border-gray-300 p-[24px] bg-white">
              <button className="w-full  transition-all duration-300 ease-out
-    bg-[#DBAB35] hover:text-[#1D0B01] hover:bg-white backdrop-blur-md border hover:border-[#DBAB35] text-white py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
+    bg-[#DBAB35] text-[#1D0B01] hover:bg-white backdrop-blur-md border border-[#DBAB35] py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
           <div className="flex gap-[32px] justify-center mt-[16px]">
             <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer">Return Policy </span>
             <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer">Cancelation Policy </span>
