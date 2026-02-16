@@ -1,80 +1,117 @@
-import { FaCheck, FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
+import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { products } from "../data/productsData";
-import { Link, useOutletContext } from "react-router-dom";
+import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { IoCheckmarkSharp } from "react-icons/io5";
 
-
 const ProductCard = () => {
-  const [limit, setLimit] = useState(2);
-const { cartOpen, setCartOpen } = useOutletContext();
-    const [showCartToast, setShowCartToast] = useState(false);
+  const navigate = useNavigate();
+  const { setCartOpen } = useOutletContext();
 
-useEffect(() => {
-  const updateLimit = () => {
-    if (window.innerWidth >= 1536) {
-      setLimit(3); // 2xl
-    } else if (window.innerWidth >= 768) {
-      setLimit(2); // lg
+  const [current, setCurrent] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(3);
+  const [showCartToast, setShowCartToast] = useState(false);
+
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const minSwipeDistance = 50;
+
+  /* ---------- responsive items ---------- */
+  useEffect(() => {
+    const updateView = () => {
+      if (window.innerWidth >= 1536) setItemsPerView(3);
+      else if (window.innerWidth >= 768) setItemsPerView(2);
+      else setItemsPerView(1);
+    };
+
+    updateView();
+    window.addEventListener("resize", updateView);
+    return () => window.removeEventListener("resize", updateView);
+  }, []);
+
+  /* ---------- swipe ---------- */
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+
+    if (distance > minSwipeDistance) next();
+    if (distance < -minSwipeDistance) prev();
+  };
+
+  /* ---------- navigation ---------- */
+  const maxIndex = products.length - itemsPerView;
+
+  const next = () =>
+    setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1));
+
+  const prev = () =>
+    setCurrent((prev) => (prev <= 0 ? maxIndex : prev - 1));
+
+  /* ---------- cart ---------- */
+  const handleAddToCart = () => {
+    if (window.innerWidth < 768) {
+      setShowCartToast(true);
     } else {
-      setLimit(1); // mobile
+      setCartOpen(true);
     }
   };
 
-  updateLimit();
-  window.addEventListener("resize", updateLimit);
-  return () => window.removeEventListener("resize", updateLimit);
-}, []);
+  useEffect(() => {
+    if (!showCartToast) return;
+    const t = setTimeout(() => setShowCartToast(false), 4000);
+    return () => clearTimeout(t);
+  }, [showCartToast]);
 
-const isMobile = window.innerWidth < 768;
+  /* ---------- UI ---------- */
+  return (
+    <section className="relative overflow-hidden py-[16px] 2xl:py-[32px]">
 
-const handleAddToCart = () => {
-  // add item logic here
+      {/* header */}
+      <div className="flex justify-between items-center mb-[16px] 2xl:mb-[32px]">
+        <p className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]">
+          You Might Love
+        </p>
 
-  if (window.innerWidth < 768) {
-    setShowCartToast(true); // mobile → show popup
-  } else {
-    setCartOpen(true); // desktop → open overlay
-  }
-};
-
-useEffect(() => {
-  if (!showCartToast) return;
-  const t = setTimeout(() => setShowCartToast(false), 4000);
-  return () => clearTimeout(t);
-}, [showCartToast]);
-
-  
-
-    return (
-        <div>
-            {/* Cards */}
-             <section className="relative overflow-hidden py-[16px] 2xl:py-[32px]">
-                  <div className="flex justify-between items-center mb-[16px] 2xl:mb-[32px] 2xl:[32px]">
-          <p
-            className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]"
-            style={{ letterSpacing: "-1px" }}
-          >
-            You Might Love
-          </p>
-
-           <button className=" transition-all duration-300 ease-out
-    hover:bg-[#DBAB35] bg-white backdrop-blur-md border border-[#DBAB35] hover:border-none text-[#1D0B01] hover:text-white font-semibold px-[24px] py-[8px] 2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer w-[125px] h-[30px] lg:w-[170px] lg:h-[55px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center">
-            <Link to="/productList">Show More</Link>
-          </button>
-        
-
+        <Link
+          to="/productList"
+          className="hover:bg-[#DBAB35] bg-white border border-[#DBAB35] hover:border-none text-[#1D0B01] hover:text-white font-semibold px-[24px] py-[8px] rounded-full"
+        >
+          Show More
+        </Link>
       </div>
-                        <div
-                          className="transition-transform duration-500 ease-in-out grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-[16px] 2xl:gap-[32px]"
-                        >
-                          {products.slice(0, limit).map((item, i) => (
-                            <div
-                              key={i}
-                              className=""
-                            >
-                                {/* CARD */}
-                               <div
+
+      {/* carousel */}
+      <div className="relative">
+
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{
+            transform: `translateX(-${(current * 100) / itemsPerView}%)`,
+          }}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
+          {products.map((item, i) => (
+            <div
+              key={i}
+              style={{ width: `${100 / itemsPerView}%` }}
+              className="flex-shrink-0 px-[8px]"
+            >
+              {/* card */}
+               <div
                 className="group relative rounded-[16px]
     h-[384px] lg:h-[700px]
     cursor-pointer overflow-hidden"
@@ -91,7 +128,7 @@ useEffect(() => {
                 <img
                   src={item.images}
                   alt={item.title}
-                  className="absolute inset-0 mx-auto h-full w-full object-cover group-hover:scale-105 duration-1000"
+                  className="absolute inset-0 mx-auto h-full object-cover w-full group-hover:scale-105 duration-1000"
                 />
  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 w-full z-20 p-[20px] lg:p-[40px]">
@@ -112,8 +149,8 @@ useEffect(() => {
                     Sanrayn Original
                   </p>  
                   <div className="flex items-center justify-between gap-3">
-                     <button
-                      onClick={(e) => {
+                    <button
+                    onClick={(e) => {
     e.stopPropagation(); 
     handleAddToCart(item); 
   }}
@@ -140,9 +177,9 @@ useEffect(() => {
                           ${item.oldPrice}
                         </button>
                       </div>
-                     <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[22px] h-[33px] w-[68px] font-normal"
+                       <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[22px] h-[33px] w-[68px]"
                       >
-                        <div className="absolute -top-[8px] 2xl:-top-[12px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[10px] text-white 2xl:text-[14px] font-bold z-10 2xl:h-[22px] h-[14px] w-[42px] 2xl:w-[58px] flex items-center justify-center">
+                        <div className="absolute -top-[8px] 2xl:-top-[12px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[10px] text-white 2xl:text-[14px] z-10 2xl:h-[22px] h-[14px] w-[42px] 2xl:w-[58px] flex items-center justify-center font-medium ">
                           -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
                         </div>
 
@@ -167,40 +204,36 @@ useEffect(() => {
                   
                 </div>
               </div>
-                    {/* MOBILE CART POPUP */}
-
-                              </div>
-                          ))}
-                        </div>
-                                                     
-                      </section>
-                           {/* MOBILE CART POPUP */}
-                                              {showCartToast && (
-                                                <div className="fixed top-30 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
-                                                  <div className="flex items-center justify-between bg-black text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
-                                              
-                                                    <div className="flex items-center gap-2 text-sm font-medium">
-                                                      <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center ">
-                                                       <IoCheckmarkSharp className="text-black" />
-                                                      </span>
-                                                      Item added to your cart
-                                                    </div>
-                                              
-                                                    <button
-                                                      onClick={() => {
-                                                        setShowCartToast(false);
-                                                        setCartOpen(true);
-                                                      }}
-                                                      className="bg-[#A0174A] text-white px-5 py-[4px] rounded-[10px] text-[12px] font-medium flex items-center justify-center"
-                                                    >
-                                                      View card
-                                                    </button>
-                                              
-                                                  </div>
-                                                </div>
-                                              )}
+            </div>
+          ))}
         </div>
-    );
+      </div>
+
+      {/* toast */}
+      {showCartToast && (
+        <div className="fixed top-20 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+          <div className="flex justify-between bg-black text-white px-4 py-3 rounded-[16px]">
+            <div className="flex items-center gap-2 text-sm">
+              <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center">
+                <IoCheckmarkSharp className="text-black" />
+              </span>
+              Item added to your cart
+            </div>
+
+            <button
+              onClick={() => {
+                setShowCartToast(false);
+                setCartOpen(true);
+              }}
+              className="bg-[#A0174A] px-5 py-[4px] rounded-[10px] text-[12px]"
+            >
+              View cart
+            </button>
+          </div>
+        </div>
+      )}
+    </section>
+  );
 };
 
 export default ProductCard;
