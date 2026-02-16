@@ -179,20 +179,20 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 <a
   href="/"
   onClick={handleLogoClick}
-  className="flex items-center md:gap-[7px] lg:gap-[12px] cursor-pointer transition-all duration-300"
+  className="flex items-center md:gap-[7px] lg:gap-[12px] cursor-pointer transition-all duration-500"
 >
 
  <img
   src={logoSrc}
   alt="Brand Logo"
-  className="h-[32px] w-[32px] lg:h-[58px] lg:w-[58px] transition-all duration-300"
+  className="h-[40px] w-[40px] lg:h-[58px] lg:w-[58px] transition-all duration-300"
 />
 
 
  <img
   src={brandSrc}
   alt="Brand Name"
-  className="h-[16px] w-[110px] lg:h-[27px] lg:w-[170px] transition-all duration-300"
+  className="h-[22px] w-[119px] lg:h-[27px] lg:w-[170px] transition-all duration-300"
 />
 
 </a>
