@@ -41,7 +41,7 @@ const [activeTab, setActiveTab] = useState("reviews");
     >
 <div className="border border-[#282828]/25"></div>
 {/* Content Wrapper */}
-<div className="relative overflow-hidden px-[16px] 2xl:px-[32px] py-[16px] 2xl:py-[32px]">
+<div className="relative overflow-hidden py-[16px] 2xl:py-[32px]">
 
   {/* Tabs — ALWAYS LEFT */}
   <div className="flex items-center gap-[24px] mb-[24px]">
