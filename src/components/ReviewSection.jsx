@@ -73,7 +73,7 @@ const [activeTab, setActiveTab] = useState("reviews");
     className={`transition-all duration-300
       ${
         activeTab === "reviews"
-          ? "flex flex-col md:flex-ro items-center justify-between"
+          ? "flex flex-col md:flex-row items-center justify-between"
           : "flex flex-col items-center text-center py-10"
       }`}
   >
