@@ -1,7 +1,84 @@
 import { FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa";
 import { LuChevronDown } from "react-icons/lu";
+import { useRef, useState } from "react";
 
 const reviewsData = [
+  {
+    name: "Ayesha Rikes",
+    rating: 5,
+    title: "Elegant & Emotional",
+    text: "Cerisa Aura instantly captivated me. The juicy cherry opening feels vibrant and inviting, while the warm amber base gives it depth and sophistication. It’s become my go-to scent for any occasion.",
+    date: "15/02/26",
+    img: "https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg",
+    reply:
+      "Thank you! We’re so happy Cerisa Aura has become your go-to scent — that truly means everything to us.",
+  },
+  {
+    name: "Michael Strack",
+    rating: 5,
+    title: "Luxury & Long-Lasting",
+    text: "This fragrance feels incredibly refined. At first spray, I was greeted with luscious cherry and creamy almond, and hours later, the amber and vanilla still linger beautifully. Truly luxurious and long-lasting.",
+    date: "13/02/26",
+    reply:
+      "This fragrance feels incredibly refined. At first spray, I was greeted with luscious cherry and creamy almond, and hours later, the amber and vanilla still linger beautifully.",
+  },
+  {
+    name: "Farid Hasan",
+    rating: 5,
+    title: "Skin-Friendly & Pure",
+    text: "The alcohol-free formula feels gentle and smooth on my skin. I love knowing it’s halal and crafted with care. Cerisa Aura feels like an indulgence without compromise.",
+    date: "11/02/26",
+    img: "https://i.postimg.cc/6p2k0Tvk/Whats-App-Image-2026-02-03-at-6-06-46-PM.jpg",
+    reply:
+      "Thank you! We’re so happy Cerisa Aura has been pure joy to wear that truly means everything to us.",
+  },
+  {
+    name: "Noor Ahmed",
+    rating: 5,
+    title: "Compliment-Getter",
+    text: "Every time I wear Cerisa Aura, people ask what I’m wearing. It’s unique without being overpowering soft, warm, and unforgettable. Absolutely obsessed!",
+    date: "07/02/26",
+    reply:
+      "Thank you! We’re so happy you love the gentle, halal formula luxury without compromise is what we’re all about love.",
+  },
+  {
+    name: "Ayesha Rikes",
+    rating: 5,
+    title: "Elegant & Emotional",
+    text: "Cerisa Aura instantly captivated me. The juicy cherry opening feels vibrant and inviting, while the warm amber base gives it depth and sophistication. It’s become my go-to scent for any occasion.",
+    date: "15/02/26",
+    img: "https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg",
+    reply:
+      "Thank you! We’re so happy Cerisa Aura has become your go-to scent — that truly means everything to us.",
+  },
+  {
+    name: "Michael Strack",
+    rating: 5,
+    title: "Luxury & Long-Lasting",
+    text: "This fragrance feels incredibly refined. At first spray, I was greeted with luscious cherry and creamy almond, and hours later, the amber and vanilla still linger beautifully. Truly luxurious and long-lasting.",
+    date: "13/02/26",
+    reply:
+      "This fragrance feels incredibly refined. At first spray, I was greeted with luscious cherry and creamy almond, and hours later, the amber and vanilla still linger beautifully.",
+  },
+  {
+    name: "Farid Hasan",
+    rating: 5,
+    title: "Skin-Friendly & Pure",
+    text: "The alcohol-free formula feels gentle and smooth on my skin. I love knowing it’s halal and crafted with care. Cerisa Aura feels like an indulgence without compromise.",
+    date: "11/02/26",
+    img: "https://i.postimg.cc/6p2k0Tvk/Whats-App-Image-2026-02-03-at-6-06-46-PM.jpg",
+    reply:
+      "Thank you! We’re so happy Cerisa Aura has been pure joy to wear that truly means everything to us.",
+  },
+  {
+    name: "Noor Ahmed",
+    rating: 5,
+    title: "Compliment-Getter",
+    text: "Every time I wear Cerisa Aura, people ask what I’m wearing. It’s unique without being overpowering soft, warm, and unforgettable. Absolutely obsessed!",
+    date: "07/02/26",
+    reply:
+      "Thank you! We’re so happy you love the gentle, halal formula luxury without compromise is what we’re all about love.",
+  },
   {
     name: "Ayesha Rikes",
     rating: 5,
@@ -43,6 +120,60 @@ const reviewsData = [
 ];
 
 export default function ReviewList() {
+const [currentPage, setCurrentPage] = useState(1);
+const reviewsRef = useRef(null);
+
+
+const reviewsPerPage = 3;
+
+const totalPages = Math.ceil(reviewsData.length / reviewsPerPage);
+
+const smoothScrollTo = (targetY, duration = 800) => {
+  const startY = window.scrollY;
+  const distance = targetY - startY;
+  let startTime = null;
+
+  const animation = (currentTime) => {
+    if (!startTime) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+
+    const ease = (t) =>
+      t < 0.5
+        ? 2 * t * t
+        : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+    const progress = Math.min(timeElapsed / duration, 1);
+    const easeProgress = ease(progress);
+
+    window.scrollTo(0, startY + distance * easeProgress);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  };
+
+  requestAnimationFrame(animation);
+};
+
+const handlePageChange = (page) => {
+  setCurrentPage(page);
+
+  const elementTop =
+    reviewsRef.current.getBoundingClientRect().top +
+    window.scrollY -
+    100; // adjust offset if needed
+
+  smoothScrollTo(elementTop, 1000); // 1000ms = extra smooth
+};
+
+
+const startIndex = (currentPage - 1) * reviewsPerPage;
+const currentReviews = reviewsData.slice(
+  startIndex,
+  startIndex + reviewsPerPage
+);
+
+
   return (
     <div className="mt-10">
 <div className="border border-[#282828]/25 mb-[24px]"></div>
@@ -55,9 +186,10 @@ export default function ReviewList() {
       </div>
 
 {/* Reviews */}
-<div className="space-y-8">
+<div ref={reviewsRef} className="space-y-8 min-h-[600px]">
 
-  {reviewsData.map((r, i) => (
+{currentReviews.map((r, i) => (
+
     <div key={i} className="border-t-2 border-[#282828]/25 pt-6">
 
       <div className="flex flex-col md:flex-row gap-6 items-start">
@@ -125,32 +257,64 @@ export default function ReviewList() {
         </div>
 
       </div>
-
     </div>
   ))}
 
 </div>
 
-      {/* Pagination */}
-      <div className="flex justify-center items-center gap-4 mt-10">
+{/* Pagination */}
+<div className="flex justify-center items-center gap-4 mt-10">
 
-        <button className="text-[text-[#3A3F42]] "><FaChevronLeft /></button>
+  {/* Prev */}
+  <button
+    type="button"
+    onClick={() =>
+      handlePageChange(Math.max(currentPage - 1, 1))
+    }
+    disabled={currentPage === 1}
+    className="text-[#3A3F42] disabled:opacity-30"
+  >
+    <FaChevronLeft />
+  </button>
 
-        {[1, 2, 3, 4].map((p) => (
-          <button
-            key={p}
-            className={`w-[55px] h-[55px] text-[20px] rounded-full text-sm font-medium transition
-              ${p === 1
-                ? "bg-[#A0174A] text-white"
-                : "text-text-[#3A3F42] hover:bg-gray-100"}`}
-          >
-            {p}
-          </button>
-        ))}
+  {/* Page Numbers (1 to totalPages) */}
+  {[...Array(totalPages)].map((_, index) => {
+    const pageNumber = index + 1;
 
-        <button className="text-[#3A3F42] "><FaChevronRight /></button>
+    return (
+      <button
+        type="button"
+        key={pageNumber}
+        onClick={() => handlePageChange(pageNumber)}
+        className={`w-[40px] h-[40px] lg:w-[55px] lg:h-[55px] text-[20px] rounded-full font-medium transition
+          ${
+            currentPage === pageNumber
+              ? "bg-[#A0174A] text-white"
+              : "text-[#3A3F42] hover:bg-gray-100"
+          }`}
+      >
+        {pageNumber}
+      </button>
+    );
+  })}
 
-      </div>
+  {/* Next */}
+  <button
+    type="button"
+    onClick={() =>
+      handlePageChange(
+        Math.min(currentPage + 1, totalPages)
+      )
+    }
+    disabled={currentPage === totalPages}
+    className="text-[#3A3F42] disabled:opacity-30"
+  >
+    <FaChevronRight />
+  </button>
+
+</div>
+
+
     </div>
   );
 }
