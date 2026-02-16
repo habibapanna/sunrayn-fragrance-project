@@ -112,16 +112,16 @@ const [activeTab, setActiveTab] = useState("reviews");
         </>
       ) : (
         <>
-          <h3 className="text-[26px] lg:text-[40px] font-semibold mb-2">
+          <h3 className="text-[#282828] text-[26px] lg:text-[40px] font-semibold mb-2">
             Have a question?
           </h3>
 
-          <p className="text-gray-500 mb-6 text-[15px]">
+          <p className="text-[#3A3F42] mb-6 text-[16px] md:text-[18px]">
             Be the first to ask something about this product.
           </p>
 
           <button className="px-8 py-3 rounded-full bg-[#A0174A] text-white hover:bg-white  font-semibold border border-transparent hover:border-[#DBAB35]
-        transition-all duration-500 text-[16px] 2xl:text-[20px] cursor-pointer hover:text-black">
+        transition-all duration-500 text-[16px] 2xl:text-[20px] cursor-pointer hover:text-black w-full">
             Ask a question
           </button>
         </>
@@ -135,7 +135,7 @@ const [activeTab, setActiveTab] = useState("reviews");
         className="mt-5 md:mt-0 px-[24px] py-[12px] rounded-full font-semibold
         bg-[#A0174A] text-white hover:bg-white hover:text-[#1D0B01]
         border border-transparent hover:border-[#DBAB35]
-        transition-all duration-500 text-[16px] 2xl:text-[20px] cursor-pointer w-1/2"
+        transition-all duration-500 text-[16px] 2xl:text-[20px] cursor-pointer w-full md:w-1/2"
       >
         Write a Review
       </button>

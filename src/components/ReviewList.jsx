@@ -63,7 +63,7 @@ export default function ReviewList() {
       <div className="flex flex-col md:flex-row gap-6 items-start">
 
        
-<div className="flex justify-between w-full">
+<div className="flex justify-between w-full md:w-[170px] ">
  {/* LEFT — NAME */}
         <div className="w-[170px]">
           <h4 className="font-medium text-[#282828] text-[17px]">
