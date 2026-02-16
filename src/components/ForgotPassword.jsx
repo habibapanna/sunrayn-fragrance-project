@@ -92,7 +92,7 @@ const ForgotPassword = ({ onClose }) => {
                 setStep("otp");
                 setTimer(179); // reset timer when moving to OTP step
               }}
-              className="w-full bg-[#DBAB35] text-black py-[12px] rounded-full  hover:brightness-95 transition-all duration-500 cursor-pointer hover:bg-white hover:text-black hover:border border-[#DBAB35] text-[15px] font-semibold"
+              className="w-full bg-[#DBAB35] text-black py-[12px] rounded-full  hover:brightness-95 transition-all duration-500 cursor-pointer hover:bg-white hover:text-black border hover:border-[#DBAB35] border-transparent text-[15px] font-semibold"
             >
               Reset
             </button>
@@ -132,7 +132,7 @@ const ForgotPassword = ({ onClose }) => {
             </p>
 
             <button
-              className="w-full bg-[#DBAB35] text-black py-[12px] rounded-full hover:brightness-95 transition-all duration-500 cursor-pointer hover:bg-white hover:text-black hover:border border-[#DBAB35] text-[15px] font-semibold"
+              className="w-full bg-[#DBAB35] text-black py-[12px] rounded-full hover:brightness-95 transition-all duration-500 cursor-pointer hover:bg-white hover:text-black border hover:border-[#DBAB35] border-transparent text-[15px] font-semibold"
             >
               Reset
             </button>
