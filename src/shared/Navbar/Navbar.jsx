@@ -197,7 +197,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 </a>
 
             {/* DESKTOP middle MENU  */}
-            <div className="hidden md:flex items-center gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] 2xl:mr-16 lg:w-[475px] h-[30px] lg:h-[40px] 2xl:w-[550px] 2xl:h-[50px] 2xl:ml-[64px]">
+            <div className="hidden md:flex items-center gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] 2xl:mr-16 w-[395px] lg:w-[476px] h-[30px] lg:h-[40px] 2xl:w-[552px] 2xl:h-[50px] 2xl:ml-[64px]">
 
             {/* Perfume */}
                <div className="relative" ref={perfumeRef}>
@@ -423,9 +423,9 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
   </div>
 </div>
 
-             <Link to='holidayOffer'> <span className="bg-[#FD4929] text-white gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] px-[14px] lg:px-[20px] py-[8px] rounded-[100px] font-semibold flex items-center justify-center w-[110px] lg:w-[150px] h-[20px] lg:h-[30px] 2xl:w-[170px] 2xl:h-[35px] uppercase">
+             <Link to='/holidayOffer'> <span className="bg-[#FD4929] text-white gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] px-[14px] lg:px-[20px] py-[8px] rounded-[100px] font-semibold flex items-center justify-center w-[120px] lg:w-[150px] h-[20px] lg:h-[30px] 2xl:w-[174px] 2xl:h-[35px] uppercase">
                 <img className="h-[10px] w-[10px] lg:h-[16px] lg:w-[16px]" src={Solar} alt="" />
-                Holiday Sale
+                Spring Offers
               </span></Link>
             </div>
           {/* RIGHT SIDE */}

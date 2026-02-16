@@ -71,25 +71,34 @@ const RouteLoader = () => {
           {/* Nozzle */}
           <div className="w-[12px] h-[10px] bg-[#A0174A] rounded-sm mt-[2px]" />
 
-          {/* Circular Glass Bottle */}
-          <div className="relative mt-2 w-[120px] h-[120px] rounded-full bg-white/30 backdrop-blur-xl border border-[#DBAB35]/40 shadow-[0_25px_45px_rgba(0,0,0,0.15)] overflow-hidden">
+        {/* Circular Glass Bottle */}
+<div className="relative mt-2 w-[120px] h-[120px] rounded-full shadow-[0_25px_45px_rgba(0,0,0,0.15)] overflow-hidden">
 
-            {/* Liquid */}
-            <div className="absolute bottom-0 w-full h-[45%] bg-[#A0174A]/70 rounded-b-full" />
+  {/* OUTER BORDER */}
+  <div className="absolute inset-0 rounded-full border-2 border-[#A0174A]" />
 
-            {/* Liquid shine */}
-            <div className="absolute bottom-0 w-full h-[45%] bg-gradient-to-t from-[#A0174A]/60 to-transparent rounded-b-full" />
+  {/* INNER GLASS */}
+  <div className="absolute inset-[6px] rounded-full bg-white/30 backdrop-blur-xl border border-[#DBAB35]/40 overflow-hidden">
 
-            {/* Glass reflection */}
-            <div className="absolute left-4 top-4 w-[16px] h-[80px] bg-white/30 rounded-full blur-sm" />
+    {/* Liquid */}
+    <div className="absolute bottom-0 w-full h-[45%] bg-[#A0174A]/70 rounded-b-full" />
 
-            {/* Brand */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-              <p className="text-[11px] tracking-[0.3em] text-[#DBAB35]">
-                SANRAYN
-              </p>
-            </div>
-          </div>
+    {/* Liquid shine */}
+    <div className="absolute bottom-0 w-full h-[45%] bg-gradient-to-t from-[#A0174A]/60 to-transparent rounded-b-full" />
+
+    {/* Glass reflection */}
+    <div className="absolute left-4 top-4 w-[16px] h-[80px] bg-white/30 rounded-full blur-sm" />
+
+    {/* Brand */}
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+      <p className="text-[11px] tracking-[0.3em] text-[#DBAB35]">
+        SANRAYN
+      </p>
+    </div>
+
+  </div>
+</div>
+
         </div>
       </div>
     </motion.div>

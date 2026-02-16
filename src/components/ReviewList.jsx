@@ -122,6 +122,24 @@ const reviewsData = [
 export default function ReviewList() {
 const [currentPage, setCurrentPage] = useState(1);
 const reviewsRef = useRef(null);
+const [sortOpen, setSortOpen] = useState(false);
+const [sortType, setSortType] = useState("recent");
+
+const sortedReviews = [...reviewsData].sort((a, b) => {
+  switch (sortType) {
+    case "recent":
+      return new Date(b.date.split("/").reverse()) - new Date(a.date.split("/").reverse());
+
+    case "highest":
+      return b.rating - a.rating;
+
+    case "lowest":
+      return a.rating - b.rating;
+
+    default:
+      return 0;
+  }
+});
 
 
 const reviewsPerPage = 3;
@@ -168,22 +186,72 @@ const handlePageChange = (page) => {
 
 
 const startIndex = (currentPage - 1) * reviewsPerPage;
-const currentReviews = reviewsData.slice(
+
+const currentReviews = sortedReviews.slice(
   startIndex,
   startIndex + reviewsPerPage
 );
+
 
 
   return (
     <div className="mt-10">
 <div className="border border-[#282828]/25 mb-[24px]"></div>
       {/* Sort */}
-      <div className="flex gap-[8px] items-center mb-6 text-[18px] text-[#3A3F42]">
-        <span>Sort by:</span>
-        <button className=" transition flex items-center gap-[8px]">
-          Most recent <LuChevronDown />
+<div className="relative flex gap-[8px] items-center mb-6 text-[18px] text-[#3A3F42]">
+  <span>Sort by:</span>
+
+  <button
+    onClick={(e) => {
+    e.stopPropagation();
+    setSortOpen(!sortOpen);
+  }}
+    className="flex items-center gap-2 cursor-pointer"
+  >
+    {
+      {
+        recent: "Most recent",
+        highest: "Highest rating",
+        lowest: "Lowest rating",
+      }[sortType]
+    }
+    <LuChevronDown
+  className={`transition-transform duration-500 ${
+    sortOpen ? "rotate-180" : "rotate-0"
+  }`}
+/>
+
+  </button>
+
+  {sortOpen && (
+    <div className="absolute top-full left-[70px] mt-2 w-[210px] bg-white shadow-lg rounded-lg border border-gray-200 z-50 overflow-hidden">
+
+      {[
+        { label: "Most recent", value: "recent" },
+        { label: "Highest rating", value: "highest" },
+        { label: "Lowest rating", value: "lowest" },
+      ].map(option => (
+        <button
+          key={option.value}
+          onClick={() => {
+            setSortType(option.value);
+            setSortOpen(false);
+            setCurrentPage(1);
+          }}
+          className={`w-full text-left px-5 py-3 text-[17px] transition
+            ${
+              sortType === option.value
+                ? "bg-[#2F5AA8] text-white"
+                : "hover:bg-gray-100"
+            }`}
+        >
+          {option.label}
         </button>
-      </div>
+      ))}
+    </div>
+  )}
+</div>
+
 
 {/* Reviews */}
 <div ref={reviewsRef} className="space-y-8 min-h-[600px]">

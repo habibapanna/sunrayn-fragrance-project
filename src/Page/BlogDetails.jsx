@@ -27,7 +27,7 @@ const BlogDetails = () => {
     className="
       flex items-center justify-center
       gap-[8px]
-      bg-[#DBAB35]/30
+      bg-[#F6F7F2]
       px-[20px]
       py-[8px]
       rounded-full
