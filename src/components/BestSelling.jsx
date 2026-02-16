@@ -89,7 +89,7 @@ useEffect(() => {
             Best Selling Perfumes
           </p>
            <button className="transition-all duration-500 ease-out
-    hover:bg-[#DBAB35] hover:text-white border border-[#DBAB35] hover:border-none text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center">
+    hover:bg-[#DBAB35] border border-[#DBAB35] hover:border-none text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center">
                       <Link to="/productList">View All</Link>
                     </button>
         </div>
@@ -116,7 +116,7 @@ useEffect(() => {
                     <p className='text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]'>Best Selling Perfumes</p>
                 </div>
                 <div>
-                    <button className="hover:bg-[#DBAB35] hover:text-white border border-[#DBAB35] hover:border-none text-[#1D0B01] px-[24px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[100px] h-[30px]"><Link to='/productList transition-all duration-500'>View All</Link></button>
+                    <button className="hover:bg-[#DBAB35] border border-[#DBAB35] hover:border-none text-[#1D0B01] px-[24px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[100px] h-[30px]"><Link to='/productList transition-all duration-500'>View All</Link></button>
                 </div>
             </div>
       {/* CAROUSEL */}
