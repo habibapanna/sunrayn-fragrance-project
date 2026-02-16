@@ -288,7 +288,7 @@ const [question, setQuestion] = useState("");
 {qaOpen && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4">
 
-    <div className="relative w-full max-w-xl bg-[#F4F4F2] rounded-[28px] p-6 sm:p-8 shadow-xl">
+    <div className="relative w-full max-w-xl bg-[#F6F7F2] rounded-[28px] p-6 sm:p-8 shadow-xl">
 
       {/* CLOSE */}
       <button

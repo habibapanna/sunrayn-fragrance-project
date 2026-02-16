@@ -185,14 +185,14 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
  <img
   src={logoSrc}
   alt="Brand Logo"
-  className="h-[40px] w-[40px] lg:h-[58px] lg:w-[58px] transition-all duration-300"
+  className="w-[35px] h-[35px] md:h-[40px] md:w-[40px] lg:h-[58px] lg:w-[58px] transition-all duration-300"
 />
 
 
  <img
   src={brandSrc}
   alt="Brand Name"
-  className="h-[22px] w-[119px] lg:h-[27px] lg:w-[170px] transition-all duration-300"
+  className="h-[19px] w-[115px] md:h-[22px] md:w-[119px] lg:h-[27px] lg:w-[170px] transition-all duration-300"
 />
 
 </a>
@@ -430,15 +430,15 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
               </span></Link>
             </div>
           {/* RIGHT SIDE */}
-          <div className="flex items-center gap-[10px]">
+          <div className="flex items-center gap-[8px]">
             {/* DESKTOP ICONS (UNCHANGED) */}
-            <div className="flex items-center gap-[10px] md:gap-[16px] ">
+            <div className="flex items-center gap-[8px] md:gap-[16px] ">
               <button
                title="Search Perfumes"
   onClick={() => setSearchOpen(true)}
   className={`
   lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[15px] rounded-full 2xl:h-[50px] 2xl:w-[50px]
-  transition-colors duration-300 cursor-pointer flex items-center justify-center  p-[8px] h-[28px] w-[28px]
+  transition-colors duration-300 cursor-pointer flex items-center justify-center  p-[6px] h-[28px] w-[28px]
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
 
@@ -451,7 +451,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
   onClick={() => setCartOpen(true)}
   className={`
  lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[15px] rounded-full 2xl:h-[50px] 2xl:w-[50px]
-  transition-colors duration-300 cursor-pointer flex items-center justify-center  p-[8px] h-[28px] w-[28px]
+  transition-colors duration-300 cursor-pointer flex items-center justify-center  p-[6px] h-[28px] w-[28px]
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
  title="View Cart"
@@ -467,7 +467,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
       lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] 
       lg:h-[40px] lg:w-[40px] 2xl:p-[15px] 
       rounded-full 2xl:h-[50px] 2xl:w-[50px]
-      bg-white/90 flex items-center justify-center cursor-pointer  p-[8px] h-[28px] w-[28px]
+      bg-white/90 flex items-center justify-center cursor-pointer  p-[6px] h-[28px] w-[28px]
     "
   >
   <img src={User} alt="" className="w-[20px] h-[20px]" />
@@ -521,7 +521,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
              <button
   title="Open Menu"
   onClick={() => setMenuOpen(true)}
-  className="bg-white/90 p-[8px] h-[28px] w-[28px] md:h-[30px] md:w-[30px] rounded-full flex items-center cursor-pointer"
+  className="bg-white/90 p-[6px] h-[28px] w-[28px] md:h-[30px] md:w-[30px] rounded-full flex items-center cursor-pointer"
 >
   <TbMenu className="text-[#1D0B01] h-[24px] w-[24px]" />
 </button>

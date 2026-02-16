@@ -96,7 +96,7 @@ const ProductCard = () => {
       <div className="relative">
 
         <div
-          className="flex transition-transform duration-500 ease-in-out"
+          className="flex gap-[16px] 2xl:gap-[32px] transition-transform duration-500 ease-in-out"
           style={{
             transform: `translateX(-${(current * 100) / itemsPerView}%)`,
           }}
@@ -105,11 +105,16 @@ const ProductCard = () => {
           onTouchEnd={onTouchEnd}
         >
           {products.map((item, i) => (
-            <div
-              key={i}
-              style={{ width: `${100 / itemsPerView}%` }}
-              className="flex-shrink-0 px-[8px]"
-            >
+<div
+  key={i}
+  style={{
+    width: `calc(${100 / itemsPerView}% - ${
+      itemsPerView === 3 ? "21.33px" : "10.66px"
+    })`,
+  }}
+  className="flex-shrink-0"
+>
+
               {/* card */}
                <div
                 className="group relative rounded-[16px]
