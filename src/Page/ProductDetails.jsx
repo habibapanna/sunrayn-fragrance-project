@@ -388,7 +388,7 @@ Back
         <div onClick={handleAddToCart}
         className="flex justify-between items-center gap-[16px] mt-[16px] lg:mt-[20px]"> 
           <button className="text-[18px] 2xl:text-[20px] w-full px-[20px] py-[8px] 2xl:py-[10px] 2x:px-[24px] rounded-full font-semibold cursor-pointer transition-all duration-500 ease-out
-    bg-[#DBAB35] text-white hover:bg-white backdrop-blur-md border hover:border-[#DBAB35] hover:text-[#1D0B01]">
+    bg-[#DBAB35] hover:bg-white backdrop-blur-md border border-[#DBAB35] text-[#1D0B01]">
             Add to cart
           </button>
           </div>

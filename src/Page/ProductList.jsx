@@ -571,7 +571,7 @@ const resultCount = filteredProducts.length;
   }}
       className="w-full bg-white/80 text-black cursor-pointer
       rounded-full py-2 font-medium
-      hover:bg-[#DBAB35] hover:text-white
+      hover:bg-[#DBAB35]
       border border-[#DBAB35] hover:border-none transition-all ease-in-out duration-500 md:text-[15px] 2xl:text-[18px]"
     >
       Add to cart
@@ -624,8 +624,8 @@ const resultCount = filteredProducts.length;
   }}
     className="px-[24px] py-[10px] text-[12px]
     rounded-full border border-[#DBAB35]
-    text-[#A0174A] hover:bg-[#DBAB35] hover:border-none
-    hover:text-white transition w-full cursor-pointer duration-500"
+    text-black hover:bg-[#DBAB35] hover:border-none
+   transition w-full cursor-pointer duration-500"
   >
     Add to cart
   </button>
