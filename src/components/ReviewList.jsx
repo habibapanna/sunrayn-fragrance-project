@@ -60,15 +60,21 @@ export default function ReviewList() {
   {reviewsData.map((r, i) => (
     <div key={i} className="border-t-2 border-[#282828]/25 pt-6">
 
-      <div className="flex gap-6 items-start">
+      <div className="flex flex-col md:flex-row gap-6 items-start">
 
-        {/* LEFT — NAME */}
+       
+<div className="flex justify-between w-full">
+ {/* LEFT — NAME */}
         <div className="w-[170px]">
           <h4 className="font-medium text-[#282828] text-[17px]">
             {r.name}
           </h4>
         </div>
-
+            {/* RIGHT — DATE */}
+        <div className="text-right md:hidden">
+          <span className="text-[#3A3F42] text-[17px]">{r.date}</span>
+        </div>
+</div>
 
         {/* CENTER — REVIEW CONTENT */}
         <div className="flex-1">
@@ -113,9 +119,8 @@ export default function ReviewList() {
 
         </div>
 
-
         {/* RIGHT — DATE */}
-        <div className="w-[120px] text-right">
+        <div className="w-[120px] text-right hidden md:block">
           <span className="text-[#3A3F42] text-[17px]">{r.date}</span>
         </div>
 

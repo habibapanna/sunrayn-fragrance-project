@@ -73,8 +73,8 @@ const [activeTab, setActiveTab] = useState("reviews");
     className={`transition-all duration-300
       ${
         activeTab === "reviews"
-          ? "flex flex-col md:flex-row items-center justify-between py-10 md:py-1"
-          : "flex flex-col items-center text-center py-10 md:py-1"
+          ? "flex flex-col md:flex-row items-center justify-between py-4 md:py-1"
+          : "flex flex-col items-center text-center py-4 md:py-1"
       }`}
   >
 
@@ -83,7 +83,7 @@ const [activeTab, setActiveTab] = useState("reviews");
 
       {activeTab === "reviews" ? (
         <>
-          <h3 className="text-[#282828] text-[25px] lg:text-[40px] font-semibold mb-[24px]">
+          <h3 className="text-[#282828] text-[25px] lg:text-[40px] font-semibold mb-[12px] md:mb-[24px]">
             Customer Reviews
           </h3>
 
