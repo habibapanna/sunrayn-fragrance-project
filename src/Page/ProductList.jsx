@@ -137,7 +137,7 @@ if (sortBy === "new")
                 type="checkbox"
                 checked={filters[filterKey].includes(opt)}
                 onChange={() => toggleFilter(filterKey, opt)}
-                className="checkbox checkbox-neutral checked:bg-[#BA9948]"
+                className="checkbox checkbox-neutral checked:bg-[#DBAB35]"
               />
               <span>{opt}</span>
             </label>
@@ -329,7 +329,7 @@ const resultCount = filteredProducts.length;
                     name="sort"
                     checked={sortBy === item.value}
                     onChange={() => setSortBy(item.value)}
-                    className="radio checked:bg-[#BA9948]"
+                    className="radio checked:bg-[#DBAB35]"
                   />
                   <span>{item.label}</span>
                 </label>
@@ -474,7 +474,7 @@ const resultCount = filteredProducts.length;
                     name="sort"
                     checked={sortBy === item.value}
                     onChange={() => setSortBy(item.value)}
-                    className="radio checked:bg-[#BA9948]"
+                    className="radio checked:bg-[#DBAB35]"
                   />
                   <span>{item.label}</span>
                 </label>
@@ -530,12 +530,12 @@ const resultCount = filteredProducts.length;
     className={`text-[8px] md:text-[10px] 2xl:text-[12px] px-[8px] py-[2px] rounded-full border flex items-center justify-center
       ${
         item.gender === "WOMEN"
-          ? "bg-white/90 text-[#A0174A] border-[#A0174A]"
+          ? "bg-white/90 text-[#A0174A] border-[#DBAB35]"
           : item.gender === "MEN"
           ? "bg-white/90 text-[#1D0B01] border-black"
           : item.gender === "UNISEX"
-          ? "bg-white/90 text-[#BA9948] border-[#BA9948]"
-          : "bg-white/90 text-[#A0174A] border-[#A0174A]" // fallback
+          ? "bg-white/90 text-[#DBAB35] border-[#DBAB35]"
+          : "bg-white/90 text-[#A0174A] border-[#DBAB35]" // fallback
       }`}
   >
     {item.gender}
@@ -571,8 +571,8 @@ const resultCount = filteredProducts.length;
   }}
       className="w-full bg-white/80 text-black cursor-pointer
       rounded-full py-2 font-medium
-      hover:bg-[#BA9948] hover:text-white
-      border border-[#A0174A] hover:border-none transition-all ease-in-out duration-500 md:text-[15px] 2xl:text-[18px]"
+      hover:bg-[#DBAB35] hover:text-white
+      border border-[#DBAB35] hover:border-none transition-all ease-in-out duration-500 md:text-[15px] 2xl:text-[18px]"
     >
       Add to cart
     </button>
@@ -584,7 +584,7 @@ const resultCount = filteredProducts.length;
 
     {/* Rating */}
 <div className="flex items-center gap-[8px]">   
-   <div className="flex items-center gap-[4px] text-[#BA9948]">
+   <div className="flex items-center gap-[4px] text-[#DBAB35]">
       {[...Array(5)].map((_, index) => (
         <FaStar key={index} className="text-[12px] md:text-[14px] 2xl:text-[16px]" />
       ))}
@@ -623,8 +623,8 @@ const resultCount = filteredProducts.length;
     handleAddToCart(item);
   }}
     className="px-[24px] py-[10px] text-[12px]
-    rounded-full border border-[#A0174A]
-    text-[#A0174A] hover:bg-[#BA9948] hover:border-none
+    rounded-full border border-[#DBAB35]
+    text-[#A0174A] hover:bg-[#DBAB35] hover:border-none
     hover:text-white transition w-full cursor-pointer duration-500"
   >
     Add to cart

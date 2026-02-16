@@ -5,7 +5,7 @@ import { X, Upload } from "lucide-react";
 const ReviewSection = ({ productSlug }) => {
   const [reviews, setReviews] = useState([]);
   const [open, setOpen] = useState(false);
-
+const [activeTab, setActiveTab] = useState("reviews");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [rating, setRating] = useState(0);
@@ -34,187 +34,251 @@ const ReviewSection = ({ productSlug }) => {
     setOpen(false);
   };
 
+
+
   return (
-    <div className="px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]"
+    <div className="px-[16px] 2xl:px-[32px] py-[16px] 2xl:py-[32px]"
     >
+<div className="border border-[#282828]/25"></div>
+{/* Content Wrapper */}
+<div className="relative overflow-hidden px-[16px] 2xl:px-[32px] py-[16px] 2xl:py-[32px]">
 
-      {/* HEADING */}
-      <p className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828] pb-[16px] 2xl:pb-[32px]">
-        What Fragrance Lovers Are Saying About Sanrayn
-      </p>
-
-<div
-  className="relative rounded-[16px] h-[400px] 2xl:h-[550px] overflow-hidden flex items-center justify-end px-[16px] 2xl:px-[32px]"
-  style={{
-    backgroundImage:
-      "url('https://i.postimg.cc/x1PD5vMm/imgi-187-Frame-1430102878-2.png')",
-    backgroundSize: "cover", // shows full image
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "left center",
-  }}
->
-
-  {/* RIGHT SIDE BLACK OVERLAY */}
-  <div className="absolute inset-0 bg-gradient-to-l from-black/80 via-black/50 to-transparent" />
-
-  {/* CONTENT */}
-  <div className="relative z-10 w-full md:w-1/2  text-white text-center flex flex-col">
-
-    <h3 className="text-[25px] 2xl:text-[35px] font-semibold mb-[12px]">
-      Customer Reviews
-    </h3>
-
-    <div className="flex items-center justify-center gap-[10px]">
-      <span className="text-[25px] 2xl:text-[35px] text-[#FFD66B]">
-        4.8
-      </span>
-
-      <div>
-        <div className="flex gap-[4px] text-[#FFD66B] ">
-          {[...Array(5)].map((_, i) => (
-            <FaStar key={i} />
-          ))}
-        </div>
-        <span className="text-[14px] text-white/90">
-          Based on 6316 reviews
-        </span>
-      </div>
-    </div>
-
+  {/* Tabs — ALWAYS LEFT */}
+  <div className="flex items-center gap-[24px] mb-[24px]">
     <button
-      onClick={() => setOpen(true)}
-      className="mx-auto mt-5 px-[24px] py-[12px] rounded-full  cursor-pointer transition-all duration-500 ease-ou font-semibold
-    bg-[#BA9948] text-white hover:bg-white backdrop-blur-md w-[327px] hover:text-[#1D0B01] text-[16px] 2xl:text-[20px]"
+      onClick={() => setActiveTab("reviews")}
+      className={`text-[25px] transition ${
+        activeTab === "reviews"
+          ? "underline font-semibold"
+          : "text-[#282828] hover:underline cursor-pointer"
+      }`}
     >
-      Write a Review
+      Reviews
     </button>
 
+    <button
+      onClick={() => setActiveTab("qa")}
+      className={`text-[25px] transition ${
+        activeTab === "qa"
+          ? "underline font-semibold"
+          : "text-[#282828] hover:underline cursor-pointer"
+      }`}
+    >
+      Q&A
+    </button>
+  </div>
+
+
+  {/* DYNAMIC CONTENT AREA */}
+  <div
+    className={`transition-all duration-300
+      ${
+        activeTab === "reviews"
+          ? "flex items-center justify-between"
+          : "flex flex-col items-center text-center py-10"
+      }`}
+  >
+
+    {/* LEFT SIDE CONTENT */}
+    <div className={`${activeTab === "reviews" ? "w-full md:w-1/2" : "max-w-xl"}`}>
+
+      {activeTab === "reviews" ? (
+        <>
+          <h3 className="text-[#282828] text-[25px] lg:text-[40px] font-semibold mb-[24px]">
+            Customer Reviews
+          </h3>
+
+          <div className="flex items-center gap-[10px]">
+            <span className="text-[25px] 2xl:text-[35px] text-[#FF9100]">
+              4.5
+            </span>
+
+            <div>
+              <div className="flex gap-[4px] text-[18px]">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar
+                    key={i}
+                    className={
+                      i === 4 ? "text-[#E9E9E9]" : "text-[#FF9100]"
+                    }
+                  />
+                ))}
+              </div>
+
+              <span className="text-[14px] text-[#3A3F42]">
+                Based on 6316 reviews
+              </span>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <h3 className="text-[26px] lg:text-[40px] font-semibold mb-2">
+            Have a question?
+          </h3>
+
+          <p className="text-gray-500 mb-6 text-[15px]">
+            Be the first to ask something about this product.
+          </p>
+
+          <button className="px-8 py-3 rounded-full bg-[#A0174A] text-white hover:bg-white  font-semibold border border-transparent hover:border-[#DBAB35]
+        transition-all duration-500 text-[16px] 2xl:text-[20px] cursor-pointer hover:text-black">
+            Ask a question
+          </button>
+        </>
+      )}
+    </div>
+
+
+    {/* RIGHT BUTTON (REVIEWS ONLY) */}
+    {activeTab === "reviews" && (
+      <button
+        onClick={() => setOpen(true)}
+        className="mt-5 md:mt-0 px-[24px] py-[12px] rounded-full font-semibold
+        bg-[#A0174A] text-white hover:bg-white hover:text-[#1D0B01]
+        border border-transparent hover:border-[#DBAB35]
+        transition-all duration-500 text-[16px] 2xl:text-[20px] cursor-pointer w-1/2"
+      >
+        Write a Review
+      </button>
+    )}
   </div>
 </div>
 
 
+
       {/* ================= MODAL ================= */}
-      {open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+{open && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-3">
 
-          <div className="bg-white w-[95%] max-w-2xl rounded-2xl p-6 relative animate-[fadeIn_.3s_ease]">
+    {/* CARD */}
+    <div className="relative w-full max-w-xl rounded-[28px] bg-[#F4F4F2] p-5 sm:p-7 shadow-xl
+                    max-h-[90vh] overflow-y-auto animate-[fadeIn_.25s_ease] no-scrollbar">
 
-            {/* CLOSE */}
-            <button
-              onClick={() => setOpen(false)}
-              className="absolute top-4 right-4 text-black hover:text-white transition-all duration-500 cursor-pointer hover:bg-black border rounded-full p-[4px]"
-            >
-              <X size={22} />
-            </button>
+      {/* CLOSE */}
+      <button
+        onClick={() => setOpen(false)}
+        className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white flex items-center justify-center shadow hover:scale-105  cursor-pointer hover:bg-black hover:text-white transition-all duration-500"
+      >
+        <X size={18}/>
+      </button>
 
-            <h2 className="text-xl font-semibold mb-6">
-              Share your experience
-            </h2>
+      {/* TITLE */}
+      <h2 className="text-center text-[20px] sm:text-[22px] font-semibold mb-6">
+        Share your experience
+      </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
+      <form onSubmit={handleSubmit} className="space-y-5">
 
-              {/* RATING */}
-              <div>
-                <label className="block mb-2 font-medium">
-                  Rate your experience *
-                </label>
-                <div className="flex gap-2 text-2xl">
-                  {[1,2,3,4,5].map((star)=>(
-                    <FaStar
-                      key={star}
-                      onClick={()=>setRating(star)}
-                      className={`cursor-pointer ${
-                        star <= rating ? "text-yellow-400" : "text-gray-300"
-                      }`}
-                    />
-                  ))}
-                </div>
-              </div>
+        {/* RATING */}
+        <div>
+          <label className="block mb-2 font-medium text-sm">
+            Rate your experience *
+          </label>
 
-              {/* TITLE */}
-              <div>
-                <label className="block mb-1 font-medium">
-                  A short title for your review *
-                </label>
-                <input
-                  value={title}
-                  onChange={(e)=>setTitle(e.target.value)}
-                  className="w-full border rounded-lg px-4 py-3 outline-none focus:ring"
-                  placeholder="Great quality and fast delivery"
+          <div className="flex items-center gap-3">
+            <div className="flex gap-[5px] text-[22px]">
+              {[1,2,3,4,5].map((star)=>(
+                <FaStar
+                  key={star}
+                  onClick={()=>setRating(star)}
+                  className={`cursor-pointer transition ${
+                    star <= rating
+                      ? "text-[#FF9F1C]"
+                      : "text-gray-300"
+                  }`}
                 />
-              </div>
+              ))}
+            </div>
 
-              {/* REVIEW */}
-              <div>
-                <label className="block mb-1 font-medium">
-                  Write your review *
-                </label>
-                <textarea
-                  value={comment}
-                  onChange={(e)=>setComment(e.target.value)}
-                  rows={5}
-                  className="w-full border rounded-lg px-4 py-3 outline-none focus:ring"
-                  placeholder="I loved it..."
-                />
-              </div>
-
-              {/* UPLOAD */}
-              <div>
-                <label className="block font-medium">
-                  Add photos or videos (Optional)
-                </label>
-                <p className="text-sm text-gray-500 mb-2">
-                  You can upload up to 10 images and 3 short videos
-                </p>
-
-                <button
-                  type="button"
-                  className="flex items-center gap-2 border px-4 py-2 rounded-lg hover:bg-gray-100"
-                >
-                  <Upload size={18}/>
-                  Upload files
-                </button>
-              </div>
-
-              {/* NAME */}
-              <div>
-                <label className="block font-medium">
-                  Your name *
-                </label>
-                <input
-                  value={name}
-                  onChange={(e)=>setName(e.target.value)}
-                  className="w-full border rounded-lg px-4 py-3 outline-none"
-                />
-              </div>
-
-              {/* EMAIL */}
-              <div>
-                <label className="block font-medium">
-                  Your email address *
-                </label>
-                <input
-                  value={email}
-                  onChange={(e)=>setEmail(e.target.value)}
-                  className="w-full border rounded-lg px-4 py-3 outline-none"
-                />
-              </div>
-
-              {/* FOOTER */}
-              <div className="flex justify-between items-center pt-4">
-                <span className="text-xs text-gray-500">
-                  * required fields
-                </span>
-
-                <button className="bg-[#A0174A] cursor-pointer text-white px-6 py-2 rounded-lg">
-                  Send
-                </button>
-              </div>
-
-            </form>
+            <span className="text-sm text-gray-500">Average</span>
           </div>
         </div>
-      )}
+
+        {/* TITLE */}
+        <div>
+          <label className="block mb-1 text-sm font-medium">
+            A short title for your review *
+          </label>
+          <input
+            value={title}
+            onChange={(e)=>setTitle(e.target.value)}
+            placeholder="e.g. Great quality and first delivery"
+            className="w-full rounded-full bg-white/70 px-5 py-3 outline-none border border-transparent focus:border-gray-300"
+          />
+        </div>
+
+        {/* REVIEW */}
+        <div>
+          <label className="block mb-1 text-sm font-medium">
+            Write your review *
+          </label>
+
+          <textarea
+            rows={4}
+            value={comment}
+            onChange={(e)=>setComment(e.target.value)}
+            placeholder="e.g. i love the fabric, but shipping so first than expected"
+            className="w-full rounded-2xl bg-white/70 px-5 py-4 outline-none border border-transparent focus:border-gray-300 resize-none"
+          />
+        </div>
+
+        {/* UPLOAD */}
+        <div>
+          <label className="block text-sm font-medium mb-2">
+            Add photos or video (Optional)
+          </label>
+
+          <button
+            type="button"
+            className="w-full border-2 border-dashed border-gray-300 rounded-2xl py-6
+                       flex flex-col items-center gap-2 text-gray-500 hover:bg-white/60 transition"
+          >
+            <Upload size={20}/>
+            <span className="text-sm">Upload files</span>
+          </button>
+        </div>
+
+        {/* NAME */}
+        <div>
+          <label className="block text-sm font-medium mb-1">
+            Your name *
+          </label>
+          <input
+            value={name}
+            onChange={(e)=>setName(e.target.value)}
+            placeholder="e.g. Jams Watt"
+            className="w-full rounded-full bg-white/70 px-5 py-3 outline-none border border-transparent focus:border-gray-300"
+          />
+        </div>
+
+        {/* EMAIL */}
+        <div>
+          <label className="block text-sm font-medium mb-1">
+            Your email address *
+          </label>
+          <input
+            value={email}
+            onChange={(e)=>setEmail(e.target.value)}
+            placeholder="e.g. jamswatt@gmail.com"
+            className="w-full rounded-full bg-white/70 px-5 py-3 outline-none border border-transparent focus:border-gray-300"
+          />
+        </div>
+
+        {/* BUTTON */}
+        <button
+          type="submit"
+          className="w-full bg-[#D4A437] border hover:border-[#DBAB35] transition-all duration-500 hover:bg-white border-transparent
+                     text-black font-medium py-3 rounded-full mt-2 cursor-pointer"
+        >
+          Send
+        </button>
+
+      </form>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };

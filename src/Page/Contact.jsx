@@ -117,7 +117,7 @@ const Contact = () => {
             <button
               type="submit"
               className="btn w-full py-[l4px] px-[16px] font-bold rounded-full  transition-all duration-300 ease-out
-    bg-[#BA9948] hover:text-[#1D0B01] hover:bg-white/60 backdrop-blur-md border border-[#BA9948] text-white"
+    bg-[#DBAB35] hover:text-[#1D0B01] hover:bg-white/60 backdrop-blur-md border border-[#DBAB35] text-white"
             >
               Submit
             </button>

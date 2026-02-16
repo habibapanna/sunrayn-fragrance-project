@@ -163,7 +163,7 @@ useEffect(() => {
   {/* Back Button */}
   <button
     onClick={() => navigate(-1)}
-    className="hidden lg:flex items-center gap-[8px] bg-[#BA9948]/30 pl-[16px] pr-[24px] py-[12px] rounded-full text-[14px] lg:text-[16px] font-medium h-[50px] cursor-pointer hover:underline"
+    className="hidden lg:flex items-center gap-[8px] bg-[#DBAB35]/30 pl-[16px] pr-[24px] py-[12px] rounded-full text-[14px] lg:text-[16px] font-medium h-[50px] cursor-pointer hover:underline"
   >
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
   <path d="M13 6L7 12L13 18" stroke="#282828" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -257,7 +257,7 @@ Back
 <div className="md:sticky md:top-[100px] h-fit">
   <div className="bg-[#F6F7F2] rounded-[16px] p-[16px] 2xl:p-[32px]">
 
-          <span className="text-[12px] 2xl:text-[16px] bg-[#FFFFFF] border border-[#A0174A] py-[8px] px-[16px] rounded-full">{product.gender}</span>
+          <span className="text-[12px] 2xl:text-[16px] bg-[#FFFFFF] border border-[#DBAB35] py-[8px] px-[16px] rounded-full">{product.gender}</span>
           <div className="flex justify-between items-center">
             <h1 className="text-[18px] lg:text-[24px] 2xl:text-[35px] text-[#1D0B01] font-bold mt-2">
             {product.title}
@@ -274,7 +274,7 @@ Back
           {/* Rating */}
           <div className="flex items-center gap-[5px] mt-3">
             {[...Array(5)].map((_, i) => (
-              <FaStar key={i} className="text-[#BA9948]" />
+              <FaStar key={i} className="text-[#DBAB35]" />
             ))}
             <span className="text-[16px] ml-[6px] underline">
               {product.rating} ({product.reviews})
@@ -378,7 +378,7 @@ Back
         <div onClick={handleAddToCart}
         className="flex justify-between items-center gap-[16px] mt-[16px] lg:mt-[20px]"> 
           <button className="text-[18px] 2xl:text-[20px] w-full px-[20px] py-[8px] 2xl:py-[10px] 2x:px-[24px] rounded-full font-semibold cursor-pointer transition-all duration-500 ease-out
-    bg-[#BA9948] text-white hover:bg-white backdrop-blur-md border hover:border-[#A0174A] hover:text-[#1D0B01]">
+    bg-[#DBAB35] text-white hover:bg-white backdrop-blur-md border hover:border-[#DBAB35] hover:text-[#1D0B01]">
             Add to cart
           </button>
           </div>
@@ -676,10 +676,9 @@ Back
                                                 </div>
                                               )}
 
-
+<ReviewSection productSlug={product.slug} />
       <section className="px-[16px] 2xl:px-[32px]"><ProductCard></ProductCard></section>
       {/* REVIEWS */}
-<ReviewSection productSlug={product.slug} />
       <MarqueeSection></MarqueeSection>
     </div>
   );

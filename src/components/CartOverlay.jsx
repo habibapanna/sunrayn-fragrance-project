@@ -199,7 +199,7 @@ const backdropVariants = {
       alt="Cerisa Aura"
       className="w-[140px] h-full lg:w-[130px]  object-cover rounded-[16px]"
     />
-    <span className="absolute top-[2px] left-[2px] text-[10px] lg:text-[12px] bg-white px-[8px] py-[2px] rounded-full border border-[#A0174A] text-[#1D0B01]">
+    <span className="absolute top-[2px] left-[2px] text-[10px] lg:text-[12px] bg-white px-[8px] py-[2px] rounded-full border border-[#DBAB35] text-[#1D0B01]">
       Woman
     </span>
   </div>
@@ -290,7 +290,7 @@ const backdropVariants = {
 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               
             <div className="absolute bottom-0 left-0 w-full p-3">
-              <div className="flex gap-[2px] text-[#BA9948] text-[12px]">
+              <div className="flex gap-[2px] text-[#DBAB35] text-[12px]">
                 {[...Array(5)].map((_, i) => (
                   <FaStar key={i} />
                 ))}
@@ -313,7 +313,7 @@ const backdropVariants = {
                         <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 105 45" fill="none">
                           <path
                             d="M95 11V0H10V11C4.47715 11 0 15.4772 0 21V24C0 29.5228 4.47715 34 10 34V45H95V34C100.523 34 105 29.5228 105 24V21C105 15.4772 100.523 11 95 11Z"
-                            fill="#BA9948"
+                            fill="#DBAB35"
                           />
                           <text
                             x="52.5"
@@ -353,8 +353,8 @@ const backdropVariants = {
         navigate("/checkout");
       }}
       className="w-full py-[10px] rounded-full font-medium text-[16px]
-        bg-[#BA9948] text-white hover:bg-white/60
-        backdrop-blur-md border hover:border-[#A0174A] hover:text-[#1D0B01]
+        bg-[#DBAB35] text-white hover:bg-white/60
+        backdrop-blur-md border hover:border-[#DBAB35] hover:text-[#1D0B01]
         transition-all duration-300 cursor-pointer"
     >
       Process to Checkout

@@ -89,7 +89,7 @@ useEffect(() => {
             Best Selling Perfumes
           </p>
            <button className="transition-all duration-300 ease-out
-    hover:bg-[#BA9948] hover:text-white border border-[#BA9948] hover:border-none text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center">
+    hover:bg-[#DBAB35] hover:text-white border border-[#DBAB35] hover:border-none text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center">
                       <Link to="/productList">View All</Link>
                     </button>
         </div>
@@ -116,7 +116,7 @@ useEffect(() => {
                     <p className='text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]'>Best Selling Perfumes</p>
                 </div>
                 <div>
-                    <button className="hover:bg-[#BA9948] hover:text-white border border-[#A0174A] hover:border-none text-[#1D0B01] px-[24px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[100px] h-[30px]"><Link to='/productList'>View All</Link></button>
+                    <button className="hover:bg-[#DBAB35] hover:text-white border border-[#DBAB35] hover:border-none text-[#1D0B01] px-[24px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[100px] h-[30px]"><Link to='/productList'>View All</Link></button>
                 </div>
             </div>
       {/* CAROUSEL */}
@@ -157,7 +157,7 @@ useEffect(() => {
                 />
  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 w-full z-20 p-[20px] lg:p-[40px]">
-                  <div className="flex items-center gap-[2px] 2xl:gap-[8px] text-[#BA9948]">
+                  <div className="flex items-center gap-[2px] 2xl:gap-[8px] text-[#DBAB35]">
                     {[...Array(5)].map((_, i) => (
                       <FaStar key={i} className="h-[12px] lg:h-[15px]" />
                     ))}
@@ -211,7 +211,7 @@ useEffect(() => {
                         <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 105 45" fill="none">
                           <path
                             d="M95 11V0H10V11C4.47715 11 0 15.4772 0 21V24C0 29.5228 4.47715 34 10 34V45H95V34C100.523 34 105 29.5228 105 24V21C105 15.4772 100.523 11 95 11Z"
-                            fill="#BA9948"
+                            fill="#DBAB35"
                           />
                           <text
                             x="52.5"

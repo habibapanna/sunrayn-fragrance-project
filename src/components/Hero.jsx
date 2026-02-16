@@ -33,7 +33,7 @@ const Hero = () => {
         <div className="text-white text-center flex flex-col items-center max-w-[900px]">
 
           {/* RATING */}
-          <div className="flex flex-col md:flex-row items-center gap-[8px] text-[#BA9948] mb-[16px]">
+          <div className="flex flex-col md:flex-row items-center gap-[8px] text-[#DBAB35] mb-[16px]">
             <div className="flex gap-[6px]">
               {[...Array(5)].map((_, i) => (
                 <FaStar key={i} className="h-[15px] w-[15px]" />
@@ -61,9 +61,9 @@ const Hero = () => {
           <Link to="/productList">
             <button
               className="
-                bg-[#BA9948] hover:bg-white
+                bg-[#DBAB35] hover:bg-white
                 text-white hover:text-[#1D0B01]
-                border border-[#BA9948]
+                border border-[#DBAB35]
                 transition-all duration-300 ease-out
                 rounded-full
                 px-[24px] py-[10px]

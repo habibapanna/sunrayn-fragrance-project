@@ -13,7 +13,7 @@ const LearnMorePopup = ({ isOpen, onClose }) => {
 
       {/* MODAL */}
       <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
-        <div className="relative w-full max-w-[900px] bg-[#BA9948] rounded-[16px] shadow-lg overflow-hidden flex flex-col md:flex-row">
+        <div className="relative w-full max-w-[900px] bg-[#DBAB35] rounded-[16px] shadow-lg overflow-hidden flex flex-col md:flex-row">
                         {/* CLOSE BUTTON */}
            <button
   onClick={onClose}
@@ -46,9 +46,9 @@ const LearnMorePopup = ({ isOpen, onClose }) => {
                 px-6 py-2 w-full md:px-6 md:py-3
                 rounded-full font-semibold
                 text-[14px] md:text-[16px]
-                border border-[#BA9948]
+                border border-[#DBAB35]
                 text-[#1D0B01]
-                hover:bg-white hover:text-[#BA9948]
+                hover:bg-white hover:text-[#DBAB35]
                 transition-all duration-500 ease-out cursor-pointer
               ">
                 SHOP NOW

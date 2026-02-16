@@ -57,8 +57,8 @@ const Categories = ({ sortBy, setSortBy }) => {
     will-change-transform
     ${
       isActive
-        ? "border-[#A0174A] scale-[1.01] shadow-lg"
-        : "border-transparent hover:border-[#BA9948] hover:scale-[1.01] hover:shadow-xl"
+        ? "border-[#DBAB35] scale-[1.01] shadow-lg"
+        : "border-transparent hover:border-[#DBAB35] hover:scale-[1.01] hover:shadow-xl"
     }
   `}
 >

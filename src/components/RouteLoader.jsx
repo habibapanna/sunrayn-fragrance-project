@@ -42,9 +42,9 @@ const RouteLoader = () => {
       <svg width="120" height="70" viewBox="0 0 120 70">
         <defs>
           <linearGradient id={`spray-left-${i}`} x1="1" y1="0" x2="0" y2="0">
-            <stop offset="0%" stopColor="#BA9948" stopOpacity="0.6" />
-            <stop offset="60%" stopColor="#BA9948" stopOpacity="0.25" />
-            <stop offset="100%" stopColor="#BA9948" stopOpacity="0" />
+            <stop offset="0%" stopColor="#DBAB35" stopOpacity="0.6" />
+            <stop offset="60%" stopColor="#DBAB35" stopOpacity="0.25" />
+            <stop offset="100%" stopColor="#DBAB35" stopOpacity="0" />
           </linearGradient>
         </defs>
 
@@ -72,7 +72,7 @@ const RouteLoader = () => {
           <div className="w-[12px] h-[10px] bg-[#A0174A] rounded-sm mt-[2px]" />
 
           {/* Circular Glass Bottle */}
-          <div className="relative mt-2 w-[120px] h-[120px] rounded-full bg-white/30 backdrop-blur-xl border border-[#A0174A]/40 shadow-[0_25px_45px_rgba(0,0,0,0.15)] overflow-hidden">
+          <div className="relative mt-2 w-[120px] h-[120px] rounded-full bg-white/30 backdrop-blur-xl border border-[#DBAB35]/40 shadow-[0_25px_45px_rgba(0,0,0,0.15)] overflow-hidden">
 
             {/* Liquid */}
             <div className="absolute bottom-0 w-full h-[45%] bg-[#A0174A]/70 rounded-b-full" />
