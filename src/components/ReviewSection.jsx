@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { X, Upload } from "lucide-react";
+import ReviewList from "./ReviewList";
 
 const ReviewSection = ({ productSlug }) => {
   const [reviews, setReviews] = useState([]);
@@ -35,7 +36,6 @@ const [activeTab, setActiveTab] = useState("reviews");
   };
 
 
-
   return (
     <div className="px-[16px] 2xl:px-[32px] py-[16px] 2xl:py-[32px]"
     >
@@ -67,7 +67,6 @@ const [activeTab, setActiveTab] = useState("reviews");
       Q&A
     </button>
   </div>
-
 
   {/* DYNAMIC CONTENT AREA */}
   <div
@@ -129,7 +128,6 @@ const [activeTab, setActiveTab] = useState("reviews");
       )}
     </div>
 
-
     {/* RIGHT BUTTON (REVIEWS ONLY) */}
     {activeTab === "reviews" && (
       <button
@@ -144,8 +142,7 @@ const [activeTab, setActiveTab] = useState("reviews");
     )}
   </div>
 </div>
-
-
+<ReviewList />
 
       {/* ================= MODAL ================= */}
 {open && (
