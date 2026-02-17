@@ -76,7 +76,7 @@ const RouteLoader = () => {
           <motion.g
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.2 }}
           >
             <rect x="80" y="20" width="40" height="18" rx="6" fill="url(#gold)" />
             <rect x="88" y="10" width="24" height="14" rx="6" fill="url(#gold)" />
