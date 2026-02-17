@@ -3,104 +3,87 @@ import { motion } from "framer-motion";
 const RouteLoader = () => {
   return (
     <motion.div
-      className="fixed inset-0 z-[9999] bg-white/90 backdrop-blur-md flex items-center justify-center"
+      className="fixed inset-0 z-[9999] flex items-center justify-center
+      bg-gradient-to-r from-black via-[#2b2b2b] to-black"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div className="relative w-[160px] h-[220px] flex flex-col items-center">
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.3 }}
+        className="w-[200px] h-[200px]"
+      >
+        <svg viewBox="0 0 200 200" className="w-full h-full">
 
-       {/* PERFUME SPRAY – RIGHT SIDE */}
-{/* PERFUME SPRAY – LEFT SIDE (REALISTIC) */}
-<motion.div className="absolute -top-4 left-[45%] pointer-events-none">
-  {[...Array(5)].map((_, i) => (
-    <motion.div
-      key={i}
-      className="absolute"
-      initial={{
-        opacity: 0,
-        x: 0,
-        y: 4,
-        scaleX: 0.6,
-        scaleY: 0.4,
-        rotate: -8,
-      }}
-      animate={{
-        opacity: [0, 0.65, 0],
-        x: [0, -38],
-        y: [0, -46],
-        scaleX: 1.1,
-        scaleY: 0.9,
-      }}
-      transition={{
-        duration: 1.8,
-        delay: i * 0.18,
-        repeat: Infinity,
-        ease: "easeOut",
-      }}
-    >
-      <svg width="120" height="70" viewBox="0 0 120 70">
-        <defs>
-          <linearGradient id={`spray-left-${i}`} x1="1" y1="0" x2="0" y2="0">
-            <stop offset="0%" stopColor="#DBAB35" stopOpacity="0.6" />
-            <stop offset="60%" stopColor="#DBAB35" stopOpacity="0.25" />
-            <stop offset="100%" stopColor="#DBAB35" stopOpacity="0" />
-          </linearGradient>
-        </defs>
+          {/* GOLD GRADIENT */}
+          <defs>
+            <linearGradient id="gold" x1="0" x2="1">
+              <stop offset="0%" stopColor="#caa648" />
+              <stop offset="40%" stopColor="#f6e27a" />
+              <stop offset="70%" stopColor="#d4af37" />
+              <stop offset="100%" stopColor="#b8962e" />
+            </linearGradient>
+          </defs>
 
-        {/* Thin directional mist */}
-        <ellipse
-          cx="80"
-          cy="35"
-          rx="42"
-          ry="14"
-          fill={`url(#spray-left-${i})`}
-        />
-      </svg>
-    </motion.div>
-  ))}
-</motion.div>
+          {/* OUTER RING */}
+          <motion.circle
+            cx="100"
+            cy="110"
+            r="70"
+            stroke="url(#gold)"
+            strokeWidth="5"
+            fill="transparent"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+          />
 
+          {/* STARS ARC */}
+          {[...Array(7)].map((_, i) => {
+            const angle = (i - 3) * 15;
+            const x = 100 + 55 * Math.sin((angle * Math.PI) / 180);
+            const y = 110 - 55 * Math.cos((angle * Math.PI) / 180);
 
-        {/* BOTTLE */}
-        <div className="relative flex flex-col items-center">
+            return (
+              <motion.text
+                key={i}
+                x={x}
+                y={y}
+                textAnchor="middle"
+                fill="url(#gold)"
+                fontSize="10"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4 + i * 0.08 }}
+              >
+                ★
+              </motion.text>
+            );
+          })}
 
-          {/* Cap */}
-          <div className="w-[42px] h-[16px] bg-[#DBAB35] rounded-md shadow-md" />
+          {/* LIQUID WAVE */}
+          <motion.path
+            d="M40 120 Q100 85 160 120 L160 150 Q100 165 40 150 Z"
+            fill="url(#gold)"
+            initial={{ y: 15, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+          />
 
-          {/* Nozzle */}
-          <div className="w-[12px] h-[10px] bg-[#A0174A] rounded-sm mt-[2px]" />
+          {/* CAP */}
+          <motion.g
+            initial={{ y: -10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <rect x="80" y="20" width="40" height="18" rx="6" fill="url(#gold)" />
+            <rect x="88" y="10" width="24" height="14" rx="6" fill="url(#gold)" />
+          </motion.g>
 
-        {/* Circular Glass Bottle */}
-<div className="relative mt-2 w-[120px] h-[120px] rounded-full shadow-[0_25px_45px_rgba(0,0,0,0.15)] overflow-hidden">
-
-  {/* OUTER BORDER */}
-  <div className="absolute inset-0 rounded-full border-2 border-[#A0174A]" />
-
-  {/* INNER GLASS */}
-  <div className="absolute inset-[6px] rounded-full bg-white/30 backdrop-blur-xl border border-[#DBAB35]/40 overflow-hidden">
-
-    {/* Liquid */}
-    <div className="absolute bottom-0 w-full h-[45%] bg-[#A0174A]/70 rounded-b-full" />
-
-    {/* Liquid shine */}
-    <div className="absolute bottom-0 w-full h-[45%] bg-gradient-to-t from-[#A0174A]/60 to-transparent rounded-b-full" />
-
-    {/* Glass reflection */}
-    <div className="absolute left-4 top-4 w-[16px] h-[80px] bg-white/30 rounded-full blur-sm" />
-
-    {/* Brand */}
-    <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-      <p className="text-[11px] tracking-[0.3em] text-[#DBAB35]">
-        SANRAYN
-      </p>
-    </div>
-
-  </div>
-</div>
-
-        </div>
-      </div>
+        </svg>
+      </motion.div>
     </motion.div>
   );
 };

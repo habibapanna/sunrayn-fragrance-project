@@ -396,7 +396,7 @@ const Checkout = () => {
     <div className="">
       <img
         src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
-        className="w-[70px] h-[70px] rounded-[12px]"
+        className="w-[70px] h-[70px] rounded-[8px]"
         alt=""
       />
     </div>

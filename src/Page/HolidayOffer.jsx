@@ -114,7 +114,7 @@ if (sortBy === "new")
         className="flex justify-between cursor-pointer"
         onClick={() => toggleAccordion(title)}
       >
-        <h3 className="font-medium">{title}</h3>
+        <h3 className="font-medium text-[15px] lg:text-[20px]">{title}</h3>
 
         <span className={`transition-transform ${openSection.includes(title) ? "rotate-180" : ""}`}>
 
@@ -139,9 +139,9 @@ if (sortBy === "new")
                 type="checkbox"
                 checked={filters[filterKey].includes(opt)}
                 onChange={() => toggleFilter(filterKey, opt)}
-                className="checkbox checkbox-neutral checked:bg-[#DBAB35]"
+                className="w-[14px] h-[14px] lg:w-[18px] lg:h-[18px] rounded-[2px] border border-[#282828] accent-[#DBAB35] cursor-pointer"
               />
-              <span>{opt}</span>
+              <span className="text-[14px] lg:text-[18px]">{opt}</span>
             </label>
           ))}
         </div>
@@ -229,7 +229,7 @@ useEffect(() => {
       {/* ================= PRICE RANGE ================= */}
       <div className="bg-white rounded-[16px] p-4 space-y-4 mx-[16px]">
         <div className="flex justify-between cursor-pointer" onClick={() => toggleAccordion("Price")}>
-          <h3 className="font-medium">Price</h3>
+          <h3 className="font-medium text-[18px]">Price</h3>
           <span className={`transition-transform ${openSection.includes("Price") ? "rotate-180" : ""}`}>
 
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -250,7 +250,7 @@ useEffect(() => {
               style={{ background: "#A0174A" }}
             />
 
-            <div className="flex justify-between text-sm font-medium">
+            <div className="flex justify-between text-[18px] font-medium">
               <span>${priceRange[0]}</span>
               <span>${priceRange[1]}</span>
             </div>
@@ -259,10 +259,10 @@ useEffect(() => {
       </div>
 
       {/* ================= FILTER TITLE ================= */}
-      <h3 className="text-[14px] font-bold uppercase">Filter:</h3>
+      <h3 className="text-[16px] font-bold uppercase mx-">Filter:</h3>
 
       {/* ACTIVE TAGS */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 mx-3">
         {Object.entries(filters).map(([key, values]) =>
           values.map(v => (
             <span key={`${key}-${v}`} className="flex items-center gap-2 bg-white px-4 py-1 rounded-full text-sm">
@@ -271,7 +271,7 @@ useEffect(() => {
             </span>
           ))
         )}
-        <button onClick={clearAllFilters} className="ml-auto underline text-sm">
+        <button onClick={clearAllFilters} className="ml-auto underline text-[18px]">
           Clear all
         </button>
       </div>
@@ -284,7 +284,7 @@ useEffect(() => {
       <FilterBlock title="Scent - Intensity Scale" options={["Subtle", "Significant", "Statement"]} filterKey="intensity" />
 
             {/* ================= SORT BY ================= */}
-      <div className="space-y-2">
+      <div className="space-y-2 mx-3 mb-3">
         <h3 className="text-[14px] font-bold uppercase">Sort by:</h3>
 
         <div
@@ -313,7 +313,7 @@ useEffect(() => {
           </div>
 
           {openSection.includes("Sort") && (
-            <div className="mt-4 space-y-3">
+            <div className="mt-4 space-y-3 text-[18px]">
               {[
                 { label: "Relevance (Default)", value: "relevance" },
                 { label: "Price - high to low", value: "price-high" },
@@ -323,13 +323,13 @@ useEffect(() => {
               ].map(item => (
                 <label key={item.value} className="flex items-center gap-3">
                   <input
-                    type="radio"
+                    type="checked"
                     name="sort"
                     checked={sortBy === item.value}
                     onChange={() => setSortBy(item.value)}
-                    className="radio checked:bg-[#DBAB35]"
+                    className="w-[18px] h-[18px] rounded-[2px] border border-[#282828] accent-[#DBAB35] cursor-pointer"
                   />
-                  <span>{item.label}</span>
+                  <span className="text-[18px]">{item.label}</span>
                 </label>
               ))}
             </div>
@@ -366,10 +366,10 @@ useEffect(() => {
         animate="visible"
         exit="exit"
       >
-    <div className="p-5 space-y-6 text-[#1D0B01]">
+    <div className="p-[4px] space-y-6 text-[#1D0B01]">
              {/* Close button */}
      <div className="flex justify-end ">
-          <button className="cursor-pointer border border-gray-300 p-2 rounded-full h-[30px] w-[30px] hover:bg-black hover:text-white flex items-center justify-center" onClick={() => setSidebarOpen(false)}>✕</button>
+          <button className="cursor-pointer border border-gray-300 p-2 rounded-full h-[30px] w-[30px] hover:bg-black hover:text-white flex items-center justify-center m-2" onClick={() => setSidebarOpen(false)}>✕</button>
         </div>
       {/* ================= PRICE RANGE ================= */}
       <div className="bg-white rounded-[16px] p-4 space-y-4 mx-[16px]">
@@ -396,18 +396,18 @@ useEffect(() => {
             />
 
             <div className="flex justify-between text-sm font-medium">
-              <span>${priceRange[0]}</span>
-              <span>${priceRange[1]}</span>
+              <span className="text-[14px]">${priceRange[0]}</span>
+              <span className="text-[14px]">${priceRange[1]}</span>
             </div>
           </>
         )}
       </div>
 
       {/* ================= FILTER TITLE ================= */}
-      <h3 className="text-[14px] font-bold uppercase">Filter:</h3>
+      <h3 className="text-[13px] font-bold uppercase mx-3">Filter:</h3>
 
       {/* ACTIVE TAGS */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2  mx-3">
         {Object.entries(filters).map(([key, values]) =>
           values.map(v => (
             <span key={`${key}-${v}`} className="flex items-center gap-2 bg-white px-4 py-1 rounded-full text-sm">
@@ -416,7 +416,7 @@ useEffect(() => {
             </span>
           ))
         )}
-        <button onClick={clearAllFilters} className="ml-auto underline text-sm">
+        <button onClick={clearAllFilters} className="ml-auto underline text-[14px]">
           Clear all
         </button>
       </div>
@@ -429,15 +429,15 @@ useEffect(() => {
       <FilterBlock title="Scent - Intensity Scale" options={["Subtle", "Significant", "Statement"]} filterKey="intensity" />
 
             {/* ================= SORT BY ================= */}
-      <div className="space-y-2">
-        <h3 className="text-[14px] font-bold uppercase">Sort by:</h3>
+      <div className="space-y-2 mx-3 mb-3">
+        <h3 className="text-[13px] font-bold uppercase ">Sort by:</h3>
 
         <div
           className="bg-white rounded-[12px] p-4 cursor-pointer"
           onClick={() => toggleAccordion("Sort")}
         >
           <div className="flex justify-between items-center">
-            <span className="font-medium">
+            <span className="font-medium text-[14px]">
               {[
                 "Relevance (Default)",
                 "Price - high to low",
@@ -468,13 +468,14 @@ useEffect(() => {
               ].map(item => (
                 <label key={item.value} className="flex items-center gap-3">
                   <input
-                    type="radio"
+                    type="checked"
                     name="sort"
                     checked={sortBy === item.value}
                     onChange={() => setSortBy(item.value)}
-                    className="radio checked:bg-[#DBAB35]"
+                    className="w-[14px] h-[14px] rounded-[2px] border border-[#282828] accent-[#DBAB35] cursor-pointer"
+
                   />
-                  <span>{item.label}</span>
+                  <span className="text-[14px]">{item.label}</span>
                 </label>
               ))}
             </div>

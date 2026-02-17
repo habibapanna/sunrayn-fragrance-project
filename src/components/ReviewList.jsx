@@ -354,7 +354,7 @@ const currentReviews = sortedReviews.slice(
         type="button"
         key={pageNumber}
         onClick={() => handlePageChange(pageNumber)}
-        className={`w-[40px] h-[40px] lg:w-[55px] lg:h-[55px] text-[20px] rounded-full font-medium transition
+        className={`w-[30px] h-[30px] lg:w-[55px] lg:h-[55px] text-[14px] md:text-[16px] 2xl:text-[20px] rounded-full font-medium transition
           ${
             currentPage === pageNumber
               ? "bg-[#A0174A] text-white"

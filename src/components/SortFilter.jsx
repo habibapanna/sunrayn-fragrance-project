@@ -192,8 +192,7 @@ const showClearAll =
   `}
 >
 
-
-        <div className="flex justify-center items-center gap-[6px] lg:gap-[12px] ">
+        <div className="flex justify-center items-center gap-[12px] ">
 
           {/* Sort & Filter Button */}
 <button
@@ -214,10 +213,9 @@ const showClearAll =
            {/* Sort & Filter Button for mobile*/}
           <button
             onClick={() => setSidebarOpen((prev) => !prev)}
-            className="sticky top-0 flex md:hidden items-center gap-[6px] lg:gap-[8px] bg-[#F6F7F2] rounded-full py-[6px] px-[11px] text-[#1D0B01] font-medium text-[12px]  cursor-pointer"
+            className="sticky top-0 flex md:hidden items-center lg:gap-[8px] bg-[#F6F7F2] rounded-full p-[12px] text-[#1D0B01] font-medium text-[12px] cursor-pointer"
           >
-           <img src={Sort} alt="" />
-SORT & FILTER
+          <HiOutlineAdjustmentsHorizontal className="text-2xl" />
           </button>
 
           {/* Search Bar */}
@@ -243,7 +241,7 @@ SORT & FILTER
           <div className="relative" ref={genderRef}>
             <button
               onClick={() => setOpenGender(!openGender)}
-              className="flex items-center gap-[6px] lg:gap-[8px] bg-[#F6F7F2] rounded-full px-[12px] 2xl:px-[18px] 2xl:py-[12px] py-[6px] text-[12px] 2xl:text-[16px] cursor-pointer"
+              className="flex items-center gap-[7px] lg:gap-[8px] bg-[#F6F7F2] rounded-full px-[12px] 2xl:px-[18px] 2xl:py-[12px] py-[10px] txt-[14px] 2xl:text-[16px] cursor-pointer"
             >
 <img src={Heart} alt="" />
               Gender 
@@ -275,14 +273,13 @@ SORT & FILTER
   </div>
 )}
 
-
           </div>
 
           {/* Scent Family */}
           <div className="relative" ref={scentRef}>
             <button
               onClick={() => setOpenScent(!openScent)}
-              className="flex items-center gap-[6px] lg:gap-[8px] bg-[#F6F7F2] rounded-full px-[12px] 2xl:px-[18px] 2xl:py-[12px] py-[6px] text-[12px] 2xl:text-[16px] cursor-pointer"
+              className="flex items-center gap-[7px] lg:gap-[8px] bg-[#F6F7F2] rounded-full px-[12px] 2xl:px-[18px] 2xl:py-[12px] py-[10px] text-[14px] 2xl:text-[16px] cursor-pointer"
             >
              <img src={Family} alt="" />
               Scent family 
