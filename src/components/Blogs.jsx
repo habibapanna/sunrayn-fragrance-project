@@ -21,8 +21,8 @@ const Blogs = () => {
 
           <Link
             to="/blogs"
-            className="transition-all duration-500 ease-out
-    hover:bg-[#DBAB35] border border-[#DBAB35] hover:border-none text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center"
+            className="transition-all duration-500
+    hover:bg-[#DBAB35] border border-[#DBAB35] text-[#1D0B01] font-semibold  2xl:px-[32px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[139px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center"
           >
             Read All
           </Link>
