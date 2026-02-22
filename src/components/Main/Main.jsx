@@ -44,7 +44,7 @@ useEffect(() => {
   return (
     <div className="min-h-screen flex flex-col bg-white">
 
-      {/* ❌ Hide top bar on Home */}
+      {/* Hide top bar on Home */}
       {!isHome && <TopAnnouncementBar />}
 
       <Navbar  cartOpen={cartOpen} setCartOpen={setCartOpen} />

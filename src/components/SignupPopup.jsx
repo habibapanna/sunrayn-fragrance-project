@@ -48,7 +48,7 @@ const SignupPopup = ({ onClose }) => {
           {/* Close */}
           <button
             onClick={handleClose}
-            className="absolute top-5 right-5 w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white transition cursor-pointer"
+            className="absolute top-5 right-5 w-9 h-9 rounded-full border border-gray-300 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-500 cursor-pointer"
           >
             ✕
           </button>
@@ -74,14 +74,14 @@ const SignupPopup = ({ onClose }) => {
           />
 
           {/* Button */}
-          <button className="bg-[#DBAB35] py-3 rounded-full text-[15px] cursor-pointer hover:opacity-90 hover:border border-[#DBAB35] hover:bg-white text-black transition-all duration-500 font-normal">
+          <button className="bg-[#DBAB35] py-3 rounded-full text-[15px] cursor-pointer hover:opacity-90 border border-[#DBAB35] hover:bg-white text-black transition-all duration-500 font-normal">
             Continue
           </button>
 
           {/* No thanks */}
           <button
             onClick={handleClose}
-            className="mt-6 text-[16px] text-black"
+            className="mt-6 text-[16px] text-black cursor-pointer"
           >
             No, Thanks
           </button>

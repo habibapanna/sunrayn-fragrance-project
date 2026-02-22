@@ -86,7 +86,4 @@ const Categories = ({ sortBy, setSortBy }) => {
 
 
 
-
-
-
 export default Categories;

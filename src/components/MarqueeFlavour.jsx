@@ -12,9 +12,8 @@ const MarqueeFlavour = () => {
             className="bg-[#F5F1EA] text-[#A0174A] px-8 py-3 rounded-full
                        flex items-center text-base 2xl:text-[20px] font-medium
                        mx-2 md:mx-4 whitespace-nowrap"
-          >
-              {item.title}
-            
+                                >
+              {item.title}   
           </button>
         ))}
       </Marquee>

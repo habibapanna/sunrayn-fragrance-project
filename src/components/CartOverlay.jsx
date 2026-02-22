@@ -9,7 +9,6 @@ import { RiDeleteBinLine } from "react-icons/ri";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 
 
-
 const tiers = [
   { id: 1, label: "1-2 items", off: "10% OFF" },
   { id: 2, label: "3 items", off: "20% OFF" },

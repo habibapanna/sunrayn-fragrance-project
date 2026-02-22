@@ -22,7 +22,7 @@ const Hero2 = () => {
 
       <div className="mx-auto pt-[100px] md:pt-[150px]  grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10 px-[16px] 2xl:px-[200px] ">
                 {/* RIGHT IMAGE */}
-        <div className="hidden justify-center md:justify-end">
+        <div className="hidden justify-center">
           <img
             src={HandImage}
     alt="Perfume Hand"
