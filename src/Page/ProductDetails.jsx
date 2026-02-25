@@ -369,8 +369,6 @@ Back
 </div>
 
 <div className="mt-[16px] lg:mt-[20px] flex gap-[16px]">
-  <p className="bg-white border border-gray-200 px-[10px] py-[4px] rounded-full">Crafted in <span className="text-[#A0174A] font-semibold">USA</span>
-</p>
 <div
   className="relative overflow-hidden rounded-full px-[18px] py-[8px] text-white text-[14px] font-semibold"
   style={{
@@ -388,6 +386,8 @@ Back
     Scent Family: <span className="font-medium">{product.scentFamily}</span>
   </span>
 </div>
+  <p className="bg-white border border-gray-200 px-[10px] py-[4px] rounded-full">Crafted in <span className="text-[#A0174A] font-semibold">USA</span>
+</p>
 </div>
 
           {/* CTA */}
