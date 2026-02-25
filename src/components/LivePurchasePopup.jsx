@@ -9,7 +9,7 @@ const LivePurchasePopup = () => {
   const intervalRef = useRef(null);
 
   useEffect(() => {
-    // ✅ Check if user already closed it
+    //  Check if user already closed it
     const closed = localStorage.getItem("livePopupClosed");
     if (closed === "true") return;
 

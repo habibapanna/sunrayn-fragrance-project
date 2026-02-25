@@ -1,6 +1,5 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-
 import TopAnnouncementBar from "../TopAnnouncementBar";
 import Footer from "../../shared/Footer/Footer";
 import RouteLoader from "../RouteLoader";

@@ -637,7 +637,7 @@ export const products = [
   salesCount: 15230,
 
   volume: ["15ML", "30ML", "60ML"],
-  scentFamily: ["Fruity"],
+  scentFamily: ["Fresh"],
   intensity: "Significant",
   connection: "Rich and Extreme",
 

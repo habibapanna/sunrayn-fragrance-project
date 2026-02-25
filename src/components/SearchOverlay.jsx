@@ -180,41 +180,61 @@ useEffect(() => {
   </p>
 </div>
 
-  <div className="grid grid-cols-2 gap-[8px]">
-    {[
-      { name: "Flowery", bg: "#FFE6F0" },
-      {  name: "Warm", bg: "#FFE5C3"  },
-      { name: "Gourmand", bg: "#FFD3C8" },
-      { name: "Fresh", bg: "#BEFFBA" },
-      { name: "Earthy", bg: "#BFDDFF" },
-      { name: "Herbal", bg: "#BCBAFF" },
-    ].map((item) => (
-      <button
-        key={item.name}
-        style={{ backgroundColor: item.bg }}
-        className="h-[35px] rounded-full text-[16px] text-[#282828] py-[8px] px-[16px] cursor-pointer font-medium flex justify-center items-center"
-      >
+<div className="grid grid-cols-2 gap-[8px]">
+  {[
+    {
+      name: "Flowery",
+      bg: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/FLORAL_BUTTON_RIGHT_BG.png?v=1734583632",
+    },
+    {
+      name: "Warm",
+      bg: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/WARM_EXPANDED_BOTTOM_RIGHT.png?v=1734522567",
+    },
+    {
+      name: "Gourmand",
+      bg: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/EDIBLE_EXPANDED_RIGHT.png?v=1734521715",
+    },
+    {
+      name: "Fresh",
+      bg: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/FRESH_BUTTON_RIGHT.png?v=1734358115",
+    },
+    {
+      name: "Earthy",
+      bg: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/EARTHY_EXPANDED_RIGHT.png?v=1734522344",
+    },
+    {
+      name: "Herbal",
+      bg: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/HERBAL_EXPANDED_RIGHT.png?v=1734522155",
+    },
+  ].map((item) => (
+    <button
+      key={item.name}
+      className="relative h-[45px] rounded-full overflow-hidden 
+      text-white font-medium 
+      flex justify-center items-center 
+      transition duration-300 hover:scale-[1.03]"
+      style={{
+        backgroundImage: `url(${item.bg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/50" />
+
+      {/* Text */}
+      <span className="relative z-10 text-[14px]">
         {item.name}
-      </button>
-    ))}
-  </div>
+      </span>
+    </button>
+  ))}
+</div>
 
 </div>
           </div>
         </div>
 
-        {signInUpOpen && (
-  <>
-    {/* BLUR BACKGROUND */}
-    <div
-      onClick={() => setSignInUpOpen(false)}
-      className="fixed  inset-0 bg-white/50 backdrop-blur-sm z-[60]"
-    />
-
-    {/* SIGN IN / UP UI */}
-    <SignInUp onClose={() => setSignInUpOpen(false)} />
-  </>
-)}
 
       </div>
     </div>

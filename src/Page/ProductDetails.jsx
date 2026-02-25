@@ -10,14 +10,11 @@ import { useNavigate, Link } from "react-router-dom";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import ReviewSection from "../components/ReviewSection";
 
-
-
 const ProductDetails = () => {
     const [openSection, setOpenSection] = useState("notes");
     const [selectedVolume, setSelectedVolume] = useState(null);
     const [showCartToast, setShowCartToast] = useState(false);
      const { cartOpen, setCartOpen } = useOutletContext();
-
     const navigate = useNavigate();
     const carouselRef = useRef(null);
 const [activeIndex, setActiveIndex] = useState(0);
@@ -111,13 +108,13 @@ const BigBottleIcon = () => (
 
   if (!product) return <div>Product not found</div>;
 
-  const scentFamilyColors = {
-  Flowery: "#FFE6F0",
-  Warm: "#FFE5C3",
-  Gourmand: "#FFD3C8",
-  Fresh: "#BEFFBA",
-  Earthy: "#BFDDFF",
-  Herbal: "#BCBAFF",
+const scentFamilyGradients = {
+  Flowery: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/FLORAL_BUTTON_RIGHT_BG.png?v=1734583632",
+  Warm: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/WARM_EXPANDED_BOTTOM_RIGHT.png?v=1734522567",
+  Gourmand: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/EDIBLE_EXPANDED_RIGHT.png?v=1734521715",
+  Fresh: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/FRESH_BUTTON_RIGHT.png?v=1734358115",
+  Earthy: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/EARTHY_EXPANDED_RIGHT.png?v=1734522344",
+  Herbal: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/HERBAL_EXPANDED_RIGHT.png?v=1734522155",
 };
 
 useEffect(() => {
@@ -374,14 +371,23 @@ Back
 <div className="mt-[16px] lg:mt-[20px] flex gap-[16px]">
   <p className="bg-white border border-gray-200 px-[10px] py-[4px] rounded-full">Crafted in <span className="text-[#A0174A] font-semibold">USA</span>
 </p>
-<span
-  className="px-[12px] py-[6px] rounded-full text-[14px] font-semibold"
+<div
+  className="relative overflow-hidden rounded-full px-[18px] py-[8px] text-white text-[14px] font-semibold"
   style={{
-    backgroundColor: scentFamilyColors[product.scentFamily] || "#F6F7F2",
+    backgroundImage: `url(${scentFamilyGradients[product.scentFamily]})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
   }}
 >
-  Scent Family: <span className="font-medium">{product.scentFamily}</span>
-</span>
+  {/* Dark Overlay */}
+  <div className="absolute inset-0 bg-black/50" />
+
+  {/* Text */}
+  <span className="relative z-10">
+    Scent Family: <span className="font-medium">{product.scentFamily}</span>
+  </span>
+</div>
 </div>
 
           {/* CTA */}
