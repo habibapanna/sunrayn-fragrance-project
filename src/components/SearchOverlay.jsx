@@ -66,7 +66,8 @@ useEffect(() => {
   if (!open) return null;
 
   return (
-   <div className="fixed inset-0 z-[70]">
+   <div className="fixed inset-0 z-[70]"
+   onClick={onClose}>
 
       {/* WHITE PANEL */}
     <div
@@ -83,6 +84,7 @@ useEffect(() => {
     shadow-2xl
     transition-all duration-300
   "
+  onClick={(e) => e.stopPropagation()}
 >
 
 
