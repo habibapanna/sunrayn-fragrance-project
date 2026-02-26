@@ -143,8 +143,8 @@ const [question, setQuestion] = useState("");
       <button
         onClick={() => setOpen(true)}
         className="mt-5 md:mt-0 px-[24px] py-[12px] rounded-full font-semibold
-        bg-[#A0174A] text-white hover:bg-white hover:text-[#1D0B01]
-        border border-transparent hover:border-[#DBAB35]
+         hover:bg-white text-[#1D0B01] bg-[#DBAB35] 
+        border border-[#DBAB35]
         transition-all duration-500 text-[16px] 2xl:text-[20px] cursor-pointer w-full md:w-1/2"
       >
         Write a Review

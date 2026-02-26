@@ -18,7 +18,7 @@ const scentBackgrounds = {
 
 const MarqueeSection = () => {
   return (
-    <section className="py-6">
+    <section className="">
       <Marquee speed={40} gradient={false} pauseOnHover>
         {products.map((item, index) => {
           const bgImage = scentBackgrounds[item.scentFamily];
