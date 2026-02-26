@@ -342,28 +342,37 @@ const Faq = () => {
           </p>
         </div>
 
-        {/* FAQ Sections */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
-          {faqData.map((section, index) => (
-            <div key={index}>
-              {/* Section Title */}
-              <h2 className="text-[22px] lg:text-[25px] font-semibold text-[#111] mb-8 border-b border-black/20 pb-3">
-                {section.title}
-              </h2>
+{/* FAQ Sections */}
+<div className="max-w-7xl mx-auto relative">
+  
+  {/* Vertical Divider (only lg+) */}
+  <div className="hidden lg:block absolute left-1/2 top-0 -translate-x-1/2 w-px h-full bg-black/10"></div>
 
-              {/* Questions */}
-              <div>
-                {section.questions.map((item, i) => (
-                  <FaqItem
-                    key={i}
-                    question={item.q}
-                    answer={item.a}
-                  />
-                ))}
-              </div>
-            </div>
+  <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-28">
+    {faqData.map((section, index) => (
+      <div
+        key={index}
+        className="lg:px-12"
+      >
+        {/* Section Title */}
+        <h2 className="text-[22px] lg:text-[25px] font-semibold text-[#111] mb-8 border-b border-black/20 pb-3">
+          {section.title}
+        </h2>
+
+        {/* Questions */}
+        <div>
+          {section.questions.map((item, i) => (
+            <FaqItem
+              key={i}
+              question={item.q}
+              answer={item.a}
+            />
           ))}
         </div>
+      </div>
+    ))}
+  </div>
+</div>
       </div>
  
 
