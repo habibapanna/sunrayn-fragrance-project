@@ -386,7 +386,7 @@ Back
     Scent Family: <span className="font-medium">{product.scentFamily}</span>
   </span>
 </div>
-  <p className="bg-white border border-gray-200 px-[10px] py-[4px] rounded-full">Crafted in <span className="text-[#A0174A] font-semibold">USA</span>
+  <p className="bg-white border border-gray-200 px-[10px] py-[4px] rounded-full">Crafted in <span className="text-[#A0174A] font-semibold">BROOKLYN NY</span>
 </p>
 </div>
 
