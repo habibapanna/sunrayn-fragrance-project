@@ -1,4 +1,4 @@
-import FrontendLayout from "@/layouts/frontend-layout";
+
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -329,7 +329,7 @@ const FaqItem = ({ question, answer }) => {
 
 const Faq = () => {
   return (
-    <FrontendLayout>
+  
 <div className="bg-[#FAFAFA] px-6 lg:px-16 py-20">
         {/* Header */}
         <div className="text-center mb-20">
@@ -365,7 +365,7 @@ const Faq = () => {
           ))}
         </div>
       </div>
-    </FrontendLayout>
+ 
 
   );
 };
