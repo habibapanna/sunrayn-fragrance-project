@@ -141,7 +141,7 @@ const navPaddingClass = (() => {
 const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer || isScentFamily
   ? "bg-[#1D0B01]/66 border-[2px] border-[#FFFFFF1A] backdrop-blur-sm rounded-full md:mt-[2px]  lg:mt-[12px]"
   : scrolled
-  ? "bg-[#1D0B01]/66 border-[2px] border-[#FFFFFF1A] backdrop-blur-sm rounded-full mt-[8px] 2xl:mt-[10px] mx-[32px] 2xl:mx-[350px]"
+  ? "bg-[#1D0B01]/66 border-[2px] border-[#FFFFFF1A] backdrop-blur-sm rounded-full mt-[8px] 2xl:mt-[10px] mx-[16px] 2xl:mx-[330px]"
   : "bg-transparent border-transparent";
 
 // Determine top position
@@ -163,25 +163,25 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 <a
   href="/"
   onClick={handleLogoClick}
-  className="flex items-center md:gap-[7px] lg:gap-[12px] cursor-pointer transition-all duration-500"
+  className="flex items-center md:gap-[5px] lg:gap-[12px] cursor-pointer transition-all duration-500"
 >
 
  <img
   src={logoSrc}
   alt="Brand Logo"
-  className="w-[35px] h-[35px] md:h-[40px] md:w-[40px] lg:h-[58px] lg:w-[58px] transition-all duration-300"
+  className="w-[35px] h-[35px] md:h-[40px] lg:w-[40px] lg:h-[58px] lg:w-[58px] transition-all duration-300"
 />
 
  <img
   src={brandSrc}
   alt="Brand Name"
-  className="h-[19px] w-[115px] md:h-[22px] md:w-[119px] lg:h-[27px] lg:w-[170px] transition-all duration-300"
+  className="h-[19px] w-[115px] md:h-[22px] lg:w-[119px] lg:h-[27px] lg:w-[170px] transition-all duration-300"
 />
 
 </a>
 
             {/* DESKTOP middle MENU  */}
-            <div className="hidden md:flex items-center gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] 2xl:mr-16 w-[395px] lg:w-[476px] h-[30px] lg:h-[40px] 2xl:w-[552px] 2xl:h-[50px] 2xl:ml-[64px]">
+            <div className="hidden md:flex items-center gap-[6px] lg:gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] 2xl:mr-16 w-[375px] lg:w-[476px] h-[30px] lg:h-[40px] 2xl:w-[552px] 2xl:h-[50px] 2xl:ml-[64px]">
 
             {/* Perfume */}
                <div className="relative" ref={perfumeRef}>
@@ -415,7 +415,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
           {/* RIGHT SIDE */}
           <div className="flex items-center gap-[8px]">
             {/* DESKTOP ICONS (UNCHANGED) */}
-            <div className="flex items-center gap-[8px] md:gap-[16px] ">
+            <div className="flex items-center gap-[8px] lg:gap-[16px] ">
               <button
   title="Wishlist"
   onClick={() => setWishlistOpen(!wishlistOpen)}
