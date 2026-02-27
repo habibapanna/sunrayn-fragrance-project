@@ -3,7 +3,7 @@ import { useNavigate, useOutletContext } from "react-router-dom";
 import Categories from "../components/Categories";
 import SortFilter from "../components/SortFilter";
 import { products } from "../data/productsData";
-import { FaCheck, FaStar } from "react-icons/fa";
+import { FaCheck, FaHeart, FaStar } from "react-icons/fa";
 import MarqueeSection from '../components/MarqueeSection';
 import MarqueeFlavour from '../components/MarqueeFlavour';
 import Premium from '../components/Premium';
@@ -200,9 +200,15 @@ useEffect(() => {
   return () => clearTimeout(t);
 }, [showCartToast]);
 
-
 const resultCount = filteredProducts.length;
-
+const [wishlist, setWishlist] = useState([]);
+const toggleWishlist = (id) => {
+  setWishlist((prev) =>
+    prev.includes(id)
+      ? prev.filter((itemId) => itemId !== id)
+      : [...prev, id]
+  );
+};
 
 
   return (
@@ -542,7 +548,7 @@ const resultCount = filteredProducts.length;
     {item.gender}
   </span>
   </div>
-  <div className="absolute hidden md:block top-[16px] right-[16px] z-10">
+  {/* <div className="absolute hidden md:block top-[16px] right-[16px] z-10">
     <span className="bg-white/90 text-[8px] md:text-[10px] 2xl:text-[12px] px-[8px] py-[2px] rounded-full uppercase text-[#A0174A]">
       {item.off}
     </span>
@@ -551,7 +557,27 @@ const resultCount = filteredProducts.length;
     <span className="bg-white/90 text-[8px] md:text-[10px] 2xl:text-[12px]  px-[8px] py-[2px] rounded-full uppercase text-[#A0174A]">
       {item.off}
     </span>
-  </div>
+  </div> */}
+      {/* WISHLIST BUTTON */}
+<button
+  onClick={(e) => {
+    e.stopPropagation();
+    toggleWishlist(item.slug); // or item.id if you have id
+  }}
+  className="absolute top-[20px] right-[20px] z-30 
+             w-[36px] h-[36px] 
+             bg-white rounded-full 
+             flex items-center justify-center 
+             shadow-md transition-all duration-300 cursor-pointer"
+>
+  <FaHeart
+    className={`text-[16px] transition-colors duration-300 ${
+      wishlist.includes(item.slug)
+        ? "text-[#A0174A]"
+        : "text-black"
+    }`}
+  />
+</button>
 
   <img
     src={item.images[0]}

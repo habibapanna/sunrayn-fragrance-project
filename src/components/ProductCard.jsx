@@ -1,4 +1,4 @@
-import { FaStar } from "react-icons/fa";
+import { FaHeart, FaStar } from "react-icons/fa";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
 import { products } from "../data/productsData";
 import { Link, useNavigate, useOutletContext } from "react-router-dom";
@@ -49,7 +49,14 @@ const ProductCard = () => {
     if (distance > minSwipeDistance) next();
     if (distance < -minSwipeDistance) prev();
   };
-
+const [wishlist, setWishlist] = useState([]);
+const toggleWishlist = (id) => {
+  setWishlist((prev) =>
+    prev.includes(id)
+      ? prev.filter((itemId) => itemId !== id)
+      : [...prev, id]
+  );
+};
   /* ---------- navigation ---------- */
   const maxIndex = products.length - itemsPerView;
 
@@ -135,6 +142,26 @@ const ProductCard = () => {
                   alt={item.title}
                   className="absolute inset-0 mx-auto h-full object-cover w-full group-hover:scale-105 duration-1000"
                 />
+                    {/* WISHLIST BUTTON */}
+<button
+  onClick={(e) => {
+    e.stopPropagation();
+    toggleWishlist(item.slug); // or item.id if you have id
+  }}
+  className="absolute top-[20px] right-[20px] z-30 
+             w-[36px] h-[36px] 
+             bg-white rounded-full 
+             flex items-center justify-center 
+             shadow-md transition-all duration-300 cursor-pointer"
+>
+  <FaHeart
+    className={`text-[16px] transition-colors duration-300 ${
+      wishlist.includes(item.slug)
+        ? "text-[#A0174A]"
+        : "text-black"
+    }`}
+  />
+</button>
  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 w-full z-20 p-[20px] lg:p-[40px]">
                   <div className="flex items-center gap-[2px] 2xl:gap-[8px] text-[#DBAB35]">

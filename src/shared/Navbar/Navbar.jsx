@@ -18,6 +18,7 @@ import User4 from '../../assets/Frame (9).svg';
 import User5 from '../../assets/Frame (10).svg';
 import MenuOverlay from "../../components/MenuOverlay";
 import ForgotPassword from "../../components/ForgotPassword";
+import { FiHeart } from "react-icons/fi";
 
 const Navbar = ({ showTopBar, cartOpen, setCartOpen }) => {
 const [open, setOpen] = useState(false);
@@ -30,6 +31,7 @@ const [openMegaMenu, setOpenMegaMenu] = useState(null);
 const [accountOpen, setAccountOpen] = useState(false);
 const [selectedItem, setSelectedItem] = useState(null);
 const location = useLocation();
+const [wishlistOpen, setWishlistOpen] = useState(false);
 
 // adjust this path to match your ProductList route
 const isHome = location.pathname === "/";
@@ -144,6 +146,8 @@ const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || 
 
 // Determine top position
 const navTopClass = isHome ? "top-0" : "top-[44px]";
+
+
 
   return (
     <>
@@ -412,6 +416,28 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
           <div className="flex items-center gap-[8px]">
             {/* DESKTOP ICONS (UNCHANGED) */}
             <div className="flex items-center gap-[8px] md:gap-[16px] ">
+              <button
+  title="Wishlist"
+  onClick={() => setWishlistOpen(!wishlistOpen)}
+  className={`
+    lg:p-[10px] md:p-[8px] 
+    md:h-[30px] md:w-[30px] 
+    lg:h-[40px] lg:w-[40px] 
+    2xl:p-[12px] 
+    rounded-full 
+    2xl:h-[50px] 2xl:w-[50px]
+    flex items-center justify-center
+    cursor-pointer
+    transition-all duration-300
+    bg-white/90
+  `}
+>
+  <FiHeart
+    className={`w-[20px] h-[20px] transition-colors duration-300 ${
+      wishlistOpen ? "text-[#A0174A]" : "text-[#1D0B01]"
+    }`}
+  />
+</button>
               <button
                title="Search Perfumes"
   onClick={() => setSearchOpen(true)}
