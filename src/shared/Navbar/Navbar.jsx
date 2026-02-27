@@ -169,7 +169,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
  <img
   src={logoSrc}
   alt="Brand Logo"
-  className="w-[35px] h-[35px] md:h-[40px] lg:w-[40px] lg:h-[58px] lg:w-[58px] transition-all duration-300"
+  className="w-[35px] h-[35px] md:h-[40px] lg:w-[40px] lg:h-[58px] lg:w-[58px] transition-all duration-300 hidden md:block"
 />
 
  <img
@@ -420,7 +420,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
   title="Wishlist"
   onClick={() => setWishlistOpen(!wishlistOpen)}
   className={`
-    lg:p-[10px] md:p-[8px] 
+    lg:p-[10px] p-[6px] md:p-[8px] 
     md:h-[30px] md:w-[30px] 
     lg:h-[40px] lg:w-[40px] 
     2xl:p-[12px] 
@@ -429,12 +429,12 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
     flex items-center justify-center
     cursor-pointer
     transition-all duration-500
-    md:bg-white/90
+    bg-white/90
   `}
 >
   <FiHeart
-    className={`w-[20px] h-[20px] transition-colors duration-300 ${
-      wishlistOpen ? "text-[#A0174A]" : "md:text-[#1D0B01] text-white"
+    className={`md:w-[20px] md:h-[20px] transition-colors duration-500 ${
+      wishlistOpen ? "text-[#A0174A]" : "text-[#1D0B01]"
     }`}
   />
 </button>
