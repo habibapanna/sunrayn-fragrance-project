@@ -9,7 +9,7 @@ const Hero = () => {
       {/* VIDEO BACKGROUND */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
-        src="https://cdn.shopify.com/videos/c/o/v/5555cec9a16b4d2aa7b5a8ab717b3f75.mp4"
+        src="https://framerusercontent.com/assets/xwyNvkWHh63ubQ8audTdLJ0lprE.mp4"
         autoPlay
         loop
         muted
@@ -62,9 +62,9 @@ const Hero = () => {
             <button
               className="
                 bg-[#DBAB35] hover:bg-white
-                text-white hover:text-[#1D0B01]
+                text-[#1D0B01]
                 border border-[#DBAB35]
-                transition-all duration-300 ease-out
+                transition-all duration-500 ease-out
                 rounded-full
                 px-[24px] py-[10px]
                 md:px-[48px] md:py-[14px]

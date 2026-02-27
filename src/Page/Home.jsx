@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div>
         
-      <Hero2 />
+      <Hero />
         <Category />
  <Signature />    
         <Featured />
