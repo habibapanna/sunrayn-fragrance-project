@@ -368,7 +368,7 @@ Back
   </div>
 </div>
 
-<div className="mt-[16px] lg:mt-[20px] flex gap-[16px]">
+<div className="mt-[16px] lg:mt-[20px] flex flex-col lg:flex-row text-center lg:text-left gap-[16px]">
 <div
   className="relative overflow-hidden rounded-full px-[18px] py-[8px] text-white text-[14px] font-semibold"
   style={{
