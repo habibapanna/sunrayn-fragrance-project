@@ -289,7 +289,7 @@ Back
           </div>
             
 <p className="text-[14px] 2xl:text-[16px] mt-2">
-  Eau de Perfume
+  Eau de Parfum
   {selectedVolume && (
     <>
       :{" "}
