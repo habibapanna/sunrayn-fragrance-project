@@ -157,7 +157,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
     ${navBgClass}
     ${navPaddingClass} left-0 right-0`}
 >
-        <div className="mx-auto px-[16px] 2xl:px-[32px] py-[8px] md:py-[14px] flex items-center justify-between text-white ">
+        <div className="mx-auto px-[16px] 2xl:px-[32px] py-[8px] md:py-[14px] flex items-center justify-between text-white">
 
 {/* left LOGO */}
 <a
@@ -415,7 +415,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
           {/* RIGHT SIDE */}
           <div className="flex items-center gap-[8px]">
             {/* DESKTOP ICONS (UNCHANGED) */}
-            <div className="flex items-center gap-[8px] lg:gap-[16px] ">
+            <div className="flex items-center gap-[8px] lg:gap-[16px]">
               <button
   title="Wishlist"
   onClick={() => setWishlistOpen(!wishlistOpen)}
@@ -428,13 +428,13 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
     2xl:h-[50px] 2xl:w-[50px]
     flex items-center justify-center
     cursor-pointer
-    transition-all duration-300
-    bg-white/90
+    transition-all duration-500
+    md:bg-white/90
   `}
 >
   <FiHeart
     className={`w-[20px] h-[20px] transition-colors duration-300 ${
-      wishlistOpen ? "text-[#A0174A]" : "text-[#1D0B01]"
+      wishlistOpen ? "text-[#A0174A]" : "md:text-[#1D0B01] text-white"
     }`}
   />
 </button>
