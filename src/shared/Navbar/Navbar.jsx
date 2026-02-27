@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { LiaAngleDownSolid } from "react-icons/lia";
 import Logo from "../../assets/Logo (2).svg";
 import BrandName from "../../assets/Brand Name (3).svg";
+import Logo1 from "../../assets/Logo (5).svg";
+import BrandName1 from "../../assets/Brand Name.svg";
 import { Link } from "react-router-dom";
 import { TbMenu } from "react-icons/tb";
 import SearchOverlay from "../../components/SearchOverlay";
@@ -117,13 +119,13 @@ const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms || isB
   ? Logo
   : scrolled
   ? Logo
-  : Logo;
+  : Logo1;
 
 const brandSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer || isScentFamily
   ? BrandName
   : scrolled
   ? BrandName
-  : BrandName;
+  : BrandName1;
 
 
 // Determine the navbar padding based on page and scroll
