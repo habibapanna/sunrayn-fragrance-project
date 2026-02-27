@@ -58,7 +58,7 @@ const Signature = () => {
         </div>
  </Link>
         {/* RIGHT CARD */}
-       <Link to='/productList'>
+       <Link to='/scent-family'>
         <div className="group relative rounded-[16px] overflow-hidden h-[392px] 2xl:h-[700px] cursor-pointer">
 
           {/* IMAGE */}
@@ -93,7 +93,7 @@ const Signature = () => {
             <GoChevronRight className="text-[20px] 2xl:text-[30px] flex-shrink-0 text-[#1D0B01]" />
 
             {/* TEXT */}
-            <Link to='/productList'>
+            <Link to='/scent-family'>
             <span
               className="
                 whitespace-nowrap uppercase font-medium

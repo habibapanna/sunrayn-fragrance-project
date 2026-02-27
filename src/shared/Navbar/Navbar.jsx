@@ -42,6 +42,7 @@ const isBlogPage = location.pathname === "/blogs";
 const isHolidayOffer = location.pathname === "/holidayOffer";
 const isBlogDetails = location.pathname.startsWith("/blogs/");
 const isProductDetails = location.pathname.startsWith("/productList/");
+const isScentFamily = location.pathname.startsWith("/scent-family");
 const perfumeRef = useRef(null);
 const collectionRef = useRef(null);
 const aboutRef = useRef(null);
@@ -110,39 +111,18 @@ useEffect(() => {
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
 
-const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
+const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer || isScentFamily
   ? Logo
   : scrolled
   ? Logo
   : Logo;
 
-const brandSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
+const brandSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer || isScentFamily
   ? BrandName
   : scrolled
   ? BrandName
   : BrandName;
 
-
-
-
-const MobileGrid = ({ items }) => (
-  <div className="grid grid-cols-1 gap-3 bg-[#F6F7F2] p-3 rounded-[8px] mt-3 ">
-    {items.map((item) => (
-      <button
-        key={item}
-        onClick={() => setSelectedItem(item)}
-        className={`py-[8px] rounded-[4px] text-[14px] font-medium transition
-          ${
-            selectedItem === item
-              ? "bg-white text-left px-2"
-              : "bg-transparent text-left px-[12px] hover:bg-white"
-          }`}
-      >
-        {item}
-      </button>
-    ))}
-  </div>
-);
 
 // Determine the navbar padding based on page and scroll
 const navPaddingClass = (() => {
@@ -156,7 +136,7 @@ const navPaddingClass = (() => {
 })();
 
 // Determine navbar background (unchanged)
-const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer
+const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer || isScentFamily
   ? "bg-[#1D0B01]/66 border-[2px] border-[#FFFFFF1A] backdrop-blur-sm rounded-full md:mt-[2px]  lg:mt-[12px]"
   : scrolled
   ? "bg-[#1D0B01]/66 border-[2px] border-[#FFFFFF1A] backdrop-blur-sm rounded-full mt-[8px] 2xl:mt-[10px] mx-[32px] 2xl:mx-[350px]"
