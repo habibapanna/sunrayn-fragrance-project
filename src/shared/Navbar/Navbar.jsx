@@ -154,7 +154,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
   return (
     <>
 <nav
-  className={`fixed z-50 transition-all duration-300
+  className={`fixed z-50 transition-all duration-1000
     ${navTopClass}
     ${navBgClass}
     ${navPaddingClass} left-0 right-0`}
