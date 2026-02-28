@@ -438,7 +438,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
   "
 >
   <FiHeart
-    className="md:w-[20px] md:h-[20px] transition-colors duration-500 text-[#1D0B01]"
+    className="h-[15px] w-[15px] md:w-[20px] md:h-[20px] transition-colors duration-500 text-[#1D0B01]"
   />
 
   {wishlist.length > 0 && (
@@ -457,7 +457,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
 `}
 
 >
-<img src={Search} alt="" className="w-[20px] h-[20px]" />
+<img src={Search} alt="" className="h-[15px] w-[15px] md:w-[20px] md:h-[20px]" />
 
 </button>
 
@@ -470,7 +470,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
 `}
  title="View Cart"
 >
-<img src={Cart} alt="" className="w-[20px] h-[20px]" />
+<img src={Cart} alt="" className="h-[15px] w-[15px] md:w-[20px] md:h-[20px]" />
 </button>
 {/* Login */}
 <div className="relative" ref={accountRef}>
@@ -484,7 +484,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
       bg-white/90 flex items-center justify-center cursor-pointer  p-[6px] h-[28px] w-[28px]
     "
   >
-  <img src={User} alt="" className="w-[20px] h-[20px]" />
+  <img src={User} alt="" className="h-[15px] w-[15px] md:w-[20px] md:h-[20px]" />
   </button>
 
   {/* ACCOUNT DROPDOWN */}
@@ -537,7 +537,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
   onClick={() => setMenuOpen(true)}
   className="bg-white/90 p-[6px] h-[28px] w-[28px] md:h-[30px] md:w-[30px] rounded-full flex items-center cursor-pointer"
 >
-  <TbMenu className="text-[#1D0B01] h-[24px] w-[24px]" />
+  <TbMenu className="text-[#1D0B01] h-[15px] w-[15px] md:w-[20px] md:h-[20px]" />
 </button>
 
             </div>

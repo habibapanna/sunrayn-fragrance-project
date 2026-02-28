@@ -18,18 +18,18 @@ const Footer = () => {
       <div className="relative z-10 mx-auto lg:px-6  2xl:pl-[80px] p-[16px] py-10 2xl:py-[150px]">
 
         {/* MOBILE BIG S */}
-      <div className="2xl:hidden relative flex justify-center items-center">
+      <div className="2xl:hidden relative flex justify-center items-center mt-5">
 
   <img
     src={Logo}
     alt="Brand Background"
-    className="absolute inset-0 m-auto h-[280px] w-[400px] object-contain pointer-events-none"
+    className="absolute inset-0 m-auto h-[250px] w-[400px] object-contain pointer-events-none"
   />
 
   <img
     src={BigS}
     alt="Big S"
-    className="relative z-10 h-[200px]"
+    className="relative z-10 h-[150px]"
   />
 
 </div>
