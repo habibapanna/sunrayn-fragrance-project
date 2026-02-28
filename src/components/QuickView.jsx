@@ -8,6 +8,7 @@ const QuickView = ({ product, onClose }) => {
    
 
  const [selectedVolume, setSelectedVolume] = useState(null);
+   const [show, setShow] = useState(false);
   useEffect(() => {
     if (product?.volume?.length) {
       setSelectedVolume(product.volume[0]);
@@ -15,6 +16,18 @@ const QuickView = ({ product, onClose }) => {
   }, [product]);
 
   if (!product) return null;
+
+
+useEffect(() => {
+  setShow(true);
+}, []);
+
+const handleClose = () => {
+  setShow(false);
+  setTimeout(() => {
+    onClose();
+  }, 500); // match transition duration
+};
 
 const volumeToOz = {
   "15ML": "0.5oz",
@@ -67,13 +80,20 @@ const BigBottleIcon = () => (
            {/* Overlay */}
     <div
       className="absolute inset-0 bg-black/50 backdrop-blur-sm"
-      onClick={onClose}
+      onClick={handleClose}
     />
 
-    <div className="relative bg-white w-[95%] md:w-[1100px] max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl z-50 p-4 animate-fadeIn">
+    <div
+  className={`
+    relative bg-white w-[95%] md:w-[1100px]
+    max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl z-50 p-4
+    transform transition-all duration-500 ease-out
+    ${show ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-4"}
+  `}
+>
        {/* Close Button */}
       <button
-        onClick={onClose}
+          onClick={handleClose}
         className="absolute flex items-center justify-center top-3 right-3 text-black text-xl border rounded-full p-2 h-8 w-8 hover:bg-black hover:text-white cursor-pointer transition-all duration-500"
       >
         ✕
