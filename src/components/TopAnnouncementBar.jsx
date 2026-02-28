@@ -14,8 +14,8 @@ const messages = [
       <div className="">
         <div className="grid grid-cols-4 gap-[10px] text-center">
           <div>
-            <div className="w-[70px] lg:w-[72px] h-[4px] lg:h-[6px] bg-white rounded-[100px]" />
-            <div className="text-[8px] lg:text-[12px] border-r border-white leading-tight w-[80px]">
+            <div className="w-[70px]  h-[4px] lg:h-[6px] bg-white rounded-[100px]" />
+            <div className="text-[8px] lg:text-[12px] border-r border-white leading-tight w-[73px]">
               1–2 items
               <br />
               <span className="font-normal text-[10px] lg:text-[14px] leading-tight">
@@ -24,8 +24,8 @@ const messages = [
             </div>
           </div>
           <div>
-            <div className="w-[70px] lg:w-[72px] h-[4px] lg:h-[6px] bg-white/40 rounded-[100px]" />
-            <div className="text-[8px] lg:text-[12px] border-r border-white leading-tight w-[80px]">
+            <div className="w-[70px] h-[4px] lg:h-[6px] bg-white/40 rounded-[100px]" />
+            <div className="text-[8px] lg:text-[12px] border-r border-white leading-tight w-[73px]">
               3 items
               <br />
               <span className="font-normal text-[10px] lg:text-[14px]">
@@ -34,8 +34,8 @@ const messages = [
             </div>
           </div>
           <div>
-            <div className="w-[70px] lg:w-[72px] h-[4px] lg:h-[6px] bg-white/40 rounded-[100px]" />
-            <div className="text-[8px] lg:text-[12px] border-r border-white leading-tight w-[80px]">
+            <div className="w-[70px] h-[4px] lg:h-[6px] bg-white/40 rounded-[100px]" />
+            <div className="text-[8px] lg:text-[12px] border-r border-white leading-tight w-[73px]">
               4 items
               <br />
               <span className="font-normal text-[10px] lg:text-[14px]">
@@ -44,7 +44,7 @@ const messages = [
             </div>
           </div>
           <div>
-            <div className="w-[70px] lg:w-[72px] h-[4px] lg:h-[6px] bg-white/40 rounded-[100px]" />
+            <div className="w-[70px] h-[4px] lg:h-[6px] bg-white/40 rounded-[100px]" />
             <div className="text-[8px] lg:text-[12px] leading-tight w-[80px]">
               5 items
               <br />
@@ -71,11 +71,10 @@ const TopAnnouncementBar = () => {
 
   return (
    <div className="
-  fixed top-[5px] md:top-[6px] left-0 right-0 mx-[16px]
-  2xl:mx-[32px]
+  fixed top-0 left-0 right-0
+
   z-50
   bg-[#1C1C1C] text-white
-  rounded-full
 ">
 
       <div className="max-w-[1600px] mx-auto px-4 h-[34px] lg:h-[44px] flex items-center justify-between rounded-b-[24px]">

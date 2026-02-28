@@ -11,7 +11,7 @@ import { IoCheckmarkSharp } from "react-icons/io5";
 
 const HolidayOffer = () => {
 const navigate = useNavigate();
-  const { cartOpen, setCartOpen } = useOutletContext();
+const { cartOpen, setCartOpen, wishlist, setWishlist } = useOutletContext();
       const [showCartToast, setShowCartToast] = useState(false);
   /* -------------------- UI STATES -------------------- */
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -203,7 +203,7 @@ useEffect(() => {
   return () => clearTimeout(t);
 }, [showCartToast]);
 
-const [wishlist, setWishlist] = useState([]);
+
 const toggleWishlist = (id) => {
   setWishlist((prev) =>
     prev.includes(id)
@@ -566,14 +566,14 @@ const toggleWishlist = (id) => {
     e.stopPropagation();
     toggleWishlist(item.slug); // or item.id if you have id
   }}
-  className="absolute top-[20px] right-[20px] z-30 
-             w-[36px] h-[36px] 
+  className="absolute top-[5px] right-[5px] lg:top-[10px] lg:right-[10px] z-30 
+             lg:w-[36px] lg:h-[36px] h-[20px] w-[20px] 
              bg-white rounded-full 
              flex items-center justify-center 
              shadow-md transition-all duration-300 cursor-pointer"
 >
   <FaHeart
-    className={`text-[16px] transition-colors duration-300 ${
+    className={`text-[12px] lg:text-[16px] transition-colors duration-300 ${
       wishlist.includes(item.slug)
         ? "text-[#A0174A]"
         : "text-black"

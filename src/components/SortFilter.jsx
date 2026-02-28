@@ -187,7 +187,7 @@ const showClearAll =
     transition-all duration-300
     md:static
     ${isSticky
-      ? "fixed top-[116px] left-0 z-40 py-[16px] bg-white"
+      ? "fixed top-[114px] left-0 z-40 py-[16px] bg-white"
       : "relative"}
   `}
 >

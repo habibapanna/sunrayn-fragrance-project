@@ -4,7 +4,6 @@ import { FaCheck, FaStar } from "react-icons/fa";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import MarqueeSection from "../components/MarqueeSection";
-import Testimonials from "../components/Testimonials";
 import ProductCard from "../components/ProductCard";
 import { useNavigate, Link } from "react-router-dom";
 import { IoCheckmarkSharp } from "react-icons/io5";

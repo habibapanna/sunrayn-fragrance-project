@@ -7,7 +7,7 @@ import { IoCheckmarkSharp } from "react-icons/io5";
 
 const ProductCard = () => {
   const navigate = useNavigate();
-  const { setCartOpen } = useOutletContext();
+const { cartOpen, setCartOpen, wishlist, setWishlist } = useOutletContext();
 
   const [current, setCurrent] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
@@ -49,7 +49,7 @@ const ProductCard = () => {
     if (distance > minSwipeDistance) next();
     if (distance < -minSwipeDistance) prev();
   };
-const [wishlist, setWishlist] = useState([]);
+
 const toggleWishlist = (id) => {
   setWishlist((prev) =>
     prev.includes(id)

@@ -22,7 +22,7 @@ import MenuOverlay from "../../components/MenuOverlay";
 import ForgotPassword from "../../components/ForgotPassword";
 import { FiHeart } from "react-icons/fi";
 
-const Navbar = ({ showTopBar, cartOpen, setCartOpen }) => {
+const Navbar = ({ showTopBar, cartOpen, setCartOpen, wishlist }) => {
 const [open, setOpen] = useState(false);
 const [scrolled, setScrolled] = useState(false);
 const [searchOpen, setSearchOpen] = useState(false);
@@ -36,6 +36,7 @@ const location = useLocation();
 const [wishlistOpen, setWishlistOpen] = useState(false);
 
 // adjust this path to match your ProductList route
+const isErrorpage = location.pathname === "//";
 const isHome = location.pathname === "/";
 const isProductList = location.pathname === "/productList";
 const isContact = location.pathname === "/contact";
@@ -47,6 +48,7 @@ const isHolidayOffer = location.pathname === "/holidayOffer";
 const isBlogDetails = location.pathname.startsWith("/blogs/");
 const isProductDetails = location.pathname.startsWith("/productList/");
 const isScentFamily = location.pathname.startsWith("/scent-family");
+const isWishList = location.pathname.startsWith("/wish-list");
 const perfumeRef = useRef(null);
 const collectionRef = useRef(null);
 const aboutRef = useRef(null);
@@ -115,13 +117,13 @@ useEffect(() => {
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
 
-const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer || isScentFamily
+const logoSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer || isScentFamily || isWishList
   ? Logo
   : scrolled
   ? Logo
   : Logo1;
 
-const brandSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer || isScentFamily
+const brandSrc = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer || isScentFamily || isWishList
   ? BrandName
   : scrolled
   ? BrandName
@@ -140,14 +142,14 @@ const navPaddingClass = (() => {
 })();
 
 // Determine navbar background (unchanged)
-const navBgClass = isProductList || isContact || isFaq || isAbout || isTerms || isBlogPage || isBlogDetails || isProductDetails || isHolidayOffer || isScentFamily
+const navBgClass = isErrorpage
   ? "bg-black/80 border-[2px] border-[#FFFFFF1A] backdrop-blur-md rounded-full md:mt-[2px]  lg:mt-[12px] transition-all duration-1000"
   : scrolled
   ? "bg-black/80 border-[2px] border-[#FFFFFF1A] backdrop-blur-md rounded-full mt-[8px] 2xl:mt-[10px] mx-[16px] 2xl:mx-[330px] transition-all duration-1000"
   : "bg-transparent border-transparent";
 
 // Determine top position
-const navTopClass = isHome ? "top-0" : "top-[44px]";
+const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
 
 
 
@@ -183,7 +185,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
 </a>
 
             {/* DESKTOP middle MENU  */}
-            <div className="hidden md:flex items-center gap-[6px] lg:gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] 2xl:mr-16 w-[375px] lg:w-[476px] h-[30px] lg:h-[40px] 2xl:w-[552px] 2xl:h-[50px] 2xl:ml-[64px]">
+            <div className="hidden md:flex items-center gap-[6px] lg:gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] 2xl:mr-16 w-[375px] lg:w-[465px] h-[30px] lg:h-[40px] 2xl:w-[497px] 2xl:h-[50px] 2xl:ml-[64px]">
 
             {/* Perfume */}
                <div className="relative" ref={perfumeRef}>
@@ -197,11 +199,11 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
               openMegaMenu === "perfume" ? null : "perfume"
             )
           }
-          className="flex items-center gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] cursor-pointer uppercase hover:text-[#A0174A]"
+          className="flex items-center gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[13px] cursor-pointer uppercase hover:text-[#A0174A]"
         >
           Perfumes
           <LiaAngleDownSolid
-            className={`h-[12px] w-[12px] lg:h-[18px] lg:w-[18px] transition-transform duration-500 ${
+            className={`h-[12px] w-[12px] lg:h-[15px] lg:w-[15px] transition-transform duration-500 ${
               openMegaMenu === "perfume" ? "rotate-180" : ""
             }`}
           />
@@ -278,11 +280,11 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
               openMegaMenu === "collection" ? null : "collection"
             )
           }
-          className="flex items-center gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] cursor-pointer uppercase hover:text-[#A0174A]"
+          className="flex items-center gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[13px] cursor-pointer uppercase hover:text-[#A0174A]"
         >
     Collections
     <LiaAngleDownSolid
-            className={`h-[12px] w-[12px] lg:h-[18px] lg:w-[18px] transition-transform duration-500 ${
+            className={`h-[12px] w-[12px] lg:h-[15px] lg:w-[15px] transition-transform duration-500 ${
               openMegaMenu === "collection" ? "rotate-180" : ""
             }`}
           />
@@ -356,11 +358,11 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
           openMegaMenu === "about" ? null : "about"
         )
       }
-      className="flex items-center gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] cursor-pointer uppercase hover:text-[#A0174A] transition-colors duration-300"
+      className="flex items-center gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[13px] cursor-pointer uppercase hover:text-[#A0174A] transition-colors duration-300"
     >
       About
       <LiaAngleDownSolid
-        className={`h-[12px] w-[12px] lg:h-[18px] lg:w-[18px] transition-transform duration-500 ${
+        className={`h-[12px] w-[12px] lg:h-[15px] lg:w-[15px] transition-transform duration-500 ${
           openMegaMenu === "about" ? "rotate-180" : ""
         }`}
       />
@@ -409,7 +411,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
   </div>
 </div>
 
-             <Link to='/holidayOffer'> <span className="bg-[#FD4929] text-white gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[15px] px-[14px] lg:px-[20px] py-[8px] rounded-[100px] font-semibold flex items-center justify-center w-[120px] lg:w-[150px] h-[20px] lg:h-[30px] 2xl:w-[174px] 2xl:h-[35px] uppercase">
+             <Link to='/holidayOffer'> <span className="bg-[#FD4929] text-white gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[13px] px-[14px] lg:px-[20px] py-[8px] rounded-[100px] font-semibold flex items-center justify-center w-[120px] lg:w-[150px] h-[20px] lg:h-[30px] 2xl:w-[160px] 2xl:h-[35px] uppercase">
                 <img className="h-[10px] w-[10px] lg:h-[16px] lg:w-[16px]" src={Solar} alt="" />
                 Spring Offers
               </span></Link>
@@ -418,33 +420,36 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
           <div className="flex items-center gap-[8px]">
             {/* DESKTOP ICONS (UNCHANGED) */}
             <div className="flex items-center gap-[8px] lg:gap-[16px]">
-              <button
+<button
   title="Wishlist"
-  onClick={() => setWishlistOpen(!wishlistOpen)}
-  className={`
+  onClick={() => navigate("/wish-list")}
+  className="
     lg:p-[10px] p-[6px] md:p-[8px] 
     md:h-[30px] md:w-[30px] 
     lg:h-[40px] lg:w-[40px] 
     2xl:p-[12px] 
     rounded-full 
-    2xl:h-[50px] 2xl:w-[50px]
     flex items-center justify-center
     cursor-pointer
     transition-all duration-500
-    bg-white/90
-  `}
+    bg-white/90 relative
+  "
 >
   <FiHeart
-    className={`md:w-[20px] md:h-[20px] transition-colors duration-500 ${
-      wishlistOpen ? "text-[#A0174A]" : "text-[#1D0B01]"
-    }`}
+    className="md:w-[20px] md:h-[20px] transition-colors duration-500 text-[#1D0B01]"
   />
+
+  {wishlist.length > 0 && (
+    <span className="absolute -top-2 right-0 bg-[#A0174A] text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">
+      {wishlist.length}
+    </span>
+  )}
 </button>
               <button
                title="Search Perfumes"
   onClick={() => setSearchOpen(true)}
   className={`
-  lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full 2xl:h-[50px] 2xl:w-[50px]
+  lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full
   transition-colors duration-300 cursor-pointer flex items-center justify-center  p-[6px] h-[28px] w-[28px]
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
@@ -457,7 +462,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
               <button
   onClick={() => setCartOpen(true)}
   className={`
- lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full 2xl:h-[50px] 2xl:w-[50px]
+ lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full
   transition-colors duration-300 cursor-pointer flex items-center justify-center  p-[6px] h-[28px] w-[28px]
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
@@ -473,7 +478,7 @@ const navTopClass = isHome ? "top-0" : "top-[44px]";
     className="
       lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] 
       lg:h-[40px] lg:w-[40px] 2xl:p-[12px] 
-      rounded-full 2xl:h-[50px] 2xl:w-[50px]
+      rounded-full
       bg-white/90 flex items-center justify-center cursor-pointer  p-[6px] h-[28px] w-[28px]
     "
   >

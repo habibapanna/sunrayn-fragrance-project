@@ -9,10 +9,11 @@ import { FaHeart } from "react-icons/fa";
 const BestSelling = () => {
   const [current, setCurrent] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
-    const { cartOpen, setCartOpen } = useOutletContext();
+   const { cartOpen, setCartOpen, wishlist, setWishlist } = useOutletContext();
         const [showCartToast, setShowCartToast] = useState(false);
         const [touchStart, setTouchStart] = useState(null);
 const [touchEnd, setTouchEnd] = useState(null);
+
 
 const minSwipeDistance = 50;
 
@@ -52,7 +53,6 @@ const onTouchEnd = () => {
   if (isRightSwipe) prev();
 };
 
-const [wishlist, setWishlist] = useState([]);
 const toggleWishlist = (id) => {
   setWishlist((prev) =>
     prev.includes(id)

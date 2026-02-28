@@ -17,6 +17,8 @@ const Main = () => {
   // New: Cart state lifted here
   const [cartOpen, setCartOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [wishlist, setWishlist] = useState([]);
+  
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -46,7 +48,7 @@ useEffect(() => {
       {/* Hide top bar on Home */}
       {!isHome && <TopAnnouncementBar />}
 
-      <Navbar  cartOpen={cartOpen} setCartOpen={setCartOpen} />
+      <Navbar  cartOpen={cartOpen} setCartOpen={setCartOpen} wishlist={wishlist} />
 
       {loading && <RouteLoader />}
 
@@ -55,7 +57,7 @@ useEffect(() => {
           isHome ? "" : "pt-[110px] md:pt-[130px] lg:pt-[147px] 2xl:pt-[130px]"
         }`}
       >
-        <Outlet context={{ setCartOpen }}/>
+        <Outlet context={{ setCartOpen, wishlist, setWishlist }} />
       </section>
 {showPopup && (
   <SignupPopup onClose={() => setShowPopup(false)} />

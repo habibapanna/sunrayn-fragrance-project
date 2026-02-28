@@ -64,7 +64,7 @@ const Hero = () => {
                 bg-[#DBAB35] hover:bg-white
                 text-[#1D0B01]
                 border border-[#DBAB35]
-                transition-all duration-500 ease-out
+                transition-all duration-300 ease-out
                 rounded-full
                 px-[24px] py-[10px]
                 md:px-[48px] md:py-[14px]

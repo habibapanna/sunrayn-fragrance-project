@@ -18,6 +18,7 @@ import BlogDetails from './Page/BlogDetails.jsx';
 import ProductDetails from './Page/ProductDetails.jsx';
 import HolidayOffer from './Page/HolidayOffer.jsx';
 import ScentFamily from './Page/ScentFamily.jsx';
+import WishList from './Page/WishList.jsx';
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "scent-family",
         element: <ScentFamily></ScentFamily>
+      },
+      {
+        path: "wish-list",
+        element: <WishList></WishList>
       },
      
     ]

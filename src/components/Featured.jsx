@@ -14,7 +14,7 @@ const Featured = () => {
   const [current, setCurrent] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(3);
   const navigate = useNavigate();
-    const { cartOpen, setCartOpen } = useOutletContext();
+  const { cartOpen, setCartOpen, wishlist, setWishlist } = useOutletContext();
         const [showCartToast, setShowCartToast] = useState(false);
         const [touchStart, setTouchStart] = useState(null);
 const [touchEnd, setTouchEnd] = useState(null);
@@ -55,7 +55,7 @@ const onTouchEnd = () => {
   if (isLeftSwipe) next();
   if (isRightSwipe) prev();
 };
-const [wishlist, setWishlist] = useState([]);
+
 const toggleWishlist = (id) => {
   setWishlist((prev) =>
     prev.includes(id)
