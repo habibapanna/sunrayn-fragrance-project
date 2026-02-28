@@ -213,10 +213,10 @@ const GiftsCheckout = () => {
   </div>
 
   {/* Card Details Box */}
-  <div className="bg-white/70 backdrop-blur-sm rounded-[20px] p-6 border border-[#00000008] space-y-5">
+  <div className="bg-white/70 backdrop-blur-sm mt-4 rounded-[20px] p-6 border border-[#00000008] space-y-5">
 
     {/* Cardholder Name */}
-    <div className="space-y-2">
+    <div className="space-y-2 ">
       <label className="text-[15px] font-medium text-[#282828]">
         Cardholder Name
       </label>
