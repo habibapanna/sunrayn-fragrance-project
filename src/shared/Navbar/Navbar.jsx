@@ -185,7 +185,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
 </a>
 
             {/* DESKTOP middle MENU  */}
-            <div className="hidden md:flex items-center gap-[6px] lg:gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] 2xl:mr-16 w-[375px] lg:w-[465px] h-[30px] lg:h-[40px] 2xl:w-[497px] 2xl:h-[50px] 2xl:ml-[64px]">
+            <div className="hidden md:flex items-center gap-[6px] lg:gap-[12px] bg-white/90 text-[#282828] pr-[5px] 2xl:pr-[9px] pl-[24px] py-[10px] lg:py-[12px] rounded-[100px] w-[375px] lg:w-[465px] h-[30px] lg:h-[40px] 2xl:w-[497px] 2xl:h-[50px] ">
 
             {/* Perfume */}
                <div className="relative" ref={perfumeRef}>
