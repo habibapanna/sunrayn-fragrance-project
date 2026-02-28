@@ -361,7 +361,7 @@ const backdropVariants = {
 <button 
   onClick={() => {
     onClose();
-    navigate("/checkout", { state: { isGift: true } });
+    navigate("/gifts-checkout", { state: { isGift: true } });
   }}
   className="text-[16px]
     text-[#A0174A] mx-auto flex items-center justify-center

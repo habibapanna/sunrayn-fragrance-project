@@ -19,6 +19,7 @@ import ProductDetails from './Page/ProductDetails.jsx';
 import HolidayOffer from './Page/HolidayOffer.jsx';
 import ScentFamily from './Page/ScentFamily.jsx';
 import WishList from './Page/WishList.jsx';
+import GiftsCheckout from './Page/GiftsCheckout.jsx';
 
 const router = createBrowserRouter([
   {
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
    {
         path: "checkout",
         element: <Checkout></Checkout>
+      },
+   {
+        path: "gifts-checkout",
+        element: <GiftsCheckout></GiftsCheckout>
       },
 ]);
 

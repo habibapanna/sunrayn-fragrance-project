@@ -34,7 +34,21 @@ const WishList = () => {
 
   return (
     <>
-    <div className="px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div>
+       {/* Header */}
+      {/* Header */}
+<div className="text-center my-4 lg:my-10 mx-[16px]">
+  <h1 className="text-[35px] lg:text-[50px] font-medium text-[#1a1a1a] mb-6 tracking-tight">
+    Your Wishlist
+  </h1>
+  <p className="text-gray-600 text-[18px] lg:text-[20px] max-w-2xl mx-auto leading-relaxed">
+    A quiet collection of the fragrances that spoke to your heart. 
+    Each piece here is not just a scent, but a feeling you chose to remember.
+  </p>
+</div>
+    </div>
+    <div className="px-6 py-12 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8">
+      
       {wishlistedProducts.map((item) => (
         <div
           key={item.slug}
