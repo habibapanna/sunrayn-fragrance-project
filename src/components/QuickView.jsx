@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { products } from "../data/productsData";
-import { useParams } from "react-router-dom";
 
 
-const QuickView = () => {
-    const { slug } = useParams();
-const product = products.find((p) => p.slug === slug);
+
+const QuickView = ({ product, onClose }) => {
+   
+
  const [selectedVolume, setSelectedVolume] = useState(null);
-const [quickViewProduct, setQuickViewProduct] = useState(null);
   useEffect(() => {
     if (product?.volume?.length) {
       setSelectedVolume(product.volume[0]);
@@ -64,26 +63,32 @@ const BigBottleIcon = () => (
 );
 
     return (
-        <div>
-                  {/* TOP SECTION */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] 2xl:gap-[32px] px-[16px] 2xl:px-[32px]">
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+           {/* Overlay */}
+    <div
+      className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+      onClick={onClose}
+    />
+
+    <div className="relative bg-white w-[95%] md:w-[1100px] max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl z-50 p-4 animate-fadeIn">
+       {/* Close Button */}
+      <button
+        onClick={onClose}
+        className="absolute flex items-center justify-center top-3 right-3 text-black text-xl border rounded-full p-2 h-8 w-8 hover:bg-black hover:text-white cursor-pointer transition-all duration-500"
+      >
+        ✕
+      </button>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] 2xl:gap-[32px] px-[16px] 2xl:px-[32px] py-[16px] 2xl:py-[32px]">
                     
-                    {/* LEFT – IMAGES */}
-                   <div className="hidden md:grid grid-cols-2 gap-[16px] 2xl:gap-[32px] auto-rows-min md:sticky md:top-[100px] h-fit">
+                    {/* LEFT – IMAGE */}
+                 
             
-                      <div className="col-span-2 ] ">
+                      <div className="">
                         <img
               src={product.images[1]}
-              className="mx-auto h-full min-h-[500px] 2xl:min-h-[700px] w-full object-cover rounded-[16px]"
+              className="mx-auto h-full  w-full object-cover rounded-[16px]"
             />
             
-                      </div>
-            
-                      {product.images.slice(2).map((img, i) => (
-                        <div key={i} className="rounded-[24px]">
-                          <img src={img} className="mx-auto 2xl:h-[450px] 2xl:w-[450px] object-cover rounded-[16px] h-full " />
-                        </div>
-                      ))}
                     </div>
              {/* RIGHT – INFO */}
             <div className="md:sticky md:top-[100px] h-fit">
@@ -233,6 +238,7 @@ const BigBottleIcon = () => (
                       </div>
                       </div>
         </div>
+</div>
         </div>
     );
 };

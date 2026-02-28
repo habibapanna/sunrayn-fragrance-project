@@ -3,9 +3,13 @@ import { useOutletContext, useNavigate } from "react-router-dom";
 import { products } from "../data/productsData";
 import { FaEye, FaHeart, FaSearch, FaStar } from "react-icons/fa";
 import { LuSearch } from "react-icons/lu";
+import { useState } from "react";
+import QuickView from "../components/QuickView";
+
 
 const WishList = () => {
   const { wishlist, setWishlist } = useOutletContext();
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const navigate = useNavigate();
 
   // Filter products that are in wishlist
@@ -29,6 +33,7 @@ const WishList = () => {
   }
 
   return (
+    <>
     <div className="px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {wishlistedProducts.map((item) => (
         <div
@@ -80,26 +85,16 @@ const WishList = () => {
   </button>
 
   {/* QUICK VIEW BUTTON */}
-  <button
+<button
   title="Quick View"
-    onClick={(e) => {
-      e.stopPropagation();
-      console.log("Quick view clicked");
-      // later we open modal here
-    }}
-    className="
-      w-[36px] h-[36px]
-      bg-white rounded-full
-      flex items-center justify-center
-      shadow-md
-      opacity-0 translate-y-2
-      group-hover:opacity-100
-      group-hover:translate-y-0
-      transition-all duration-500 cursor-pointer
-    "
-  >
-    <LuSearch className="text-[16px] text-black" />
-  </button>
+  onClick={(e) => {
+    e.stopPropagation();
+    setSelectedProduct(item);
+  }}
+  className="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center shadow-md opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 cursor-pointer"
+>
+  <LuSearch className="text-[16px] text-black" />
+</button>
 
 </div>
  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
@@ -179,6 +174,13 @@ const WishList = () => {
         </div>
       ))}
     </div>
+    {selectedProduct && (
+      <QuickView
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
+    )}
+  </>
   );
 };
 
