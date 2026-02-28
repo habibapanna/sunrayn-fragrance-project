@@ -97,7 +97,7 @@ const Premium = () => {
               key={i}
               className={`
                 h-[8px] w-[8px] rounded-full
-                transition-all duration-300
+                transition-all duration-500
                 ${active === i ? "bg-[#1D0B01] w-[18px]" : "bg-[#CFCFCF]"}
               `}
             />

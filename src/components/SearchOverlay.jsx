@@ -82,7 +82,7 @@ useEffect(() => {
     overflow-y-auto
     overscroll-contain
     shadow-2xl
-    transition-all duration-300
+    transition-all duration-500
   "
   onClick={(e) => e.stopPropagation()}
 >
@@ -214,7 +214,7 @@ useEffect(() => {
       className="relative h-[45px] rounded-full overflow-hidden 
       text-white font-medium 
       flex justify-center items-center 
-      transition duration-300 hover:scale-[1.03]"
+      transition duration-500 hover:scale-[1.03]"
       style={{
         backgroundImage: `url(${item.bg})`,
         backgroundSize: "cover",

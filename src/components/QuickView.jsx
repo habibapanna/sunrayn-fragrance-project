@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import Paypal from "../assets/XMLID_1_.svg";
+import { Link } from "react-router-dom";
 
 
 
@@ -254,6 +255,9 @@ const BigBottleIcon = () => (
                        <img src={Paypal} alt="" />
                       </button>
                       </div>
+                      <Link to="/checkout">
+                      <button className="mt-[16px] underline cursor-pointer text-[16px] text-center flex items-center justify-center mx-auto">More payment options
+</button></Link>
                       </div>
                         {/* Notes */}
       <div className="space-y-[20px] mt-[16px]">

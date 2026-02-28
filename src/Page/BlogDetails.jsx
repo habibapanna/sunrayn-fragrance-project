@@ -122,7 +122,7 @@ const BlogDetails = () => {
     </h3>
 
     <span
-      className={`transition-transform duration-300 ${
+      className={`transition-transform duration-500 ${
         tocOpen ? "rotate-180" : ""
       }`}
     >

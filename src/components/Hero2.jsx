@@ -60,7 +60,7 @@ const Hero2 = () => {
               className="
                 bg-white 
                 text-[#A0174A]               
-                transition-all duration-300 ease-out
+                transition-all duration-500 ease-out
                 rounded-full
                 px-[24px] py-[10px]
                 lg:px-[48px] lg:py-[14px]

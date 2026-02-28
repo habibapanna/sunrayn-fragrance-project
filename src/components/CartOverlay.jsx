@@ -153,7 +153,7 @@ const backdropVariants = {
     <div
       key={tier.id}
       onClick={() => setSelectedTier(tier.id)}
-      className={`cursor-pointer transition-all duration-300 group ${
+      className={`cursor-pointer transition-all duration-500 group ${
         selectedTier === tier.id
           ? "text-[#A0174A]"
           : "text-[#282828] border-transparent"
@@ -301,7 +301,7 @@ const backdropVariants = {
 
               <div className="flex justify-between items-center">
                 <button className="bg-[#1D0B01]/60 backdrop-blur-md px-4 py-1 rounded-full text-sm cursor-pointer hover:text-[#1D0B01] border border-white
-    transition-all duration-300 ease-out
+    transition-all duration-500 ease-out
     hover:bg-white text-white">Add to Cart</button>
                   <div className="relative w-[60px] h-[28px] text-[20px]  font-normal"
                       >
@@ -351,15 +351,27 @@ const backdropVariants = {
         onClose();
         navigate("/checkout");
       }}
-      className="w-full py-[10px] rounded-full font-medium text-[16px]
+      className="w-full py-[10px] rounded-full text-[16px]
         bg-[#DBAB35] hover:bg-white
         backdrop-blur-md border border-[#DBAB35] text-[#1D0B01]
-        transition-all duration-300 cursor-pointer"
+        transition-all duration-500 cursor-pointer font-semibold"
     >
       Process to Checkout
     </button>
+<button 
+  onClick={() => {
+    onClose();
+    navigate("/checkout", { state: { isGift: true } });
+  }}
+  className="text-[16px]
+    text-[#A0174A] mx-auto flex items-center justify-center
+    cursor-pointer font-semibold mt-[12px] underline"
+>
+  Process to Checkout for Gifts
+</button>
 
-    <p className="text-center text-[#A0174A] text-[14px] lg:text-[16px] mt-[12px]">
+
+    <p className="text-center text-[#1D0B01] text-[14px] lg:text-[16px] mt-[12px]">
       Pay with Visa, Mastercard, Apple Pay and more
     </p>
   </div>

@@ -104,7 +104,7 @@ const cardVariant = {
                   whitespace-nowrap text-[16px] md:text-[18px]
                   text-[#1D0B01] uppercase font-medium text-center
                   opacity-0 group-hover:opacity-100
-                  transition-opacity duration-300 delay-150
+                  transition-opacity duration-500 delay-150
                 "
               >
                 Shop {item.title}

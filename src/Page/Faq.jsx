@@ -308,14 +308,14 @@ const FaqItem = ({ question, answer }) => {
 
         <ChevronDown
           size={20}
-          className={`transition-transform duration-300 ${
+          className={`transition-transform duration-500 ${
             open ? "rotate-180" : ""
           }`}
         />
       </button>
 
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${
           open ? "max-h-96 mt-4 opacity-100" : "max-h-0 opacity-0"
         }`}
       >

@@ -184,7 +184,7 @@ const showClearAll =
   <section
   className={`
     w-full
-    transition-all duration-300
+    transition-all duration-500
     md:static
     ${isSticky
       ? "fixed top-[110px] left-0 z-40 py-[8px] bg-white"
@@ -246,7 +246,7 @@ const showClearAll =
 <img src={Heart} alt="" />
               Gender 
               <svg className={`
-      transition-transform duration-300 ease-in-out
+      transition-transform duration-500 ease-in-out
       ${openGender ? "rotate-180" : "rotate-0"}
     `} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M5 9.16699L10 14.167L15 9.16699" stroke="#282828" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -284,7 +284,7 @@ const showClearAll =
              <img src={Family} alt="" />
               Scent family 
               <svg  className={`
-      transition-transform duration-300 ease-in-out
+      transition-transform duration-500 ease-in-out
       ${openScent ? "rotate-180" : "rotate-0"}
     `} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
   <path d="M5 9.16699L10 14.167L15 9.16699" stroke="#282828" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>

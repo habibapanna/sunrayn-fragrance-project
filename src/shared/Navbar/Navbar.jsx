@@ -175,13 +175,13 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
  <img
   src={logoSrc}
   alt="Brand Logo"
-  className="w-[35px] h-[35px] md:h-[40px] lg:w-[40px] lg:h-[58px] lg:w-[58px] transition-all duration-300 hidden md:block"
+  className="w-[35px] h-[35px] md:h-[40px] lg:w-[40px] lg:h-[58px] lg:w-[58px] transition-all duration-500 hidden md:block"
 />
 
  <img
   src={brandSrc}
   alt="Brand Name"
-  className="h-[19px] w-[115px] md:h-[22px] lg:w-[119px] lg:h-[27px] lg:w-[170px] transition-all duration-300"
+  className="h-[19px] w-[115px] md:h-[22px] lg:w-[119px] lg:h-[27px] lg:w-[170px] transition-all duration-500"
 />
 
 </a>
@@ -360,7 +360,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
           openMegaMenu === "about" ? null : "about"
         )
       }
-      className="flex items-center gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[13px] cursor-pointer uppercase hover:text-[#A0174A] transition-colors duration-300"
+      className="flex items-center gap-[4px] 2xl:gap-[5px] text-[10px] lg:text-[12px] 2xl:text-[13px] cursor-pointer uppercase hover:text-[#A0174A] transition-colors duration-500"
     >
       About
       <LiaAngleDownSolid
@@ -452,7 +452,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
   onClick={() => setSearchOpen(true)}
   className={`
   lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full
-  transition-colors duration-300 cursor-pointer flex items-center justify-center  p-[6px] h-[28px] w-[28px]
+  transition-colors duration-500 cursor-pointer flex items-center justify-center  p-[6px] h-[28px] w-[28px]
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
 
@@ -465,7 +465,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
   onClick={() => setCartOpen(true)}
   className={`
  lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full
-  transition-colors duration-300 cursor-pointer flex items-center justify-center  p-[6px] h-[28px] w-[28px]
+  transition-colors duration-500 cursor-pointer flex items-center justify-center  p-[6px] h-[28px] w-[28px]
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
  title="View Cart"

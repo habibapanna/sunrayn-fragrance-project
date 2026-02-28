@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo2 from "../assets/Logo (2).svg";
 import SANRAYN from '../assets/SANRAYN (1).svg';
 import shopPay from '../assets/ShopPay.svg';
@@ -14,7 +14,9 @@ import { useState } from "react";
 
 const Checkout = () => {
   const [openSummary, setOpenSummary] = useState(false);
+  const location = useLocation();
 
+  const isGift = location.state?.isGift || false;
   return (
     <div className="bg-[#F6F7F2]">
       <section className="min-h-screen md:max-w-7xl mx-auto px-[16px]">
@@ -34,7 +36,7 @@ const Checkout = () => {
     <span className="text-[#A0174A] font-medium flex items-center gap-2">
       Order summary
       <IoChevronDown
-        className={`transition-transform duration-300 ${
+        className={`transition-transform duration-500 ${
           openSummary ? "rotate-180" : ""
         }`}
       />
@@ -45,7 +47,7 @@ const Checkout = () => {
 
   {/* DROPDOWN CONTENT */}
 <div
-  className={`overflow-hidden transition-all duration-300 ${
+  className={`overflow-hidden transition-all duration-500 ${
     openSummary ? "max-h-[500px]" : "max-h-0"
   }`}
 >
@@ -156,6 +158,74 @@ const Checkout = () => {
               <input type="checkbox" className="h-[14px] w-[14px] 2xl:w-[16px] 2xl:h-[16px] border-[1.5px] border-[#3A3F42] checkbox checkbox-sm rounded-[4px] cursor-pointer"/> Subscribe for new and daily update
             </label>
           </div>
+
+{isGift && (
+  <div className="bg-gradient-to-br from-[#FFF0F5] to-[#FFE4EC] 
+                  rounded-[20px] p-6 shadow-xl border border-[#F5C2D0]
+                  space-y-5 relative overflow-hidden">
+
+    {/* Decorative Ribbon Effect */}
+    <div className="absolute top-0 right-0 bg-[#A0174A] text-white 
+                    text-xs px-4 py-1 rotate-45 translate-x-6 translate-y-4">
+      Gift Order
+    </div>
+
+    <h2 className="text-[18px] font-semibold text-[#A0174A] text-center">
+      🎁 Send This As a Gift
+    </h2>
+
+    {/* Recipient Name */}
+    <div className="space-y-2">
+      <label className="text-[14px] font-medium text-[#1D0B01]">
+        Recipient Name
+      </label>
+      <input
+        type="text"
+        placeholder="Enter recipient name"
+        className="w-full bg-white rounded-full px-5 py-3 
+                   focus:outline-none border border-[#F5C2D0]"
+      />
+    </div>
+
+    {/* Recipient Email */}
+    <div className="space-y-2">
+      <label className="text-[14px] font-medium text-[#1D0B01]">
+        Recipient Email
+      </label>
+      <input
+        type="email"
+        placeholder="Enter recipient email"
+        className="w-full bg-white rounded-full px-5 py-3 
+                   focus:outline-none border border-[#F5C2D0]"
+      />
+    </div>
+
+    {/* Personal Message */}
+    <div className="space-y-2">
+      <label className="text-[14px] font-medium text-[#1D0B01]">
+        Personal Message
+      </label>
+      <textarea
+        rows="3"
+        placeholder="Write a heartfelt message..."
+        className="w-full bg-white rounded-[16px] px-5 py-3 
+                   focus:outline-none border border-[#F5C2D0] resize-none"
+      />
+    </div>
+
+    {/* Delivery Date */}
+    <div className="space-y-2">
+      <label className="text-[14px] font-medium text-[#1D0B01]">
+        Schedule Delivery Date
+      </label>
+      <input
+        type="date"
+        className="w-full bg-white rounded-full px-5 py-3 
+                   focus:outline-none border border-[#F5C2D0]"
+      />
+    </div>
+  </div>
+)}
 
         {/* Delivery Information */}
 <div className="bg-white rounded-[16px] p-[16px] 2xl:p-6 space-y-5 border border-gray-300 shadow-lg">
@@ -365,7 +435,7 @@ const Checkout = () => {
           </div>
 
          <div className="hidden md:block rounded-t-[16px] shadow-lg border border-gray-300 p-[24px] bg-white">
-             <button className="w-full  transition-all duration-300 ease-out
+             <button className="w-full  transition-all duration-500 ease-out
     bg-[#DBAB35] text-[#1D0B01] hover:bg-white backdrop-blur-md border border-[#DBAB35] py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
           <div className="flex gap-[32px] justify-center mt-[16px]">
             <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer">Return Policy </span>
@@ -433,7 +503,7 @@ const Checkout = () => {
         </div>
         </div>
         <div className="mt-6 md:hidden rounded-t-[16px] p-[24px] shadow-lg border border-gray-300 bg-white">
-             <button className="w-full  transition-all duration-300 ease-out
+             <button className="w-full  transition-all duration-500 ease-out
     bg-[#DBAB35] hover:text-[#1D0B01] hover:bg-white backdrop-blur-md border hover:border-[#DBAB35] text-white py-[7px] 2xl:py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
           <div className="flex gap-[32px] justify-center mt-[16px]">
             <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer hover:underline">Return Policy </span>

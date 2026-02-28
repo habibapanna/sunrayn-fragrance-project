@@ -564,7 +564,7 @@ const toggleWishlist = (id) => {
     </span>
   </div> */}
 {/* RIGHT SIDE ICONS */}
-<div className="absolute top-[10px] right-[10px] 2xl:top-[20px] 2xl:right-[20px] z-30 flex flex-col 2xl:gap-3">
+<div className="absolute top-[10px] right-[10px] 2xl:top-[20px] 2xl:right-[20px] z-30 flex flex-col 2xl:gap-2">
 
   {/* WISHLIST BUTTON */}
   <button
@@ -608,7 +608,7 @@ const toggleWishlist = (id) => {
   <div className="hidden md:block absolute bottom-0 left-0 w-full
     translate-y-full opacity-0
     group-hover:translate-y-0 group-hover:opacity-100
-    transition-all duration-300 ease-out
+    transition-all duration-500 ease-out
     p-3 bg-gradient-to-t from-black/60 to-transparent"
   >
     <button

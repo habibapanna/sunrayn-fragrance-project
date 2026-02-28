@@ -157,10 +157,10 @@ const toggleWishlist = (id) => {
     className="w-[36px] h-[36px] 
                bg-white rounded-full 
                flex items-center justify-center 
-               shadow-md transition-all duration-300"
+               shadow-md transition-all duration-500"
   >
     <FaHeart
-      className={`text-[16px] transition-colors duration-300 ${
+      className={`text-[16px] transition-colors duration-500 ${
         wishlist.includes(item.slug)
           ? "text-[#A0174A]"
           : "text-black"

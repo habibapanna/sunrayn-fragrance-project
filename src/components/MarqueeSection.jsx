@@ -30,7 +30,7 @@ const MarqueeSection = () => {
                          flex items-center justify-center
                          mx-2 md:mx-4 px-8 whitespace-nowrap
                          text-white font-medium
-                         transition duration-300 hover:scale-[1.05]"
+                         transition duration-500 hover:scale-[1.05]"
               style={{
                 backgroundImage: `url(${bgImage})`,
                 backgroundSize: "cover",

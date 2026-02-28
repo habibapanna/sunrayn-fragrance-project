@@ -75,7 +75,7 @@ const [question, setQuestion] = useState("");
 
   {/* DYNAMIC CONTENT AREA */}
   <div
-    className={`transition-all duration-300
+    className={`transition-all duration-500
       ${
         activeTab === "reviews"
           ? "flex flex-col md:flex-row items-center justify-between py-4 md:py-1"

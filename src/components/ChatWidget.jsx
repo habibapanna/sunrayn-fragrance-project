@@ -57,7 +57,7 @@ const [closing, setClosing] = useState(false);
   w-[95%] sm:w-[380px]
   h-[550px] bg-white rounded-2xl shadow-2xl
   flex flex-col overflow-hidden z-[999]
-  transform transition-all duration-300
+  transform transition-all duration-500
   ${closing ? "opacity-0 translate-y-10 scale-95" : "opacity-100 translate-y-0 scale-100"}`}
 >
 

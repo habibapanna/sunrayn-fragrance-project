@@ -23,13 +23,13 @@ const SignupPopup = ({ onClose }) => {
   return (
     <div
       className={`fixed inset-0 z-[999] flex items-center justify-center p-4
-      transition-opacity duration-300
+      transition-opacity duration-500
       ${show ? "bg-black/40 opacity-100" : "bg-black/0 opacity-0"}`}
     >
       {/* Modal */}
       <div
         className={`relative w-full max-w-[950px] rounded-[16px] overflow-hidden bg-white shadow-2xl grid md:grid-cols-2
-        transform transition-all duration-300
+        transform transition-all duration-500
         ${show ? "scale-100 translate-y-0 opacity-100" : "scale-95 translate-y-6 opacity-0"}`}
       >
         

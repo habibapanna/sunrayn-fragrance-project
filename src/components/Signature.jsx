@@ -49,7 +49,7 @@ const Signature = () => {
                 text-[16px] 2xl:text-[18px]
                 text-[#1D0B01]
                 opacity-0 group-hover:opacity-100
-                transition-opacity duration-300 delay-150
+                transition-opacity duration-500 delay-150
               "
             >
               Shop
@@ -100,7 +100,7 @@ const Signature = () => {
                 text-[16px] 2xl:text-[18px]
                 text-[#1D0B01]
                 opacity-0 group-hover:opacity-100
-                transition-opacity duration-300 delay-150
+                transition-opacity duration-500 delay-150
               "
             >
               Shop
