@@ -1,7 +1,7 @@
 
 import { Link, useLocation } from "react-router-dom";
 import Logo2 from "../assets/Logo (2).svg";
-import SANRAYN from '../assets/SANRAYN (1).svg';
+import SANRAYN from '../assets/Brand Name (3).svg';
 import shopPay from '../assets/ShopPay.svg';
 import PayPal from '../assets/Paypal Logo.svg';
 import Gpay  from '../assets/G pay logo.svg';
@@ -371,7 +371,8 @@ const Checkout = () => {
          </div>
         </div>
         {/* RIGHT */}
-       <div className="2xl:col-span-2 "> <div className="bg-white rounded-[16px] p-[16px] 2xl:p-[24px] w-full
+       <div className="2xl:col-span-2 sticky top-32 h-fit">
+         <div className="bg-white rounded-[16px] p-[16px] 2xl:p-[24px] w-full
       2xl:sticky 2xl:top-[32px] shadow-lg border border-gray-300">
           <p className="text-[16px] font-semibold lg:text-[18px] 2xl:text-[20px] mb-4">Product Details</p>
           <div className="flex justify-between items-center mb-[20px]">

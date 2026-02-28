@@ -21,12 +21,12 @@ const GiftsCheckout = () => {
 <div className="absolute -top-32 -left-32 w-[400px] h-[400px] bg-[#A0174A]/10 rounded-full blur-[120px]"></div>
 <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-[#FD4929]/10 rounded-full blur-[120px]"></div>
       {/* HEADER */}
-      <div className="sticky top-0 z-50 backdrop-blur-md bg-white/80 flex flex-col gap-[4px] w-full h-[80px] 2xl:h-[100px] justify-cente items-center border-b border-[#00000010] shadow-sm">
+      <div className="sticky top-0 z-50 backdrop-blur-md bg-white/80 flex flex-col gap-[4px] w-full h-[100px] 2xl:h-[120px] justify-center items-center border-b border-[#00000010] shadow-sm">
         <Link to="/">
           <img src={Logo2} alt="Sanrayn" className="h-[50px] w-[50px] 2xl:h-[70px] 2xl:w-[70px]" />
         </Link>
        
-        <p className="absolut top-[70px] text-[12px] tracking-[6px] text-[#A0174A] font-medium">
+        <p className="absolut top-[70px] text-[12px] mb-1 tracking-[6px] text-[#A0174A] font-medium">
  CHECKOUT FOR GIFTS 
 </p>
       </div>
@@ -295,7 +295,7 @@ const GiftsCheckout = () => {
         </div>
 
         {/* RIGHT SIDE – SUMMARY */}
-        <div className="sticky top-8 h-fit">
+        <div className="sticky top-36 h-fit">
             {/* RIGHT */}
        <div className="2xl:col-span-2 "> <div className="bg-white rounded-[16px] p-[16px] 2xl:p-[24px] w-full
       2xl:sticky 2xl:top-[32px] shadow-lg border border-gray-300">
