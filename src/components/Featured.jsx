@@ -9,8 +9,6 @@ import QuickView from './QuickView';
 import { LuSearch } from 'react-icons/lu';
 
 
-
-
 const Featured = () => {
 
   const [current, setCurrent] = useState(0);
@@ -160,7 +158,7 @@ useEffect(() => {
                   className="absolute inset-0 mx-auto h-full w-full object-cover group-hover:scale-105 duration-1000"
                 />
 {/* RIGHT SIDE ICONS */}
-<div className="absolute top-[20px] right-[20px] z-30 flex flex-col gap-3">
+<div className="absolute top-[10px] right-[10px] 2xl:top-[20px] 2xl:right-[20px] z-30 flex flex-col 2xl:gap-3">
 
   {/* WISHLIST BUTTON */}
   <button
@@ -189,7 +187,7 @@ useEffect(() => {
     e.stopPropagation();
     setSelectedProduct(item);
   }}
-  className="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center shadow-md opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 cursor-pointer"
+  className="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center shadow-md opacity-100 translate-y-2 group-hover:opacity-100 2xl:group-hover:translate-y-0 transition-all duration-500 cursor-pointer"
 >
   <LuSearch className="text-[16px] text-black" />
 </button>

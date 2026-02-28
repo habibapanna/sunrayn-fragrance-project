@@ -564,7 +564,7 @@ const toggleWishlist = (id) => {
     </span>
   </div> */}
 {/* RIGHT SIDE ICONS */}
-<div className="absolute top-[20px] right-[20px] z-30 flex flex-col gap-3">
+<div className="absolute top-[10px] right-[10px] 2xl:top-[20px] 2xl:right-[20px] z-30 flex flex-col 2xl:gap-3">
 
   {/* WISHLIST BUTTON */}
   <button
@@ -572,13 +572,13 @@ const toggleWishlist = (id) => {
       e.stopPropagation();
       toggleWishlist(item.slug);
     }}
-    className="w-[36px] h-[36px] 
+    className="lg:w-[36px] lg:h-[36px] h-[26px] w-[26px]
                bg-white rounded-full 
                flex items-center justify-center 
-               shadow-md transition-all duration-300"
+               shadow-md transition-all duration-500"
   >
     <FaHeart
-      className={`text-[16px] transition-colors duration-300 ${
+      className={`text-[12px] lg:text-[16px] transition-colors duration-500 ${
         wishlist.includes(item.slug)
           ? "text-[#A0174A]"
           : "text-black"
@@ -593,9 +593,9 @@ const toggleWishlist = (id) => {
     e.stopPropagation();
     setSelectedProduct(item);
   }}
-  className="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center shadow-md opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 cursor-pointer"
+  className="lg:w-[36px] lg:h-[36px] h-[26px] w-[26px] bg-white rounded-full flex items-center justify-center shadow-md opacity-100 translate-y-2 2xl:group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 cursor-pointer"
 >
-  <LuSearch className="text-[16px] text-black" />
+  <LuSearch className="text-[12px] lg:text-[16px] text-black" />
 </button>
 
 </div>
