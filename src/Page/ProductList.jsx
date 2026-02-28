@@ -10,9 +10,12 @@ import Premium from '../components/Premium';
 import NewsLetter from '../components/NewsLetter';
 import { motion, AnimatePresence } from "framer-motion";
 import { IoCheckmarkSharp } from "react-icons/io5";
+import { LuSearch } from "react-icons/lu";
+import QuickView from "../components/QuickView";
 
 const ProductList = () => {
   const navigate = useNavigate();
+   const [selectedProduct, setSelectedProduct] = useState(null);
   /* -------------------- UI STATES -------------------- */
   const [sidebarOpen, setSidebarOpen] = useState(false);
  const [openSection, setOpenSection] = useState([
@@ -558,26 +561,42 @@ const toggleWishlist = (id) => {
       {item.off}
     </span>
   </div> */}
-      {/* WISHLIST BUTTON */}
+{/* RIGHT SIDE ICONS */}
+<div className="absolute top-[20px] right-[20px] z-30 flex flex-col gap-3">
+
+  {/* WISHLIST BUTTON */}
+  <button
+    onClick={(e) => {
+      e.stopPropagation();
+      toggleWishlist(item.slug);
+    }}
+    className="w-[36px] h-[36px] 
+               bg-white rounded-full 
+               flex items-center justify-center 
+               shadow-md transition-all duration-300"
+  >
+    <FaHeart
+      className={`text-[16px] transition-colors duration-300 ${
+        wishlist.includes(item.slug)
+          ? "text-[#A0174A]"
+          : "text-black"
+      }`}
+    />
+  </button>
+
+  {/* QUICK VIEW BUTTON */}
 <button
+  title="Quick View"
   onClick={(e) => {
     e.stopPropagation();
-    toggleWishlist(item.slug); // or item.id if you have id
+    setSelectedProduct(item);
   }}
-  className="absolute top-[5px] right-[5px] lg:top-[10px] lg:right-[10px] z-30 
-             lg:w-[36px] lg:h-[36px] h-[20px] w-[20px] 
-             bg-white rounded-full 
-             flex items-center justify-center 
-             shadow-md transition-all duration-300 cursor-pointer"
+  className="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center shadow-md opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 cursor-pointer"
 >
-  <FaHeart
-    className={`text-[12px] lg:text-[16px] transition-colors duration-300 ${
-      wishlist.includes(item.slug)
-        ? "text-[#A0174A]"
-        : "text-black"
-    }`}
-  />
+  <LuSearch className="text-[16px] text-black" />
 </button>
+
+</div>
 
   <img
     src={item.images[0]}
@@ -666,6 +685,12 @@ const toggleWishlist = (id) => {
 
           </motion.div>
         </section>
+            {selectedProduct && (
+      <QuickView
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
+    )}
                        {/* MOBILE CART POPUP */}
                                               {showCartToast && (
                                                 <div className="fixed top-50 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
