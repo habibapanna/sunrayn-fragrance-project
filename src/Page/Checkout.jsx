@@ -21,12 +21,12 @@ const Checkout = () => {
     <div className="bg-[#F6F7F2]">
       <section className="min-h-screen mx-auto">
       {/* Logo */}
-      <div className="sticky top-0 z-50 bg-white flex gap-2 w-full h-[100px] justify-center mb-[24px]  items-center border-b border-gray-300">
+      <div className="sticky top-0 z-50 bg-white flex gap-2 w-full h-[100px] justify-center mb-4 2xl:mb-[24px]  items-center border-b border-gray-300">
        <Link to="/" className="cursor-pointer"> <img src={Logo2} alt="Sanrayn" className="h-[70px] w-[70px]" /></Link>
        <Link to="/" className="cursor-pointer"><img src={SANRAYN} alt="" className="w-[174px] h-[28px]"/></Link>
       </div>
       {/* MOBILE ORDER SUMMARY */}
-<div className="md:hidden mb-6 px-[16px]">
+<div className="md:hidden mb-4 px-[16px]">
 
   {/* HEADER BAR */}
   <div
@@ -105,10 +105,10 @@ const Checkout = () => {
 </div>
 </div>
 
-      <div className="md:max-w-7xl  px-[16px] mx-auto grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 md:gap-4 2xl:px-10 relative">
+      <div className="md:max-w-7xl  px-[16px] mx-auto grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 md:gap-4 2xl:gap-6 2xl:px-10 relative">
 
         {/* LEFT */}
-        <div className="2xl:col-span-2 space-y-6">
+        <div className="2xl:col-span-2 space-y-4 2xl:space-y-6">
           {/* Express Checkout */}
           <div className="bg-white rounded-[16px] p-[16px] 2xl:p-6 border border-gray-300 shadow-lg">
   <p className="text-[14px] 2xl:text-[16px] text-[#282828] text-center font-medium mb-[16px] 2xl:mb-[24px]">
@@ -427,13 +427,13 @@ const Checkout = () => {
           </div>
         </div>
         </div>
-        <div className="mt-6 md:hidden rounded-[16px] p-[24px] shadow-lg border border-gray-300 bg-white">
+        <div className="mt-4 2xl:mt-6 md:hidden rounded-[16px] p-[24px] shadow-lg border border-gray-300 bg-white">
              <button className="w-full  transition-all duration-500 ease-out
-    bg-[#DBAB35] hover:text-[#1D0B01] hover:bg-white backdrop-blur-md border hover:border-[#DBAB35] text-white py-[7px] 2xl:py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
+    bg-[#DBAB35] hover:text-[#1D0B01] hover:bg-white backdrop-blur-md border border-[#DBAB35] text-white py-[7px] 2xl:py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
          </div>
       </div>
       {/* footer */}
-                <div className="sticky bottom-0 z-50 flex gap-[32px] justify-center mt-[24px] bg-white border-t border-gray-300 py-8">
+                <div className="sticky bottom-0 z-50 flex gap-[32px] justify-center mt-4 2xl:mt-[24px] bg-white border-t border-gray-300 p-4 2xl:p-6">
             <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer hover:underline">Return Policy </span>
             <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer hover:underline">Cancelation Policy </span>
            <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer hover:underline"> <Link to='/terms'>Terms of Service</Link></span>
