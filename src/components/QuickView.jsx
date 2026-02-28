@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaStar } from "react-icons/fa";
-import { products } from "../data/productsData";
+import Paypal from "../assets/XMLID_1_.svg";
 
 
 
 const QuickView = ({ product, onClose }) => {
    
-
+const notesRef = useRef(null);
  const [selectedVolume, setSelectedVolume] = useState(null);
    const [show, setShow] = useState(false);
   useEffect(() => {
@@ -94,11 +94,11 @@ const BigBottleIcon = () => (
        {/* Close Button */}
       <button
           onClick={handleClose}
-        className="absolute flex items-center justify-center top-3 right-3 text-black text-xl border rounded-full p-2 h-8 w-8 hover:bg-black hover:text-white cursor-pointer transition-all duration-500"
+        className="absolute flex items-center justify-center top-1 right-1 lg:top-3 lg:right-3 text-black text-lg lg:text-xl lg:border rounded-full p-2 h-6 w-6 lg:h-8 lg:w-8 hover:bg-black hover:text-white cursor-pointer transition-all duration-500"
       >
         ✕
       </button>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] 2xl:gap-[32px] px-[16px] 2xl:px-[32px] py-[16px] 2xl:py-[32px]">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] 2xl:gap-[32px] 2xl:px-[16px] py-[16px] md:py-[32px]">
                     
                     {/* LEFT – IMAGE */}
                  
@@ -112,7 +112,7 @@ const BigBottleIcon = () => (
                     </div>
              {/* RIGHT – INFO */}
             <div className="md:sticky md:top-[100px] h-fit">
-              <div className="bg-[#F6F7F2] rounded-[16px] p-[16px] 2xl:p-[32px]">
+              <div className="lg:bg-[#F6F7F2] rounded-[16px]  2xl:p-[32px]">
             
             <span
               className={`text-[12px] 2xl:text-[16px] bg-white border py-[8px] px-[16px] rounded-full ${
@@ -246,16 +246,36 @@ const BigBottleIcon = () => (
               <p className="bg-white border border-gray-200 px-[10px] py-[4px] rounded-full">Crafted in <span className="text-[#A0174A] font-semibold">BROOKLYN NY</span>
             </p>
             </div>
-            
                       {/* CTA */}
                     <div onClick={handleAddToCart}
-                    className="flex justify-between items-center gap-[16px] mt-[16px] lg:mt-[20px]"> 
-                      <button className="text-[18px] 2xl:text-[20px] w-full px-[20px] py-[8px] 2xl:py-[10px] 2x:px-[24px] rounded-full font-semibold cursor-pointer transition-all duration-500 ease-out
-                bg-[#DBAB35] hover:bg-white backdrop-blur-md border border-[#DBAB35] text-[#1D0B01]">
-                        Add to cart
+                    className="flex justify-center items-center mt-[16px] lg:mt-[20px]"> 
+                      <button className="flex justify-center items-center w-full px-[20px] py-[8px] 2xl:py-[10px] 2x:px-[24px] rounded-full font-semibold cursor-pointer transition-all duration-500 ease-out
+                bg-[#DBAB35] hover:bg-white backdrop-blur-md border border-[#DBAB35]">
+                       <img src={Paypal} alt="" />
                       </button>
                       </div>
                       </div>
+                        {/* Notes */}
+      <div className="space-y-[20px] mt-[16px]">
+        {["top", "middle", "base"].map((key) => (
+          <div key={key} className="flex gap-[16px]">
+            <span className=""><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 56 56" fill="none">
+  <circle cx="28" cy="28" r="28" fill="#F6F7F2"/>
+  <path d="M27.9297 14.1338H28.9964V15.2005H27.9297V14.1338Z" fill="#1D0B01"/>
+  <path d="M30.6006 12C30.742 12 30.8776 12.0563 30.9775 12.1562C31.0775 12.2562 31.1338 12.3918 31.1338 12.5332V16.2666H33.2666V19.4668H35.4004C35.5418 19.4668 35.6773 19.523 35.7773 19.623C35.8774 19.7231 35.9336 19.8586 35.9336 20V43.4668C35.9336 43.6082 35.8773 43.7438 35.7773 43.8438C35.6773 43.9437 35.5418 44 35.4004 44H21.5342C21.3927 44 21.2563 43.9438 21.1562 43.8438C21.0564 43.7438 21 43.6081 21 43.4668V20C21 19.8587 21.0564 19.723 21.1562 19.623C21.2563 19.523 21.3927 19.4668 21.5342 19.4668H23.667V16.2666H25.8008V12.5332C25.8008 12.3918 25.857 12.2562 25.957 12.1562C26.057 12.0563 26.1926 12 26.334 12H30.6006ZM22.0674 42.7334H34.8672V28.667H22.0674V42.7334ZM22.0674 23.2002H27.9336V22.1338H26.8672V20.5332H22.0674V23.2002ZM30.0674 22.1338H29V23.2002H34.8672V20.5332H30.0674V22.1338ZM26.8672 16.2666H30.0674V13.0664H26.8672V16.2666Z" fill="#1D0B01"/>
+  <rect x="27.9297" y="23.7334" width="1.06667" height="19.2667" fill="#1D0B01"/>
+</svg></span>
+            <div>
+              <p className="font-medium text-[12px] lg:text-[16px] 2xl:text-[18px]">
+                {product.notes[key].title}: {product.notes[key].values}
+              </p>
+              <p className=" text-[10px] lg:text-[14px] 2xl:text-[16px] text-[#282828]/80">
+                {product.notes[key].description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
                       </div>
         </div>
 </div>

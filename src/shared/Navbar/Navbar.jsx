@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { LiaAngleDownSolid } from "react-icons/lia";
-import Logo from "../../assets/Logo (2).svg";
+// golden
+import Logo from "../../assets/Logo (2).svg"; 
 import BrandName from "../../assets/Brand Name (3).svg";
+// white
 import Logo1 from "../../assets/Logo (5).svg";
 import BrandName1 from "../../assets/Brand Name.svg";
 import { Link } from "react-router-dom";
@@ -33,7 +35,7 @@ const [openMegaMenu, setOpenMegaMenu] = useState(null);
 const [accountOpen, setAccountOpen] = useState(false);
 const [selectedItem, setSelectedItem] = useState(null);
 const location = useLocation();
-const [wishlistOpen, setWishlistOpen] = useState(false);
+
 
 // adjust this path to match your ProductList route
 const isErrorpage = location.pathname === "//";
@@ -161,7 +163,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
     ${navBgClass}
     ${navPaddingClass} left-0 right-0`}
 >
-        <div className="mx-auto px-[16px] 2xl:px-[32px] py-[8px] md:py-[14px] flex items-center justify-between text-white">
+        <div className="mx-auto px-[16px] 2xl:px-[32px] py-[6px] md:py-[14px] flex items-center justify-between text-white">
 
 {/* left LOGO */}
 <a
