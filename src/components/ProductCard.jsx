@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import QuickView from "./QuickView";
 import { LuSearch } from "react-icons/lu";
+import { Eye } from "lucide-react";
 
 const ProductCard = () => {
   const navigate = useNavigate();
@@ -177,7 +178,7 @@ const toggleWishlist = (id) => {
   }}
   className="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center shadow-md opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 cursor-pointer"
 >
-  <LuSearch className="text-[16px] text-black" />
+  <Eye className="text-[16px] text-black" />
 </button>
 
 </div>

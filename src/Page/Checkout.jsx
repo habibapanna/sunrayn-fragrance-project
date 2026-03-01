@@ -434,7 +434,7 @@ const Checkout = () => {
          </div>
       </div>
       {/* footer */}
-                <div className="sticky bottom-0 z-50 flex gap-[32px] justify-center mt-4 2xl:mt-[24px] bg-white border-t border-gray-300 p-4 2xl:p-6">
+                <div className="flex gap-[32px] justify-center mt-4 2xl:mt-[24px] bg-white border-t border-gray-300 p-4 2xl:p-6">
             <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer hover:underline">Return Policy </span>
             <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer hover:underline">Cancelation Policy </span>
            <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer hover:underline"> <Link to='/terms'>Terms of Service</Link></span>

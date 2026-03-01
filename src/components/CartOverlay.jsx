@@ -305,7 +305,7 @@ const backdropVariants = {
     hover:bg-white text-white">Add to Cart</button>
                   <div className="relative w-[60px] h-[28px] text-[20px]  font-normal"
                       >
-                        <div className="absolute -top-[6px]  left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[10px] text-white z-10 h-[12px] w-[40px] flex items-center justify-center">
+                        <div className="absolute -top-[6px]  left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[9px] text-white z-10 h-[12px] w-[40px] flex items-center justify-center">
                           -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
                         </div>
 

@@ -10,6 +10,7 @@ import { products } from '../data/productsData';
 import { IoCheckmarkSharp } from "react-icons/io5";
 import QuickView from "../components/QuickView";
 import { LuSearch } from "react-icons/lu";
+import { Eye } from "lucide-react";
 
 const HolidayOffer = () => {
 const navigate = useNavigate();
@@ -595,7 +596,7 @@ const toggleWishlist = (id) => {
   }}
   className="lg:w-[36px] lg:h-[36px] h-[26px] w-[26px] bg-white rounded-full flex items-center justify-center shadow-md opacity-100 translate-y-2 2xl:group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 cursor-pointer"
 >
-  <LuSearch className="text-[12px] lg:text-[16px] text-black" />
+  <Eye className="text-[12px] lg:text-[16px] text-black" />
 </button>
 
 </div>

@@ -95,7 +95,7 @@ const BigBottleIcon = () => (
        {/* Close Button */}
       <button
           onClick={handleClose}
-        className="absolute flex items-center justify-center top-1 right-1 lg:top-3 lg:right-3 text-black text-lg lg:text-xl lg:border rounded-full p-2 h-6 w-6 lg:h-8 lg:w-8 hover:bg-black hover:text-white cursor-pointer transition-all duration-500"
+        className="absolute flex items-center justify-center top-1 lg:top-3 right-3 text-black text-lg lg:text-xl lg:border rounded-full p-2 h-6 w-6 lg:h-8 lg:w-8 hover:bg-black hover:text-white cursor-pointer transition-all duration-500"
       >
         ✕
       </button>
@@ -107,13 +107,13 @@ const BigBottleIcon = () => (
                       <div className="">
                         <img
               src={product.images[1]}
-              className="mx-auto h-full  w-full object-cover rounded-[16px]"
+              className="mx-auto h-[350px] md:h-full w-full object-cover rounded-[16px]"
             />
             
                     </div>
              {/* RIGHT – INFO */}
             <div className="md:sticky md:top-[100px] h-fit">
-              <div className="lg:bg-[#F6F7F2] rounded-[16px]  2xl:p-[32px]">
+              <div className="2xl:bg-[#F6F7F2] rounded-[16px]  2xl:p-[32px]">
             
             <span
               className={`text-[12px] 2xl:text-[16px] bg-white border py-[8px] px-[16px] rounded-full ${
