@@ -189,7 +189,7 @@ useEffect(() => {
   }}
   className="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center shadow-md opacity-100 2xl:opacity-0 translate-y-2 group-hover:opacity-100 2xl:group-hover:translate-y-0 transition-all duration-500 cursor-pointer"
 >
-  <Eye className="w-3 h-3 lg:w-[20px] lg:h-[20px] text-black" />
+  <Eye className="w-[20px] h-[20px] text-black" />
 </button>
 
 </div>

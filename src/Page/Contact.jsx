@@ -6,7 +6,7 @@ import Upload from '../assets/Upload.png'
 
 const Contact = () => {
   return (
-    <div className="bg-white px-[32px]  py-[64px]">
+    <div className="bg-white px-[16px]  py-[64px]">
       {/* Header */}
       <div className="text-center mb-14">
         <h1 className="text-[32px] lg:text-[50px] text-[#282828] font-semibold mb-3">We’re Here to Help</h1>

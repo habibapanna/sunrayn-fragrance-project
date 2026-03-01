@@ -348,7 +348,6 @@ const toggleWishlist = (id) => {
           )}
         </div>
       </div>
-
     </div>
   </aside>
 )}
@@ -378,9 +377,9 @@ const toggleWishlist = (id) => {
         animate="visible"
         exit="exit"
       >
-    <div className="p-[4px] space-y-6 text-[#1D0B01]">
+    <div className="p-[4px] space-y-2 text-[#1D0B01]">
              {/* Close button */}
-     <div className="flex justify-end ">
+     <div className="flex justify-end mt-2">
           <button className="cursor-pointer border border-gray-300 p-2 rounded-full h-[30px] w-[30px] hover:bg-black hover:text-white flex items-center justify-center m-2" onClick={() => setSidebarOpen(false)}>✕</button>
         </div>
       {/* ================= PRICE RANGE ================= */}
@@ -441,7 +440,7 @@ const toggleWishlist = (id) => {
       <FilterBlock title="Scent - Intensity Scale" options={["Subtle", "Significant", "Statement"]} filterKey="intensity" />
 
             {/* ================= SORT BY ================= */}
-      <div className="space-y-2 mx-3 mb-3">
+      <div className="space-y-2 mx-3 mt-6">
         <h3 className="text-[13px] font-bold uppercase ">Sort by:</h3>
 
         <div
