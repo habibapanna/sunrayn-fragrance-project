@@ -21,7 +21,7 @@ const items = [
     key: "combo-sales" 
   },
   {
-    title: "Holiday Sale",
+    title: "Spring Offers",
     product: "https://i.postimg.cc/x1BhnzNr/c082e350-40e9-4486-acfd-e19a5713042c-1-(2).png",
      key: "holiday-sale"
   },

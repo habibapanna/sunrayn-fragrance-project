@@ -249,14 +249,14 @@ const MenuOverlay = ({ open, onClose, onOpenSignIn }) => {
               </div>
             </div>
 
-            {/* HOLIDAY SALE BUTTON */}
+            {/* Spring Offers BUTTON */}
             <Link to="/holidayOffer">
               <button
                 onClick={onClose}
                 className="mt-[24px] bg-[#FD4929] text-white w-full h-[44px] rounded-full font-semibold flex items-center justify-center gap-[6px]"
               >
                 <img src={Solar} alt="" />
-                Holiday Sale
+                Spring Offers
               </button>
             </Link>
           </motion.div>

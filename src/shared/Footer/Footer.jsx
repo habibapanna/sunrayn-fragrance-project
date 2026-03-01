@@ -46,7 +46,7 @@ const Footer = () => {
               <div className="text-left">
                 <p className="text-[#A0174A] mb-4 text-[25px]">SANRAYN Collections</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
-                  <li className="hover:underline cursor-pointer"><Link to='/holidayOffer'>Holiday Sale</Link></li>
+                  <li className="hover:underline cursor-pointer"><Link to='/holidayOffer'>Spring Offers</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='/productList'>New Arrivals</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='/productList'>Featured Products</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='/productList'>Sanrayn Specials</Link></li>

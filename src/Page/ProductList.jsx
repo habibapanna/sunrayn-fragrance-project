@@ -494,7 +494,9 @@ const toggleWishlist = (id) => {
           )}
         </div>
       </div>
-
+     <div className="flex justify-end ">
+          <button className="cursor-pointer underline flex items-center text-[14px] justify-center m-2" onClick={() => setSidebarOpen(false)}>Show Result</button>
+        </div>
     </div>
     </motion.aside>
   </>

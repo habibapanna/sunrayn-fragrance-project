@@ -95,11 +95,18 @@ const BigBottleIcon = () => (
        {/* Close Button */}
       <button
           onClick={handleClose}
-        className="absolute flex items-center justify-center top-1 lg:top-3 right-3 text-black text-lg lg:text-xl lg:border rounded-full p-2 h-6 w-6 lg:h-8 lg:w-8 hover:bg-black hover:text-white cursor-pointer transition-all duration-500"
+        className="absolute flex items-center justify-center top-3 right-3 text-black text-sm lg:text-xl border rounded-full p-2 h-6 w-6 lg:h-8 lg:w-8 hover:bg-black hover:text-white cursor-pointer transition-all duration-500"
       >
         ✕
       </button>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] 2xl:gap-[32px] 2xl:px-[16px] py-[16px] md:py-[32px]">
+                   {/* Close Button */}
+      <button
+          onClick={handleClose}
+        className="absolute flex items-center text-[16px] justify-center -bottom-100 md:-bottom-0 2xl:-bottom-55 right-5 text-black cursor-pointer transition-all duration-500 underline"
+      >
+        Close
+      </button>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] 2xl:gap-[32px] 2xl:px-[16px] py-[16px] md:py-[32px] mt-4 md:mt-1">
                     
                     {/* LEFT – IMAGE */}
                  
@@ -226,7 +233,7 @@ const BigBottleIcon = () => (
               </div>
             </div>
             
-            <div className="mt-[16px] lg:mt-[20px] flex flex-col lg:flex-row text-center lg:text-left gap-[16px]">
+            <div className="mt-[16px] lg:mt-[20px] flex  text-center lg:text-left gap-[16px]">
             <div
               className="relative overflow-hidden rounded-full px-[18px] py-[8px] text-white text-[14px] font-semibold"
               style={{
@@ -244,7 +251,7 @@ const BigBottleIcon = () => (
                 Scent Family: <span className="font-medium">{product.scentFamily}</span>
               </span>
             </div>
-              <p className="bg-white border border-gray-200 px-[10px] py-[4px] rounded-full">Crafted in <span className="text-[#A0174A] font-semibold">BROOKLYN NY</span>
+              <p className="bg-white border border-gray-200 px-[10px] py-[4px] rounded-full">Crafted in <span className="text-[#A0174A] font-semibold">BKLYN</span>
             </p>
             </div>
                       {/* CTA */}
@@ -280,9 +287,17 @@ const BigBottleIcon = () => (
           </div>
         ))}
       </div>
+
+                     
+                     
                       </div>
+                      
+                      
         </div>
+        
 </div>
+
+
         </div>
     );
 };
