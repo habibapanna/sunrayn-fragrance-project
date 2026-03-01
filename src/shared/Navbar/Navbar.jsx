@@ -175,7 +175,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
  <img
   src={logoSrc}
   alt="Brand Logo"
-  className="w-[35px] h-[35px] md:h-[40px] lg:w-[40px] lg:h-[58px] lg:w-[58px] transition-all duration-500 hidden md:block"
+  className="w-[35px] h-[35px] md:h-[40px] lg:w-[40px] lg:h-[58px] lg:w-[58px] transition-all duration-500"
 />
 
  <img
@@ -434,7 +434,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
     flex items-center justify-center
     cursor-pointer
     transition-all duration-500
-    bg-white/90 relative
+    bg-white/90 relative hidden
   "
 >
   <FiHeart
@@ -452,7 +452,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
   onClick={() => setSearchOpen(true)}
   className={`
   lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full
-  transition-colors duration-500 cursor-pointer flex items-center justify-center  p-[6px] h-[28px] w-[28px]
+  transition-colors duration-500 cursor-pointer hidden md:flex items-center justify-center  p-[6px] h-[28px] w-[28px]
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
 
@@ -463,9 +463,9 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
 
               <button
   onClick={() => setCartOpen(true)}
-  className={`
+  className={`hidden md:flex
  lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full
-  transition-colors duration-500 cursor-pointer flex items-center justify-center  p-[6px] h-[28px] w-[28px]
+  transition-colors duration-500 cursor-pointer items-center justify-center  p-[6px] h-[28px] w-[28px]
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
  title="View Cart"
@@ -477,11 +477,11 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
   <button
     title="Account"
     onClick={() => setAccountOpen(!accountOpen)}
-    className="
+    className="flex
       lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] 
       lg:h-[40px] lg:w-[40px] 2xl:p-[12px] 
       rounded-full
-      bg-white/90 flex items-center justify-center cursor-pointer  p-[6px] h-[28px] w-[28px]
+      bg-white/90 items-center justify-center cursor-pointer  p-[6px] h-[28px] w-[28px]
     "
   >
   <img src={User} alt="" className="h-[15px] w-[15px] md:w-[20px] md:h-[20px]" />
@@ -531,11 +531,11 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
             </div>
 
             {/* MOBILE ICONS */}
-            <div className="flex md:hidden items-center gap-[12px] py-[10px]">
+            <div className="flex md:hidden items-center py-[10px]">
              <button
   title="Open Menu"
   onClick={() => setMenuOpen(true)}
-  className="bg-white/90 p-[6px] h-[28px] w-[28px] md:h-[30px] md:w-[30px] rounded-full flex items-center cursor-pointer"
+  className="bg-white/90 p-[6px] h-[28px] w-[28px] md:h-[30px] md:w-[30px] rounded-full flex items-center cursor-pointer justify-center"
 >
   <TbMenu className="text-[#1D0B01] h-[15px] w-[15px] md:w-[20px] md:h-[20px]" />
 </button>
@@ -626,7 +626,68 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
         />
       )}
 
+{/* MOBILE FLOATING BOTTOM NAV */}
+<div className="fixed bottom-4 left-1/2 -translate-x-1/2 md:hidden z-[55]">
+  <div className="
+    bg-black/80 
+    backdrop-blur-md
+    border border-white/10
+    rounded-full
+    px-6 py-4
+    flex items-center gap-4
+  ">
+<button
+  title="Wishlist"
+  onClick={() => navigate("/wish-list")}
+  className="
+    lg:p-[10px] p-[6px] md:p-[8px] 
+    md:h-[30px] md:w-[30px] 
+    lg:h-[40px] lg:w-[40px] 
+    2xl:p-[12px] 
+    rounded-full 
+    flex items-center justify-center
+    cursor-pointer
+    transition-all duration-500
+    bg-white/90 relative
+  "
+>
+  <FiHeart
+    className="h-[15px] w-[15px] md:w-[20px] md:h-[20px] transition-colors duration-500 text-[#1D0B01]"
+  />
 
+  {wishlist.length > 0 && (
+    <span className="absolute -top-2 right-0 bg-[#A0174A] text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">
+      {wishlist.length}
+    </span>
+  )}
+</button>
+    {/* Search */}
+    <button
+      onClick={() => setSearchOpen(true)}
+      className="bg-white/90 p-[6px] h-[28px] w-[28px] rounded-full flex items-center cursor-pointer justify-center"
+    >
+      <img src={Search} alt="" className="h-[18px] w-[18px]" />
+    </button>
+
+    {/* Cart */}
+    <button
+      onClick={() => setCartOpen(true)}
+      className="bg-white/90 p-[6px] h-[28px] w-[28px] rounded-full flex items-center cursor-pointer justify-center"
+    >
+      <img src={Cart} alt="" className="h-[18px] w-[18px] " />
+     
+    </button>
+    {/* Account */}
+    <button
+      onClick={() => setSignInUpOpen(true)}
+      className="bg-white/90 p-[6px] h-[28px] w-[28px] rounded-full  items-center cursor-pointer justify-center hidden"
+    >
+      <img src={User} alt="" className="h-[18px] w-[18px]" />
+      
+    </button>
+
+  </div>
+</div>
     </>
   );
 };

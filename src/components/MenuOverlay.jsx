@@ -77,11 +77,11 @@ const MenuOverlay = ({ open, onClose, onOpenSignIn }) => {
             "
           >
             {/* HEADER */}
-            <div className="flex items-center justify-between py-[16px]">
-              <button onClick={onOpenSignIn} className="flex items-center gap-[10px]">
+            <div className="flex items-center justify-end py-[16px]">
+              {/* <button onClick={onOpenSignIn} className="flex items-center gap-[10px]">
                 <img className="bg-[#F6F7F2] p-3 rounded-full" src={User} alt="" />
                 <span className="font-semibold text-[16px]">Login</span>
-              </button>
+              </button> */}
               <button onClick={onClose} className="text-[16px] underline">
                 Close
               </button>
