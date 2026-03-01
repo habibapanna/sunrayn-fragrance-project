@@ -5,11 +5,14 @@ import { FaEye, FaHeart, FaSearch, FaStar } from "react-icons/fa";
 import { LuSearch } from "react-icons/lu";
 import { useState } from "react";
 import QuickView from "../components/QuickView";
+import { Eye } from "lucide-react";
+import { IoCheckmarkSharp } from "react-icons/io5";
 
 
 const WishList = () => {
-  const { wishlist, setWishlist } = useOutletContext();
+ const { cartOpen, setCartOpen, wishlist, setWishlist } = useOutletContext();
   const [selectedProduct, setSelectedProduct] = useState(null);
+   const [showCartToast, setShowCartToast] = useState(false);
   const navigate = useNavigate();
 
   // Filter products that are in wishlist
@@ -31,6 +34,16 @@ const WishList = () => {
       </div>
     );
   }
+
+  const handleAddToCart = () => {
+  // add item logic here
+
+  if (window.innerWidth < 768) {
+    setShowCartToast(true); // mobile → show popup
+  } else {
+    setCartOpen(true); // desktop → open overlay
+  }
+};
 
   return (
     <>
@@ -104,9 +117,9 @@ const WishList = () => {
     e.stopPropagation();
     setSelectedProduct(item);
   }}
-  className="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center shadow-md opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 cursor-pointer"
+  className="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center shadow-md opacity-100 2xl:opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 cursor-pointer"
 >
-  <LuSearch className="text-[16px] text-black" />
+   <Eye className="w-4 h-4 lg:w-[25px] lg:h-[25px] text-black" />
 </button>
 
 </div>
@@ -187,6 +200,31 @@ const WishList = () => {
         </div>
       ))}
     </div>
+                {/* MOBILE CART POPUP */}
+    {showCartToast && (
+      <div className="fixed top-20 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+        <div className="flex items-center justify-between bg-black text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
+    
+          <div className="flex items-center gap-2 text-sm font-medium">
+            <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center ">
+             <IoCheckmarkSharp className="text-black" />
+            </span>
+            Item added to your cart
+          </div>
+    
+          <button
+            onClick={() => {
+              setShowCartToast(false);
+              setCartOpen(true);
+            }}
+            className="bg-[#A0174A] text-white px-5 py-[4px] rounded-[10px] text-[12px] font-medium flex items-center justify-center"
+          >
+            View card
+          </button>
+    
+        </div>
+      </div>
+    )}
     {selectedProduct && (
       <QuickView
         product={selectedProduct}
