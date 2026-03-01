@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Logo2 from "../assets/Logo (4).svg";
-import SANRAYN from "../assets/SANRAYN (1).svg";
+import SANRAYN from "../assets/Brand Name (2).svg";
 import shopPay from '../assets/ShopPay.svg';
 import PayPal from '../assets/Paypal Logo.svg';
 import Gpay  from '../assets/G pay logo.svg';
@@ -21,14 +21,12 @@ const GiftsCheckout = () => {
 <div className="absolute -top-32 -left-32 w-[400px] h-[400px] bg-[#A0174A]/10 rounded-full blur-[120px]"></div>
 <div className="absolute bottom-0 right-0 w-[350px] h-[350px] bg-[#FD4929]/10 rounded-full blur-[120px]"></div>
       {/* HEADER */}
-      <div className="sticky top-0 z-50 backdrop-blur-md bg-white/80 flex flex-col gap-[4px] w-full h-[100px] 2xl:h-[120px] justify-center items-center border-b border-[#00000010] shadow-sm">
+      <div className="sticky top-0 z-50 backdrop-blur-md bg-white/80 flex flex-col gap-[6px] w-full py-4 justify-center items-center border-b border-[#00000010] shadow-sm ">
         <Link to="/">
           <img src={Logo2} alt="Sanrayn" className="h-[50px] w-[50px] 2xl:h-[70px] 2xl:w-[70px]" />
         </Link>
        
-        <p className="absolut top-[70px] text-[12px] mb-1 tracking-[6px] text-[#A0174A] font-medium">
- CHECKOUT FOR GIFTS 
-</p>
+        <Link to="/" className="cursor-pointer"><img src={SANRAYN} alt="" className="w-[174px] h-[28px]"/></Link>
       </div>
 
       {/* MAIN GRID */}
