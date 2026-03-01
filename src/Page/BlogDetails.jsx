@@ -3,17 +3,52 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { blogs } from "../data/blogs";
 import Blogs from "../components/Blogs";
 import { BsArrowLeft, BsChevronDown } from "react-icons/bs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineDown } from "react-icons/ai";
 
 const BlogDetails = () => {
   const navigate = useNavigate();
   const { slug } = useParams();
   const [tocOpen, setTocOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState(0);
 
   const blog = blogs.find((b) => b.slug === slug);
 
   if (!blog) return <div>Blog not found</div>;
+
+
+useEffect(() => {
+  const sections = blog.content.map((_, index) =>
+    document.getElementById(`section-${index}`)
+  );
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = sections.findIndex(
+            (sec) => sec === entry.target
+          );
+          setActiveSection(index);
+        }
+      });
+    },
+    {
+      rootMargin: "-40% 0px -50% 0px",
+      threshold: 0,
+    }
+  );
+
+  sections.forEach((section) => {
+    if (section) observer.observe(section);
+  });
+
+  return () => {
+    sections.forEach((section) => {
+      if (section) observer.unobserve(section);
+    });
+  };
+}, [blog]);
 
   return (
 <div>
@@ -140,7 +175,11 @@ const BlogDetails = () => {
       {blog.content.map((section, index) => (
         <li
           key={index}
-          className="cursor-pointer hover:text-[#1D0B01]"
+          className={`cursor-pointer transition-colors duration-300 ${
+  activeSection === index
+    ? "text-[#1D0B01] font-semibold"
+    : "text-[#3A3F42] hover:text-[#1D0B01]"
+}`}
           onClick={() => {
             document
               .getElementById(`section-${index}`)
@@ -166,9 +205,21 @@ const BlogDetails = () => {
 
           <ul className="space-y-[12px] text-[18px] text-[#3A3F42]">
             {blog.content.map((section, index) => (
-              <li key={index} className="cursor-pointer hover:text-[#1D0B01]">
-                {index + 1}. {section.heading}
-              </li>
+            <li
+  key={index}
+  className={`cursor-pointer transition-colors duration-300 ${
+  activeSection === index
+    ? "text-[#1D0B01] font-semibold"
+    : "text-[#3A3F42] hover:text-[#1D0B01]"
+}`}
+  onClick={() => {
+    document
+      .getElementById(`section-${index}`)
+      ?.scrollIntoView({ behavior: "smooth" });
+  }}
+>
+  {index + 1}. {section.heading}
+</li>
             ))}
           </ul>
         </div>
@@ -176,7 +227,7 @@ const BlogDetails = () => {
         {/* ===== BLOG CONTENT (RIGHT SIDE) ===== */}
         <div className="lg:col-span-2 space-y-[60px]">
           {blog.content.map((section, index) => (
-            <div key={index}>
+  <div key={index} id={`section-${index}`}>
               <h2 className="text-[26px] 2xl:text-[34px] font-semibold text-[#282828] mb-[24px]">
                 {section.heading}
               </h2>

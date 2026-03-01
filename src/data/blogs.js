@@ -46,10 +46,10 @@ export const blogs = [
     ]
   },
   {
-    slug: "rise-of-halal-luxury-fragrances",
-    title: "The Rise of Halal Luxury Fragrances in the Modern World",
-    date: "February 3, 2026",
-readTime: "5 min read",
+   slug: "complete-guide-to-understanding-halal-luxury-fragrances-in-modern-perfumery",
+  title: "The Complete Guide to Understanding Halal Luxury Fragrances in Modern Perfumery",
+  date: "February 3, 2026",
+  readTime: "8 min read",
     product: "https://i.postimg.cc/pdYRfpNM/Whats-App-Image-2026-02-03-at-6-11-48-PM.jpg",
     description:
       "Luxury fragrance has long been associated with artistry, emotion, and identity. In recent years, a new movement has emerged within the perfume world halal luxury fragrances. What was once a niche category has evolved into a global expression of mindful elegance, purity, and modern sophistication.",
@@ -90,10 +90,10 @@ readTime: "5 min read",
     ]
   },
   {
-    slug: "rise-of-halal-luxury-fragrances",
-    title: "The Rise of Halal Luxury Fragrances in the Modern World",
-    date: "February 3, 2026",
-readTime: "5 min read",
+slug: "how-ethical-sourcing-is-changing-the-future-of-premium-perfume-brands",
+  title: "How Ethical Sourcing Is Changing the Future of Premium Perfume Brands Worldwide",
+  date: "February 10, 2026",
+  readTime: "6 min read",
     product: "https://i.postimg.cc/XNPxgLk5/Whats-App-Image-2026-02-03-at-6-06-50-PM.jpg",
     description:
       "Luxury fragrance has long been associated with artistry, emotion, and identity. In recent years, a new movement has emerged within the perfume world halal luxury fragrances. What was once a niche category has evolved into a global expression of mindful elegance, purity, and modern sophistication.",
@@ -134,10 +134,10 @@ readTime: "5 min read",
     ]
   },
   {
-    slug: "rise-of-halal-luxury-fragrances",
-    title: "The Rise of Halal Luxury Fragrances in the Modern World",
-    date: "February 3, 2026",
-readTime: "5 min read",
+   slug: "why-alcohol-free-perfumes-are-becoming-the-new-standard-in-global-fragrance-markets",
+  title: "Why Alcohol-Free Perfumes Are Becoming the New Standard in Global Fragrance Markets",
+  date: "February 15, 2026",
+  readTime: "7 min read",
     product: "https://i.postimg.cc/vTdvj2f0/Product-Image-(1).png",
     description:
       "Luxury fragrance has long been associated with artistry, emotion, and identity. In recent years, a new movement has emerged within the perfume world halal luxury fragrances. What was once a niche category has evolved into a global expression of mindful elegance, purity, and modern sophistication.",
@@ -178,10 +178,10 @@ readTime: "5 min read",
     ]
   },
   {
-    slug: "rise-of-halal-luxury-fragrances",
-    title: "The Rise of Halal Luxury Fragrances in the Modern World",
-    date: "February 3, 2026",
-readTime: "5 min read",
+   slug: "the-science-behind-long-lasting-oud-based-luxury-fragrances-explained",
+  title: "The Science Behind Long-Lasting Oud-Based Luxury Fragrances Explained",
+  date: "February 18, 2026",
+  readTime: "9 min read",
     product: "https://i.postimg.cc/Rh4QBppP/Perfume-Image.png",
     description:
       "Luxury fragrance has long been associated with artistry, emotion, and identity. In recent years, a new movement has emerged within the perfume world halal luxury fragrances. What was once a niche category has evolved into a global expression of mindful elegance, purity, and modern sophistication.",
@@ -222,10 +222,10 @@ readTime: "5 min read",
     ]
   },
   {
-    slug: "rise-of-halal-luxury-fragrances",
-    title: "The Rise of Halal Luxury Fragrances in the Modern World",
-    date: "February 3, 2026",
-readTime: "5 min read",
+    slug: "top-reasons-modern-consumers-are-switching-to-halal-certified-beauty-products",
+  title: "Top Reasons Modern Consumers Are Switching to Halal Certified Beauty Products",
+  date: "February 22, 2026",
+  readTime: "5 min read",
     product: "https://i.postimg.cc/KvmJSjd2/Product-Image-(5).png",
     description:
       "Luxury fragrance has long been associated with artistry, emotion, and identity. In recent years, a new movement has emerged within the perfume world halal luxury fragrances. What was once a niche category has evolved into a global expression of mindful elegance, purity, and modern sophistication.",
@@ -266,10 +266,10 @@ readTime: "5 min read",
     ]
   },
   {
-    slug: "rise-of-halal-luxury-fragrances",
-    title: "The Rise of Halal Luxury Fragrances in the Modern World",
-    date: "February 3, 2026",
-readTime: "5 min read",
+  slug: "exploring-the-cultural-significance-of-oud-and-musk-in-middle-eastern-fragrances",
+  title: "Exploring the Cultural Significance of Oud and Musk in Middle Eastern Fragrances",
+  date: "March 1, 2026",
+  readTime: "10 min read",
     product: "https://i.postimg.cc/bYnH7mKJ/9b0096f7b783078d5631d44d3d6e0c09fb305a7c.png",
     description:
       "Luxury fragrance has long been associated with artistry, emotion, and identity. In recent years, a new movement has emerged within the perfume world halal luxury fragrances. What was once a niche category has evolved into a global expression of mindful elegance, purity, and modern sophistication.",
