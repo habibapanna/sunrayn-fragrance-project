@@ -100,12 +100,7 @@ const BigBottleIcon = () => (
         ✕
       </button>
                    {/* Close Button */}
-      <button
-          onClick={handleClose}
-        className="absolute flex items-center text-[16px] justify-center -bottom-100 md:-bottom-0 2xl:-bottom-55 right-5 text-black cursor-pointer transition-all duration-500 underline"
-      >
-        Close
-      </button>
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] 2xl:gap-[32px] 2xl:px-[16px] py-[16px] md:py-[32px] mt-4 md:mt-1">
                     
                     {/* LEFT – IMAGE */}
@@ -294,7 +289,14 @@ const BigBottleIcon = () => (
                       
                       
         </div>
-        
+<div className="flex justify-end">
+  <button
+    onClick={handleClose}
+    className="text-[16px] text-black cursor-pointer underline"
+  >
+    Close
+  </button>
+</div>
 </div>
 
 

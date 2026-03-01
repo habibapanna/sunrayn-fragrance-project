@@ -35,7 +35,6 @@ const WishList = () => {
   return (
     <>
     <div>
-       {/* Header */}
       {/* Header */}
 <div className="text-center my-4 lg:my-10 mx-[16px]">
   <h1 className="text-[35px] lg:text-[50px] font-medium text-[#1a1a1a] mb-6 tracking-tight">
