@@ -230,7 +230,6 @@ const toggleWishlist = (id) => {
   clearAllFilters={clearAllFilters}
 />
 
-
       <div className="relative flex gap-[16px] 2xl:gap-[32px]">
         {/* -------------------- SIDEBAR -------------------- */}
  <AnimatePresence>

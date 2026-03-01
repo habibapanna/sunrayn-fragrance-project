@@ -19,7 +19,7 @@ const Contact = () => {
       {/* Content */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left Card */}
-        <div className="bg-[#F6F7F2]  rounded-3xl p-10">
+        <div className="bg-[#F6F7F2]  rounded-[24px] p-10">
           <h2 className="text-[25px] lg:text-[32px] font-semibold mb-2 text-[#1D0B01]">Contact SANRAYN</h2>
           <p className="text-[#282828] mb-8 text-[16px]">
             Our team is ready to assist with questions, support needs, and new
@@ -65,63 +65,12 @@ const Contact = () => {
         </div>
 
         {/* Right Card */}
-        <div className="bg-[#FAFAF7] rounded-3xl p-10 text-[16px]">
-          <form className="space-y-6">
-            {/* Full Name */}
-            <div>
-              <label className="label">
-                <span className="label-text text-[#231F20]">Full Name</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Ex: Steve Henry"
-                className="input input-bordered w-full rounded-full  text-[#282828]"
-              />
-            </div>
-
-            {/* Email */}
-            <div>
-              <label className="label">
-                <span className="label-text  text-[#231F20]">Email</span>
-              </label>
-              <input
-                type="email"
-                placeholder="info@yourmail.com"
-                className="input input-bordered w-full rounded-full"
-              />
-            </div>
-
-            {/* Attachments */}
-            <div>
-              <label className="label">
-                <span className="label-text  text-[#231F20]">Attachments</span>
-              </label>
-              <div className="border-2 border-dashed rounded-2xl p-8 text-center border-[#282828]/20 hover:bg-gray-50 cursor-pointer transition">
-                <img src={Upload} alt="" className="mx-auto" />
-                <p className="text-[#282828]">Upload or drag files</p>
-              </div>
-            </div>
-
-            {/* Message */}
-            <div>
-              <label className="label">
-                <span className="label-text  text-[#231F20]">Message</span>
-              </label>
-              <textarea
-                className="textarea textarea-bordered w-full rounded-2xl min-h-[120px]  text-[#282828]"
-                placeholder="Write your message here..."
-              ></textarea>
-            </div>
-
-            {/* Submit */}
-            <button
-              type="submit"
-              className="btn w-full py-[l4px] px-[16px] font-bold rounded-full  transition-all duration-500 ease-out
-    bg-[#DBAB35] hover:text-[#1D0B01] hover:bg-white/60 backdrop-blur-md border border-[#DBAB35] text-white"
-            >
-              Submit
-            </button>
-          </form>
+        <div className="">
+         <img
+  className="rounded-[24px] h-[400px] lg:h-[500px] w-full object-cover"
+  src="https://i.postimg.cc/RVC2rJT7/5c8db80aa2e8a9fdbfc1f81be265a73b661cc593.png"
+  alt=""
+/>
         </div>
       </div>
     </div>

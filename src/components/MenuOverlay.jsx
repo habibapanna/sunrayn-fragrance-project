@@ -123,21 +123,21 @@ const MenuOverlay = ({ open, onClose, onOpenSignIn }) => {
                   </div>
 
                   {openPerfume && (
-                    <div className="mt-[12px] space-y-[12px]">
+                    <div className="mt-[12px] space-y-2">
 
                       {/* Perfume Style */}
                       <div className="bg-[#F6F7F2] p-3 rounded-xl">
-                        <div className="flex justify-between cursor-pointer" onClick={() => setOpenPerfumeStyle(!openPerfumeStyle)}>
+                        <div className="flex justify-between cursor-pointer " onClick={() => setOpenPerfumeStyle(!openPerfumeStyle)}>
                           <span className="font-medium">Perfume Style</span>
                           <GoChevronDown className={`${openPerfumeStyle ? "rotate-180" : ""}`} />
                         </div>
                         {openPerfumeStyle && (
-                          <div className="mt-2 space-y-2">
+                          <div className="mt-2 space-y-2 text-[14px]">
                             {["Men", "Women", "Unisex"].map((item) => (
                               <div
                                 key={item}
                                 onClick={() => handleNavigate("/productList", "perfume", item)}
-                                className={`px-3 py-2 rounded-lg cursor-pointer ${selectedPerfume === item ? "bg-white" : "bg-[#F6F7F2]"}`}
+                                className={`px-3 py-2 rounded-lg cursor-pointer ${selectedPerfume === item ? "bg-white" : "bg-white"}`}
                               >
                                 {item}
                               </div>
@@ -153,12 +153,12 @@ const MenuOverlay = ({ open, onClose, onOpenSignIn }) => {
                           <GoChevronDown className={`${openPerfumeFamily ? "rotate-180" : ""}`} />
                         </div>
                         {openPerfumeFamily && (
-                          <div className="mt-2 space-y-2">
+                          <div className="mt-2 space-y-2 text-[14px]">
                             {["Flowery", "Warm", "Gourmand", "Fresh", "Earthy", "Herbal"].map((item) => (
                               <div
                                 key={item}
                                 onClick={() => handleNavigate("/productList", "perfumeFamily", item)}
-                                className={`px-3 py-2 rounded-lg cursor-pointer ${selectedPerfumeFamily === item ? "bg-white" : "bg-[#F6F7F2]"}`}
+                                className={`px-3 py-2 rounded-lg cursor-pointer ${selectedPerfumeFamily === item ? "bg-white" : "bg-white"}`}
                               >
                                 {item}
                               </div>
@@ -179,7 +179,7 @@ const MenuOverlay = ({ open, onClose, onOpenSignIn }) => {
                   </div>
 
                   {openCollection && (
-                    <div className="mt-[12px] space-y-[12px]">
+                    <div className="mt-[12px] space-y-2">
 
                       {/* Perfume Type */}
                       <div className="bg-[#F6F7F2] p-3 rounded-xl">
@@ -188,12 +188,12 @@ const MenuOverlay = ({ open, onClose, onOpenSignIn }) => {
                           <GoChevronDown className={`${openPerfumeType ? "rotate-180" : ""}`} />
                         </div>
                         {openPerfumeType && (
-                          <div className="mt-2 space-y-2">
+                          <div className="mt-2 space-y-2 text-[14px]">
                             {["All Perfumes", "New Arrivals", "Combo Sales", "Limited Editions"].map((item) => (
                               <div
                                 key={item}
                                 onClick={() => handleNavigate("/productList", "collection", item)}
-                                className={`px-3 py-2 rounded-lg cursor-pointer ${selectedCollection === item ? "bg-white" : "bg-[#F6F7F2]"}`}
+                                className={`px-3 py-2 rounded-lg cursor-pointer ${selectedCollection === item ? "bg-white" : "bg-white"}`}
                               >
                                 {item}
                               </div>
@@ -209,12 +209,12 @@ const MenuOverlay = ({ open, onClose, onOpenSignIn }) => {
                           <GoChevronDown className={`${openShopByTheme ? "rotate-180" : ""}`} />
                         </div>
                         {openShopByTheme && (
-                          <div className="mt-2 space-y-2">
+                          <div className="mt-2 space-y-2 text-[14px]">
                             {["Best Offers", "Event Perfumes", "Best Sellers"].map((item) => (
                               <div
                                 key={item}
                                 onClick={() => handleNavigate("/productList", "shopTheme", item)}
-                                className={`px-3 py-2 rounded-lg cursor-pointer ${selectedShopTheme === item ? "bg-white" : "bg-[#F6F7F2]"}`}
+                                className={`px-3 py-2 rounded-lg cursor-pointer ${selectedShopTheme === item ? "bg-white" : "bg-white"}`}
                               >
                                 {item}
                               </div>
@@ -231,7 +231,7 @@ const MenuOverlay = ({ open, onClose, onOpenSignIn }) => {
               {/* ABOUT TAB */}
               <input type="radio" name="menu_tabs" className="tab rounded-t-[16px] checked:bg-[#F6F7F2] checked:text-black transition-all" aria-label="ABOUT" />
               <div className="tab-content bg-[#F6F7F2] rounded-[16px]">
-                <div className="space-y-[8px] text-[14px] p-[16px]">
+                <div className="space-y-2 text-[14px] p-[16px]">
                   {[
                     { label: "About Us", path: "/about" },
                     { label: "Contact Us", path: "/contact" },
