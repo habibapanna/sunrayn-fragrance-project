@@ -463,7 +463,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
 
               <button
   onClick={() => setCartOpen(true)}
-  className={`hidden md:flex
+  className={`flex
  lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full
   transition-colors duration-500 cursor-pointer items-center justify-center  p-[6px] h-[28px] w-[28px]
   ${scrolled ? "bg-white/90" : "bg-white/90"}
@@ -672,7 +672,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
     {/* Cart */}
     <button
       onClick={() => setCartOpen(true)}
-      className="bg-white/90 p-[6px] h-[28px] w-[28px] rounded-full flex items-center cursor-pointer justify-center"
+      className="bg-white/90 p-[6px] h-[28px] w-[28px] rounded-full flex items-center cursor-pointer justify-center hidden"
     >
       <img src={Cart} alt="" className="h-[18px] w-[18px] " />
      
