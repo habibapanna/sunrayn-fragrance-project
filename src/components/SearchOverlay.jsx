@@ -76,8 +76,8 @@ useEffect(() => {
     top-1/2 left-1/2
     -translate-x-1/2 -translate-y-1/2
     w-[95%] md:w-[680px] lg:w-[1001px]
-    max-h-[90vh]
-    bg-white rounded-[16px]
+    max-h-[80vh]
+    bg-white rounded-lg
     px-[24px] pb-[32px]
     overflow-y-auto
     overscroll-contain

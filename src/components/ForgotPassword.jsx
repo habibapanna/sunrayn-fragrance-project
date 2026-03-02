@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Mail } from "lucide-react";
-import Logo from "../assets/Logo (3).svg";
-import BrandName from "../assets/Brand Name (1).svg";
+import Logo from "../assets/Logo (6).svg";
+import BrandName from "../assets/Brand Name (3).svg";
 
 const ForgotPassword = ({ onClose }) => {
   const [step, setStep] = useState("email"); // email | otp
@@ -48,7 +48,7 @@ const ForgotPassword = ({ onClose }) => {
 
   return (
     <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/40 backdrop-blur-sm">
-      <div className="relative w-[420px] bg-[#F6F7F2] rounded-[16px] px-6 py-8 shadow-2xl">
+       <div className="relative w-[95%] mx-2 bg-[#F6F7F2] rounded-lg px-4 py-6 shadow-xl">
         {/* Close */}
         <button
           onClick={onClose}
@@ -92,7 +92,7 @@ const ForgotPassword = ({ onClose }) => {
                 setStep("otp");
                 setTimer(179); // reset timer when moving to OTP step
               }}
-              className="w-full bg-[#DBAB35] text-black py-[12px] rounded-full  hover:brightness-95 transition-all duration-500 cursor-pointer hover:bg-white hover:text-black border border-[#DBAB35] text-[15px] font-semibold"
+              className="w-full bg-[#BA9948] text-black py-[12px] rounded-full  hover:brightness-95 transition-all duration-500 cursor-pointer hover:bg-white hover:text-black border border-[#BA9948] text-[15px] font-semibold"
             >
               Reset
             </button>
@@ -132,7 +132,7 @@ const ForgotPassword = ({ onClose }) => {
             </p>
 
             <button
-              className="w-full bg-[#DBAB35] text-black py-[12px] rounded-full hover:brightness-95 transition-all duration-500 cursor-pointer hover:bg-white hover:text-black border border-[#DBAB35] text-[15px] font-semibold"
+              className="w-full bg-[#BA9948] text-black py-[12px] rounded-full hover:brightness-95 transition-all duration-500 cursor-pointer hover:bg-white hover:text-black border border-[#BA9948] text-[15px] font-semibold"
             >
               Reset
             </button>

@@ -143,7 +143,7 @@ if (sortBy === "new")
                 type="checkbox"
                 checked={filters[filterKey].includes(opt)}
                 onChange={() => toggleFilter(filterKey, opt)}
-                className="w-[14px] h-[14px] lg:w-[18px] lg:h-[18px] rounded-[2px] border border-[#282828] accent-[#DBAB35] cursor-pointer"
+                className="w-[14px] h-[14px] lg:w-[18px] lg:h-[18px] rounded-[2px] border border-[#282828] accent-[#BA9948] cursor-pointer"
               />
               <span className="text-[14px] lg:text-[18px]">{opt}</span>
             </label>
@@ -339,7 +339,7 @@ const toggleWishlist = (id) => {
                     name="sort"
                     checked={sortBy === item.value}
                     onChange={() => setSortBy(item.value)}
-                    className="w-[18px] h-[18px] rounded-[2px] border border-[#282828] accent-[#DBAB35] cursor-pointer"
+                    className="w-[18px] h-[18px] rounded-[2px] border border-[#282828] accent-[#BA9948] cursor-pointer"
                   />
                   <span className="text-[18px]">{item.label}</span>
                 </label>
@@ -371,8 +371,8 @@ const toggleWishlist = (id) => {
       <motion.aside
         className="md:hidden fixed left-1/2 top-1/2
     -translate-x-1/2 -translate-y-1/2
-    w-[92%] max-w-[480px]
-    h-[85vh] rounded-lg overflow-y-auto z-50 bg-[#F6F7F2]"
+    w-[95%] max-w-[480px]
+    max-h-[80vh] rounded-lg overflow-y-auto z-50 bg-[#F6F7F2]"
         variants={mobileSidebarVariants}
         initial="hidden"
         animate="visible"
@@ -484,7 +484,7 @@ const toggleWishlist = (id) => {
                     name="sort"
                     checked={sortBy === item.value}
                     onChange={() => setSortBy(item.value)}
-                    className="w-[14px] h-[14px] rounded-[2px] border border-[#282828] accent-[#DBAB35] cursor-pointer"
+                    className="w-[14px] h-[14px] rounded-[2px] border border-[#282828] accent-[#BA9948] cursor-pointer"
 
                   />
                   <span className="text-[14px]">{item.label}</span>
@@ -534,7 +534,6 @@ const toggleWishlist = (id) => {
   flex flex-row md:flex-col"
 >
 
-
 {/* IMAGE SECTION */}
 <div className="relative overflow-hidden w-[150px] md:w-full flex-shrink-0">
 
@@ -548,23 +547,14 @@ const toggleWishlist = (id) => {
           : item.gender === "MEN"
           ? "bg-white/90 text-[#1D0B01] border-black"
           : item.gender === "UNISEX"
-          ? "bg-white/90 text-[#DBAB35] border-[#DBAB35]"
-          : "bg-white/90 text-[#A0174A] border-[#DBAB35]" // fallback
+          ? "bg-white/90 text-[#BA9948] border-[#BA9948]"
+          : "bg-white/90 text-[#A0174A] border-[#BA9948]" // fallback
       }`}
   >
     {item.gender}
   </span>
   </div>
-  {/* <div className="absolute hidden md:block top-[16px] right-[16px] z-10">
-    <span className="bg-white/90 text-[8px] md:text-[10px] 2xl:text-[12px] px-[8px] py-[2px] rounded-full uppercase text-[#A0174A]">
-      {item.off}
-    </span>
-  </div>
-  <div className="absolute md:hidden bottom-[8px] left-[8px] z-10">
-    <span className="bg-white/90 text-[8px] md:text-[10px] 2xl:text-[12px]  px-[8px] py-[2px] rounded-full uppercase text-[#A0174A]">
-      {item.off}
-    </span>
-  </div> */}
+
 {/* RIGHT SIDE ICONS */}
 <div className="absolute top-[10px] right-[10px] 2xl:top-[20px] 2xl:right-[20px] z-30 flex flex-col 2xl:gap-2">
 
@@ -587,7 +577,6 @@ const toggleWishlist = (id) => {
       }`}
     />
   </button>
-
   {/* QUICK VIEW BUTTON */}
 <button
   title="Quick View"
@@ -601,6 +590,7 @@ const toggleWishlist = (id) => {
 </button>
 
 </div>
+
   <img
     src={item.images[0]}
     alt={item.title}
@@ -620,8 +610,8 @@ const toggleWishlist = (id) => {
   }}
       className="w-full bg-white/80 text-black cursor-pointer
       rounded-full py-2 font-medium
-      hover:bg-[#DBAB35]
-      border border-[#DBAB35] hover:border-none transition-all ease-in-out duration-500 md:text-[15px] 2xl:text-[18px]"
+      hover:bg-[#BA9948]
+      border border-[#BA9948] hover:border-none transition-all ease-in-out duration-500 md:text-[15px] 2xl:text-[18px]"
     >
       Add to cart
     </button>
@@ -633,7 +623,7 @@ const toggleWishlist = (id) => {
 
     {/* Rating */}
 <div className="flex items-center gap-[8px]">   
-   <div className="flex items-center gap-[4px] text-[#DBAB35]">
+   <div className="flex items-center gap-[4px] text-[#BA9948]">
       {[...Array(5)].map((_, index) => (
         <FaStar key={index} className="text-[12px] md:text-[14px] 2xl:text-[16px]" />
       ))}
@@ -661,8 +651,8 @@ const toggleWishlist = (id) => {
     </p>
    </div>
     <div className="flex justify-between">
-      <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Crafted in <span  className="font-semibold group-hover:text-[#A0174A] transition-colors duration-500">USA</span></p>
-    <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Scent Family: <span  className="font-semibold group-hover:text-[#A0174A] transition-colors duration-500">{item.scentFamily}</span></p>
+      <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Scent Family: <span  className="font-semibold group-hover:text-[#A0174A] transition-colors duration-500">{item.scentFamily}</span></p>
+      <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Crafted in <span  className="font-semibold group-hover:text-[#A0174A] transition-colors duration-500">BKLYN</span></p>
     </div>
     {/* MOBILE ADD TO CART */}
 <div className="flex justify-end mt-[12px] md:hidden">
@@ -672,9 +662,9 @@ const toggleWishlist = (id) => {
     handleAddToCart(item);
   }}
     className="px-[24px] py-[10px] text-[12px]
-    rounded-full border border-[#DBAB35]
-    text-black hover:bg-[#DBAB35] hover:border-none
-     transition w-full cursor-pointer duration-500"
+    rounded-full border border-[#BA9948]
+    text-black hover:bg-[#BA9948] hover:border-none
+   transition w-full cursor-pointer duration-500"
   >
     Add to cart
   </button>

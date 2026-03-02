@@ -1,6 +1,6 @@
 import { FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa";
 import { LuChevronDown } from "react-icons/lu";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const reviewsData = [
   {
@@ -241,7 +241,7 @@ const currentReviews = sortedReviews.slice(
           className={`w-full text-left px-5 py-3 text-[17px] transition
             ${
               sortType === option.value
-                ? "bg-[#2F5AA8] text-white"
+                ? "bg-[#A0174A] text-white"
                 : "hover:bg-gray-100"
             }`}
         >

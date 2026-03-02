@@ -125,7 +125,7 @@ const WishList = () => {
 </div>
  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 w-full z-20 p-[20px] lg:p-[40px]">
-                  <div className="flex items-center gap-[2px] 2xl:gap-[8px] text-[#DBAB35]">
+                  <div className="flex items-center gap-[2px] 2xl:gap-[8px] text-[#BA9948]">
                     {[...Array(5)].map((_, i) => (
                       <FaStar key={i} className="h-[12px] lg:h-[15px]" />
                     ))}
@@ -176,12 +176,9 @@ const WishList = () => {
                           -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
                         </div>
 
-                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 105 45" fill="none">
-                          <path
-                            d="M95 11V0H10V11C4.47715 11 0 15.4772 0 21V24C0 29.5228 4.47715 34 10 34V45H95V34C100.523 34 105 29.5228 105 24V21C105 15.4772 100.523 11 95 11Z"
-                            fill="#DBAB35"
-                          />
-                          <text
+                                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 45" fill="none">
+  <path d="M95 11V0H10V11C4.47715 11 0 15.4772 0 21V24C0 29.5228 4.47715 34 10 34V45H95V34C100.523 34 105 29.5228 105 24V21C105 15.4772 100.523 11 95 11Z" fill="#BA9948"/>
+  <text
                             x="52.5"
                             y="30"
                             textAnchor="middle"
@@ -190,7 +187,7 @@ const WishList = () => {
                           >
                             ${item.price.toFixed(2)}
                           </text>
-                        </svg>
+</svg>
                       </div>
                     </div>
                   </div>

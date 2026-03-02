@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "../assets/image 15.svg";
-import Logo from "../assets/Logo (3).svg";
-import BrandName from "../assets/Brand Name (1).svg";
+import Logo from "../assets/Logo (6).svg";
+import BrandName from "../assets/Brand Name (3).svg";
 
 const SignupPopup = ({ onClose }) => {
   const [show, setShow] = useState(false);
@@ -74,7 +74,7 @@ const SignupPopup = ({ onClose }) => {
           />
 
           {/* Button */}
-          <button className="bg-[#DBAB35] py-3 rounded-full text-[15px] cursor-pointer hover:opacity-90 border border-[#DBAB35] hover:bg-white text-black transition-all duration-500 font-normal">
+          <button className="bg-[#BA9948] py-3 rounded-full text-[15px] cursor-pointer hover:opacity-90 border border-[#BA9948] hover:bg-white text-black transition-all duration-500 font-normal">
             Continue
           </button>
 

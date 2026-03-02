@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import BigS from "../../assets/Footer Logo.svg";
+import BigS from "../../assets/Footer Logo (1).svg";
 import Visa from "../../assets/Visa logo.svg";
 import Paypal from "../../assets/XMLID_1_.svg";
-import SANRAYN from "../../assets/SANRAYN.svg";
+import SANRAYN from "../../assets/SANRAYN (2).svg";
 import MasterCard from "../../assets/MasterCard logo.svg";
 import Logo from "../../assets/Logo (1).svg";
 import { SlSocialFacebook } from "react-icons/sl";
@@ -15,21 +15,21 @@ const Footer = () => {
 
 
       {/* ================= MAIN CONTENT ================= */}
-      <div className="relative z-10 mx-auto lg:px-6  2xl:pl-[80px] p-[16px] py-10 2xl:py-[150px]">
+      <div className="relative z-10 mx-auto lg:px-6  2xl:pl-[80px] p-[16px]  md:py-10 2xl:py-[150px]">
 
         {/* MOBILE BIG S */}
-      <div className="2xl:hidden relative flex justify-center items-center mt-5">
+      <div className="2xl:hidden relative flex justify-center items-center mt-8 md:mt-5">
 
   <img
     src={Logo}
     alt="Brand Background"
-    className="absolute inset-0 m-auto h-[250px] w-[400px] object-contain pointer-events-none"
+    className="absolute inset-0 m-auto h-[150px] w-[300px] md:h-[250px] md:w-[400px] object-contain pointer-events-none"
   />
 
   <img
     src={BigS}
     alt="Big S"
-    className="relative z-10 h-[150px]"
+    className="relative z-10 h-[80px] md:h-[150px]"
   />
 
 </div>
@@ -37,14 +37,14 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start gap-[32px]">
 
           {/* LEFT CONTENT */}
-          <div className="w-full 2xl:max-w-2xl text-left mt-[40px] 2xl:mt-0">
+          <div className="w-full 2xl:max-w-2xl text-left mt-[30px] md:mt-[40px] 2xl:mt-0">
             <Link to="/" className="2xl:inline-block">
-              <img src={SANRAYN} alt="Sanrayn" className="mx-auto" />
+              <img src={SANRAYN} alt="Sanrayn" className="mx-auto " />
             </Link>
-            <div className="flex flex-wrap justify-between gap-[32px] mt-[40px] 2xl:mt-[57px]">
+            <div className="flex flex-wrap items-center justify-between gap-[32px] mt-[30px] md:mt-[40px] 2xl:mt-[57px]">
               {/* SHOP */}
               <div className="text-left">
-                <p className="text-[#A0174A] mb-4 text-[25px]">SANRAYN Collections</p>
+                <p className="text-[#A0174A] mb-4 text-[25px]">Our Collections</p>
                 <ul className="space-y-3 text-[14px] md:text-[16px] text-[#282828]">
                   <li className="hover:underline cursor-pointer"><Link to='/holidayOffer'>Spring Offers</Link></li>
                   <li className="hover:underline cursor-pointer"><Link to='/productList'>New Arrivals</Link></li>
@@ -115,24 +115,24 @@ const Footer = () => {
       <div className="flex items-center gap-4 md:gap-2 lg:gap-5">
 
         {/* Facebook */}
-        <span className="border border-[#DBAB35] p-2 cursor-pointer hover:border-none rounded-full
+        <span className="border border-[#BA9948] p-2 cursor-pointer hover:border-none rounded-full
                          hover:bg-[#A0174A] hover:text-white 
                          transition-all duration-500">
-          <SlSocialFacebook className="text-2xl text-[#DBAB35] hover:text-white" />
+          <SlSocialFacebook className="text-2xl text-[#BA9948] hover:text-white" />
         </span>
 
         {/* Instagram */}
-        <span className="border border-[#DBAB35] p-2 cursor-pointer hover:border-none rounded-full
+        <span className="border border-[#BA9948] p-2 cursor-pointer hover:border-none rounded-full
                          hover:bg-[#A0174A]  
                          transition-all duration-500">
-          <IoLogoInstagram className="text-2xl text-[#DBAB35] hover:text-white" />
+          <IoLogoInstagram className="text-2xl text-[#BA9948] hover:text-white" />
         </span>
 
         {/* TikTok */}
-        <span className="border border-[#DBAB35] p-2 cursor-pointer hover:border-none rounded-full
+        <span className="border border-[#BA9948] p-2 cursor-pointer hover:border-none rounded-full
                          hover:bg-[#A0174A] hover:text-white 
                          transition-all duration-500">
-          <PiTiktokLogo className="text-2xl text-[#DBAB35] hover:text-white" />
+          <PiTiktokLogo className="text-2xl text-[#BA9948] hover:text-white" />
         </span>
 
       </div>

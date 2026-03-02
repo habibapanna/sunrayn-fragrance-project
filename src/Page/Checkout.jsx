@@ -1,6 +1,6 @@
 
 import { Link, useLocation } from "react-router-dom";
-import Logo2 from "../assets/Logo (2).svg";
+import Logo2 from "../assets/Logo (6).svg";
 import SANRAYN from '../assets/Brand Name (3).svg';
 import shopPay from '../assets/ShopPay.svg';
 import PayPal from '../assets/Paypal Logo.svg';
@@ -367,7 +367,7 @@ const Checkout = () => {
 
          <div className="hidden md:block rounded-[16px] shadow-lg border border-gray-300 p-[24px] bg-white">
              <button className="w-full  transition-all duration-500 ease-out
-    bg-[#DBAB35] text-[#1D0B01] hover:bg-white backdrop-blur-md border border-[#DBAB35] py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
+    bg-[#BA9948] text-[#1D0B01] hover:bg-white backdrop-blur-md border border-[#BA9948] py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
          </div>
         </div>
         {/* RIGHT */}
@@ -430,7 +430,7 @@ const Checkout = () => {
         </div>
         <div className="mt-4 2xl:mt-6 md:hidden rounded-[16px] p-[24px] shadow-lg border border-gray-300 bg-white">
              <button className="w-full  transition-all duration-500
-    bg-[#DBAB35] hover:text-[#1D0B01] hover:bg-white backdrop-blur-md border border-[#DBAB35] text-white py-[7px] 2xl:py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
+    bg-[#BA9948] hover:text-[#1D0B01] hover:bg-white backdrop-blur-md border border-[#BA9948] text-white py-[7px] 2xl:py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
          </div>
       </div>
       {/* footer */}

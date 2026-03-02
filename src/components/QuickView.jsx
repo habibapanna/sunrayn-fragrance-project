@@ -39,7 +39,7 @@ const volumeToOz = {
 const genderStyles = {
   WOMEN: "border-[#A0174A] text-[#A0174A]",
   MEN: "border-black text-black",
-  UNISEX: "border-[#DBAB35] text-[#DBAB35]",
+  UNISEX: "border-[#BA9948] text-[#BA9948]",
 };
 
 const scentFamilyGradients = {
@@ -119,7 +119,7 @@ const BigBottleIcon = () => (
             
             <span
               className={`text-[12px] 2xl:text-[16px] bg-white border py-[8px] px-[16px] rounded-full ${
-                genderStyles[product.gender?.toUpperCase()] || "border-[#DBAB35]"
+                genderStyles[product.gender?.toUpperCase()] || "border-[#BA9948]"
               }`}
             >
               {product.gender}
@@ -141,7 +141,7 @@ const BigBottleIcon = () => (
                       {/* Rating */}
                       <div className="flex items-center gap-[5px] mt-3">
                         {[...Array(5)].map((_, i) => (
-                          <FaStar key={i} className="text-[#DBAB35]" />
+                          <FaStar key={i} className="text-[#BA9948]" />
                         ))}
                         <span className="text-[16px] ml-[6px] underline">
                           {product.rating} ({product.reviews})
@@ -253,7 +253,7 @@ const BigBottleIcon = () => (
                     <div onClick={handleAddToCart}
                     className="flex justify-center items-center mt-[16px] lg:mt-[20px]"> 
                       <button className="flex justify-center items-center w-full px-[20px] py-[8px] 2xl:py-[10px] 2x:px-[24px] rounded-full font-semibold cursor-pointer transition-all duration-500 ease-out
-                bg-[#DBAB35] hover:bg-white backdrop-blur-md border border-[#DBAB35]">
+                bg-[#BA9948] hover:bg-white backdrop-blur-md border border-[#BA9948]">
                        <img src={Paypal} alt="" />
                       </button>
                       </div>

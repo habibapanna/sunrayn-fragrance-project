@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { User, Mail, Lock, Eye } from "lucide-react";
-import Logo from "../assets/Logo (3).svg";
-import BrandName from "../assets/Brand Name (1).svg";
+import Logo from "../assets/Logo (6).svg";
+import BrandName from "../assets/Brand Name (3).svg";
 import LoginImage from '../assets/source_33c67f1744d30a9778b8a7dbd033753e.jpg';
 import SignUpImage from '../assets/source_1fd2e936a8bff36362ef9d1b14f4a2e5.jpg';
 
@@ -15,7 +15,7 @@ return (
 
     {/* OUTER WRAPPER WITH BG IMAGE */}
     <div
-      className={`relative w-full max-w-[1100px]  rounded-[16px] overflow-hidden shadow-2xl hidden md:block 
+      className={`relative w-full max-w-[1100px]  rounded-lg overflow-hidden shadow-2xl hidden md:block 
         ${mode === "login" ? "h-[550px]" : "h-[673px]"}
         `}
       style={{
@@ -26,7 +26,7 @@ return (
     >
 
       {/* FORM CARD */}
-      <div className="absolute right-6 top-1/2 -translate-y-1/2 rounded-[16px] bg-[#F6F7F2] px-6 py-8 pb-7 shadow-xl w-[444px]">
+      <div className="absolute right-6 top-1/2 -translate-y-1/2 rounded-lg bg-[#F6F7F2] px-6 py-8 pb-7 shadow-xl w-[444px]">
 
         {/* CLOSE */}
         <button
@@ -145,7 +145,7 @@ return (
           )}
 
           {/* BUTTON */}
-          <button className="w-full bg-[#DBAB35] text-black py-[12px] rounded-full font-semibold  transition-all duration-500 cursor-pointer hover:bg-white hover:text-black hover:border border-[#DBAB35]
+          <button className="w-full bg-[#BA9948] text-black py-[12px] rounded-full font-semibold  transition-all duration-500 cursor-pointer hover:bg-white hover:text-black hover:border border-[#BA9948]
         ">
             {mode === "signup" ? "SIGN IN" : "LOG IN"}
           </button>
@@ -167,9 +167,9 @@ return (
     </div>
 
     {/* MOBILE VERSION */}
-    <div className="md:hidden w-full max-w-[420px] mx-auto">
+   <div className="md:hidden w-full flex items-center justify-center">
         {/* FORM CARD */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 rounded-[16px] bg-[#F6F7F2] px-4 py-20 shadow-xl w-full">
+     <div className="relative w-[95%] mx-2 bg-[#F6F7F2] rounded-lg px-4 py-6 shadow-xl">
 
         {/* CLOSE */}
         <button
@@ -182,23 +182,23 @@ return (
       {/* LOGO */}
 <div
   className={`flex mb-5 items-center justify-center ${
-    mode === "login" ? "flex-row gap-3 mb-[20px]" : "flex-col"
+    mode === "login" ? "flex-col gap-3 mb-[20px]" : "flex-col"
   }`}
 >
-  <img src={Logo} className={mode === "login" ? "h-[50px]" : "h-[60px] mb-2"} />
-  <img src={BrandName} className={mode === "login" ? "h-[27xpx]" : "h-[20px] mb-2"} />
+  <img src={Logo} className={mode === "login" ? "h-[50px]" : "h-[50px] mb-2"} />
+  <img src={BrandName} className={mode === "login" ? "h-[20px]" : "h-[20px]"} />
 </div>
 
 
         {/* HEADING */}
-        <h2 className="text-center text-[20px] lg:text-[25px] leading-snug mb-6 text-[#2a2a2a]">
+        <h2 className="text-center text-[20px] lg:text-[25px] leading-snug mb-5 text-[#2a2a2a]">
           {mode === "signup"
             ? "Hi! Enter info below to better track your orders."
             : "Hi! Please enter your email."}
         </h2>
 
         {/* TOGGLE */}
-        <div className="flex bg-white rounded-full p-2 mb-[24px]">
+        <div className="flex bg-white rounded-full p-2 mb-[20px]">
           <button
             onClick={() => setMode("signup")}
             className={`flex-1 py-2 rounded-full text-[14px] cursor-pointer transition-all duration-500 font-semibold
@@ -260,12 +260,12 @@ return (
           )}
 
           {mode === "signup" ? (
-            <label className="flex items-start gap-2 text-sm text-gray-600">
-              <input type="checkbox" className="mt-1 accent-[#A0174A]" />
-              By registering, you agree our{" "}
+            <label className="flex items-center justify-center gap-[5px] text-[12px] text-gray-600">
+              <input type="checkbox" className=" accent-[#A0174A]" />
+             <p> By registering, you agree our{" "}
               <span className="underline cursor-pointer">
                 Terms of Use & Privacy Policy
-              </span>
+              </span></p>
             </label>
           ) : (
             <div className="flex justify-between text-sm text-gray-600">
@@ -288,7 +288,7 @@ return (
           )}
 
           {/* BUTTON */}
-          <button className="w-full bg-[#DBAB35] text-black py-[12px] rounded-full font-semibold  transition-all duration-500 cursor-pointer hover:bg-white hover:text-black border border-[#DBAB35]
+          <button className="w-full bg-[#BA9948] text-black py-[12px] rounded-full font-semibold  transition-all duration-500 cursor-pointer hover:bg-white hover:text-black border border-[#BA9948]
         ">
             {mode === "signup" ? "SIGN IN" : "LOG IN"}
           </button>

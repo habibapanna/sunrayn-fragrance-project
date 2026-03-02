@@ -46,6 +46,18 @@ const MenuOverlay = ({ open, onClose, onOpenSignIn }) => {
     }
   }, [open]);
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [open]);
+
   return (
     <AnimatePresence>
       {open && (
@@ -68,9 +80,9 @@ const MenuOverlay = ({ open, onClose, onOpenSignIn }) => {
             className="
               absolute left-1/2 top-1/2
               -translate-x-1/2 -translate-y-1/2
-              w-[92%] max-w-[480px]
-              h-[85vh]
-              bg-white rounded-[28px]
+              w-[95%] max-w-[480px]
+              max-h-[80vh]
+              bg-white rounded-lg
               shadow-2xl
               overflow-y-auto
               px-[20px] pb-[30px]

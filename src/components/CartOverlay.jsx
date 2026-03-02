@@ -198,7 +198,7 @@ const backdropVariants = {
       alt="Cerisa Aura"
       className="w-[140px] h-full lg:w-[130px]  object-cover rounded-[8px]"
     />
-    <span className="absolute top-[2px] left-[2px] text-[10px] lg:text-[12px] bg-white px-[8px] py-[2px] rounded-full border border-[#DBAB35] text-[#1D0B01]">
+    <span className="absolute top-[2px] left-[2px] text-[10px] lg:text-[12px] bg-white px-[8px] py-[2px] rounded-full border border-[#BA9948] text-[#1D0B01]">
       Woman
     </span>
   </div>
@@ -287,7 +287,7 @@ const backdropVariants = {
 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               
             <div className="absolute bottom-0 left-0 w-full p-3">
-              <div className="flex gap-[2px] text-[#DBAB35] text-[12px]">
+              <div className="flex gap-[2px] text-[#BA9948] text-[12px]">
                 {[...Array(5)].map((_, i) => (
                   <FaStar key={i} />
                 ))}
@@ -350,8 +350,8 @@ const backdropVariants = {
         navigate("/checkout");
       }}
       className="w-full py-[10px] rounded-full text-[16px]
-        bg-[#DBAB35] hover:bg-white
-        backdrop-blur-md border border-[#DBAB35] text-[#1D0B01]
+        bg-[#BA9948] hover:bg-white
+        backdrop-blur-md border border-[#BA9948] text-[#1D0B01]
         transition-all duration-500 cursor-pointer font-semibold"
     >
       Process to Checkout

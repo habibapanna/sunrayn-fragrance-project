@@ -5,7 +5,6 @@ import { useNavigate, Link, useOutletContext } from "react-router-dom";
 import { products } from "../data/productsData";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa";
-import { LuSearch } from "react-icons/lu";
 import QuickView from "./QuickView";
 import { Eye } from "lucide-react";
 
@@ -100,7 +99,7 @@ useEffect(() => {
             You Might Love
           </p>
            <button className="transition-all duration-500 ease-out
-    hover:bg-[#DBAB35] border border-[#DBAB35] text-[#1D0B01] font-semibold  2xl:px-[22px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[150px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center">
+    hover:bg-[#BA9948] border border-[#BA9948] text-[#1D0B01] font-semibold  2xl:px-[22px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[150px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center">
                       <Link to="/productList">Show More</Link>
                     </button>
         </div>
@@ -127,7 +126,7 @@ useEffect(() => {
                     <p className='text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]'>You Might Love</p>
                 </div>
                 <div>
-                    <button className="hover:bg-[#DBAB35] border border-[#DBAB35] text-[#1D0B01] transition-all duration-500 px-[14px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[105px] h-[30px]"><Link to='/productList'>Show More</Link></button>
+                    <button className="hover:bg-[#BA9948] border border-[#BA9948] text-[#1D0B01] transition-all duration-500 px-[14px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[105px] h-[30px]"><Link to='/productList'>Show More</Link></button>
                 </div>
             </div>
       {/* CAROUSEL */}
@@ -204,7 +203,7 @@ useEffect(() => {
 </div>
  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 w-full z-20 p-[20px] lg:p-[40px]">
-                  <div className="flex items-center gap-[2px] 2xl:gap-[8px] text-[#DBAB35]">
+                  <div className="flex items-center gap-[2px] 2xl:gap-[8px] text-[#BA9948]">
                     {[...Array(5)].map((_, i) => (
                       <FaStar key={i} className="h-[12px] lg:h-[15px]" />
                     ))}
@@ -255,12 +254,9 @@ useEffect(() => {
                           -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
                         </div>
 
-                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 105 45" fill="none">
-                          <path
-                            d="M95 11V0H10V11C4.47715 11 0 15.4772 0 21V24C0 29.5228 4.47715 34 10 34V45H95V34C100.523 34 105 29.5228 105 24V21C105 15.4772 100.523 11 95 11Z"
-                            fill="#DBAB35"
-                          />
-                          <text
+                                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 45" fill="none">
+  <path d="M95 11V0H10V11C4.47715 11 0 15.4772 0 21V24C0 29.5228 4.47715 34 10 34V45H95V34C100.523 34 105 29.5228 105 24V21C105 15.4772 100.523 11 95 11Z" fill="#BA9948"/>
+  <text
                             x="52.5"
                             y="30"
                             textAnchor="middle"
@@ -269,7 +265,7 @@ useEffect(() => {
                           >
                             ${item.price.toFixed(2)}
                           </text>
-                        </svg>
+</svg>
                       </div>
                     </div>
                   </div>

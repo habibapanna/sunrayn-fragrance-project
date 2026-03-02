@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { LiaAngleDownSolid } from "react-icons/lia";
 // golden
-import Logo from "../../assets/Logo (2).svg"; 
+import Logo from "../../assets/Logo (6).svg"; 
 import BrandName from "../../assets/Brand Name (3).svg";
 // white
 import Logo1 from "../../assets/Logo (5).svg";
@@ -489,7 +489,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
 
   {/* ACCOUNT DROPDOWN */}
   {accountOpen && (
-  <div className="absolute md:-right-4 mt-3 w-[170px] -right-12  bg-white rounded-[16px] shadow-xl p-2 z-[80]">
+  <div className="absolute md:-right-4 mt-3 w-[170px] -right-12  bg-white rounded-lg shadow-xl p-2 z-[80]">
       
       {/* Triangle */}
       <div className="absolute -top-2 md:right-8 w-5 h-5 right-13 bg-white rotate-45"></div>

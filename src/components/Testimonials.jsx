@@ -125,7 +125,7 @@ const Testimonials = () => {
                   />
 
                   {/* STARS */}
-                  <div className="flex gap-[6px] mt-[20px] md:mt-[32px] lg:mt-[48px] mb-[12px] text-[#DBAB35]">
+                  <div className="flex gap-[6px] mt-[20px] md:mt-[32px] lg:mt-[48px] mb-[12px] text-[#BA9948]">
                     {[...Array(5)].map((_, idx) => (
                       <FaStar key={idx} className="h-[20px] w-[20px] md:h-[24px] md:w-[24px]" />
                     ))}

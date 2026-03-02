@@ -5,6 +5,9 @@ import Heart from '../assets/Heart.svg';
 import Family from '../assets/Frame (5).svg';
 import Sort from '../assets/Vector.svg';
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
+import { span } from "framer-motion/client";
+import { FaCheck } from "react-icons/fa";
+import { IoCheckmarkOutline } from "react-icons/io5";
 
 const scentOptions = [
   { label: "Flowery", icon: (<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -100,20 +103,24 @@ const [isSticky, setIsSticky] = useState(false);
 
 useEffect(() => {
   const handleScroll = () => {
-    const is2xlScreen = window.innerWidth >= 1536; // 2xl breakpoint
-
+    const is2xlScreen = window.innerWidth >= 1536;
     const scrollLimit = is2xlScreen ? 300 : 80;
 
+    // Sticky logic
     if (window.scrollY > scrollLimit) {
       setIsSticky(true);
     } else {
       setIsSticky(false);
     }
+
+    // 🔥 Close dropdowns when scrolling
+    if (openGender) setOpenGender(false);
+    if (openScent) setOpenScent(false);
   };
 
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+}, [openGender, openScent]);
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -150,20 +157,12 @@ const renderDropdown = (items, filterKey) => (
         >
           {/* Checkbox */}
           <div
-            className={`w-[18px] h-[18px] rounded-[7px] border flex items-center justify-center ${
-              active ? "bg-[#C8A44B] border-[#C8A44B]" : "border-[#3A3F42]"
+            className={`w-[15px] h-[15px] rounded-[4px] border flex items-center justify-center ${
+              active ? "bg-[#BA9948] border-[#BA9948] text-white" : "border-[#3A3F42]"
             }`}
           >
             {active && (
-              <svg width="12" height="12" viewBox="0 0 12 12">
-                <path
-                  d="M2.5 6.5L5 9L9.5 3.5"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+             <IoCheckmarkOutline />
             )}
           </div>
 
@@ -258,7 +257,7 @@ const showClearAll =
 
             </button>
 {openGender && (
-  <div className="absolute top-[55px] left-0 w-[140px] lg:w-[160px] bg-white rounded-[16px] shadow-lg p-[6px] lg:p-[12px] z-40">
+  <div className="absolute top-[55px] left-0 w-[140px] lg:w-[160px] bg-white rounded-lg shadow-lg p-[6px] lg:p-[12px] z-40">
     {renderDropdown(genderOptions, "gender")}
 
     {showClearAll && (
@@ -295,7 +294,7 @@ const showClearAll =
 </svg>
             </button>
 {openScent && (
-  <div className="absolute top-[55px] left-0 w-[140px] lg:w-[160px] bg-white rounded-[16px] shadow-lg p-[6px] lg:p-[12px] z-40">
+  <div className="absolute top-[55px] left-0 w-[140px] lg:w-[160px] bg-white rounded-lg shadow-lg p-[6px] lg:p-[12px] z-40">
     {renderDropdown(scentOptions, "scentFamily")}
 
     {showClearAll && (
@@ -320,7 +319,7 @@ const showClearAll =
                {/* RESULT COUNT ROW */}
          <div className="flex justify-between items-center my-[16px] 2xl:my-[32px]">
            <div className="">
-            <p className="text-[12px] md:text-[14px] 2xl:text-[18px] font-medium text-[#1D0B01]">Explore <span className="text-[#A0174A] font-semibold">10+ </span>  Impressions perfumes, crafted in <span className="text-[#A0174A] font-semibold">USA</span>.</p>
+            <p className="text-[12px] md:text-[14px] 2xl:text-[18px] font-medium text-[#1D0B01]">Explore <span className="text-[#A0174A] font-semibold">10+ </span>  Impressions perfumes, crafted in <span className="text-[#A0174A] font-semibold uppercase">bklyn</span>.</p>
          </div>
 <div className="">
   <p className="text-[12px] md:text-[14px] 2xl:text-[18px] font-medium text-[#1D0B01]">

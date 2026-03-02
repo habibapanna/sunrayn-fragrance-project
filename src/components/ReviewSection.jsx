@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { X, Upload } from "lucide-react";
 import ReviewList from "./ReviewList";
@@ -17,6 +17,17 @@ const [qaName, setQaName] = useState("");
 const [qaEmail, setQaEmail] = useState("");
 const [question, setQuestion] = useState("");
 
+useEffect(() => {
+  if (open || qaOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [open, qaOpen]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,6 +50,7 @@ const [question, setQuestion] = useState("");
     setTitle("");
     setOpen(false);
   };
+
 
 
   return (
@@ -128,7 +140,7 @@ const [question, setQuestion] = useState("");
          <button
   onClick={() => setQaOpen(true)}
   className="px-8 py-3 rounded-full bg-[#A0174A] hover:text-black font-semibold text-white
-  hover:bg-white border border-transparent hover:border-[#DBAB35]
+  hover:bg-white border border-transparent hover:border-[#BA9948]
   transition-all duration-500 text-[16px] 2xl:text-[20px] cursor-pointer w-full"
 >
   Ask a question
@@ -143,8 +155,8 @@ const [question, setQuestion] = useState("");
       <button
         onClick={() => setOpen(true)}
         className="mt-5 md:mt-0 px-[24px] py-[12px] rounded-full font-semibold
-         hover:bg-white text-[#1D0B01] bg-[#DBAB35] 
-        border border-[#DBAB35]
+         hover:bg-white text-[#1D0B01] bg-[#BA9948] 
+        border border-[#BA9948]
         transition-all duration-500 text-[16px] 2xl:text-[20px] cursor-pointer w-full md:w-1/2"
       >
         Write a Review
@@ -158,8 +170,8 @@ const [question, setQuestion] = useState("");
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-3">
 
     {/* CARD */}
-    <div className="relative w-full max-w-xl rounded-[28px] bg-[#F4F4F2] p-5 sm:p-7 shadow-xl
-                    max-h-[90vh] overflow-y-auto animate-[fadeIn_.25s_ease] no-scrollbar">
+    <div className="relative w-full max-w-xl rounded-lg bg-[#F4F4F2] p-5 sm:p-7 shadow-xl
+                    max-h-[80vh] overflow-y-auto animate-[fadeIn_.25s_ease] no-scrollbar">
 
       {/* CLOSE */}
       <button
@@ -274,7 +286,7 @@ const [question, setQuestion] = useState("");
         {/* BUTTON */}
         <button
           type="submit"
-          className="w-full bg-[#D4A437] border hover:border-[#DBAB35] border-transparent transition-all duration-500 hover:bg-white
+          className="w-full bg-[#D4A437] border hover:border-[#BA9948] border-transparent transition-all duration-500 hover:bg-white
                      text-black font-medium py-3 rounded-full mt-2 cursor-pointer"
         >
           Send
@@ -288,7 +300,7 @@ const [question, setQuestion] = useState("");
 {qaOpen && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4">
 
-    <div className="relative w-full max-w-xl bg-[#F6F7F2] rounded-[28px] p-6 sm:p-8 shadow-xl">
+    <div className="relative w-full max-w-xl bg-[#F6F7F2] rounded-lg p-6 sm:p-8 shadow-xl">
 
       {/* CLOSE */}
       <button
@@ -367,7 +379,7 @@ const [question, setQuestion] = useState("");
           type="submit"
           className="w-full bg-[#D4A437] text-black font-semibold 
           py-3 rounded-full hover:bg-white border border-transparent 
-          hover:border-[#DBAB35] transition-all duration-500"
+          hover:border-[#BA9948] transition-all duration-500"
         >
           Send
         </button>

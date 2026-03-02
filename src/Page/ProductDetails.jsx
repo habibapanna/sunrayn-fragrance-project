@@ -149,7 +149,7 @@ useEffect(() => {
 const genderStyles = {
   WOMEN: "border-[#A0174A] text-[#A0174A]",
   MEN: "border-black text-black",
-  UNISEX: "border-[#DBAB35] text-[#DBAB35]",
+  UNISEX: "border-[#BA9948] text-[#BA9948]",
 };
 
 
@@ -258,7 +258,7 @@ Back
 
 <span
   className={`text-[12px] 2xl:text-[16px] bg-white border py-[8px] px-[16px] rounded-full ${
-    genderStyles[product.gender?.toUpperCase()] || "border-[#DBAB35]"
+    genderStyles[product.gender?.toUpperCase()] || "border-[#BA9948]"
   }`}
 >
   {product.gender}
@@ -280,7 +280,7 @@ Back
           {/* Rating */}
           <div className="flex items-center gap-[5px] mt-3">
             {[...Array(5)].map((_, i) => (
-              <FaStar key={i} className="text-[#DBAB35]" />
+              <FaStar key={i} className="text-[#BA9948]" />
             ))}
             <span className="text-[16px] ml-[6px] underline">
               {product.rating} ({product.reviews})
@@ -369,7 +369,7 @@ Back
 
 <div className="mt-[16px] lg:mt-[20px] flex text-center lg:text-left gap-[16px]">
 <div
-  className="relative overflow-hidden rounded-full px-[18px] py-[8px] text-white text-[14px] font-semibold"
+  className="relative overflow-hidden rounded-full px-[14px] lg:px-[18px] py-[8px] text-white text-[14px] font-semibold"
   style={{
     backgroundImage: `url(${scentFamilyGradients[product.scentFamily]})`,
     backgroundSize: "cover",
@@ -393,7 +393,7 @@ Back
         <div onClick={handleAddToCart}
         className="flex justify-between items-center gap-[16px] mt-[16px] lg:mt-[20px]"> 
           <button className="text-[18px] 2xl:text-[20px] w-full px-[20px] py-[8px] 2xl:py-[10px] 2x:px-[24px] rounded-full font-semibold cursor-pointer transition-all duration-500 ease-out
-    bg-[#DBAB35] hover:bg-white backdrop-blur-md border border-[#DBAB35] text-[#1D0B01]">
+    bg-[#BA9948] hover:bg-white backdrop-blur-md border border-[#BA9948] text-[#1D0B01]">
             Add to cart
           </button>
           </div>

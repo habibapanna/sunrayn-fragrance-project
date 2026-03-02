@@ -86,7 +86,7 @@ const TopAnnouncementBar = () => {
             {messages[0].content}{" "}
             <button
               onClick={() => setIsPopupOpen(true)}
-              className="underline text-[#DBAB35] cursor-pointer"
+              className="underline text-[#BA9948] cursor-pointer"
             >
               Learn more
             </button>
@@ -110,7 +110,7 @@ const TopAnnouncementBar = () => {
             {messages[index].id === 1 && (
               <button
                 onClick={() => setIsPopupOpen(true)}
-                className="underline text-[#DBAB35]"
+                className="underline text-[#BA9948]"
               >
                 Learn more
               </button>
