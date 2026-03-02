@@ -1,33 +1,34 @@
-import { FaHeart, FaStar } from "react-icons/fa";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
-import { products } from "../data/productsData";
-import { Link, useNavigate, useOutletContext } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { FaCheck, FaStar } from "react-icons/fa";
+import { useNavigate, Link, useOutletContext } from "react-router-dom";
+import { products } from "../data/productsData";
 import { IoCheckmarkSharp } from "react-icons/io5";
-import QuickView from "./QuickView";
+import { FaHeart } from "react-icons/fa";
 import { LuSearch } from "react-icons/lu";
+import QuickView from "./QuickView";
 import { Eye } from "lucide-react";
 
 const ProductCard = () => {
-  const navigate = useNavigate();
-   const [selectedProduct, setSelectedProduct] = useState(null);
-const { cartOpen, setCartOpen, wishlist, setWishlist } = useOutletContext();
-
   const [current, setCurrent] = useState(0);
+   const [selectedProduct, setSelectedProduct] = useState(null);
   const [itemsPerView, setItemsPerView] = useState(3);
-  const [showCartToast, setShowCartToast] = useState(false);
+   const { cartOpen, setCartOpen, wishlist, setWishlist } = useOutletContext();
+        const [showCartToast, setShowCartToast] = useState(false);
+        const [touchStart, setTouchStart] = useState(null);
+const [touchEnd, setTouchEnd] = useState(null);
 
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
 
-  const minSwipeDistance = 50;
+const minSwipeDistance = 50;
 
-  /* ---------- responsive items ---------- */
+  const navigate = useNavigate();
+
+  // Adjust number of items per view based on screen width
   useEffect(() => {
     const updateView = () => {
-      if (window.innerWidth >= 1536) setItemsPerView(3);
-      else if (window.innerWidth >= 768) setItemsPerView(2);
-      else setItemsPerView(1);
+      if (window.innerWidth >= 1280) setItemsPerView(3); // xl
+      else if (window.innerWidth >= 768) setItemsPerView(2); // lg
+      else setItemsPerView(1); // mobile
     };
 
     updateView();
@@ -35,24 +36,26 @@ const { cartOpen, setCartOpen, wishlist, setWishlist } = useOutletContext();
     return () => window.removeEventListener("resize", updateView);
   }, []);
 
-  /* ---------- swipe ---------- */
   const onTouchStart = (e) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-  };
+  setTouchEnd(null);
+  setTouchStart(e.targetTouches[0].clientX);
+};
 
-  const onTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
+const onTouchMove = (e) => {
+  setTouchEnd(e.targetTouches[0].clientX);
+};
 
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+const onTouchEnd = () => {
+  if (!touchStart || !touchEnd) return;
 
-    const distance = touchStart - touchEnd;
+  const distance = touchStart - touchEnd;
 
-    if (distance > minSwipeDistance) next();
-    if (distance < -minSwipeDistance) prev();
-  };
+  const isLeftSwipe = distance > minSwipeDistance;
+  const isRightSwipe = distance < -minSwipeDistance;
+
+  if (isLeftSwipe) next();
+  if (isRightSwipe) prev();
+};
 
 const toggleWishlist = (id) => {
   setWishlist((prev) =>
@@ -61,71 +64,90 @@ const toggleWishlist = (id) => {
       : [...prev, id]
   );
 };
-  /* ---------- navigation ---------- */
+
   const maxIndex = products.length - itemsPerView;
 
-  const next = () =>
-    setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  const next = () => setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  const prev = () => setCurrent((prev) => (prev <= 0 ? maxIndex : prev - 1));
 
-  const prev = () =>
-    setCurrent((prev) => (prev <= 0 ? maxIndex : prev - 1));
+const handleAddToCart = () => {
+  // add item logic here
 
-  /* ---------- cart ---------- */
-  const handleAddToCart = () => {
-    if (window.innerWidth < 768) {
-      setShowCartToast(true);
-    } else {
-      setCartOpen(true);
-    }
-  };
+  if (window.innerWidth < 768) {
+    setShowCartToast(true); // mobile → show popup
+  } else {
+    setCartOpen(true); // desktop → open overlay
+  }
+};
 
-  useEffect(() => {
-    if (!showCartToast) return;
-    const t = setTimeout(() => setShowCartToast(false), 4000);
-    return () => clearTimeout(t);
-  }, [showCartToast]);
+useEffect(() => {
+  if (!showCartToast) return;
+  const t = setTimeout(() => setShowCartToast(false), 4000);
+  return () => clearTimeout(t);
+}, [showCartToast]);
 
-  /* ---------- UI ---------- */
+
+
   return (
-    <section className="relative overflow-hidden py-[16px] 2xl:py-[32px]">
+    <div className="mx-auto py-[16px] 2xl:py-[32px]">
+      {/* HEADER */}
+      <div className="hidden lg:flex justify-between items-center mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px]">
+        <div className="flex items-center justify-center gap-[20px] md:gap-[32px]">
+          <p
+            className="text-[20px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]"
+            style={{ letterSpacing: "-1px" }}
+          >
+            You Might Love
+          </p>
+           <button className="transition-all duration-500 ease-out
+    hover:bg-[#DBAB35] border border-[#DBAB35] text-[#1D0B01] font-semibold  2xl:px-[22px] 2xl:py-[12px] rounded-full cursor-pointer lg:w-[150px] lg:h-[50px] text-[14px] lg:text-[16px] 2xl:text-[20px] flex items-center justify-center">
+                      <Link to="/productList">Show More</Link>
+                    </button>
+        </div>
 
-      {/* header */}
-      <div className="flex justify-between items-center mb-[16px] 2xl:mb-[32px]">
-        <p className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]">
-          You Might Love
-        </p>
-
-        <Link
-          to="/productList"
-          className="hover:bg-[#DBAB35] bg-white border border-[#DBAB35] text-[#1D0B01] font-semibold px-[24px] py-[8px] rounded-full transition-all duration-500"
-        >
-          Show More
-        </Link>
+        {/* Arrows for large screens */}
+        <div className="hidden lg:flex gap-5">
+          <button
+            onClick={prev}
+            className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer"
+          >
+            <GoChevronLeft className="text-[35px]" />
+          </button>
+          <button
+            onClick={next}
+            className="w-[55px] h-[55px] rounded-full bg-[#F5F1EA] shadow flex items-center justify-center cursor-pointer"
+          >
+            <GoChevronRight className="text-[35px]" />
+          </button>
+        </div>
       </div>
-
-      {/* carousel */}
-      <div className="relative">
-
+    <div className='flex lg:hidden justify-between items-center px-[16px] pb-[16px]
+            '>
+                <div>
+                    <p className='text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]'>You Might Love</p>
+                </div>
+                <div>
+                    <button className="hover:bg-[#DBAB35] border border-[#DBAB35] text-[#1D0B01] transition-all duration-500 px-[14px] py-[8px] rounded-full text-[14px] cursor-pointer flex items-center w-[105px] h-[30px]"><Link to='/productList'>Show More</Link></button>
+                </div>
+            </div>
+      {/* CAROUSEL */}
+      <section className="relative overflow-hidden">
         <div
-          className="flex gap-[16px] 2xl:gap-[32px] transition-transform duration-500 ease-in-out"
+          className="flex transition-transform duration-500 ease-in-out"
+  onTouchStart={onTouchStart}
+  onTouchMove={onTouchMove}
+  onTouchEnd={onTouchEnd}
           style={{
             transform: `translateX(-${(current * 100) / itemsPerView}%)`,
           }}
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={onTouchEnd}
         >
           {products.map((item, i) => (
-<div
-  key={i}
-  style={{
-   width: `${100 / (itemsPerView + 0.2)}%`,
-  }}
-  className="flex-shrink-0"
->
-
-              {/* card */}
-               <div
+            <div
+              key={i}
+              className="flex-shrink-0 px-[8px] 2xl:px-[16px]"
+              style={{ width: `${100 / itemsPerView}%` }}
+            >
+              <div
                 className="group relative rounded-[16px]
     h-[384px] lg:h-[700px]
     cursor-pointer overflow-hidden"
@@ -145,7 +167,7 @@ const toggleWishlist = (id) => {
                   className="absolute inset-0 mx-auto h-full object-cover w-full group-hover:scale-105 duration-1000"
                 />
 {/* RIGHT SIDE ICONS */}
-<div className="absolute top-[20px] right-[20px] z-30 flex flex-col 2xl:gap-3">
+<div className="absolute top-[10px] right-[10px] 2xl:top-[20px] 2xl:right-[20px] z-30 flex flex-col 2xl:gap-3">
 
   {/* WISHLIST BUTTON */}
   <button
@@ -174,7 +196,7 @@ const toggleWishlist = (id) => {
     e.stopPropagation();
     setSelectedProduct(item);
   }}
-  className="w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center shadow-md opacity-100 2xl:opacity-0 translate-y-2 2xl:group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 cursor-pointer"
+  className=" w-[36px] h-[36px] bg-white rounded-full flex items-center justify-center shadow-md opacity-100 translate-y-2 2xl:opacity-0 2xl:group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 cursor-pointer"
 >
   <Eye className="w-[20px] h-[20px] text-black" />
 </button>
@@ -220,6 +242,7 @@ const toggleWishlist = (id) => {
 >
   Add to Cart
 </button>
+
                     <div className="flex gap-[12px] md:gap-[20px]">
                       <div>
                         <button className="text-[#FFF] text-[16px] py-[10px] px-[20px] rounded-[100px] line-through hidden lg:block border border-white">
@@ -256,15 +279,30 @@ const toggleWishlist = (id) => {
             </div>
           ))}
         </div>
-      </div>
+
+        {/* ARROWS */}
+          <div className="flex lg:hidden justify-center gap-5 mt-[16px]">
+            <button
+              onClick={prev}
+              className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center"
+            >
+              <GoChevronLeft className="text-[28px]" />
+            </button>
+            <button
+              onClick={next}
+              className="w-[40px] h-[40px] bg-[#F5F1EA] rounded-full flex items-center justify-center"
+            >
+              <GoChevronRight className="text-[28px]" />
+            </button>
+          </div>
+      </section>
           {selectedProduct && (
       <QuickView
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
       />
     )}
-
-      {/* toast */}
+  {/* toast */}
       {showCartToast && (
         <div className="fixed top-30 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
           <div className="flex justify-between bg-black text-white px-4 py-3 rounded-[16px]">
@@ -287,7 +325,7 @@ const toggleWishlist = (id) => {
           </div>
         </div>
       )}
-    </section>
+    </div>
   );
 };
 
