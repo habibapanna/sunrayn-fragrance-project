@@ -19,6 +19,7 @@ const BestSelling = () => {
 const [touchEnd, setTouchEnd] = useState(null);
 
 
+
 const minSwipeDistance = 50;
 
   const navigate = useNavigate();

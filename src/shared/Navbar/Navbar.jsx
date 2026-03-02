@@ -23,6 +23,7 @@ import User5 from '../../assets/Frame (10).svg';
 import MenuOverlay from "../../components/MenuOverlay";
 import ForgotPassword from "../../components/ForgotPassword";
 import { FiHeart } from "react-icons/fi";
+import { RiArrowRightWideLine } from "react-icons/ri";
 
 const Navbar = ({ showTopBar, cartOpen, setCartOpen, wishlist }) => {
 const [open, setOpen] = useState(false);
@@ -34,6 +35,9 @@ const [signInUpOpen, setSignInUpOpen] = useState(false);
 const [openMegaMenu, setOpenMegaMenu] = useState(null);
 const [accountOpen, setAccountOpen] = useState(false);
 const [selectedItem, setSelectedItem] = useState(null);
+const [mobileNavOpen, setMobileNavOpen] = useState(false);
+const prevWishlistCount = useRef(wishlist.length);
+// const prevCartCount = useRef(cart.length); 
 const location = useLocation();
 
 
@@ -73,6 +77,28 @@ const handleLogoClick = (e) => {
     navigate("/");
   }
 };
+// wishlist
+useEffect(() => {
+  const isMobile = window.innerWidth < 768;
+
+  if (isMobile && wishlist.length > prevWishlistCount.current) {
+    setMobileNavOpen(true);
+  }
+
+  prevWishlistCount.current = wishlist.length;
+}, [wishlist.length]);
+
+// cart
+// useEffect(() => {
+//   const isMobile = window.innerWidth < 768;
+
+//   if (isMobile && cart.length > prevCartCount.current) {
+//     setMobileNavOpen(true);
+//   }
+
+//   prevCartCount.current = cart.length;
+// }, [cart.length]);
+
 // for dropdowns
 useEffect(() => {
   const handleClickOutside = (e) => {
@@ -452,7 +478,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
   onClick={() => setSearchOpen(true)}
   className={`
   lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full
-  transition-colors duration-500 cursor-pointer hidden md:flex items-center justify-center  p-[6px] h-[28px] w-[28px]
+  transition-colors duration-500 cursor-pointer flex items-center justify-center  p-[6px] h-[28px] w-[28px]
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
 
@@ -463,7 +489,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
 
               <button
   onClick={() => setCartOpen(true)}
-  className={`flex
+  className={`hidden md:flex
  lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full
   transition-colors duration-500 cursor-pointer items-center justify-center  p-[6px] h-[28px] w-[28px]
   ${scrolled ? "bg-white/90" : "bg-white/90"}
@@ -626,50 +652,67 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
         />
       )}
 
-{/* MOBILE FLOATING RIGHT HANGER NAV */}
-<div className="fixed bottom-40 right-0 -translate-y-1/2 z-[55] md:hidden">
-  <div className="flex flex-col items-center gap-4 bg-black/80 backdrop-blur-md rounded-lg p-3 border border-white/10">
-    
-    {/* Search Button */}
-    <button
-      onClick={() => setSearchOpen(true)}
-      className="bg-white/90 p-[6px] h-[28px] w-[28px] rounded-full flex items-center justify-center cursor-pointer transition-all duration-500"
-      title="Search"
-    >
-      <img src={Search} alt="Search" className="h-[15px] w-[15px] md:w-[20px] md:h-[20px]" />
-    </button>
+{/* MOBILE SLIDE-IN LEFT NAV */}
+<div className="fixed bottom-100 left-0 z-[55] md:hidden">
 
-    {/* Wishlist / Heart */}
-    <button
-      title="Wishlist"
-      onClick={() => navigate("/wish-list")}
-      className="bg-white/90 p-[6px] h-[28px] w-[28px] rounded-full flex items-center justify-center relative cursor-pointer transition-all duration-500"
-    >
-      <FiHeart className="h-[15px] w-[15px] md:w-[20px] md:h-[20px]" />
-      
-      {wishlist.length > 0 && (
-        <span className="absolute -top-2 right-0 bg-[#A0174A] text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-          {wishlist.length}
-        </span>
-      )}
-    </button>
+  {/* Wrapper */}
+  <div
+    className={`
+      relative
+      transition-transform duration-500 ease-in-out
+      ${mobileNavOpen ? "-translate-x-2" : "-translate-x-[80%]"}
+    `}
+  >
 
+    {/* Main Bar */}
+    <div className="flex flex-col relative items-center gap-4 
+                    bg-black/80 backdrop-blur-md 
+                    rounded-r-lg p-4 border border-white/10">
+    {/* Arrow Toggle Button */}
     <button
-      onClick={() => setCartOpen(true)}
-      className="bg-white/90 p-3 rounded-full items-center justify-center cursor-pointer transition-all duration-500 hidden"
-      title="Cart"
+      onClick={() => setMobileNavOpen(!mobileNavOpen)}
+      className="absolute -right-3 top-1/2 -translate-y-1/2 
+                  text-white p-1 rounded-r-md"
     >
-      <img src={Cart} alt="Cart" className="h-5 w-5" />
+      <RiArrowRightWideLine
+        className={`transition-transform duration-500 text-2xl ${
+          mobileNavOpen ? "rotate-180" : ""
+        }`}
+      />
     </button>
+      {/* Cart */}
+      <button
+        onClick={() => {
+          setCartOpen(true);
+          setMobileNavOpen(true);
+        }}
+        className="bg-white/90 p-[6px] h-[28px] w-[28px] 
+                   rounded-full flex items-center justify-center"
+      >
+        <img src={Cart} alt="Cart" className="h-[15px] w-[15px]" />
+      </button>
 
-    <button
-      onClick={() => setSignInUpOpen(true)}
-      className="bg-white/90 p-3 rounded-full  items-center justify-center cursor-pointer transition-all duration-500 hidden"
-      title="Account"
-    >
-      <img src={User} alt="Account" className="h-5 w-5" />
-    </button>
+      {/* Wishlist */}
+      <button
+        onClick={() => {
+          navigate("/wish-list");
+          setMobileNavOpen(true);
+        }}
+        className="bg-white/90 p-[6px] h-[28px] w-[28px] 
+                   rounded-full flex items-center justify-center relative"
+      >
+        <FiHeart className="h-[15px] w-[15px]" />
 
+        {wishlist.length > 0 && (
+          <span className="absolute -top-2 right-0 
+                           bg-[#A0174A] text-white text-xs 
+                           w-5 h-5 flex items-center justify-center 
+                           rounded-full">
+            {wishlist.length}
+          </span>
+        )}
+      </button>
+    </div>
   </div>
 </div>
     </>
