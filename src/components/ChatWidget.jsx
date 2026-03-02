@@ -45,9 +45,9 @@ const [closing, setClosing] = useState(false);
       {/* Floating Button */}
       <button
         onClick={() => (open ? handleClose() : setOpen(true))}
-        className="fixed bottom-6 right-6 z-40 bg-[#A0174A] text-white p-4 rounded-full shadow-lg transition cursor-pointer"
+        className="fixed bottom-6 right-6 z-40 bg-[#A0174A] text-white p-3 2xl:p-[14px] rounded-full shadow-lg transition cursor-pointer"
       >
-        {open ? <FaTimes size={25} /> : <FaCommentDots size={25} />}
+        {open ? <FaTimes className="h-[20px] w-[20px] 2xl:h-[25px] 2xl:w-[25px]" /> : <FaCommentDots className="h-[20px] w-[20px] 2xl:h-[25px] 2xl:w-[25px]" />}
       </button>
 
       {/* Chat Popup */}

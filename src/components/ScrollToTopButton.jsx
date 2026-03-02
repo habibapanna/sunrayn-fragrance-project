@@ -34,11 +34,11 @@ const ScrollToTopButton = () => {
     <button
       onClick={scrollToTop}
       className="fixed bottom-6 left-6 z-40 
-      bg-[#A0174A] text-white p-3 rounded-full 
+      bg-[#A0174A] text-white p-[11px] 2xl:p-3 rounded-full 
       shadow-lg hover:scale-105 transition-all cursor-pointer"
       aria-label="Scroll to top"
     >
-      <MdOutlineKeyboardDoubleArrowUp size={30} />
+      <MdOutlineKeyboardDoubleArrowUp className="h-[20px] w-[20px] 2xl:h-[25px] 2xl:w-[25px]" />
     </button>
   );
 };
