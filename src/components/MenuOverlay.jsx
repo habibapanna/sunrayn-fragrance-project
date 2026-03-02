@@ -116,7 +116,7 @@ const MenuOverlay = ({ open, onClose, onOpenSignIn }) => {
               <div className="tab-content bg-[#F6F7F2] p-4 rounded-r-[16px] rounded-bl-[16px]">
 
                 {/* PERFUMES */}
-                <div className="bg-white rounded-[16px] p-[16px] mb-[16px]">
+                <div className="bg-[#F6F7F2] rounded-[16px] mb-[16px]">
                   <div className="flex justify-between items-center cursor-pointer" onClick={() => setOpenPerfume(!openPerfume)}>
                     <h3 className="font-semibold">Perfumes</h3>
                     <GoChevronDown className={`${openPerfume ? "rotate-180" : ""}`} />
@@ -172,7 +172,7 @@ const MenuOverlay = ({ open, onClose, onOpenSignIn }) => {
                 </div>
 
                 {/* COLLECTIONS */}
-                <div className="bg-white rounded-[16px] p-[16px]">
+                <div className="bg-[#F6F7F2] rounded-[16px]">
                   <div className="flex justify-between items-center cursor-pointer" onClick={() => setOpenCollection(!openCollection)}>
                     <h3 className="font-semibold">Collections</h3>
                     <GoChevronDown className={`${openCollection ? "rotate-180" : ""}`} />
