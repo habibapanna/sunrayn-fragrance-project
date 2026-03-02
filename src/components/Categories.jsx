@@ -31,9 +31,9 @@ const Categories = ({ sortBy, setSortBy }) => {
     <div>
       <div
         className="
-          flex items-center gap-[8px] 2xl:gap-[32px] pb-[16px] py-[8px]
+          flex items-center gap-[16px] 2xl:gap-[32px] pb-[16px] py-[8px]
            2xl:py-[32px]
-          justify-start lg:justify-center
+          justify-start lg:justify-center overflow-x-scroll
         "
       >
         {items.map((item) => {
@@ -45,12 +45,13 @@ const Categories = ({ sortBy, setSortBy }) => {
   onClick={() => setSortBy(item.key)}
   className={`
     group
+    flex-shrink-0
     flex flex-col lg:flex-row
     items-center justify-between
     cursor-pointer
     rounded-[8px] 2xl:rounded-[16px]
     bg-[#F6F7F2]
-    w-[126px] h-[96px] p-[4px]
+    w-[126px] h-[96px] p-3
     md:w-full md:h-full md:p-6 md:gap-[12px]
     border
     transition-all duration-500 ease-out
