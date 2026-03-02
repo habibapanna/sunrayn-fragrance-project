@@ -161,16 +161,27 @@ useEffect(() => {
 
   <IconFilter
     icon={Family}
-    title="Scent Notes"
-    items={["Amber", "Powdery", "Fruity", "Vanilla", "Citrus", "Apple", "Spicy"]}
+    title="Scent Families"
+    items={["Flowery", "Warm", "Fruity", "Gourmand", "Fresh", "Earthy", "Herbal"]}
   />
 
 </div>
 
  {/* RIGHT CARD */}
           <div className="flex justify-center lg:justify-end">
+                   {/* RIGHT PRODUCT CARD */}
+        <div className="">
+          <div className="bg-[#FBF7F2] rounded-[24px] p-4 w-[160px] lg:w-[220px] text-center">
+            <img
+              src="https://i.postimg.cc/JnBwP30d/Product-Card.png"
+              className="rounded-xl mx-auto mb-4"
+            />
+          </div> <p className="text-[14px] lg:text-[16px] text-center text-[#1D0B01] font-medium cursor-pointer">
+              <Link to='productList'>View All Perfume</Link>
+            </p>
+        </div>
 
-            <div className="bg-[#F6F7F2] w-full max-w-[280px] h-auto rounded-[24px] p-[12px] 2xl:p-[24px] flex flex-col justify-between gap-[32px]">
+            {/* <div className="bg-[#F6F7F2] w-full max-w-[280px] h-auto rounded-[24px] p-[12px] 2xl:p-[24px] flex flex-col justify-between gap-[32px]">
 
 <div className="">
       <h3 className="text-[25px] font-semibold text-[#1D0B01]">
@@ -222,10 +233,10 @@ useEffect(() => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Overlay */}
+      
       <div className="absolute inset-0 bg-black/50" />
 
-      {/* Text */}
+     
       <span className="relative z-10 text-[14px]">
         {item.name}
       </span>
@@ -233,7 +244,8 @@ useEffect(() => {
   ))}
 </div>
 
-</div>
+</div> */}
+
           </div>
         </div>
 
