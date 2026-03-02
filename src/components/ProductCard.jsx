@@ -145,7 +145,7 @@ const toggleWishlist = (id) => {
                   className="absolute inset-0 mx-auto h-full object-cover w-full group-hover:scale-105 duration-1000"
                 />
 {/* RIGHT SIDE ICONS */}
-<div className="absolute top-[20px] right-[20px] z-30 flex flex-col gap-3">
+<div className="absolute top-[20px] right-[20px] z-30 flex flex-col 2xl:gap-3">
 
   {/* WISHLIST BUTTON */}
   <button
