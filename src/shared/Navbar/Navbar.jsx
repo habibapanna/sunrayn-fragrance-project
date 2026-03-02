@@ -431,7 +431,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
     lg:h-[40px] lg:w-[40px] 
     2xl:p-[12px] 
     rounded-full 
-    flex items-center justify-center
+    md:flex items-center justify-center
     cursor-pointer
     transition-all duration-500
     bg-white/90 relative hidden

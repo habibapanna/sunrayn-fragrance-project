@@ -33,7 +33,7 @@ const Categories = ({ sortBy, setSortBy }) => {
         className="
           flex items-center gap-[16px] 2xl:gap-[32px] pb-[16px]
            2xl:py-[32px]
-          justify-start lg:justify-center overflow-x-scroll
+          justify-start lg:justify-center overflow-x-scroll md:overflow-x-hidden
         "
       >
         {items.map((item) => {
@@ -45,20 +45,20 @@ const Categories = ({ sortBy, setSortBy }) => {
   onClick={() => setSortBy(item.key)}
   className={`
     group
-    flex-shrink-0
+    flex-shrink-0 md:flex-shrink-1
     flex flex-col lg:flex-row
     items-center justify-between
     cursor-pointer
     rounded-[8px] 2xl:rounded-[16px]
     bg-[#F6F7F2]
     w-[126px] h-[96px] p-3
-    md:w-full md:h-full md:p-6 md:gap-[12px]
+    md:w-full md:h-full md:p-5 md:gap-[12px]
     border
     transition-all duration-500 ease-out
     will-change-transform
     ${
       isActive
-        ? "border-[#DBAB35] scale-[1.01] shadow-lg"
+        ? "border-[#DBAB35] scale-[1.0] shadow-lg"
         : "border-transparent hover:border-[#DBAB35] hover:scale-[1.01] hover:shadow-xl"
     }
   `}
