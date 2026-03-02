@@ -119,9 +119,7 @@ const toggleWishlist = (id) => {
 <div
   key={i}
   style={{
-    width: `calc(${100 / itemsPerView}% - ${
-      itemsPerView === 3 ? "21.33px" : "10.66px"
-    })`,
+   width: `${100 / (itemsPerView + 0.2)}%`,
   }}
   className="flex-shrink-0"
 >
@@ -222,7 +220,6 @@ const toggleWishlist = (id) => {
 >
   Add to Cart
 </button>
-
                     <div className="flex gap-[12px] md:gap-[20px]">
                       <div>
                         <button className="text-[#FFF] text-[16px] py-[10px] px-[20px] rounded-[100px] line-through hidden lg:block border border-white">
@@ -269,7 +266,7 @@ const toggleWishlist = (id) => {
 
       {/* toast */}
       {showCartToast && (
-        <div className="fixed top-20 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+        <div className="fixed top-30 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
           <div className="flex justify-between bg-black text-white px-4 py-3 rounded-[16px]">
             <div className="flex items-center gap-2 text-sm">
               <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center">
