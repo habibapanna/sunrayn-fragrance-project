@@ -87,7 +87,7 @@ const BigBottleIcon = () => (
     <div
   className={`
     relative bg-white w-[95%] md:w-[1100px]
-    max-h-[90vh] overflow-y-auto rounded-lg shadow-2xl z-50 p-4
+    max-h-[80vh] overflow-y-auto rounded-lg shadow-2xl z-50 p-4
     transform transition-all duration-500 ease-out
     ${show ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-4"}
   `}
@@ -99,7 +99,7 @@ const BigBottleIcon = () => (
       >
         ✕
       </button>
-                   {/* Close Button */}
+                  
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] 2xl:gap-[32px] 2xl:px-[16px] py-[16px] md:py-[32px] mt-4 md:mt-1">
                     
@@ -287,14 +287,14 @@ const BigBottleIcon = () => (
                      
                       </div>
                       
-                      
+                 {/* Close Button */}      
         </div>
 <div className="flex justify-end">
   <button
     onClick={handleClose}
-    className="text-[16px] text-black cursor-pointer underline"
+    className=" text-[14px] lg:text-[16px] text-black cursor-pointer underline"
   >
-    Close
+    Go Back
   </button>
 </div>
 </div>

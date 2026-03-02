@@ -273,12 +273,10 @@ const backdropVariants = {
           el.scrollLeft / (el.scrollWidth - el.clientWidth);
         setScrollProgress(progress);
       }}
-    className="flex gap-[12px] overflow-x-auto scroll-smooth snap-x snap-mandatory touch-pan-x scrollbar-hide pb-2">
+     className="flex gap-3 overflow-x-auto scrollbar-hide snap-x snap-mandatory flex-shrink-0 -webkit-overflow-scrolling: touch"
+>
       {products.map((item, i) => (
-        <div
-          key={i}
-          className="snap-start flex-shrink-0 w-[215px]"
-        >
+         <div key={i} className="snap-start flex-shrink-0 w-[215px]">
           <div className="group relative h-[272px] rounded-[16px] overflow-hidden"
       
           >
