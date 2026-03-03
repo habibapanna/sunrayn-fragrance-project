@@ -143,7 +143,10 @@ const backdropVariants = {
   <path d="M6.25 6.66663L6.38985 4.98844C6.54632 3.11084 8.11589 1.66663 10 1.66663C11.8841 1.66663 13.4537 3.11084 13.6102 4.98844L13.75 6.66663" stroke="#050C29" stroke-width="1.25"/>
   <path d="M12.5 9.16663C12.3917 10.3442 11.3047 11.25 10 11.25C8.69525 11.25 7.60835 10.3442 7.5 9.16663" stroke="#050C29" stroke-width="1.25" stroke-linecap="round"/>
 </svg>
-        <h2 className="font-medium text-[14px] lg:text-[16px] 2xl:text-[18px]">Your cart (1)</h2></div> 
+        <h2 className="font-medium text-[14px] lg:text-[16px] 2xl:text-[18px]">
+    Your cart ({cart.length})
+  </h2>
+        </div> 
       </div>
           
      {/* Discount */}
@@ -223,7 +226,7 @@ const backdropVariants = {
           </div>
         </div>
         <p className="text-[12px] lg:text-[14px] text-[#282828] mt-1">
-          Size: {item.size || "N/A"}
+          Size: {item.volume || "N/A"}
         </p>
       </div>
 
