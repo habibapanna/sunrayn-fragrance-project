@@ -16,7 +16,7 @@ const tiers = [
   { id: 4, label: "5 items", off: "30% OFF" }
 ];
 
-const CartOverlay = ({ onClose }) => {
+const CartOverlay = ({ onClose, cart = [], setCart }) => {
   const navigate = useNavigate();
  /* ================= CAROUSEL STATE ================= */
   const [current, setCurrent] = useState(0);
@@ -187,67 +187,88 @@ const backdropVariants = {
 </div>
       {/* SCROLLABLE CONTENT */}
 <div className="overflow-y-auto px-[16px]">
-       {/* Cart Item */}
-<div className="my-[12px] lg:my-[16px] bg-[#F6F7F2] rounded-[16px] p-[12px] lg:p-[16px] flex gap-[16px]">
+{/* Cart Items */}
+{cart.map((item, index) => (
+  <div
+    key={item.slug}
+    className="my-[12px] lg:my-[16px] bg-[#F6F7F2] rounded-[16px] p-[12px] lg:p-[16px] flex gap-[16px]"
+  >
+    {/* LEFT – IMAGE */}
+    <div className="relative flex-shrink-0">
+      <img
+        src={item.images}
+        alt={item.title}
+        className="w-[140px] h-full lg:w-[130px] object-cover rounded-[8px]"
+      />
+      <span className="absolute top-[2px] left-[2px] text-[10px] lg:text-[12px] bg-white px-[8px] py-[2px] rounded-full border border-[#DBAB35] text-[#1D0B01]">
+        {item.gender || "Unisex"}
+      </span>
+    </div>
 
-  {/* LEFT – IMAGE */}
-  <div className="relative flex-shrink-0">
-    <img
-      src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
-      alt="Cerisa Aura"
-      className="w-[140px] h-full lg:w-[130px]  object-cover rounded-[8px]"
-    />
-    <span className="absolute top-[2px] left-[2px] text-[10px] lg:text-[12px] bg-white px-[8px] py-[2px] rounded-full border border-[#DBAB35] text-[#1D0B01]">
-      Woman
-    </span>
-  </div>
-
-  {/* RIGHT – CONTENT */}
-  <div className="flex flex-col flex-1 justify-between">
-
-    {/* Top Section */}
-    <div>
-      <div className="flex justify-between items-start">
-        <h3 className="font-medium text-[#A0174A] text-[14px] lg:text-[16px] 2xl:text-[20px]">
-          Cerisa Aura
-        </h3>
-
-        <div className="text-right flex items-center gap-[6px]">
-          <p className="text-[12px] lg:text-[14px] line-through text-[#3A3F42]">
-            $40
-          </p>
-          <p className="font-medium text-[#A0174A] text-[16px] lg:text-[18px] 2xl:text-[20px]">
-            $32
-          </p>
+    {/* RIGHT – CONTENT */}
+    <div className="flex flex-col flex-1 justify-between">
+      {/* Top Section */}
+      <div>
+        <div className="flex justify-between items-start">
+          <h3 className="font-medium text-[#A0174A] text-[14px] lg:text-[16px] 2xl:text-[20px]">
+            {item.title}
+          </h3>
+          <div className="text-right flex items-center gap-[6px]">
+            <p className="text-[12px] lg:text-[14px] line-through text-[#3A3F42]">
+              ${item.oldPrice}
+            </p>
+            <p className="font-medium text-[#A0174A] text-[16px] lg:text-[18px] 2xl:text-[20px]">
+              ${item.price}
+            </p>
+          </div>
         </div>
+        <p className="text-[12px] lg:text-[14px] text-[#282828] mt-1">
+          Size: {item.size || "N/A"}
+        </p>
       </div>
 
-      <p className="hidden lg:block text-[14px] text-[#282828] mt-1">
-        Alluring cherry and almond fragrance
-      </p>
+      {/* Bottom Section */}
+      <div className="flex items-center justify-between mt-[12px]">
+        {/* Quantity */}
+        <div className="flex items-center gap-3 bg-white rounded-full px-[12px] py-[6px]">
+          <Minus
+            className="w-[18px] h-[18px] cursor-pointer"
+            onClick={() =>
+              setCart((prev) =>
+                prev.map((p) =>
+                  p.slug === item.slug && p.qty > 1
+                    ? { ...p, qty: p.qty - 1 }
+                    : p
+                )
+              )
+            }
+          />
+          <span className="text-[14px] lg:text-[16px]">{item.qty || 1}</span>
+          <Plus
+            className="w-[18px] h-[18px] cursor-pointer"
+            onClick={() =>
+              setCart((prev) =>
+                prev.map((p) =>
+                  p.slug === item.slug
+                    ? { ...p, qty: (p.qty || 1) + 1 }
+                    : p
+                )
+              )
+            }
+          />
+        </div>
 
-      <p className="text-[12px] lg:text-[14px] text-[#282828] mt-1">
-        Size: 15ML / 1oz
-      </p>
-    </div>
-
-    {/* Bottom Section */}
-    <div className="flex items-center justify-between mt-[12px]">
-
-      {/* Quantity */}
-      <div className="flex items-center gap-3 bg-white rounded-full px-[12px] py-[6px]">
-        <Minus className="w-[18px] h-[18px] cursor-pointer" />
-        <span className="text-[14px] lg:text-[16px]">1</span>
-        <Plus className="w-[18px] h-[18px] cursor-pointer" />
+        {/* Delete */}
+        <RiDeleteBinLine
+          className="text-[22px] lg:text-[26px] text-[#A0174A] cursor-pointer hover:text-red-600 transition-all duration-500"
+          onClick={() =>
+            setCart((prev) => prev.filter((p) => p.slug !== item.slug))
+          }
+        />
       </div>
-
-      {/* Delete */}
-      <RiDeleteBinLine className="text-[22px] lg:text-[26px] text-[#A0174A] cursor-pointer hover:text-red-600 transition-all duration-500" />
-
     </div>
-
   </div>
-</div>
+))}
         {/* Order Summary */}
         <div className="my-[12px] lg:my-[16px] bg-[#F6F7F2] rounded-[20px] p-[16px]">
           <h3 className="font-medium text-[18px] 2xl:text-[20px] mb-[16px]">Order Summary</h3>

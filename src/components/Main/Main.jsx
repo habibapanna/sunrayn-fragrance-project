@@ -76,8 +76,11 @@ useEffect(() => {
             onClick={() => setCartOpen(false)}
             className="fixed inset-0 bg-black/10 z-50"
           />
-          <CartOverlay onClose={() => setCartOpen(false)}
-            />
+           <CartOverlay
+      onClose={() => setCartOpen(false)}
+      cart={cart}
+      setCart={setCart}
+    />
         </>
       )}
     </div>
