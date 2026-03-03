@@ -373,8 +373,8 @@ const backdropVariants = {
         navigate("/checkout");
       }}
       className="w-full py-[8px] rounded-full text-[14px] lg:text-[15px]
-        bg-[#DBAB35] hover:bg-white
-        backdrop-blur-md border border-[#DBAB35] text-[#1D0B01]
+        bg-[#BA9948] hover:bg-white
+        backdrop-blur-md border border-[#BA9948] text-[#1D0B01]
         transition-all duration-500 cursor-pointer font-semibold"
     >
       Process to Checkout

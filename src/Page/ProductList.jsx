@@ -574,6 +574,7 @@ useEffect(() => {
   className="product-card group bg-[#F6F7F2] rounded-[16px]
   overflow-hidden cursor-pointer
   flex flex-row md:flex-col"
+  onClick={() => navigate(`/productList/${item.slug}`)}
 >
 
 {/* IMAGE SECTION */}

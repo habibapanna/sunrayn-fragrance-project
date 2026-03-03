@@ -16,7 +16,7 @@ const Checkout = () => {
   const [openSummary, setOpenSummary] = useState(false);
   const location = useLocation();
 
-  const isGift = location.state?.isGift || false;
+  
   return (
     <div className="bg-[#F6F7F2]">
       <section className="min-h-screen mx-auto">
