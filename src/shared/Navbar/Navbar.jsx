@@ -24,6 +24,7 @@ import MenuOverlay from "../../components/MenuOverlay";
 import ForgotPassword from "../../components/ForgotPassword";
 import { FiHeart } from "react-icons/fi";
 import { RiArrowRightWideLine } from "react-icons/ri";
+import { Heart } from "lucide-react";
 
 const Navbar = ({ showTopBar, cartOpen, setCartOpen, wishlist, cart }) => {
 const [open, setOpen] = useState(false);
@@ -37,10 +38,9 @@ const [accountOpen, setAccountOpen] = useState(false);
 const [selectedItem, setSelectedItem] = useState(null);
 const [mobileNavOpen, setMobileNavOpen] = useState(false);
 const prevWishlistCount = useRef(wishlist.length);
-// const prevCartCount = useRef(cart?.length || 0);
 const prevCartCount = useRef(cart.length); 
 const location = useLocation();
-
+const navigate = useNavigate();
 
 // adjust this path to match your ProductList route
 const isErrorpage = location.pathname === "//";
@@ -60,7 +60,7 @@ const perfumeRef = useRef(null);
 const collectionRef = useRef(null);
 const aboutRef = useRef(null);
 const accountRef = useRef(null);
-const navigate = useNavigate();
+
 
 const handleLogoClick = (e) => {
   e.preventDefault();
@@ -88,7 +88,6 @@ useEffect(() => {
 
   prevWishlistCount.current = wishlist.length;
 }, [wishlist.length]);
-
 // cart
 useEffect(() => {
   const isMobile = window.innerWidth < 768;
@@ -192,8 +191,6 @@ const navBgClass = isErrorpage
 
 // Determine top position
 const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
-
-
 
   return (
     <>
@@ -477,7 +474,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
     bg-white/90 relative hidden
   "
 >
-  <FiHeart
+  <Heart
     className="h-[15px] w-[15px] md:w-[20px] md:h-[20px] transition-colors duration-500 text-[#1D0B01]"
   />
 
@@ -735,7 +732,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
         className="bg-white/90 p-[6px] h-[28px] w-[28px] 
                    rounded-full flex items-center justify-center relative"
       >
-        <FiHeart className="h-[15px] w-[15px]" />
+        <Heart className="h-[15px] w-[15px]" />
 
         {wishlist.length > 0 && (
           <span className="absolute -top-2 right-0 
@@ -748,6 +745,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
       </button>
     </div>
   </div>
+  
 </div>
     </>
   );
