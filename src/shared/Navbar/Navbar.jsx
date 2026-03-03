@@ -25,7 +25,7 @@ import ForgotPassword from "../../components/ForgotPassword";
 import { FiHeart } from "react-icons/fi";
 import { RiArrowRightWideLine } from "react-icons/ri";
 
-const Navbar = ({ showTopBar, cartOpen, setCartOpen, wishlist }) => {
+const Navbar = ({ showTopBar, cartOpen, setCartOpen, wishlist, cart }) => {
 const [open, setOpen] = useState(false);
 const [scrolled, setScrolled] = useState(false);
 const [searchOpen, setSearchOpen] = useState(false);
@@ -37,7 +37,8 @@ const [accountOpen, setAccountOpen] = useState(false);
 const [selectedItem, setSelectedItem] = useState(null);
 const [mobileNavOpen, setMobileNavOpen] = useState(false);
 const prevWishlistCount = useRef(wishlist.length);
-// const prevCartCount = useRef(cart.length); 
+// const prevCartCount = useRef(cart?.length || 0);
+const prevCartCount = useRef(cart.length); 
 const location = useLocation();
 
 
@@ -89,16 +90,29 @@ useEffect(() => {
 }, [wishlist.length]);
 
 // cart
-// useEffect(() => {
-//   const isMobile = window.innerWidth < 768;
+useEffect(() => {
+  const isMobile = window.innerWidth < 768;
 
-//   if (isMobile && cart.length > prevCartCount.current) {
-//     setMobileNavOpen(true);
-//   }
+  if (isMobile && cart.length > prevCartCount.current) {
+    setMobileNavOpen(true);
+  }
 
-//   prevCartCount.current = cart.length;
-// }, [cart.length]);
+  prevCartCount.current = cart.length;
+}, [cart.length]);
+// floating nav
+useEffect(() => {
+  let timer;
 
+  if (mobileNavOpen) {
+    timer = setTimeout(() => {
+      setMobileNavOpen(false);
+    }, 4000); // 3 seconds
+  }
+
+  return () => {
+    if (timer) clearTimeout(timer);
+  };
+}, [mobileNavOpen, setMobileNavOpen]);
 // for dropdowns
 useEffect(() => {
   const handleClickOutside = (e) => {
@@ -488,15 +502,26 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
 </button>
 
               <button
-  onClick={() => setCartOpen(true)}
+ onClick={() => {
+    setCartOpen(true);
+    setMobileNavOpen(true);
+  }}
   className={`hidden md:flex
  lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full
-  transition-colors duration-500 cursor-pointer items-center justify-center  p-[6px] h-[28px] w-[28px]
+  transition-colors duration-500 cursor-pointer items-center justify-center  p-[6px] h-[28px] w-[28px] relative
   ${scrolled ? "bg-white/90" : "bg-white/90"}
 `}
  title="View Cart"
 >
 <img src={Cart} alt="" className="h-[15px] w-[15px] md:w-[20px] md:h-[20px]" />
+ {cart?.length > 0 && (
+    <span className="absolute -top-2 right-0 
+                     bg-[#A0174A] text-white text-xs 
+                     w-5 h-5 flex items-center justify-center 
+                     rounded-full">
+      {cart.length}
+    </span>
+  )}
 </button>
 {/* Login */}
 <div className="relative" ref={accountRef}>
@@ -653,21 +678,21 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
       )}
 
 {/* MOBILE SLIDE-IN LEFT NAV */}
-<div className="fixed bottom-100 left-0 z-[55] md:hidden">
+<div className="fixed bottom-100 left-0 z-50 md:hidden">
 
   {/* Wrapper */}
   <div
     className={`
       relative
       transition-transform duration-500 ease-in-out
-      ${mobileNavOpen ? "-translate-x-2" : "-translate-x-[80%]"}
+      ${mobileNavOpen ? "-translate-x-4" : "-translate-x-[80%]"}
     `}
   >
 
     {/* Main Bar */}
     <div className="flex flex-col relative items-center gap-4 
                     bg-black/80 backdrop-blur-md 
-                    rounded-r-lg p-4 border border-white/10">
+                    rounded-r-lg p-4 border border-white/10 w-[100px]">
     {/* Arrow Toggle Button */}
     <button
       onClick={() => setMobileNavOpen(!mobileNavOpen)}
@@ -675,22 +700,31 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
                   text-white p-1 rounded-r-md"
     >
       <RiArrowRightWideLine
-        className={`transition-transform duration-500 text-2xl ${
+        className={`transition-transform duration-500 text-[30px] ${
           mobileNavOpen ? "rotate-180" : ""
         }`}
       />
     </button>
       {/* Cart */}
-      <button
-        onClick={() => {
-          setCartOpen(true);
-          setMobileNavOpen(true);
-        }}
-        className="bg-white/90 p-[6px] h-[28px] w-[28px] 
-                   rounded-full flex items-center justify-center"
-      >
-        <img src={Cart} alt="Cart" className="h-[15px] w-[15px]" />
-      </button>
+    <button
+  onClick={() => {
+    setCartOpen(true);
+    setMobileNavOpen(true);
+  }}
+  className="bg-white/90 p-[6px] h-[28px] w-[28px] 
+             rounded-full flex items-center justify-center relative"
+>
+  <img src={Cart} alt="Cart" className="h-[15px] w-[15px]" />
+
+  {cart?.length > 0 && (
+    <span className="absolute -top-2 right-0 
+                     bg-[#A0174A] text-white text-xs 
+                     w-5 h-5 flex items-center justify-center 
+                     rounded-full">
+      {cart.length}
+    </span>
+  )}
+</button>
 
       {/* Wishlist */}
       <button

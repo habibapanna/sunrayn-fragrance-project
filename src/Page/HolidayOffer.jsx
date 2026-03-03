@@ -15,7 +15,8 @@ import { Eye } from "lucide-react";
 const HolidayOffer = () => {
 const navigate = useNavigate();
  const [selectedProduct, setSelectedProduct] = useState(null);
-const { cartOpen, setCartOpen, wishlist, setWishlist } = useOutletContext();
+const { cartOpen, setCartOpen, wishlist, setWishlist, cart, 
+  setCart } = useOutletContext();
       const [showCartToast, setShowCartToast] = useState(false);
   /* -------------------- UI STATES -------------------- */
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -191,13 +192,21 @@ const overlayVariants = {
 
 const isMobile = window.innerWidth < 768;
 
-const handleAddToCart = () => {
-  // add item logic here
+const handleAddToCart = (product) => {
+  setCart((prev) => {
+    const alreadyInCart = prev.find((item) => item.slug === product.slug);
+
+    if (alreadyInCart) {
+      return prev; // prevent duplicate
+    }
+
+    return [...prev, product];
+  });
 
   if (window.innerWidth < 768) {
-    setShowCartToast(true); // mobile → show popup
+    setShowCartToast(true);
   } else {
-    setCartOpen(true); // desktop → open overlay
+    setCartOpen(true);
   }
 };
 

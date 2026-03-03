@@ -14,6 +14,7 @@ import { LuSearch } from "react-icons/lu";
 import QuickView from "../components/QuickView";
 import { Eye } from "lucide-react";
 
+
 const ProductList = () => {
   const navigate = useNavigate();
    const [selectedProduct, setSelectedProduct] = useState(null);
@@ -30,7 +31,7 @@ const ProductList = () => {
   "Perfume Volume",
 ]);
   const [searchQuery, setSearchQuery] = useState("");
-  const { cartOpen, setCartOpen, wishlist, setWishlist } = useOutletContext();
+  const { cartOpen, setCartOpen, wishlist, setWishlist, cart, setCart } = useOutletContext();
       const [showCartToast, setShowCartToast] = useState(false);
   /* -------------------- SORT STATE -------------------- */
   const [sortBy, setSortBy] = useState("relevance");
@@ -188,13 +189,21 @@ const overlayVariants = {
 
 const isMobile = window.innerWidth < 768;
 
-const handleAddToCart = () => {
-  // add item logic here
+const handleAddToCart = (product) => {
+  setCart((prev) => {
+    const alreadyInCart = prev.find((item) => item.slug === product.slug);
+
+    if (alreadyInCart) {
+      return prev; // prevent duplicate
+    }
+
+    return [...prev, product];
+  });
 
   if (window.innerWidth < 768) {
-    setShowCartToast(true); // mobile → show popup
+    setShowCartToast(true);
   } else {
-    setCartOpen(true); // desktop → open overlay
+    setCartOpen(true);
   }
 };
 
@@ -699,7 +708,7 @@ useEffect(() => {
     )}
                        {/* MOBILE CART POPUP */}
                                               {showCartToast && (
-                                                <div className="fixed top-50 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+                                                <div className="fixed hidden top-50 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
                                                   <div className="flex items-center justify-between bg-black text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
                                               
                                                     <div className="flex items-center gap-2 text-sm font-medium">
@@ -726,7 +735,7 @@ useEffect(() => {
       </div>
       <section className="pt-[16px] 2xl:pt-[32px]"><Premium></Premium></section>
       <section className="mt-[16px]"><NewsLetter></NewsLetter></section>
-      <MarqueeSection></MarqueeSection>
+      <section className="pt-[16px] 2xl:pt-[32px]"><MarqueeSection></MarqueeSection></section>
     </div>
   );
 };

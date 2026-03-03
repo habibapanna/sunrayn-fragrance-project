@@ -47,8 +47,8 @@ const ForgotPassword = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/40 backdrop-blur-sm">
-       <div className="relative w-[95%] mx-2 bg-[#F6F7F2] rounded-lg px-4 py-6 shadow-xl">
+   <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black/40 backdrop-blur-sm overflow-x-hidden px-4">
+  <div className="relative w-full max-w-md bg-[#F6F7F2] rounded-lg px-4 py-6 shadow-xl">
         {/* Close */}
         <button
           onClick={onClose}
@@ -83,7 +83,7 @@ const ForgotPassword = ({ onClose }) => {
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-transparent outline-none w-full text-sm"
+             className="bg-transparent outline-none w-full text-[16px]"
               />
             </div>
 

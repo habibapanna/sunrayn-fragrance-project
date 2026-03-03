@@ -413,7 +413,7 @@ const Checkout = () => {
           <div className="border-1 mb-[20px] border-[#bfc7cd]"></div>
           <div className="flex gap-2 mb-4">
             <input className="flex-1 bg-[#F6F7F2] rounded-full text-[14px] 2xl:text-[16px] pl-[20px] pr-[16px] py-[8px] 2xl:py-[12px] focus:outline-none" placeholder="Discount code or gift card" />
-            <button className="bg-[#FD4929] text-white py-[5px] 2xl:py-[7px] px-[32px] rounded-full text-[14px] 2xl:text-[16px] cursor-pointer">Apply</button>
+            <button className="bg-[#FD4929] text-white py-[5px] 2xl:py-[7px] px-[16px] 2xl:px-[32px] rounded-full text-[14px] 2xl:text-[16px] cursor-pointer">Apply</button>
           </div>
           <div className="border-1 mb-[20px] border-[#bfc7cd]"></div>
           <div className="space-y-[8px]">

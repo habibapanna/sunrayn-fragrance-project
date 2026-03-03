@@ -10,7 +10,8 @@ import { IoCheckmarkSharp } from "react-icons/io5";
 
 
 const WishList = () => {
- const { cartOpen, setCartOpen, wishlist, setWishlist } = useOutletContext();
+ const { cartOpen, setCartOpen, wishlist, setWishlist, cart, 
+  setCart } = useOutletContext();
   const [selectedProduct, setSelectedProduct] = useState(null);
    const [showCartToast, setShowCartToast] = useState(false);
   const navigate = useNavigate();
@@ -35,13 +36,21 @@ const WishList = () => {
     );
   }
 
-  const handleAddToCart = () => {
-  // add item logic here
+const handleAddToCart = (product) => {
+  setCart((prev) => {
+    const alreadyInCart = prev.find((item) => item.slug === product.slug);
+
+    if (alreadyInCart) {
+      return prev; // prevent duplicate
+    }
+
+    return [...prev, product];
+  });
 
   if (window.innerWidth < 768) {
-    setShowCartToast(true); // mobile → show popup
+    setShowCartToast(true);
   } else {
-    setCartOpen(true); // desktop → open overlay
+    setCartOpen(true);
   }
 };
 
@@ -59,7 +68,7 @@ const WishList = () => {
   </p>
 </div>
     </div>
-    <div className="px-6 py-12 grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-8">
+    <div className="2xl:px-8 px-4 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4  2xl:gap-[32px]">
       
       {wishlistedProducts.map((item) => (
         <div
@@ -199,7 +208,7 @@ const WishList = () => {
     </div>
                 {/* MOBILE CART POPUP */}
     {showCartToast && (
-      <div className="fixed top-20 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+      <div className="fixed hidden top-20 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
         <div className="flex items-center justify-between bg-black text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
     
           <div className="flex items-center gap-2 text-sm font-medium">

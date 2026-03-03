@@ -18,6 +18,7 @@ const Main = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [wishlist, setWishlist] = useState([]);
+  const [cart, setCart] = useState([]);
   
 
   useEffect(() => {
@@ -48,7 +49,7 @@ useEffect(() => {
       {/* Hide top bar on Home */}
       {!isHome && <TopAnnouncementBar />}
 
-      <Navbar  cartOpen={cartOpen} setCartOpen={setCartOpen} wishlist={wishlist} />
+      <Navbar  cartOpen={cartOpen} setCartOpen={setCartOpen} wishlist={wishlist} cart={cart} />
 
       {loading && <RouteLoader />}
 
@@ -57,7 +58,7 @@ useEffect(() => {
           isHome ? "" : "pt-[110px] md:pt-[130px] lg:pt-[147px] 2xl:pt-[130px]"
         }`}
       >
-        <Outlet context={{ setCartOpen, wishlist, setWishlist }} />
+        <Outlet context={{ setCartOpen, wishlist, setWishlist, cart, setCart }} />
       </section>
 {showPopup && (
   <SignupPopup onClose={() => setShowPopup(false)} />
@@ -75,7 +76,8 @@ useEffect(() => {
             onClick={() => setCartOpen(false)}
             className="fixed inset-0 bg-black/10 z-50"
           />
-          <CartOverlay onClose={() => setCartOpen(false)} />
+          <CartOverlay onClose={() => setCartOpen(false)}
+            />
         </>
       )}
     </div>

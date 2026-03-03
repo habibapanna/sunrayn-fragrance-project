@@ -30,7 +30,7 @@ const GiftsCheckout = () => {
       </div>
 
       {/* MAIN GRID */}
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 px-4 2xl:px-6 md:gap-6 pt-4 2xl:pt-6">
+     <div className="max-w-7xl mx-auto grid md:grid-cols-2 px-4 2xl:px-6 md:gap-6 pt-4 2xl:pt-6 pb-32">
 
         {/* LEFT SIDE */}
         <div className="space-y-4 2xl:space-y-6">

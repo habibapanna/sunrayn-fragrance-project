@@ -13,7 +13,7 @@ const ProductDetails = () => {
     const [openSection, setOpenSection] = useState("notes");
     const [selectedVolume, setSelectedVolume] = useState(null);
     const [showCartToast, setShowCartToast] = useState(false);
-     const { cartOpen, setCartOpen } = useOutletContext();
+     const { cartOpen, setCartOpen, cart, setCart } = useOutletContext();
     const navigate = useNavigate();
     const carouselRef = useRef(null);
 const [activeIndex, setActiveIndex] = useState(0);
@@ -130,13 +130,21 @@ const volumeToOz = {
 
 const isMobile = window.innerWidth < 768;
 
-const handleAddToCart = () => {
-  // add item logic here
+const handleAddToCart = (product) => {
+  setCart((prev) => {
+    const alreadyInCart = prev.find((item) => item.slug === product.slug);
+
+    if (alreadyInCart) {
+      return prev; // prevent duplicate
+    }
+
+    return [...prev, product];
+  });
 
   if (window.innerWidth < 768) {
-    setShowCartToast(true); // mobile → show popup
+    setShowCartToast(true);
   } else {
-    setCartOpen(true); // desktop → open overlay
+    setCartOpen(true);
   }
 };
 
@@ -667,7 +675,7 @@ Back
       </div>
                        {/* MOBILE CART POPUP */}
                                               {showCartToast && (
-                                                <div className="fixed top-28 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+                                                <div className="fixed hidden top-28 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
                                                   <div className="flex items-center justify-between bg-black text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
                                               
                                                     <div className="flex items-center gap-2 text-sm font-medium">

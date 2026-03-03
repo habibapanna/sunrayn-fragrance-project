@@ -286,7 +286,7 @@ useEffect(() => {
         {/* BUTTON */}
         <button
           type="submit"
-          className="w-full bg-[#D4A437] border hover:border-[#BA9948] border-transparent transition-all duration-500 hover:bg-white
+          className="w-full bg-[#BA9948] border hover:border-[#BA9948] border-transparent transition-all duration-500 hover:bg-white
                      text-black font-medium py-3 rounded-full mt-2 cursor-pointer"
         >
           Send

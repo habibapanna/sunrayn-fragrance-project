@@ -52,13 +52,24 @@ const [closing, setClosing] = useState(false);
 
       {/* Chat Popup */}
       {open && (
-       <div
-  className={`fixed bottom-20 right-4 md:right-6
-  w-[95%] sm:w-[380px]
-  h-[550px] bg-white rounded-2xl shadow-2xl
-  flex flex-col overflow-hidden z-[999]
-  transform transition-all duration-500
-  ${closing ? "opacity-0 translate-y-10 scale-95" : "opacity-100 translate-y-0 scale-100"}`}
+      <div
+  className={`
+    fixed 
+    top-1/2 left-1/2 
+    -translate-x-1/2 -translate-y-1/2
+    md:top-auto md:left-auto 
+    md:translate-x-0 md:translate-y-0
+    md:bottom-20 md:right-6
+    
+    w-[95%] sm:w-[380px]
+    h-[550px] bg-white rounded-lg shadow-2xl
+    flex flex-col overflow-hidden z-[999]
+    transform transition-all duration-500
+    
+    ${closing 
+      ? "opacity-0 scale-95" 
+      : "opacity-100 scale-100"}
+  `}
 >
 
 <div className="flex items-center justify-between px-4 py-3 border-b border-gray-300 bg-white">

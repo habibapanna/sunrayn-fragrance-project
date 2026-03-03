@@ -145,45 +145,44 @@ const backdropVariants = {
 </svg>
         <h2 className="font-medium text-[14px] lg:text-[16px] 2xl:text-[18px]">Your cart (1)</h2></div> 
       </div>
-              {/* Discount */}
-        <div className="mx-[16px] bg-[#EDE8D0] rounded-[16px] py-[8px] px-[16px] cursor-pointer">
-          <p className="text-[14px] lg:text-[16px] 2xl:text-[20px] text-[#282828] font-medium mb-[8px]">Special discount</p>
-          <div className="grid grid-cols-4 gap-[4px] lg:gap-[8px] text-center">
-  {tiers.map((tier) => (
-    <div
-      key={tier.id}
-      onClick={() => setSelectedTier(tier.id)}
-      className={`cursor-pointer transition-all duration-500 group ${
-        selectedTier === tier.id
-          ? "text-[#A0174A]"
-          : "text-[#282828] border-transparent"
-      }`}
-    >
+          
+     {/* Discount */}
+<div className="mx-[16px] bg-[#EDE8D0] rounded-[16px] py-[6px] px-[16px] cursor-pointer">
+  <p className="text-[13px] lg:text-[14px] 2xl:text-[16px] text-[#282828] font-medium mb-[6px]">
+    Special discount
+  </p>
+
+  <div className="grid grid-cols-4 gap-[3px] lg:gap-[6px] text-center">
+    {tiers.map((tier) => (
       <div
-        className={`w-[73px] lg:w-[96px] h-[8px] rounded-[100px] mb-[10px] lg:mb-[13px] mx-auto
-        ${selectedTier === tier.id ? "bg-[#1D0B01]" : "bg-white group-hover:bg-[#1D0B01] transition-all duration-500"}
-        `}
-      />
-
-      <div className="text-[12px] lg:text-[16px] border-r border-white group-hover:text-[#A0174A] transition-all duration-500">
-        {tier.label}
-        <br />
-        <span className="font-normal text-[14px] lg:text-[18px] group-hover:text-[#A0174A] transition-all duration-500">
-          {tier.off}
-        </span>
-      </div>
-    </div>
-  ))}
-</div>
-
-
-          <div className="border border-white mt-[8px] lg:mt-[16px]"></div>
-
-          <div className="flex items-center gap-2 text-[14px] lg:text-[18px] mt-[8px] lg:mt-[16px] text-[#A0174A] transition-all duration-500">
-
-            <img src={Truck} alt="" className="h-[24px] w-[24px]" /> FREE shipping on 3+ items
-          </div>
+        key={tier.id}
+        onClick={() => setSelectedTier(tier.id)}
+        className={`cursor-pointer transition-all duration-500 group ${
+          selectedTier === tier.id ? "text-[#A0174A]" : "text-[#282828] border-transparent"
+        }`}
+      >
+        <div
+          className={`w-[70px] lg:w-[90px] h-[6px] rounded-[100px] mb-[6px] lg:mb-[10px] mx-auto
+            ${selectedTier === tier.id ? "bg-[#1D0B01]" : "bg-white group-hover:bg-[#1D0B01] transition-all duration-500"}
+          `}
+        />
+        <div className="text-[11px] lg:text-[14px] border-r border-white group-hover:text-[#A0174A] transition-all duration-500">
+          {tier.label}
+          <br />
+          <span className="font-normal text-[12px] lg:text-[16px] group-hover:text-[#A0174A] transition-all duration-500">
+            {tier.off}
+          </span>
         </div>
+      </div>
+    ))}
+  </div>
+
+  <div className="border border-white mt-[6px] lg:mt-[10px]"></div>
+
+  <div className="flex items-center gap-2 text-[12px] lg:text-[14px] mt-[6px] lg:mt-[10px] text-[#A0174A] transition-all duration-500">
+    <img src={Truck} alt="" className="h-[20px] w-[20px]" /> FREE shipping on 3+ items
+  </div>
+</div>
         
 </div>
       {/* SCROLLABLE CONTENT */}
@@ -198,7 +197,7 @@ const backdropVariants = {
       alt="Cerisa Aura"
       className="w-[140px] h-full lg:w-[130px]  object-cover rounded-[8px]"
     />
-    <span className="absolute top-[2px] left-[2px] text-[10px] lg:text-[12px] bg-white px-[8px] py-[2px] rounded-full border border-[#BA9948] text-[#1D0B01]">
+    <span className="absolute top-[2px] left-[2px] text-[10px] lg:text-[12px] bg-white px-[8px] py-[2px] rounded-full border border-[#DBAB35] text-[#1D0B01]">
       Woman
     </span>
   </div>
@@ -287,7 +286,7 @@ const backdropVariants = {
 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               
             <div className="absolute bottom-0 left-0 w-full p-3">
-              <div className="flex gap-[2px] text-[#BA9948] text-[12px]">
+              <div className="flex gap-[2px] text-[#DBAB35] text-[12px]">
                 {[...Array(5)].map((_, i) => (
                   <FaStar key={i} />
                 ))}
@@ -335,13 +334,13 @@ const backdropVariants = {
 </div>
       </div>
 {/* FOOTER */}
-<div className="sticky bottom-0 bg-white p-[16px]">
-  <div className="bg-[#F6F7F2] rounded-[20px] p-[16px]">
-    <div className="flex justify-between mb-[16px]">
-      <span className="text-[16px] font-bold">
-        Subtotal <span className="text-[15px]">(1 items)</span>
+<div className="sticky bottom-0 bg-white p-[12px]">
+  <div className="bg-[#F6F7F2] rounded-[16px] p-[12px]">
+    <div className="flex justify-between mb-[12px]">
+      <span className="text-[14px] lg:text-[15px] font-bold">
+        Subtotal <span className="text-[13px] lg:text-[14px]">(1 items)</span>
       </span>
-      <span className="text-[16px] font-bold">$37.75</span>
+      <span className="text-[14px] lg:text-[15px] font-bold">$37.75</span>
     </div>
 
     <button
@@ -349,27 +348,27 @@ const backdropVariants = {
         onClose();
         navigate("/checkout");
       }}
-      className="w-full py-[10px] rounded-full text-[16px]
-        bg-[#BA9948] hover:bg-white
-        backdrop-blur-md border border-[#BA9948] text-[#1D0B01]
+      className="w-full py-[8px] rounded-full text-[14px] lg:text-[15px]
+        bg-[#DBAB35] hover:bg-white
+        backdrop-blur-md border border-[#DBAB35] text-[#1D0B01]
         transition-all duration-500 cursor-pointer font-semibold"
     >
       Process to Checkout
     </button>
-<button 
-  onClick={() => {
-    onClose();
-    navigate("/gifts-checkout", { state: { isGift: true } });
-  }}
-  className="text-[16px]
-    text-[#A0174A] mx-auto flex items-center justify-center
-    cursor-pointer font-semibold mt-[12px] underline"
->
-  Process to Checkout for Gifts
-</button>
 
+    <button 
+      onClick={() => {
+        onClose();
+        navigate("/gifts-checkout", { state: { isGift: true } });
+      }}
+      className="text-[14px] lg:text-[15px]
+        text-[#A0174A] mx-auto flex items-center justify-center
+        cursor-pointer font-semibold mt-[8px] underline"
+    >
+      Process to Checkout for Gifts
+    </button>
 
-    <p className="text-center text-[#1D0B01] text-[14px] lg:text-[16px] mt-[12px]">
+    <p className="text-center text-[#1D0B01] text-[12px] lg:text-[14px] mt-[8px]">
       Pay with Visa, Mastercard, Apple Pay and more
     </p>
   </div>

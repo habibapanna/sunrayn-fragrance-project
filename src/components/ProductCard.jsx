@@ -12,7 +12,8 @@ const ProductCard = () => {
   const [current, setCurrent] = useState(0);
    const [selectedProduct, setSelectedProduct] = useState(null);
   const [itemsPerView, setItemsPerView] = useState(3);
-   const { cartOpen, setCartOpen, wishlist, setWishlist } = useOutletContext();
+   const { cartOpen, setCartOpen, wishlist, setWishlist, cart, 
+  setCart } = useOutletContext();
         const [showCartToast, setShowCartToast] = useState(false);
         const [touchStart, setTouchStart] = useState(null);
 const [touchEnd, setTouchEnd] = useState(null);
@@ -69,13 +70,21 @@ const toggleWishlist = (id) => {
   const next = () => setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1));
   const prev = () => setCurrent((prev) => (prev <= 0 ? maxIndex : prev - 1));
 
-const handleAddToCart = () => {
-  // add item logic here
+const handleAddToCart = (product) => {
+  setCart((prev) => {
+    const alreadyInCart = prev.find((item) => item.slug === product.slug);
+
+    if (alreadyInCart) {
+      return prev; // prevent duplicate
+    }
+
+    return [...prev, product];
+  });
 
   if (window.innerWidth < 768) {
-    setShowCartToast(true); // mobile → show popup
+    setShowCartToast(true);
   } else {
-    setCartOpen(true); // desktop → open overlay
+    setCartOpen(true);
   }
 };
 
@@ -300,7 +309,7 @@ useEffect(() => {
     )}
   {/* toast */}
       {showCartToast && (
-        <div className="fixed top-30 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+        <div className="fixed hidden top-30 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
           <div className="flex justify-between bg-black text-white px-4 py-3 rounded-[16px]">
             <div className="flex items-center gap-2 text-sm">
               <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center">
