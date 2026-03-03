@@ -546,11 +546,8 @@ useEffect(() => {
   initial={{ opacity: 0, scale: 0.96 }}
   animate={{ opacity: 1, scale: 1 }}
   exit={{ opacity: 0, scale: 0.9 }}
-  transition={{
-    duration: 0.99,
-    ease: [0.22, 1, 0.36, 1], // luxury easing
-  }}
-  onClick={() => navigate(`/productList/${item.slug}`)}
+  whileInView={{}}
+  viewport={{ once: false, amount: 0.6 }} // 60% visible = active
   className="group bg-[#F6F7F2] rounded-[16px]
   overflow-hidden cursor-pointer
   flex flex-row md:flex-col"
@@ -654,16 +651,26 @@ useEffect(() => {
     </div>
     {/* Title + Price Row */}
     <div className="flex justify-between items-center mt-[12px] md:[4px]">
-      <h3 className="group-hover:text-[#A0174A] duration-500 text-[12px] transition-colors md:text-[16px] 2xl:text-[20px] font-semibold uppercase">
-        {item.title}
-      </h3>
+      <motion.h3
+  className="text-[12px] md:text-[16px] 2xl:text-[20px] font-semibold uppercase"
+  whileInView={{ color: "#A0174A" }}
+  viewport={{ once: false, amount: 0.6 }}
+  transition={{ duration: 0.4 }}
+>
+  {item.title}
+</motion.h3>
       <div className="flex gap-[16px]">
         <p className="text-[#A0174A]/50 line-through text-[13px] md:text-[16px] 2xl:text-[20px]">
           ${item.oldPrice}
         </p>
-        <p className="group-hover:text-[#A0174A] font-semibold text-[13px] md:text-[16px] 2xl:text-[20px] transition-colors duration-500">
-          ${item.price}
-        </p>
+      <motion.p
+  className="font-semibold text-[13px] md:text-[16px] 2xl:text-[20px]"
+  whileInView={{ color: "#A0174A" }}
+  viewport={{ once: false, amount: 0.6 }}
+  transition={{ duration: 0.4 }}
+>
+  ${item.price}
+</motion.p>
       </div>
     </div>
 
@@ -673,23 +680,36 @@ useEffect(() => {
     </p>
    </div>
     <div className="flex justify-between">
-      <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Scent Family: <span  className="font-semibold group-hover:text-[#A0174A] transition-colors duration-500">{item.scentFamily}</span></p>
+     <motion.span
+  className="font-semibold"
+  whileInView={{ color: "#A0174A" }}
+  viewport={{ once: false, amount: 0.6 }}
+  transition={{ duration: 0.4 }}
+>
+  {item.scentFamily}
+</motion.span>
       <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Crafted in <span  className="font-semibold group-hover:text-[#A0174A] transition-colors duration-500">BKLYN</span></p>
     </div>
     {/* MOBILE ADD TO CART */}
 <div className="flex justify-end mt-[12px] md:hidden">
-  <button
-    onClick={(e) => {
+<motion.button
+  onClick={(e) => {
     e.stopPropagation(); 
     handleAddToCart(item);
   }}
-    className="px-[24px] py-[10px] text-[12px]
-    rounded-full border border-[#BA9948]
-    text-black hover:bg-[#BA9948] hover:border-none
-   transition w-full cursor-pointer duration-500"
-  >
-    Add to cart
-  </button>
+  whileInView={{
+    backgroundColor: "#A0174A",
+    color: "#ffffff",
+    borderColor: "#A0174A"
+  }}
+  viewport={{ once: false, amount: 0.6 }}
+  transition={{ duration: 0.4 }}
+  className="px-[24px] py-[10px] text-[12px]
+  rounded-full border border-[#BA9948]
+  w-full cursor-pointer duration-500"
+>
+  Add to cart
+</motion.button>
 </div>
 
   </div>
