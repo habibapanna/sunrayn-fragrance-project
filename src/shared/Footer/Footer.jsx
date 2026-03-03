@@ -41,7 +41,7 @@ const Footer = () => {
             <Link to="/" className="2xl:inline-block">
               <img src={SANRAYN} alt="Sanrayn" className="mx-auto " />
             </Link>
-            <div className="flex flex-wrap items-center justify-between gap-[32px] mt-[30px] md:mt-[40px] 2xl:mt-[57px]">
+            <div className="flex flex-wrap items-center justify-between gap-[32px] mt-[32px] md:mt-[40px] 2xl:mt-[57px]">
               {/* SHOP */}
               <div className="text-left">
                 <p className="text-[#A0174A] mb-4 text-[25px]">Our Collections</p>
