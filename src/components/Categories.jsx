@@ -33,7 +33,7 @@ const Categories = ({ sortBy, setSortBy }) => {
         className="
           flex items-center gap-[16px] 2xl:gap-[32px] pb-[16px]
            2xl:py-[32px]
-          justify-start lg:justify-center overflow-x-scroll md:overflow-x-hidden
+          justify-start lg:justify-center overflow-x-scroll md:overflow-x-hidden no-scrollbar
         "
       >
         {items.map((item) => {
