@@ -15,7 +15,6 @@ import QuickView from "../components/QuickView";
 import { Eye } from "lucide-react";
 
 
-
 const ProductList = () => {
   const navigate = useNavigate();
    const [selectedProduct, setSelectedProduct] = useState(null);
@@ -31,7 +30,7 @@ const ProductList = () => {
   "Connection",
   "Perfume Volume",
 ]);
-// mobile
+// mobile effect
 const [activeCard, setActiveCard] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const { cartOpen, setCartOpen, wishlist, setWishlist, cart, setCart } = useOutletContext();
@@ -209,6 +208,34 @@ const handleAddToCart = (product) => {
     setCartOpen(true);
   }
 };
+
+// mobile effect
+useEffect(() => {
+  const handleScroll = () => {
+    const cards = document.querySelectorAll(".product-card");
+    let closest = null;
+    let closestDistance = Infinity;
+
+    cards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.top + rect.height / 2;
+      const screenCenter = window.innerHeight / 2;
+      const distance = Math.abs(screenCenter - cardCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closest = card.getAttribute("data-slug");
+      }
+    });
+
+    setActiveCard(closest);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
 useEffect(() => {
   if (!showCartToast) return;
@@ -543,19 +570,8 @@ useEffect(() => {
 
 <motion.div
   key={item.slug}
-  layout
-  initial={{ opacity: 0, scale: 0.96 }}
-  animate={{ opacity: 1, scale: 1 }}
-  exit={{ opacity: 0, scale: 0.9 }}
-  transition={{
-    duration: 0.99,
-    ease: [0.22, 1, 0.36, 1],
-  }}
-  onViewportEnter={() => setActiveCard(item.slug)}
-  onViewportLeave={() => setActiveCard(null)}
-  viewport={{ amount: 0.6 }}
-  onClick={() => navigate(`/productList/${item.slug}`)}
-  className="group bg-[#F6F7F2] rounded-[16px]
+  data-slug={item.slug}
+  className="product-card group bg-[#F6F7F2] rounded-[16px]
   overflow-hidden cursor-pointer
   flex flex-row md:flex-col"
 >
@@ -658,7 +674,7 @@ useEffect(() => {
     </div>
     {/* Title + Price Row */}
     <div className="flex justify-between items-center mt-[12px] md:[4px]">
-     <h3
+    <h3
   className={`
     duration-500 text-[12px] transition-colors
     md:text-[16px] 2xl:text-[20px] font-semibold uppercase
@@ -709,7 +725,7 @@ useEffect(() => {
     e.stopPropagation(); 
     handleAddToCart(item);
   }}
-   className={`
+    className={`
   px-[24px] py-[10px] text-[12px]
   rounded-full border border-[#BA9948]
   w-full cursor-pointer duration-500 transition-all

@@ -15,6 +15,8 @@ import { Eye } from "lucide-react";
 const HolidayOffer = () => {
 const navigate = useNavigate();
  const [selectedProduct, setSelectedProduct] = useState(null);
+ // mobile effect
+const [activeCard, setActiveCard] = useState(null);
 const { cartOpen, setCartOpen, wishlist, setWishlist, cart, 
   setCart } = useOutletContext();
       const [showCartToast, setShowCartToast] = useState(false);
@@ -216,6 +218,32 @@ useEffect(() => {
   return () => clearTimeout(t);
 }, [showCartToast]);
 
+useEffect(() => {
+  const handleScroll = () => {
+    const cards = document.querySelectorAll(".product-card");
+    let closest = null;
+    let closestDistance = Infinity;
+
+    cards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const cardCenter = rect.top + rect.height / 2;
+      const screenCenter = window.innerHeight / 2;
+      const distance = Math.abs(screenCenter - cardCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closest = card.getAttribute("data-slug");
+      }
+    });
+
+    setActiveCard(closest);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
 const toggleWishlist = (id) => {
   setWishlist((prev) =>
@@ -529,16 +557,8 @@ const toggleWishlist = (id) => {
 
 <motion.div
   key={item.slug}
-  layout
-  initial={{ opacity: 0, scale: 0.96 }}
-  animate={{ opacity: 1, scale: 1 }}
-  exit={{ opacity: 0, scale: 0.9 }}
-  transition={{
-    duration: 0.99,
-    ease: [0.22, 1, 0.36, 1], // luxury easing
-  }}
-  onClick={() => navigate(`/productList/${item.slug}`)}
-  className="group bg-[#F6F7F2] rounded-[16px]
+  data-slug={item.slug}
+  className="product-card group bg-[#F6F7F2] rounded-[16px]
   overflow-hidden cursor-pointer
   flex flex-row md:flex-col"
 >
@@ -641,16 +661,30 @@ const toggleWishlist = (id) => {
     </div>
     {/* Title + Price Row */}
     <div className="flex justify-between items-center mt-[12px] md:[4px]">
-      <h3 className="group-hover:text-[#A0174A] duration-500 text-[12px] transition-colors md:text-[16px] 2xl:text-[20px] font-semibold uppercase">
-        {item.title}
-      </h3>
+    <h3
+  className={`
+    duration-500 text-[12px] transition-colors
+    md:text-[16px] 2xl:text-[20px] font-semibold uppercase
+    group-hover:text-[#A0174A]
+    ${activeCard === item.slug ? "text-[#A0174A] md:text-inherit" : ""}
+  `}
+>
+  {item.title}
+</h3>
       <div className="flex gap-[16px]">
         <p className="text-[#A0174A]/50 line-through text-[13px] md:text-[16px] 2xl:text-[20px]">
           ${item.oldPrice}
         </p>
-        <p className="group-hover:text-[#A0174A] font-semibold text-[13px] md:text-[16px] 2xl:text-[20px] transition-colors duration-500">
-          ${item.price}
-        </p>
+       <p
+  className={`
+    font-semibold text-[13px] md:text-[16px] 2xl:text-[20px]
+    transition-colors duration-500
+    group-hover:text-[#A0174A]
+    ${activeCard === item.slug ? "text-[#A0174A] md:text-inherit" : ""}
+  `}
+>
+  ${item.price}
+</p>
       </div>
     </div>
 
@@ -660,7 +694,15 @@ const toggleWishlist = (id) => {
     </p>
    </div>
     <div className="flex justify-between">
-      <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Scent Family: <span  className="font-semibold group-hover:text-[#A0174A] transition-colors duration-500">{item.scentFamily}</span></p>
+      <span
+  className={`
+    font-semibold transition-colors duration-500
+    group-hover:text-[#A0174A]
+    ${activeCard === item.slug ? "text-[#A0174A] md:text-inherit" : ""}
+  `}
+>
+  {item.scentFamily}
+</span>
       <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Crafted in <span  className="font-semibold group-hover:text-[#A0174A] transition-colors duration-500">BKLYN</span></p>
     </div>
     {/* MOBILE ADD TO CART */}
@@ -670,10 +712,14 @@ const toggleWishlist = (id) => {
     e.stopPropagation(); 
     handleAddToCart(item);
   }}
-    className="px-[24px] py-[10px] text-[12px]
-    rounded-full border border-[#BA9948]
-    text-black hover:bg-[#BA9948] hover:border-none
-   transition w-full cursor-pointer duration-500"
+    className={`
+  px-[24px] py-[10px] text-[12px]
+  rounded-full border border-[#BA9948]
+  w-full cursor-pointer duration-500 transition-all
+  ${activeCard === item.slug 
+    ? "bg-[#A0174A] text-white border-[#A0174A]" 
+    : "text-black"}
+`}
   >
     Add to cart
   </button>
