@@ -79,7 +79,7 @@ const handleAddToCart = (product) => {
    {/* card */}
                <div
                 className="group relative rounded-[16px]
-    h-[384px] lg:h-[700px]
+    h-[384px] lg:h-[500px]
     cursor-pointer overflow-hidden"
                 onClick={() => navigate(`/productList/${item.slug}`)}
               >
@@ -133,7 +133,7 @@ const handleAddToCart = (product) => {
 
 </div>
  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 w-full z-20 p-[20px] lg:p-[40px]">
+                <div className="absolute bottom-0 left-0 w-full z-20 p-[16px]">
                   <div className="flex items-center gap-[2px] 2xl:gap-[8px] text-[#BA9948]">
                     {[...Array(5)].map((_, i) => (
                       <FaStar key={i} className="h-[12px] lg:h-[15px]" />
@@ -143,7 +143,7 @@ const handleAddToCart = (product) => {
                     </span>
                   </div>
 
-                  <h3 className="text-[20px] md:text-[35px] font-normal text-[#FFF]">
+                  <h3 className="text-[20px] md:text-[30px] font-normal text-[#FFF]">
                     {item.title}
                   </h3>
 
@@ -179,9 +179,9 @@ const handleAddToCart = (product) => {
                           ${item.oldPrice}
                         </button>
                       </div>
-                       <div className="relative 2xl:w-[105px] 2xl:h-[45px] text-[22px] h-[33px] w-[68px]"
+                       <div className="relative 2xl:w-[90px] 2xl:h-[40px] text-[20px] h-[33px] w-[65px]"
                       >
-                        <div className="absolute -top-[8px] 2xl:-top-[12px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[10px] text-white 2xl:text-[14px] z-10 2xl:h-[22px] h-[14px] w-[42px] 2xl:w-[58px] flex items-center justify-center font-medium ">
+                        <div className="absolute -top-[8px] 2xl:-top-[12px] left-1/2 -translate-x-1/2 bg-[#1D0B01] text-[9px] text-white 2xl:text-[12px] z-10 2xl:h-[20px] h-[14px] w-[42px] 2xl:w-[50px] flex items-center justify-center font-medium ">
                           -{Math.round(((item.oldPrice - item.price) / item.oldPrice) * 100)}% Off
                         </div>
 
