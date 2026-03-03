@@ -15,10 +15,10 @@ const Footer = () => {
 
 
       {/* ================= MAIN CONTENT ================= */}
-      <div className="relative z-10 mx-auto lg:px-6  2xl:pl-[80px] p-[16px]  md:py-10 2xl:py-[150px]">
+      <div className="relative z-10 mx-auto lg:px-6  2xl:pl-[80px] p-[16px] py-  md:py-10 2xl:py-[150px]">
 
         {/* MOBILE BIG S */}
-      <div className="2xl:hidden relative flex justify-center items-center mt-8 md:mt-5">
+      <div className="2xl:hidden hidden relative md:flex justify-center items-center md:mt-5">
 
   <img
     src={Logo}
@@ -37,7 +37,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start gap-[32px]">
 
           {/* LEFT CONTENT */}
-          <div className="w-full 2xl:max-w-2xl text-left mt-[30px] md:mt-[40px] 2xl:mt-0">
+          <div className="w-full 2xl:max-w-2xl text-left md:mt-[40px] 2xl:mt-0">
             <Link to="/" className="2xl:inline-block">
               <img src={SANRAYN} alt="Sanrayn" className="mx-auto " />
             </Link>
