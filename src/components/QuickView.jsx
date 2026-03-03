@@ -162,71 +162,55 @@ const BigBottleIcon = () => (
             
                       <p className="mt-4 text-[14px] lg:text-[16px] 2xl:text-[20px] text-[#282828]">{product.description}</p>
             
-             {/* Volume */}
-            <div className="mt-[20px] 2xl:mt-[32px]">
-              <p className="text-[16px] 2xl:text-[18px] mb-2">Volume</p>
-            
-              <div className="flex gap-[8px]">
-               {product.volume.map((v) => {
-              const isSelected = selectedVolume === v;
-              const is15ml = v === "15ML";
-              const isBestValue = v === "30ML";
-            
-              return (
-            <button
-              type="button"
-              key={v}
-              onClick={() => setSelectedVolume(v)}
-              className={`relative
-                flex items-center justify-center gap-[4px] 2xl:gap-[8px]
-                px-[10px] py-[8px] 2xl:px-[14px] 2xl:py-[10px]
-                rounded-full border transition cursor-pointer
-                ${
-                  isSelected
-                    ? "border-[#282828] bg-white"
-                    : "border-[#282828]/35 hover:border-[#282828]"
-                }
-              `}
-            >
-            
-                  {/* Best Value Badge */}
-                  {isBestValue && (
-                    <span className="absolute -top-[8px] right-[6px] text-[10px] lg:text-[12px] 
-                      bg-[#A0174A] text-white px-[6px] py-[2px] rounded-full">
-                      Best Value
-                    </span>
-                  )}
-            
-                  {/* Circle */}
-                  <span
-                    className={`
-                      h-[16px] w-[16px] 2xl:h-[20px] 2xl:w-[20px]
-                      rounded-full border
-                      ${
-                        isSelected
-                          ? "border-[4px] border-[#282828]"
-                          : "border-[#282828]/35"
-                      }
-                    `}
-                  />
-            
-                  {/* Icon */}
-                  {is15ml ? <SmallBottleIcon /> : <BigBottleIcon />}
-            
-                  {/* Text */}
-                  <span
-                    className={`
-                      text-[14px] 2xl:text-[20px] font-medium
-                      ${isSelected ? "text-[#282828]" : "text-[#282828]/35"}
-                    `}
-                  >
-                    {v}
-                  </span>
-                </button>
-              );
-            })}
-              </div>
-            </div>
+             {/* Volume Selector */}
+<div className="mt-[20px] 2xl:mt-[32px]">
+  <p className="text-[16px] 2xl:text-[18px] mb-2">Volume</p>
+
+  <div className="flex gap-[8px]">
+    {["15ML", "30ML", "60ML"].map((v) => {
+      const isSelected = selectedVolume === v;
+      const isBestValue = v === "30ML";
+      const isSmall = v === "15ML";
+
+      return (
+        <button
+          key={v}
+          type="button"
+          onClick={() => setSelectedVolume(v)}
+          className={`relative flex items-center justify-center gap-[4px] 2xl:gap-[8px]
+            px-[10px] py-[8px] 2xl:px-[14px] 2xl:py-[10px]
+            rounded-full border transition cursor-pointer
+            ${isSelected ? "border-[#282828] bg-white" : "border-[#282828]/35 hover:border-[#282828]"}`}
+        >
+          {/* Best Value Badge */}
+          {isBestValue && (
+            <span className="absolute -top-[8px] right-[6px] text-[10px] lg:text-[12px] 
+              bg-[#A0174A] text-white px-[6px] py-[2px] rounded-full z-10">
+              Best Value
+            </span>
+          )}
+
+          {/* Selection Circle */}
+          <span
+            className={`h-[16px] w-[16px] 2xl:h-[20px] 2xl:w-[20px] rounded-full border
+              ${isSelected ? "border-[4px] border-[#282828]" : "border-[#282828]/35"}`}
+          />
+
+          {/* Bottle Icon */}
+          {isSmall ? <SmallBottleIcon /> : <BigBottleIcon />}
+
+          {/* Volume Text */}
+          <span
+            className={`text-[14px] 2xl:text-[20px] font-medium
+              ${isSelected ? "text-[#282828]" : "text-[#282828]/35"}`}
+          >
+            {v}
+          </span>
+        </button>
+      );
+    })}
+  </div>
+</div>
             
             <div className="mt-[16px] lg:mt-[20px] flex  text-center lg:text-left gap-[16px]">
             <div
