@@ -15,6 +15,7 @@ import QuickView from "../components/QuickView";
 import { Eye } from "lucide-react";
 
 
+
 const ProductList = () => {
   const navigate = useNavigate();
    const [selectedProduct, setSelectedProduct] = useState(null);
@@ -30,6 +31,8 @@ const ProductList = () => {
   "Connection",
   "Perfume Volume",
 ]);
+// mobile
+const [activeCard, setActiveCard] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const { cartOpen, setCartOpen, wishlist, setWishlist, cart, setCart } = useOutletContext();
       const [showCartToast, setShowCartToast] = useState(false);
@@ -237,7 +240,6 @@ useEffect(() => {
   };
 }, [sidebarOpen]);
 
-
   return (
     <div className="px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
 
@@ -253,7 +255,6 @@ useEffect(() => {
   resultCount={resultCount}
 />
       <div className="relative flex gap-[16px] 2xl:gap-[32px]">
-
         {/* -------------------- SIDEBAR -------------------- */}
  <AnimatePresence>
 {sidebarOpen && (
@@ -546,8 +547,14 @@ useEffect(() => {
   initial={{ opacity: 0, scale: 0.96 }}
   animate={{ opacity: 1, scale: 1 }}
   exit={{ opacity: 0, scale: 0.9 }}
-  whileInView={{}}
-  viewport={{ once: false, amount: 0.6 }} // 60% visible = active
+  transition={{
+    duration: 0.99,
+    ease: [0.22, 1, 0.36, 1],
+  }}
+  onViewportEnter={() => setActiveCard(item.slug)}
+  onViewportLeave={() => setActiveCard(null)}
+  viewport={{ amount: 0.6 }}
+  onClick={() => navigate(`/productList/${item.slug}`)}
   className="group bg-[#F6F7F2] rounded-[16px]
   overflow-hidden cursor-pointer
   flex flex-row md:flex-col"
@@ -651,26 +658,30 @@ useEffect(() => {
     </div>
     {/* Title + Price Row */}
     <div className="flex justify-between items-center mt-[12px] md:[4px]">
-      <motion.h3
-  className="text-[12px] md:text-[16px] 2xl:text-[20px] font-semibold uppercase"
-  whileInView={{ color: "#A0174A" }}
-  viewport={{ once: false, amount: 0.6 }}
-  transition={{ duration: 0.4 }}
+     <h3
+  className={`
+    duration-500 text-[12px] transition-colors
+    md:text-[16px] 2xl:text-[20px] font-semibold uppercase
+    group-hover:text-[#A0174A]
+    ${activeCard === item.slug ? "text-[#A0174A] md:text-inherit" : ""}
+  `}
 >
   {item.title}
-</motion.h3>
+</h3>
       <div className="flex gap-[16px]">
         <p className="text-[#A0174A]/50 line-through text-[13px] md:text-[16px] 2xl:text-[20px]">
           ${item.oldPrice}
         </p>
-      <motion.p
-  className="font-semibold text-[13px] md:text-[16px] 2xl:text-[20px]"
-  whileInView={{ color: "#A0174A" }}
-  viewport={{ once: false, amount: 0.6 }}
-  transition={{ duration: 0.4 }}
+       <p
+  className={`
+    font-semibold text-[13px] md:text-[16px] 2xl:text-[20px]
+    transition-colors duration-500
+    group-hover:text-[#A0174A]
+    ${activeCard === item.slug ? "text-[#A0174A] md:text-inherit" : ""}
+  `}
 >
   ${item.price}
-</motion.p>
+</p>
       </div>
     </div>
 
@@ -680,36 +691,35 @@ useEffect(() => {
     </p>
    </div>
     <div className="flex justify-between">
-     <motion.span
-  className="font-semibold"
-  whileInView={{ color: "#A0174A" }}
-  viewport={{ once: false, amount: 0.6 }}
-  transition={{ duration: 0.4 }}
+      <span
+  className={`
+    font-semibold transition-colors duration-500
+    group-hover:text-[#A0174A]
+    ${activeCard === item.slug ? "text-[#A0174A] md:text-inherit" : ""}
+  `}
 >
   {item.scentFamily}
-</motion.span>
+</span>
       <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Crafted in <span  className="font-semibold group-hover:text-[#A0174A] transition-colors duration-500">BKLYN</span></p>
     </div>
     {/* MOBILE ADD TO CART */}
 <div className="flex justify-end mt-[12px] md:hidden">
-<motion.button
-  onClick={(e) => {
+  <button
+    onClick={(e) => {
     e.stopPropagation(); 
     handleAddToCart(item);
   }}
-  whileInView={{
-    backgroundColor: "#A0174A",
-    color: "#ffffff",
-    borderColor: "#A0174A"
-  }}
-  viewport={{ once: false, amount: 0.6 }}
-  transition={{ duration: 0.4 }}
-  className="px-[24px] py-[10px] text-[12px]
+   className={`
+  px-[24px] py-[10px] text-[12px]
   rounded-full border border-[#BA9948]
-  w-full cursor-pointer duration-500"
->
-  Add to cart
-</motion.button>
+  w-full cursor-pointer duration-500 transition-all
+  ${activeCard === item.slug 
+    ? "bg-[#A0174A] text-white border-[#A0174A]" 
+    : "text-black"}
+`}
+  >
+    Add to cart
+  </button>
 </div>
 
   </div>
