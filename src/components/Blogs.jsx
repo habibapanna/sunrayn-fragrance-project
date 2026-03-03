@@ -88,7 +88,7 @@ const Blogs = () => {
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-              <div className="absolute left-[16px] bottom-[16px] right-[16px] 2xl:bottom-[32px] 2xl:left-[32px] 2xl:right-[32px] text-white text-[25px] md:text-[30px] 2xl:text-[35px] font-medium leading-snug">
+              <div className="absolute left-[16px] bottom-[16px] right-[16px] 2xl:bottom-[32px] 2xl:left-[32px] 2xl:right-[32px] text-white text-[22px] md:text-[28px] 2xl:text-[35px] font-medium leading-snug">
                 {item.title}
               </div>
             </div>
