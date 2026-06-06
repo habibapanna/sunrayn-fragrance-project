@@ -19,7 +19,6 @@ body {
 }
 
 
-
 /* DaisyUI range custom color */
 input[type="range"].custom-range::-webkit-slider-thumb {
   background-color: #DBAB35;

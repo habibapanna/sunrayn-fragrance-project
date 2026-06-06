@@ -312,7 +312,6 @@ const MenuOverlay = ({ open, onClose, onOpenSignIn }) => {
 </div>
 
         
-
             {/* Spring Offers BUTTON */}
             <Link to="/holidayOffer">
               <button

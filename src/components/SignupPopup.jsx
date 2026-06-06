@@ -28,7 +28,7 @@ const SignupPopup = ({ onClose }) => {
     >
       {/* Modal */}
       <div
-        className={`relative w-full max-w-[950px] rounded-[16px] overflow-hidden bg-white shadow-2xl grid md:grid-cols-2
+        className={`relative w-full max-w-[950px] rounded-lg overflow-hidden bg-white shadow-2xl grid md:grid-cols-2
         transform transition-all duration-500
         ${show ? "scale-100 translate-y-0 opacity-100" : "scale-95 translate-y-6 opacity-0"}`}
       >

@@ -51,8 +51,6 @@ useEffect(() => {
     setOpen(false);
   };
 
-
-
   return (
     <div className="px-[16px] 2xl:px-[32px] py-[16px] 2xl:py-[32px]"
     >
@@ -301,7 +299,6 @@ useEffect(() => {
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4">
 
     <div className="relative w-full max-w-xl bg-[#F6F7F2] rounded-lg p-6 sm:p-8 shadow-xl">
-
       {/* CLOSE */}
       <button
         onClick={() => setQaOpen(false)}

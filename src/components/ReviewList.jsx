@@ -141,7 +141,6 @@ const sortedReviews = [...reviewsData].sort((a, b) => {
   }
 });
 
-
 const reviewsPerPage = 3;
 
 const totalPages = Math.ceil(reviewsData.length / reviewsPerPage);
@@ -191,8 +190,6 @@ const currentReviews = sortedReviews.slice(
   startIndex,
   startIndex + reviewsPerPage
 );
-
-
 
   return (
     <div className="mt-10">
@@ -251,7 +248,6 @@ const currentReviews = sortedReviews.slice(
     </div>
   )}
 </div>
-
 
 {/* Reviews */}
 <div ref={reviewsRef} className="space-y-8 min-h-[600px]">
@@ -381,7 +377,6 @@ const currentReviews = sortedReviews.slice(
   </button>
 
 </div>
-
 
     </div>
   );

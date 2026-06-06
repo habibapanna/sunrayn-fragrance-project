@@ -176,7 +176,6 @@ const mobileSidebarVariants = {
     },
   },
 };
-
 const overlayVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -190,6 +189,7 @@ const overlayVariants = {
 };
 
 const isMobile = window.innerWidth < 768;
+
 
 const handleAddToCart = (product) => {
   setCart((prev) => {
@@ -236,7 +236,7 @@ useEffect(() => {
 
   return () => window.removeEventListener("scroll", handleScroll);
 }, []);
-
+// toaster
 useEffect(() => {
   if (!showCartToast) return;
   const t = setTimeout(() => setShowCartToast(false), 4000);
@@ -252,7 +252,7 @@ const toggleWishlist = (id) => {
       : [...prev, id]
   );
 };
-
+// overflow off
 useEffect(() => {
   const isMobile = window.innerWidth < 768; // md breakpoint
 
@@ -708,7 +708,9 @@ useEffect(() => {
     </p>
    </div>
     <div className="flex justify-between">
-      <span
+<div className="flex items-center">
+  Scent Family: 
+        <span
   className={`
     font-semibold transition-colors duration-500
     group-hover:text-[#A0174A]
@@ -717,6 +719,7 @@ useEffect(() => {
 >
   {item.scentFamily}
 </span>
+</div>
       <p className="text-[12px] md:text-[15px] 2xl:text-[18px] mt-[12px] md:[4px] text-[#0D0C09]">Crafted in <span  className="font-semibold group-hover:text-[#A0174A] transition-colors duration-500">BKLYN</span></p>
     </div>
     {/* MOBILE ADD TO CART */}

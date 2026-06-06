@@ -5,8 +5,6 @@ import Heart from '../assets/Heart.svg';
 import Family from '../assets/Frame (5).svg';
 import Sort from '../assets/Vector.svg';
 import { HiOutlineAdjustmentsHorizontal } from "react-icons/hi2";
-import { span } from "framer-motion/client";
-import { FaCheck } from "react-icons/fa";
 import { IoCheckmarkOutline } from "react-icons/io5";
 
 const scentOptions = [
