@@ -129,7 +129,7 @@ const Footer2 = () => {
           {/* Policy */}
           <div>
             <h3 className="text-[#A0174A] font-bold text-[20px] md:text-[28px] mb-4 md:mb-6">
-              Policy
+             Our Commitments
             </h3>
 
             <ul className="space-y-2 md:space-y-4 text-[14px] md:text-[18px]">
