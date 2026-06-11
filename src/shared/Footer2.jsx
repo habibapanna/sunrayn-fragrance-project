@@ -153,7 +153,7 @@ const Footer2 = () => {
  {/* Newsletter */}
 <div className="mt-">
 
-  <p className="text-[14px] md:text-[15px] text-black mb-4 md:mb-5 leading-relaxed ">
+  <p className="text-[14px] md:text-[18px] text-black mb-4 md:mb-5 leading-relaxed ">
     Stay connected with SANRAYN and receive exclusive updates, new fragrance launches, and special offers.
   </p>
 
