@@ -9,6 +9,7 @@ import Navbar from "../../shared/Navbar/Navbar";
 import CartOverlay from "../CartOverlay";
 import SignupPopup from "../SignupPopup";
 import LivePurchasePopup from "../LivePurchasePopup";
+import Footer2 from "../../shared/Footer2";
 
 const Main = () => {
   const location = useLocation();
@@ -64,7 +65,7 @@ useEffect(() => {
   <SignupPopup onClose={() => setShowPopup(false)} />
 )}
 
-      <Footer />
+      <Footer2></Footer2>
       <ChatWidget />
       <ScrollToTopButton />
       <LivePurchasePopup />
