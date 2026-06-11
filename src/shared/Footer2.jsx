@@ -23,13 +23,13 @@ const Footer2 = () => {
   return (
     <footer>
       {/* Main Footer */}
-      <div className="max-w-full bg-gradient-to-t from-[#FDFCFC] to-[#F0ECE5] py-16 px-[16px] lg:px-[32px]">
+      <div className="max-w-full bg-gradient-to-t from-[#FDFCFC] to-[#F0ECE5] py-10 md:py-16 px-[16px] lg:px-[32px]">
         <div className="relative md:hidden mb-10">
   {/* SANRAYN Logo */}
   <img
     src={Logo}
     alt="SANRAYN"
-    className="h-16 relative z-10 mx-auto"
+    className="h-14 relative z-10"
   />
 
   {/* Decorative Logos */}
@@ -58,7 +58,7 @@ const Footer2 = () => {
 
   </div>
 </div>
-        <div className="mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-10">
 <div className="relative hidden md:block">
   {/* SANRAYN Logo */}
   <img
@@ -96,11 +96,11 @@ const Footer2 = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-[#A0174A] font-bold text-[20px] md:text-[28px] mb-6">
+            <h3 className="text-[#A0174A] font-bold text-[20px] md:text-[28px] mb-4 md:mb-6">
               Quick Links
             </h3>
 
-            <ul className="space-y-4 text-[14px] md:text-[18px]">
+            <ul className="space-y-2 md:space-y-4 text-[14px] md:text-[18px]">
               <li><a href="#">Home</a></li>
               <li><a href="#">Products</a></li>
               <li><a href="#">FAQ</a></li>
@@ -112,11 +112,11 @@ const Footer2 = () => {
           
           {/* Categories */}
           <div>
-            <h3 className="text-[#A0174A] font-bold text-[20px] md:text-[28px] mb-6">
+            <h3 className="text-[#A0174A] font-bold text-[20px] md:text-[28px] mb-4 md:mb-6">
               Top Categories
             </h3>
 
-            <ul className="space-y-4 text-[14px] md:text-[18px]">
+            <ul className="space-y-2 md:space-y-4 text-[14px] md:text-[18px]">
               <li><a href="#">Holiday Sale</a></li>
               <li><a href="#">New Arrivals</a></li>
               <li><a href="#">Sanrayn Specials</a></li>
@@ -126,13 +126,13 @@ const Footer2 = () => {
             </ul>
           </div>
 
-          {/* Store Policy */}
+          {/* Policy */}
           <div>
-            <h3 className="text-[#A0174A] font-bold text-[20px] md:text-[28px] mb-6">
-              Store Policy
+            <h3 className="text-[#A0174A] font-bold text-[20px] md:text-[28px] mb-4 md:mb-6">
+              Policy
             </h3>
 
-            <ul className="space-y-4 text-[14px] md:text-[18px]">
+            <ul className="space-y-2 md:space-y-4 text-[14px] md:text-[18px]">
               <li><a href="#">Privacy Policy</a></li>
               <li><a href="#">Shipping Policy</a></li>
               <li><a href="#">Return Policy</a></li>
@@ -144,7 +144,7 @@ const Footer2 = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-[#A0174A] font-bold text-[20px] md:text-[28px] mb-6">
+            <h3 className="text-[#A0174A] font-bold text-[20px] md:text-[28px] mb-4 md:mb-6">
            Stay Connected
             </h3>
 
@@ -153,8 +153,8 @@ const Footer2 = () => {
  {/* Newsletter */}
 <div className="mt-">
 
-  <p className="text-[14px] md:text-[15px] text-black mb-5 leading-relaxed ">
-    Stay connected with SANRAYN and receive exclusive updates, new fragrance launches, and special offers directly in your inbox.
+  <p className="text-[14px] md:text-[15px] text-black mb-4 md:mb-5 leading-relaxed ">
+    Stay connected with SANRAYN and receive exclusive updates, new fragrance launches, and special offers.
   </p>
 
   {/* Email Input */}
@@ -210,7 +210,7 @@ const Footer2 = () => {
       {/* Bottom Bar */}
       <div className="bg- py-6 px-6 border-t border-[#C77F6033]">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
-          <p className="text-black text-center lg:text-left text-[16px]">
+          <p className="text-black text-center lg:text-left text-[16px] order-4 md:order-none">
          ©2026 Sanrayn all right reserved
           </p>
 <div>
