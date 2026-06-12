@@ -26,9 +26,9 @@ const MarqueeSection = () => {
           return (
             <button
               key={index}
-              className="relative h-[45px] md:h-[55px] rounded-full overflow-hidden 
+              className="relative h-[40px] md:h-[55px] rounded-full overflow-hidden 
                          flex items-center justify-center
-                         mx-2 md:mx-4 px-8 whitespace-nowrap
+                         mx-2 px-4 md:mx-4 md:px-8 whitespace-nowrap
                          text-white font-medium
                          transition duration-500 hover:scale-[1.05]"
               style={{

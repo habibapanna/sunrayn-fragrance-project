@@ -24,22 +24,22 @@ const Footer2 = () => {
     <footer>
       {/* Main Footer */}
       <div className="max-w-full bg-gradient-to-t from-[#FDFCFC] to-[#F0ECE5] py-10 md:py-16 px-[16px] lg:px-[32px]">
-        <div className="relative mb-6 md:hidden md:mb-10 ">
+        <div className="relative mb-6 md:hidden md:mb-10">
   {/* SANRAYN Logo */}
   <img
     src={Logo}
     alt="SANRAYN"
-    className="h-10 relative z-10 mx-auto"
+    className="h-10 relative z-10"
   />
      {/* Newsletter */}
-<div className=" md:hidden block mt-6">
+<div className=" md:hidden mx-auto block mt-6">
 
-  <p className="text-[18px] text-[#A0174A] mb-4 md:mb-5 leading-relaxed font-bold text-center">
+  <p className="text-[18px] text-[#A0174A] mb-4 md:mb-5 leading-relaxed font-bold">
     Stay connected with SANRAYN
   </p>
 
   {/* Email Input */}
-  <div className="relative w-full max-w-[320px] mx-auto">
+  <div className="relative w-full max-w-[320px]">
     <input
       type="email"
       placeholder="Enter your email address"
