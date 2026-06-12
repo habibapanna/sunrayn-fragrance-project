@@ -12,13 +12,16 @@ import Logo from "../assets/SANRAYN (2).svg";
 import Visa from "../assets/Visa logo.svg";
 import Paypal from "../assets/XMLID_1_.svg";
 import MasterCard from "../assets/MasterCard logo.svg";
-import { SlSocialFacebook } from "react-icons/sl";
+import { SlLocationPin, SlSocialFacebook } from "react-icons/sl";
 import { IoLogoInstagram } from "react-icons/io5";
 import { PiTiktokLogo } from "react-icons/pi";
 import Logo1 from "../assets/Logo (1).svg";
 import { HiArrowRight } from "react-icons/hi";
 import Logo2 from "../assets/Footer Logo (1).svg";
 import { IoIosStopwatch } from "react-icons/io";
+import { FiClock, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
+import { GrLocation } from "react-icons/gr";
+import { LuMapPin } from "react-icons/lu";
 
 const Footer2 = () => {
   return (
@@ -207,7 +210,7 @@ const Footer2 = () => {
 
   {/* Address */}
   <div className="flex items-start gap-3">
-    <FaMapMarkerAlt className="text-[#A0174A] mt-1 flex-shrink-0" />
+    <FiMapPin className="text-[#A0174A] mt-1 flex-shrink-0" />
     <p className="leading-relaxed">
       1469 NOSTRAND AVE BROOKLYN NY
       11226
@@ -216,7 +219,7 @@ const Footer2 = () => {
 
   {/* Email */}
   <div className="flex items-center gap-3">
-    <MdEmail className="text-[#A0174A] flex-shrink-0" />
+    <FiMail className="text-[#A0174A] flex-shrink-0" />
     <a
       href="mailto:Info@aromafragrance.us"
       className="hover:text-[#A0174A] transition-colors duration-300"
@@ -227,7 +230,7 @@ const Footer2 = () => {
 
   {/* Phone */}
   <div className="flex items-center gap-3">
-    <FaPhoneAlt className="text-[#A0174A] flex-shrink-0" />
+    <FiPhone className="text-[#A0174A] flex-shrink-0" />
     <a
       href="tel:+13473836682"
       className="hover:text-[#A0174A] transition-colors duration-300"
@@ -235,16 +238,11 @@ const Footer2 = () => {
       +1 (347)383-6682
     </a>
   </div>
-  {/* Phone */}
-  <div className="flex items-center gap-3">
-    <IoIosStopwatch className="text-[#A0174A] flex-shrink-0" />
-    <a
-      href="tel:+13473836682"
-      className="hover:text-[#A0174A] transition-colors duration-300"
-    >
-      Typically replies within 24 hours
-    </a>
-  </div>
+  {/* support */}
+<div className="flex items-center gap-3">
+  <FiClock className="text-[#A0174A] text-[18px] flex-shrink-0" />
+  <p>Support available within 24 hours</p>
+</div>
 
 </div>
 
