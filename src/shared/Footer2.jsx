@@ -129,7 +129,7 @@ const Footer2 = () => {
           {/* Policy */}
           <div>
             <h3 className="text-[#A0174A] font-bold text-[20px] md:text-[28px] mb-4 md:mb-6">
-             Our Commitments
+             Commitments
             </h3>
 
             <ul className="space-y-2 md:space-y-4 text-[14px] md:text-[18px]">
@@ -145,16 +145,50 @@ const Footer2 = () => {
           {/* Contact */}
           <div>
             <h3 className="text-[#A0174A] font-bold text-[20px] md:text-[28px] mb-4 md:mb-6">
-           Stay Connected
+           Support
             </h3>
 
-           
+{/* Contact Information */}
+<div className="space-y-4  md:mb-6 text-[14px] md:text-[18px] text-black">
 
- {/* Newsletter */}
-<div className="mt-">
+  {/* Address */}
+  <div className="flex items-start gap-3">
+    <FaMapMarkerAlt className="text-[#A0174A] mt-1 flex-shrink-0" />
+    <p className="leading-relaxed">
+      1469 NOSTRAND AVE BROOKLYN NY
+      11226
+    </p>
+  </div>
 
-  <p className="text-[14px] md:text-[18px] text-black mb-4 md:mb-5 leading-relaxed ">
-    Stay connected with SANRAYN and receive exclusive updates, new fragrance launches, and special offers.
+  {/* Email */}
+  <div className="flex items-center gap-3">
+    <MdEmail className="text-[#A0174A] flex-shrink-0" />
+    <a
+      href="mailto:Info@aromafragrance.us"
+      className="hover:text-[#A0174A] transition-colors duration-300"
+    >
+      help@sanrayn.com
+    </a>
+  </div>
+
+  {/* Phone */}
+  <div className="flex items-center gap-3">
+    <FaPhoneAlt className="text-[#A0174A] flex-shrink-0" />
+    <a
+      href="tel:+13473836682"
+      className="hover:text-[#A0174A] transition-colors duration-300"
+    >
+      +1 (347)383-6682
+    </a>
+  </div>
+
+</div>
+
+{/* Newsletter */}
+<div className="mt-4 md:mt-6">
+
+  <p className="text-[14px] md:text-[18px] text-[#A0174A] mb-4 md:mb-5 leading-relaxed font-bold">
+    Stay connected with SANRAYN
   </p>
 
   {/* Email Input */}
@@ -202,6 +236,7 @@ const Footer2 = () => {
       <HiArrowRight className="text-white text-lg" />
     </button>
   </div>
+
 </div>
           </div>
         </div>
