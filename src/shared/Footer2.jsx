@@ -24,14 +24,67 @@ const Footer2 = () => {
     <footer>
       {/* Main Footer */}
       <div className="max-w-full bg-gradient-to-t from-[#FDFCFC] to-[#F0ECE5] py-10 md:py-16 px-[16px] lg:px-[32px]">
-        <div className="relative md:hidden mb-10">
+        <div className="relative mb-6 md:hidden md:mb-10">
   {/* SANRAYN Logo */}
   <img
     src={Logo}
     alt="SANRAYN"
     className="h-10 relative z-10"
   />
+     {/* Newsletter */}
+<div className=" md:hidden mx-auto block mt-6">
 
+  <p className="text-[18px] text-[#A0174A] mb-4 md:mb-5 leading-relaxed font-bold">
+    Stay connected with SANRAYN
+  </p>
+
+  {/* Email Input */}
+  <div className="relative w-full max-w-[320px]">
+    <input
+      type="email"
+      placeholder="Enter your email address"
+      className="
+        w-full
+        h-[45px]
+        rounded-full
+        bg-white
+        text-[#282828]
+        pl-5
+        pr-14
+        text-[14px]
+        border border-[#A0174A]/30
+        focus:outline-none
+        focus:border-[#A0174A]
+        focus:ring-2
+        focus:ring-[#A0174A]/10
+        transition-all duration-300
+      "
+    />
+
+    <button
+      className="
+        absolute
+        right-1.5
+        top-1/2
+        -translate-y-1/2
+        h-[36px]
+        w-[36px]
+        rounded-full
+        bg-[#A0174A]
+        hover:bg-[#86123D]
+        flex
+        items-center
+        justify-center
+        transition-all
+        duration-300
+      "
+      aria-label="Subscribe"
+    >
+      <HiArrowRight className="text-white text-lg" />
+    </button>
+  </div>
+
+</div>
   {/* Decorative Logos */}
   <div className="relative hidden md:block mt-6 ml-4 w-[180px] h-[180px] md:w-[240px] md:h-[240px]">
 
@@ -238,64 +291,8 @@ const Footer2 = () => {
   </div>
 
 </div>
-
-          </div>
-       
+          </div>    
         </div>
-     {/* Newsletter */}
-<div className="mt-4 md:hidden block md:mt-6">
-
-  <p className="text-[18px] text-[#A0174A] mb-4 md:mb-5 leading-relaxed font-bold">
-    Stay connected with SANRAYN
-  </p>
-
-  {/* Email Input */}
-  <div className="relative w-full max-w-[320px]">
-    <input
-      type="email"
-      placeholder="Enter your email address"
-      className="
-        w-full
-        h-[45px]
-        rounded-full
-        bg-white
-        text-[#282828]
-        pl-5
-        pr-14
-        text-[14px]
-        border border-[#A0174A]/30
-        focus:outline-none
-        focus:border-[#A0174A]
-        focus:ring-2
-        focus:ring-[#A0174A]/10
-        transition-all duration-300
-      "
-    />
-
-    <button
-      className="
-        absolute
-        right-1.5
-        top-1/2
-        -translate-y-1/2
-        h-[36px]
-        w-[36px]
-        rounded-full
-        bg-[#A0174A]
-        hover:bg-[#86123D]
-        flex
-        items-center
-        justify-center
-        transition-all
-        duration-300
-      "
-      aria-label="Subscribe"
-    >
-      <HiArrowRight className="text-white text-lg" />
-    </button>
-  </div>
-
-</div>
       </div>
 
       {/* Bottom Bar */}
