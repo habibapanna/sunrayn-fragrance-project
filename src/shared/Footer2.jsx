@@ -30,7 +30,7 @@ const Footer2 = () => {
   <img
     src={Logo}
     alt="SANRAYN"
-    className="h-10 relative z-10"
+    className="h-12 relative z-10"
   />
      {/* Newsletter */}
 <div className=" md:hidden mx-auto block mt-6">
