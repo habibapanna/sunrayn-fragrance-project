@@ -1,20 +1,22 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import HeroVideo from "../assets/kling_20260612_VIDEO_please_mak_5171_0.mp4";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
       {/* VIDEO BACKGROUND */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover"
-        src="https://framerusercontent.com/assets/xwyNvkWHh63ubQ8audTdLJ0lprE.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
+     <video
+  className="absolute inset-0 w-full h-full object-cover"
+  autoPlay
+  loop
+  muted
+  playsInline
+>
+  <source src={HeroVideo} type="video/mp4" />
+</video>
 
       {/* GRADIENT OVERLAY */}
       <div
@@ -28,57 +30,59 @@ const Hero = () => {
         "
       />
 
-      {/* CONTENT */}
-      <div className="relative z-10 w-full px-[16px] flex justify-center 2xl:mt-[130px]">
-        <div className="text-white text-center flex flex-col items-center max-w-[900px]">
+     {/* CONTENT */}
+<div className="absolute inset-0 z-10 flex items-end">
+  <div className="w-full px-[16px] md:px-[40px] lg:px-[60px] pb-[40px] md:pb-[70px]">
+    
+    <div className="max-w-[650px] text-white">
 
-          {/* RATING */}
-          <div className="flex flex-col md:flex-row items-center gap-[8px] text-[#BA9948] mb-[16px]">
-            <div className="flex gap-[6px]">
-              {[...Array(5)].map((_, i) => (
-                <FaStar key={i} className="h-[15px] w-[15px]" />
-              ))}
-            </div>
-            <span className="text-[14px] md:text-[16px] text-white">
-              5 star rating | Based on 200+ happy customers
-            </span>
-          </div>
-          {/* HEADING */}
-          <h1 className="text-[30px] md:text-[50px] lg:text-[60px] font-semibold leading-tight mb-[20px]">
-            Designer-Inspired Luxury <br />
-            Fragrances with Everyday <br />
-            Affordability
-          </h1>
-
-          {/* DESCRIPTION */}
-          <p className="text-gray-200 text-[15px] md:text-[20px] mb-[32px] md:max-w-[95%]">
-            Sanrayn brings perfumes that linger with grace, purity, and devotion.
-            Our luxury designer-inspired aromas are artfully blended to
-            complement your sophistication.
-          </p>
-
-          {/* CTA */}
-          <Link to="/productList">
-            <button
-              className="
-                bg-[#BA9948] hover:bg-white
-                text-[#1D0B01]
-                border border-[#BA9948]
-                transition-all duration-500 ease-out
-                rounded-full
-                px-[24px] py-[10px]
-                md:px-[48px] md:py-[14px]
-                text-[14px] md:text-[20px]
-                flex items-center justify-center
-                cursor-pointer font-semibold
-              "
-            >
-              Shop Now
-            </button>
-          </Link>
-
+      {/* RATING */}
+      <div className="flex flex-wrap items-center gap-[8px] text-[#BA9948] mb-4">
+        <div className="flex gap-[6px]">
+          {[...Array(5)].map((_, i) => (
+            <FaStar key={i} className="h-[15px] w-[15px]" />
+          ))}
         </div>
+
+        <span className="text-[14px] md:text-[16px] text-white">
+          5 star rating | Based on 200+ happy customers
+        </span>
       </div>
+
+      {/* HEADING */}
+      <h1 className="text-[36px] md:text-[50px] lg:text-[60px] font-semibold leading-[1.1] mb-4">
+        Luxury Fragrances Crafted for Every Day
+      </h1>
+
+   
+
+      {/* BUTTONS */}
+      <div className="flex flex-col sm:flex-row gap-4">
+
+        <Link to="/productList">
+          <button
+            className="
+              bg-[#BA9948]
+              hover:bg-white
+              text-[#1D0B01]
+              border border-[#BA9948]
+              rounded-full
+              px-8 py-3
+              md:px-12 md:py-4
+              text-[14px] md:text-[18px]
+              font-semibold
+              transition-all duration-500
+            "
+          >
+            SHOP Now
+          </button>
+        </Link>
+
+      </div>
+
+    </div>
+  </div>
+</div>
     </section>
   );
 };
