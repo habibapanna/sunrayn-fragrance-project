@@ -18,6 +18,7 @@ import { PiTiktokLogo } from "react-icons/pi";
 import Logo1 from "../assets/Logo (1).svg";
 import { HiArrowRight } from "react-icons/hi";
 import Logo2 from "../assets/Footer Logo (1).svg";
+import { IoIosStopwatch } from "react-icons/io";
 
 const Footer2 = () => {
   return (
@@ -234,8 +235,19 @@ const Footer2 = () => {
       +1 (347)383-6682
     </a>
   </div>
+  {/* Phone */}
+  <div className="flex items-center gap-3">
+    <IoIosStopwatch className="text-[#A0174A] flex-shrink-0" />
+    <a
+      href="tel:+13473836682"
+      className="hover:text-[#A0174A] transition-colors duration-300"
+    >
+      Typically replies within 24 hours
+    </a>
+  </div>
 
 </div>
+
 
 {/* Newsletter */}
 <div className="mt-4 hidden md:block md:mt-6">
