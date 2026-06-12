@@ -29,7 +29,7 @@ const Footer2 = () => {
   <img
     src={Logo}
     alt="SANRAYN"
-    className="h-14 relative z-10"
+    className="h-10 relative z-10"
   />
 
   {/* Decorative Logos */}
