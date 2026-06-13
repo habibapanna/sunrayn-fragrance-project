@@ -22,7 +22,7 @@ const Offer = () => {
           >
             <div className="text-white text-left">
               <h1 className="text-[35px] md:text-[55px] lg:text-[75px] 2xl:text-[90px] leading-tight mb-6">
-                Get 30% Off
+               Wear Luxury for Less
               </h1>
 
               <p className="mb-8 text-[14px] md:text-[25px]">

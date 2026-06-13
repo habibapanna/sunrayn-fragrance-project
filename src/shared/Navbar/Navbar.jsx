@@ -471,7 +471,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
     md:flex items-center justify-center
     cursor-pointer
     transition-all duration-500
-    bg-white/90 relative hidden
+    bg-[#F6F7F2] relative hidden
   "
 >
   <Heart
@@ -490,7 +490,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
   className={`
   lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full
   transition-colors duration-500 cursor-pointer flex items-center justify-center  p-[6px] h-[28px] w-[28px]
-  ${scrolled ? "bg-white/90" : "bg-white/90"}
+  ${scrolled ? "bg-[#F6F7F2]" : "bg-[#F6F7F2]"}
 `}
 
 >
@@ -506,7 +506,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
   className={`hidden md:flex
  lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] lg:h-[40px] lg:w-[40px] 2xl:p-[12px] rounded-full
   transition-colors duration-500 cursor-pointer items-center justify-center  p-[6px] h-[28px] w-[28px] relative
-  ${scrolled ? "bg-white/90" : "bg-white/90"}
+  ${scrolled ? "bg-[#F6F7F2]" : "bg-[#F6F7F2]"}
 `}
  title="View Cart"
 >
@@ -529,7 +529,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
       lg:p-[10px] md:p-[8px] md:h-[30px] md:w-[30px] 
       lg:h-[40px] lg:w-[40px] 2xl:p-[12px] 
       rounded-full
-      bg-white/90 items-center justify-center cursor-pointer  p-[6px] h-[28px] w-[28px]
+      bg-[#F6F7F2] items-center justify-center cursor-pointer  p-[6px] h-[28px] w-[28px]
     "
   >
   <img src={User} alt="" className="h-[15px] w-[15px] md:w-[20px] md:h-[20px]" />

@@ -14,11 +14,11 @@ const NewsLetter = () => {
           {/* LEFT IMAGE SPACE */}
           <div className="w-1/2" />
           {/* RIGHT CONTENT */}
-          <div className="relative z-10 lg:w-1/2 flex items-center px-6 py-16 md:px-16 md:py-24 2xl:px-24">
+          <div className="relative z-10 lg:w-1/2 flex items-center px-6 py-16 md:px-10 md:py-24">
             <div className="text-white">
 
-              <h1 className="text-[35px] md:text-[55px] lg:text-[65px] 2xl:text-[96px] font-light mb-[10px] md:mb-6">
-                Get 30% Off
+              <h1 className="text-[35px] md:text-[55px] font-light mb-[10px] md:mb-6">
+               Stay connected with SANRAYN
               </h1>
 
               <p className="text-white/90 md:mb-10 mb-[20px] text-[14px] lg:text-[22px] leading-relaxed">

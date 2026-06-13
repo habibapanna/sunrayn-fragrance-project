@@ -238,11 +238,12 @@ const Footer2 = () => {
       +1 (347)383-6682
     </a>
   </div>
-  {/* support */}
-<div className="flex items-center gap-3">
-  <FiClock className="text-[#A0174A] text-[18px] flex-shrink-0" />
-  <p>Support available within 24 hours</p>
-</div>
+  <div className="flex items-start gap-3">
+    <FiClock className="text-[#A0174A] mt-1 flex-shrink-0" />
+    <p className="leading-relaxed">
+      Support available within 24 hours
+    </p>
+  </div>
 
 </div>
 
