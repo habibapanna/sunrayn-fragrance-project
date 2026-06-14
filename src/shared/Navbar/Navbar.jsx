@@ -256,7 +256,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
           >
          <div className="absolute top-full mt-[20px] -right-60 z-50">
 
-      <div className="bg-white rounded-[16px] shadow-xl px-[30px] py-[20px] lg:px-[40px] lg:py-[32px] flex gap-[40px] lg:gap-[74px]">
+      <div className="bg-white rounded-[16px] shadow-xl px-[30px] py-[20px] lg:px-[40px] lg:py-[32px] flex gap-[40px] lg:gap-[54px]">
 
         {/* ARROW TIP */}
         <span className="absolute md:right-[240px] -top-[10px] lg:right-[300px] w-5 h-5 bg-white rotate-45" />
@@ -338,7 +338,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
         {/* MEGA MENU */}
    <div className="absolute top-full mt-[20px] -right-60 z-50">
 
-      <div className="relative bg-white rounded-[16px] shadow-xl px-[30px] py-[20px] lg:px-[40px] lg:py-[32px] flex gap-[40px] lg:gap-[74px]">
+      <div className="relative bg-white rounded-[16px] shadow-xl px-[30px] py-[20px] lg:px-[40px] lg:py-[32px] flex gap-[40px] lg:gap-[54px]">
 
         {/* ARROW TIP */}
         <span className="absolute -top-[10px] right-[250px] lg:right-[300px] w-5 h-5 bg-white rotate-45" />

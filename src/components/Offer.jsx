@@ -2,51 +2,127 @@ import { Link } from "react-router-dom";
 
 const Offer = () => {
   return (
-    <div className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
+    <div className="mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10 pb-4 sm:pb-6 lg:pb-8">
       <Link to="/productList">
         <section
-          className="relative bg-cover bg-center flex overflow-hidden
-          rounded-[16px] h-[400px] 2xl:h-[550px]"
+          className="
+            relative overflow-hidden rounded-2xl
+            bg-cover bg-center bg-no-repeat
+            min-h-[280px]
+            sm:min-h-[350px]
+            md:min-h-[450px]
+            lg:min-h-[520px]
+            xl:min-h-[580px]
+            flex
+          "
           style={{
             backgroundImage:
               "url('https://i.postimg.cc/x1PD5vMm/imgi-187-Frame-1430102878-2.png')",
           }}
         >
-          {/* LEFT EMPTY SPACE */}
-          <div className="w-1/3 md:w-1/2" />
+          {/* Gradient Overlay */}
+          <div
+            className="
+              absolute inset-0
+              bg-gradient-to-r
+              from-black/20
+              via-black/40
+              to-black/75
+            "
+          />
 
-          {/* RIGHT CONTENT */}
-          <div className="relative z-10 w-2/3 md:w-1/2
-            flex items-center justify-center
-            px-6 py-16  md:py-[241px]"
+          {/* Content */}
+          <div
+            className="
+              relative z-10
+              w-full
+              flex items-center
+              justify-end
+              px-5
+              sm:px-8
+              md:px-12
+              lg:px-16
+              py-8
+              sm:py-12
+            "
           >
-            <div className="text-white text-left">
-              <h1 className="text-[35px] md:text-[55px] lg:text-[75px] 2xl:text-[90px] leading-tight mb-6">
-               Wear Luxury for Less
+            <div
+              className="
+                w-full
+                sm:max-w-[85%]
+                md:max-w-[70%]
+                lg:max-w-[55%]
+                xl:max-w-[50%]
+                text-white
+                text-left
+              "
+            >
+              <h1
+                className="
+                  font-medium leading-[1.1]
+                  text-[30px]
+                  sm:text-[40px]
+                  md:text-[50px]
+                  lg:text-[64px]
+                  xl:text-[78px]
+                  2xl:text-[90px]
+                  mb-4
+                  sm:mb-6
+                "
+              >
+                Wear Luxury for Less
               </h1>
 
-              <p className="mb-8 text-[14px] md:text-[25px]">
+              <p
+                className="
+                  text-[14px]
+                  sm:text-[16px]
+                  md:text-[18px]
+                  lg:text-[22px]
+                  xl:text-[25px]
+                  leading-relaxed
+                  mb-6
+                  sm:mb-8
+                  max-w-[550px] lg:max-w-full
+                "
+              >
                 Be the first to know about new collections and exclusive offers.
               </p>
 
               <button
-                className="bg-white px-[24px] py-[10px]
-                rounded-[100px] h-[30px] w-[123px] md:h-[40px] md:w-[200px] md:font-semibold md:text-[16px]
-                lg:w-[210px] lg:h-[55px]
-                text-[14px] lg:text-[20px]
-                2xl:font-bold transition-all duration-500 ease-out
-                hover:bg-[#BA9948] text-[#1D0B01] flex items-center justify-center cursor-pointer "
+                className="
+                  inline-flex items-center justify-center
+                  rounded-full
+                  bg-white text-[#1D0B01]
+                  hover:bg-[#BA9948]
+                  transition-all duration-500 ease-out
+
+                  h-11
+                  px-6
+
+                  sm:h-12
+                  sm:px-8
+
+                  md:h-14
+                  md:px-10
+
+                  lg:h-16
+                  lg:px-12
+
+                  text-sm
+                  sm:text-base
+                  lg:text-lg
+                  xl:text-xl
+
+                  font-medium
+                  xl:font-semibold
+                  cursor-pointer
+                "
               >
-                Shop Hurry
+                Shop Now
               </button>
             </div>
           </div>
-
-          {/* RIGHT SIDE OVERLAY */}
-          <div className="
-            absolute right-0 top-0 h-full w-2/3 xl:w-1/2
-            bg-gradient-to-l from-black/80 via-black/50 to-transparent
-          " />
         </section>
       </Link>
     </div>
