@@ -8,9 +8,9 @@ const About = () => {
       {/* HERO IMAGE */}
       <section className=" mx-auto px-[16px]  2xl:px-[32px] pb-[16px] lg:py-[16px] 2xl:py-[32px]">
         <div className="flex flex-col gap-[24px] md:flex-row justify-between text-[#282828] pb-[16px] 2xl:pb-[32px]">
-            <h3 className="text-center md:text-left text-[30px] lg:text-[40px] 2xl:text-[50px] "> Purpose in Every Scent</h3>
-            <p className="hidden lg:block text-[18px] text-center lg:text-left 2xl:text-[20px]">Discover halal, alcohol-free luxury perfumes crafted with <br /> intention, artistry, and unwavering commitment to purity.</p>
-            <p className="text-[18px] text-center md:text-left md:w-sm lg:hidden">Discover halal, alcohol-free luxury perfumes crafted with intention, artistry, and unwavering commitment to purity.</p>
+            <h3 className="text-center md:text-left text-[30px] lg:text-[40px] 2xl:text-[50px] "> Every scent carries a soul.</h3>
+            <p className="hidden w-[500px] lg:block text-[18px] text-center lg:text-left 2xl:text-[20px]">Introducing a feeling of serenity in every spritz, wrapping your presence in purity, warmth, and quiet confidence.</p>
+            <p className="text-[18px] text-center md:text-left md:w-sm lg:hidden">Introducing a feeling of serenity in every spritz, wrapping your presence in purity, warmth, and quiet confidence.</p>
         </div>
         <div><img
           src="https://i.postimg.cc/Rh4QBppP/Perfume-Image.png"
@@ -28,17 +28,18 @@ const About = () => {
             className="rounded-[16px] w-full h-[268px] md:h-[350px] lg:h-[520px] 2xl:h-[700px] 2xl:w-[880px] object-cover"
           />
           <div className="2xl:w-[576px]">
-            <h2 className="text-[#1D0B01] mb-4 text-[30px] lg:text-[40px] 2xl:text-[50px]">
-              In-house, genderless exclusives for the next generation.
+            <h2 className="text-[#1D0B01] mb-4 text-[22px] lg:text-[40px] 2xl:text-[50px]">
+              More than perfume. 
+More than elegance. 
+More than luxury. 
+A quiet intensity that draws everyone closer.
+
             </h2>
             <p className="text-[#282828] text-[16px] lg:text-[18px] 2xl:text-[24px] mb-6 ">
-              Sanrayn Originals is our collection of in-house exclusive
-              fragrances, uniquely blended by our perfumers in France to offer
-              a variety of fair-priced, niche luxury scents for the next
-              generation.
+             Sanrayn brings together premium grandeur and modern elegance to create a fragrance experience that feels uniquely yours. Every bottle of Sanrayn embodies an aura of sophistication, crafted to reflect your true identity. A majestic collection of fragrance that goes beyond expectation. 
             </p>
-            <Link to='/productList'><button className="btn rounded-full transition-all duration-500 ease-out
-    bg-[#BA9948] text-[#1D0B01] hover:bg-white backdrop-blur-md border hover:border-[#BA9948]  text-[20px]  px-[20px] py-[8px] lg:px-[24px] lg:py-[10px] 2xl:h-[55px] 2xl:w-[210px]">
+            <Link to='/productList'><button className="border-none rounded-full transition-all duration-500 ease-out
+    bg-[#BA9948] text-[#1D0B01] hover:bg-white backdrop-blur-md border hover:border-[#BA9948] lg:text-[20px]  px-[20px] py-[8px] lg:px-[24px] lg:py-[10px] 2xl:h-[55px] 2xl:w-[210px]">
               Shop Now
             </button></Link>
           </div>
@@ -51,7 +52,7 @@ const About = () => {
 
     {/* Title */}
     <h2 className="text-[25px] lg:text-[35px] 2xl:text-[50px] font-semibold mb-[32px] lg:mb-[56px] 2xl:mb-[96px] text-[#2B1B0E]">
-      From Discovery to Devotion
+      From Invention to Elegance
     </h2>
 
     {/* Flow */}
@@ -113,11 +114,10 @@ const About = () => {
 </svg>
         </div>
         <h3 className="text-[25px] 2xl:text-[35px] text-[#DC7C2A] mb-[4px]">
-          Discover
+          Experience
         </h3>
         <p className="text-[#282828] text-[16px] 2xl:text-[18px] max-w-[260px]">
-          Browse curated collections and find fragrances aligned with your style
-          and mood.
+          Pick your most desired Sanrayn premium collection and awaken your sense of serenity.
         </p>
       </div>
 
@@ -134,11 +134,11 @@ const About = () => {
 </svg>
         </div>
         <h3 className="text-[25px] 2xl:text-[35px] text-[#DC7C2A] mb-[4px]">
-          Wear
+         Embrace
         </h3>
         <p className="text-[#282828] text-[16px] 2xl:text-[18px] max-w-[260px]">
-          Experience smooth, long-lasting halal fragrances crafted for comfort
-          and elegance.
+          Own the fragrance that defines your iconic presence. 
+
         </p>
       </div>
 
@@ -151,11 +151,10 @@ const About = () => {
 </svg>
         </div>
         <h3 className="text-[25px] 2xl:text-[35px] text-[#DC7C2A] mb-[4px]">
-          Connect
+         Empower
         </h3>
         <p className="text-[#282828] text-[16px] 2xl:text-[18px] max-w-[260px]">
-          Fall in love with a scent that reflects your identity and leaves a
-          lasting impression.
+         Enhance your identity with every note you wear.
         </p>
       </div>
 
@@ -170,15 +169,14 @@ const About = () => {
 
     {/* TEXT */}
     <div className="bg-[#FAFAF7] rounded-[16px]  p-[32px] 2xl:px-[48px] flex flex-col gap-[24px] justify-center ">
-      <h2 className="text-[#A0174A] mb-4 text-[30px] lg:text-[40px] 2xl:text-[50px] leading-tight 2xl:w-[500px] mx-auto">
-        A New Standard for Thoughtful Luxury.
+      <h2 className="text-[#A0174A] mb-4 text-[22px] lg:text-[40px] 2xl:text-[50px] leading-tight 2xl:w-[500px] mx-auto">
+       Unapologetically Exclusive. Unapologetically Refined. Unapologetically Desired.
       </h2>
 
       <p className="text-[#1D0B01] text-[16px] lg:text-[24px] leading-relaxed 2xl:w-[500px] mx-auto">
-        The fragrance industry has long overlooked those who seek purity
-        without sacrificing sophistication. Sanrayn was born to bridge
-        that gap—bringing halal, alcohol-free fragrances into a modern,
-        luxurious space.
+        Born for individuals who carry quiet confidence, Sanrayn transforms fragrance into something deeply personal. Every blend is designed with premium detail and emotional intention, leaving behind a trace of sophistication that lingers far beyond the moment. 
+Luxury shouldn’t live in your wishlist, but in the fragrance you wear every day.
+
       </p>
     </div>
 
@@ -187,7 +185,7 @@ const About = () => {
      <img
   src="https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg"
   alt="Luxury Perfume"
-  className="h-[328px] lg:h-[568px] 2xl:h-[700px] w-full object-cover"
+  className="h-full lg:h-[568px] 2xl:h-[700px] w-full object-cover"
 />
 
     </div>
@@ -198,38 +196,38 @@ const About = () => {
       {/* VALUES */}
       <section className="mx-auto px-[16px] 2xl:px-[32px] pb-[16px] 2xl:pb-[32px]">
         <div className="grid md:grid-cols-3 gap-[16px] 2xl:gap-[32px]">
-          <div className="bg-[#FFF4E8] rounded-[16px] p-8 text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" className="mx-auto">
+          <div className="bg-[#FFF4E8] rounded-[16px] p-8 text-left">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" className="">
   <path d="M73.3307 22.5007H64.0344C62.0307 22.5007 61.0287 22.5007 60.0841 22.2146C59.1394 21.9286 58.3057 21.3728 56.6384 20.2613C54.1377 18.5941 51.2847 16.6922 49.8674 16.2631C48.4504 15.834 46.9474 15.834 43.9417 15.834C39.8544 15.834 37.2197 15.834 35.3821 16.5952C33.5444 17.3564 32.0993 18.8016 29.209 21.6919L26.6654 24.2355C26.014 24.8868 25.6883 25.2125 25.4872 25.5341C24.7419 26.726 24.8245 28.2575 25.6937 29.3624C25.9282 29.6604 26.287 29.9492 27.0047 30.5267C29.6573 32.6615 33.4814 32.4484 35.8834 30.0321L39.9974 25.8935H43.3307L63.3307 46.0125C65.1717 47.8645 65.1717 50.8669 63.3307 52.7189C61.4897 54.5709 58.5051 54.5709 56.6641 52.7189L54.9974 51.0422M54.9974 51.0422L44.9974 40.9829M54.9974 51.0422C56.8384 52.8942 56.8384 55.8969 54.9974 57.7485C53.1564 59.6005 50.1717 59.6005 48.3307 57.7485L44.9974 54.3956M44.9974 54.3956C46.8384 56.2472 46.8384 59.2499 44.9974 61.1019C43.1564 62.9535 40.1717 62.9535 38.3307 61.1019L33.3307 56.0719M44.9974 54.3956L38.3307 47.7289M33.3307 56.0719L31.6641 54.3956M33.3307 56.0719C35.1717 57.9239 35.1717 60.9266 33.3307 62.7786C31.4898 64.6302 28.505 64.6302 26.6641 62.7786L17.252 53.1702C15.3179 51.1959 14.3509 50.2089 13.1119 49.6879C11.8729 49.1672 10.491 49.1672 7.7272 49.1672H6.66406" stroke="#DC7C2A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M73.3333 49.166H65" stroke="#DC7C2A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M28.3307 22.5H6.66406" stroke="#DC7C2A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-            <h3 className="text-[20px] 2xl:text-[35px] mb-2 text-[#DC7C2A]">Integrity</h3>
+            <h3 className="text-[20px] 2xl:text-[35px] mb-2 text-[#DC7C2A]">Trust & Transparency</h3>
             <p className="text-[16px] 2xl:text-[18px] text-[#282828]">
-              Every ingredient is halal-certified. Every promise is kept.
+             Most fragrances come with unclear ingredients and hidden alcohol.Sanrayn removes the doubt with transparent, cruelty-free formulas you can trust.
             </p>
           </div>
 
-          <div className="bg-[#F1FFF6] rounded-[16px] p-8 text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" className="mx-auto">
+          <div className="bg-[#F1FFF6] rounded-[16px] p-8 text-left">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" className="">
   <path d="M45.7561 11.4799L51.6221 23.3089C52.4221 24.9556 54.5551 26.535 56.3551 26.8374L66.9871 28.6185C73.7864 29.7611 75.3864 34.7347 70.4867 39.641L62.2211 47.975C60.8211 49.3863 60.0547 52.1083 60.4877 54.0577L62.8544 64.3743C64.7207 72.5403 60.4211 75.6993 53.2554 71.4313L43.2897 65.4833C41.4901 64.408 38.5237 64.408 36.6904 65.4833L26.725 71.4313C19.5924 75.6993 15.2596 72.5067 17.126 64.3743L19.4924 54.0577C19.9257 52.1083 19.1591 49.3863 17.7593 47.975L9.49353 39.641C4.62739 34.7347 6.19389 29.7611 12.9931 28.6185L23.6253 26.8374C25.3918 26.535 27.5249 24.9556 28.3248 23.3089L34.1907 11.4799C37.3904 5.06137 42.5897 5.06137 45.7561 11.4799Z" stroke="#43B583" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-            <h3 className="text-[20px] 2xl:text-[35px] mb-2 text-[#43B583]">Excellence</h3>
+            <h3 className="text-[20px] 2xl:text-[35px] mb-2 text-[#43B583]">Lasting Presence</h3>
             <p className="text-[16px] 2xl:text-[18px] text-[#282828]">
-              We hold ourselves to the highest standards of quality and artistry.
+            A disappearing scent often means a disappearing presence. Sanrayn’s premium collection is made to last not just on skin, but in memory, creating a lasting and elegant vibe wherever you go.
             </p>
           </div>
 
           <div className="bg-[#F3F1FF] rounded-[16px] p-8 text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" className="mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" className="mx-">
   <path d="M27.1886 52.8113C23.5998 52.7873 18.6578 51.9093 14.7802 48.032C7.87434 41.126 10.4832 30.8439 10.4832 30.8439C10.4832 30.8439 15.8672 29.4782 21.4604 31.3398C21.4195 31.0335 21.3852 30.7233 21.3583 30.409C21.3105 29.8503 21.2851 29.2794 21.2853 28.6952C21.2851 16.6769 31.9681 10 31.9681 10C31.9681 10 38.6437 14.1725 41.441 21.8573C50.7483 15.3457 62.047 17.953 62.047 17.953C62.047 17.953 64.6543 29.2518 58.1427 38.559C65.8277 41.3563 70 48.032 70 48.032C70 48.032 63.323 58.715 51.3047 58.7147C50.3923 58.7147 49.5103 58.6533 48.6603 58.5397C50.5217 64.1327 49.156 69.5167 49.156 69.5167C49.156 69.5167 38.874 72.1257 31.9681 65.2197" stroke="#FF4242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M10 69.9993L43.3333 36.666" stroke="#FF4242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
             <h3 className="text-[20px] 2xl:text-[35px] mb-2 text-[#FF4242]">
-              Sustainability
+             Committed Luxury
             </h3>
             <p className="text-[16px] 2xl:text-[18px] text-[#282828]">
-              Mindful sourcing and eco-conscious practices guide our process.
+             A promise of pure, lasting, and intentional fragrance crafted with uncompromising care and timeless elegance.
             </p>
           </div>
         </div>
