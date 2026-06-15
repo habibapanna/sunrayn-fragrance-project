@@ -218,7 +218,7 @@ Luxury shouldn’t live in your wishlist, but in the fragrance you wear every da
             </p>
           </div>
 
-          <div className="bg-[#F3F1FF] rounded-[16px] p-8 text-center">
+          <div className="bg-[#F3F1FF] rounded-[16px] p-8 text-left">
             <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" className="mx-">
   <path d="M27.1886 52.8113C23.5998 52.7873 18.6578 51.9093 14.7802 48.032C7.87434 41.126 10.4832 30.8439 10.4832 30.8439C10.4832 30.8439 15.8672 29.4782 21.4604 31.3398C21.4195 31.0335 21.3852 30.7233 21.3583 30.409C21.3105 29.8503 21.2851 29.2794 21.2853 28.6952C21.2851 16.6769 31.9681 10 31.9681 10C31.9681 10 38.6437 14.1725 41.441 21.8573C50.7483 15.3457 62.047 17.953 62.047 17.953C62.047 17.953 64.6543 29.2518 58.1427 38.559C65.8277 41.3563 70 48.032 70 48.032C70 48.032 63.323 58.715 51.3047 58.7147C50.3923 58.7147 49.5103 58.6533 48.6603 58.5397C50.5217 64.1327 49.156 69.5167 49.156 69.5167C49.156 69.5167 38.874 72.1257 31.9681 65.2197" stroke="#FF4242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M10 69.9993L43.3333 36.666" stroke="#FF4242" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
