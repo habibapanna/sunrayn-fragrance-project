@@ -369,9 +369,6 @@ const Checkout = () => {
              <button className="w-full  transition-all duration-500 ease-out
     bg-[#BA9948] text-[#1D0B01] hover:bg-white backdrop-blur-md border border-[#BA9948] py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
          </div>
-         <div className="hidden md:block">
-          <CheckoutSecurity></CheckoutSecurity>
-        </div>
         </div>
         {/* RIGHT */}
        <div className="2xl:col-span-2 md:sticky top-32 h-fit">
@@ -435,10 +432,15 @@ const Checkout = () => {
              <button className="w-full  transition-all duration-500
     bg-[#BA9948] hover:text-[#1D0B01] hover:bg-white backdrop-blur-md border border-[#BA9948] text-white py-[7px] 2xl:py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
          </div>
+         {/* Checkout Security */}
          <div className="md:hidden block">
           <CheckoutSecurity></CheckoutSecurity>
         </div>
       </div>
+      {/* Checkout Security */}
+       <div className="hidden md:block">
+          <CheckoutSecurity></CheckoutSecurity>
+        </div>
       {/* footer */}
                 <div className="flex gap-[32px] justify-center mt-4 2xl:mt-[24px] bg-white border-t border-gray-300 p-4 2xl:p-6">
             <span className="text-[10px] 2xl:text-[14px] text-[#372416] cursor-pointer hover:underline">Return Policy </span>

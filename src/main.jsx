@@ -20,6 +20,7 @@ import HolidayOffer from './Page/HolidayOffer.jsx';
 import ScentFamily from './Page/ScentFamily.jsx';
 import WishList from './Page/WishList.jsx';
 import GiftsCheckout from './Page/GiftsCheckout.jsx';
+import { ToastContainer } from 'react-toastify';
 
 const router = createBrowserRouter([
   {
@@ -92,5 +93,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
       <RouterProvider router={router} />
+       <ToastContainer />
   </StrictMode>,
 )

@@ -201,7 +201,7 @@ const backdropVariants = {
       <img
         src={item.images}
         alt={item.title}
-        className="w-[140px] h-full lg:w-[130px] object-cover rounded-[8px]"
+        className="w-[140px] h-[140px] lg:w-[130px] object-cover rounded-[8px]"
       />
       <span className="absolute top-[2px] left-[2px] text-[10px] lg:text-[12px] bg-white px-[8px] py-[2px] rounded-full border border-[#DBAB35] text-[#1D0B01]">
         {item.gender || "Unisex"}

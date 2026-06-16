@@ -76,6 +76,7 @@ const Offer = () => {
               <p
                 className="
                   text-[14px]
+                  
                   sm:text-[16px]
                   md:text-[18px]
                   lg:text-[22px]

@@ -15,7 +15,7 @@ const Footer2 = () => {
     <footer>
       {/* Main Footer */}
       <div className="max-w-full bg-gradient-to-t from-[#FDFCFC] to-[#F0ECE5] py-10 md:py-16 px-4 sm:px-6 md:px-8 lg:px-8 xl:px-12 2xl:px-16">
-        {/* Wrapper keeps content from stretching too wide on ultra-large monitors */}
+        {/* Wrapper */}
         <div className="mx-auto 2xl:max-w-[1800px]">
 
           {/* Logo + Newsletter block - shown on mobile & tablet (below lg), hidden on desktop */}

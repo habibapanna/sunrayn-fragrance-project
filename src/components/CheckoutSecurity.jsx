@@ -31,76 +31,74 @@ const CheckoutSecurity = () => {
         border
         border-gray-300
         rounded-[20px]
+        md:rounded-none
         shadow-sm
-        px-2
-        py-6
-        md:py-7
-        lg:px-8
+        px-4
+        md:px-6
+        py-5
+        lg:py-6
         mt-4
         lg:mt-6
-        space-y-6
-        sm:space-y-7
       "
     >
-      {/* Secure + payment method logos */}
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <div className="flex items-center gap-3 sm:gap-4">
-          <img
-            src={SecureIcon}
-            alt="Secure checkout"
-            className="h-10 sm:h-12 shrink-0"
-          />
-          <p className="text-[#9C7A2F] font-semibold text-sm sm:text-[16px] tracking-[1.5px] sm:tracking-[2px]">
-            SECURE & ENCRYPTED CHECKOUT
-          </p>
-        </div>
+      <div className="overflow-x-auto">
+        {/* secure badge + payment logos + trust badges + security statement */}
+        <div className="flex items-center w-max mx-auto gap-4 md:gap-6 lg:gap-10">
+          {/* Secure & Encrypted Checkout */}
+          <div className="flex items-center gap-3 shrink-0">
+            <img src={SecureIcon} alt="Secure checkout" className="h-9 sm:h-10 shrink-0" />
+            <p className="text-[#9C7A2F] font-semibold text-[10px] sm:text-[11px] lg:text-xs tracking-[1.5px] sm:tracking-[2px] leading-[1.5] whitespace-nowrap">
+              SECURE &<br />ENCRYPTED<br />CHECKOUT
+            </p>
+          </div>
 
-        <div className="flex items-center px-4 justify-center sm:justify-end gap-4">
-          {paymentMethods.map((method) => (
-            <img
-              key={method.alt}
-              src={method.src}
-              alt={method.alt}
-              className={`${method.className} w-auto object-contain shrink-0`}
-            />
-          ))}
-        </div>
-      </div>
+          <span className="w-px h-9 sm:h-10 bg-[#D8CFC0] shrink-0" />
 
-      {/* Trust badges */}
-      <div className="grid grid-cols-3 gap- px-2 sm:gap-6 pt-2 border-t border-[#D8CFC0]/40">
-        {trustBadges.map((badge) => (
-          <div
-            key={badge.title}
-            className="flex flex-col sm:flex-row items-start gap-1.5 sm:gap-3 text-left sm:text-left"
-          >
-            <img src={badge.icon} alt="" className="h-8 sm:h-10 shrink-0" />
-            <div>
-              <p className="text-[#9C7A2F] font-semibold text-[12px] lg:text-base leading-tight">
-                {badge.title}
-              </p>
-              <p className="text-[10px] lg:text-[13px] text-[#282828] leading-tight">
-                {badge.subtitle}
+          {/* Payment method logos */}
+          <div className="flex items-center gap-3 sm:gap-4 lg:gap-5 shrink-0">
+            {paymentMethods.map((method) => (
+              <img
+                key={method.alt}
+                src={method.src}
+                alt={method.alt}
+                className={`${method.className} w-auto object-contain shrink-0`}
+              />
+            ))}
+          </div>
+
+          <span className="w-px h-9 sm:h-10 bg-[#D8CFC0] shrink-0" />
+
+          {/* Trust badges */}
+          <div className="flex items-center gap-4 sm:gap-5 lg:gap-6 shrink-0">
+            {trustBadges.map((badge) => (
+              <div key={badge.title} className="flex items-center gap-2 shrink-0">
+                <img src={badge.icon} alt="" className="h-7 sm:h-8 lg:h-9 shrink-0" />
+                <div className="leading-tight whitespace-nowrap">
+                  <p className="text-[#9C7A2F] font-semibold text-[11px] sm:text-xs lg:text-sm">
+                    {badge.title}
+                  </p>
+                  <p className="text-[9px] sm:text-[10px] lg:text-[11px] text-[#5A5A5A]">
+                    {badge.subtitle}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <span className="w-px h-9 sm:h-10 bg-[#D8CFC0] shrink-0" />
+
+          {/* Security statement */}
+          <div className="shrink-0 max-w-[230px] lg:max-w-[260px] md:pr-5">
+            <div className="flex items-center gap-2">
+              <img src={SecureIcon2} alt="Security badge" className="h-8 w-8 shrink-0" />
+              <p className="text-[#9C7A2F] font-semibold text-[12px] sm:text-[13px] lg:text-[14px] leading-snug whitespace-nowrap">
+                YOUR SECURITY IS<br />OUR PRIORITY
               </p>
             </div>
+            <p className="text-[11px] sm:text-[12px] text-[#282828] ml-3 leading-snug">
+              Secure encrypted payments.
+            </p>
           </div>
-        ))}
-      </div>
-
-      {/* Security statement */}
-      <div className="flex items-center gap-3 pt-2 border-t border-[#D8CFC0]/40">
-        <img
-          src={SecureIcon2}
-          alt="Security badge"
-          className="h-10 w-10 shrink-0"
-        />
-        <div>
-          <p className="text-[#9C7A2F] font-semibold text-[15px] sm:text-[16px]">
-            YOUR SECURITY IS OUR PRIORITY
-          </p>
-          <p className="text-[12px] sm:text-[13px] text-[#282828]">
-            All transactions are encrypted and processed securely.
-          </p>
         </div>
       </div>
     </div>

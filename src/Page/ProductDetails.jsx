@@ -657,10 +657,10 @@ Back
   </div>
 
       </div>
-                       {/* MOBILE CART POPUP */}
+                       {/* add to CART POPUP */}
                                               {showCartToast && (
-                                                <div className="fixed hidden top-28 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
-                                                  <div className="flex items-center justify-between bg-black text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
+                                                <div className="fixed top-28 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+                                                  <div className="flex items-center justify-between bg-black/70 text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
                                               
                                                     <div className="flex items-center gap-2 text-sm font-medium">
                                                       <span className="bg-white rounded-full w-6 h-6 flex items-center justify-center ">
