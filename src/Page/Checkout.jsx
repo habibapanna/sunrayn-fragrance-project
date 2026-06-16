@@ -11,6 +11,7 @@ import Flag from '../assets/Flag Pack.svg';
 import { LuSearch } from "react-icons/lu";
 import { IoChevronDown } from "react-icons/io5";
 import { useState } from "react";
+import CheckoutSecurity from "../components/CheckoutSecurity";
 
 const Checkout = () => {
   const [openSummary, setOpenSummary] = useState(false);
@@ -106,7 +107,6 @@ const Checkout = () => {
 </div>
 
       <div className="md:max-w-7xl  px-[16px] mx-auto grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 md:gap-4 2xl:gap-6 2xl:px-10 relative">
-
         {/* LEFT */}
         <div className="2xl:col-span-2 space-y-4 2xl:space-y-6">
           {/* Express Checkout */}
@@ -369,9 +369,12 @@ const Checkout = () => {
              <button className="w-full  transition-all duration-500 ease-out
     bg-[#BA9948] text-[#1D0B01] hover:bg-white backdrop-blur-md border border-[#BA9948] py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
          </div>
+         <div className="hidden md:block">
+          <CheckoutSecurity></CheckoutSecurity>
+        </div>
         </div>
         {/* RIGHT */}
-       <div className="2xl:col-span-2 sticky top-32 h-fit">
+       <div className="2xl:col-span-2 md:sticky top-32 h-fit">
          <div className="bg-white rounded-[16px] p-[16px] 2xl:p-[24px] w-full
       2xl:sticky 2xl:top-[32px] shadow-lg border border-gray-300">
           <p className="text-[16px] font-semibold lg:text-[18px] 2xl:text-[20px] mb-4">Product Details</p>
@@ -428,10 +431,13 @@ const Checkout = () => {
           </div>
         </div>
         </div>
-        <div className="mt-4 2xl:mt-6 md:hidden rounded-[16px] p-[24px] shadow-lg border border-gray-300 bg-white">
+        <div className="mt-4 2xl:mt-6 md:hidden rounded-[16px] p-[24px] shadow-lg border border-gray-300 bg-white overflow-hidden">
              <button className="w-full  transition-all duration-500
     bg-[#BA9948] hover:text-[#1D0B01] hover:bg-white backdrop-blur-md border border-[#BA9948] text-white py-[7px] 2xl:py-[10px] px-[12px] rounded-full font-semibold text-[14px] 2xl:text-[16px] cursor-pointer">Continue to Payment</button>
          </div>
+         <div className="md:hidden block">
+          <CheckoutSecurity></CheckoutSecurity>
+        </div>
       </div>
       {/* footer */}
                 <div className="flex gap-[32px] justify-center mt-4 2xl:mt-[24px] bg-white border-t border-gray-300 p-4 2xl:p-6">

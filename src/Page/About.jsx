@@ -10,7 +10,7 @@ const About = () => {
         <div className="flex flex-col gap-[24px] md:flex-row justify-between text-[#282828] pb-[16px] 2xl:pb-[32px]">
             <h3 className="text-center md:text-left text-[30px] lg:text-[40px] 2xl:text-[50px] "> Every scent carries a soul.</h3>
             <p className="hidden w-[500px] lg:block text-[18px] text-center lg:text-left 2xl:text-[20px]">Introducing a feeling of serenity in every spritz, wrapping your presence in purity, warmth, and quiet confidence.</p>
-            <p className="text-[18px] text-center md:text-left md:w-sm lg:hidden">Introducing a feeling of serenity in every spritz, wrapping your presence in purity, warmth, and quiet confidence.</p>
+            <p className="text-[18px] text-left md:text-left md:w-sm lg:hidden">Introducing a feeling of serenity in every spritz, wrapping your presence in purity, warmth, and quiet confidence.</p>
         </div>
         <div><img
           src="https://i.postimg.cc/Rh4QBppP/Perfume-Image.png"
