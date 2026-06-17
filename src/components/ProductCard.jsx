@@ -6,11 +6,13 @@ import { products } from "../data/productsData";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa";
 import QuickView from "./QuickView";
+import SizeSelectModal, { getSizePrice } from "./SizeSelectModal";
 import { Eye } from "lucide-react";
 
 const ProductCard = () => {
   const [current, setCurrent] = useState(0);
    const [selectedProduct, setSelectedProduct] = useState(null);
+   const [sizeSelectProduct, setSizeSelectProduct] = useState(null);
   const [itemsPerView, setItemsPerView] = useState(3);
    const { cartOpen, setCartOpen, wishlist, setWishlist, cart, 
   setCart } = useOutletContext();
@@ -70,16 +72,35 @@ const toggleWishlist = (id) => {
   const next = () => setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1));
   const prev = () => setCurrent((prev) => (prev <= 0 ? maxIndex : prev - 1));
 
+// Step 1: clicking "Add to Cart" opens the size picker instead of adding directly
 const handleAddToCart = (product) => {
+  setSizeSelectProduct(product);
+};
+
+// Step 2: clicking a size in the popup actually adds that variant to the cart
+const confirmAddToCart = (product, sizeKey, sizeLabel) => {
+  const { price, oldPrice } = getSizePrice(product, sizeKey);
+
+  const cartItem = {
+    ...product,
+    size: sizeLabel,
+    price,
+    oldPrice,
+  };
+
   setCart((prev) => {
-    const alreadyInCart = prev.find((item) => item.slug === product.slug);
+    const alreadyInCart = prev.find(
+      (i) => i.slug === product.slug && i.size === sizeLabel
+    );
 
     if (alreadyInCart) {
-      return prev; // prevent duplicate
+      return prev; // prevent duplicate of the same product + same size
     }
 
-    return [...prev, product];
+    return [...prev, cartItem];
   });
+
+  setSizeSelectProduct(null);
 
   if (window.innerWidth < 768) {
     setShowCartToast(true);
@@ -94,7 +115,17 @@ useEffect(() => {
   return () => clearTimeout(t);
 }, [showCartToast]);
 
+useEffect(() => {
+  if (sizeSelectProduct) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
 
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [sizeSelectProduct]);
 
   return (
     <div className="mx-auto py-[16px] 2xl:py-[32px]">
@@ -226,7 +257,7 @@ useEffect(() => {
                   </h3>
 
                   <p className="text-[12px] 2xl:text-[18px] text-[#FFF] mb-[12px] md:mb-[26px]">
-                    Sanrayn Original
+                     Alluring cherry and almond fragrance.
                   </p>  
                   <div className="flex items-center justify-between gap-3">
                     <button
@@ -305,6 +336,16 @@ useEffect(() => {
       <QuickView
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
+      />
+    )}
+
+    {sizeSelectProduct && (
+      <SizeSelectModal
+        product={sizeSelectProduct}
+        onClose={() => setSizeSelectProduct(null)}
+        onSelectSize={(sizeKey, sizeLabel) =>
+          confirmAddToCart(sizeSelectProduct, sizeKey, sizeLabel)
+        }
       />
     )}
   {/* toast */}

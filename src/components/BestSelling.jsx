@@ -261,7 +261,7 @@ useEffect(() => {
                   </h3>
 
                   <p className="text-[12px] 2xl:text-[18px] text-[#FFF] mb-[12px] md:mb-[26px]">
-                    Sanrayn Original
+                     Alluring cherry and almond fragrance.
                   </p>  
                   <div className="flex items-center justify-between gap-3">
                     <button
