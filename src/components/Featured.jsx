@@ -6,6 +6,7 @@ import { Link, useNavigate, useOutletContext } from 'react-router-dom';
 import { products } from '../data/productsData';
 import { IoCheckmarkSharp } from 'react-icons/io5';
 import QuickView from './QuickView';
+import SizeSelectModal, { getSizePrice } from './SizeSelectModal';
 import { Eye } from "lucide-react";
 
 
@@ -13,6 +14,7 @@ const Featured = () => {
 
   const [current, setCurrent] = useState(0);
    const [selectedProduct, setSelectedProduct] = useState(null);
+   const [sizeSelectProduct, setSizeSelectProduct] = useState(null);
   const [itemsPerView, setItemsPerView] = useState(3);
   const navigate = useNavigate();
   const { cartOpen, setCartOpen, wishlist, setWishlist, cart, 
@@ -73,16 +75,35 @@ const toggleWishlist = (id) => {
 
 const isMobile = window.innerWidth < 768;
 
+// Step 1: clicking "Add to Cart" opens the size picker instead of adding directly
 const handleAddToCart = (product) => {
+  setSizeSelectProduct(product);
+};
+
+// Step 2: clicking a size in the popup actually adds that variant to the cart
+const confirmAddToCart = (product, sizeKey, sizeLabel) => {
+  const { price, oldPrice } = getSizePrice(product, sizeKey);
+
+  const cartItem = {
+    ...product,
+    size: sizeLabel,
+    price,
+    oldPrice,
+  };
+
   setCart((prev) => {
-    const alreadyInCart = prev.find((item) => item.slug === product.slug);
+    const alreadyInCart = prev.find(
+      (i) => i.slug === product.slug && i.size === sizeLabel
+    );
 
     if (alreadyInCart) {
-      return prev; // prevent duplicate
+      return prev; // prevent duplicate of the same product + same size
     }
 
-    return [...prev, product];
+    return [...prev, cartItem];
   });
+
+  setSizeSelectProduct(null);
 
   if (window.innerWidth < 768) {
     setShowCartToast(true);
@@ -97,12 +118,24 @@ useEffect(() => {
   return () => clearTimeout(t);
 }, [showCartToast]);
 
+useEffect(() => {
+  if (sizeSelectProduct) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [sizeSelectProduct]);
+
     return (
         <div className='mx-auto px-[8px] 2xl:px-[16px] pb-[16x] 2xl:pb-[32px]'>
             <div className='hidden lg:flex justify-between mb-[16px] 2xl:mb-[32px] px-[16px] 2xl:px-[32px]'>
             <div className='flex justify-center items-center text-center gap-[20px] 2xl:gap-[32px]'>
                 <div>
-                    <p className='text-[20px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828'>Featured Perfumes</p>
+                    <p className='text-[20px] lg:text-[35px] 2xl:text-[50px] font-semibold text-[#282828]'>Featured Perfumes</p>
                 </div>
                 <div>
                       <button className="transition-all duration-500 ease-out
@@ -297,6 +330,16 @@ useEffect(() => {
       <QuickView
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
+      />
+    )}
+
+    {sizeSelectProduct && (
+      <SizeSelectModal
+        product={sizeSelectProduct}
+        onClose={() => setSizeSelectProduct(null)}
+        onSelectSize={(sizeKey, sizeLabel) =>
+          confirmAddToCart(sizeSelectProduct, sizeKey, sizeLabel)
+        }
       />
     )}
             {/* MOBILE CART POPUP */}

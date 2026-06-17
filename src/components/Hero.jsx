@@ -74,7 +74,7 @@ const Hero = () => {
               transition-all duration-500
             "
           >
-            SHOP Now
+            SHOP NOW
           </button>
         </Link>
 

@@ -1259,7 +1259,7 @@ export const products = [
   reviews: 1239,
   salesCount: 15230,
 
-  volume: ["50ML"],
+  volume: ["60ML"],
   scentFamily: ["Herbal"],
   intensity: "Significant",
   connection: "Rich and Extreme",
@@ -1882,7 +1882,7 @@ export const products = [
   reviews: 1239,
   salesCount: 15230,
 
-  volume: ["50ML"],
+  volume: ["60ML"],
   scentFamily: ["Flowery"],
   intensity: "Significant",
   connection: "Rich and Extreme",
@@ -3751,7 +3751,7 @@ export const products = [
   reviews: 1239,
   salesCount: 15230,
 
-  volume: ["50ML"],
+  volume: ["60ML"],
   scentFamily: ["Gourmand"],
   intensity: "Subtle",
   connection: "Rich and Extreme",
@@ -5620,7 +5620,7 @@ export const products = [
   reviews: 1239,
   salesCount: 15220,
 
-  volume: ["50ML"],
+  volume: ["60ML"],
   scentFamily: ["Flowery"],
   intensity: "Significant",
   connection: "Rich and Extreme",
@@ -6866,7 +6866,7 @@ export const products = [
   reviews: 1239,
   salesCount: 15330,
 
-  volume: ["50ML"],
+  volume: ["60ML"],
   scentFamily: ["Warm"],
   intensity: "Significant",
   connection: "Rich and Extreme",

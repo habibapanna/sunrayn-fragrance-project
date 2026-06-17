@@ -7,11 +7,13 @@ import { IoCheckmarkSharp } from "react-icons/io5";
 import { FaHeart } from "react-icons/fa";
 import { LuSearch } from "react-icons/lu";
 import QuickView from "./QuickView";
+import SizeSelectModal, { getSizePrice } from "./SizeSelectModal";
 import { Eye } from "lucide-react";
 
 const BestSelling = () => {
   const [current, setCurrent] = useState(0);
    const [selectedProduct, setSelectedProduct] = useState(null);
+   const [sizeSelectProduct, setSizeSelectProduct] = useState(null);
   const [itemsPerView, setItemsPerView] = useState(3);
    const { cartOpen, setCartOpen, wishlist, setWishlist, cart, 
   setCart } = useOutletContext();
@@ -24,6 +26,18 @@ const [touchEnd, setTouchEnd] = useState(null);
 const minSwipeDistance = 50;
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+  if (sizeSelectProduct) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [sizeSelectProduct]);
 
   // Adjust number of items per view based on screen width
   useEffect(() => {
@@ -72,16 +86,35 @@ const toggleWishlist = (id) => {
   const next = () => setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1));
   const prev = () => setCurrent((prev) => (prev <= 0 ? maxIndex : prev - 1));
 
+// Step 1: clicking "Add to Cart" opens the size picker instead of adding directly
 const handleAddToCart = (product) => {
+  setSizeSelectProduct(product);
+};
+
+// Step 2: clicking a size in the popup actually adds that variant to the cart
+const confirmAddToCart = (product, sizeKey, sizeLabel) => {
+  const { price, oldPrice } = getSizePrice(product, sizeKey);
+
+  const cartItem = {
+    ...product,
+    size: sizeLabel,
+    price,
+    oldPrice,
+  };
+
   setCart((prev) => {
-    const alreadyInCart = prev.find((item) => item.slug === product.slug);
+    const alreadyInCart = prev.find(
+      (i) => i.slug === product.slug && i.size === sizeLabel
+    );
 
     if (alreadyInCart) {
-      return prev; // prevent duplicate
+      return prev; // prevent duplicate of the same product + same size
     }
 
-    return [...prev, product];
+    return [...prev, cartItem];
   });
+
+  setSizeSelectProduct(null);
 
   if (window.innerWidth < 768) {
     setShowCartToast(true);
@@ -309,9 +342,19 @@ useEffect(() => {
         onClose={() => setSelectedProduct(null)}
       />
     )}
+
+    {sizeSelectProduct && (
+      <SizeSelectModal
+        product={sizeSelectProduct}
+        onClose={() => setSizeSelectProduct(null)}
+        onSelectSize={(sizeKey, sizeLabel) =>
+          confirmAddToCart(sizeSelectProduct, sizeKey, sizeLabel)
+        }
+      />
+    )}
             {/* MOBILE CART POPUP */}
 {showCartToast && (
-  <div className="fixed top-20 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
+  <div className="hidden fixed top-20 left-1/2 -translate-x-1/2 w-[92%] z-50 md:hidden">
     <div className="flex items-center justify-between bg-black text-white px-4 py-3 rounded-[16px] shadow-lg mx-[16px]">
 
       <div className="flex items-center gap-2 text-sm font-medium">
