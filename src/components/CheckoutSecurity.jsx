@@ -6,14 +6,14 @@ import SupportIcon from "../assets/supportIcon.png";
 import Visa from "../assets/Visa logo.svg";
 import MasterCard from "../assets/MasterCard logo.svg";
 import Paypal from "../assets/Paypal Logo.svg";
-import AmericanExpress from "../assets/american-express.png";
-import Discover from "../assets/discover.png";
+import AmericanExpress from "../assets/fontisto--american-express (1).svg";
+import Discover from "../assets/logos--discover.svg";
 
 const paymentMethods = [
-  { src: Visa, alt: "Visa", className: "h-4 md:h-4 lg:h-5" },
-  { src: MasterCard, alt: "Mastercard", className: "h-4 md:h-3 lg:h-5" },
-  { src: AmericanExpress, alt: "American Express", className: "h-6 md:h-6 lg:h-7" },
-  { src: Discover, alt: "Discover", className: "h-6 md:h-6 lg:h-7" },
+  { src: Visa, alt: "Visa", className: "h-3 md:h-4 lg:h-5" },
+  { src: MasterCard, alt: "Mastercard", className: "h-3 md:h-4 lg:h-5" },
+  { src: AmericanExpress, alt: "American Express", className: "h-6 md:h-8 lg:h-12 bg-color:blue-500" },
+  { src: Discover, alt: "Discover", className: "h-3 md:h-4 lg:h-4" },
   { src: Paypal, alt: "PayPal", className: "h-4 md:h-4 lg:h-6" },
 ];
 
