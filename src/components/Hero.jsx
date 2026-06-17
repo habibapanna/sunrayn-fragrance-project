@@ -72,6 +72,7 @@ const Hero = () => {
               text-[14px] md:text-[18px]
               font-semibold
               transition-all duration-500
+              cursor-pointer
             "
           >
             SHOP NOW

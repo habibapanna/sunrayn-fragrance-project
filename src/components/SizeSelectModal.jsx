@@ -34,7 +34,7 @@ const SizeSelectModal = ({ product, onClose, onSelectSize }) => {
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-[#282828] hover:text-black"
+          className="absolute top-4 right-4 text-[#282828] hover:text-black cursor-pointer"
         >
           <X size={20} />
         </button>

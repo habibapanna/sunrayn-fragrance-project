@@ -5,19 +5,20 @@ import SortFilter from "../components/SortFilter";
 import { products } from "../data/productsData";
 import { FaCheck, FaHeart, FaStar } from "react-icons/fa";
 import MarqueeSection from '../components/MarqueeSection';
-import MarqueeFlavour from '../components/MarqueeFlavour';
 import Premium from '../components/Premium';
 import NewsLetter from '../components/NewsLetter';
 import { motion, AnimatePresence } from "framer-motion";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import { LuSearch } from "react-icons/lu";
 import QuickView from "../components/QuickView";
+import SizeSelectModal, { getSizePrice } from "../components/SizeSelectModal";
 import { Eye } from "lucide-react";
 
 
 const ProductList = () => {
   const navigate = useNavigate();
    const [selectedProduct, setSelectedProduct] = useState(null);
+   const [sizeSelectProduct, setSizeSelectProduct] = useState(null);
   /* -------------------- UI STATES -------------------- */
   const [sidebarOpen, setSidebarOpen] = useState(false);
  const [openSection, setOpenSection] = useState([
@@ -191,16 +192,35 @@ const overlayVariants = {
 const isMobile = window.innerWidth < 768;
 
 
+// Step 1: 
 const handleAddToCart = (product) => {
+  setSizeSelectProduct(product);
+};
+
+// Step 2: 
+const confirmAddToCart = (product, sizeKey, sizeLabel) => {
+  const { price, oldPrice } = getSizePrice(product, sizeKey);
+
+  const cartItem = {
+    ...product,
+    size: sizeLabel,
+    price,
+    oldPrice,
+  };
+
   setCart((prev) => {
-    const alreadyInCart = prev.find((item) => item.slug === product.slug);
+    const alreadyInCart = prev.find(
+      (i) => i.slug === product.slug && i.size === sizeLabel
+    );
 
     if (alreadyInCart) {
-      return prev; // prevent duplicate
+      return prev; // prevent duplicate of the same product + same size
     }
 
-    return [...prev, product];
+    return [...prev, cartItem];
   });
+
+  setSizeSelectProduct(null);
 
   if (window.innerWidth < 768) {
     setShowCartToast(true);
@@ -208,6 +228,18 @@ const handleAddToCart = (product) => {
     setCartOpen(true);
   }
 };
+
+useEffect(() => {
+  if (sizeSelectProduct) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [sizeSelectProduct]);
 
 // mobile effect
 useEffect(() => {
@@ -754,6 +786,16 @@ useEffect(() => {
       <QuickView
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}
+      />
+    )}
+
+    {sizeSelectProduct && (
+      <SizeSelectModal
+        product={sizeSelectProduct}
+        onClose={() => setSizeSelectProduct(null)}
+        onSelectSize={(sizeKey, sizeLabel) =>
+          confirmAddToCart(sizeSelectProduct, sizeKey, sizeLabel)
+        }
       />
     )}
                        {/* MOBILE CART POPUP */}
