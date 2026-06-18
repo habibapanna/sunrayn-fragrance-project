@@ -12,8 +12,8 @@ import Discover from "../assets/logos--discover.svg";
 const paymentMethods = [
   { src: Visa, alt: "Visa", className: "h-3 md:h-4 lg:h-5" },
   { src: MasterCard, alt: "Mastercard", className: "h-3 md:h-4 lg:h-5" },
-  { src: AmericanExpress, alt: "American Express", className: "h-6 md:h-8 lg:h-10 bg-color:blue-500" },
-  { src: Discover, alt: "Discover", className: "h-3 md:h-3 lg:h-3" },
+  { src: AmericanExpress, alt: "American Express", className: "h-6 md:h-8 lg:h-9 bg-color:blue-500" },
+  { src: Discover, alt: "Discover", className: "h-3 md:h-3 lg:h-4" },
   { src: Paypal, alt: "PayPal", className: "h-4 md:h-4 lg:h-6" },
 ];
 

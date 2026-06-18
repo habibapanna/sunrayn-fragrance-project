@@ -52,20 +52,41 @@ const SizeSelectModal = ({ product, onClose, onSelectSize }) => {
         </div>
 
         <div className="flex flex-col gap-3">
-          {SIZE_OPTIONS.map((opt) => {
-            const { price } = getSizePrice(product, opt.key);
-            return (
-              <button
-                key={opt.key}
-                onClick={() => onSelectSize(opt.key, opt.label)}
-                className="flex items-center justify-between border border-[#D8CFC0] rounded-full px-5 py-3 hover:border-[#BA9948] hover:bg-[#BA9948]/10 transition-all duration-300 cursor-pointer"
-              >
-                <span className="font-semibold text-[#282828]">{opt.label}</span>
-                <span className="text-[#9C7A2F] font-semibold">${price?.toFixed(2)}</span>
-              </button>
-            );
-          })}
-        </div>
+  {SIZE_OPTIONS.map((opt) => {
+    const { price } = getSizePrice(product, opt.key);
+
+    return (
+      <div key={opt.key} className="relative">
+        {/* Badge only for 30ML */}
+        {opt.key === "30ml" && (
+         <span className="absolute -top-[8px] right-[6px] text-[10px] lg:text-[12px] 
+              bg-[#A0174A] text-white px-[6px] py-[2px] rounded-full z-10">
+              Best Value
+            </span>
+        )}
+
+        <button
+          onClick={() => onSelectSize(opt.key, opt.label)}
+          className={`w-full flex items-center justify-between border rounded-full px-5 py-3 transition-all duration-300 cursor-pointer
+            ${
+              opt.key === "30ml"
+                ? "border-[#BA9948]"
+                : "border-[#D8CFC0]"
+            }
+            hover:border-[#BA9948] hover:bg-[#BA9948]/10`}
+        >
+          <span className="font-semibold text-[#282828]">
+            {opt.label}
+          </span>
+
+          <span className="text-[#9C7A2F] font-semibold">
+            ${price?.toFixed(2)}
+          </span>
+        </button>
+      </div>
+    );
+  })}
+</div>
       </div>
     </div>
   );
