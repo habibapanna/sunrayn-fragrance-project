@@ -583,7 +583,7 @@ const navTopClass = isHome ? "top-0" : "top-[32px] lg:top-[40px]";
              <button
   title="Open Menu"
   onClick={() => setMenuOpen(true)}
-  className="bg-white/90 p-[6px] h-[28px] w-[28px] md:h-[30px] md:w-[30px] rounded-full flex items-center cursor-pointer justify-center"
+  className="bg-[#F6F7F2] p-[6px] h-[28px] w-[28px] md:h-[30px] md:w-[30px] rounded-full flex items-center cursor-pointer justify-center"
 >
   <TbMenu className="text-[#1D0B01] h-[15px] w-[15px] md:w-[20px] md:h-[20px]" />
 </button>
