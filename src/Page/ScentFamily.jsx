@@ -120,14 +120,7 @@ const ScentFamily = () => {
           `}
         />
 
-        {/* LEFT IMAGE (only desktop open) */}
-        {isOpen && (
-          <img
-            src={item.img}
-            alt=""
-            className="hidden md:block absolute top-0 left-0 h-full w-[45%] object-cover pointer-events-none"
-          />
-        )}
+      
 
         {/* WHITE CARD */}
         <div
@@ -137,23 +130,6 @@ const ScentFamily = () => {
               : "w-[70%] md:w-[60%] lg:w-[40%] rounded-xl px-6 py-4 h-[60px] flex items-center"}
           ml-5 md:ml-12`}
         >
-          {/* TOP RIGHT IMAGE (only when open) */}
-          {isOpen && (
-            <img
-              src={item.image}
-              alt=""
-              className="absolute top-0 right-0 w-[35%] md:w-[30%] pointer-events-none"
-            />
-          )}
-
-          {/* BOTTOM RIGHT BG (inside white card) */}
-          <img
-            src={item.bg}
-            alt=""
-            className={`absolute bottom-0 right-0 transition-all duration-500 object-cover pointer-events-none
-            ${isOpen ? "w-[55%]" : "w-[45%] h-full"}
-            `}
-          />
 
           {/* CONTENT */}
           <div className="relative z-10">
