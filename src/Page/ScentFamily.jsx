@@ -1,23 +1,20 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 const scentFamilies = [
   {
-    name: "Flowery",
+    name: "Floral",
     bg: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/FLORAL_BUTTON_RIGHT_BG.png?v=1734583632",
-    img: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/FLORAL_BUTTON_LEFT_BG.png?v=1734572997",
-    image: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/FLORAL_BUTTON_LEFT_BG.png?v=1734572997",
     color: "#E3A7A7",
     title: "The Floral fragrance category lets you select and spray the essence of your favorite bouquet.",
     description:
       "Choose from our largest fragrance family to find the flowery scents that make you stop, smell, and feel the most like you. Love roses, jasmine, clean white flowers, or anything in between? There's something for everyone, whether you're an elegant and timeless or modern and trendsetting fragrance lover.",
   },
   {
-    name: "Fresh",
+    name: "Amber",
     bg: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/FRESH_BUTTON_RIGHT.png?v=1734358115",
-    img: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/FRESH_BUTTON_LEFT.png?v=1734104601",
-    image: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/FREH_EXPANDED_TOP_RIGHT.png?v=1734354301",
     color: "#C6E09E",
      title: "The Fresh fragrance category includes scent families that excuse uplifting and bright sensibilities.",
     description:
@@ -26,38 +23,30 @@ const scentFamilies = [
   {
     name: "Gourmand",
     bg: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/EDIBLE_EXPANDED_RIGHT.png?v=1734521715",
-    img: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/EDIBLE_EXPANDED_LEFT.png?v=1734521636",
-    image: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/EDIBLE_TOP_RIGHT.png?v=1734521877",
     color: "#E9A97F",
     title: "The Floral fragrance category lets you select and spray the essence of your favorite bouquet.",
     description:
       "Choose from our largest fragrance family to find the flowery scents that make you stop, smell, and feel the most like you. Love roses, jasmine, clean white flowers, or anything in between? There's something for everyone, whether you're an elegant and timeless or modern and trendsetting fragrance lover.",
   },
   {
-    name: "Herbal",
+    name: "Aromatic",
     bg: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/HERBAL_EXPANDED_RIGHT.png?v=1734522155",
-    img: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/HERBAL_EXPANDED_LEFT.png?v=1734522155",
-    image: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/HERBAL_TOP_RIGHT.png?v=1734522154",
     color: "#B7C95F",
      title: "The Floral fragrance category lets you select and spray the essence of your favorite bouquet.",
     description:
       "Choose from our largest fragrance family to find the flowery scents that make you stop, smell, and feel the most like you. Love roses, jasmine, clean white flowers, or anything in between? There's something for everyone, whether you're an elegant and timeless or modern and trendsetting fragrance lover.",
   },
   {
-    name: "Earthy",
+    name: "Woody",
     bg: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/EARTHY_EXPANDED_RIGHT.png?v=1734522344",
-    img: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/EARTHY_EXPANDED_LEFT.png?v=1734522344",
-    image: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/EARTHY_TOP_RIGHT.png?v=1734522343",
     color: "#D5B79A",
     title: "The Floral fragrance category lets you select and spray the essence of your favorite bouquet.",
     description:
       "Choose from our largest fragrance family to find the flowery scents that make you stop, smell, and feel the most like you. Love roses, jasmine, clean white flowers, or anything in between? There's something for everyone, whether you're an elegant and timeless or modern and trendsetting fragrance lover.",
   },
   {
-    name: "Warm",
+    name: "Fruity",
     bg: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/WARM_EXPANDED_BOTTOM_RIGHT.png?v=1734522567",
-    img: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/WARM_EXPANDED_TOP_LEFT.png?v=1734522567",
-    image: "https://cdn.shopify.com/s/files/1/0047/4067/7699/files/WARM_TOP_RIGHT.png?v=1734522566",
     color: "#E6C15F",
      title: "The Floral fragrance category lets you select and spray the essence of your favorite bouquet.",
     description:
@@ -111,12 +100,34 @@ const ScentFamily = () => {
           {isOpen ? <Minus size={18}  /> : <Plus size={18} />}
         </div>
 
+        {/* SHOP BUTTON */}
+        {isOpen && (
+          <Link
+            to='/productList'
+            onClick={(e) => e.stopPropagation()}
+            className="absolute hidden md:block right-10 lg:right-50 top-1/2 -translate-y-1/2 z-40 rounded-full px-8 py-3 text-[18px] font-semibold text-black shadow-sm transition-colors duration-300 hover:opacity-90 bg-white"
+            
+          >
+            Shop {item.name}
+          </Link>
+        )}
+         {isOpen && (
+          <Link
+            to='/productList'
+            onClick={(e) => e.stopPropagation()}
+            className="absolute md:hidden right-6 bottom-6 z-40 rounded-full px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors duration-300 hover:opacity-90 bg-[#A0174A]"
+            
+          >
+            Shop {item.name}
+          </Link>
+        )}
+
         {/* Decorative BG (Main Container) */}
         <img
           src={item.bg}
           alt=""
           className={`absolute right-0 bottom-0 transition-all duration-500 object-cover pointer-events-none
-          ${isOpen ? "w-[70%] opacity-100" : "w-[60%] h-full opacity-100"}
+          ${isOpen ? "w-[70%] opacity-100 " : "w-[60%] h-full opacity-100"}
           `}
         />
 
