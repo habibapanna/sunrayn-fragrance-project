@@ -96,7 +96,7 @@ const buttonVariants = {
               leave a lasting impression.
             </p>
 
-            <Link to='productList'><button className=" transition-all duration-500 ease-out
+            <Link to='/about'><button className=" transition-all duration-500 ease-out
     bg-[#BA9948] border border-[#BA9948] hover:bg-white backdrop-blur-md text-[#1D0B01] px-5 py-2 md:px-6 md:py-3 rounded-full text-[14px] lg:text-[18px] 2xl:text-[20px] font-bold  h-[40px] lg:h-[55px] cursor-pointer mt-5 2xl:my-12 flex items-center justify-center">
               Read More
             </button></Link>
