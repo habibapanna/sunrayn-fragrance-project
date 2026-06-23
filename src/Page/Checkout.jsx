@@ -214,13 +214,26 @@ const Checkout = () => {
       </span>
     </div>
   </div>
-
-  {/* City / State / Zip */}
-<div className="grid grid-cols-3 gap-4">
-
-  {/* City */}
+  {/* Phone Number */}
   <div className="space-y-2">
-    <label className="text-[14px] 2xl:text-[16px]">City</label>
+    <label className="text-[14px] 2xl:text-[16px]">Phone Number</label>
+    <div className="flex items-center gap-3 bg-[#F6F7F2] rounded-lg px-5 py-2 2xl:py-3">
+      <span className="flex items-center gap-2 text-[14px] 2xl:text-[16px]">
+        <img src={Flag} alt="" />
+        <span className="text-gray-500"></span>
+      </span>
+      <input
+        placeholder="+1(555) 247-8936"
+        className="bg-transparent text-[14px] 2xl:text-[16px] focus:outline-none w-full"
+      />
+    </div>
+  </div>
+  {/* City / State / Zip */}
+<div className="grid grid-cols-1 gap-4">
+
+  {/* State */}
+  <div className="space-y-2">
+    <label className="text-[14px] 2xl:text-[16px]">State</label>
 
     <div className="relative">
       <select className="w-full appearance-none bg-[#F6F7F2] rounded-lg px-5 pr-10 py-2 2xl:py-3 text-[14px] 2xl:text-[16px] focus:outline-none">
@@ -231,9 +244,9 @@ const Checkout = () => {
     </div>
   </div>
 
-  {/* State */}
+  {/* City */}
   <div className="space-y-2">
-    <label className="text-[14px] 2xl:text-[16px]">State</label>
+    <label className="text-[14px] 2xl:text-[16px]">City</label>
 
     <div className="relative">
       <select className="w-full appearance-none bg-[#F6F7F2] rounded-lg px-5 pr-10 py-2 2xl:py-3 text-[14px] 2xl:text-[16px] focus:outline-none">
@@ -255,20 +268,6 @@ const Checkout = () => {
 
 </div>
 
-  {/* Phone Number */}
-  <div className="space-y-2">
-    <label className="text-[14px] 2xl:text-[16px]">Phone Number</label>
-    <div className="flex items-center gap-3 bg-[#F6F7F2] rounded-lg px-5 py-2 2xl:py-3">
-      <span className="flex items-center gap-2 text-[14px] 2xl:text-[16px]">
-        <img src={Flag} alt="" />
-        <span className="text-gray-500"></span>
-      </span>
-      <input
-        placeholder="+1(555) 247-8936"
-        className="bg-transparent text-[14px] 2xl:text-[16px] focus:outline-none w-full"
-      />
-    </div>
-  </div>
 
   {/* Save Info */}
   <label className="flex items-center gap-3 text-[14px] 2xl:text-[16px] cursor-pointer">

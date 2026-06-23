@@ -84,7 +84,7 @@ const buttonVariants = {
               alt="Special Perfume"
               className="h-[292px] md:h-[250px] lg:h-[397px] 2xl:h-[700px] w-full 2xl:w-[651px] object-cover rounded-[16px] "
             />
-            <div className="md:hidden absolute inset-0 bg-gradient-to-b from-transparent to-[#EDE8E0]" />
+            {/* <div className="md:hidden absolute inset-0 bg-gradient-to-b from-transparent to-[#EDE8E0]" /> */}
           </div>
 
           {/* DESCRIPTION */}

@@ -14,6 +14,7 @@ const posts = [
   { title: 'Women', product: 'https://i.postimg.cc/PNGRVQZ7/Whats-App-Image-2026-02-03-at-6-11-48-PM-(2).jpg' },
   { title: 'Unisex', product: 'https://i.postimg.cc/pdYRfpNM/Whats-App-Image-2026-02-03-at-6-11-48-PM.jpg' },
   { title: 'Unisex', product: 'https://i.postimg.cc/6p2k0Tvk/Whats-App-Image-2026-02-03-at-6-06-46-PM.jpg' },
+  { title: 'Unisex', product: 'https://i.postimg.cc/W4V5k4wv/Whats-App-Image-2026-02-03-at-6-06-48-PM.jpg' },
 ];
 
 const RecentPost = () => {
@@ -90,11 +91,11 @@ const RecentPost = () => {
             spaceBetween: 16,
           },
           1024: {
-            slidesPerView: 2,
+            slidesPerView: 3,
             spaceBetween: 16,
           },
           1536: {
-            slidesPerView: 4,
+            slidesPerView: 5,
             spaceBetween: 32,
           },
         }}

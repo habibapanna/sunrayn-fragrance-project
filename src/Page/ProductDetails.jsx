@@ -8,6 +8,8 @@ import ProductCard from "../components/ProductCard";
 import { useNavigate, Link } from "react-router-dom";
 import { IoCheckmarkSharp } from "react-icons/io5";
 import ReviewSection from "../components/ReviewSection";
+import GLightbox from 'glightbox';
+import 'glightbox/dist/css/glightbox.css';
 
 const ProductDetails = () => {
     const [openSection, setOpenSection] = useState("notes");
@@ -122,6 +124,7 @@ useEffect(() => {
   }
 }, [product]);
 
+
 const volumeToOz = {
   "15ML": "0.5oz",
   "30ML": "1oz",
@@ -160,6 +163,18 @@ const genderStyles = {
   UNISEX: "border-[#BA9948] text-[#BA9948]",
 };
 
+useEffect(() => {
+  const lightbox = GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    closeButton: true,
+  });
+
+  return () => {
+    lightbox.destroy();
+  };
+}, [product]);
 
 
   return (
@@ -206,44 +221,57 @@ Back
       {/* TOP SECTION */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px] 2xl:gap-[32px] px-[16px] 2xl:px-[32px]">
         
-        {/* LEFT – IMAGES */}
-       <div className="hidden md:grid grid-cols-2 gap-[16px] 2xl:gap-[32px] auto-rows-min md:sticky md:top-[100px] h-fit">
+{/* LEFT – IMAGES (DESKTOP) */}
+<div className="hidden md:grid grid-cols-2 gap-[16px] 2xl:gap-[32px] auto-rows-min md:sticky md:top-[100px] h-fit">
+  <div className="col-span-2">
+    
+     <a href={product.images[1]}
+      className="glightbox cursor-zoom-in"
+      data-gallery="product-gallery"
+    >
+      <img
+        src={product.images[1]}
+        className="mx-auto h-full min-h-[500px] 2xl:min-h-[700px] w-full object-cover rounded-[16px]"
+      />
+    </a>
+  </div>
 
-          <div className="col-span-2 ] ">
-            <img
-  src={product.images[1]}
-  className="mx-auto h-full min-h-[500px] 2xl:min-h-[700px] w-full object-cover rounded-[16px]"
-/>
+  {product.images.slice(2).map((img, i) => (
+    <div key={i} className="rounded-[24px]">
+      
+       <a href={img}
+        className="glightbox cursor-zoom-in"
+        data-gallery="product-gallery"
+      >
+        <img
+          src={img}
+          className="mx-auto 2xl:h-[450px] 2xl:w-[450px] object-cover rounded-[16px] h-full"
+        />
+      </a>
+    </div>
+  ))}
+</div>
 
-          </div>
-
-          {product.images.slice(2).map((img, i) => (
-            <div key={i} className="rounded-[24px]">
-              <img src={img} className="mx-auto 2xl:h-[450px] 2xl:w-[450px] object-cover rounded-[16px] h-full " />
-            </div>
-          ))}
-        </div>
 {/* LEFT – IMAGES (MOBILE CAROUSEL) */}
 <div className="md:hidden">
   <div
     ref={carouselRef}
     onScroll={handleScroll}
-    className="
-      flex overflow-x-auto snap-x snap-mandatory
-      scroll-smooth no-scrollbar
-      gap-[16px]
-    "
+    className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-[16px]"
   >
     {product.images.slice(1).map((img, i) => (
-      <div
-        key={i}
-        className="min-w-full snap-center"
-      >
-        <img
-          src={img}
-          alt={`${product.title} ${i + 1}`}
-          className="object-cover rounded-[16px] h-[343px] w-full "
-        />
+      <div key={i} className="min-w-full snap-center">
+        
+        <a  href={img}
+          className="glightbox"
+          data-gallery="product-gallery-mobile"
+        >
+          <img
+            src={img}
+            alt={`${product.title} ${i + 1}`}
+            className="object-cover rounded-[16px] h-[343px] w-full"
+          />
+        </a>
       </div>
     ))}
   </div>
@@ -253,13 +281,14 @@ Back
     {product.images.slice(1).map((_, i) => (
       <span
         key={i}
-        className={`h-2 w-2 rounded-full transition
-          ${activeIndex === i ? "bg-[#1D0B01]" : "bg-[#1D0B01]/30"}
-        `}
+        className={`h-2 w-2 rounded-full transition ${
+          activeIndex === i ? "bg-[#1D0B01]" : "bg-[#1D0B01]/30"
+        }`}
       />
     ))}
   </div>
 </div>
+
  {/* RIGHT – INFO */}
 <div className="md:sticky md:top-[100px] h-fit">
   <div className="bg-[#F6F7F2] rounded-[16px] p-[16px] 2xl:p-[32px]">
